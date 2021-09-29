@@ -1,9 +1,11 @@
 {
-  "name": "vdeep-numl",
+  "name": "numl-react",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "yarn workspaces run build",
+    "build:types": "yarn workspaces run build:types",
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -30,5 +32,9 @@
     "prettier": "2.4.1",
     "typescript": "^4.3.2",
     "vite": "^2.5.4"
-  }
+  },
+  "workspaces": [
+    "packages/*",
+    "packages/atoms/src/*"
+  ]
 }
