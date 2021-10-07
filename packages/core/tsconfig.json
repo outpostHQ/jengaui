@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    // "target": "ES2020",
+    // "lib": ["DOM", "DOM.Iterable", "ES6"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    // "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    // "module": "ES6",
+    // "moduleResolution": "Node",
+    // "resolveJsonModule": true,
+    // "isolatedModules": true,
+    "jsx": "react",
+    "outDir": "types"
+  },
+  "exclude": ["**/vite.config.ts", "**/node_modules", "types"],
+  "include": ["index.ts", "src/**/*"]
+}

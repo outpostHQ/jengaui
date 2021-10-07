@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "tastycss-react": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -35,6 +36,7 @@
   },
   "workspaces": [
     "packages/*",
+    "packages/core/src/*",
     "packages/atoms/src/*"
   ]
 }

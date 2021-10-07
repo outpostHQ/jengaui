@@ -1,7 +1,17 @@
-import { BaseProps, TextStyleProps } from 'tastycss-react'
+import { ActionProps } from '@numl-react/action'
 
-export interface ButtonProps extends BaseProps, Partial<TextStyleProps> {
-  to?: string
-  label?: string
-  typeAttribute?: 'button' | 'reset' | 'submit' | undefined
+export interface ButtonProps extends ActionProps {
+  ghost?: boolean
+  icon?: JSX.Element
+  isLoading?: boolean
+  isSelected?: boolean
+  type?:
+    | 'primary'
+    | 'default'
+    | 'danger'
+    | 'link'
+    | 'clear'
+    | 'outline'
+    | 'tab'
+    | 'item'
 }

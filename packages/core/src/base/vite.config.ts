@@ -14,15 +14,10 @@ export default defineConfig({
         'react',
         'tastycss',
         'tastycss-react',
-        '@ant-design/icons',
+        '@react-types/shared',
+        '@react-types/button',
         '@numl-react/core',
         '@numl-react/atoms',
-        '@react-aria/button',
-        '@react-aria/interactions',
-        '@react-aria/utils',
-        '@react-spectrum/utils',
-        '@react-types/button',
-        '@react-types/shared',
       ],
       output: {
         globals: {
