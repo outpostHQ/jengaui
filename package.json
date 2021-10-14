@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "yarn workspaces run build",
-    "build:types": "yarn workspaces run build:types",
+    "build": "yarn workspaces foreach run build",
+    "build:types": "yarn workspaces foreach run build:types",
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
