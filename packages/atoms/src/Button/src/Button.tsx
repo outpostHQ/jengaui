@@ -100,10 +100,10 @@ const STYLES_BY_TYPE: any = {
     cursor: 'default',
   },
   tab: {
-    // shadow: {
-    //   '': '',
-    //   selected: 'inset 0 -1ow 0 0 #purple',
-    // },
+    shadow: {
+      '': '',
+      selected: 'inset 0 -1ow 0 0 #purple',
+    },
     color: {
       '': '#dark',
       'selected, hovered': '#purple-text',
@@ -118,7 +118,7 @@ const STYLES_BY_TYPE: any = {
   },
   // not an actual type
   disabled: {
-    // border: '#clear',
+    border: '#clear',
     fill: '#dark.08',
     color: '#dark.60',
   },
