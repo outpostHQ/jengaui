@@ -23,10 +23,10 @@ const colors = {
   success: '49, 195, 124',
   'success-text': '48, 166, 102',
   note: '251, 188, 5',
-};
+}
 
 function color(name, opacity = 1) {
-  return `rgba(${colors[name]}, ${opacity})`;
+  return `rgba(${colors[name]}, ${opacity})`
 }
 
 const PROPS = {
@@ -191,11 +191,11 @@ const PROPS = {
   'default-line-height': 'var(--t3-line-height)',
   'default-letter-spacing': 'var(--t3-letter-spacing)',
   'default-font-weight': 'var(--t3-font-weight)',
-};
+}
 
 Object.keys(colors).forEach((name) => {
-  PROPS[`${name}-color`] = color(name);
-  PROPS[`${name}-color-rgb`] = colors[name];
-});
+  PROPS[`${name}-color`] = color(name)
+  PROPS[`${name}-color-rgb`] = colors[name]
+})
 
-export default PROPS;
+export default PROPS

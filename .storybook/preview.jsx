@@ -1,15 +1,15 @@
-import React from 'react';
-import { GlobalStyles } from '../src/GlobalStyles';
+import React from 'react'
+import { GlobalStyles } from '../src/GlobalStyles'
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
 }
 
 export const decorators = [
   (Story) => (
     <>
-      <GlobalStyles/>
-      <Story/>
+      <GlobalStyles />
+      <Story />
     </>
-  )
+  ),
 ]
