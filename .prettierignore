@@ -5,3 +5,4 @@ dist
 yarn.lock
 package.json
 .*
+!.storybook
