@@ -2046,7 +2046,7 @@ __metadata:
     react: ^17.0.0
     react-dom: ^17.0.0
     rimraf: ^3.0.2
-    tastycss-react: ^0.3.0
+    tastycss-react: ^0.4.4
     typescript: ^4.3.2
     vite: ^2.5.4
   peerDependencies:
@@ -2082,7 +2082,7 @@ __metadata:
     react: ^17.0.0
     react-dom: ^17.0.0
     rimraf: ^3.0.2
-    tastycss-react: ^0.3.0
+    tastycss-react: ^0.4.4
     typescript: ^4.3.2
     vite: ^2.5.4
   peerDependencies:
@@ -2091,9 +2091,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@numl-react/button@workspace:packages/atoms/src/button":
+"@numl-react/button@workspace:packages/atoms/src/Button":
   version: 0.0.0-use.local
-  resolution: "@numl-react/button@workspace:packages/atoms/src/button"
+  resolution: "@numl-react/button@workspace:packages/atoms/src/Button"
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@react-types/button": ^3.4.1
@@ -2101,7 +2101,7 @@ __metadata:
     "@types/react-dom": ^17.0.0
     "@vitejs/plugin-react": ^1.0.0
     rimraf: ^3.0.2
-    tastycss-react: ^0.3.0
+    tastycss-react: ^0.4.4
     typescript: ^4.3.2
     vite: ^2.5.4
   peerDependencies:
@@ -10703,7 +10703,7 @@ fsevents@^1.2.7:
     react-dom: ^17.0.0
     storybook-builder-vite: ^0.1.0
     styled-components: ^5.3.1
-    tastycss-react: ^0.3.0
+    tastycss-react: ^0.4.4
     typescript: ^4.3.2
     vite: ^2.5.4
   languageName: unknown
@@ -13606,22 +13606,22 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tastycss-react@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "tastycss-react@npm:0.3.0"
+"tastycss-react@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "tastycss-react@npm:0.4.4"
   dependencies:
     react: ">=17.0.0"
     react-dom: ">=17.0.0"
     styled-components: 5.3.0
-    tastycss: ^0.3.0
-  checksum: 241d89d265b2056efe98388ef4d2c3e8c9904cbef381ff3bcdf46084a2e01d09f1130e8c9d834f944915fe2f429d91cdabbd7441aacb937d2ed198cbd363382e
+    tastycss: ^0.4.4
+  checksum: 589a04b398b430593dd6fa0069a58552a3181381dc1782486178fae61081adb27cfba0c20f244331cfc97785fe2fe80d8ca61c182ccd9f58472bd6ee96e5af0c
   languageName: node
   linkType: hard
 
-"tastycss@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "tastycss@npm:0.3.0"
-  checksum: 1b173f17551bfecb232d45096ec0bebee3e6068717e2bfb60e3aa9d60b92a3cab2bce96ad9abecc653cd0660f6486d4103b84432e6f2ed16323fc67b0a260734
+"tastycss@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "tastycss@npm:0.4.4"
+  checksum: 441cd7fd20e7cd88ebd1bd2ebb64c6187779a05bdc10fe1d206c1b176e4f5db4d10e2dc85aafa2cb7cd71e8b12e8df31cb5da195239ed35a4a35f14d529b2635
   languageName: node
   linkType: hard
 

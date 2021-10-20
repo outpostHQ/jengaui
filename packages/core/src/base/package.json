@@ -38,6 +38,6 @@
     "vite": "^2.5.4"
   },
   "dependencies": {
-    "tastycss-react": "^0.3.0"
+    "tastycss-react": "^0.4.4"
   }
 }
