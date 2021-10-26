@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ActionProps } from '@numl-react/action';
 export interface ButtonProps extends ActionProps {
     ghost?: boolean;
