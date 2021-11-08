@@ -16,8 +16,8 @@ export default defineConfig({
         'tastycss-react',
         '@react-types/shared',
         '@react-types/button',
-        '@numl-react/core',
-        '@numl-react/atoms',
+        '@jenga-ui/core',
+        '@jenga-ui/atoms',
       ],
       output: {
         globals: {

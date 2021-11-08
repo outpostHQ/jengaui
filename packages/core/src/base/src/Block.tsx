@@ -8,7 +8,7 @@ import {
   ContainerStyleProps,
   AllBaseProps,
 } from 'tastycss-react'
-import { filterBaseProps } from '@numl-react/core'
+import { filterBaseProps } from '@jenga-ui/core'
 
 const DEFAULT_STYLES = {
   display: 'block',

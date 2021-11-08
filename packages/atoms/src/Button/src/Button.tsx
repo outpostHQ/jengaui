@@ -3,7 +3,7 @@ import { ButtonProps } from './ButtonProps'
 import { FocusableRef } from '@react-types/shared'
 import { LoadingOutlined } from '@ant-design/icons'
 import { useContextStyles, Styles } from 'tastycss-react'
-import { Action, Block, Space, propDeprecationWarning } from '@numl-react/core'
+import { Action, Block, Space, propDeprecationWarning } from '@jenga-ui/core'
 
 const STYLES_BY_TYPE: any = {
   default: {
@@ -314,5 +314,7 @@ const Button = forwardRef(
     )
   }
 )
+
+Button.displayName = 'Button'
 
 export default Button

@@ -9,7 +9,7 @@ import {
   Styles,
   CONTAINER_STYLES,
 } from 'tastycss-react'
-import { filterBaseProps } from '@numl-react/core'
+import { filterBaseProps } from '@jenga-ui/core'
 
 type ShortItemsStyles = {
   align?: Styles['alignItems']

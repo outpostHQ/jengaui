@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
-import { Base, filterBaseProps } from '@numl-react/core'
+import { Base, filterBaseProps } from '@jenga-ui/core'
 import { useFocusableRef } from '@react-spectrum/utils'
 import { ActionProps } from './ActionProps'
 import { FocusableRef } from '@react-types/shared'
-import { propDeprecationWarning } from '@numl-react/core'
+import { propDeprecationWarning } from '@jenga-ui/core'
 import {
   extractStyles,
   Styles,

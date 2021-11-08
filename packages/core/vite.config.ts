@@ -14,8 +14,8 @@ export default defineConfig({
         'react',
         'tastycss',
         'tastycss-react',
-        '@numl-react/core',
-        '@numl-react/atoms',
+        '@jenga-ui/core',
+        '@jenga-ui/atoms',
       ],
       output: {
         globals: {
