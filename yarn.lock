@@ -1888,6 +1888,124 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jenga-ui/action@workspace:packages/core/src/action":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/action@workspace:packages/core/src/action"
+  dependencies:
+    "@react-aria/button": ^3.3.4
+    "@react-aria/interactions": ^3.6.0
+    "@react-aria/utils": ^3.9.0
+    "@react-spectrum/utils": ^3.6.2
+    "@react-types/button": ^3.4.1
+    "@react-types/shared": ^3.9.0
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    react: ^17.0.0
+    react-dom: ^17.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/atoms@workspace:packages/atoms":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/atoms@workspace:packages/atoms"
+  dependencies:
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/base@workspace:packages/core/src/base":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/base@workspace:packages/core/src/base"
+  dependencies:
+    "@react-types/button": ^3.4.1
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    react: ^17.0.0
+    react-dom: ^17.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/button@workspace:packages/atoms/src/button":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/button@workspace:packages/atoms/src/button"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@react-types/button": ^3.4.1
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/core@workspace:packages/core"
+  dependencies:
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/form@workspace:packages/atoms/src/form":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/form@workspace:packages/atoms/src/form"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@react-aria/interactions": ^3.6.0
+    "@react-aria/textfield": ^3.4.0
+    "@react-spectrum/utils": ^3.6.2
+    "@react-types/textfield": ^3.3.0
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.3.0
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
 "@jest/transform@npm:^26.6.2":
   version: 26.6.2
   resolution: "@jest/transform@npm:26.6.2"
@@ -2041,124 +2159,6 @@ __metadata:
   checksum: c96381d4a37448ea280951e46233f7e541058cf57a57d4094dd4bdcaae43fa5872b5f2eb6bfb004591a68e29c5877abe3cdc210cb3588cbf20ab2877f31a7de7
   languageName: node
   linkType: hard
-
-"@numl-react/action@workspace:packages/core/src/action":
-  version: 0.0.0-use.local
-  resolution: "@numl-react/action@workspace:packages/core/src/action"
-  dependencies:
-    "@react-aria/button": ^3.3.4
-    "@react-aria/interactions": ^3.6.0
-    "@react-aria/utils": ^3.9.0
-    "@react-spectrum/utils": ^3.6.2
-    "@react-types/button": ^3.4.1
-    "@react-types/shared": ^3.9.0
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@vitejs/plugin-react": ^1.0.0
-    react: ^17.0.0
-    react-dom: ^17.0.0
-    rimraf: ^3.0.2
-    tastycss-react: ^0.4.4
-    typescript: ^4.3.2
-    vite: ^2.5.4
-  peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
-  languageName: unknown
-  linkType: soft
-
-"@numl-react/atoms@workspace:packages/atoms":
-  version: 0.0.0-use.local
-  resolution: "@numl-react/atoms@workspace:packages/atoms"
-  dependencies:
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@vitejs/plugin-react": ^1.0.0
-    rimraf: ^3.0.2
-    typescript: ^4.3.2
-    vite: ^2.5.4
-  peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
-  languageName: unknown
-  linkType: soft
-
-"@numl-react/base@workspace:packages/core/src/base":
-  version: 0.0.0-use.local
-  resolution: "@numl-react/base@workspace:packages/core/src/base"
-  dependencies:
-    "@react-types/button": ^3.4.1
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@vitejs/plugin-react": ^1.0.0
-    react: ^17.0.0
-    react-dom: ^17.0.0
-    rimraf: ^3.0.2
-    tastycss-react: ^0.4.4
-    typescript: ^4.3.2
-    vite: ^2.5.4
-  peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
-  languageName: unknown
-  linkType: soft
-
-"@numl-react/button@workspace:packages/atoms/src/button":
-  version: 0.0.0-use.local
-  resolution: "@numl-react/button@workspace:packages/atoms/src/button"
-  dependencies:
-    "@ant-design/icons": ^4.7.0
-    "@react-types/button": ^3.4.1
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@vitejs/plugin-react": ^1.0.0
-    rimraf: ^3.0.2
-    tastycss-react: ^0.4.4
-    typescript: ^4.3.2
-    vite: ^2.5.4
-  peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
-  languageName: unknown
-  linkType: soft
-
-"@numl-react/core@workspace:packages/core":
-  version: 0.0.0-use.local
-  resolution: "@numl-react/core@workspace:packages/core"
-  dependencies:
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@vitejs/plugin-react": ^1.0.0
-    rimraf: ^3.0.2
-    typescript: ^4.3.2
-    vite: ^2.5.4
-  peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
-  languageName: unknown
-  linkType: soft
-
-"@numl-react/form@workspace:packages/atoms/src/form":
-  version: 0.0.0-use.local
-  resolution: "@numl-react/form@workspace:packages/atoms/src/form"
-  dependencies:
-    "@ant-design/icons": ^4.7.0
-    "@react-aria/interactions": ^3.6.0
-    "@react-aria/textfield": ^3.4.0
-    "@react-spectrum/utils": ^3.6.2
-    "@react-types/textfield": ^3.3.0
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@vitejs/plugin-react": ^1.0.0
-    rimraf: ^3.0.2
-    tastycss-react: ^0.3.0
-    typescript: ^4.3.2
-    vite: ^2.5.4
-  peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
-  languageName: unknown
-  linkType: soft
 
 "@pmmmwh/react-refresh-webpack-plugin@npm:^0.4.3":
   version: 0.4.3
@@ -9608,6 +9608,40 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"jenga-ui@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "jenga-ui@workspace:."
+  dependencies:
+    "@babel/core": ^7.15.5
+    "@storybook/addon-actions": ^6.3.8
+    "@storybook/addon-essentials": ^6.3.8
+    "@storybook/addon-links": ^6.3.8
+    "@storybook/react": ^6.3.8
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@types/styled-components": ^5.1.15
+    "@typescript-eslint/eslint-plugin": ^4.32.0
+    "@typescript-eslint/parser": ^4.32.0
+    "@vitejs/plugin-react": ^1.0.0
+    babel-loader: ^8.2.2
+    chromatic: ^6.0.4
+    eslint: ^7.32.0
+    eslint-config-prettier: ^8.3.0
+    eslint-plugin-prettier: ^4.0.0
+    eslint-plugin-react: ^7.26.1
+    husky: ^7.0.2
+    lint-staged: ">=10"
+    prettier: 2.4.1
+    react: ^17.0.0
+    react-dom: ^17.0.0
+    storybook-builder-vite: ^0.1.0
+    styled-components: ^5.3.1
+    tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  languageName: unknown
+  linkType: soft
+
 "jest-haste-map@npm:^26.6.2":
   version: 26.6.2
   resolution: "jest-haste-map@npm:26.6.2"
@@ -10939,40 +10973,6 @@ fsevents@^1.2.7:
   checksum: 13656bc9aa771b96cef209ffca31c31a03b507ca6862ba7c3f638a283560620d723d52e626d57892c7fff475f4c36ac07f0600f14544692ff595abff214b9ffb
   languageName: node
   linkType: hard
-
-"numl-react@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "numl-react@workspace:."
-  dependencies:
-    "@babel/core": ^7.15.5
-    "@storybook/addon-actions": ^6.3.8
-    "@storybook/addon-essentials": ^6.3.8
-    "@storybook/addon-links": ^6.3.8
-    "@storybook/react": ^6.3.8
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@types/styled-components": ^5.1.15
-    "@typescript-eslint/eslint-plugin": ^4.32.0
-    "@typescript-eslint/parser": ^4.32.0
-    "@vitejs/plugin-react": ^1.0.0
-    babel-loader: ^8.2.2
-    chromatic: ^6.0.4
-    eslint: ^7.32.0
-    eslint-config-prettier: ^8.3.0
-    eslint-plugin-prettier: ^4.0.0
-    eslint-plugin-react: ^7.26.1
-    husky: ^7.0.2
-    lint-staged: ">=10"
-    prettier: 2.4.1
-    react: ^17.0.0
-    react-dom: ^17.0.0
-    storybook-builder-vite: ^0.1.0
-    styled-components: ^5.3.1
-    tastycss-react: ^0.4.4
-    typescript: ^4.3.2
-    vite: ^2.5.4
-  languageName: unknown
-  linkType: soft
 
 "object-assign@npm:^4.1.0, object-assign@npm:^4.1.1":
   version: 4.1.1
