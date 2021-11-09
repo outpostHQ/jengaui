@@ -1949,9 +1949,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/button@workspace:packages/atoms/src/button":
+"@jenga-ui/button@workspace:packages/atoms/src/Button":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/button@workspace:packages/atoms/src/button"
+  resolution: "@jenga-ui/button@workspace:packages/atoms/src/Button"
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@react-types/button": ^3.4.1
@@ -1976,28 +1976,6 @@ __metadata:
     "@types/react-dom": ^17.0.0
     "@vitejs/plugin-react": ^1.0.0
     rimraf: ^3.0.2
-    typescript: ^4.3.2
-    vite: ^2.5.4
-  peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
-  languageName: unknown
-  linkType: soft
-
-"@jenga-ui/form@workspace:packages/atoms/src/form":
-  version: 0.0.0-use.local
-  resolution: "@jenga-ui/form@workspace:packages/atoms/src/form"
-  dependencies:
-    "@ant-design/icons": ^4.7.0
-    "@react-aria/interactions": ^3.6.0
-    "@react-aria/textfield": ^3.4.0
-    "@react-spectrum/utils": ^3.6.2
-    "@react-types/textfield": ^3.3.0
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@vitejs/plugin-react": ^1.0.0
-    rimraf: ^3.0.2
-    tastycss-react: ^0.3.0
     typescript: ^4.3.2
     vite: ^2.5.4
   peerDependencies:
@@ -2278,20 +2256,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/label@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@react-aria/label@npm:3.2.0"
-  dependencies:
-    "@babel/runtime": ^7.6.2
-    "@react-aria/utils": ^3.9.0
-    "@react-types/label": ^3.5.0
-    "@react-types/shared": ^3.9.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1
-  checksum: 214ee6e24453086a7788506b0c11c29294c0f59d295d4766868026e5572d627c49fa207cf7e85565ae01a3c0e4bdb7cd6bd8e10e74fa481cc04d6b70b5920948
-  languageName: node
-  linkType: hard
-
 "@react-aria/ssr@npm:^3.0.3, @react-aria/ssr@npm:^3.1.0":
   version: 3.1.0
   resolution: "@react-aria/ssr@npm:3.1.0"
@@ -2300,22 +2264,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: ae376d45dbd19e990891353a2eee10c13f3b54dbd807a2e528928983741c0ea9dbfefcc132c46c685e53440a53f7be82bd36a5c61bdfaec3c3518f02ae444e7f
-  languageName: node
-  linkType: hard
-
-"@react-aria/textfield@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "@react-aria/textfield@npm:3.4.0"
-  dependencies:
-    "@babel/runtime": ^7.6.2
-    "@react-aria/focus": ^3.5.0
-    "@react-aria/label": ^3.2.0
-    "@react-aria/utils": ^3.9.0
-    "@react-types/shared": ^3.9.0
-    "@react-types/textfield": ^3.3.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1
-  checksum: b1e57ed7bc75e5f536fc5e79d14fdf249cb1faa07b34618fea318738632c207ae46459c3535ffc8431e8219dc93d5098e7f1ebc50ea96816222fdc86edbf9473
   languageName: node
   linkType: hard
 
@@ -2397,34 +2345,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-types/label@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "@react-types/label@npm:3.5.0"
-  dependencies:
-    "@react-types/shared": ^3.9.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1
-  checksum: 04c9af07960583548f75980bdec3bc377f6e55507d3014abf55e27dab98cc80c4873a0583160b592a4dfda9dc3417a2222c4ff855723d48ccf89fd6aaeb4ab35
-  languageName: node
-  linkType: hard
-
 "@react-types/shared@npm:^3.8.0, @react-types/shared@npm:^3.9.0":
   version: 3.9.0
   resolution: "@react-types/shared@npm:3.9.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: 0be11ba4234767d47707dff8601605f46bfd9e3e07dcd3213119517f9a627cca4b71e9030478d3941241d8a6be8b8bc00e92278342daad8f7397bc9eee290f1c
-  languageName: node
-  linkType: hard
-
-"@react-types/textfield@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "@react-types/textfield@npm:3.3.0"
-  dependencies:
-    "@react-types/shared": ^3.9.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1
-  checksum: 26765fb83a3c8f8d7d9f96a0ccf1b79f3deb384bbd0a075a3de154c9b0f157b9e56a3b6752fe8bba29e86d82bd5faf4ef1f10a746edd22bb78df5eb53007cf00
   languageName: node
   linkType: hard
 
@@ -13852,18 +13778,6 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tastycss-react@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "tastycss-react@npm:0.3.0"
-  dependencies:
-    react: ">=17.0.0"
-    react-dom: ">=17.0.0"
-    styled-components: 5.3.0
-    tastycss: ^0.3.0
-  checksum: 241d89d265b2056efe98388ef4d2c3e8c9904cbef381ff3bcdf46084a2e01d09f1130e8c9d834f944915fe2f429d91cdabbd7441aacb937d2ed198cbd363382e
-  languageName: node
-  linkType: hard
-
 "tastycss-react@npm:^0.4.4":
   version: 0.4.4
   resolution: "tastycss-react@npm:0.4.4"
@@ -13873,13 +13787,6 @@ resolve@^2.0.0-next.3:
     styled-components: 5.3.0
     tastycss: ^0.4.4
   checksum: 589a04b398b430593dd6fa0069a58552a3181381dc1782486178fae61081adb27cfba0c20f244331cfc97785fe2fe80d8ca61c182ccd9f58472bd6ee96e5af0c
-  languageName: node
-  linkType: hard
-
-"tastycss@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "tastycss@npm:0.3.0"
-  checksum: 1b173f17551bfecb232d45096ec0bebee3e6068717e2bfb60e3aa9d60b92a3cab2bce96ad9abecc653cd0660f6486d4103b84432e6f2ed16323fc67b0a260734
   languageName: node
   linkType: hard
 
