@@ -5,7 +5,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'index.ts'),
-      name: 'NumlReact',
+      name: 'jenga-ui',
       formats: ['es', 'cjs'],
       fileName: 'index',
     },

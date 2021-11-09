@@ -3,7 +3,7 @@ import { DollarCircleOutlined } from '@ant-design/icons'
 import Button from '../src/Button'
 
 export default {
-  title: 'NUML / Atoms / Button',
+  title: 'jenga-ui / Atoms / Button',
   component: Button,
   argTypes: {
     icon: {

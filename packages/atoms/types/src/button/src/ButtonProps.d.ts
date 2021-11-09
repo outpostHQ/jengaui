@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { ActionProps } from '@numl-react/action';
+import { ActionProps } from '@jenga-ui/action';
 export interface ButtonProps extends ActionProps {
     ghost?: boolean;
     icon?: JSX.Element;

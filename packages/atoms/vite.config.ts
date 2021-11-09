@@ -5,7 +5,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'index.ts'),
-      name: 'NumlReact',
+      name: 'jenga-ui',
       formats: ['es', 'cjs'],
       fileName: 'index',
     },
@@ -14,8 +14,8 @@ export default defineConfig({
         'react',
         'tastycss',
         'tastycss-react',
-        '@numl-react/core',
-        '@numl-react/atoms',
+        '@jenga-ui/core',
+        '@jenga-ui/atoms',
         '@react-aria/button',
         '@react-aria/interactions',
         '@react-aria/utils',
