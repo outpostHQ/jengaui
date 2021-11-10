@@ -1,6 +1,13 @@
 {
   "name": "@jenga-ui/atoms",
   "version": "0.0.1",
+  "description": "A set of Jenga-UI React atoms component",
+  "keywords": [
+    "atoms",
+    "react",
+    "jenga-ui",
+    "ui"
+  ],
   "files": [
     "dist",
     "types"

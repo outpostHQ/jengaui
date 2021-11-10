@@ -1,6 +1,20 @@
 {
   "name": "@jenga-ui/core",
   "version": "0.0.1",
+  "description": "Responsive and accessible React UI components built with TastyCSS",
+  "keywords": [
+    "react",
+    "jenga-ui",
+    "ui",
+    "design-system",
+    "react-components",
+    "uikit",
+    "accessible",
+    "components",
+    "tastycss",
+    "library",
+    "design-system"
+  ],
   "files": [
     "dist",
     "types"

@@ -1,4 +1,4 @@
-# Jenga-UI
+# @jenga-ui/button
 
 Note: This project is WIP, API might change without notice.
 
@@ -6,10 +6,10 @@ Note: This project is WIP, API might change without notice.
 
 ```sh
 # with npm
-npm install @jenga-ui/core
+npm install @jenga-ui/button
 
 # with yarn
-yarn add @jenga-ui/core
+yarn add @jenga-ui/button
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

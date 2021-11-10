@@ -1,4 +1,4 @@
-# Jenga-UI
+# @jenga-ui/core
 
 Note: This project is WIP, API might change without notice.
 
