@@ -11,7 +11,10 @@
     "build-storybook": "build-storybook",
     "lint": "prettier --check .",
     "format": "prettier --write .",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "publish:all": "lerna publish --no-verify-access",
+    "publish:beta": "lerna publish --ignore-prepublish --ignore-scripts --canary --preid beta --dist-tag beta",
+    "publish:dev": "run-s build:dev publish:beta"
   },
   "dependencies": {
     "react": "^17.0.0",
