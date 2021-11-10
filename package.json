@@ -1,6 +1,5 @@
 {
   "name": "jenga-ui",
-  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -13,9 +12,7 @@
     "lint": "prettier --check .",
     "format": "prettier --write .",
     "postinstall": "husky install",
-    "publish:all": "lerna publish --no-verify-access",
-    "publish:beta": "lerna publish --ignore-prepublish --ignore-scripts --canary --preid beta --dist-tag beta",
-    "publish:dev": "run-s build:dev publish:beta"
+    "publish": "yarn workspaces foreach --no-private npm publish"
   },
   "dependencies": {
     "react": "^17.0.0",
