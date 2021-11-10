@@ -1,6 +1,15 @@
 {
   "name": "@jenga-ui/button",
   "version": "0.0.1",
+  "description": "Jenga-UI React button component",
+  "keywords": [
+    "button",
+    "react",
+    "jenga-ui",
+    "ui",
+    "clickable",
+    "tabbable"
+  ],
   "files": [
     "dist",
     "types"

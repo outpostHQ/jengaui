@@ -1,4 +1,4 @@
-# Jenga-UI
+# @jenga-ui/atoms
 
 Note: This project is WIP, API might change without notice.
 
@@ -6,10 +6,10 @@ Note: This project is WIP, API might change without notice.
 
 ```sh
 # with npm
-npm install @jenga-ui/core
+npm install @jenga-ui/atoms
 
 # with yarn
-yarn add @jenga-ui/core
+yarn add @jenga-ui/atoms
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.
@@ -18,4 +18,4 @@ For discussions, suggestions and contributions, create an issue or join our [Dis
 
 Jenga-UI is a project by [Forneu](https://forneu.com).
 
-Released under the [MIT License](LICENSE).
+Released under the MIT License.

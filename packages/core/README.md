@@ -1,4 +1,4 @@
-# Jenga-UI
+# @jenga-ui/core
 
 Note: This project is WIP, API might change without notice.
 
@@ -18,4 +18,4 @@ For discussions, suggestions and contributions, create an issue or join our [Dis
 
 Jenga-UI is a project by [Forneu](https://forneu.com).
 
-Released under the [MIT License](LICENSE).
+Released under the MIT License.
