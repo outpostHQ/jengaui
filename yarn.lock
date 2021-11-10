@@ -1949,9 +1949,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/button@workspace:packages/atoms/src/Button":
+"@jenga-ui/button@workspace:packages/atoms/src/button":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/button@workspace:packages/atoms/src/Button"
+  resolution: "@jenga-ui/button@workspace:packages/atoms/src/button"
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@react-types/button": ^3.4.1

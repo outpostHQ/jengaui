@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "yarn workspaces foreach run build",
     "build:types": "yarn workspaces foreach run build:types",
+    "test": "yarn workspace jenga-ui run test",
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
