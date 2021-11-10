@@ -14,6 +14,9 @@
     "dist",
     "types"
   ],
+  "repository": "numldesign/jenga-ui",
+  "license": "MIT",
+  "bugs": "https://github.com/numldesign/jenga-ui/issues",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "exports": {
@@ -30,6 +33,9 @@
     "prebuild": "rimraf dist && rimraf types",
     "postbuild": "yarn build:types",
     "build:types": "npx tsc -b --verbose"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "peerDependencies": {
     "react": "^17.0.0",
