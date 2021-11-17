@@ -74,7 +74,7 @@ export function Provider(allProps: PropsWithChildren<ProviderProps>) {
 
   Object.entries(props)
     .filter(([, value]) => {
-      return value != null
+      return value !== null
     })
     .forEach(([key, value]) => (newValue[key] = value))
 

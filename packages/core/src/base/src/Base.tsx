@@ -51,11 +51,11 @@ export const Base = forwardRef(
 
     // css = `${css || ''}${renderStyles(styles, zones)}`
 
-    if (additionalProps.hidden == null && isHidden) {
+    if (additionalProps.hidden === null && isHidden) {
       additionalProps.hidden = isHidden
     }
 
-    if (additionalProps.disabled == null && isDisabled) {
+    if (additionalProps.disabled === null && isDisabled) {
       additionalProps.disabled = isDisabled
     }
 
