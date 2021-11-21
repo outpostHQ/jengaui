@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from '../src/Form'
+import { Form } from '../'
 
 export default {
   title: 'jenga-ui / Atoms / Form',
