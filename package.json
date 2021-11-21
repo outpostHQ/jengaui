@@ -58,7 +58,6 @@
   "workspaces": [
     "packages/*",
     "packages/core/src/*",
-    "packages/base/src/*",
     "packages/atoms/src/*"
   ],
   "lint-staged": {
