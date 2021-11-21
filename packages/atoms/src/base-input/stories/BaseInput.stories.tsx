@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { DollarCircleOutlined } from '@ant-design/icons'
-import Input from '../src/Input'
+import { Input } from '../../input'
 
 export default {
   title: 'jenga-ui / Atoms / Input',
@@ -114,9 +115,9 @@ const Template = ({
     radius={radius}
     isDisabled={isDisabled}
     isLoading={isLoading}
-    isSelected={isSelected}
-    icon={icon ? <DollarCircleOutlined /> : undefined}
-    onPress={() => console.log('Press')}
+    // isSelected={isSelected}
+    // icon={icon ? <DollarCircleOutlined /> : undefined}
+    // onPress={() => console.log('Press')}
   >
     {label}
   </Input>
