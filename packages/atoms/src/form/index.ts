@@ -1,2 +1,2 @@
 export * from './src/FormProps'
-export { default as Form } from './src/Form'
+export * from './src/Form'

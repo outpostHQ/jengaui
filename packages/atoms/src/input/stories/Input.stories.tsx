@@ -1,9 +1,21 @@
 import React from 'react'
+import { Input } from '../'
 import { DollarCircleOutlined } from '@ant-design/icons'
-import Input from '../src/Input'
+import {
+  MESSAGE_ARG,
+  IS_DISABLED_ARG,
+  IS_LOADING_ARG,
+  IS_REQUIRED_ARG,
+  LABEL_ARG,
+  LABEL_POSITION_ARG,
+  MULTILINE_ARG,
+  PLACEHOLDER_ARG,
+  VALIDATION_STATE_ARG,
+  SIZE_ARG,
+} from '../../FormFieldArgs'
 
 export default {
-  title: 'jenga-ui / Atoms / Input',
+  title: 'UIKit/Forms/Input',
   component: Input,
   argTypes: {
     icon: {
@@ -17,162 +29,93 @@ export default {
         defaultValue: { summary: false },
       },
     },
-    isDisabled: {
-      defaultValue: false,
-      description: 'Disables the input.',
-      control: {
-        type: 'boolean',
-      },
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
-    isLoading: {
-      control: 'boolean',
-      description: 'Loading state with spinner. Also works as disabled',
-      defaultValue: false,
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
+    ...IS_DISABLED_ARG,
+    ...IS_LOADING_ARG,
+    ...VALIDATION_STATE_ARG,
+    ...IS_REQUIRED_ARG,
     type: {
-      defaultValue: 'default',
-      description: "A visual type of the input. Don't affect any logic",
+      defaultValue: 'text',
+      description: 'Input type',
+      control: {
+        type: 'radio',
+        options: ['text', 'search', 'url', 'tel', 'email', 'password'],
+      },
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'text' },
+      },
+    },
+    ...SIZE_ARG,
+    inputMode: {
+      defaultValue: 'none',
+      description: 'Input type mode',
       control: {
         type: 'radio',
         options: [
-          undefined,
-          'default',
-          'primary',
-          'link',
-          'outline',
-          'danger',
-          'clear',
-          'item',
-          'tab',
+          'none',
+          'text',
+          'tel',
+          'url',
+          'email',
+          'numeric',
+          'decimal',
+          'search',
         ],
       },
       table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'default' },
+        defaultValue: { summary: 'none' },
       },
     },
-    isSelected: {
-      control: 'boolean',
-      description: 'Selected state for Tab type inputs',
-      defaultValue: false,
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
+    ...MESSAGE_ARG,
+    ...LABEL_ARG,
+    ...LABEL_POSITION_ARG,
+    ...MULTILINE_ARG,
+    defaultValue: {
+      defaultValue: '',
+      control: 'text',
     },
-    size: {
+    ...PLACEHOLDER_ARG,
+    multiLine: {
       defaultValue: undefined,
-      description: 'The size of the input',
+      control: 'number',
+    },
+    suffix: {
+      defaultValue: '',
+      control: 'text',
+    },
+    suffixPosition: {
+      defaultValue: 'after',
+      description: 'Input type',
       control: {
         type: 'radio',
-        options: [undefined, 'default', 'small'],
+        options: ['before', 'after'],
       },
       table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'default' },
+        defaultValue: { summary: 'text' },
       },
-    },
-    radius: {
-      defaultValue: undefined,
-      control: {
-        type: 'radio',
-        options: [undefined, '0', '1r', 'round'],
-      },
-      table: {
-        type: { summary: 'string|number' },
-        defaultValue: { summary: '1r' },
-      },
-    },
-    label: {
-      defaultValue: 'Input',
-      control: 'text',
     },
   },
 }
 
-const Template = ({
-  size,
-  type,
-  radius,
-  isSelected,
-  isDisabled,
-  isLoading,
-  label,
-  icon,
-}) => (
+// eslint-disable-next-line react/prop-types
+const Template = ({ icon, ...props }) => (
   <Input
-    size={size}
-    type={type}
-    radius={radius}
-    isDisabled={isDisabled}
-    isLoading={isLoading}
-    isSelected={isSelected}
-    icon={icon ? <DollarCircleOutlined /> : undefined}
-    onPress={() => console.log('Press')}
-  >
-    {label}
-  </Input>
+    prefix={icon ? <DollarCircleOutlined /> : null}
+    {...props}
+    onChange={(query) => console.log('change', query)}
+  />
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  label: 'Input',
-}
+Default.args = {}
 
-export const Primary = Template.bind({})
-Primary.args = {
-  type: 'primary',
-  label: 'Input',
-}
-
-export const Outline = Template.bind({})
-Outline.args = {
-  type: 'outline',
-  label: 'Input',
-}
-
-export const Clear = Template.bind({})
-Clear.args = {
-  type: 'clear',
-  label: 'Input',
-}
-
-export const Item = Template.bind({})
-Item.args = {
-  label: 'Input',
-  type: 'item',
-}
-
-export const Tab = Template.bind({})
-Tab.args = {
-  label: 'Tab',
-  type: 'tab',
-  selected: true,
-}
-
-export const Link = Template.bind({})
-Link.args = {
-  label: 'Link',
-  type: 'link',
-  selected: true,
-}
+export const WithDefaultValue = Template.bind({})
+WithDefaultValue.args = { defaultValue: 'default value' }
 
 export const WithIcon = Template.bind({})
-WithIcon.args = {
-  icon: true,
-}
+WithIcon.args = { icon: true }
 
-export const Loading = Template.bind({})
-Loading.args = {
-  icon: true,
-  isLoading: true,
-  label: '',
-}
+export const Password = Template.bind({})
+Password.args = { icon: true, type: 'password' }

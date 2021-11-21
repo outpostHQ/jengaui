@@ -11,8 +11,8 @@ import { FormFieldProps } from '@jenga-ui/core'
 
 export interface BaseInputProps
   extends BaseProps,
-    PositionStyleProps,
-    BlockStyleProps,
+    Partial<PositionStyleProps>,
+    Partial<BlockStyleProps>,
     AriaTextFieldProps,
     FormFieldProps {
   /** Input decoration before the main input */
