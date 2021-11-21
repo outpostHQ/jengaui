@@ -12,10 +12,11 @@ import {
   PLACEHOLDER_ARG,
   VALIDATION_STATE_ARG,
   SIZE_ARG,
+  NECESSITY_INDICATOR_ARG,
 } from '../../FormFieldArgs'
 
 export default {
-  title: 'UIKit/Forms/Input',
+  title: 'jenga-ui / Atoms / Input',
   component: Input,
   argTypes: {
     icon: {
@@ -33,6 +34,7 @@ export default {
     ...IS_LOADING_ARG,
     ...VALIDATION_STATE_ARG,
     ...IS_REQUIRED_ARG,
+    ...NECESSITY_INDICATOR_ARG,
     type: {
       defaultValue: 'text',
       description: 'Input type',
