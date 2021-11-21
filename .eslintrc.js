@@ -20,4 +20,10 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint'],
+  rules: {
+    'no-empty-function': 'off',
+    '@typescript-eslint/no-empty-function': ['off'],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['off']
+  }
 }

@@ -1,10 +1,11 @@
 import React, { forwardRef } from 'react'
-import { Base, filterBaseProps } from '@jenga-ui/core'
+import { filterBaseProps } from '@jenga-ui/core'
 import { useFocusableRef } from '@react-spectrum/utils'
 import { ActionProps } from './ActionProps'
 import { FocusableRef } from '@react-types/shared'
 import { propDeprecationWarning } from '@jenga-ui/core'
 import {
+  Element,
   extractStyles,
   Styles,
   CONTAINER_STYLES,
@@ -76,7 +77,7 @@ export const Action = forwardRef(
     console.error('Action')
 
     return (
-      <Base
+      <Element
         data-is-hovered={isHovered && !isDisabled ? '' : null}
         data-is-pressed={isPressed && !isDisabled ? '' : null}
         data-is-focused={isFocused && !isDisabled ? '' : null}

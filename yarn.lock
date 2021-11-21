@@ -1986,9 +1986,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/base@workspace:packages/core/src/base":
+"@jenga-ui/base-element@workspace:packages/core/src/base":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/base@workspace:packages/core/src/base"
+  resolution: "@jenga-ui/base-element@workspace:packages/core/src/base"
   dependencies:
     "@react-types/button": ^3.4.1
     "@types/react": ^17.0.0
@@ -1998,6 +1998,41 @@ __metadata:
     react-dom: ^17.0.0
     rimraf: ^3.0.2
     tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/base-input@workspace:packages/atoms/src/base-input":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/base-input@workspace:packages/atoms/src/base-input"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@react-types/textfield": ^3.3.0
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/base@workspace:packages/base":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/base@workspace:packages/base"
+  dependencies:
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
     typescript: ^4.3.2
     vite: ^2.5.4
   peerDependencies:
@@ -2033,6 +2068,43 @@ __metadata:
     "@types/react-dom": ^17.0.0
     "@vitejs/plugin-react": ^1.0.0
     rimraf: ^3.0.2
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/form@workspace:packages/atoms/src/form":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/form@workspace:packages/atoms/src/form"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@react-types/button": ^3.4.1
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/input@workspace:packages/atoms/src/input":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/input@workspace:packages/atoms/src/input"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
     typescript: ^4.3.2
     vite: ^2.5.4
   peerDependencies:
@@ -2609,6 +2681,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: 0be11ba4234767d47707dff8601605f46bfd9e3e07dcd3213119517f9a627cca4b71e9030478d3941241d8a6be8b8bc00e92278342daad8f7397bc9eee290f1c
+  languageName: node
+  linkType: hard
+
+"@react-types/textfield@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@react-types/textfield@npm:3.3.0"
+  dependencies:
+    "@react-types/shared": ^3.9.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: 26765fb83a3c8f8d7d9f96a0ccf1b79f3deb384bbd0a075a3de154c9b0f157b9e56a3b6752fe8bba29e86d82bd5faf4ef1f10a746edd22bb78df5eb53007cf00
   languageName: node
   linkType: hard
 
@@ -3806,6 +3889,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jest@npm:^27.0.3":
+  version: 27.0.3
+  resolution: "@types/jest@npm:27.0.3"
+  dependencies:
+    jest-diff: ^27.0.0
+    pretty-format: ^27.0.0
+  checksum: 3683a9945821966f6dccddf337219a5d682633687c9d30df859223db553589f63e9b2c34e69f0cc845c86ffcf115742f25c12ea03c8d33d2244890fdc0af61e2
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.4, @types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.7, @types/json-schema@npm:^7.0.8":
   version: 7.0.9
   resolution: "@types/json-schema@npm:7.0.9"
@@ -4864,6 +4957,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"assertion-error@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "assertion-error@npm:1.1.0"
+  checksum: fd9429d3a3d4fd61782eb3962ae76b6d08aa7383123fca0596020013b3ebd6647891a85b05ce821c47d1471ed1271f00b0545cf6a4326cf2fc91efcc3b0fbecf
+  languageName: node
+  linkType: hard
+
 "assign-symbols@npm:^1.0.0":
   version: 1.0.0
   resolution: "assign-symbols@npm:1.0.0"
@@ -5724,6 +5824,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chai@npm:^4.3.4":
+  version: 4.3.4
+  resolution: "chai@npm:4.3.4"
+  dependencies:
+    assertion-error: ^1.1.0
+    check-error: ^1.0.2
+    deep-eql: ^3.0.1
+    get-func-name: ^2.0.0
+    pathval: ^1.1.1
+    type-detect: ^4.0.5
+  checksum: 772c522b3bfe3fcf0e0e74edfe584cd886b0e85a73126dec750095300e023d4e1ec6d40e3c35a80d2bd8f33dca46c42767a36f5f50f32dca6fa31c88b5f49ab8
+  languageName: node
+  linkType: hard
+
 "chalk@npm:2.4.2, chalk@npm:^2.0.0, chalk@npm:^2.4.1":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
@@ -5780,6 +5894,13 @@ __metadata:
   version: 1.1.4
   resolution: "character-reference-invalid@npm:1.1.4"
   checksum: 20274574c70e05e2f81135f3b93285536bc8ff70f37f0809b0d17791a832838f1e49938382899ed4cb444e5bbd4314ca1415231344ba29f4222ce2ccf24fea0b
+  languageName: node
+  linkType: hard
+
+"check-error@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "check-error@npm:1.0.2"
+  checksum: d9d106504404b8addd1ee3f63f8c0eaa7cd962a1a28eb9c519b1c4a1dc7098be38007fc0060f045ee00f075fbb7a2a4f42abcf61d68323677e11ab98dc16042e
   languageName: node
   linkType: hard
 
@@ -6643,6 +6764,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"deep-eql@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "deep-eql@npm:3.0.1"
+  dependencies:
+    type-detect: ^4.0.0
+  checksum: 4f4c9fb79eb994fb6e81d4aa8b063adc40c00f831588aa65e20857d5d52f15fb23034a6576ecf886f7ff6222d5ae42e71e9b7d57113e0715b1df7ea1e812b125
+  languageName: node
+  linkType: hard
+
 "deep-is@npm:^0.1.3, deep-is@npm:~0.1.3":
   version: 0.1.4
   resolution: "deep-is@npm:0.1.4"
@@ -7025,6 +7155,13 @@ __metadata:
     minimalistic-assert: ^1.0.1
     minimalistic-crypto-utils: ^1.0.1
   checksum: d56d21fd04e97869f7ffcc92e18903b9f67f2d4637a23c860492fbbff5a3155fd9ca0184ce0c865dd6eb2487d234ce9551335c021c376cd2d3b7cb749c7d10f4
+  languageName: node
+  linkType: hard
+
+"email-validator@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "email-validator@npm:2.0.4"
+  checksum: e702fee24e1b9efb7e6a84abb309bebdb4ddde137fdb99a61e24bd82ac0b605be34e191b1c4d04fbc855be7b94cad967f932a456c0def2240303881f4e388f2d
   languageName: node
   linkType: hard
 
@@ -8625,6 +8762,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"get-func-name@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "get-func-name@npm:2.0.0"
+  checksum: 8d82e69f3e7fab9e27c547945dfe5cc0c57fc0adf08ce135dddb01081d75684a03e7a0487466f478872b341d52ac763ae49e660d01ab83741f74932085f693c3
+  languageName: node
+  linkType: hard
+
 "get-intrinsic@npm:^1.0.2, get-intrinsic@npm:^1.1.0, get-intrinsic@npm:^1.1.1":
   version: 1.1.1
   resolution: "get-intrinsic@npm:1.1.1"
@@ -10179,6 +10323,7 @@ fsevents@^1.2.7:
     "@storybook/addon-essentials": ^6.3.8
     "@storybook/addon-links": ^6.3.8
     "@storybook/react": ^6.3.8
+    "@types/jest": ^27.0.3
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     "@types/styled-components": ^5.1.15
@@ -10186,7 +10331,9 @@ fsevents@^1.2.7:
     "@typescript-eslint/parser": ^4.32.0
     "@vitejs/plugin-react": ^1.0.0
     babel-loader: ^8.2.2
+    chai: ^4.3.4
     chromatic: ^6.0.4
+    email-validator: ^2.0.4
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
@@ -10201,6 +10348,7 @@ fsevents@^1.2.7:
     styled-components: ^5.3.1
     tastycss-react: ^0.4.4
     typescript: ^4.3.2
+    valid-url: ^1.0.9
     vite: ^2.5.4
   languageName: unknown
   linkType: soft
@@ -10304,7 +10452,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:^27.3.1":
+"jest-diff@npm:^27.0.0, jest-diff@npm:^27.3.1":
   version: 27.3.1
   resolution: "jest-diff@npm:27.3.1"
   dependencies:
@@ -12600,6 +12748,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"pathval@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "pathval@npm:1.1.1"
+  checksum: 090e3147716647fb7fb5b4b8c8e5b55e5d0a6086d085b6cd23f3d3c01fcf0ff56fd3cc22f2f4a033bd2e46ed55d61ed8379e123b42afe7d531a2a5fc8bb556d6
+  languageName: node
+  linkType: hard
+
 "pbkdf2@npm:^3.0.3":
   version: 3.1.2
   resolution: "pbkdf2@npm:3.1.2"
@@ -12882,7 +13037,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^27.3.1":
+"pretty-format@npm:^27.0.0, pretty-format@npm:^27.3.1":
   version: 27.3.1
   resolution: "pretty-format@npm:27.3.1"
   dependencies:
@@ -15428,7 +15583,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"type-detect@npm:4.0.8":
+"type-detect@npm:4.0.8, type-detect@npm:^4.0.0, type-detect@npm:^4.0.5":
   version: 4.0.8
   resolution: "type-detect@npm:4.0.8"
   checksum: 62b5628bff67c0eb0b66afa371bd73e230399a8d2ad30d852716efcc4656a7516904570cd8631a49a3ce57c10225adf5d0cbdcb47f6b0255fe6557c453925a15
@@ -15915,6 +16070,13 @@ typescript@^4.3.2:
     convert-source-map: ^1.6.0
     source-map: ^0.7.3
   checksum: c7dabf9567e0c210b24d0720e553803cbe1ff81edb1ec7f2080eb4be01ed081a40286cc9f4aaa86d1bf8d57840cefae8fdf326b7cb8faa316ba50c7b948030d4
+  languageName: node
+  linkType: hard
+
+"valid-url@npm:^1.0.9":
+  version: 1.0.9
+  resolution: "valid-url@npm:1.0.9"
+  checksum: 3ecb030559404441c2cf104cbabab8770efb0f36d117db03d1081052ef133015a68806148ce954bb4dd0b5c42c14b709a88783c93d66b0916cb67ba771c98702
   languageName: node
   linkType: hard
 

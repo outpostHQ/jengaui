@@ -1,12 +1,12 @@
 import React from 'react'
 import { forwardRef } from 'react'
 import { FocusableRef } from '@react-types/shared'
-import { Base } from './Base'
 import {
   CONTAINER_STYLES,
   extractStyles,
   ContainerStyleProps,
   AllBaseProps,
+  Element,
 } from 'tastycss-react'
 import { filterBaseProps } from '@jenga-ui/core'
 
@@ -18,16 +18,18 @@ export interface BlockProps
   extends Partial<Omit<AllBaseProps, keyof ContainerStyleProps | 'as'>>,
     Partial<ContainerStyleProps> {}
 
-export const Block = forwardRef(
-  (props: BlockProps, ref: FocusableRef<HTMLElement>) => {
-    const styles = extractStyles(props, CONTAINER_STYLES, DEFAULT_STYLES)
+const Block = (props: BlockProps, ref: FocusableRef<HTMLElement>) => {
+  const styles = extractStyles(props, CONTAINER_STYLES, DEFAULT_STYLES)
 
-    return (
-      <Base
-        {...filterBaseProps(props, { eventProps: true })}
-        styles={styles}
-        ref={ref}
-      />
-    )
-  }
-)
+  return (
+    <Element
+      {...filterBaseProps(props, { eventProps: true })}
+      styles={styles}
+      ref={ref}
+    />
+  )
+}
+
+const _Block = forwardRef(Block)
+
+export { _Block as Block }
