@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@react-aria/textfield": "^3.4.0",
     "tastycss-react": "^0.4.4"
   }
 }

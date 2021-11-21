@@ -2100,6 +2100,7 @@ __metadata:
   resolution: "@jenga-ui/input@workspace:packages/atoms/src/input"
   dependencies:
     "@ant-design/icons": ^4.7.0
+    "@react-aria/textfield": ^3.4.0
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     "@vitejs/plugin-react": ^1.0.0
@@ -2586,6 +2587,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/label@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@react-aria/label@npm:3.2.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/utils": ^3.9.0
+    "@react-types/label": ^3.5.0
+    "@react-types/shared": ^3.9.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: 214ee6e24453086a7788506b0c11c29294c0f59d295d4766868026e5572d627c49fa207cf7e85565ae01a3c0e4bdb7cd6bd8e10e74fa481cc04d6b70b5920948
+  languageName: node
+  linkType: hard
+
 "@react-aria/ssr@npm:^3.0.3, @react-aria/ssr@npm:^3.1.0":
   version: 3.1.0
   resolution: "@react-aria/ssr@npm:3.1.0"
@@ -2594,6 +2609,22 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: ae376d45dbd19e990891353a2eee10c13f3b54dbd807a2e528928983741c0ea9dbfefcc132c46c685e53440a53f7be82bd36a5c61bdfaec3c3518f02ae444e7f
+  languageName: node
+  linkType: hard
+
+"@react-aria/textfield@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@react-aria/textfield@npm:3.4.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/focus": ^3.5.0
+    "@react-aria/label": ^3.2.0
+    "@react-aria/utils": ^3.9.0
+    "@react-types/shared": ^3.9.0
+    "@react-types/textfield": ^3.3.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: b1e57ed7bc75e5f536fc5e79d14fdf249cb1faa07b34618fea318738632c207ae46459c3535ffc8431e8219dc93d5098e7f1ebc50ea96816222fdc86edbf9473
   languageName: node
   linkType: hard
 
@@ -2672,6 +2703,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: e9d4371fff8e4e9460346f7cc715df8f10051860b8b3f4bf0773267f653e6541ce50ca6548822742e43972682c9c0ff9d72ecb364ee62779e07dac85086157c5
+  languageName: node
+  linkType: hard
+
+"@react-types/label@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "@react-types/label@npm:3.5.0"
+  dependencies:
+    "@react-types/shared": ^3.9.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: 04c9af07960583548f75980bdec3bc377f6e55507d3014abf55e27dab98cc80c4873a0583160b592a4dfda9dc3417a2222c4ff855723d48ccf89fd6aaeb4ab35
   languageName: node
   linkType: hard
 
