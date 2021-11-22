@@ -1,6 +1,7 @@
 {
   "name": "jenga-ui",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "yarn workspaces foreach run build",
