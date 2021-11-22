@@ -1,3 +1,4 @@
+export * from './Block'
 export * from './Flex'
 export * from './Flow'
 export * from './Grid'

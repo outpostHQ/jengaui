@@ -8,7 +8,7 @@ import {
   Element,
   Styles,
 } from 'tastycss-react'
-import { filterBaseProps, useCombinedRefs } from '../../../utils'
+import { filterBaseProps, useCombinedRefs } from '../utils'
 
 const DEFAULT_STYLES: Styles = {
   display: 'grid',

@@ -7,7 +7,7 @@ import {
   BaseProps,
   ContainerStyleProps,
 } from 'tastycss-react'
-import { filterBaseProps } from '../../../utils'
+import { filterBaseProps } from '../utils'
 
 const DEFAULT_STYLES = {
   display: 'block',

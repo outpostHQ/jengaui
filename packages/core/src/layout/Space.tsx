@@ -6,7 +6,7 @@ import {
   ContainerStyleProps,
   Element,
 } from 'tastycss-react'
-import { filterBaseProps } from '../../../utils'
+import { filterBaseProps } from '../utils'
 import { ShortItemsStyles } from './layoutStyles'
 
 const DEFAULT_STYLES = {
