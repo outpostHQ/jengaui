@@ -4,7 +4,7 @@ import { DollarCircleOutlined } from '@ant-design/icons'
 import { Input } from '../../input'
 
 export default {
-  title: 'jenga-ui / Atoms / Input',
+  title: 'jenga-ui / Atoms / BaseInput',
   component: Input,
   argTypes: {
     icon: {
