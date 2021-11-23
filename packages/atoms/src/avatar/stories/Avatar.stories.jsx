@@ -4,7 +4,7 @@ import { Avatar } from '../'
 import { DollarCircleOutlined } from '@ant-design/icons'
 
 export default {
-  title: 'UIKit/Content/Avatar',
+  title: 'Jenga-UI / Atoms / Avatar',
   component: Avatar,
   argTypes: {
     icon: {
