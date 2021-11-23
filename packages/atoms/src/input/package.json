@@ -1,6 +1,7 @@
 {
   "name": "@jenga-ui/input",
   "version": "0.0.1",
+  "license": "MIT",
   "description": "Jenga-UI React input component",
   "keywords": [
     "input",
@@ -14,9 +15,6 @@
     "dist",
     "types"
   ],
-  "repository": "numldesign/jenga-ui",
-  "license": "MIT",
-  "bugs": "https://github.com/numldesign/jenga-ui/issues",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "exports": {
@@ -27,6 +25,7 @@
   },
   "types": "types/index.d.ts",
   "typings": "types/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -53,5 +52,13 @@
     "@ant-design/icons": "^4.7.0",
     "@react-aria/textfield": "^3.4.0",
     "tastycss-react": "^0.4.4"
+  },
+  "homepage": "https://github.com/numldesign/jenga-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numldesign/jenga-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/numldesign/jenga-ui/issues"
   }
 }

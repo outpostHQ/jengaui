@@ -2004,12 +2004,48 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@jenga-ui/badge@workspace:packages/atoms/src/badge":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/badge@workspace:packages/atoms/src/badge"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
 "@jenga-ui/base-input@workspace:packages/atoms/src/base-input":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/base-input@workspace:packages/atoms/src/base-input"
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@react-types/textfield": ^3.3.0
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/button-group@workspace:packages/atoms/src/button-group":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/button-group@workspace:packages/atoms/src/button-group"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     "@vitejs/plugin-react": ^1.0.0
@@ -2083,6 +2119,24 @@ __metadata:
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@react-aria/textfield": ^3.4.0
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@vitejs/plugin-react": ^1.0.0
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
+    typescript: ^4.3.2
+    vite: ^2.5.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
+"@jenga-ui/tag@workspace:packages/atoms/src/tag":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/tag@workspace:packages/atoms/src/tag"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     "@vitejs/plugin-react": ^1.0.0
