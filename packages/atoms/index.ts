@@ -1,3 +1,5 @@
+export * from './src/avatar'
+export * from './src/badge'
 export * from './src/form'
 export * from './src/button'
 export * from './src/base-input'
