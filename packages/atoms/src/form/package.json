@@ -43,12 +43,12 @@
   },
   "devDependencies": {
     "@react-types/button": "^3.4.1",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@vitejs/plugin-react": "^1.0.0",
+    "@types/react": "^17.0.36",
+    "@types/react-dom": "^17.0.11",
+    "@vitejs/plugin-react": "^1.1.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.3.2",
-    "vite": "^2.5.4"
+    "typescript": "^4.5.2",
+    "vite": "^2.6.14"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
