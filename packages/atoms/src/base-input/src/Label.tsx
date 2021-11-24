@@ -77,7 +77,7 @@ export const LABEL_STYLES: Styles = {
   whiteSpace: 'nowrap',
 } as const
 
-export interface CubeLabelProps
+export interface LabelProps
   extends BaseProps,
     TagNameProps,
     ContainerStyleProps {
@@ -91,8 +91,8 @@ export interface CubeLabelProps
   onClick?: MouseEventHandler
 }
 
-function Label(props: CubeLabelProps, ref) {
-  props = useProviderProps<CubeLabelProps>(props)
+function Label(props: LabelProps, ref) {
+  props = useProviderProps<LabelProps>(props)
 
   const {
     as,
