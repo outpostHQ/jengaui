@@ -41,6 +41,7 @@
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@react-spectrum/utils": "^3.6.2",
     "@react-types/textfield": "^3.3.0",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^17.0.11",

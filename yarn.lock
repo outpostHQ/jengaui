@@ -2018,6 +2018,7 @@ __metadata:
   resolution: "@jenga-ui/base-input@workspace:packages/atoms/src/base-input"
   dependencies:
     "@ant-design/icons": ^4.7.0
+    "@react-spectrum/utils": ^3.6.2
     "@react-types/textfield": ^3.3.0
     "@types/react": ^17.0.36
     "@types/react-dom": ^17.0.11
