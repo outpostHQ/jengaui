@@ -1,6 +1,7 @@
 {
   "name": "@jenga-ui/action",
   "version": "0.0.1",
+  "license": "MIT",
   "description": "Jenga-UI React action for button component",
   "keywords": [
     "button",
@@ -15,9 +16,6 @@
     "dist",
     "types"
   ],
-  "repository": "numldesign/jenga-ui",
-  "license": "MIT",
-  "bugs": "https://github.com/numldesign/jenga-ui/issues",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "exports": {
@@ -28,6 +26,7 @@
   },
   "types": "types/index.d.ts",
   "typings": "types/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -49,16 +48,24 @@
     "@react-spectrum/utils": "^3.6.2",
     "@react-types/button": "^3.4.1",
     "@react-types/shared": "^3.9.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@vitejs/plugin-react": "^1.0.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
+    "@types/react": "^17.0.36",
+    "@types/react-dom": "^17.0.11",
+    "@vitejs/plugin-react": "^1.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
-    "typescript": "^4.3.2",
-    "vite": "^2.5.4"
+    "typescript": "^4.5.2",
+    "vite": "^2.6.14"
   },
   "dependencies": {
     "tastycss-react": "^0.4.4"
+  },
+  "homepage": "https://github.com/numldesign/jenga-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numldesign/jenga-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/numldesign/jenga-ui/issues"
   }
 }

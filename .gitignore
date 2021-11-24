@@ -2,7 +2,9 @@ node_modules
 .DS_Store
 dist
 dist-ssr
+.eslintcache
 *.local
+storybook-static
 
 .pnp.*
 .yarn/*

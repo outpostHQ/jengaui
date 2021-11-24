@@ -104,7 +104,7 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 400;
   }
 
-  .cube-notification-container {
+  .jenga-notification-container {
     min-width: 288px;
     max-width: 340px;
     width: calc(100vw - 32px);
@@ -114,20 +114,20 @@ export const GlobalStyles = createGlobalStyle`
     z-index: 999999;
   }
 
-  .cube-notifications {
+  .jenga-notifications {
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: 1fr;
   }
 
-  .cube-notification-enter {
+  .jenga-notification-enter {
     opacity: 0;
     max-height: 0px;
     margin-bottom: 0px;
     transform: translate(100%, 0);
   }
 
-  .cube-notification-enter-active {
+  .jenga-notification-enter-active {
     opacity: 1;
     max-height: 56px;
     margin-bottom: 8px;
@@ -139,14 +139,14 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  .cube-notification-exit {
+  .jenga-notification-exit {
     opacity: 1;
     margin-bottom: 8px;
     max-height: 56px;
     transform: translate(0, 0);
   }
 
-  .cube-notification-exit-active {
+  .jenga-notification-exit-active {
     opacity: 0;
     max-height: 0px;
     margin-bottom: 0px;
