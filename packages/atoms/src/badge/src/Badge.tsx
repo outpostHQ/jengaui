@@ -64,7 +64,7 @@ const RawBadge = styled({
   },
 })
 
-export interface BadgeProps extends BaseProps, ContainerStyleProps {
+export interface BadgeProps extends BaseProps, Partial<ContainerStyleProps> {
   type?: keyof typeof THEMES | string
 }
 
