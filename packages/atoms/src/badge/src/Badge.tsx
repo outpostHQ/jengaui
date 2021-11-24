@@ -64,11 +64,11 @@ const RawBadge = styled({
   },
 })
 
-export interface CubeBadgeProps extends BaseProps, ContainerStyleProps {
+export interface BadgeProps extends BaseProps, ContainerStyleProps {
   type?: keyof typeof THEMES | string
 }
 
-const Badge = (allProps: CubeBadgeProps, ref) => {
+const Badge = (allProps: BadgeProps, ref) => {
   const { type, children, ...props } = allProps
 
   const styles = extractStyles(props, CONTAINER_STYLES)
