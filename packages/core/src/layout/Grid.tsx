@@ -15,7 +15,7 @@ const DEFAULT_STYLES = {
   gap: '@(column-gap, 0)',
 }
 
-export interface CubeGridProps
+export interface GridProps
   extends BaseProps,
     ContainerStyleProps,
     ShortItemsStyles,
@@ -30,7 +30,7 @@ const PROP_MAP = {
   areas: 'gridAreas',
 } as const
 
-const Grid = (props: CubeGridProps, ref) => {
+const Grid = (props: GridProps, ref) => {
   const styles = extractStyles(
     props,
     CONTAINER_STYLES,
