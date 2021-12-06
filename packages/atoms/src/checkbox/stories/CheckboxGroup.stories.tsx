@@ -1,4 +1,5 @@
 import React from 'react'
+import { Meta } from '@storybook/react'
 import { Checkbox } from '../src/Checkbox'
 
 export default {
@@ -69,7 +70,7 @@ export default {
       control: 'text',
     },
   },
-}
+} as Meta
 
 const Template = (props) => (
   <Checkbox.Group {...props} onChange={(query) => console.log('change', query)}>

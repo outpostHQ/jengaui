@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { Checkbox } from '../src/Checkbox'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'jenga-ui / Atoms / Checkbox',
@@ -57,7 +58,7 @@ export default {
       control: 'text',
     },
   },
-}
+} as Meta
 
 const Template = ({
   label,
