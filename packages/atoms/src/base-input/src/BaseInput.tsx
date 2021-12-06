@@ -29,7 +29,7 @@ import {
   Props,
 } from 'tastycss-react'
 import { Prefix, Suffix, Space, Block } from '@jenga-ui/core'
-import { FieldWrapper } from './FieldWrapper'
+import { FieldWrapper } from '../../form'
 import { BaseInputProps } from './BaseInputProps'
 
 const WRAPPER_STYLES: Styles = {
