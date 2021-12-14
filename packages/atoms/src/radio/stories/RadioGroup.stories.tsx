@@ -3,7 +3,7 @@ import { Radio } from '../src/Radio'
 import { JengaRadioGroupProps } from '../src/RadioGroup'
 
 export default {
-  title: 'UIKit/Forms/RadioGroup',
+  title: 'jenga-ui / Atoms / RadioGroup',
   component: Radio.Group,
   argTypes: {
     isDisabled: {
