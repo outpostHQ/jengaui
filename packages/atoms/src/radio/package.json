@@ -1,10 +1,10 @@
 {
-  "name": "@jenga-ui/input",
+  "name": "@jenga-ui/radio",
   "version": "0.0.1",
   "license": "MIT",
-  "description": "Jenga-UI React input component",
+  "description": "Jenga-UI React radio component",
   "keywords": [
-    "input",
+    "radio",
     "react",
     "jenga-ui",
     "ui",
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@react-aria/textfield": "^3.4.0",
+    "@react-aria/radio": "^3.1.6",
     "tastycss-react": "^0.4.4"
   },
   "homepage": "https://github.com/numldesign/jenga-ui",

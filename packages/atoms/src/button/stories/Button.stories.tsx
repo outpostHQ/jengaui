@@ -1,6 +1,7 @@
 import React from 'react'
 import { DollarCircleOutlined } from '@ant-design/icons'
 import Button from '../src/Button'
+import { ButtonProps } from '../src/ButtonProps'
 
 export default {
   title: 'jenga-ui / Atoms / Button',
@@ -98,29 +99,24 @@ export default {
   },
 }
 
-const Template = ({
-  size,
-  type,
-  radius,
-  isSelected,
-  isDisabled,
-  isLoading,
-  label,
-  icon,
-}) => (
-  <Button
-    size={size}
-    type={type}
-    radius={radius}
-    isDisabled={isDisabled}
-    isLoading={isLoading}
-    isSelected={isSelected}
-    icon={icon ? <DollarCircleOutlined /> : undefined}
-    onPress={() => console.log('Press')}
-  >
-    {label}
-  </Button>
-)
+const Template = (props: ButtonProps) => {
+  const { size, type, radius, isSelected, isDisabled, isLoading, label, icon } =
+    props
+  return (
+    <Button
+      size={size}
+      type={type}
+      radius={radius}
+      isDisabled={isDisabled}
+      isLoading={isLoading}
+      isSelected={isSelected}
+      icon={icon ? <DollarCircleOutlined /> : undefined}
+      onPress={() => console.log('Press')}
+    >
+      {label}
+    </Button>
+  )
+}
 
 export const Default = Template.bind({})
 Default.args = {

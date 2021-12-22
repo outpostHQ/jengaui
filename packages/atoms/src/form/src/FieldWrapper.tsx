@@ -39,7 +39,7 @@ const MESSAGE_STYLES = {
 
 export type FieldWrapperProps = {
   as?: string
-  labelPosition: LabelPosition
+  labelPosition?: LabelPosition
   label?: ReactNode
   insideForm?: boolean
   styles?: Styles
