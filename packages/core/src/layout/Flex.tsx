@@ -18,8 +18,8 @@ const DEFAULT_STYLES = {
 
 export interface JengaFlexProps
   extends BaseProps,
-    ContainerStyleProps,
-    ShortItemsStyles {}
+    Partial<ContainerStyleProps>,
+    Partial<ShortItemsStyles> {}
 
 const PROP_MAP = {
   align: 'alignItems',
