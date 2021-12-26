@@ -1,2 +1,1 @@
-export * from './src/Radio'
-export * from './src/RadioGroup'
+export * from './src/Switch'
