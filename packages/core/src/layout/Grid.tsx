@@ -17,9 +17,9 @@ const DEFAULT_STYLES = {
 
 export interface GridProps
   extends BaseProps,
-    ContainerStyleProps,
-    ShortItemsStyles,
-    ShortGridStyles {}
+    Partial<ContainerStyleProps>,
+    Partial<ShortItemsStyles>,
+    Partial<ShortGridStyles> {}
 
 const PROP_MAP = {
   align: 'alignItems',
