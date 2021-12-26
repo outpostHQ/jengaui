@@ -12,6 +12,6 @@ export interface ButtonProps extends ActionProps {
     | 'link'
     | 'clear'
     | 'outline'
-    | 'tab'
-    | 'item'
+    | 'neutral'
+    | string
 }
