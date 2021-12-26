@@ -2307,6 +2307,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@jenga-ui/number-input@workspace:packages/atoms/src/number-input":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/number-input@workspace:packages/atoms/src/number-input"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@react-aria/i18n": ^3.3.4
+    "@react-aria/numberfield": ^3.1.1
+    "@react-stately/numberfield": ^3.0.2
+    "@react-types/numberfield": ^3.1.0
+    "@types/react": ^17.0.38
+    "@types/react-dom": ^17.0.11
+    "@vitejs/plugin-react": ^1.1.3
+    rimraf: ^3.0.2
+    tastycss-react: ^0.4.4
+    typescript: ^4.5.4
+    vite: ^2.7.7
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
 "@jenga-ui/placeholder@workspace:packages/atoms/src/placeholder":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/placeholder@workspace:packages/atoms/src/placeholder"
@@ -2893,7 +2915,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/i18n@npm:^3.3.3":
+"@react-aria/i18n@npm:^3.3.3, @react-aria/i18n@npm:^3.3.4":
   version: 3.3.4
   resolution: "@react-aria/i18n@npm:3.3.4"
   dependencies:
@@ -2910,6 +2932,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/interactions@npm:^3.5.1, @react-aria/interactions@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "@react-aria/interactions@npm:3.7.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/utils": ^3.10.0
+    "@react-types/shared": ^3.10.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: d1f5d07b78195e94f5f706d04ad3cd5d4a9f256d6e5b88f086971ad493f9fce931546601b9b3d06671798cc9c68630438f2a2f61cfda7376a03235c721abf6a5
+  languageName: node
+  linkType: hard
+
 "@react-aria/interactions@npm:^3.6.0":
   version: 3.6.0
   resolution: "@react-aria/interactions@npm:3.6.0"
@@ -2920,19 +2955,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: 8f87574fdb68816eac5af92e87c8a2046564d12d6855061a909661b9036083776f29df22201c93f2576378f4596d253ede610c3bd762e74844cb642f59d014b1
-  languageName: node
-  linkType: hard
-
-"@react-aria/interactions@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "@react-aria/interactions@npm:3.7.0"
-  dependencies:
-    "@babel/runtime": ^7.6.2
-    "@react-aria/utils": ^3.10.0
-    "@react-types/shared": ^3.10.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1
-  checksum: d1f5d07b78195e94f5f706d04ad3cd5d4a9f256d6e5b88f086971ad493f9fce931546601b9b3d06671798cc9c68630438f2a2f61cfda7376a03235c721abf6a5
   languageName: node
   linkType: hard
 
@@ -2964,6 +2986,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/live-announcer@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@react-aria/live-announcer@npm:3.0.1"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/utils": ^3.8.2
+    "@react-aria/visually-hidden": ^3.2.3
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+    react-dom: ^16.8.0 || ^17.0.0-rc.1
+  checksum: e66502f455a13392ad0993ddccf362c4178939431084a3c4f50586028dd2af92b0618e44c5279641df0ad977151f9ea30834aa0c9221c0a669911e39d9939c17
+  languageName: node
+  linkType: hard
+
+"@react-aria/numberfield@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@react-aria/numberfield@npm:3.1.1"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/i18n": ^3.3.3
+    "@react-aria/interactions": ^3.7.0
+    "@react-aria/live-announcer": ^3.0.1
+    "@react-aria/spinbutton": ^3.0.1
+    "@react-aria/textfield": ^3.5.0
+    "@react-aria/utils": ^3.10.0
+    "@react-stately/numberfield": ^3.0.2
+    "@react-types/button": ^3.4.1
+    "@react-types/numberfield": ^3.1.0
+    "@react-types/shared": ^3.10.0
+    "@react-types/textfield": ^3.3.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+    react-dom: ^16.8.0 || ^17.0.0-rc.1
+  checksum: de0b0aaf6106974b19eafee0633039ac75b1d7806f6b735d4ceedd8408e7123b0646695ad7ab8092e0c3d4935610e27e6587d3ef134cc297075dc6ca390b3c0c
+  languageName: node
+  linkType: hard
+
 "@react-aria/radio@npm:^3.1.6":
   version: 3.1.6
   resolution: "@react-aria/radio@npm:3.1.6"
@@ -2979,6 +3038,23 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: e79afa6738bd9b61a9a2b394b7b8e4e1b3d35f0d86e669bb2b710de55ad0e11d85d575a7f80c9224b9fff48f8b69bce8af83777790bad4aa359364ac29ced25f
+  languageName: node
+  linkType: hard
+
+"@react-aria/spinbutton@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@react-aria/spinbutton@npm:3.0.1"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/i18n": ^3.3.2
+    "@react-aria/live-announcer": ^3.0.1
+    "@react-aria/utils": ^3.8.2
+    "@react-types/button": ^3.4.1
+    "@react-types/shared": ^3.8.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+    react-dom: ^16.8.0 || ^17.0.0-rc.1
+  checksum: 0cbd8fbbe034c738646e10b64d1723f990e3e0f8fe1045d6eb3b9233bd8083f03a5485f668fad102d9c6039252a9c5411ca0caf9d8c6da28108dcf98479271cd
   languageName: node
   linkType: hard
 
@@ -3020,6 +3096,22 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: b1e57ed7bc75e5f536fc5e79d14fdf249cb1faa07b34618fea318738632c207ae46459c3535ffc8431e8219dc93d5098e7f1ebc50ea96816222fdc86edbf9473
+  languageName: node
+  linkType: hard
+
+"@react-aria/textfield@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "@react-aria/textfield@npm:3.5.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/focus": ^3.5.0
+    "@react-aria/label": ^3.2.1
+    "@react-aria/utils": ^3.10.0
+    "@react-types/shared": ^3.10.0
+    "@react-types/textfield": ^3.3.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: d0debd4190772a95161b39cc69910d93e976441fee3fec6c0388f31aae3dc36c89b60fd05550076650f1aee5ce98accde2b8723440b8829fd7c5581581fd26bc
   languageName: node
   linkType: hard
 
@@ -3086,6 +3178,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/visually-hidden@npm:^3.2.3":
+  version: 3.2.3
+  resolution: "@react-aria/visually-hidden@npm:3.2.3"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/interactions": ^3.5.1
+    "@react-aria/utils": ^3.8.2
+    clsx: ^1.1.1
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: 3a7ebc55e54f51ac9118afaa2f032313adf03278b24e03a0e60c40d5cbf501d32c371314b85ab9590535b8e6873927f71f44be34b6adaca7c3e14372c2ecde90
+  languageName: node
+  linkType: hard
+
 "@react-spectrum/utils@npm:^3.6.2":
   version: 3.6.2
   resolution: "@react-spectrum/utils@npm:3.6.2"
@@ -3129,6 +3235,21 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: df0430bf25fcb13b9dab12dfeb6c612917a0a9771313718d8cc2d0088576c10e3b3af952c4990ac175953a214844a58f9dad2f80018fd8c74fcb3f114946751f
+  languageName: node
+  linkType: hard
+
+"@react-stately/numberfield@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@react-stately/numberfield@npm:3.0.2"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@internationalized/number": ^3.0.2
+    "@react-stately/utils": ^3.2.2
+    "@react-types/numberfield": ^3.0.1
+    "@react-types/shared": ^3.8.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: a49696cec4a20ae0fcb030aad0fd6ad4af4ed602ab3f683a1aacb822acb153610e91f9f5c56a761c9cde6946f2fb13c22f3ec434a5c00a05027c997cd74355bc
   languageName: node
   linkType: hard
 
@@ -3211,6 +3332,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1
   checksum: 04c9af07960583548f75980bdec3bc377f6e55507d3014abf55e27dab98cc80c4873a0583160b592a4dfda9dc3417a2222c4ff855723d48ccf89fd6aaeb4ab35
+  languageName: node
+  linkType: hard
+
+"@react-types/numberfield@npm:^3.0.1, @react-types/numberfield@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@react-types/numberfield@npm:3.1.0"
+  dependencies:
+    "@react-types/shared": ^3.9.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: b3bd18a31661c6166601253aace3063822e7c870a77ad27b07586f831767cb74ca2f70968b07f045e2e25fcc2b3ab2451a92f73fa5cc4f694e8075345aa2fd3a
   languageName: node
   linkType: hard
 
