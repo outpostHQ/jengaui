@@ -1,8 +1,9 @@
+import { ReactNode } from 'react'
 import { ActionProps } from '@jenga-ui/action'
 
 export interface ButtonProps extends ActionProps {
   ghost?: boolean
-  icon?: JSX.Element
+  icon?: ReactNode
   isLoading?: boolean
   isSelected?: boolean
   type?:
@@ -12,6 +13,6 @@ export interface ButtonProps extends ActionProps {
     | 'link'
     | 'clear'
     | 'outline'
-    | 'tab'
-    | 'item'
+    | 'neutral'
+    | string
 }

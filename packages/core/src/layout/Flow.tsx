@@ -16,7 +16,9 @@ const DEFAULT_STYLES = {
 
 const STYLE_PROPS = CONTAINER_STYLES
 
-export interface JengaFlowProps extends BaseProps, ContainerStyleProps {}
+export interface JengaFlowProps
+  extends BaseProps,
+    Partial<ContainerStyleProps> {}
 
 const Flow = (props: JengaFlowProps, ref) => {
   const styles = extractStyles(props, STYLE_PROPS, DEFAULT_STYLES)

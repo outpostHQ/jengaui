@@ -15,6 +15,7 @@ export interface ActionProps
     Omit<AriaButtonProps, 'type'> {
   to?: string
   label?: string
+  htmlType?: 'button' | 'submit' | 'reset' | undefined
   skipWarnings?: boolean
   preventDefault?: boolean
   onClick?: MouseEventHandler
