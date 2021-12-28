@@ -168,7 +168,7 @@ const Tab = ({
   )
 }
 
-export interface CubeTabsProps extends JengaFlexProps {
+export interface JengaTabsProps extends JengaFlexProps {
   /** The initial active key in the tabs (uncontrolled). */
   defaultActiveKey?: string
   /** The currently active key in the tabs (controlled). */
@@ -192,7 +192,7 @@ export function LegacyTabs({
   extra,
   children,
   ...props
-}: CubeTabsProps) {
+}: JengaTabsProps) {
   const tabsRef = useRef<HTMLDivElement>(null)
 
   const [tabs, setTabs] = useState<JengaTabData[]>([])

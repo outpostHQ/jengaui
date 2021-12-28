@@ -76,7 +76,7 @@ const THUMB_STYLES: Styles = {
   cursor: 'pointer',
 }
 
-export interface CubeSwitchProps
+export interface JengaSwitchProps
   extends BaseProps,
     OuterStyleProps,
     BlockStyleProps,
@@ -87,7 +87,7 @@ export interface CubeSwitchProps
   isLoading?: boolean
 }
 
-function Switch(props: CubeSwitchProps, ref) {
+function Switch(props: JengaSwitchProps, ref) {
   props = useProviderProps(props)
   props = useFormProps(props)
 
@@ -237,6 +237,6 @@ function Switch(props: CubeSwitchProps, ref) {
  * They are usually used to activate or deactivate a specific setting.
  */
 const _Switch = Object.assign(forwardRef(Switch), {
-  cubeInputType: 'Checkbox',
+  jengaInputType: 'Checkbox',
 })
 export { _Switch as Switch }
