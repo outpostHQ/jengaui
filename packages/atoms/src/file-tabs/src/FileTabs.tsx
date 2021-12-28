@@ -446,12 +446,12 @@ export function FileTabs({
   )
 }
 
-export interface CubeFileTabProps extends FileTabProps {
+export interface JengaFileTabProps extends FileTabProps {
   id: string | number
   title: string
 }
 
-FileTabs.TabPane = function FileTabPane(allProps: CubeFileTabProps) {
+FileTabs.TabPane = function FileTabPane(allProps: JengaFileTabProps) {
   const { id, title, isDirty, children, ...props } = allProps
   const { addTab, removeTab, currentTab, setDirtyTab } =
     useContext(FileTabsContext)

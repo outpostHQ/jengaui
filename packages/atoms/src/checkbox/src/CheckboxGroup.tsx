@@ -47,14 +47,14 @@ const GROUP_STYLES = {
   padding: '(1x - 1bw) 0',
 }
 
-export interface CubeCheckboxGroupProps
+export interface JengaCheckboxGroupProps
   extends BaseProps,
     AriaCheckboxGroupProps,
     FormFieldProps {
   orientation?: 'vertical' | 'horizontal'
 }
 
-function CheckboxGroup(props: CubeCheckboxGroupProps, ref) {
+function CheckboxGroup(props: JengaCheckboxGroupProps, ref) {
   props = useProviderProps(props)
   props = useFormProps(props)
 
@@ -150,6 +150,6 @@ function CheckboxGroup(props: CubeCheckboxGroupProps, ref) {
  * All possible options are exposed up front for users to compare.
  */
 const _CheckboxGroup = Object.assign(forwardRef(CheckboxGroup), {
-  cubeInputType: 'CheckboxGroup',
+  jengaInputType: 'CheckboxGroup',
 })
 export { _CheckboxGroup as CheckboxGroup }

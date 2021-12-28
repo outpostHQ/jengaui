@@ -62,6 +62,6 @@ function PasswordInput(props: BaseInputProps, ref) {
  * communicate the entry requirements.
  */
 const _PasswordInput = Object.assign(forwardRef(PasswordInput), {
-  cubeInputType: 'Text',
+  jengaInputType: 'Text',
 })
 export { _PasswordInput as PasswordInput }
