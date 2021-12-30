@@ -72,10 +72,10 @@ const Overlay = styled.div`
   }
 `
 
-export interface CubeModalProps extends JengaCardProps {
+export interface JengaModalProps extends JengaCardProps {
   title?: string
   isVisible?: boolean
-  type?: 'default' | 'primary' | 'info' | 'danger'
+  type?: 'default' | 'primary' | 'info' | 'danger' | string
   isClosable?: boolean
   isLoading?: boolean
   okType?: 'default' | 'primary' | 'danger'
@@ -92,7 +92,7 @@ export interface CubeModalProps extends JengaCardProps {
  * Designed after AntD Modal component and almost duplicate its API.
  * Use Dialog component instead
  */
-export function Modal(allProps: CubeModalProps) {
+export function Modal(allProps: JengaModalProps) {
   const {
     title,
     isVisible,
@@ -295,7 +295,7 @@ interface ModalService {
   reject: (item: ModalItem, arg?: any) => void
 }
 
-interface ModalItem extends Omit<CubeModalProps, 'id'> {
+interface ModalItem extends Omit<JengaModalProps, 'id'> {
   id?: number
   isVisible?: boolean
   resolve: (any) => void
