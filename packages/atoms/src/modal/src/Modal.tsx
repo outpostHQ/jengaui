@@ -75,7 +75,7 @@ const Overlay = styled.div`
 export interface JengaModalProps extends JengaCardProps {
   title?: string
   isVisible?: boolean
-  type?: 'default' | 'primary' | 'info' | 'danger' | string
+  type?: 'default' | 'primary' | 'info' | 'danger'
   isClosable?: boolean
   isLoading?: boolean
   okType?: 'default' | 'primary' | 'danger'
