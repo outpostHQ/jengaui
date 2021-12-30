@@ -6,7 +6,7 @@ import { FormStore, JengaFormData } from './useForm'
 export interface FormProps
   extends FormBaseProps,
     BaseProps,
-    ContainerStyleProps,
+    Partial<ContainerStyleProps>,
     Pick<
       FormHTMLAttributes<HTMLFormElement>,
       'action' | 'autoComplete' | 'encType' | 'method' | 'target'

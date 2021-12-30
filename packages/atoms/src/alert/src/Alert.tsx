@@ -22,7 +22,7 @@ const DEFAULT_STYLES: Styles = {
 
 const STYLE_LIST = [...CONTAINER_STYLES, ...TEXT_STYLES] as const
 
-export interface CubeAlertProps
+export interface JengaAlertProps
   extends BaseProps,
     ContainerStyleProps,
     TextStyleProps {
@@ -30,7 +30,7 @@ export interface CubeAlertProps
   label?: string
 }
 
-export const Alert = forwardRef((allProps: CubeAlertProps, ref) => {
+export const Alert = forwardRef((allProps: JengaAlertProps, ref) => {
   const { label, ...props } = allProps
   let { type } = allProps
 

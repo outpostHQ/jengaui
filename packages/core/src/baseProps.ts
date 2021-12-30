@@ -29,6 +29,7 @@ export interface FormBaseProps {
   /** Whether the field is required */
   isRequired?: boolean
   necessityIndicator?: NecessityIndicator
+  necessityLabel?: ReactNode
   /** Whether the field is read only */
   isReadOnly?: boolean
   /** The validation state of the field */

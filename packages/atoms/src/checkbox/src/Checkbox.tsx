@@ -28,7 +28,7 @@ import { CheckboxGroup } from './CheckboxGroup'
 import { CheckboxGroupContext } from './context'
 import { FocusableRef } from '@react-types/shared'
 
-export interface CubeCheckboxProps
+export interface JengaCheckboxProps
   extends BaseProps,
     AriaCheckboxProps,
     FormFieldProps {}
@@ -86,7 +86,7 @@ const INPUT_STYLES: Styles = {
   transition: 'theme',
 } as const
 
-function Checkbox(props: CubeCheckboxProps, ref: FocusableRef) {
+function Checkbox(props: JengaCheckboxProps, ref: FocusableRef) {
   const originalProps = props
 
   props = useProviderProps(props)
@@ -179,13 +179,13 @@ function Checkbox(props: CubeCheckboxProps, ref: FocusableRef) {
     for (const key of ['isSelected', 'defaultSelected', 'isEmphasized']) {
       if (originalProps[key] != null) {
         console.warn(
-          `CubeUIKit: ${key} is unsupported on individual <Checkbox> elements within a <CheckboxGroup>. Please apply these props to the group instead.`
+          `Jenga-UI: ${key} is unsupported on individual <Checkbox> elements within a <CheckboxGroup>. Please apply these props to the group instead.`
         )
       }
     }
     if (props.value == null) {
       console.warn(
-        'CubeUIKit: A <Checkbox> element within a <CheckboxGroup> requires a `value` property.'
+        'Jenga-UI: A <Checkbox> element within a <CheckboxGroup> requires a `value` property.'
       )
     }
   }

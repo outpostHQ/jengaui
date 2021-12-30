@@ -76,7 +76,7 @@ const THUMB_STYLES: Styles = {
   cursor: 'pointer',
 }
 
-export interface CubeSwitchProps
+export interface JengaSwitchProps
   extends BaseProps,
     OuterStyleProps,
     BlockStyleProps,
@@ -87,7 +87,7 @@ export interface CubeSwitchProps
   isLoading?: boolean
 }
 
-function Switch(props: CubeSwitchProps, ref) {
+function Switch(props: JengaSwitchProps, ref) {
   props = useProviderProps(props)
   props = useFormProps(props)
 
