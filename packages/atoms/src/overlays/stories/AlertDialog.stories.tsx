@@ -4,7 +4,7 @@ import { AlertDialog, DialogTrigger } from '../src'
 import { ModalProvider } from '@react-aria/overlays'
 
 export default {
-  title: 'UIKit/Overlays/AlertDialog',
+  title: 'jenga-ui / Atoms / AlertDialog',
   component: AlertDialog,
   argTypes: {
     danger: {

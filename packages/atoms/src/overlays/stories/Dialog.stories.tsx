@@ -13,7 +13,7 @@ import {
 } from '@jenga-ui/content'
 
 export default {
-  title: 'UIKit/Overlays/Dialog',
+  title: 'jenga-ui / Atoms / Dialog',
   component: Dialog,
   argTypes: {
     size: {
