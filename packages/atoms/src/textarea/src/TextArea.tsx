@@ -91,6 +91,6 @@ function TextArea(props: JengaTextAreaProps, ref) {
  * communicate the entry requirements.
  */
 const _TextArea = Object.assign(forwardRef(TextArea), {
-  cubeInputType: 'Text',
+  jengaInputType: 'Text',
 })
 export { _TextArea as TextArea }

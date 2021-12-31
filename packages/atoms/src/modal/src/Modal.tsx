@@ -20,54 +20,54 @@ const Overlay = styled.div`
   z-index: 1000;
   display: none;
 
-  .cube-modal {
+  .jenga-modal {
     --base-translate: ((50vh - 50%) / -3);
     transform: translate(0, calc(var(--base-translate)));
   }
 
-  &.cube-modal-transition-enter {
+  &.jenga-modal-transition-enter {
     opacity: 0;
     display: flex;
 
-    & .cube-modal {
+    & .jenga-modal {
       transform: translate(0, calc(-32px + var(--base-translate))) scale(0.5);
     }
   }
 
-  &.cube-modal-transition-enter-active {
+  &.jenga-modal-transition-enter-active {
     opacity: 1;
     transition: all 250ms cubic-bezier(0, 0.5, 0, 1);
 
-    & .cube-modal {
+    & .jenga-modal {
       transform: translate(0, calc(var(--base-translate))) scale(1);
       transition: all 250ms cubic-bezier(0.5, 0.5, 0, 1);
     }
   }
 
-  &.cube-modal-transition-enter-done {
+  &.jenga-modal-transition-enter-done {
     display: flex;
   }
 
-  &.cube-modal-transition-exit {
+  &.jenga-modal-transition-exit {
     opacity: 1;
     display: flex;
 
-    & .cube-modal {
+    & .jenga-modal {
       transform: translate(0, calc(var(--base-translate))) scale(1);
     }
   }
 
-  &.cube-modal-transition-exit-active {
+  &.jenga-modal-transition-exit-active {
     opacity: 0;
     transition: all 160ms ease-in;
 
-    & .cube-modal {
+    & .jenga-modal {
       transform: translate(0, calc(-32px + var(--base-translate))) scale(0.5);
       transition: all 160ms ease-in;
     }
   }
 
-  &.cube-modal-transition-exit-done {
+  &.jenga-modal-transition-exit-done {
     display: none;
   }
 `
@@ -146,7 +146,7 @@ export function Modal(allProps: JengaModalProps) {
   const onOverlayClick = (evt) => {
     if (!evt || !evt.target) return
 
-    if (evt.target.classList.contains('cube-modal-overlay') && !isLoading) {
+    if (evt.target.classList.contains('jenga-modal-overlay') && !isLoading) {
       close()
     }
   }
@@ -189,11 +189,15 @@ export function Modal(allProps: JengaModalProps) {
   )
 
   return (
-    <CSSTransition in={inProp} timeout={250} classNames="cube-modal-transition">
-      <Overlay className="cube-modal-overlay" onClick={onOverlayClick}>
+    <CSSTransition
+      in={inProp}
+      timeout={250}
+      classNames="jenga-modal-transition"
+    >
+      <Overlay className="jenga-modal-overlay" onClick={onOverlayClick}>
         <Card
           data-qa={qa || 'Modal'}
-          className="cube-modal"
+          className="jenga-modal"
           display="flex"
           role="region"
           color="#dark.85"
@@ -311,7 +315,7 @@ const modal: ModalService = {
 
     this.root = document.createElement('div')
 
-    this.root.classList.add('cube-modal-container')
+    this.root.classList.add('jenga-modal-container')
 
     document.body.appendChild(this.root)
 

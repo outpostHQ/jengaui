@@ -150,6 +150,6 @@ function CheckboxGroup(props: JengaCheckboxGroupProps, ref) {
  * All possible options are exposed up front for users to compare.
  */
 const _CheckboxGroup = Object.assign(forwardRef(CheckboxGroup), {
-  cubeInputType: 'CheckboxGroup',
+  jengaInputType: 'CheckboxGroup',
 })
 export { _CheckboxGroup as CheckboxGroup }

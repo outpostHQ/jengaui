@@ -157,6 +157,6 @@ function RadioGroup(props: JengaRadioGroupProps, ref) {
  * All possible options are exposed up front for users to compare.
  */
 const _RadioGroup = Object.assign(forwardRef(RadioGroup), {
-  cubeInputType: 'RadioGroup',
+  jengaInputType: 'RadioGroup',
 })
 export { _RadioGroup as RadioGroup }

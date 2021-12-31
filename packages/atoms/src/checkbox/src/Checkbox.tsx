@@ -179,13 +179,13 @@ function Checkbox(props: JengaCheckboxProps, ref: FocusableRef) {
     for (const key of ['isSelected', 'defaultSelected', 'isEmphasized']) {
       if (originalProps[key] != null) {
         console.warn(
-          `Jenga-UI: ${key} is unsupported on individual <Checkbox> elements within a <CheckboxGroup>. Please apply these props to the group instead.`
+          `JengaUIKit: ${key} is unsupported on individual <Checkbox> elements within a <CheckboxGroup>. Please apply these props to the group instead.`
         )
       }
     }
     if (props.value == null) {
       console.warn(
-        'Jenga-UI: A <Checkbox> element within a <CheckboxGroup> requires a `value` property.'
+        'JengaUIKit: A <Checkbox> element within a <CheckboxGroup> requires a `value` property.'
       )
     }
   }
@@ -270,7 +270,7 @@ function Checkbox(props: JengaCheckboxProps, ref: FocusableRef) {
  * or to mark one individual item as selected.
  */
 const _Checkbox = Object.assign(forwardRef(Checkbox), {
-  cubeInputType: 'Checkbox',
+  jengaInputType: 'Checkbox',
   Group: CheckboxGroup,
 })
 export { _Checkbox as Checkbox }

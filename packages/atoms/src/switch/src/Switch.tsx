@@ -237,6 +237,6 @@ function Switch(props: JengaSwitchProps, ref) {
  * They are usually used to activate or deactivate a specific setting.
  */
 const _Switch = Object.assign(forwardRef(Switch), {
-  cubeInputType: 'Checkbox',
+  jengaInputType: 'Checkbox',
 })
 export { _Switch as Switch }
