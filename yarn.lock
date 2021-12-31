@@ -2451,23 +2451,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/overlay@workspace:packages/core/src/overlay":
-  version: 0.0.0-use.local
-  resolution: "@jenga-ui/overlay@workspace:packages/core/src/overlay"
-  dependencies:
-    "@types/react": ^17.0.38
-    "@types/react-dom": ^17.0.11
-    "@vitejs/plugin-react": ^1.1.3
-    rimraf: ^3.0.2
-    tastycss-react: ^0.4.4
-    typescript: ^4.5.4
-    vite: ^2.7.7
-  peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
-  languageName: unknown
-  linkType: soft
-
 "@jenga-ui/overlays@workspace:packages/atoms/src/overlays":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/overlays@workspace:packages/atoms/src/overlays"
