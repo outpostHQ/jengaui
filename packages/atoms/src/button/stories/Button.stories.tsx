@@ -1,6 +1,6 @@
 import React from 'react'
 import { DollarCircleOutlined } from '@ant-design/icons'
-import Button from '../src/Button'
+import { Button } from '../'
 import { ButtonProps } from '../src/ButtonProps'
 
 export default {

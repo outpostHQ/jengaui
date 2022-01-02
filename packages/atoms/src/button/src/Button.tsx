@@ -224,7 +224,7 @@ export function provideStyles(props: ProvideStylesProps): any {
 
 const DEPRECATED_PROPS = ['disabled', 'loading', 'onClick']
 
-const Button = forwardRef(
+export const Button = forwardRef(
   (props: ButtonProps, ref: FocusableRef): JSX.Element => {
     const {
       type,
@@ -316,5 +316,3 @@ const Button = forwardRef(
 )
 
 Button.displayName = 'Button'
-
-export default Button
