@@ -7,7 +7,7 @@ import {
   ContainerStyleProps,
 } from 'tastycss-react'
 import { filterBaseProps } from '../utils'
-import { ShortGridStyles, ShortItemsStyles } from './layoutStyles'
+import { ShortGridStyles } from './layoutStyles'
 
 const DEFAULT_STYLES = {
   display: 'grid',
@@ -18,12 +18,9 @@ const DEFAULT_STYLES = {
 export interface GridProps
   extends BaseProps,
     Partial<ContainerStyleProps>,
-    Partial<ShortItemsStyles>,
     Partial<ShortGridStyles> {}
 
 const PROP_MAP = {
-  align: 'alignItems',
-  justify: 'justifyItems',
   template: 'gridTemplate',
   columns: 'gridColumns',
   rows: 'gridRows',

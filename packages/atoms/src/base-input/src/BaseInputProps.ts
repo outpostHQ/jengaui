@@ -4,6 +4,7 @@ import {
   Props,
   BlockStyleProps,
   Styles,
+  DimensionStyleProps,
 } from 'tastycss-react'
 import { AriaTextFieldProps } from '@react-types/textfield'
 import { ReactNode, RefObject } from 'react'
@@ -12,6 +13,7 @@ import { FormFieldProps } from '@jenga-ui/core'
 export interface BaseInputProps
   extends BaseProps,
     Partial<PositionStyleProps>,
+    Partial<DimensionStyleProps>,
     Partial<BlockStyleProps>,
     AriaTextFieldProps,
     FormFieldProps {
@@ -30,7 +32,7 @@ export interface BaseInputProps
   /** Direct input wrapper props */
   wrapperProps?: Props
   /** The input ref */
-  inputRef?: RefObject<HTMLInputElement>
+  inputRef?: RefObject<HTMLInputElement | HTMLTextAreaElement>
   /** The wrapper ref */
   wrapperRef?: RefObject<HTMLDivElement>
   /** Whether the input has the loading status */

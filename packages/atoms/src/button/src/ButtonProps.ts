@@ -15,4 +15,5 @@ export interface ButtonProps extends ActionProps {
     | 'outline'
     | 'neutral'
     | string
+  size?: 'small' | 'default' | 'large' | string
 }

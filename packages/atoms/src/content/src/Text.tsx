@@ -68,7 +68,6 @@ export interface JengaTextProps
    */
   italic?: ResponsiveStyleValue<CSSProperties['fontStyle']>
   weight?: string | number
-  align?: ResponsiveStyleValue<CSSProperties['textAlign']>
   transform?: ResponsiveStyleValue<CSSProperties['textTransform']>
 }
 

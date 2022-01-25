@@ -21,6 +21,7 @@ import {
   extractStyles,
   BLOCK_STYLES,
   POSITION_STYLES,
+  DIMENSION_STYLES,
   useContextStyles,
   Styles,
   BaseProps,
@@ -36,6 +37,8 @@ const WRAPPER_STYLES: Styles = {
   display: 'grid',
   position: 'relative',
 }
+
+const STYLE_LIST = [...POSITION_STYLES, ...DIMENSION_STYLES]
 
 const INPUT_STYLE_PROPS_LIST = [...BLOCK_STYLES, 'resize']
 
@@ -91,6 +94,7 @@ function BaseInput(props: BaseInputProps, ref) {
     labelStyles,
     isRequired,
     necessityIndicator,
+    necessityLabel,
     validationState,
     message,
     prefix,
@@ -98,26 +102,31 @@ function BaseInput(props: BaseInputProps, ref) {
     multiLine,
     autoFocus,
     labelProps,
-    inputProps,
     wrapperProps,
     isLoading,
     loadingIndicator,
-    insideForm,
     value,
     suffixPosition = 'before',
     wrapperRef,
     requiredMark = true,
     rows = 1,
+    tooltip,
     size,
     ...otherProps
   } = props
 
-  let { inputStyles = {}, wrapperStyles = {}, inputRef, suffix } = props
+  let {
+    inputStyles = {},
+    wrapperStyles = {},
+    suffix,
+    inputRef,
+    inputProps,
+  } = props
 
   const [suffixWidth, setSuffixWidth] = useState(0)
   const [prefixWidth, setPrefixWidth] = useState(0)
 
-  const styles = extractStyles(otherProps, POSITION_STYLES)
+  const styles = extractStyles(otherProps, STYLE_LIST)
 
   const contextStyles = useContextStyles('Input', otherProps)
 
@@ -176,6 +185,15 @@ function BaseInput(props: BaseInputProps, ref) {
     ) : (
       suffix
     )
+
+  // Fix safari bug: https://github.com/philipwalton/flexbugs/issues/270
+  if (!inputProps?.placeholder) {
+    if (!inputProps) {
+      inputProps = {}
+    }
+
+    inputProps.placeholder = ' '
+  }
 
   const textField = (
     <Element
@@ -239,16 +257,17 @@ function BaseInput(props: BaseInputProps, ref) {
       {...{
         labelPosition,
         label,
-        insideForm,
         styles,
         isRequired,
         labelStyles,
         necessityIndicator,
+        necessityLabel,
         labelProps,
         isDisabled,
         validationState,
         message,
         requiredMark,
+        tooltip,
         Component: textField,
         ref: domRef,
       }}
