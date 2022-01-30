@@ -12,7 +12,11 @@
     "lint": "prettier --check .",
     "format": "prettier --write .",
     "postinstall": "husky install",
-    "publish": "yarn workspaces foreach --no-private npm publish"
+    "publish": "yarn workspaces foreach --no-private npm publish",
+    "reset": "yarn clean && rm -rf node_modules .yarn/cache",
+    "bump:stable": "yarn version apply --all",
+    "bump:next": "yarn version apply --all --prerelease",
+    "bump:check": "yarn version check"
   },
   "dependencies": {
     "email-validator": "^2.0.4",
