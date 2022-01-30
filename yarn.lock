@@ -2442,7 +2442,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/active-zone@^0.0.1, @jenga-ui/active-zone@workspace:packages/atoms/src/active-zone":
+"@jenga-ui/active-zone@^0.0.2, @jenga-ui/active-zone@workspace:packages/atoms/src/active-zone":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/active-zone@workspace:packages/atoms/src/active-zone"
   dependencies:
@@ -2462,7 +2462,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/alert@^0.0.1, @jenga-ui/alert@workspace:packages/atoms/src/alert":
+"@jenga-ui/alert@^0.0.2, @jenga-ui/alert@workspace:packages/atoms/src/alert":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/alert@workspace:packages/atoms/src/alert"
   dependencies:
@@ -2495,7 +2495,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/avatar@^0.0.1, @jenga-ui/avatar@workspace:packages/atoms/src/avatar":
+"@jenga-ui/avatar@^0.0.2, @jenga-ui/avatar@workspace:packages/atoms/src/avatar":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/avatar@workspace:packages/atoms/src/avatar"
   dependencies:
@@ -2513,7 +2513,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/badge@^0.0.1, @jenga-ui/badge@workspace:packages/atoms/src/badge":
+"@jenga-ui/badge@^0.0.2, @jenga-ui/badge@workspace:packages/atoms/src/badge":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/badge@workspace:packages/atoms/src/badge"
   dependencies:
@@ -2531,7 +2531,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/base-input@^0.0.1, @jenga-ui/base-input@workspace:packages/atoms/src/base-input":
+"@jenga-ui/base-input@^0.0.2, @jenga-ui/base-input@workspace:packages/atoms/src/base-input":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/base-input@workspace:packages/atoms/src/base-input"
   dependencies:
@@ -2551,7 +2551,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/button-group@^0.0.1, @jenga-ui/button-group@workspace:packages/atoms/src/button-group":
+"@jenga-ui/button-group@^0.0.2, @jenga-ui/button-group@workspace:packages/atoms/src/button-group":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/button-group@workspace:packages/atoms/src/button-group"
   dependencies:
@@ -2569,7 +2569,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/button@^0.0.1, @jenga-ui/button@workspace:packages/atoms/src/button":
+"@jenga-ui/button@^0.0.2, @jenga-ui/button@workspace:packages/atoms/src/button":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/button@workspace:packages/atoms/src/button"
   dependencies:
@@ -2588,7 +2588,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/card@^0.0.1, @jenga-ui/card@workspace:packages/atoms/src/card":
+"@jenga-ui/card@^0.0.2, @jenga-ui/card@workspace:packages/atoms/src/card":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/card@workspace:packages/atoms/src/card"
   dependencies:
@@ -2605,7 +2605,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/checkbox@^0.0.1, @jenga-ui/checkbox@workspace:packages/atoms/src/checkbox":
+"@jenga-ui/checkbox@^0.0.2, @jenga-ui/checkbox@workspace:packages/atoms/src/checkbox":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/checkbox@workspace:packages/atoms/src/checkbox"
   dependencies:
@@ -2632,7 +2632,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/combo-box@^0.0.1, @jenga-ui/combo-box@workspace:packages/atoms/src/combo-box":
+"@jenga-ui/combo-box@^0.0.2, @jenga-ui/combo-box@workspace:packages/atoms/src/combo-box":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/combo-box@workspace:packages/atoms/src/combo-box"
   dependencies:
@@ -2656,7 +2656,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/content@^0.0.1, @jenga-ui/content@workspace:packages/atoms/src/content":
+"@jenga-ui/content@^0.0.2, @jenga-ui/content@workspace:packages/atoms/src/content":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/content@workspace:packages/atoms/src/content"
   dependencies:
@@ -2677,33 +2677,33 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jenga-ui/core@workspace:packages/core"
   dependencies:
-    "@jenga-ui/active-zone": ^0.0.1
-    "@jenga-ui/alert": ^0.0.1
-    "@jenga-ui/avatar": ^0.0.1
-    "@jenga-ui/badge": ^0.0.1
-    "@jenga-ui/base-input": ^0.0.1
-    "@jenga-ui/button": ^0.0.1
-    "@jenga-ui/button-group": ^0.0.1
-    "@jenga-ui/card": ^0.0.1
-    "@jenga-ui/checkbox": ^0.0.1
-    "@jenga-ui/combo-box": ^0.0.1
-    "@jenga-ui/content": ^0.0.1
-    "@jenga-ui/file-input": ^0.0.1
-    "@jenga-ui/file-tabs": ^0.0.1
-    "@jenga-ui/input": ^0.0.1
-    "@jenga-ui/link": ^0.0.1
-    "@jenga-ui/modal": ^0.0.1
-    "@jenga-ui/number-input": ^0.0.1
-    "@jenga-ui/password-input": ^0.0.1
-    "@jenga-ui/placeholder": ^0.0.1
-    "@jenga-ui/radio": ^0.0.1
-    "@jenga-ui/search-input": ^0.0.1
-    "@jenga-ui/select": ^0.0.1
-    "@jenga-ui/skeleton": ^0.0.1
-    "@jenga-ui/switch": ^0.0.1
-    "@jenga-ui/tabs": ^0.0.1
-    "@jenga-ui/tag": ^0.0.1
-    "@jenga-ui/textarea": ^0.0.1
+    "@jenga-ui/active-zone": ^0.0.2
+    "@jenga-ui/alert": ^0.0.2
+    "@jenga-ui/avatar": ^0.0.2
+    "@jenga-ui/badge": ^0.0.2
+    "@jenga-ui/base-input": ^0.0.2
+    "@jenga-ui/button": ^0.0.2
+    "@jenga-ui/button-group": ^0.0.2
+    "@jenga-ui/card": ^0.0.2
+    "@jenga-ui/checkbox": ^0.0.2
+    "@jenga-ui/combo-box": ^0.0.2
+    "@jenga-ui/content": ^0.0.2
+    "@jenga-ui/file-input": ^0.0.2
+    "@jenga-ui/file-tabs": ^0.0.2
+    "@jenga-ui/input": ^0.0.2
+    "@jenga-ui/link": ^0.0.2
+    "@jenga-ui/modal": ^0.0.2
+    "@jenga-ui/number-input": ^0.0.2
+    "@jenga-ui/password-input": ^0.0.2
+    "@jenga-ui/placeholder": ^0.0.2
+    "@jenga-ui/radio": ^0.0.2
+    "@jenga-ui/search-input": ^0.0.2
+    "@jenga-ui/select": ^0.0.2
+    "@jenga-ui/skeleton": ^0.0.2
+    "@jenga-ui/switch": ^0.0.2
+    "@jenga-ui/tabs": ^0.0.2
+    "@jenga-ui/tag": ^0.0.2
+    "@jenga-ui/textarea": ^0.0.2
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     "@vitejs/plugin-react": ^1.1.4
@@ -2716,7 +2716,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/file-input@^0.0.1, @jenga-ui/file-input@workspace:packages/atoms/src/file-input":
+"@jenga-ui/file-input@^0.0.2, @jenga-ui/file-input@workspace:packages/atoms/src/file-input":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/file-input@workspace:packages/atoms/src/file-input"
   dependencies:
@@ -2735,7 +2735,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/file-tabs@^0.0.1, @jenga-ui/file-tabs@workspace:packages/atoms/src/file-tabs":
+"@jenga-ui/file-tabs@^0.0.2, @jenga-ui/file-tabs@workspace:packages/atoms/src/file-tabs":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/file-tabs@workspace:packages/atoms/src/file-tabs"
   dependencies:
@@ -2772,7 +2772,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/input@^0.0.1, @jenga-ui/input@workspace:packages/atoms/src/input":
+"@jenga-ui/input@^0.0.2, @jenga-ui/input@workspace:packages/atoms/src/input":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/input@workspace:packages/atoms/src/input"
   dependencies:
@@ -2791,7 +2791,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/link@^0.0.1, @jenga-ui/link@workspace:packages/atoms/src/link":
+"@jenga-ui/link@^0.0.2, @jenga-ui/link@workspace:packages/atoms/src/link":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/link@workspace:packages/atoms/src/link"
   dependencies:
@@ -2809,7 +2809,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/modal@^0.0.1, @jenga-ui/modal@workspace:packages/atoms/src/modal":
+"@jenga-ui/modal@^0.0.2, @jenga-ui/modal@workspace:packages/atoms/src/modal":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/modal@workspace:packages/atoms/src/modal"
   dependencies:
@@ -2828,7 +2828,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/number-input@^0.0.1, @jenga-ui/number-input@workspace:packages/atoms/src/number-input":
+"@jenga-ui/number-input@^0.0.2, @jenga-ui/number-input@workspace:packages/atoms/src/number-input":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/number-input@workspace:packages/atoms/src/number-input"
   dependencies:
@@ -2877,7 +2877,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/password-input@^0.0.1, @jenga-ui/password-input@workspace:packages/atoms/src/password-input":
+"@jenga-ui/password-input@^0.0.2, @jenga-ui/password-input@workspace:packages/atoms/src/password-input":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/password-input@workspace:packages/atoms/src/password-input"
   dependencies:
@@ -2896,7 +2896,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/placeholder@^0.0.1, @jenga-ui/placeholder@workspace:packages/atoms/src/placeholder":
+"@jenga-ui/placeholder@^0.0.2, @jenga-ui/placeholder@workspace:packages/atoms/src/placeholder":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/placeholder@workspace:packages/atoms/src/placeholder"
   dependencies:
@@ -2913,7 +2913,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/radio@^0.0.1, @jenga-ui/radio@workspace:packages/atoms/src/radio":
+"@jenga-ui/radio@^0.0.2, @jenga-ui/radio@workspace:packages/atoms/src/radio":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/radio@workspace:packages/atoms/src/radio"
   dependencies:
@@ -2935,7 +2935,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/search-input@^0.0.1, @jenga-ui/search-input@workspace:packages/atoms/src/search-input":
+"@jenga-ui/search-input@^0.0.2, @jenga-ui/search-input@workspace:packages/atoms/src/search-input":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/search-input@workspace:packages/atoms/src/search-input"
   dependencies:
@@ -2955,7 +2955,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/select@^0.0.1, @jenga-ui/select@workspace:packages/atoms/src/select":
+"@jenga-ui/select@^0.0.2, @jenga-ui/select@workspace:packages/atoms/src/select":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/select@workspace:packages/atoms/src/select"
   dependencies:
@@ -2983,7 +2983,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/skeleton@^0.0.1, @jenga-ui/skeleton@workspace:packages/atoms/src/skeleton":
+"@jenga-ui/skeleton@^0.0.2, @jenga-ui/skeleton@workspace:packages/atoms/src/skeleton":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/skeleton@workspace:packages/atoms/src/skeleton"
   dependencies:
@@ -3000,7 +3000,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/switch@^0.0.1, @jenga-ui/switch@workspace:packages/atoms/src/switch":
+"@jenga-ui/switch@^0.0.2, @jenga-ui/switch@workspace:packages/atoms/src/switch":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/switch@workspace:packages/atoms/src/switch"
   dependencies:
@@ -3019,7 +3019,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/tabs@^0.0.1, @jenga-ui/tabs@workspace:packages/atoms/src/tabs":
+"@jenga-ui/tabs@^0.0.2, @jenga-ui/tabs@workspace:packages/atoms/src/tabs":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/tabs@workspace:packages/atoms/src/tabs"
   dependencies:
@@ -3036,7 +3036,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/tag@^0.0.1, @jenga-ui/tag@workspace:packages/atoms/src/tag":
+"@jenga-ui/tag@^0.0.2, @jenga-ui/tag@workspace:packages/atoms/src/tag":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/tag@workspace:packages/atoms/src/tag"
   dependencies:
@@ -3054,7 +3054,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/textarea@^0.0.1, @jenga-ui/textarea@workspace:packages/atoms/src/textarea":
+"@jenga-ui/textarea@^0.0.2, @jenga-ui/textarea@workspace:packages/atoms/src/textarea":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/textarea@workspace:packages/atoms/src/textarea"
   dependencies:
