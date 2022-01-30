@@ -7,7 +7,6 @@ import {
   Element,
 } from 'tastycss-react'
 import { filterBaseProps } from '../utils'
-import { ShortItemsStyles } from './layoutStyles'
 
 const DEFAULT_STYLES = {
   display: 'flex',
@@ -16,8 +15,7 @@ const DEFAULT_STYLES = {
 
 export interface JengaSpaceProps
   extends BaseProps,
-    Partial<ContainerStyleProps>,
-    ShortItemsStyles {
+    Partial<ContainerStyleProps> {
   direction?: 'vertical' | 'horizontal'
 }
 

@@ -38,6 +38,35 @@
     "postbuild": "yarn build:types",
     "build:types": "npx tsc -b --verbose"
   },
+  "dependencies": {
+    "@jenga-ui/active-zone": "^0.0.1",
+    "@jenga-ui/alert": "^0.0.1",
+    "@jenga-ui/avatar": "^0.0.1",
+    "@jenga-ui/badge": "^0.0.1",
+    "@jenga-ui/base-input": "^0.0.1",
+    "@jenga-ui/button": "^0.0.1",
+    "@jenga-ui/button-group": "^0.0.1",
+    "@jenga-ui/card": "^0.0.1",
+    "@jenga-ui/checkbox": "^0.0.1",
+    "@jenga-ui/combo-box": "^0.0.1",
+    "@jenga-ui/content": "^0.0.1",
+    "@jenga-ui/file-input": "^0.0.1",
+    "@jenga-ui/file-tabs": "^0.0.1",
+    "@jenga-ui/input": "^0.0.1",
+    "@jenga-ui/link": "^0.0.1",
+    "@jenga-ui/modal": "^0.0.1",
+    "@jenga-ui/number-input": "^0.0.1",
+    "@jenga-ui/password-input": "^0.0.1",
+    "@jenga-ui/placeholder": "^0.0.1",
+    "@jenga-ui/radio": "^0.0.1",
+    "@jenga-ui/search-input": "^0.0.1",
+    "@jenga-ui/select": "^0.0.1",
+    "@jenga-ui/skeleton": "^0.0.1",
+    "@jenga-ui/switch": "^0.0.1",
+    "@jenga-ui/tabs": "^0.0.1",
+    "@jenga-ui/tag": "^0.0.1",
+    "@jenga-ui/textarea": "^0.0.1"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -50,8 +79,8 @@
     "@types/react-dom": "^17.0.11",
     "@vitejs/plugin-react": "^1.1.4",
     "rimraf": "^3.0.2",
-    "typescript": "^4.5.4",
-    "vite": "^2.7.10"
+    "typescript": "^4.5.5",
+    "vite": "^2.7.13"
   },
   "homepage": "https://github.com/numldesign/jenga-ui",
   "repository": {

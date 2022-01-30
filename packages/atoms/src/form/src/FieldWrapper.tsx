@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { forwardRef, ReactNode } from 'react'
 import { Label } from './Label'
 import { Element, Styles } from 'tastycss-react'
@@ -6,6 +7,8 @@ import {
   NecessityIndicator,
   ValidationState,
 } from '@jenga-ui/core'
+import { TooltipProvider } from '@jenga-ui/overlays'
+import { InfoCircleOutlined } from '@ant-design/icons'
 
 const FIELD_STYLES = {
   display: 'grid',
@@ -38,10 +41,9 @@ const MESSAGE_STYLES = {
 }
 
 export type FieldWrapperProps = {
-  as?: string
-  labelPosition?: LabelPosition
-  label?: ReactNode
-  insideForm?: boolean
+  as: string
+  labelPosition: LabelPosition
+  label?: string
   styles?: Styles
   isRequired?: boolean
   isDisabled?: boolean
@@ -54,14 +56,14 @@ export type FieldWrapperProps = {
   Component?: JSX.Element
   validationState?: ValidationState
   requiredMark?: boolean
+  tooltip?: ReactNode
 }
 
-function FieldWrapper(props: FieldWrapperProps, ref) {
+function FieldWrapper(props, ref) {
   const {
     as,
     labelPosition,
     label,
-    insideForm,
     styles,
     isRequired,
     isDisabled,
@@ -74,11 +76,11 @@ function FieldWrapper(props: FieldWrapperProps, ref) {
     Component,
     validationState,
     requiredMark = true,
+    tooltip,
   } = props
 
-  const mods: { [key: string]: boolean | null | undefined } = {
-    'has-sider': Boolean(labelPosition === 'side' && label),
-    'inside-form': insideForm,
+  const mods = {
+    'has-sider': labelPosition === 'side' && label,
     invalid: validationState === 'invalid',
     valid: validationState === 'valid',
   }
@@ -107,6 +109,18 @@ function FieldWrapper(props: FieldWrapperProps, ref) {
           {...labelProps}
         >
           {label}
+          {tooltip ? (
+            <>
+              &nbsp;
+              <TooltipProvider
+                title={tooltip}
+                activeWrap
+                width="initial max-content 40x"
+              >
+                <InfoCircleOutlined style={{ color: 'var(--primary-color)' }} />
+              </TooltipProvider>
+            </>
+          ) : null}
         </Label>
       )}
       {Component}

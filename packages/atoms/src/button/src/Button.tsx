@@ -226,22 +226,9 @@ const DEPRECATED_PROPS = ['disabled', 'loading', 'onClick']
 
 export const Button = forwardRef(
   (props: ButtonProps, ref: FocusableRef): JSX.Element => {
-    const {
-      type,
-      size,
-      label,
-      ghost,
-      css,
-      icon,
-      skipWarnings,
-      ...additionalProps
-    } = props
+    const { type, size, label, css, icon, mods, ...additionalProps } = props
 
     let { styles, children } = props
-
-    if (!skipWarnings) {
-      propDeprecationWarning('Action', additionalProps, DEPRECATED_PROPS)
-    }
 
     const isDisabled = additionalProps.isDisabled
     const isLoading = additionalProps.isLoading
@@ -252,7 +239,6 @@ export const Button = forwardRef(
       isDisabled,
       size,
       type,
-      ghost,
       icon,
       children,
     }
@@ -288,7 +274,6 @@ export const Button = forwardRef(
         data-is-loading={isLoading ? '' : undefined}
         data-is-selected={isSelected ? '' : undefined}
         styles={styles}
-        skipWarnings={skipWarnings}
       >
         {isLoading ? (
           <Block

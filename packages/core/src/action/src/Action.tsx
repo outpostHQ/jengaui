@@ -1,9 +1,8 @@
-import React, { forwardRef } from 'react'
-import { filterBaseProps } from '@jenga-ui/core'
+import React, { forwardRef, useContext, useCallback } from 'react'
+import { filterBaseProps, UIKitContext } from '@jenga-ui/core'
 import { useFocusableRef } from '@react-spectrum/utils'
 import { ActionProps } from './ActionProps'
 import { FocusableRef } from '@react-types/shared'
-import { propDeprecationWarning } from '@jenga-ui/core'
 import {
   Element,
   extractStyles,
@@ -16,20 +15,91 @@ import { mergeProps } from '@react-aria/utils'
 import { useHover } from '@react-aria/interactions'
 import { useFocus } from './utils'
 
-// type AnchorTargetType = '_self' | '_blank' | '_parent' | '_top'
+const FILTER_OPTIONS = { propNames: new Set(['onMouseEnter', 'onMouseLeave']) }
+
+/**
+ * Helper to open link.
+ * @param {String} href
+ * @param {String|Boolean} [target]
+ */
+export function openLink(href, target?) {
+  const link = document.createElement('a')
+
+  link.href = href
+
+  if (target) {
+    link.target = target === true ? '_blank' : target
+  }
+
+  document.body.appendChild(link)
+
+  link.click()
+
+  document.body.removeChild(link)
+}
+
+export function parseTo(to): {
+  newTab: boolean
+  nativeRoute: boolean
+  href: string | undefined
+} {
+  const newTab = to && typeof to === 'string' && to.startsWith('!')
+  const nativeRoute = to && typeof to === 'string' && to.startsWith('@')
+  const href: string | undefined =
+    to && typeof to === 'string'
+      ? newTab || nativeRoute
+        ? to.slice(1)
+        : to
+      : undefined
+
+  return {
+    newTab,
+    nativeRoute,
+    href,
+  }
+}
+
+export function performClickHandler(evt, router, to, onPress) {
+  const { newTab, nativeRoute, href } = parseTo(to)
+
+  onPress?.(evt)
+
+  if (!to) return
+
+  if (evt.shiftKey || evt.metaKey || newTab) {
+    openLink(href, true)
+
+    return
+  }
+
+  if (nativeRoute) {
+    openLink(href || window.location.href)
+  } else if (href && href.startsWith('#')) {
+    const id = href.slice(1)
+    const element = document.getElementById(id)
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      })
+
+      return
+    }
+  }
+
+  if (router) {
+    router.push(href)
+  } else if (href) {
+    window.location.href = href
+  }
+}
 
 // styles
 const DEFAULT_STYLES: Styles = {
   reset: 'button',
   position: 'relative',
-  opacity: {
-    '': 1,
-    disabled: 0.4,
-  },
-  cursor: {
-    '': 'pointer',
-    disabled: 'default',
-  },
   margin: 0,
   fontFamily: 'var(--font)',
   fontWeight: 'inherit',
@@ -40,65 +110,80 @@ const DEFAULT_STYLES: Styles = {
     focused: '#purple-03',
   },
   transition: 'theme',
+  cursor: 'pointer',
 } as const
 
 const DEPRECATED_PROPS = ['disabled', 'onClick']
 const STYLE_PROPS = [...CONTAINER_STYLES, ...TEXT_STYLES]
 
 export const Action = forwardRef(
-  (props: ActionProps, ref: FocusableRef<HTMLElement>): JSX.Element => {
-    const {
-      to,
-      typeAttribute,
-      label,
-      skipWarnings,
-      isDisabled,
-      ...additionalProps
-    } = props
-
-    if (!skipWarnings) {
-      propDeprecationWarning('Action', props, DEPRECATED_PROPS)
-      // TODO: deprecationWarning
-    }
-
-    let as = props.as
+  (
+    { to, as, htmlType, label, css, mods, onPress, ...props }: ActionProps,
+    ref: FocusableRef<HTMLElement>
+  ): JSX.Element => {
     as = to ? 'a' : as || 'button'
 
-    // const router = useContext(UIKitContext).router;
-    // const { newTab, href } = parseTo(to);
-    // const target = newTab ? '_blank' : undefined;
+    const router = useContext(UIKitContext).router
+    const isDisabled = props.isDisabled
+    const { newTab, href } = parseTo(to)
+    const target = newTab ? '_blank' : undefined
     const domRef = useFocusableRef(ref)
-    const styles = extractStyles(additionalProps, STYLE_PROPS, DEFAULT_STYLES)
+    const styles = extractStyles(props, STYLE_PROPS, DEFAULT_STYLES)
 
-    const { buttonProps, isPressed } = useButton(additionalProps, domRef)
+    const customOnPress = useCallback(
+      (evt) => {
+        performClickHandler(evt, router, to, onPress)
+      },
+      [router, to, onPress]
+    )
+
+    const { buttonProps, isPressed } = useButton(
+      {
+        ...props,
+        onPress: customOnPress,
+      },
+      domRef
+    )
     const { hoverProps, isHovered } = useHover({ isDisabled })
     const { focusProps, isFocused } = useFocus({ isDisabled }, true)
 
-    console.error('Action')
+    const customProps = to
+      ? {
+          onClick(evt) {
+            evt.preventDefault()
+          },
+        }
+      : {}
 
     return (
       <Element
-        data-is-hovered={isHovered && !isDisabled ? '' : null}
-        data-is-pressed={isPressed && !isDisabled ? '' : null}
-        data-is-focused={isFocused && !isDisabled ? '' : null}
-        data-is-disabled={isDisabled || null}
+        mods={{
+          hovered: isHovered && !isDisabled,
+          pressed: isPressed && !isDisabled,
+          focused: isFocused && !isDisabled,
+          disabled: isDisabled,
+          ...mods,
+        }}
         aria-label={label}
         {...mergeProps(
           buttonProps,
           hoverProps,
           focusProps,
-          // customProps,
-          filterBaseProps(additionalProps, { eventProps: true })
+          customProps,
+          filterBaseProps(props, FILTER_OPTIONS)
         )}
-        type={typeAttribute || 'button'}
-        // rel={as === 'a' && newTab ? 'rel="noopener noreferrer"' : undefined}
-        ref={domRef as any}
+        type={htmlType || 'button'}
+        rel={as === 'a' && newTab ? 'rel="noopener noreferrer"' : undefined}
+        ref={domRef}
         as={as}
         isDisabled={isDisabled}
         styles={styles}
-        // target={target}
-        // href={href}
+        target={target}
+        href={href}
+        css={css}
       />
     )
   }
 )
+
+Action.displayName = 'Action'

@@ -400,13 +400,14 @@ LegacyTabs.TabPane = function TabPane({
 
   const isCurrent = id === currentTab
 
-  return (
-    <Block
-      style={{ display: isCurrent ? 'block' : 'none' }}
-      flexGrow={1}
-      {...props}
-    >
-      {children}
-    </Block>
-  )
+  return null
+  // return (
+  //   <Block
+  //     style={{ display: isCurrent ? 'block' : 'none' }}
+  //     flexGrow={1}
+  //     {...props}
+  //   >
+  //     {children}
+  //   </Block>
+  // )
 }

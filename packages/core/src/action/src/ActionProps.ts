@@ -12,12 +12,12 @@ export interface ActionProps
     TagNameProps,
     Partial<ContainerStyleProps>,
     Partial<TextStyleProps>,
+    Partial<TextStyleProps>,
     Omit<AriaButtonProps, 'type'> {
   to?: string
   label?: string
   htmlType?: 'button' | 'submit' | 'reset' | undefined
-  skipWarnings?: boolean
-  preventDefault?: boolean
   onClick?: MouseEventHandler
-  typeAttribute?: 'button' | 'reset' | 'submit' | undefined
+  onMouseEnter?: MouseEventHandler
+  onMouseLeave?: MouseEventHandler
 }

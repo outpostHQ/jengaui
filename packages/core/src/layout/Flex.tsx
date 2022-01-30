@@ -4,11 +4,9 @@ import {
   extractStyles,
   BaseProps,
   ContainerStyleProps,
-  Styles,
   Element,
 } from 'tastycss-react'
 import { filterBaseProps } from '../utils'
-import { ShortItemsStyles } from './layoutStyles'
 
 const DEFAULT_STYLES = {
   display: 'flex',
@@ -18,8 +16,7 @@ const DEFAULT_STYLES = {
 
 export interface JengaFlexProps
   extends BaseProps,
-    Partial<ContainerStyleProps>,
-    Partial<ShortItemsStyles> {}
+    Partial<ContainerStyleProps> {}
 
 const PROP_MAP = {
   align: 'alignItems',
