@@ -12,7 +12,9 @@
     "lint": "prettier --check .",
     "format": "prettier --write .",
     "postinstall": "husky install",
-    "publish": "yarn workspaces foreach --no-private npm publish"
+    "publish:all": "lerna publish --no-verify-access",
+    "publish:beta": "lerna publish --ignore-prepublish --ignore-scripts --canary --preid beta --dist-tag beta",
+    "publish:dev": "run-s build:dev publish:beta"
   },
   "dependencies": {
     "email-validator": "^2.0.4",
@@ -46,6 +48,7 @@
     "eslint-plugin-react": "^7.28.0",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
+    "lerna": "^4.0.0",
     "lint-staged": "^12.3.2",
     "prettier": "^2.5.1",
     "storybook-builder-vite": "^0.1.14",
