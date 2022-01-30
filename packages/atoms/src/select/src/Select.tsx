@@ -124,7 +124,6 @@ const LISTBOX_STYLES: Styles = {
   shadow: '0px 4px 16px #shadow',
   height: 'initial 30x',
   overflow: 'hidden auto',
-  styledScrollbar: true,
 } as const
 
 const OPTION_STYLES: Styles = {
