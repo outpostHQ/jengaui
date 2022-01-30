@@ -52,6 +52,6 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "tastycss-react": "^0.5.4"
+    "tastycss-react": "^0.5.5"
   }
 }

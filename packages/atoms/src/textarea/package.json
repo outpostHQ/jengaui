@@ -50,7 +50,7 @@
     "@react-aria/textfield": "^3.5.0",
     "@react-aria/utils": "^3.11.0",
     "@react-stately/utils": "^3.3.0",
-    "tastycss-react": "^0.5.4"
+    "tastycss-react": "^0.5.5"
   },
   "homepage": "https://github.com/numldesign/jenga-ui",
   "repository": {

@@ -54,7 +54,7 @@
     "@react-aria/radio": "^3.1.6",
     "@react-aria/utils": "^3.11.0",
     "@react-spectrum/utils": "^3.6.3",
-    "tastycss-react": "^0.5.4"
+    "tastycss-react": "^0.5.5"
   },
   "homepage": "https://github.com/numldesign/jenga-ui",
   "repository": {

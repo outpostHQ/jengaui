@@ -54,7 +54,7 @@
     "@react-aria/overlays": "^3.7.3",
     "@react-stately/collections": "^3.3.4",
     "@react-stately/combobox": "^3.0.1",
-    "tastycss-react": "^0.5.4"
+    "tastycss-react": "^0.5.5"
   },
   "homepage": "https://github.com/numldesign/jenga-ui",
   "repository": {

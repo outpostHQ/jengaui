@@ -59,7 +59,7 @@
     "@react-spectrum/utils": "^3.6.3",
     "@react-stately/toggle": "^3.2.3",
     "@react-stately/utils": "^3.3.0",
-    "tastycss-react": "^0.5.4"
+    "tastycss-react": "^0.5.5"
   },
   "homepage": "https://github.com/numldesign/jenga-ui",
   "repository": {

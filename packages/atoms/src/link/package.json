@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@react-types/shared": "^3.10.1",
-    "tastycss-react": "^0.5.4"
+    "tastycss-react": "^0.5.5"
   },
   "homepage": "https://github.com/numldesign/jenga-ui",
   "repository": {
