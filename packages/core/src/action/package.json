@@ -1,6 +1,6 @@
 {
   "name": "@jenga-ui/action",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "Jenga-UI React action for button component",
   "keywords": [
