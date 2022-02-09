@@ -498,5 +498,5 @@ function Option({ item, state, styles, shouldUseVirtualFocus }: any) {
 
 const _Select = Object.assign(forwardRef(Select), { Item })
 // @ts-ignore
-_Select.cubeInputType = 'Select'
+_Select.jengaInputType = 'Select'
 export { _Select as Select }

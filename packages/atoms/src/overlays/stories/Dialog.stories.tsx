@@ -115,7 +115,7 @@ const Template = ({ size, ...props }: any) => {
             // styles={{
             //   width: '320px',
             //   placeSelf: 'end',
-            //   height: '@cube-visual-viewport-height',
+            //   height: '@jenga-visual-viewport-height',
             // }}
           >
             <Title>Modal title</Title>

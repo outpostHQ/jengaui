@@ -46,7 +46,7 @@ export function OverlayWrapper({
       in={isOpen}
       unmountOnExit
       timeout={180}
-      classNames="cube-overlay-transition"
+      classNames="jenga-overlay-transition"
     >
       {children}
     </CSSTransition>

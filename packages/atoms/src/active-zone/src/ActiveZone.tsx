@@ -17,7 +17,7 @@ import { useFocusableRef } from '@react-spectrum/utils'
 import { FocusableOptions, useFocusable } from '@react-aria/focus'
 import { useFocus } from '@jenga-ui/core'
 
-export interface CubeActiveZoneProps
+export interface JengaActiveZoneProps
   extends BaseProps,
     TagNameProps,
     BaseStyleProps,
@@ -41,7 +41,7 @@ const DEFAULT_STYLES: Styles = {
 const STYLE_PROPS = [...CONTAINER_STYLES, ...TEXT_STYLES]
 
 const ActiveZone = (
-  { as, label, onClick, ...props }: CubeActiveZoneProps,
+  { as, label, onClick, ...props }: JengaActiveZoneProps,
   ref
 ) => {
   const isDisabled = props.isDisabled

@@ -17,7 +17,7 @@ import { TrayProps } from '@react-types/overlays'
 
 const TRAY_STYLES: Styles = {
   zIndex: 2,
-  height: 'max (@cube-visual-viewport-height * .9)',
+  height: 'max (@jenga-visual-viewport-height * .9)',
   width: '288px 90vw',
   pointerEvents: 'auto',
   transition:
@@ -131,7 +131,7 @@ const TrayWrapper = forwardRef(function (props: JengaTrayWrapperProps, ref) {
   }, [height, viewport.height])
 
   const wrapperStyle = {
-    '--cube-visual-viewport-height': height + 'px',
+    '--jenga-visual-viewport-height': height + 'px',
   }
 
   const domProps = mergeProps(otherProps, overlayProps)

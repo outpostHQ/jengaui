@@ -80,7 +80,7 @@ const TRIGGER_STYLES: Styles = {
   cursor: 'pointer',
 } as const
 
-export interface CubeComboBoxProps<T>
+export interface JengaComboBoxProps<T>
   extends Omit<JengaSelectBaseProps<T>, 'onOpenChange'>,
     ComboBoxProps<T>,
     CollectionBase<T> {
@@ -98,7 +98,7 @@ export interface CubeComboBoxProps<T>
   size?: 'small' | 'default' | 'large' | string
 }
 
-function ComboBox<T extends object>(props: CubeComboBoxProps<T>, ref) {
+function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
   props = useProviderProps(props)
   props = useFormProps(props)
 
@@ -352,7 +352,7 @@ function ComboBox<T extends object>(props: CubeComboBoxProps<T>, ref) {
 }
 
 const _ComboBox = Object.assign(forwardRef(ComboBox), {
-  cubeInputType: 'ComboBox',
+  jengaInputType: 'ComboBox',
   Item,
 })
 export { _ComboBox as ComboBox }

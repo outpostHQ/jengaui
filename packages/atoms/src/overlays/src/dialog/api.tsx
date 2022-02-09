@@ -36,11 +36,11 @@ export const api: DialogService = {
   init() {
     if (this.root) return
 
-    const uikitRoot = document.getElementById('cube-ui-kit-root')
+    const uikitRoot = document.getElementById('jenga-ui-kit-root')
 
     this.root = document.createElement('div')
 
-    this.root.classList.add('cube-dialog-container')
+    this.root.classList.add('jenga-dialog-container')
 
     if (uikitRoot) {
       uikitRoot.appendChild(this.root)
@@ -48,7 +48,7 @@ export const api: DialogService = {
       this._render([])
     } else {
       console.warn(
-        'Cube UI Kit: unable to create a Modal because the Root component is not found.'
+        'Jenga UI Kit: unable to create a Modal because the Root component is not found.'
       )
     }
   },

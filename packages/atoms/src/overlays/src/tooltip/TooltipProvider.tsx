@@ -1,12 +1,12 @@
 import React from 'react'
-import { CubeTooltipTriggerProps, TooltipTrigger } from './TooltipTrigger'
+import { JengaTooltipTriggerProps, TooltipTrigger } from './TooltipTrigger'
 import { JengaTooltipProps, Tooltip } from './Tooltip'
 import { ReactNode, useEffect, useState } from 'react'
 import { Styles } from 'tastycss-react'
 
 export interface JengaTooltipProviderProps
-  extends Omit<CubeTooltipTriggerProps, 'children'> {
-  children: CubeTooltipTriggerProps['children'][0]
+  extends Omit<JengaTooltipTriggerProps, 'children'> {
+  children: JengaTooltipTriggerProps['children'][0]
   title?: ReactNode
   tooltipStyles?: Styles
   width?: JengaTooltipProps['width']

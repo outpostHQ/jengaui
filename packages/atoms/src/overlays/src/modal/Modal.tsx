@@ -26,7 +26,7 @@ export const OVERLAY_WRAPPER_STYLES: Styles = {
   },
   boxSizing: 'border-box',
   width: '100vw',
-  height: '@cube-visual-viewport-height',
+  height: '@jenga-visual-viewport-height',
   pointerEvents: 'none',
   zIndex: 2,
   transition: 'visibility 0ms linear .13s',
@@ -36,13 +36,13 @@ const MODAL_STYLES: Styles = {
   display: 'grid',
   zIndex: 2,
   height: {
-    '': 'max (@cube-visual-viewport-height * .9)',
+    '': 'max (@jenga-visual-viewport-height * .9)',
     '[data-type="fullscreenTakeover"] | [data-type="panel"]':
-      '@cube-visual-viewport-height @cube-visual-viewport-height',
+      '@jenga-visual-viewport-height @jenga-visual-viewport-height',
     '[data-type="fullscreen"]':
-      '(@cube-visual-viewport-height * .9) (@cube-visual-viewport-height * .9)',
+      '(@jenga-visual-viewport-height * .9) (@jenga-visual-viewport-height * .9)',
     '[data-type="fullscreenTakeover"]':
-      '@cube-visual-viewport-height @cube-visual-viewport-height',
+      '@jenga-visual-viewport-height @jenga-visual-viewport-height',
   },
   width: {
     width: '288px 90vw',
@@ -127,7 +127,7 @@ const ModalWrapper = forwardRef(function (props: ModalWrapperProps, ref) {
   const { modalProps } = useModal()
   const viewport = useViewportSize()
   const style = {
-    '--cube-visual-viewport-height': viewport.height + 'px',
+    '--jenga-visual-viewport-height': viewport.height + 'px',
   }
 
   return (

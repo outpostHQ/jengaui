@@ -46,24 +46,24 @@ export const getOverlayTransitionCSS = ({
     --overlay-normal-scale: scale(1, 1);
   }
 
-  &.cube-overlay-transition-enter${suffix} {
+  &.jenga-overlay-transition-enter${suffix} {
     opacity: 0;
     transform: var(--overlay-translate-hidden) var(--overlay-hidden-scale);
   }
 
-  &.cube-overlay-transition-enter-active${suffix} {
+  &.jenga-overlay-transition-enter-active${suffix} {
     opacity: 1;
     transform: var(--overlay-translate-visible) var(--overlay-normal-scale);
     transition: transform var(--overlay-transition) cubic-bezier(0, .66, 0, .66), opacity var(--overlay-transition) cubic-bezier(0, .66, 0, .66);
     pointer-events: none;
   }
 
-  &.cube-overlay-transition-exit${suffix} {
+  &.jenga-overlay-transition-exit${suffix} {
     opacity: 1;
     transform: var(--overlay-translate-visible) var(--overlay-normal-scale);
   }
 
-  &.cube-overlay-transition-exit-active${suffix} {
+  &.jenga-overlay-transition-exit-active${suffix} {
     opacity: 0;
     transform: var(--overlay-translate-hidden) var(--overlay-hidden-scale);
     pointer-events: none;
