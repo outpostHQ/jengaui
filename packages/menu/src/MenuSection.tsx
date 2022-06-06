@@ -1,27 +1,27 @@
-import React, { Fragment, Key } from 'react';
-import { MenuItem } from './MenuItem';
-import { Node } from '@react-types/shared';
-import { TreeState } from '@react-stately/tree';
-import { useMenuSection } from '@react-aria/menu';
+import React, { Fragment, Key } from 'react'
+import { MenuItem } from './MenuItem'
+import { Node } from '@react-types/shared'
+import { TreeState } from '@react-stately/tree'
+import { useMenuSection } from '@react-aria/menu'
 import {
   StyledMenu,
   StyledMenuSection,
   StyledMenuSectionHeading,
-} from './styled';
+} from './styled'
 
 export interface JengaMenuSectionProps<T> {
-  item: Node<T>;
-  state: TreeState<T>;
-  onAction?: (key: Key) => void;
+  item: Node<T>
+  state: TreeState<T>
+  onAction?: (key: Key) => void
 }
 
 /** @private */
 export function MenuSection<T>(props: JengaMenuSectionProps<T>) {
-  let { item, state, onAction } = props;
+  let { item, state, onAction } = props
   let { itemProps, headingProps, groupProps } = useMenuSection({
     heading: item.rendered,
     'aria-label': item['aria-label'],
-  });
+  })
 
   return (
     <Fragment>
@@ -40,16 +40,16 @@ export function MenuSection<T>(props: JengaMenuSectionProps<T>) {
                 state={state}
                 onAction={onAction}
               />
-            );
+            )
 
             if (node.wrapper) {
-              item = node.wrapper(item);
+              item = node.wrapper(item)
             }
 
-            return item;
+            return item
           })}
         </StyledMenu>
       </StyledMenuSection>
     </Fragment>
-  );
+  )
 }

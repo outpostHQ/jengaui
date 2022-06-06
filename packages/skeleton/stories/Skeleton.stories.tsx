@@ -1,5 +1,5 @@
-import { Skeleton } from '../src/Skeleton';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { Skeleton } from '../src/Skeleton'
+import { baseProps } from '../../../stories/lists/baseProps'
 
 export default {
   title: 'Content/Skeleton',
@@ -9,44 +9,44 @@ export default {
       exclude: baseProps,
     },
   },
-};
+}
 
 const Template = (args) => {
-  return <Skeleton {...args} />;
-};
+  return <Skeleton {...args} />
+}
 
-export const Page = Template.bind({});
+export const Page = Template.bind({})
 Page.args = {
   layout: 'page',
-};
+}
 
-export const Topbar = Template.bind({});
+export const Topbar = Template.bind({})
 Topbar.args = {
   layout: 'topbar',
-};
+}
 
-export const Menu = Template.bind({});
+export const Menu = Template.bind({})
 Menu.args = {
   layout: 'menu',
-};
+}
 
-export const Tabs = Template.bind({});
+export const Tabs = Template.bind({})
 Tabs.args = {
   layout: 'tabs',
-};
+}
 
-export const Stats = Template.bind({});
+export const Stats = Template.bind({})
 Stats.args = {
   layout: 'stats',
-};
+}
 
-export const Table = Template.bind({});
+export const Table = Template.bind({})
 Table.args = {
   layout: 'table',
-};
+}
 
-export const Chart = Template.bind({});
+export const Chart = Template.bind({})
 Chart.args = {
   layout: 'chart',
   columns: 16,
-};
+}

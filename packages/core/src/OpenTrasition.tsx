@@ -1,10 +1,10 @@
-import { Children, cloneElement } from 'react';
-import Transition from 'react-transition-group/Transition';
+import { Children, cloneElement } from 'react'
+import Transition from 'react-transition-group/Transition'
 
 const OPEN_STATES = {
   entering: false,
   entered: true,
-};
+}
 
 /**
  * Timeout issues adding css animations to enter may be related to
@@ -26,9 +26,9 @@ export function OpenTransition(props) {
         Children.map(
           props.children,
           (child) =>
-            child && cloneElement(child, { isOpen: !!OPEN_STATES[state] }),
+            child && cloneElement(child, { isOpen: !!OPEN_STATES[state] })
         )
       }
     </Transition>
-  );
+  )
 }

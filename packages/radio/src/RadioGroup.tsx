@@ -1,10 +1,15 @@
-import { forwardRef } from 'react';
-import { useDOMRef } from '@react-spectrum/utils';
-import { useProviderProps } from '@jenga-ui/providers';
-import { useRadioGroup } from '@react-aria/radio';
-import { useRadioGroupState } from '@react-stately/radio';
-import { FormContext, useFormProps, FieldWrapper, FormFieldProps } from '@jenga-ui/form';
-import { RadioContext } from './context';
+import { forwardRef } from 'react'
+import { useDOMRef } from '@react-spectrum/utils'
+import { useProviderProps } from '@jenga-ui/providers'
+import { useRadioGroup } from '@react-aria/radio'
+import { useRadioGroupState } from '@react-stately/radio'
+import {
+  FormContext,
+  useFormProps,
+  FieldWrapper,
+  FormFieldProps,
+} from '@jenga-ui/form'
+import { RadioContext } from './context'
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -12,18 +17,15 @@ import {
   OUTER_STYLES,
   Styles,
   tasty,
-} from 'tastycss';
-import type { AriaRadioGroupProps } from '@react-types/radio';
-import {
-  castNullableStringValue,
-  WithNullableValue,
-} from '@jenga-ui/utils';
+} from 'tastycss'
+import type { AriaRadioGroupProps } from '@react-types/radio'
+import { castNullableStringValue, WithNullableValue } from '@jenga-ui/utils'
 
 export interface JengaRadioGroupProps
   extends BaseProps,
     AriaRadioGroupProps,
     FormFieldProps {
-  groupStyles?: Styles;
+  groupStyles?: Styles
 }
 
 const RadioGroupElement = tasty({
@@ -42,12 +44,12 @@ const RadioGroupElement = tasty({
     },
     padding: '(1x - 1bw) 0',
   },
-});
+})
 
 function RadioGroup(props: WithNullableValue<JengaRadioGroupProps>, ref) {
-  props = castNullableStringValue(props);
-  props = useProviderProps(props);
-  props = useFormProps(props);
+  props = castNullableStringValue(props)
+  props = useProviderProps(props)
+  props = useFormProps(props)
 
   let {
     isDisabled,
@@ -68,14 +70,14 @@ function RadioGroup(props: WithNullableValue<JengaRadioGroupProps>, ref) {
     styles,
     groupStyles,
     ...otherProps
-  } = props;
-  let domRef = useDOMRef(ref);
+  } = props
+  let domRef = useDOMRef(ref)
 
-  styles = extractStyles(otherProps, OUTER_STYLES, styles);
-  groupStyles = extractStyles(otherProps, BLOCK_STYLES, groupStyles);
+  styles = extractStyles(otherProps, OUTER_STYLES, styles)
+  groupStyles = extractStyles(otherProps, BLOCK_STYLES, groupStyles)
 
-  let state = useRadioGroupState(props);
-  let { radioGroupProps: fieldProps, labelProps } = useRadioGroup(props, state);
+  let state = useRadioGroupState(props)
+  let { radioGroupProps: fieldProps, labelProps } = useRadioGroup(props, state)
 
   let radioGroup = (
     <RadioGroupElement
@@ -94,7 +96,7 @@ function RadioGroup(props: WithNullableValue<JengaRadioGroupProps>, ref) {
         <RadioContext.Provider value={state}>{children}</RadioContext.Provider>
       </FormContext.Provider>
     </RadioGroupElement>
-  );
+  )
 
   return (
     <FieldWrapper
@@ -119,15 +121,15 @@ function RadioGroup(props: WithNullableValue<JengaRadioGroupProps>, ref) {
         ref: domRef,
       }}
     />
-  );
+  )
 }
 
 /**
  * Radio groups allow users to select a single option from a list of mutually exclusive options.
  * All possible options are exposed up front for users to compare.
  */
-const _RadioGroup = forwardRef(RadioGroup);
+const _RadioGroup = forwardRef(RadioGroup)
 
-(_RadioGroup as any).jengaInputType = 'RadioGroup';
+;(_RadioGroup as any).jengaInputType = 'RadioGroup'
 
-export { _RadioGroup as RadioGroup };
+export { _RadioGroup as RadioGroup }

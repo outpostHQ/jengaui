@@ -1,32 +1,32 @@
 const DIRECTION_MAP = {
-    initial: 'top center',
-    top: 'bottom center',
-    right: 'center left',
-    left: 'center right',
-    bottom: 'top center',
-  };
-  const TRANSLATE_MAP = {
-    initial: 'translate(0px, calc(-1 * var(--overlay-offset)))',
-    top: 'translate(0px, calc(1 * var(--overlay-offset)))',
-    right: 'translate(calc(-1 * var(--overlay-offset)), 0px)',
-    left: 'translate(calc(1 * var(--overlay-offset)), 0px)',
-    bottom: 'translate(0px, calc(-1 * var(--overlay-offset)))',
-  };
-  
-  export interface OverlayTransitionCSSProps {
-    suffix?: string;
-    placement?: string;
-    minScale?: string | number;
-    minOffset?: string;
-    forChild?: boolean;
-  }
-  
-  export const getOverlayTransitionCSS = ({
-    suffix = '',
-    placement = 'initial',
-    minScale = 0.8,
-    minOffset = '8px',
-  }: OverlayTransitionCSSProps = {}) => `
+  initial: 'top center',
+  top: 'bottom center',
+  right: 'center left',
+  left: 'center right',
+  bottom: 'top center',
+}
+const TRANSLATE_MAP = {
+  initial: 'translate(0px, calc(-1 * var(--overlay-offset)))',
+  top: 'translate(0px, calc(1 * var(--overlay-offset)))',
+  right: 'translate(calc(-1 * var(--overlay-offset)), 0px)',
+  left: 'translate(calc(1 * var(--overlay-offset)), 0px)',
+  bottom: 'translate(0px, calc(-1 * var(--overlay-offset)))',
+}
+
+export interface OverlayTransitionCSSProps {
+  suffix?: string
+  placement?: string
+  minScale?: string | number
+  minOffset?: string
+  forChild?: boolean
+}
+
+export const getOverlayTransitionCSS = ({
+  suffix = '',
+  placement = 'initial',
+  minScale = 0.8,
+  minOffset = '8px',
+}: OverlayTransitionCSSProps = {}) => `
     &${suffix} {
       transform: var(--overlay-position);
       transform-origin: ${DIRECTION_MAP[placement]};
@@ -65,4 +65,4 @@ const DIRECTION_MAP = {
       pointer-events: none;
       transition: transform var(--overlay-transition) cubic-bezier(.66, 0, .66, 0), opacity var(--overlay-transition) cubic-bezier(.66, 0, .66, 0);
     }
-  `;
+  `

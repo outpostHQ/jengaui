@@ -1,12 +1,12 @@
-import { ComponentType, forwardRef, ReactNode, useMemo } from 'react';
+import { ComponentType, forwardRef, ReactNode, useMemo } from 'react'
 import {
   CheckCircleFilled,
   CloseCircleFilled,
   InfoCircleFilled,
   WarningFilled,
-} from '@ant-design/icons';
+} from '@ant-design/icons'
 
-import { Title } from '@jenga-ui/content';
+import { Title } from '@jenga-ui/content'
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -14,30 +14,30 @@ import {
   extractStyles,
   filterBaseProps,
   tasty,
-} from 'tastycss';
-import { wrapNodeIfPlain } from '@jenga-ui/utils';
+} from 'tastycss'
+import { wrapNodeIfPlain } from '@jenga-ui/utils'
 
 export interface JengaResultProps extends BaseProps, ContainerStyleProps {
   /** Additional block content. For example, a set of buttons */
-  children?: ReactNode;
+  children?: ReactNode
   /** Custom icon element */
-  icon?: ReactNode;
+  icon?: ReactNode
   /**
    * Result status from ready-made templates
    * @default 'info'
    */
-  status?: JengaResultStatus;
+  status?: JengaResultStatus
   /**
    * The subTitle
    * @deprecated The subTitle prop is deprecated and will be removed in next major release. consider using subtitle instead
    */
-  subTitle?: ReactNode;
+  subTitle?: ReactNode
   /**
    * Subtitle of the Result component
    */
-  subtitle?: ReactNode;
+  subtitle?: ReactNode
   /** The title */
-  title?: ReactNode;
+  title?: ReactNode
 }
 
 export type JengaResultStatus =
@@ -47,15 +47,15 @@ export type JengaResultStatus =
   | 'warning'
   | 404
   | 403
-  | 500;
+  | 500
 
 type StatusIconMap = Record<
   JengaResultStatus,
   {
-    color: string;
-    component: ComponentType;
+    color: string
+    component: ComponentType
   }
->;
+>
 
 const Container = tasty({
   qa: 'Result_Container',
@@ -79,13 +79,13 @@ const Container = tasty({
       gap: '1x',
     },
   },
-});
+})
 
 const IconWrapper = tasty({
   styles: {
     fontSize: '10x',
   },
-});
+})
 
 const statusIconMap: StatusIconMap = {
   success: {
@@ -108,55 +108,55 @@ const statusIconMap: StatusIconMap = {
     color: '#purple',
     component: () => {
       // TODO: Needs to be implemented in the future
-      return null;
+      return null
     },
   },
   403: {
     color: '#purple',
     component: () => {
       // TODO: Needs to be implemented in the future
-      return null;
+      return null
     },
   },
   500: {
     color: '#purple',
     component: () => {
       // TODO: Needs to be implemented in the future
-      return null;
+      return null
     },
   },
-};
+}
 
 function Result(props: JengaResultProps, ref) {
   let { children, icon, status, subTitle, subtitle, title, ...otherProps } =
-    props;
+    props
 
-  subtitle = subtitle ?? subTitle;
+  subtitle = subtitle ?? subTitle
 
   if (icon && status) {
     console.warn(
-      'Don\'t use "icon" and "status" together, it can lead to possible errors.',
-    );
+      'Don\'t use "icon" and "status" together, it can lead to possible errors.'
+    )
   }
 
   const iconNode = useMemo(() => {
     if (icon) {
-      return icon;
+      return icon
     }
 
     const { color, component: Component } =
       status && statusIconMap.hasOwnProperty(status)
         ? statusIconMap[status]
-        : statusIconMap.info;
+        : statusIconMap.info
 
     return (
       <IconWrapper data-element="IconWrapper" styles={{ color }}>
         <Component data-element="Icon" />
       </IconWrapper>
-    );
-  }, [icon, status]);
+    )
+  }, [icon, status])
 
-  const styles = extractStyles(otherProps, CONTAINER_STYLES);
+  const styles = extractStyles(otherProps, CONTAINER_STYLES)
 
   return (
     <Container
@@ -181,9 +181,9 @@ function Result(props: JengaResultProps, ref) {
       )}
       {children && <div data-element="Content">{children}</div>}
     </Container>
-  );
+  )
 }
 
-const _Result = forwardRef(Result);
+const _Result = forwardRef(Result)
 
-export { _Result as Result };
+export { _Result as Result }

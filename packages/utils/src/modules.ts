@@ -1,3 +1,3 @@
 export function extractModule(promise) {
-    return promise.then((module) => module.default || module);
-  }
+  return promise.then((module) => module.default || module)
+}

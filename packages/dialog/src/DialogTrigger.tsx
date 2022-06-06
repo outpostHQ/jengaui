@@ -1,17 +1,17 @@
-import { Fragment, ReactElement, RefObject, useEffect, useRef } from 'react';
-import { useOverlayTriggerState } from '@react-stately/overlays';
-import { PressResponder } from '@react-aria/interactions';
-import { useMediaQuery } from '@react-spectrum/utils';
-import { useOverlayPosition, useOverlayTrigger } from '@react-aria/overlays';
-import { DialogContext } from './context';
-import { Modal, Popover, Tray } from '@jenga-ui/modal';
-import { Styles } from 'tastycss';
+import { Fragment, ReactElement, RefObject, useEffect, useRef } from 'react'
+import { useOverlayTriggerState } from '@react-stately/overlays'
+import { PressResponder } from '@react-aria/interactions'
+import { useMediaQuery } from '@react-spectrum/utils'
+import { useOverlayPosition, useOverlayTrigger } from '@react-aria/overlays'
+import { DialogContext } from './context'
+import { Modal, Popover, Tray } from '@jenga-ui/modal'
+import { Styles } from 'tastycss'
 
-export type JengaDialogClose = (close: () => void) => ReactElement;
+export type JengaDialogClose = (close: () => void) => ReactElement
 
 export interface JengaDialogTriggerProps {
   /** The Dialog and its trigger element. See the DialogTrigger [Content section](#content) for more information on what to provide as children. */
-  children: [ReactElement, JengaDialogClose | ReactElement];
+  children: [ReactElement, JengaDialogClose | ReactElement]
   /**
    * The type of Dialog that should be rendered. See the DialogTrigger [types section](#dialog-types) for an explanation on each.
    * @default 'modal'
@@ -22,23 +22,23 @@ export interface JengaDialogTriggerProps {
     | 'tray'
     | 'fullscreen'
     | 'fullscreenTakeover'
-    | 'panel';
+    | 'panel'
   /** The type of Dialog that should be rendered when on a mobile device. See DialogTrigger [types section](#dialog-types) for an explanation on each. */
-  mobileType?: 'modal' | 'tray' | 'fullscreen' | 'fullscreenTakeover' | 'panel';
+  mobileType?: 'modal' | 'tray' | 'fullscreen' | 'fullscreenTakeover' | 'panel'
   /**
    * Whether a popover type Dialog's arrow should be hidden.
    */
-  hideArrow?: boolean;
+  hideArrow?: boolean
   /** The ref of the element the Dialog should visually attach itself to. Defaults to the trigger button if not defined. */
-  targetRef?: RefObject<HTMLElement>;
+  targetRef?: RefObject<HTMLElement>
   /** Whether a modal type Dialog should be dismissable. */
-  isDismissable?: boolean;
+  isDismissable?: boolean
   /** Whether pressing the escape key to close the dialog should be disabled. */
-  isKeyboardDismissDisabled?: boolean;
+  isKeyboardDismissDisabled?: boolean
   /** The screen breakpoint for the mobile type */
-  mobileViewport?: number;
+  mobileViewport?: number
   /** The style map for the overlay **/
-  styles?: Styles;
+  styles?: Styles
 }
 
 function DialogTrigger(props) {
@@ -54,33 +54,33 @@ function DialogTrigger(props) {
     styles,
     mobileViewport = 700,
     ...positionProps
-  } = props;
+  } = props
 
   if (!Array.isArray(children) || children.length > 2) {
-    throw new Error('DialogTrigger must have exactly 2 children');
+    throw new Error('DialogTrigger must have exactly 2 children')
   }
   // if a function is passed as the second child, it won't appear in toArray
-  let [trigger, content] = children;
+  let [trigger, content] = children
 
   // On small devices, show a modal or tray instead of a popover.
-  let isMobile = useMediaQuery(`(max-width: ${mobileViewport}px)`);
+  let isMobile = useMediaQuery(`(max-width: ${mobileViewport}px)`)
   if (isMobile) {
     // handle cases where desktop popovers need a close button for the mobile modal view
     if (type !== 'modal' && mobileType === 'modal') {
-      isDismissable = true;
+      isDismissable = true
     }
 
-    type = mobileType;
+    type = mobileType
   }
 
-  let state = useOverlayTriggerState(props);
+  let state = useOverlayTriggerState(props)
 
-  let wasOpen = useRef(false);
-  let isExiting = useRef(false);
-  let onExiting = () => (isExiting.current = true);
-  let onExited = () => (isExiting.current = false);
+  let wasOpen = useRef(false)
+  let isExiting = useRef(false)
+  let onExiting = () => (isExiting.current = true)
+  let onExited = () => (isExiting.current = false)
 
-  wasOpen.current = state.isOpen;
+  wasOpen.current = state.isOpen
 
   useEffect(() => {
     return () => {
@@ -90,16 +90,16 @@ function DialogTrigger(props) {
         type !== 'tray'
       ) {
         console.warn(
-          'JengaUIKit: A DialogTrigger unmounted while open. This is likely due to being placed within a trigger that unmounts or inside a conditional. Consider using a DialogContainer instead.',
-        );
+          'JengaUIKit: A DialogTrigger unmounted while open. This is likely due to being placed within a trigger that unmounts or inside a conditional. Consider using a DialogContainer instead.'
+        )
       }
-    };
-  }, []);
+    }
+  }, [])
 
   function onClose(action) {
     if (isDismissable) {
-      onDismiss && onDismiss(action);
-      state.close();
+      onDismiss && onDismiss(action)
+      state.close()
     }
   }
 
@@ -115,7 +115,7 @@ function DialogTrigger(props) {
         isKeyboardDismissDisabled={isKeyboardDismissDisabled}
         hideArrow={hideArrow}
       />
-    );
+    )
   }
 
   let renderOverlay = () => {
@@ -137,7 +137,7 @@ function DialogTrigger(props) {
           >
             {typeof content === 'function' ? content(state.close) : content}
           </Modal>
-        );
+        )
       case 'tray':
         return (
           <Tray
@@ -148,9 +148,9 @@ function DialogTrigger(props) {
           >
             {typeof content === 'function' ? content(state.close) : content}
           </Tray>
-        );
+        )
     }
-  };
+  }
 
   return (
     <DialogTriggerBase
@@ -161,7 +161,7 @@ function DialogTrigger(props) {
       trigger={trigger}
       overlay={renderOverlay()}
     />
-  );
+  )
 }
 
 /**
@@ -169,8 +169,8 @@ function DialogTrigger(props) {
  * open state with the trigger's press state. Additionally, it allows you to customize the type and
  * positioning of the Dialog.
  */
-let _DialogTrigger = DialogTrigger;
-export { _DialogTrigger as DialogTrigger };
+let _DialogTrigger = DialogTrigger
+export { _DialogTrigger as DialogTrigger }
 
 function PopoverTrigger(allProps) {
   let {
@@ -182,10 +182,10 @@ function PopoverTrigger(allProps) {
     onClose,
     isKeyboardDismissDisabled,
     ...props
-  } = allProps;
+  } = allProps
 
-  let triggerRef = useRef<HTMLElement>(null);
-  let overlayRef = useRef<HTMLDivElement>(null);
+  let triggerRef = useRef<HTMLElement>(null)
+  let overlayRef = useRef<HTMLDivElement>(null)
 
   let {
     overlayProps: popoverProps,
@@ -200,18 +200,18 @@ function PopoverTrigger(allProps) {
     crossOffset: props.crossOffset,
     shouldFlip: props.shouldFlip,
     isOpen: state.isOpen,
-  });
+  })
 
   let { triggerProps, overlayProps } = useOverlayTrigger(
     { type: 'dialog' },
     state,
-    triggerRef,
-  );
+    triggerRef
+  )
 
   let triggerPropsWithRef = {
     ...triggerProps,
     ref: targetRef ? undefined : triggerRef,
-  };
+  }
 
   let overlay = (
     <Popover
@@ -226,7 +226,7 @@ function PopoverTrigger(allProps) {
     >
       {typeof content === 'function' ? content(state.close) : content}
     </Popover>
-  );
+  )
 
   return (
     <DialogTriggerBase
@@ -238,7 +238,7 @@ function PopoverTrigger(allProps) {
       onClose={onClose}
       overlay={overlay}
     />
-  );
+  )
 }
 
 function DialogTriggerBase(props) {
@@ -251,14 +251,14 @@ function DialogTriggerBase(props) {
     triggerProps = {},
     overlay,
     trigger,
-  } = props;
+  } = props
 
   let context = {
     type,
     onClose,
     isDismissable,
     ...dialogProps,
-  };
+  }
 
   return (
     <Fragment>
@@ -276,5 +276,5 @@ function DialogTriggerBase(props) {
       </PressResponder>
       <DialogContext.Provider value={context}>{overlay}</DialogContext.Provider>
     </Fragment>
-  );
+  )
 }

@@ -1,14 +1,14 @@
-import { expect } from '@storybook/jest';
-import { ComponentMeta, Story } from '@storybook/react';
-import { userEvent, within } from '@storybook/testing-library';
-import { action } from '@storybook/addon-actions';
-import { AlertDialog, JengaAlertDialogProps } from '../src/AlertDialog';
-import { useAlertDialogAPI } from '../src/AlertDialogApiProvider';
-import { baseProps } from '../../../stories/lists/baseProps';
-import { DialogTrigger } from '@jenga-ui/dialog';
-import { Button } from '@jenga-ui/button';
-import { DialogProps } from '../src/types';
-import { Paragraph } from '@jenga-ui/content';
+import { expect } from '@storybook/jest'
+import { ComponentMeta, Story } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
+import { action } from '@storybook/addon-actions'
+import { AlertDialog, JengaAlertDialogProps } from '../src/AlertDialog'
+import { useAlertDialogAPI } from '../src/AlertDialogApiProvider'
+import { baseProps } from '../../../stories/lists/baseProps'
+import { DialogTrigger } from '@jenga-ui/dialog'
+import { Button } from '@jenga-ui/button'
+import { DialogProps } from '../src/types'
+import { Paragraph } from '@jenga-ui/content'
 
 export default {
   title: 'Overlays/AlertDialog',
@@ -24,7 +24,7 @@ export default {
     ),
   },
   parameters: { controls: { exclude: baseProps } },
-} as ComponentMeta<typeof AlertDialog>;
+} as ComponentMeta<typeof AlertDialog>
 
 const Template: Story<JengaAlertDialogProps> = (args) => {
   return (
@@ -37,19 +37,19 @@ const Template: Story<JengaAlertDialogProps> = (args) => {
 
       {() => <AlertDialog title="Title" {...args} />}
     </DialogTrigger>
-  );
-};
+  )
+}
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = Template.bind({})
+Default.args = {}
 Default.play = async ({ canvasElement }) => {
-  const { getByRole } = within(canvasElement);
-  await userEvent.click(getByRole('button'));
-  await expect(getByRole('alertdialog')).toBeInTheDocument();
-};
+  const { getByRole } = within(canvasElement)
+  await userEvent.click(getByRole('button'))
+  await expect(getByRole('alertdialog')).toBeInTheDocument()
+}
 
 export const UsingApi: Story<DialogProps> = (args) => {
-  const dialogAPI = useAlertDialogAPI();
+  const dialogAPI = useAlertDialogAPI()
 
   return (
     <Button
@@ -63,22 +63,22 @@ export const UsingApi: Story<DialogProps> = (args) => {
     >
       Open Modal
     </Button>
-  );
-};
+  )
+}
 UsingApi.play = async ({ canvasElement }) => {
-  const { getByRole } = within(canvasElement);
-  await userEvent.click(getByRole('button'));
+  const { getByRole } = within(canvasElement)
+  await userEvent.click(getByRole('button'))
 
-  await expect(getByRole('alertdialog')).toBeInTheDocument();
-};
+  await expect(getByRole('alertdialog')).toBeInTheDocument()
+}
 
 export const UsingApiWithCancel: Story<DialogProps> = (args) => {
-  const dialogAPI = useAlertDialogAPI();
+  const dialogAPI = useAlertDialogAPI()
 
   return (
     <Button
       onPress={() => {
-        const cancelDialog = new AbortController();
+        const cancelDialog = new AbortController()
 
         const openedDialog = dialogAPI.open(
           {
@@ -91,23 +91,23 @@ export const UsingApiWithCancel: Story<DialogProps> = (args) => {
               },
             },
           },
-          { cancelToken: cancelDialog.signal },
-        );
+          { cancelToken: cancelDialog.signal }
+        )
 
         openedDialog
           .then(action('DialogClosed'))
-          .catch(action('DialogClosedWithReject'));
+          .catch(action('DialogClosedWithReject'))
       }}
     >
       Open Modal
     </Button>
-  );
-};
+  )
+}
 UsingApiWithCancel.play = async ({ canvasElement }) => {
-  const { getByRole, getByTestId, queryByRole } = within(canvasElement);
+  const { getByRole, getByTestId, queryByRole } = within(canvasElement)
 
-  await userEvent.click(getByRole('button'));
-  await expect(queryByRole('alertdialog')).toBeInTheDocument();
-  await userEvent.click(getByTestId('CancelToken'));
-  await expect(queryByRole('alertdialog')).not.toBeInTheDocument();
-};
+  await userEvent.click(getByRole('button'))
+  await expect(queryByRole('alertdialog')).toBeInTheDocument()
+  await userEvent.click(getByTestId('CancelToken'))
+  await expect(queryByRole('alertdialog')).not.toBeInTheDocument()
+}

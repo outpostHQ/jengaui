@@ -1,4 +1,4 @@
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react'
 import {
   Submit,
   TextInput,
@@ -13,20 +13,20 @@ import {
   PasswordInput,
   Switch,
   Block,
-} from '../../../index';
-import { NumberInput } from '../NumberInput/NumberInput';
-import { baseProps } from '../../../stories/lists/baseProps';
-import { Button } from '../../actions';
-import { linkTo } from '@storybook/addon-links';
+} from '../../../index'
+import { NumberInput } from '../NumberInput/NumberInput'
+import { baseProps } from '../../../stories/lists/baseProps'
+import { Button } from '../../actions'
+import { linkTo } from '@storybook/addon-links'
 
 export default {
   title: 'Forms/ComplexForm',
   component: Form,
   parameters: { controls: { exclude: baseProps } },
-};
+}
 
 const Template: StoryFn<typeof Form> = (args) => {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
 
   return (
     <>
@@ -37,10 +37,10 @@ const Template: StoryFn<typeof Form> = (args) => {
         form={form}
         {...args}
         onSubmit={(v) => {
-          console.log('onSubmit:', v);
+          console.log('onSubmit:', v)
         }}
         onValuesChange={(v) => {
-          console.log('onChange', v);
+          console.log('onChange', v)
         }}
         defaultValues={{
           text: 'some',
@@ -64,8 +64,8 @@ const Template: StoryFn<typeof Form> = (args) => {
                 return value.length >= 8
                   ? Promise.resolve()
                   : Promise.reject(
-                      'This field should be at least 8 symbols long',
-                    );
+                      'This field should be at least 8 symbols long'
+                    )
               },
             }),
           ]}
@@ -87,7 +87,7 @@ const Template: StoryFn<typeof Form> = (args) => {
           necessityIndicator={'label'}
           defaultValue="tenphi@gmail.com"
           shouldUpdate={({ email }) => {
-            return !!email;
+            return !!email
           }}
         >
           <TextInput type="email" label="Email field" />
@@ -157,15 +157,15 @@ const Template: StoryFn<typeof Form> = (args) => {
         <Submit>Submit</Submit>
       </Form>
     </>
-  );
-};
+  )
+}
 
 export const FormInsideDialog: StoryFn = () => {
   return (
     <Button onPress={linkTo('Overlays/DialogForm')}>
       Moved to a Dialog Form Page
     </Button>
-  );
-};
+  )
+}
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})

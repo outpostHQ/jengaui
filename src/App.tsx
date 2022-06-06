@@ -1,26 +1,26 @@
-import { useState } from 'react';
-import { Block, Element, LoadingAnimation, Title } from './index';
-import { Button } from '@jenga-ui/button';
+import { useState } from 'react'
+import { Block, Element, LoadingAnimation, Title } from './index'
+import { Button } from '@jenga-ui/button'
 // import ResponsiveProvider from './providers/Responsive';
 // import { Modal } from './components/organisms/Modal/Modal';
 // import { notification } from './services/notification';
-import { color, StyleProvider } from 'tastycss';
-import { Card } from '@jenga-ui/card';
-import { Flex, Space, Grid } from '@jenga-ui/layout';
-import { Base64Upload } from './components/other/Base64Upload/Base64Upload';
-import { Link } from '@jenga-ui/link';
-import { Field, Form, useForm } from '@jenga-ui/form';
-import { TextInput } from '@jenga-ui/text-input';
-import { Provider } from '@jenga-ui/providers';
-import { GridProvider } from '@jenga-ui/providers';
+import { color, StyleProvider } from 'tastycss'
+import { Card } from '@jenga-ui/card'
+import { Flex, Space, Grid } from '@jenga-ui/layout'
+import { Base64Upload } from './components/other/Base64Upload/Base64Upload'
+import { Link } from '@jenga-ui/link'
+import { Field, Form, useForm } from '@jenga-ui/form'
+import { TextInput } from '@jenga-ui/text-input'
+import { Provider } from '@jenga-ui/providers'
+import { GridProvider } from '@jenga-ui/providers'
 
 // window.notification = notification;
 //
 // window.Modal = Modal;
 
 function App() {
-  const [inProp, setInProp] = useState(false);
-  const [form] = useForm();
+  const [inProp, setInProp] = useState(false)
+  const [form] = useForm()
 
   return (
     <>
@@ -163,7 +163,7 @@ function App() {
         </Grid>
       </Provider>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

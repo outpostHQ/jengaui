@@ -1,28 +1,22 @@
-import { forwardRef, useCallback, useLayoutEffect, useRef } from 'react';
-import {
-  JengaTextInputBaseProps,
-  TextInputBase,
-} from '@jenga-ui/text-input';
-import { useControlledState } from '@react-stately/utils';
-import { useProviderProps } from '@jenga-ui/providers';
-import { useTextField } from '@react-aria/textfield';
-import { chain } from '@react-aria/utils';
-import {
-  castNullableStringValue,
-  WithNullableValue,
-} from '@jenga-ui/utils';
+import { forwardRef, useCallback, useLayoutEffect, useRef } from 'react'
+import { JengaTextInputBaseProps, TextInputBase } from '@jenga-ui/text-input'
+import { useControlledState } from '@react-stately/utils'
+import { useProviderProps } from '@jenga-ui/providers'
+import { useTextField } from '@react-aria/textfield'
+import { chain } from '@react-aria/utils'
+import { castNullableStringValue, WithNullableValue } from '@jenga-ui/utils'
 
 export interface JengaTextAreaProps extends JengaTextInputBaseProps {
   /** Whether the textarea should change its size depends on content */
-  autoSize?: boolean;
+  autoSize?: boolean
   /** The rows attribute in HTML is used to specify the number of visible text lines for the
    * control i.e the number of rows to display. */
-  rows?: number;
+  rows?: number
 }
 
 function TextArea(props: WithNullableValue<JengaTextAreaProps>, ref) {
-  props = castNullableStringValue(props);
-  props = useProviderProps(props);
+  props = castNullableStringValue(props)
+  props = useProviderProps(props)
   let {
     autoSize = false,
     isDisabled = false,
@@ -31,24 +25,24 @@ function TextArea(props: WithNullableValue<JengaTextAreaProps>, ref) {
     onChange,
     rows,
     ...otherProps
-  } = props;
+  } = props
 
-  rows = rows || 3;
+  rows = rows || 3
 
   let [inputValue, setInputValue] = useControlledState(
     props.value,
     props.defaultValue,
-    () => {},
-  );
-  let inputRef = useRef<HTMLTextAreaElement>(null);
+    () => {}
+  )
+  let inputRef = useRef<HTMLTextAreaElement>(null)
 
   let onHeightChange = useCallback(() => {
     if (autoSize && inputRef.current) {
-      let input = inputRef.current;
-      let prevAlignment = input.style.alignSelf;
-      let computedStyle = getComputedStyle(input);
-      input.style.alignSelf = 'start';
-      input.style.height = 'auto';
+      let input = inputRef.current
+      let prevAlignment = input.style.alignSelf
+      let computedStyle = getComputedStyle(input)
+      input.style.alignSelf = 'start'
+      input.style.height = 'auto'
       input.style.height = input.scrollHeight
         ? `calc(${input.scrollHeight}px + (2 * var(--border-width)))`
         : `${
@@ -56,16 +50,16 @@ function TextArea(props: WithNullableValue<JengaTextAreaProps>, ref) {
             parseFloat(computedStyle.paddingBottom) +
             parseFloat(computedStyle.lineHeight) * (rows || 3) +
             2
-          }px`;
-      input.style.alignSelf = prevAlignment;
+          }px`
+      input.style.alignSelf = prevAlignment
     }
-  }, [inputRef]);
+  }, [inputRef])
 
   useLayoutEffect(() => {
     if (inputRef.current) {
-      onHeightChange();
+      onHeightChange()
     }
-  }, [onHeightChange, inputValue, inputRef]);
+  }, [onHeightChange, inputValue, inputRef])
 
   let { labelProps, inputProps } = useTextField(
     {
@@ -73,8 +67,8 @@ function TextArea(props: WithNullableValue<JengaTextAreaProps>, ref) {
       onChange: chain(onChange, setInputValue),
       inputElementType: 'textarea',
     },
-    inputRef,
-  );
+    inputRef
+  )
 
   return (
     <TextInputBase
@@ -89,7 +83,7 @@ function TextArea(props: WithNullableValue<JengaTextAreaProps>, ref) {
       isRequired={isRequired}
       rows={rows}
     />
-  );
+  )
 }
 
 /**
@@ -97,8 +91,8 @@ function TextArea(props: WithNullableValue<JengaTextAreaProps>, ref) {
  * with a keyboard. Various decorations can be displayed around the field to
  * communicate the entry requirements.
  */
-const _TextArea = forwardRef(TextArea);
+const _TextArea = forwardRef(TextArea)
 
-(_TextArea as any).jengaInputType = 'Text';
+;(_TextArea as any).jengaInputType = 'Text'
 
-export { _TextArea as TextArea };
+export { _TextArea as TextArea }

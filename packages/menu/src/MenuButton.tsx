@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import { Button, JengaButtonProps } from '@jenga-ui/button';
-import { Text } from '@jenga-ui/content';
-import { Styles } from 'tastycss';
-import { Space } from '@jenga-ui/layout';
-import { CheckOutlined } from '@ant-design/icons';
+import { ReactNode } from 'react'
+import { Button, JengaButtonProps } from '@jenga-ui/button'
+import { Text } from '@jenga-ui/content'
+import { Styles } from 'tastycss'
+import { Space } from '@jenga-ui/layout'
+import { CheckOutlined } from '@ant-design/icons'
 
 const ACTION_BUTTON: Styles = {
   border: {
@@ -43,7 +43,7 @@ const ACTION_BUTTON: Styles = {
       disabled: '#dark-04',
     },
   },
-};
+}
 
 const getPostfix = (postfix) =>
   typeof postfix === 'string' ? (
@@ -52,13 +52,13 @@ const getPostfix = (postfix) =>
     </Text>
   ) : (
     postfix
-  );
+  )
 
 export type MenuButtonProps = {
-  postfix: ReactNode;
-  isSelectable?: boolean;
-  disabled?: boolean;
-} & JengaButtonProps;
+  postfix: ReactNode
+  isSelectable?: boolean
+  disabled?: boolean
+} & JengaButtonProps
 
 export function MenuButton({
   children,
@@ -66,13 +66,13 @@ export function MenuButton({
   postfix,
   ...props
 }: MenuButtonProps) {
-  const { isSelected, isSelectable } = props;
-  const checkIcon = isSelectable && isSelected ? <CheckOutlined /> : null;
+  const { isSelected, isSelectable } = props
+  const checkIcon = isSelectable && isSelected ? <CheckOutlined /> : null
   const mods = {
     ...props.mods,
     selectable: isSelectable,
     selected: isSelected,
-  };
+  }
 
   return (
     <Button
@@ -91,5 +91,5 @@ export function MenuButton({
         {postfix && getPostfix(postfix)}
       </Space>
     </Button>
-  );
+  )
 }

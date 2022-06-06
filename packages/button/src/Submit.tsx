@@ -1,17 +1,17 @@
-import { forwardRef } from 'react';
-import { Button } from './Button';
-import { useProviderProps } from '@jenga-ui/providers';
-import { useFormProps } from '@jenga-ui/form';
+import { forwardRef } from 'react'
+import { Button } from './Button'
+import { useProviderProps } from '@jenga-ui/providers'
+import { useFormProps } from '@jenga-ui/form'
 
 function Submit(props, ref) {
-  props = useProviderProps(props);
-  props = useFormProps(props);
+  props = useProviderProps(props)
+  props = useFormProps(props)
 
-  const { form, ...otherProps } = props;
-  const formData = form.getFieldsValue();
+  const { form, ...otherProps } = props
+  const formData = form.getFieldsValue()
   const isValid = !Object.keys(formData).find((name) => {
-    return form.isFieldInvalid(name);
-  });
+    return form.isFieldInvalid(name)
+  })
 
   return (
     <Button
@@ -22,8 +22,8 @@ function Submit(props, ref) {
       isDisabled={!isValid}
       {...otherProps}
     />
-  );
+  )
 }
 
-const _Submit = forwardRef(Submit);
-export { _Submit as Submit };
+const _Submit = forwardRef(Submit)
+export { _Submit as Submit }

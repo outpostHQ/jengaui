@@ -1,5 +1,5 @@
-import { forwardRef } from 'react';
-import THEMES from '../../core/src/themes';
+import { forwardRef } from 'react'
+import THEMES from '../../core/src/themes'
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -7,7 +7,7 @@ import {
   extractStyles,
   filterBaseProps,
   tasty,
-} from 'tastycss';
+} from 'tastycss'
 
 const BadgeElement = tasty({
   qa: 'Badge',
@@ -31,22 +31,22 @@ const BadgeElement = tasty({
     fill: {
       '': '#purple',
       ...Object.keys(THEMES).reduce((map, type) => {
-        map[`[data-type="${type}"]`] = THEMES[type].color;
+        map[`[data-type="${type}"]`] = THEMES[type].color
 
-        return map;
+        return map
       }, {}),
     },
   },
-});
+})
 
 export interface JengaBadgeProps extends BaseProps, ContainerStyleProps {
-  type?: keyof typeof THEMES | string;
+  type?: keyof typeof THEMES | string
 }
 
 export const Badge = forwardRef((allProps: JengaBadgeProps, ref) => {
-  let { type, children, ...props } = allProps;
+  let { type, children, ...props } = allProps
 
-  const styles = extractStyles(props, CONTAINER_STYLES);
+  const styles = extractStyles(props, CONTAINER_STYLES)
 
   return (
     <BadgeElement
@@ -61,5 +61,5 @@ export const Badge = forwardRef((allProps: JengaBadgeProps, ref) => {
     >
       {children}
     </BadgeElement>
-  );
-});
+  )
+})

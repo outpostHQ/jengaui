@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from 'react'
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -8,10 +8,10 @@ import {
   tasty,
   TEXT_STYLES,
   TextStyleProps,
-} from 'tastycss';
-import { useSlotProps } from '@jenga-ui/utils';
+} from 'tastycss'
+import { useSlotProps } from '@jenga-ui/utils'
 
-const STYLE_LIST = [...CONTAINER_STYLES, ...TEXT_STYLES];
+const STYLE_LIST = [...CONTAINER_STYLES, ...TEXT_STYLES]
 
 const HeaderElement = tasty({
   qa: 'Header',
@@ -21,7 +21,7 @@ const HeaderElement = tasty({
     gridArea: 'header',
     flow: 'column',
   },
-});
+})
 
 export interface JengaHeaderProps
   extends BaseProps,
@@ -29,9 +29,9 @@ export interface JengaHeaderProps
     TextStyleProps {}
 
 export const Header = forwardRef((props: JengaHeaderProps, ref) => {
-  props = useSlotProps(props, 'header');
+  props = useSlotProps(props, 'header')
 
-  const styles = extractStyles(props, STYLE_LIST);
+  const styles = extractStyles(props, STYLE_LIST)
 
   return (
     <HeaderElement
@@ -39,5 +39,5 @@ export const Header = forwardRef((props: JengaHeaderProps, ref) => {
       styles={styles}
       ref={ref}
     />
-  );
-});
+  )
+})

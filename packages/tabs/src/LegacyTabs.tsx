@@ -6,27 +6,27 @@ import {
   useLayoutEffect,
   useRef,
   useState,
-} from 'react';
-import { Block } from '@jenga-ui/core';
-import { Space, Flex, JengaFlexProps, Flow } from '@jenga-ui/layout';
-import { Button, JengaButtonProps } from '@jenga-ui/button';
-import { Styles, tasty } from 'tastycss';
-import styled from 'styled-components';
+} from 'react'
+import { Block } from '@jenga-ui/core'
+import { Space, Flex, JengaFlexProps, Flow } from '@jenga-ui/layout'
+import { Button, JengaButtonProps } from '@jenga-ui/button'
+import { Styles, tasty } from 'tastycss'
+import styled from 'styled-components'
 
 export interface JengaTabData {
-  id: string | number;
-  qa?: string;
-  title?: string;
-  isDisabled?: boolean;
-  isHidden?: boolean;
+  id: string | number
+  qa?: string
+  title?: string
+  isDisabled?: boolean
+  isHidden?: boolean
 }
 
 export interface LegacyJengaTabsContextValue {
-  addTab: (JengaTabData) => void;
-  setTab: (id: string | number) => void;
-  removeTab: (JengaTabData) => void;
-  changeTab: (JengaTabData) => void;
-  currentTab?: string | number;
+  addTab: (JengaTabData) => void
+  setTab: (id: string | number) => void
+  removeTab: (JengaTabData) => void
+  changeTab: (JengaTabData) => void
+  currentTab?: string | number
 }
 
 const LegacyTabsContext = createContext<LegacyJengaTabsContextValue>({
@@ -34,7 +34,7 @@ const LegacyTabsContext = createContext<LegacyJengaTabsContextValue>({
   removeTab() {},
   setTab() {},
   changeTab() {},
-});
+})
 
 const TabElement = tasty(Button, {
   type: 'tab',
@@ -51,7 +51,7 @@ const TabElement = tasty(Button, {
     radius: '1r 1r 0 0',
     border: 0,
   },
-});
+})
 
 const StyledTabElement = styled(TabElement)`
   &::before {
@@ -73,14 +73,14 @@ const StyledTabElement = styled(TabElement)`
   &:not([data-is-selected]):not([disabled])[data-is-hovered]::before {
     --outline-size: 1px;
   }
-`;
+`
 
 const TabsPanelElement = tasty(Space, {
   styles: {
     gap: '1x',
     flexShrink: 0,
   },
-});
+})
 
 const StyledTabsPanelElement = styled(TabsPanelElement)`
   position: relative;
@@ -102,7 +102,7 @@ const StyledTabsPanelElement = styled(TabsPanelElement)`
     width: 3px;
     height: 3px;
   }
-`;
+`
 
 const TabsContainerElement = tasty(Flow, {
   styles: {
@@ -110,7 +110,7 @@ const TabsContainerElement = tasty(Flow, {
     height: 'max 100%',
     width: 'max 100%',
   },
-});
+})
 
 const StyledTabsContainerElement = styled(TabsContainerElement)`
   position: relative;
@@ -154,14 +154,14 @@ const StyledTabsContainerElement = styled(TabsContainerElement)`
   &[data-is-right-fade]::after {
     opacity: 1;
   }
-`;
+`
 
 export interface LegacyJengaTabProps extends Omit<JengaButtonProps, 'id'> {
-  id?: string | number;
-  title?: string;
-  isSelected?: boolean;
-  isHidden?: boolean;
-  onClose?: () => void;
+  id?: string | number
+  title?: string
+  isSelected?: boolean
+  isHidden?: boolean
+  onClose?: () => void
 }
 
 const Tab = ({
@@ -172,22 +172,22 @@ const Tab = ({
 }: Omit<LegacyJengaTabProps, 'id'>) => {
   return (
     <StyledTabElement isSelected={isSelected} isHidden={isHidden} {...props} />
-  );
-};
+  )
+}
 
 export interface JengaTabsProps extends JengaFlexProps {
   /** The initial active key in the tabs (uncontrolled). */
-  defaultActiveKey?: string;
+  defaultActiveKey?: string
   /** The currently active key in the tabs (controlled). */
-  activeKey?: string | number;
+  activeKey?: string | number
   /** Handler that is called when the tab is clicked. */
-  onTabClick?: (string) => void;
+  onTabClick?: (string) => void
   /** Handler that is called when the tab is closed. */
-  onTabClose?: (string) => void;
+  onTabClose?: (string) => void
   /** Styles for the each tab pane */
-  paneStyles?: Styles;
+  paneStyles?: Styles
   /** Additional content along the tabs */
-  extra?: ReactNode;
+  extra?: ReactNode
 }
 
 export function LegacyTabs({
@@ -200,121 +200,121 @@ export function LegacyTabs({
   children,
   ...props
 }: JengaTabsProps) {
-  const tabsRef = useRef<HTMLDivElement>(null);
+  const tabsRef = useRef<HTMLDivElement>(null)
 
-  const [tabs, setTabs] = useState<JengaTabData[]>([]);
-  const [activeKey, setActiveKey] = useState(activeKeyProp || defaultActiveKey);
+  const [tabs, setTabs] = useState<JengaTabData[]>([])
+  const [activeKey, setActiveKey] = useState(activeKeyProp || defaultActiveKey)
 
-  const [leftFade, setLeftFade] = useState<boolean>(false);
-  const [rightFade, setRightFade] = useState<boolean>(false);
+  const [leftFade, setLeftFade] = useState<boolean>(false)
+  const [rightFade, setRightFade] = useState<boolean>(false)
 
   function updateScroll() {
-    const el = tabsRef && tabsRef.current;
+    const el = tabsRef && tabsRef.current
 
-    if (!el) return;
+    if (!el) return
 
-    setLeftFade(!!el.scrollLeft);
+    setLeftFade(!!el.scrollLeft)
     setRightFade(
       el.scrollWidth !== el.offsetWidth &&
-        !!(el.scrollWidth - el.offsetWidth - el.scrollLeft),
-    );
+        !!(el.scrollWidth - el.offsetWidth - el.scrollLeft)
+    )
   }
 
-  useLayoutEffect(updateScroll, [tabs]);
+  useLayoutEffect(updateScroll, [tabs])
 
   function scrollCurrentIntoView() {
-    const el = tabsRef && tabsRef.current;
+    const el = tabsRef && tabsRef.current
 
-    if (!el) return;
+    if (!el) return
 
-    const current = el.querySelector('button[disabled]');
+    const current = el.querySelector('button[disabled]')
 
-    if (!current) return;
+    if (!current) return
 
-    current.scrollIntoView({ behavior: 'smooth', inline: 'end', block: 'end' });
+    current.scrollIntoView({ behavior: 'smooth', inline: 'end', block: 'end' })
   }
 
   useEffect(() => {
     function update() {
-      updateScroll();
+      updateScroll()
     }
 
     if (tabsRef && tabsRef.current) {
-      tabsRef.current.addEventListener('scroll', update);
-      tabsRef.current.addEventListener('mousewheel', update);
-      window.addEventListener('resize', update);
+      tabsRef.current.addEventListener('scroll', update)
+      tabsRef.current.addEventListener('mousewheel', update)
+      window.addEventListener('resize', update)
     }
 
     return () => {
       if (tabsRef && tabsRef.current) {
-        tabsRef.current.removeEventListener('scroll', update);
-        tabsRef.current.removeEventListener('mousewheel', update);
+        tabsRef.current.removeEventListener('scroll', update)
+        tabsRef.current.removeEventListener('mousewheel', update)
       }
 
-      window.removeEventListener('resize', update);
-    };
-  }, [tabsRef]);
+      window.removeEventListener('resize', update)
+    }
+  }, [tabsRef])
 
-  useEffect(scrollCurrentIntoView, [activeKey]);
+  useEffect(scrollCurrentIntoView, [activeKey])
 
   useEffect(() => {
-    setActiveKey(activeKeyProp);
-  }, [activeKeyProp]);
+    setActiveKey(activeKeyProp)
+  }, [activeKeyProp])
 
   function getTab(
     tabs: JengaTabData[],
-    key: string | number,
+    key: string | number
   ): JengaTabData | undefined {
-    return tabs.find((tab) => tab.id === key);
+    return tabs.find((tab) => tab.id === key)
   }
 
   function setTab(key: string | number) {
     if (getTab(tabs, key)) {
-      setActiveKey(key);
+      setActiveKey(key)
     }
   }
 
   function addTab(tab: JengaTabData) {
     setTabs((tabs) => {
       if (!getTab(tabs, tab.id)) {
-        return [...tabs, tab];
+        return [...tabs, tab]
       }
 
-      return tabs;
-    });
+      return tabs
+    })
   }
 
   function removeTab(tab: JengaTabData) {
     setTabs((tabs) => {
-      const _tabs = tabs.filter((_tab) => _tab.id !== tab.id);
+      const _tabs = tabs.filter((_tab) => _tab.id !== tab.id)
 
       setActiveKey((prevActiveKey) => {
         if (prevActiveKey === tab.id) {
-          return _tabs[0] && _tabs[0].id;
+          return _tabs[0] && _tabs[0].id
         }
 
-        return prevActiveKey;
-      });
+        return prevActiveKey
+      })
 
-      return _tabs;
-    });
+      return _tabs
+    })
   }
 
   function changeTab(tab: JengaTabData) {
     setTabs((tabs) => {
-      const existTab = tabs.find((_tab) => _tab.id === tab.id);
+      const existTab = tabs.find((_tab) => _tab.id === tab.id)
 
       if (existTab) {
-        Object.assign(existTab, tab);
+        Object.assign(existTab, tab)
       }
 
-      return [...tabs];
-    });
+      return [...tabs]
+    })
   }
 
   function onPress(tab: JengaTabData) {
-    onTabClick && onTabClick(tab.id);
-    setTab(tab.id);
+    onTabClick && onTabClick(tab.id)
+    setTab(tab.id)
   }
 
   return (
@@ -346,7 +346,7 @@ export function LegacyTabs({
                 >
                   {tab.title}
                 </Tab>
-              );
+              )
             })}
           </StyledTabsPanelElement>
           {extra}
@@ -360,7 +360,7 @@ export function LegacyTabs({
         </Flex>
       </LegacyTabsContext.Provider>
     </StyledTabsContainerElement>
-  );
+  )
 }
 
 LegacyTabs.TabPane = function TabPane({
@@ -373,7 +373,7 @@ LegacyTabs.TabPane = function TabPane({
   ...props
 }: LegacyJengaTabProps) {
   const { addTab, removeTab, changeTab, currentTab } =
-    useContext(LegacyTabsContext);
+    useContext(LegacyTabsContext)
 
   useEffect(() => {
     const tabData = {
@@ -382,14 +382,14 @@ LegacyTabs.TabPane = function TabPane({
       title,
       isDisabled,
       isHidden,
-    };
+    }
 
-    addTab(tabData);
+    addTab(tabData)
 
     return () => {
-      removeTab(tabData);
-    };
-  }, [id]);
+      removeTab(tabData)
+    }
+  }, [id])
 
   useEffect(() => {
     changeTab({
@@ -398,10 +398,10 @@ LegacyTabs.TabPane = function TabPane({
       title,
       isDisabled,
       isHidden,
-    });
-  }, [title, isDisabled, isHidden]);
+    })
+  }, [title, isDisabled, isHidden])
 
-  const isCurrent = id === currentTab;
+  const isCurrent = id === currentTab
 
   return (
     <Block
@@ -411,5 +411,5 @@ LegacyTabs.TabPane = function TabPane({
     >
       {children}
     </Block>
-  );
-};
+  )
+}

@@ -1,14 +1,11 @@
-import copy from 'clipboard-copy';
-import { Action, Button } from '@jenga-ui/button';
-import { Card, JengaCardProps } from '@jenga-ui/card';
-import { Styles, tasty } from 'tastycss';
-import {
-  JengaPrismCodeProps,
-  PrismCode,
-} from '@jenga-ui/prism-code';
-import { notification } from '@jenga-ui/services';
-import { CopyOutlined } from '@ant-design/icons';
-import { Tooltip, TooltipTrigger } from '@jenga-ui/tooltip';
+import copy from 'clipboard-copy'
+import { Action, Button } from '@jenga-ui/button'
+import { Card, JengaCardProps } from '@jenga-ui/card'
+import { Styles, tasty } from 'tastycss'
+import { JengaPrismCodeProps, PrismCode } from '@jenga-ui/prism-code'
+import { notification } from '@jenga-ui/services'
+import { CopyOutlined } from '@ant-design/icons'
+import { Tooltip, TooltipTrigger } from '@jenga-ui/tooltip'
 
 const ActionElement = tasty(Action, {
   styles: {
@@ -16,7 +13,7 @@ const ActionElement = tasty(Action, {
     cursor: 'default',
     width: '100%',
   },
-});
+})
 
 const StyledBlock = tasty({
   styles: {
@@ -39,7 +36,7 @@ const StyledBlock = tasty({
       },
     },
   },
-});
+})
 
 const ButtonContainer = tasty({
   styles: {
@@ -60,7 +57,7 @@ const ButtonContainer = tasty({
         'linear-gradient(to right,rgba(var(--context-fill-color-rgb),0),rgba(var(--context-fill-color-rgb),1))',
     },
   },
-});
+})
 
 const CopySnippetElement = tasty(Card, {
   qa: 'CopySnippet',
@@ -80,7 +77,7 @@ const CopySnippetElement = tasty(Card, {
       overflow: 'hidden',
     },
   },
-});
+})
 
 const CopyButton = tasty(Button, {
   type: 'clear',
@@ -106,28 +103,28 @@ const CopyButton = tasty(Button, {
     top: 0,
     zIndex: 1,
   },
-});
+})
 
 export interface JengaCopySnippetProps extends JengaCardProps {
-  padding?: Styles['padding'];
+  padding?: Styles['padding']
   /** The code snippet */
-  code: string;
+  code: string
   /** The title of the snippet */
-  title?: string;
+  title?: string
   /** Whether the snippet is single-lined */
-  nowrap?: boolean;
+  nowrap?: boolean
   /** The prefix for each line of code. Useful for bash snippets. */
-  prefix?: string;
+  prefix?: string
   /** The code language of the snippet */
-  language?: JengaPrismCodeProps['language'];
+  language?: JengaPrismCodeProps['language']
   /** Whether the snippet uses a serif font */
-  serif?: boolean;
+  serif?: boolean
   /** Whether the snippet uses overlay on the edge */
-  showOverlay?: boolean;
+  showOverlay?: boolean
   /** Whether the snippet is scrollable */
-  showScroll?: boolean;
+  showScroll?: boolean
   /** Whether to show the tooltip with the full content */
-  showTooltip?: boolean;
+  showTooltip?: boolean
 }
 
 export function CopySnippet(allProps: JengaCopySnippetProps) {
@@ -145,30 +142,30 @@ export function CopySnippet(allProps: JengaCopySnippetProps) {
     showTooltip = false,
     styles,
     ...props
-  } = allProps;
+  } = allProps
 
-  padding = padding || '1.125x 1.5x';
+  padding = padding || '1.125x 1.5x'
 
-  const codeTitle = title || 'Code example';
+  const codeTitle = title || 'Code example'
 
   async function onCopy() {
-    await copy(code);
+    await copy(code)
 
-    notification.success(`${codeTitle} copied`);
+    notification.success(`${codeTitle} copied`)
   }
 
-  code = (code || '').replace(/\n$/, '');
+  code = (code || '').replace(/\n$/, '')
 
-  const multiline = code.includes('\n') && !nowrap;
+  const multiline = code.includes('\n') && !nowrap
   const formattedCode = code
     .split(/\n/g)
     .map((line) => `${prefix || ''}${line} `)
-    .join('\n');
+    .join('\n')
 
   styles = {
     preset: 'default',
     ...styles,
-  } as Styles;
+  } as Styles
 
   const Snippet = (
     <CopySnippetElement styles={styles} {...props}>
@@ -203,7 +200,7 @@ export function CopySnippet(allProps: JengaCopySnippetProps) {
         </ButtonContainer>
       </div>
     </CopySnippetElement>
-  );
+  )
 
   if (showTooltip) {
     return (
@@ -211,8 +208,8 @@ export function CopySnippet(allProps: JengaCopySnippetProps) {
         <ActionElement>{Snippet}</ActionElement>
         <Tooltip>{formattedCode}</Tooltip>
       </TooltipTrigger>
-    );
+    )
   }
 
-  return Snippet;
+  return Snippet
 }

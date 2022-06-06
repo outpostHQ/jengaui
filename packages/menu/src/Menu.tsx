@@ -1,50 +1,50 @@
-import React, { ReactElement, ReactNode } from 'react';
-import { DOMRef, ItemProps } from '@react-types/shared';
+import React, { ReactElement, ReactNode } from 'react'
+import { DOMRef, ItemProps } from '@react-types/shared'
 import {
   Item as BaseItem,
   Section as BaseSection,
-} from '@react-stately/collections';
-import { useMenu } from '@react-aria/menu';
-import { mergeProps, useSyncRef } from '@react-aria/utils';
-import { useDOMRef } from '@react-spectrum/utils';
-import { useTreeState } from '@react-stately/tree';
-import type { AriaMenuProps } from '@react-types/menu';
+} from '@react-stately/collections'
+import { useMenu } from '@react-aria/menu'
+import { mergeProps, useSyncRef } from '@react-aria/utils'
+import { useDOMRef } from '@react-spectrum/utils'
+import { useTreeState } from '@react-stately/tree'
+import type { AriaMenuProps } from '@react-types/menu'
 
 import {
   CONTAINER_STYLES,
   ContainerStyleProps,
   extractStyles,
   Styles,
-} from 'tastycss';
-import { StyledMenu, StyledMenuHeader } from './styled';
-import { MenuItem } from './MenuItem';
-import { MenuSection } from './MenuSection';
-import { MenuButtonProps } from './MenuButton';
-import { useMenuContext } from './context';
+} from 'tastycss'
+import { StyledMenu, StyledMenuHeader } from './styled'
+import { MenuItem } from './MenuItem'
+import { MenuSection } from './MenuSection'
+import { MenuButtonProps } from './MenuButton'
+import { useMenuContext } from './context'
 
 export interface JengaMenuProps<T>
   extends ContainerStyleProps,
     AriaMenuProps<T> {
-  header?: ReactNode;
-  footer?: ReactNode;
-  styles?: Styles;
+  header?: ReactNode
+  footer?: ReactNode
+  styles?: Styles
 }
 
 function Menu<T extends object>(
   props: JengaMenuProps<T>,
-  ref: DOMRef<HTMLUListElement>,
+  ref: DOMRef<HTMLUListElement>
 ) {
-  const { header, footer } = props;
-  const domRef = useDOMRef(ref);
-  const contextProps = useMenuContext();
-  const completeProps = mergeProps(contextProps, props);
+  const { header, footer } = props
+  const domRef = useDOMRef(ref)
+  const contextProps = useMenuContext()
+  const completeProps = mergeProps(contextProps, props)
 
-  const state = useTreeState(completeProps);
-  const items = [...state.collection];
-  const hasSections = items.some((item) => item.type === 'section');
+  const state = useTreeState(completeProps)
+  const items = [...state.collection]
+  const hasSections = items.some((item) => item.type === 'section')
 
-  const { menuProps } = useMenu(completeProps, state, domRef);
-  const styles = extractStyles(completeProps, CONTAINER_STYLES);
+  const { menuProps } = useMenu(completeProps, state, domRef)
+  const styles = extractStyles(completeProps, CONTAINER_STYLES)
 
   const baseProps = {
     styles,
@@ -53,9 +53,9 @@ function Menu<T extends object>(
       footer: !!footer,
       header: !!header,
     },
-  };
+  }
 
-  useSyncRef(contextProps, domRef);
+  useSyncRef(contextProps, domRef)
 
   return (
     <StyledMenu
@@ -72,7 +72,7 @@ function Menu<T extends object>(
               state={state}
               onAction={completeProps.onAction}
             />
-          );
+          )
         }
 
         let menuItem = (
@@ -82,52 +82,52 @@ function Menu<T extends object>(
             state={state}
             onAction={completeProps.onAction}
           />
-        );
+        )
 
         if (item.wrapper) {
-          menuItem = item.wrapper(menuItem);
+          menuItem = item.wrapper(menuItem)
         }
 
-        return menuItem;
+        return menuItem
       })}
     </StyledMenu>
-  );
+  )
 }
 
 // forwardRef doesn't support generic parameters, so cast the result to the correct type
 // https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref
 const _Menu = React.forwardRef(Menu) as <T>(
-  props: JengaMenuProps<T> & { ref?: DOMRef<HTMLUListElement> },
-) => ReactElement;
+  props: JengaMenuProps<T> & { ref?: DOMRef<HTMLUListElement> }
+) => ReactElement
 
-type PartialMenuButton = Partial<MenuButtonProps>;
+type PartialMenuButton = Partial<MenuButtonProps>
 
 type ItemComponent = <T>(
   props: ItemProps<T> &
-    PartialMenuButton & { wrapper?: (item: ReactElement) => ReactElement },
-) => JSX.Element;
+    PartialMenuButton & { wrapper?: (item: ReactElement) => ReactElement }
+) => JSX.Element
 
-type SectionComponent = typeof BaseSection;
+type SectionComponent = typeof BaseSection
 
 const Item = Object.assign(BaseItem, {
   displayName: 'Item',
-}) as ItemComponent;
+}) as ItemComponent
 
 const Section = Object.assign(BaseSection, {
   displayName: 'Section',
-}) as SectionComponent;
+}) as SectionComponent
 
 type __MenuComponent = typeof _Menu & {
-  Item: typeof Item;
-  Section: typeof Section;
-};
+  Item: typeof Item
+  Section: typeof Section
+}
 
 const __Menu = Object.assign(_Menu as __MenuComponent, {
   Item,
   Section,
   displayName: 'Menu',
-});
+})
 
-__Menu.displayName = 'Menu';
+__Menu.displayName = 'Menu'
 
-export { __Menu as Menu };
+export { __Menu as Menu }

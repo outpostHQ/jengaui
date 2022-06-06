@@ -1,10 +1,10 @@
-import { mergeProps } from '@jenga-ui/utils';
-import { Overlay } from './Overlay';
-import { forwardRef, HTMLAttributes } from 'react';
-import { useModal, useOverlay } from '@react-aria/overlays';
-import { BaseProps, tasty } from 'tastycss';
-import { OverlayProps } from '@react-types/overlays';
-import { PlacementAxis } from '@jenga-ui/form';
+import { mergeProps } from '@jenga-ui/utils'
+import { Overlay } from './Overlay'
+import { forwardRef, HTMLAttributes } from 'react'
+import { useModal, useOverlay } from '@react-aria/overlays'
+import { BaseProps, tasty } from 'tastycss'
+import { OverlayProps } from '@react-types/overlays'
+import { PlacementAxis } from '@jenga-ui/form'
 
 const PopoverElement = tasty({
   role: 'presentation',
@@ -26,20 +26,20 @@ const PopoverElement = tasty({
       '[data-placement="top"]': 'bottom center',
     },
   },
-});
+})
 
 export interface JengaPopoverProps
   extends BaseProps,
     Omit<OverlayProps, 'children'> {
-  container?: HTMLElement;
-  placement?: PlacementAxis;
-  arrowProps?: HTMLAttributes<HTMLElement>;
-  hideArrow?: boolean;
-  isOpen?: boolean;
-  onClose?: () => void;
-  shouldCloseOnBlur?: boolean;
-  isNonModal?: boolean;
-  isDismissable?: boolean;
+  container?: HTMLElement
+  placement?: PlacementAxis
+  arrowProps?: HTMLAttributes<HTMLElement>
+  hideArrow?: boolean
+  isOpen?: boolean
+  onClose?: () => void
+  shouldCloseOnBlur?: boolean
+  isNonModal?: boolean
+  isDismissable?: boolean
 }
 
 function Popover(props: JengaPopoverProps, ref) {
@@ -56,7 +56,7 @@ function Popover(props: JengaPopoverProps, ref) {
     isNonModal,
     isDismissable = true,
     ...otherProps
-  } = props;
+  } = props
 
   return (
     <Overlay {...otherProps}>
@@ -76,12 +76,12 @@ function Popover(props: JengaPopoverProps, ref) {
         {children}
       </PopoverWrapper>
     </Overlay>
-  );
+  )
 }
 
 const PopoverWrapper = forwardRef(function PopoverWrapper(
   props: JengaPopoverProps,
-  ref,
+  ref
 ) {
   let {
     qa,
@@ -96,15 +96,15 @@ const PopoverWrapper = forwardRef(function PopoverWrapper(
     isNonModal,
     isDismissable,
     ...otherProps
-  } = props;
+  } = props
   let { overlayProps } = useOverlay(
     { ...props, isDismissable: isDismissable && isOpen },
     // @ts-ignore
-    ref,
-  );
+    ref
+  )
   let { modalProps } = useModal({
     isDisabled: isNonModal,
-  });
+  })
 
   return (
     <PopoverElement
@@ -120,8 +120,8 @@ const PopoverWrapper = forwardRef(function PopoverWrapper(
     >
       {children}
     </PopoverElement>
-  );
-});
+  )
+})
 
-let _Popover = forwardRef(Popover);
-export { _Popover as Popover };
+let _Popover = forwardRef(Popover)
+export { _Popover as Popover }

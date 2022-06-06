@@ -1,26 +1,26 @@
-import { FocusableProvider } from '@react-aria/focus';
-import { Children, ReactElement, useRef } from 'react';
-import { TooltipContext } from './context';
-import { useOverlayPosition } from '@react-aria/overlays';
-import { useTooltipTrigger } from '@react-aria/tooltip';
-import { useTooltipTriggerState } from '@react-stately/tooltip';
-import { OverlayWrapper } from '@jenga-ui/overlays';
-import type { TooltipTriggerProps } from '@react-types/tooltip';
-import { ActiveZone } from '@jenga-ui/active-zone';
-import { Block } from '@jenga-ui/core';
+import { FocusableProvider } from '@react-aria/focus'
+import { Children, ReactElement, useRef } from 'react'
+import { TooltipContext } from './context'
+import { useOverlayPosition } from '@react-aria/overlays'
+import { useTooltipTrigger } from '@react-aria/tooltip'
+import { useTooltipTriggerState } from '@react-stately/tooltip'
+import { OverlayWrapper } from '@jenga-ui/overlays'
+import type { TooltipTriggerProps } from '@react-types/tooltip'
+import { ActiveZone } from '@jenga-ui/active-zone'
+import { Block } from '@jenga-ui/core'
 
-const DEFAULT_OFFSET = 8; // Offset needed to reach 4px/5px (med/large) distance between tooltip and trigger button
-const DEFAULT_CROSS_OFFSET = 0;
+const DEFAULT_OFFSET = 8 // Offset needed to reach 4px/5px (med/large) distance between tooltip and trigger button
+const DEFAULT_CROSS_OFFSET = 0
 
 export interface JengaTooltipTriggerProps extends TooltipTriggerProps {
-  children: [ReactElement | string, ReactElement];
-  crossOffset?: number;
-  offset?: number;
-  placement?: 'start' | 'end' | 'right' | 'left' | 'top' | 'bottom';
-  isMaterial?: boolean;
+  children: [ReactElement | string, ReactElement]
+  crossOffset?: number
+  offset?: number
+  placement?: 'start' | 'end' | 'right' | 'left' | 'top' | 'bottom'
+  isMaterial?: boolean
   /** Whether the trigger should have an ActiveZone wrap to make sure it's focusable and hoverable.
    * Otherwise, tooltip won't work. */
-  activeWrap?: boolean;
+  activeWrap?: boolean
 }
 
 function TooltipTrigger(props: JengaTooltipTriggerProps) {
@@ -32,17 +32,17 @@ function TooltipTrigger(props: JengaTooltipTriggerProps) {
     isMaterial,
     offset = DEFAULT_OFFSET,
     trigger: triggerAction,
-  } = props;
+  } = props
 
-  let [trigger, tooltip] = Children.toArray(children);
+  let [trigger, tooltip] = Children.toArray(children)
 
   let state = useTooltipTriggerState({
     delay: 750,
     ...props,
-  });
+  })
 
-  let tooltipTriggerRef = useRef(null);
-  let overlayRef = useRef(null);
+  let tooltipTriggerRef = useRef(null)
+  let overlayRef = useRef(null)
 
   let { triggerProps, tooltipProps } = useTooltipTrigger(
     {
@@ -50,8 +50,8 @@ function TooltipTrigger(props: JengaTooltipTriggerProps) {
       trigger: triggerAction,
     },
     state,
-    tooltipTriggerRef,
-  );
+    tooltipTriggerRef
+  )
 
   let { overlayProps, arrowProps, placement } = useOverlayPosition({
     placement: props.placement || 'top',
@@ -60,18 +60,18 @@ function TooltipTrigger(props: JengaTooltipTriggerProps) {
     offset,
     crossOffset,
     isOpen: state.isOpen,
-  });
+  })
 
   if (!activeWrap && typeof trigger === 'string') {
     console.warn(
-      'JengaUIKit: Tooltips are only supported on elements that are both focusable and hoverable. To solve this issue you can: 1) Use active element as a trigger (`Button`, `Link`, etc); 2) Use `activeWrap` attribute to automatically wrap the content; 3) Use `ActiveZone` component to manually wrap the content.',
-    );
+      'JengaUIKit: Tooltips are only supported on elements that are both focusable and hoverable. To solve this issue you can: 1) Use active element as a trigger (`Button`, `Link`, etc); 2) Use `activeWrap` attribute to automatically wrap the content; 3) Use `ActiveZone` component to manually wrap the content.'
+    )
 
-    return <Block>{trigger}</Block>;
+    return <Block>{trigger}</Block>
   }
 
   function onClick(e) {
-    e?.currentTarget?.parentNode.click();
+    e?.currentTarget?.parentNode.click()
   }
 
   return (
@@ -103,7 +103,7 @@ function TooltipTrigger(props: JengaTooltipTriggerProps) {
         </OverlayWrapper>
       </TooltipContext.Provider>
     </FocusableProvider>
-  );
+  )
 }
 
 /**
@@ -111,5 +111,5 @@ function TooltipTrigger(props: JengaTooltipTriggerProps) {
  * the Tooltip when the user hovers over or focuses the trigger, and positioning the Tooltip
  * relative to the trigger.
  */
-let _TooltipTrigger = TooltipTrigger;
-export { _TooltipTrigger as TooltipTrigger };
+let _TooltipTrigger = TooltipTrigger
+export { _TooltipTrigger as TooltipTrigger }

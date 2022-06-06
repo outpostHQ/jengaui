@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { PortalProps } from './types';
-import { usePortal } from './usePortal';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { PortalProps } from './types'
+import { usePortal } from './usePortal'
 
 /**
  * This component renders its children outside the current DOM hierarchy.
@@ -27,8 +27,8 @@ import { usePortal } from './usePortal';
  * ```
  */
 export function Portal(props: PortalProps): JSX.Element | null {
-  const { children, mountRoot, isDisabled } = usePortal(props);
+  const { children, mountRoot, isDisabled } = usePortal(props)
 
-  if (isDisabled) return <>{children}</>;
-  return mountRoot ? ReactDOM.createPortal(children, mountRoot) : null;
+  if (isDisabled) return <>{children}</>
+  return mountRoot ? ReactDOM.createPortal(children, mountRoot) : null
 }

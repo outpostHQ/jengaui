@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from 'react'
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -7,14 +7,14 @@ import {
   filterBaseProps,
   ShortGridStyles,
   tasty,
-} from 'tastycss';
+} from 'tastycss'
 
 const GridElement = tasty({
   styles: {
     display: 'grid',
     flow: 'row',
   },
-});
+})
 
 export interface JengaGridProps
   extends BaseProps,
@@ -26,10 +26,10 @@ const PROP_MAP = {
   columns: 'gridColumns',
   rows: 'gridRows',
   areas: 'gridAreas',
-} as const;
+} as const
 
 export const Grid = forwardRef((props: JengaGridProps, ref) => {
-  const styles = extractStyles(props, CONTAINER_STYLES, undefined, PROP_MAP);
+  const styles = extractStyles(props, CONTAINER_STYLES, undefined, PROP_MAP)
 
   return (
     <GridElement
@@ -37,5 +37,5 @@ export const Grid = forwardRef((props: JengaGridProps, ref) => {
       styles={styles}
       ref={ref}
     />
-  );
-});
+  )
+})

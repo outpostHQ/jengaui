@@ -1,12 +1,12 @@
-import { forwardRef, useEffect } from 'react';
-import Prism from 'prismjs';
+import { forwardRef, useEffect } from 'react'
+import Prism from 'prismjs'
 import {
   BaseProps,
   CONTAINER_STYLES,
   ContainerStyleProps,
   Styles,
   tasty,
-} from 'tastycss';
+} from 'tastycss'
 
 const PreElement = tasty({
   as: 'pre',
@@ -20,14 +20,14 @@ const PreElement = tasty({
       display: 'block',
     },
   },
-});
+})
 
 export interface JengaPrismCodeProps extends ContainerStyleProps {
   /** The CSS style map */
-  style?: BaseProps['style'];
-  styles?: Styles;
+  style?: BaseProps['style']
+  styles?: Styles
   /** The code snippet */
-  code?: string;
+  code?: string
   /** The language of the code snippet */
   language?:
     | 'javascript'
@@ -41,15 +41,15 @@ export interface JengaPrismCodeProps extends ContainerStyleProps {
     | 'editorconfig'
     | 'php'
     | 'python'
-    | 'typescript';
+    | 'typescript'
 }
 
 function PrismCode(props: JengaPrismCodeProps, ref) {
-  let { code, language = 'javascript', ...otherProps } = props;
+  let { code, language = 'javascript', ...otherProps } = props
 
   useEffect(() => {
-    Prism.highlightAll();
-  });
+    Prism.highlightAll()
+  })
 
   return (
     <PreElement ref={ref} className="jenga-prism-code" {...otherProps}>
@@ -57,11 +57,11 @@ function PrismCode(props: JengaPrismCodeProps, ref) {
         {code}
       </code>
     </PreElement>
-  );
+  )
 }
 
 /**
  * Code block with syntax highlighting
  */
-const _PrismCode = forwardRef(PrismCode);
-export { _PrismCode as PrismCode };
+const _PrismCode = forwardRef(PrismCode)
+export { _PrismCode as PrismCode }

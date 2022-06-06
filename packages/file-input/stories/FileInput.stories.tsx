@@ -1,5 +1,5 @@
-import { FileInput } from '../src/FileInput';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { FileInput } from '../src/FileInput'
+import { baseProps } from '../../../stories/lists/baseProps'
 
 export default {
   title: 'Forms/FileInput',
@@ -9,11 +9,11 @@ export default {
       exclude: baseProps,
     },
   },
-};
+}
 
 const Template = ({ icon, ...props }) => (
   <FileInput {...props} onChange={(query) => console.log('change', query)} />
-);
+)
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = Template.bind({})
+Default.args = {}

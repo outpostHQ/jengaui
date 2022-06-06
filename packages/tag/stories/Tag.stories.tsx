@@ -1,4 +1,4 @@
-import { Tag } from '../src/Tag';
+import { Tag } from '../src/Tag'
 
 export default {
   title: 'Content/Tag',
@@ -40,15 +40,15 @@ export default {
       },
     },
   },
-};
+}
 
 const Template = ({ label, ...props }) => (
   <Tag {...props} onClose={() => console.log('close')}>
     {label}
   </Tag>
-);
+)
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   label: 'Tag name or content',
-};
+}

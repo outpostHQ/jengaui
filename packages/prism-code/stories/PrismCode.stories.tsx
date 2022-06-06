@@ -1,5 +1,5 @@
-import { PrismCode } from '../src/PrismCode';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { PrismCode } from '../src/PrismCode'
+import { baseProps } from '../../../stories/lists/baseProps'
 
 export default {
   title: 'Content/PrismCode',
@@ -9,21 +9,21 @@ export default {
       exclude: baseProps,
     },
   },
-};
+}
 
-const Template = ({ ...args }) => <PrismCode {...args} />;
+const Template = ({ ...args }) => <PrismCode {...args} />
 
-export const OneLine = Template.bind({});
+export const OneLine = Template.bind({})
 OneLine.args = {
   code: '$ npm install -g jengajs-cli',
-};
+}
 
-export const MultiLine = Template.bind({});
+export const MultiLine = Template.bind({})
 MultiLine.args = {
   code: '$ npm install -g jengajs-cli\n$ jengajs deploy',
-};
+}
 
-export const JavascriptSyntax = Template.bind({});
+export const JavascriptSyntax = Template.bind({})
 JavascriptSyntax.args = {
   language: 'javascript',
   code: `jenga('LineItems', {
@@ -64,4 +64,4 @@ JavascriptSyntax.args = {
     }
   }
 });`,
-};
+}

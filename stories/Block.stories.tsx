@@ -1,4 +1,4 @@
-import { Block } from '@jenga-ui/core';
+import { Block } from '@jenga-ui/core'
 
 export default {
   title: 'Generic/Block',
@@ -39,11 +39,11 @@ export default {
       },
     },
   },
-};
+}
 
-const Template = ({ label, ...args }) => <Block {...args}>{label}</Block>;
+const Template = ({ label, ...args }) => <Block {...args}>{label}</Block>
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   label: 'Block content',
-};
+}

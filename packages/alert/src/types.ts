@@ -1,5 +1,5 @@
-import { BaseProps, ContainerStyleProps, TextStyleProps } from 'tastycss';
-import THEMES from '../../core/src/themes';
+import { BaseProps, ContainerStyleProps, TextStyleProps } from 'tastycss'
+import THEMES from '../../core/src/themes'
 
 export interface JengaAlertProps
   extends Omit<BaseProps, 'theme'>,
@@ -11,11 +11,11 @@ export interface JengaAlertProps
    * @deprecated use `theme` prop instead
    * @default note
    */
-  type?: keyof typeof THEMES;
+  type?: keyof typeof THEMES
   /**
    * Changes the appearance of the Alert component
    *
    * @default note
    */
-  theme?: keyof typeof THEMES;
+  theme?: keyof typeof THEMES
 }

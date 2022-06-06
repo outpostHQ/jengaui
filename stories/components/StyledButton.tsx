@@ -1,12 +1,12 @@
-import { tasty } from 'tastycss';
-import { Button } from '@jenga-ui/button';
+import { tasty } from 'tastycss'
+import { Button } from '@jenga-ui/button'
 
 export const StyledButton = tasty(Button, {
   styles: {
     padding: '3x 6x',
     preset: 't1',
   },
-});
+})
 
 export const GlobalStyledHeading = tasty('div.myButton', {
   display: 'inline-block',
@@ -19,7 +19,7 @@ export const GlobalStyledHeading = tasty('div.myButton', {
     ':hover': '#purple.20',
   },
   color: '#dark',
-});
+})
 
 export function Block() {
   return (
@@ -27,5 +27,5 @@ export function Block() {
       <StyledButton>123</StyledButton>
       <GlobalStyledHeading />
     </>
-  );
+  )
 }

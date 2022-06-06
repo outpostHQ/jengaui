@@ -24,6 +24,11 @@
     "strictNullChecks": true,
     "target": "ES5"
   },
-  "exclude": ["dist", "node_modules", "vite.config.ts", "**/*.stories.tsx"],
-  "include": ["index.ts", "src"]
+  "exclude": [
+    "**/dist",
+    "**/vite.config.ts",
+    "**/node_modules",
+    "**/*.stories.tsx"
+  ],
+  "include": ["index.ts", "src/**/*"]
 }

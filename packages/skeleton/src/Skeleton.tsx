@@ -1,6 +1,6 @@
-import { JengaPlaceholderProps, Placeholder } from '@jenga-ui/placeholder';
-import { JengaGridProps, Grid, Space, Flow } from '@jenga-ui/layout';
-import { BaseProps, ContainerStyleProps } from 'tastycss';
+import { JengaPlaceholderProps, Placeholder } from '@jenga-ui/placeholder'
+import { JengaGridProps, Grid, Space, Flow } from '@jenga-ui/layout'
+import { BaseProps, ContainerStyleProps } from 'tastycss'
 
 const LAYOUT_MAP = {
   page({ lines, children, ...props }) {
@@ -17,7 +17,7 @@ const LAYOUT_MAP = {
               .map((item, i) => <Placeholder key={i} />)}
         </Flow>
       </Flow>
-    );
+    )
   },
   content({ children, lines, ...props }) {
     return (
@@ -27,7 +27,7 @@ const LAYOUT_MAP = {
             .fill(0)
             .map((item, i) => <Placeholder key={i} />)}
       </Flow>
-    );
+    )
   },
   topbar(props) {
     return (
@@ -49,7 +49,7 @@ const LAYOUT_MAP = {
           <Placeholder circle size="4x" />
         </Space>
       </Space>
-    );
+    )
   },
   menu({ lines, ...props }) {
     return (
@@ -60,7 +60,7 @@ const LAYOUT_MAP = {
             <Placeholder key={i} />
           ))}
       </Flow>
-    );
+    )
   },
   stats({ cards, ...props }) {
     return (
@@ -77,7 +77,7 @@ const LAYOUT_MAP = {
             />
           ))}
       </Space>
-    );
+    )
   },
   tabs({ tabs, children, lines, ...props }) {
     return (
@@ -96,11 +96,11 @@ const LAYOUT_MAP = {
               .map((item, i) => <Placeholder key={i} />)}
         </Flow>
       </Flow>
-    );
+    )
   },
   table({ rows, columns, ...props }) {
-    columns = columns || 5;
-    rows = rows || 5;
+    columns = columns || 5
+    rows = rows || 5
 
     return (
       <Grid
@@ -115,18 +115,16 @@ const LAYOUT_MAP = {
             return Array(columns)
               .fill(0)
               .map((item, j) => {
-                return (
-                  <Placeholder key={`${i}.${j}`} size={!i ? '3x' : '2x'} />
-                );
-              });
+                return <Placeholder key={`${i}.${j}`} size={!i ? '3x' : '2x'} />
+              })
           })}
       </Grid>
-    );
+    )
   },
   chart({ columns, ...props }) {
-    columns = columns || 12;
+    columns = columns || 12
 
-    const heightMap = [1, 4, 2, 5, 8, 9, 5, 3, 4, 2, 6, 7, 2];
+    const heightMap = [1, 4, 2, 5, 8, 9, 5, 3, 4, 2, 6, 7, 2]
 
     return (
       <Grid
@@ -146,12 +144,12 @@ const LAYOUT_MAP = {
                 height={`${heightMap[i % 12] * 10}%`}
                 width="max 6x"
               />
-            );
+            )
           })}
       </Grid>
-    );
+    )
   },
-} as const;
+} as const
 
 export interface JengaSkeletonProps
   extends JengaGridProps,
@@ -159,25 +157,25 @@ export interface JengaSkeletonProps
     BaseProps,
     ContainerStyleProps {
   /** The type of the layout */
-  layout?: keyof typeof LAYOUT_MAP;
+  layout?: keyof typeof LAYOUT_MAP
   /** The number of columns for table layout */
-  columns?: number;
+  columns?: number
   /** The number of rows for table layout */
-  rows?: number;
+  rows?: number
   /** The number of placeholder lines */
-  lines?: number;
+  lines?: number
   /** The number of tabs */
-  tabs?: number;
+  tabs?: number
   /** The number of cards */
-  cards?: number;
+  cards?: number
 }
 
 export function Skeleton({ layout, ...props }: JengaSkeletonProps) {
-  layout = layout || 'page';
+  layout = layout || 'page'
 
   return LAYOUT_MAP[layout] ? (
     LAYOUT_MAP[layout]({ ...props, qa: 'Skeleton' })
   ) : (
     <Placeholder {...props} />
-  );
+  )
 }

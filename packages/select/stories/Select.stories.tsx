@@ -1,7 +1,7 @@
-import { Select } from '../src/index';
-import { DollarCircleOutlined } from '@ant-design/icons';
-import { SELECTED_KEY_ARG } from '../../../stories/FormFieldArgs';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { Select } from '../src/index'
+import { DollarCircleOutlined } from '@ant-design/icons'
+import { SELECTED_KEY_ARG } from '../../../stories/FormFieldArgs'
+import { baseProps } from '../../../stories/lists/baseProps'
 
 export default {
   title: 'Pickers/Select',
@@ -14,17 +14,9 @@ export default {
   argTypes: {
     ...SELECTED_KEY_ARG,
   },
-};
+}
 
-const options = [
-  'red',
-  'orange',
-  'yellow',
-  'green',
-  'blue',
-  'purple',
-  'violet',
-];
+const options = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'violet']
 
 const Template = ({
   icon,
@@ -53,20 +45,20 @@ const Template = ({
       {...props}
     >
       {options.map((option) => {
-        return <Select.Item key={option}>{option}</Select.Item>;
+        return <Select.Item key={option}>{option}</Select.Item>
       })}
     </Select>
-  );
-};
+  )
+}
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = Template.bind({})
+Default.args = {}
 
-export const WithDefaultValue = Template.bind({});
-WithDefaultValue.args = { defaultSelectedKey: 'purple' };
+export const WithDefaultValue = Template.bind({})
+WithDefaultValue.args = { defaultSelectedKey: 'purple' }
 
-export const WithIcon = Template.bind({});
-WithIcon.args = { icon: true };
+export const WithIcon = Template.bind({})
+WithIcon.args = { icon: true }
 
 // export const Multiple = Template.bind({});
 // Multiple.args = { icon: true, defaultSelectedKeys: ['red', 'violet'] };

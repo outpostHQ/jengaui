@@ -5,9 +5,9 @@ import {
   useImperativeHandle,
   useRef,
   useState,
-} from 'react';
-import { useProviderProps } from '@jenga-ui/providers';
-import { Action } from '@jenga-ui/button';
+} from 'react'
+import { useProviderProps } from '@jenga-ui/providers'
+import { Action } from '@jenga-ui/button'
 import {
   BaseProps,
   BlockStyleProps,
@@ -16,10 +16,10 @@ import {
   PositionStyleProps,
   Styles,
   tasty,
-} from 'tastycss';
-import type { AriaTextFieldProps } from '@react-types/textfield';
-import { FormFieldProps, FieldWrapper } from '@jenga-ui/form';
-import { createFocusableRef } from '@react-spectrum/utils';
+} from 'tastycss'
+import type { AriaTextFieldProps } from '@react-types/textfield'
+import { FormFieldProps, FieldWrapper } from '@jenga-ui/form'
+import { createFocusableRef } from '@react-spectrum/utils'
 
 const FileInputElement = tasty(Action, {
   styles: {
@@ -71,7 +71,7 @@ const FileInputElement = tasty(Action, {
       zIndex: 10,
     },
   },
-});
+})
 
 export interface JengaFileInputProps
   extends BaseProps,
@@ -83,29 +83,29 @@ export interface JengaFileInputProps
    * The size of the input
    * @default default
    */
-  size?: 'small' | 'default' | 'large' | string;
+  size?: 'small' | 'default' | 'large' | string
   /** The input ref */
-  inputRef?: RefObject<HTMLInputElement>;
+  inputRef?: RefObject<HTMLInputElement>
   /** Style map for the input */
-  inputStyles?: Styles;
+  inputStyles?: Styles
   /**
    * The type of the input
    * @default file
    */
-  type?: 'file' | 'text';
+  type?: 'file' | 'text'
 }
 
 function extractContents(element, callback) {
-  const files = element?.files;
+  const files = element?.files
 
   if (files && files.length > 0) {
-    const fileReader = new FileReader();
+    const fileReader = new FileReader()
 
     fileReader.onload = function () {
-      callback(fileReader.result);
-    };
+      callback(fileReader.result)
+    }
 
-    fileReader.readAsText(files[0]);
+    fileReader.readAsText(files[0])
   }
 }
 
@@ -136,42 +136,42 @@ function FileInput(props: JengaFileInputProps, ref) {
     inputStyles,
     type = 'file',
     ...otherProps
-  } = useProviderProps(props);
-  const [value, setValue] = useState();
-  const [dragHover, setDragHover] = useState(false);
-  let domRef = useRef(null);
-  let defaultInputRef = useRef(null);
-  inputRef = inputRef || defaultInputRef;
+  } = useProviderProps(props)
+  const [value, setValue] = useState()
+  const [dragHover, setDragHover] = useState(false)
+  let domRef = useRef(null)
+  let defaultInputRef = useRef(null)
+  inputRef = inputRef || defaultInputRef
 
-  let styles = extractStyles(otherProps, CONTAINER_STYLES);
+  let styles = extractStyles(otherProps, CONTAINER_STYLES)
 
   const onLocalChange = useCallback(
     (event) => {
-      const value = event.target.value;
+      const value = event.target.value
 
       if (type === 'file') {
-        onChange?.(value);
+        onChange?.(value)
       } else if (onChange) {
-        extractContents(event.target, onChange);
+        extractContents(event.target, onChange)
       }
 
-      setValue(value);
+      setValue(value)
     },
-    [onChange],
-  );
+    [onChange]
+  )
 
   // Expose imperative interface for ref
   useImperativeHandle(ref, () => ({
     ...createFocusableRef(domRef, inputRef),
     select() {
       if (inputRef?.current) {
-        inputRef.current.select();
+        inputRef.current.select()
       }
     },
     getInputElement() {
-      return inputRef?.current;
+      return inputRef?.current
     },
-  }));
+  }))
 
   const fileInput = (
     <FileInputElement
@@ -185,7 +185,7 @@ function FileInput(props: JengaFileInputProps, ref) {
       }}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === 'Space') {
-          inputRef?.current?.click();
+          inputRef?.current?.click()
         }
       }}
     >
@@ -198,13 +198,13 @@ function FileInput(props: JengaFileInputProps, ref) {
         type="file"
         tabIndex={-1}
         onDragEnter={() => {
-          setDragHover(true);
+          setDragHover(true)
         }}
         onDragLeave={() => {
-          setDragHover(false);
+          setDragHover(false)
         }}
         onDrop={() => {
-          setDragHover(false);
+          setDragHover(false)
         }}
       />
       <div data-element="Button">Choose file</div>
@@ -212,7 +212,7 @@ function FileInput(props: JengaFileInputProps, ref) {
         {value || placeholder || 'No file selected'}
       </div>
     </FileInputElement>
-  );
+  )
 
   return (
     <FieldWrapper
@@ -237,13 +237,13 @@ function FileInput(props: JengaFileInputProps, ref) {
         ref: domRef,
       }}
     />
-  );
+  )
 }
 
 /**
  * FileInputs are file inputs that allow users to select local files to
  * upload them to the server.
  */
-const _FileInput = forwardRef(FileInput);
+const _FileInput = forwardRef(FileInput)
 
-export { _FileInput as FileInput };
+export { _FileInput as FileInput }

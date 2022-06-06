@@ -1,34 +1,34 @@
-import React, { ReactNode, forwardRef, Fragment, useRef } from 'react';
+import React, { ReactNode, forwardRef, Fragment, useRef } from 'react'
 import {
   unwrapDOMRef,
   useDOMRef,
   useIsMobileDevice,
-} from '@react-spectrum/utils';
-import { DismissButton, useOverlayPosition } from '@react-aria/overlays';
-import { DOMRef, DOMRefValue } from '@react-types/shared';
-import { FocusScope } from '@react-aria/focus';
-import { Placement, PositionProps } from '@react-types/overlays';
-import { PressResponder } from '@react-aria/interactions';
-import { MenuTriggerProps as BaseTriggerProps } from '@react-types/menu';
-import { useMenuTrigger } from '@react-aria/menu';
-import { useMenuTriggerState } from '@react-stately/menu';
-import { Popover, Tray } from '@jenga-ui/modal';
-import { mergeProps, SlotProvider } from '@jenga-ui/utils';
-import { MenuContext, MenuContextValue } from './context';
+} from '@react-spectrum/utils'
+import { DismissButton, useOverlayPosition } from '@react-aria/overlays'
+import { DOMRef, DOMRefValue } from '@react-types/shared'
+import { FocusScope } from '@react-aria/focus'
+import { Placement, PositionProps } from '@react-types/overlays'
+import { PressResponder } from '@react-aria/interactions'
+import { MenuTriggerProps as BaseTriggerProps } from '@react-types/menu'
+import { useMenuTrigger } from '@react-aria/menu'
+import { useMenuTriggerState } from '@react-stately/menu'
+import { Popover, Tray } from '@jenga-ui/modal'
+import { mergeProps, SlotProvider } from '@jenga-ui/utils'
+import { MenuContext, MenuContextValue } from './context'
 
 export type JengaMenuTriggerProps = BaseTriggerProps &
   PositionProps & {
-    trigger?: string;
-    isDisabled?: boolean;
-    children: ReactNode[];
-  };
+    trigger?: string
+    isDisabled?: boolean
+    children: ReactNode[]
+  }
 
 function MenuTrigger(props: JengaMenuTriggerProps, ref: DOMRef<HTMLElement>) {
-  const menuPopoverRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLElement>();
-  const domRef = useDOMRef(ref);
-  const menuTriggerRef = domRef || triggerRef;
-  const menuRef = useRef<HTMLUListElement>(null);
+  const menuPopoverRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLElement>()
+  const domRef = useDOMRef(ref)
+  const menuTriggerRef = domRef || triggerRef
+  const menuRef = useRef<HTMLUListElement>(null)
   const {
     children,
     align = 'start',
@@ -37,18 +37,18 @@ function MenuTrigger(props: JengaMenuTriggerProps, ref: DOMRef<HTMLElement>) {
     closeOnSelect,
     trigger = 'press',
     isDisabled,
-  } = props;
+  } = props
 
-  const [menuTrigger, menu] = React.Children.toArray(children);
-  const state = useMenuTriggerState(props);
+  const [menuTrigger, menu] = React.Children.toArray(children)
+  const state = useMenuTriggerState(props)
 
   const { menuTriggerProps, menuProps } = useMenuTrigger(
     { isDisabled },
     state,
-    menuTriggerRef,
-  );
+    menuTriggerRef
+  )
 
-  let initialPlacement: Placement;
+  let initialPlacement: Placement
   switch (direction) {
     case 'left':
     case 'right':
@@ -56,15 +56,15 @@ function MenuTrigger(props: JengaMenuTriggerProps, ref: DOMRef<HTMLElement>) {
     case 'end':
       initialPlacement = `${direction} ${
         align === 'end' ? 'bottom' : 'top'
-      }` as Placement;
-      break;
+      }` as Placement
+      break
     case 'bottom':
     case 'top':
     default:
-      initialPlacement = `${direction} ${align}` as Placement;
+      initialPlacement = `${direction} ${align}` as Placement
   }
 
-  const isMobile = useIsMobileDevice();
+  const isMobile = useIsMobileDevice()
   const { overlayProps: positionProps, placement } = useOverlayPosition({
     targetRef: menuTriggerRef,
     overlayRef: menuPopoverRef,
@@ -76,7 +76,7 @@ function MenuTrigger(props: JengaMenuTriggerProps, ref: DOMRef<HTMLElement>) {
     containerPadding: props.containerPadding,
     offset: props.offset || 8,
     crossOffset: props.crossOffset,
-  });
+  })
 
   const menuContext = {
     ...menuProps,
@@ -93,7 +93,7 @@ function MenuTrigger(props: JengaMenuTriggerProps, ref: DOMRef<HTMLElement>) {
     mods: {
       popover: !isMobile,
     },
-  } as MenuContextValue;
+  } as MenuContextValue
 
   const contents = (
     <>
@@ -101,16 +101,16 @@ function MenuTrigger(props: JengaMenuTriggerProps, ref: DOMRef<HTMLElement>) {
       {menu}
       <DismissButton onDismiss={state.close} />
     </>
-  );
+  )
 
   // On small screen devices, the menu is rendered in a tray, otherwise a popover.
-  let overlay;
+  let overlay
   if (isMobile) {
     overlay = (
       <Tray isOpen={state.isOpen} onClose={state.close}>
         {contents}
       </Tray>
-    );
+    )
   } else {
     overlay = (
       <Popover
@@ -124,7 +124,7 @@ function MenuTrigger(props: JengaMenuTriggerProps, ref: DOMRef<HTMLElement>) {
       >
         {contents}
       </Popover>
-    );
+    )
   }
 
   return (
@@ -142,15 +142,15 @@ function MenuTrigger(props: JengaMenuTriggerProps, ref: DOMRef<HTMLElement>) {
       </SlotProvider>
       <MenuContext.Provider value={menuContext}>{overlay}</MenuContext.Provider>
     </Fragment>
-  );
+  )
 }
 
 /**
  * The MenuTrigger serves as a wrapper around a Menu and its associated trigger,
  * linking the Menu's open state with the trigger's press state.
  */
-let _MenuTrigger = forwardRef(MenuTrigger);
+let _MenuTrigger = forwardRef(MenuTrigger)
 
-_MenuTrigger.displayName = 'MenuTrigger';
+_MenuTrigger.displayName = 'MenuTrigger'
 
-export { _MenuTrigger as MenuTrigger };
+export { _MenuTrigger as MenuTrigger }

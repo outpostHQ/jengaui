@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
-import { GlobalStyles } from './GlobalStyles';
-import { PortalProvider } from '@jenga-ui/portal';
+import { useEffect, useRef, useState } from 'react'
+import { GlobalStyles } from './GlobalStyles'
+import { PortalProvider } from '@jenga-ui/portal'
 import {
   BASE_STYLES,
   BaseProps,
@@ -8,38 +8,38 @@ import {
   extractStyles,
   filterBaseProps,
   tasty,
-} from 'tastycss';
-import { Provider } from '@jenga-ui/providers';
-import { ModalProvider } from '@react-aria/overlays';
-import { StyleSheetManager } from 'styled-components';
-import { TOKENS } from '../../../src/tokens';
-import { AlertDialogApiProvider } from '@jenga-ui/alert-dialog';
+} from 'tastycss'
+import { Provider } from '@jenga-ui/providers'
+import { ModalProvider } from '@react-aria/overlays'
+import { StyleSheetManager } from 'styled-components'
+import { TOKENS } from '../../../src/tokens'
+import { AlertDialogApiProvider } from '@jenga-ui/alert-dialog'
 
 const RootElement = tasty({
   id: 'jenga-ui-kit-root',
   className: 'root',
-});
+})
 
 const DEFAULT_STYLES = {
   display: 'block',
   preset: 't3',
   ...Object.keys(TOKENS).reduce((map, key) => {
-    map[`@${key}`] = TOKENS[key];
+    map[`@${key}`] = TOKENS[key]
 
-    return map;
+    return map
   }, {}),
-};
-const STYLES = [...BASE_STYLES, ...BLOCK_STYLES];
+}
+const STYLES = [...BASE_STYLES, ...BLOCK_STYLES]
 
 export interface JengaRootProps extends BaseProps {
-  tokens?: { [key: string]: string };
-  bodyStyles?: { [key: string]: string };
-  fonts?: boolean;
-  publicUrl?: string;
-  router?: any;
-  font?: string;
-  monospaceFont?: string;
-  applyLegacyTokens?: boolean;
+  tokens?: { [key: string]: string }
+  bodyStyles?: { [key: string]: string }
+  fonts?: boolean
+  publicUrl?: string
+  router?: any
+  font?: string
+  monospaceFont?: string
+  applyLegacyTokens?: boolean
 }
 
 export const Root = (allProps: JengaRootProps) => {
@@ -54,20 +54,20 @@ export const Root = (allProps: JengaRootProps) => {
     monospaceFont,
     applyLegacyTokens,
     ...props
-  } = allProps;
+  } = allProps
 
-  const ref = useRef(null);
+  const ref = useRef(null)
 
-  const [rootRef, setRootRef] = useState();
+  const [rootRef, setRootRef] = useState()
 
   useEffect(() => {
     if (!rootRef) {
       // @ts-ignore
-      setRootRef(ref?.current);
+      setRootRef(ref?.current)
     }
-  }, []);
+  }, [])
 
-  const styles = extractStyles(props, STYLES, DEFAULT_STYLES);
+  const styles = extractStyles(props, STYLES, DEFAULT_STYLES)
 
   return (
     <Provider router={router} root={rootRef}>
@@ -93,5 +93,5 @@ export const Root = (allProps: JengaRootProps) => {
         </RootElement>
       </StyleSheetManager>
     </Provider>
-  );
-};
+  )
+}

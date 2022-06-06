@@ -1,14 +1,14 @@
-import { forwardRef, ReactNode } from 'react';
-import { Action, JengaActionProps } from './Action';
-import { LoadingOutlined } from '@ant-design/icons';
-import { Styles } from 'tastycss';
-import { FocusableRef } from '@react-types/shared';
-import { accessibilityWarning } from '@jenga-ui//utils';
+import { forwardRef, ReactNode } from 'react'
+import { Action, JengaActionProps } from './Action'
+import { LoadingOutlined } from '@ant-design/icons'
+import { Styles } from 'tastycss'
+import { FocusableRef } from '@react-types/shared'
+import { accessibilityWarning } from '@jenga-ui//utils'
 
 export interface JengaButtonProps extends JengaActionProps {
-  icon?: ReactNode;
-  isLoading?: boolean;
-  isSelected?: boolean;
+  icon?: ReactNode
+  isLoading?: boolean
+  isSelected?: boolean
   type?:
     | 'primary'
     | 'default'
@@ -17,8 +17,8 @@ export interface JengaButtonProps extends JengaActionProps {
     | 'clear'
     | 'outline'
     | 'neutral'
-    | string;
-  size?: 'small' | 'default' | 'large' | (string & {});
+    | string
+  size?: 'small' | 'default' | 'large' | (string & {})
 }
 
 export function provideStyles({
@@ -30,7 +30,7 @@ export function provideStyles({
   children,
   label,
 }) {
-  children = children || icon ? children : label;
+  children = children || icon ? children : label
 
   return {
     ...DEFAULT_STYLES,
@@ -45,7 +45,7 @@ export function provideStyles({
           height: '(2.5x + 1lh)',
         }
       : null),
-  };
+  }
 }
 
 const DEFAULT_STYLES_BY_TYPE: { [key: string]: Styles } = {
@@ -147,7 +147,7 @@ const DEFAULT_STYLES_BY_TYPE: { [key: string]: Styles } = {
       '[disabled]': '#dark.30',
     },
   },
-};
+}
 
 const DANGER_STYLES_BY_TYPE: { [key: string]: Styles } = {
   primary: {
@@ -242,7 +242,7 @@ const DANGER_STYLES_BY_TYPE: { [key: string]: Styles } = {
       '[disabled]': '#dark.30',
     },
   },
-};
+}
 
 const STYLES_BY_SIZE = {
   small: {
@@ -255,7 +255,7 @@ const STYLES_BY_SIZE = {
     padding: '(1.5x - 1px) (2.5x - 1px)',
     preset: 't2m',
   },
-};
+}
 
 const DEFAULT_STYLES = {
   display: 'inline-grid',
@@ -273,16 +273,16 @@ const DEFAULT_STYLES = {
     transition:
       'display .2s steps(1, start), margin .2s linear, opacity .2s linear',
   },
-} as Styles;
+} as Styles
 
 export const Button = forwardRef(
   (allProps: JengaButtonProps, ref: FocusableRef<HTMLElement>) => {
     let { type, size, label, styles, children, theme, icon, mods, ...props } =
-      allProps;
+      allProps
 
-    const isDisabled = props.isDisabled;
-    const isLoading = props.isLoading;
-    const isSelected = props.isSelected;
+    const isDisabled = props.isDisabled
+    const isLoading = props.isLoading
+    const isSelected = props.isSelected
     const propsForStyles = {
       ...props,
       label,
@@ -293,34 +293,34 @@ export const Button = forwardRef(
       type,
       icon,
       children,
-    };
+    }
 
     if (!children) {
       if (icon) {
         if (!label) {
           accessibilityWarning(
-            'If you provide `icon` property for a Button and do not provide any children then you should specify the `label` property to make sure the Button element stays accessible.',
-          );
+            'If you provide `icon` property for a Button and do not provide any children then you should specify the `label` property to make sure the Button element stays accessible.'
+          )
         }
       } else {
         if (!label) {
           accessibilityWarning(
-            'If you provide no children for a Button then you should specify the `label` property to make sure the Button element stays accessible.',
-          );
+            'If you provide no children for a Button then you should specify the `label` property to make sure the Button element stays accessible.'
+          )
         }
       }
     }
 
-    children = children || icon ? children : label;
+    children = children || icon ? children : label
 
     styles = {
       ...provideStyles(propsForStyles),
       ...styles,
-    };
+    }
 
     if (isLoading && !children && styles) {
-      styles.fontSize = '1em';
-      styles.lineHeight = '1em';
+      styles.fontSize = '1em'
+      styles.lineHeight = '1em'
     }
 
     return (
@@ -341,6 +341,6 @@ export const Button = forwardRef(
         {icon || isLoading ? !isLoading ? icon : <LoadingOutlined /> : null}
         {children}
       </Action>
-    );
-  },
-);
+    )
+  }
+)

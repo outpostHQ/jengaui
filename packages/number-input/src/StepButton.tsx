@@ -1,6 +1,6 @@
-import { Button } from '@jenga-ui/button';
-import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
-import { Styles } from 'tastycss';
+import { Button } from '@jenga-ui/button'
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons'
+import { Styles } from 'tastycss'
 
 const STEP_BUTTON_STYLES: Styles = {
   padding: '0 .5x',
@@ -11,7 +11,7 @@ const STEP_BUTTON_STYLES: Styles = {
   preset: 't4',
   lineHeight: '1em',
   height: 'auto',
-};
+}
 
 /**
  * Buttons for NumberField.
@@ -32,5 +32,5 @@ export function StepButton(props) {
       label={`Step ${props.direction}`}
       {...props}
     />
-  );
+  )
 }

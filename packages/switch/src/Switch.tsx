@@ -1,9 +1,9 @@
-import { useFocusableRef } from '@react-spectrum/utils';
-import { forwardRef, useMemo, useRef } from 'react';
-import { useSwitch } from '@react-aria/switch';
-import { useHover } from '@react-aria/interactions';
-import { useToggleState } from '@react-stately/toggle';
-import { useProviderProps } from '@jenga-ui/providers';
+import { useFocusableRef } from '@react-spectrum/utils'
+import { forwardRef, useMemo, useRef } from 'react'
+import { useSwitch } from '@react-aria/switch'
+import { useHover } from '@react-aria/interactions'
+import { useToggleState } from '@react-stately/toggle'
+import { useProviderProps } from '@jenga-ui/providers'
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -15,16 +15,28 @@ import {
   OuterStyleProps,
   Styles,
   tasty,
-} from 'tastycss';
-import { Base } from '@jenga-ui/core';
-import { useFocus, mergeProps, castNullableIsSelected, WithNullableSelected } from '@jenga-ui/utils';
-import { LoadingOutlined } from '@ant-design/icons';
-import { useFormProps, INLINE_LABEL_STYLES, LABEL_STYLES, HiddenInput, FieldWrapper, FormFieldProps } from '@jenga-ui/form';
-import type { AriaSwitchProps } from '@react-types/switch';
+} from 'tastycss'
+import { Base } from '@jenga-ui/core'
+import {
+  useFocus,
+  mergeProps,
+  castNullableIsSelected,
+  WithNullableSelected,
+} from '@jenga-ui/utils'
+import { LoadingOutlined } from '@ant-design/icons'
+import {
+  useFormProps,
+  INLINE_LABEL_STYLES,
+  LABEL_STYLES,
+  HiddenInput,
+  FieldWrapper,
+  FormFieldProps,
+} from '@jenga-ui/form'
+import type { AriaSwitchProps } from '@react-types/switch'
 
 const BaseSwitchWrapperElement = tasty({
   qa: 'SwitchWrapper',
-});
+})
 
 const SwitchWrapperElement = tasty({
   qa: 'SwitchWrapper',
@@ -38,7 +50,7 @@ const SwitchWrapperElement = tasty({
     width: 'min-content',
     cursor: 'pointer',
   },
-});
+})
 
 const SwitchElement = tasty({
   styles: {
@@ -70,7 +82,7 @@ const SwitchElement = tasty({
       'inside-form & side-label': 'start',
     },
   },
-});
+})
 
 const SwitchThumbElement = tasty({
   'aria-hidden': 'true',
@@ -89,7 +101,7 @@ const SwitchThumbElement = tasty({
     transition: 'left',
     cursor: 'pointer',
   },
-});
+})
 
 export interface JengaSwitchProps
   extends BaseProps,
@@ -97,15 +109,15 @@ export interface JengaSwitchProps
     BlockStyleProps,
     FormFieldProps,
     AriaSwitchProps {
-  thumbStyles?: Styles;
-  inputStyles?: Styles;
-  isLoading?: boolean;
+  thumbStyles?: Styles
+  inputStyles?: Styles
+  isLoading?: boolean
 }
 
 function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
-  props = castNullableIsSelected(props);
-  props = useProviderProps(props);
-  props = useFormProps(props);
+  props = castNullableIsSelected(props)
+  props = useProviderProps(props)
+  props = useFormProps(props)
 
   let {
     qa,
@@ -127,30 +139,30 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
     requiredMark = true,
     tooltip,
     ...otherProps
-  } = props;
+  } = props
 
-  label = label || children;
+  label = label || children
 
-  let styles = extractStyles(props, OUTER_STYLES);
+  let styles = extractStyles(props, OUTER_STYLES)
 
-  inputStyles = extractStyles(props, BLOCK_STYLES, inputStyles);
+  inputStyles = extractStyles(props, BLOCK_STYLES, inputStyles)
 
   labelStyles = useMemo(
     () => ({
       ...(insideForm ? LABEL_STYLES : INLINE_LABEL_STYLES),
       ...labelStyles,
     }),
-    [insideForm, labelStyles],
-  );
+    [insideForm, labelStyles]
+  )
 
-  let { isFocused, focusProps } = useFocus({ isDisabled }, true);
-  let { hoverProps, isHovered } = useHover({ isDisabled });
+  let { isFocused, focusProps } = useFocus({ isDisabled }, true)
+  let { hoverProps, isHovered } = useHover({ isDisabled })
 
-  let inputRef = useRef(null);
-  let domRef = useFocusableRef(ref, inputRef);
+  let inputRef = useRef(null)
+  let domRef = useFocusableRef(ref, inputRef)
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  let { inputProps } = useSwitch(props, useToggleState(props), inputRef);
+  let { inputProps } = useSwitch(props, useToggleState(props), inputRef)
 
   const switchField = (
     <BaseSwitchWrapperElement qa={qa || 'Switch'}>
@@ -178,7 +190,7 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
         />
       </SwitchElement>
     </BaseSwitchWrapperElement>
-  );
+  )
 
   if (insideForm) {
     return (
@@ -201,7 +213,7 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
           ref: domRef,
         }}
       />
-    );
+    )
   }
 
   return (
@@ -231,15 +243,15 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
         </Element>
       )}
     </SwitchWrapperElement>
-  );
+  )
 }
 
 /**
  * Switches allow users to turn an individual option on or off.
  * They are usually used to activate or deactivate a specific setting.
  */
-let _Switch = forwardRef(Switch);
+let _Switch = forwardRef(Switch)
 
-(_Switch as any).jengaInputType = 'Checkbox';
+;(_Switch as any).jengaInputType = 'Checkbox'
 
-export { _Switch as Switch };
+export { _Switch as Switch }

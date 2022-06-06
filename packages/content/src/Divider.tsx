@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from 'react'
 import {
   BASE_STYLES,
   BaseProps,
@@ -7,8 +7,8 @@ import {
   OUTER_STYLES,
   OuterStyleProps,
   tasty,
-} from 'tastycss';
-import { useSlotProps } from '@jenga-ui/utils';
+} from 'tastycss'
+import { useSlotProps } from '@jenga-ui/utils'
 
 const DividerElement = tasty({
   styles: {
@@ -38,15 +38,15 @@ const DividerElement = tasty({
     },
   },
   styleProps: [...OUTER_STYLES, ...BASE_STYLES, ...COLOR_STYLES],
-});
+})
 
 export interface JengaDividerProps extends BaseProps, OuterStyleProps {}
 
 export const Divider = forwardRef((props: JengaDividerProps, ref) => {
   const { mods, children, styles, ...otherProps } = useSlotProps(
     props,
-    'divider',
-  );
+    'divider'
+  )
 
   return (
     <DividerElement
@@ -68,5 +68,5 @@ export const Divider = forwardRef((props: JengaDividerProps, ref) => {
         </>
       )}
     </DividerElement>
-  );
-});
+  )
+})

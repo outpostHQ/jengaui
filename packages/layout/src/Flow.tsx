@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from 'react'
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -6,21 +6,21 @@ import {
   extractStyles,
   filterBaseProps,
   tasty,
-} from 'tastycss';
+} from 'tastycss'
 
 const FlowElement = tasty({
   styles: {
     display: 'block',
     flow: 'column',
   },
-});
+})
 
-const STYLE_PROPS = CONTAINER_STYLES;
+const STYLE_PROPS = CONTAINER_STYLES
 
 export interface JengaFlowProps extends BaseProps, ContainerStyleProps {}
 
 export const Flow = forwardRef((props: JengaFlowProps, ref) => {
-  const styles = extractStyles(props, STYLE_PROPS);
+  const styles = extractStyles(props, STYLE_PROPS)
 
   return (
     <FlowElement
@@ -28,5 +28,5 @@ export const Flow = forwardRef((props: JengaFlowProps, ref) => {
       styles={styles}
       ref={ref}
     />
-  );
-});
+  )
+})

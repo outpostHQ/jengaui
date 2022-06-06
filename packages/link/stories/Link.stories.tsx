@@ -1,5 +1,5 @@
-import { Link } from '../src/Link';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { Link } from '../src/Link'
+import { baseProps } from '../../../stories/lists/baseProps'
 
 export default {
   title: 'Navigation/Link',
@@ -15,7 +15,7 @@ export default {
       control: 'text',
     },
   },
-};
+}
 
 const Template = ({ isDisabled, label }) => (
   <Link
@@ -25,9 +25,9 @@ const Template = ({ isDisabled, label }) => (
   >
     {label}
   </Link>
-);
+)
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   label: 'Link',
-};
+}

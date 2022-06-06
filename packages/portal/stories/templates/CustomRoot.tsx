@@ -1,10 +1,10 @@
-import { Story } from '@storybook/react';
-import { useRef } from 'react';
-import { Portal } from '../../src/Portal';
-import { PortalProps } from '../../src/types';
+import { Story } from '@storybook/react'
+import { useRef } from 'react'
+import { Portal } from '../../src/Portal'
+import { PortalProps } from '../../src/types'
 
 export const CustomRootTemplate: Story<PortalProps> = (args) => {
-  const rootRef = useRef(null);
+  const rootRef = useRef(null)
 
   return (
     <>
@@ -17,5 +17,5 @@ export const CustomRootTemplate: Story<PortalProps> = (args) => {
       </div>
       By default, Portal content should be there {' -> '}
     </>
-  );
-};
+  )
+}

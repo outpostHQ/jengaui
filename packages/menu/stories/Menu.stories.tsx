@@ -1,19 +1,16 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import {
   BulbOutlined,
   CheckCircleFilled,
   MoreOutlined,
-} from '@ant-design/icons';
-import {
-  Menu,
-  MenuTrigger,
-} from '../src';
-import { Button } from '@jenga-ui/button';
-import { Flex, Space } from '@jenga-ui/layout';
-import { Text } from '@jenga-ui/content';
-import { Root } from '@jenga-ui/core';
-import { baseProps } from '../../../stories/lists/baseProps';
-import { action } from '@storybook/addon-actions';
+} from '@ant-design/icons'
+import { Menu, MenuTrigger } from '../src'
+import { Button } from '@jenga-ui/button'
+import { Flex, Space } from '@jenga-ui/layout'
+import { Text } from '@jenga-ui/content'
+import { Root } from '@jenga-ui/core'
+import { baseProps } from '../../../stories/lists/baseProps'
+import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'Pickers/Menu',
@@ -26,7 +23,7 @@ export default {
   argTypes: {
     onAction: { action: 'action' },
   },
-};
+}
 
 const MenuTemplate = (props) => {
   return (
@@ -46,8 +43,8 @@ const MenuTemplate = (props) => {
         </Menu.Item>
       </Menu>
     </Root>
-  );
-};
+  )
+}
 
 export const Default = ({ ...props }) => {
   const menu = (
@@ -62,7 +59,7 @@ export const Default = ({ ...props }) => {
         Cut
       </Menu.Item>
     </Menu>
-  );
+  )
 
   return (
     <Root>
@@ -84,8 +81,8 @@ export const Default = ({ ...props }) => {
         </MenuTrigger>
       </Space>
     </Root>
-  );
-};
+  )
+}
 
 export const Sections = (props) => {
   return (
@@ -104,25 +101,25 @@ export const Sections = (props) => {
         </Menu>
       </div>
     </Root>
-  );
-};
+  )
+}
 
 export const GitActions = (props) => {
   const bulbIcon = (
     <Text>
       <BulbOutlined />
     </Text>
-  );
+  )
   const successIcon = (
     <Text color="#success">
       <CheckCircleFilled />
     </Text>
-  );
+  )
   const stuffText = (
     <Text nowrap color="inherit">
       Suff
     </Text>
-  );
+  )
 
   return (
     <Root>
@@ -167,36 +164,36 @@ export const GitActions = (props) => {
         </Menu>
       </Space>
     </Root>
-  );
-};
+  )
+}
 
 export const MenuSelectableSingle = (props) => {
-  const [selectedKeys, setSelectedKeys] = useState(['1']);
+  const [selectedKeys, setSelectedKeys] = useState(['1'])
   const onSelectionChange = (key) => {
-    setSelectedKeys(key);
-  };
+    setSelectedKeys(key)
+  }
 
   return MenuTemplate({
     ...props,
     selectionMode: 'single',
     selectedKeys,
     onSelectionChange,
-  });
-};
+  })
+}
 
 export const MenuSelectableMultiple = (props) => {
-  const [selectedKeys, setSelectedKeys] = useState(['1', '2']);
+  const [selectedKeys, setSelectedKeys] = useState(['1', '2'])
   const onSelectionChange = (key) => {
-    setSelectedKeys(key);
-  };
+    setSelectedKeys(key)
+  }
 
   return MenuTemplate({
     ...props,
     selectionMode: 'multiple',
     selectedKeys,
     onSelectionChange,
-  });
-};
+  })
+}
 
 export const PaymentDetails = (props) => {
   return (
@@ -218,5 +215,5 @@ export const PaymentDetails = (props) => {
         </Menu>
       </div>
     </Root>
-  );
-};
+  )
+}

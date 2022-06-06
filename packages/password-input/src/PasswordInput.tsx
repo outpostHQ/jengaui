@@ -1,34 +1,28 @@
-import { forwardRef, useCallback, useRef, useState } from 'react';
-import {
-  JengaTextInputBaseProps,
-  TextInputBase,
-} from '@jenga-ui/text-input';
-import { useProviderProps } from '@jenga-ui/providers';
-import { useTextField } from '@react-aria/textfield';
-import { Button } from '@jenga-ui/button';
-import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
-import {
-  castNullableStringValue,
-  WithNullableValue,
-} from '@jenga-ui/utils';
+import { forwardRef, useCallback, useRef, useState } from 'react'
+import { JengaTextInputBaseProps, TextInputBase } from '@jenga-ui/text-input'
+import { useProviderProps } from '@jenga-ui/providers'
+import { useTextField } from '@react-aria/textfield'
+import { Button } from '@jenga-ui/button'
+import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons'
+import { castNullableStringValue, WithNullableValue } from '@jenga-ui/utils'
 
 function PasswordInput(props: WithNullableValue<JengaTextInputBaseProps>, ref) {
-  props = castNullableStringValue(props);
+  props = castNullableStringValue(props)
 
-  let { suffix, multiLine, ...otherProps } = useProviderProps({ ...props });
-  let [type, setType] = useState('password');
-  let inputRef = useRef(null);
+  let { suffix, multiLine, ...otherProps } = useProviderProps({ ...props })
+  let [type, setType] = useState('password')
+  let inputRef = useRef(null)
   let { labelProps, inputProps } = useTextField(
     {
       ...otherProps,
       type,
     },
-    inputRef,
-  );
+    inputRef
+  )
 
   const toggleType = useCallback((e) => {
-    setType((type) => (type === 'password' ? 'text' : 'password'));
-  }, []);
+    setType((type) => (type === 'password' ? 'text' : 'password'))
+  }, [])
 
   const wrappedSuffix = (
     <>
@@ -47,7 +41,7 @@ function PasswordInput(props: WithNullableValue<JengaTextInputBaseProps>, ref) {
         icon={type === 'password' ? <EyeInvisibleOutlined /> : <EyeOutlined />}
       />
     </>
-  );
+  )
 
   return (
     <TextInputBase
@@ -62,7 +56,7 @@ function PasswordInput(props: WithNullableValue<JengaTextInputBaseProps>, ref) {
       multiLine={multiLine}
       {...otherProps}
     />
-  );
+  )
 }
 
 /**
@@ -70,8 +64,8 @@ function PasswordInput(props: WithNullableValue<JengaTextInputBaseProps>, ref) {
  * with a keyboard. Various decorations can be displayed around the field to
  * communicate the entry requirements.
  */
-const _PasswordInput = forwardRef(PasswordInput);
+const _PasswordInput = forwardRef(PasswordInput)
 
-(_PasswordInput as any).jengaInputType = 'Text';
+;(_PasswordInput as any).jengaInputType = 'Text'
 
-export { _PasswordInput as PasswordInput };
+export { _PasswordInput as PasswordInput }

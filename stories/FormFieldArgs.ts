@@ -1,10 +1,10 @@
-import { baseProps } from './lists/baseProps';
+import { baseProps } from './lists/baseProps'
 
 export const DISABLE_BASE_ARGS = baseProps.reduce((map, prop) => {
-  map[prop] = { table: { disable: true } };
+  map[prop] = { table: { disable: true } }
 
-  return map;
-}, {});
+  return map
+}, {})
 
 export const LABEL_POSITION_ARG = {
   labelPosition: {
@@ -16,28 +16,28 @@ export const LABEL_POSITION_ARG = {
       defaultValue: { summary: 'top' },
     },
   },
-};
+}
 
 export const LABEL_ARG = {
   label: {
     control: 'text',
     description: 'The content to display as the label.',
   },
-};
+}
 
 export const EXTRA_ARG = {
   extra: {
     control: 'text',
     description: 'The extra content to display next to the label.',
   },
-};
+}
 
 export const DESCRIPTION_ARG = {
   description: {
     control: 'text',
     description: 'The description for the field.',
   },
-};
+}
 
 export const NECESSITY_INDICATOR_ARG = {
   necessityIndicator: {
@@ -50,7 +50,7 @@ export const NECESSITY_INDICATOR_ARG = {
       defaultValue: { summary: 'icon' },
     },
   },
-};
+}
 
 export const MESSAGE_ARG = {
   message: {
@@ -58,14 +58,14 @@ export const MESSAGE_ARG = {
     description: 'Validation error message',
     control: 'text',
   },
-};
+}
 
 export const PLACEHOLDER_ARG = {
   placeholder: {
     // defaultValue: 'Placeholder',
     control: 'text',
   },
-};
+}
 
 export const VALIDATION_STATE_ARG = {
   validationState: {
@@ -79,7 +79,7 @@ export const VALIDATION_STATE_ARG = {
       defaultValue: { summary: 'top' },
     },
   },
-};
+}
 
 export const IS_LOADING_ARG = {
   isLoading: {
@@ -91,7 +91,7 @@ export const IS_LOADING_ARG = {
       defaultValue: { summary: false },
     },
   },
-};
+}
 
 export const AUTO_FOCUS_ARG = {
   autoFocus: {
@@ -105,7 +105,7 @@ export const AUTO_FOCUS_ARG = {
       defaultValue: { summary: false },
     },
   },
-};
+}
 
 export const IS_REQUIRED_ARG = {
   isRequired: {
@@ -120,7 +120,7 @@ export const IS_REQUIRED_ARG = {
       defaultValue: { summary: false },
     },
   },
-};
+}
 
 export const IS_READ_ONLY_ARG = {
   isReadOnly: {
@@ -135,7 +135,7 @@ export const IS_READ_ONLY_ARG = {
       defaultValue: { summary: false },
     },
   },
-};
+}
 
 export const IS_DISABLED_ARG = {
   isDisabled: {
@@ -149,7 +149,7 @@ export const IS_DISABLED_ARG = {
       defaultValue: { summary: false },
     },
   },
-};
+}
 
 export const SIZE_ARG = {
   size: {
@@ -162,7 +162,7 @@ export const SIZE_ARG = {
       defaultValue: { summary: 'default' },
     },
   },
-};
+}
 
 export const MULTILINE_ARG = {
   multiLine: {
@@ -176,7 +176,7 @@ export const MULTILINE_ARG = {
       defaultValue: { summary: false },
     },
   },
-};
+}
 
 export const REQUIRED_MARK_ARG = {
   requiredMark: {
@@ -190,7 +190,7 @@ export const REQUIRED_MARK_ARG = {
       defaultValue: { summary: true },
     },
   },
-};
+}
 
 export const TEXT_VALUE_ARG = {
   value: {
@@ -209,7 +209,7 @@ export const TEXT_VALUE_ARG = {
       type: { summary: 'string' },
     },
   },
-};
+}
 
 export const NUMBER_VALUE_ARG = {
   value: {
@@ -228,7 +228,7 @@ export const NUMBER_VALUE_ARG = {
       type: { summary: 'number' },
     },
   },
-};
+}
 
 export const MULTIPLE_VALUE_ARG = {
   value: {
@@ -247,7 +247,7 @@ export const MULTIPLE_VALUE_ARG = {
       type: { summary: 'string[]' },
     },
   },
-};
+}
 
 export const IS_SELECTED_ARG = {
   isSelected: {
@@ -273,7 +273,7 @@ export const IS_SELECTED_ARG = {
       type: { summary: 'boolean' },
     },
   },
-};
+}
 
 export const IS_INDETERMINATE_ARG = {
   isIndeterminate: {
@@ -287,7 +287,7 @@ export const IS_INDETERMINATE_ARG = {
       type: { summary: 'boolean' },
     },
   },
-};
+}
 
 export const SELECTED_KEY_ARG = {
   selectedKey: {
@@ -306,4 +306,4 @@ export const SELECTED_KEY_ARG = {
       type: { summary: 'string' },
     },
   },
-};
+}

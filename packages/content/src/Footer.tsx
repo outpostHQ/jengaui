@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from 'react'
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -8,10 +8,10 @@ import {
   tasty,
   TEXT_STYLES,
   TextStyleProps,
-} from 'tastycss';
-import { useSlotProps } from '@jenga-ui/utils';
+} from 'tastycss'
+import { useSlotProps } from '@jenga-ui/utils'
 
-const STYLE_LIST = [...CONTAINER_STYLES, ...TEXT_STYLES];
+const STYLE_LIST = [...CONTAINER_STYLES, ...TEXT_STYLES]
 
 const FooterElement = tasty({
   qa: 'Footer',
@@ -21,7 +21,7 @@ const FooterElement = tasty({
     display: 'block',
     flow: 'column',
   },
-});
+})
 
 export interface JengaFooterProps
   extends BaseProps,
@@ -29,9 +29,9 @@ export interface JengaFooterProps
     TextStyleProps {}
 
 export const Footer = forwardRef((props: JengaFooterProps, ref) => {
-  props = useSlotProps(props, 'footer');
+  props = useSlotProps(props, 'footer')
 
-  const styles = extractStyles(props, STYLE_LIST);
+  const styles = extractStyles(props, STYLE_LIST)
 
   return (
     <FooterElement
@@ -39,5 +39,5 @@ export const Footer = forwardRef((props: JengaFooterProps, ref) => {
       styles={styles}
       ref={ref}
     />
-  );
-});
+  )
+})

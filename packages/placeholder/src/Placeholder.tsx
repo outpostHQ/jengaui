@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from 'react'
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -7,8 +7,8 @@ import {
   filterBaseProps,
   Styles,
   tasty,
-} from 'tastycss';
-import styled from 'styled-components';
+} from 'tastycss'
+import styled from 'styled-components'
 
 const PlaceholderElement = tasty({
   role: 'alert',
@@ -20,7 +20,7 @@ const PlaceholderElement = tasty({
     height: '2x',
     opacity: '.35',
   },
-});
+})
 
 const StyledPlaceholder = styled(PlaceholderElement)`
   --placeholder-animation-time: 1.4s;
@@ -47,29 +47,31 @@ const StyledPlaceholder = styled(PlaceholderElement)`
       background-position: var(--placeholder-animation-size) 0;
     }
   }
-`;
+`
 
 export interface JengaPlaceholderProps extends BaseProps, ContainerStyleProps {
-  size?: Styles['fontSize'];
-  circle?: boolean;
+  size?: Styles['fontSize']
+  circle?: boolean
 }
 
-export const Placeholder = forwardRef((allProps: JengaPlaceholderProps, ref) => {
-  let { size = '2x', circle, ...props } = allProps;
+export const Placeholder = forwardRef(
+  (allProps: JengaPlaceholderProps, ref) => {
+    let { size = '2x', circle, ...props } = allProps
 
-  let styles = extractStyles(props, CONTAINER_STYLES);
+    let styles = extractStyles(props, CONTAINER_STYLES)
 
-  return (
-    <StyledPlaceholder
-      role="region"
-      {...filterBaseProps(props, { eventProps: true })}
-      styles={{
-        height: size,
-        width: circle ? size : false,
-        radius: circle ? '9999rem' : '1r',
-        ...styles,
-      }}
-      ref={ref}
-    />
-  );
-});
+    return (
+      <StyledPlaceholder
+        role="region"
+        {...filterBaseProps(props, { eventProps: true })}
+        styles={{
+          height: size,
+          width: circle ? size : false,
+          radius: circle ? '9999rem' : '1r',
+          ...styles,
+        }}
+        ref={ref}
+      />
+    )
+  }
+)

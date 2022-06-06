@@ -1,12 +1,12 @@
-import { Button } from '@jenga-ui/button';
-import { useDOMRef } from '@react-spectrum/utils';
-import { useDialogContext } from './context';
-import { DismissButton } from '@react-aria/overlays';
-import { FocusScope } from '@react-aria/focus';
-import { forwardRef, ReactNode } from 'react';
-import { useDialog } from '@react-aria/dialog';
-import { useMessageFormatter } from '@react-aria/i18n';
-import { CloseOutlined } from '@ant-design/icons';
+import { Button } from '@jenga-ui/button'
+import { useDOMRef } from '@react-spectrum/utils'
+import { useDialogContext } from './context'
+import { DismissButton } from '@react-aria/overlays'
+import { FocusScope } from '@react-aria/focus'
+import { forwardRef, ReactNode } from 'react'
+import { useDialog } from '@react-aria/dialog'
+import { useMessageFormatter } from '@react-aria/i18n'
+import { CloseOutlined } from '@ant-design/icons'
 import {
   BASE_STYLES,
   BaseProps,
@@ -18,12 +18,12 @@ import {
   extractStyles,
   Styles,
   tasty,
-} from 'tastycss';
-import { mergeProps, SlotProvider } from '@jenga-ui/utils';
-import type { AriaDialogProps } from '@react-types/dialog';
-import { DOMRef } from '@react-types/shared';
+} from 'tastycss'
+import { mergeProps, SlotProvider } from '@jenga-ui/utils'
+import type { AriaDialogProps } from '@react-types/dialog'
+import { DOMRef } from '@react-types/shared'
 
-const STYLES_LIST = [...BASE_STYLES, ...DIMENSION_STYLES, ...BLOCK_STYLES];
+const STYLES_LIST = [...BASE_STYLES, ...DIMENSION_STYLES, ...BLOCK_STYLES]
 
 const DialogElement = tasty({
   as: 'section',
@@ -78,7 +78,7 @@ const DialogElement = tasty({
     },
     '@dialog-content-gap': '3x',
   },
-});
+})
 
 const CLOSE_BUTTON_STYLES: Styles = {
   display: 'flex',
@@ -88,25 +88,25 @@ const CLOSE_BUTTON_STYLES: Styles = {
   width: '5x',
   height: '5x',
   placeContent: 'center',
-};
+}
 
 const sizeMap = {
   S: 'small',
   M: 'medium',
   L: 'large',
-};
+}
 const sizePxMap = {
   small: 360,
   medium: 479,
   large: 798,
-};
+}
 
 const intlMessages = {
   'en-US': {
     dismiss: 'Dismiss',
     alert: 'Alert',
   },
-};
+}
 
 export interface JengaDialogProps
   extends Omit<BaseProps, 'role'>,
@@ -115,14 +115,14 @@ export interface JengaDialogProps
     BlockStyleProps,
     DimensionStyleProps {
   /** The size of the dialog */
-  size?: 'S' | 'M' | 'L' | 'small' | 'medium' | 'large';
+  size?: 'S' | 'M' | 'L' | 'small' | 'medium' | 'large'
   /** Whether the dialog is dismissable */
-  isDismissable?: boolean;
+  isDismissable?: boolean
   /** Trigger when the dialog is dismissed */
-  onDismiss?: (arg?: any) => void;
+  onDismiss?: (arg?: any) => void
   /** That you can replace the close icon with */
-  closeIcon?: ReactNode;
-  closeButtonStyles?: Styles;
+  closeIcon?: ReactNode
+  closeButtonStyles?: Styles
 }
 
 /**
@@ -131,9 +131,9 @@ export interface JengaDialogProps
  */
 export const Dialog = forwardRef(function Dialog(
   props: JengaDialogProps,
-  ref: DOMRef<HTMLDivElement>,
+  ref: DOMRef<HTMLDivElement>
 ) {
-  let { type = 'modal', ...contextProps } = useDialogContext();
+  let { type = 'modal', ...contextProps } = useDialogContext()
 
   let {
     qa,
@@ -144,25 +144,25 @@ export const Dialog = forwardRef(function Dialog(
     closeIcon,
     closeButtonStyles,
     ...otherProps
-  } = props;
+  } = props
 
-  size = sizeMap[size.toUpperCase()] || size;
+  size = sizeMap[size.toUpperCase()] || size
 
-  const styles: Styles = extractStyles(otherProps, STYLES_LIST);
+  const styles: Styles = extractStyles(otherProps, STYLES_LIST)
 
-  let formatMessage = useMessageFormatter(intlMessages);
+  let formatMessage = useMessageFormatter(intlMessages)
 
-  let domRef = useDOMRef(ref);
+  let domRef = useDOMRef(ref)
   let { dialogProps, titleProps } = useDialog(
     mergeProps(contextProps, props),
-    domRef,
-  );
+    domRef
+  )
 
   // If rendered in a popover or tray there won't be a visible dismiss button,
   // so we render a hidden one for screen readers.
-  let dismissButton;
+  let dismissButton
   if (type === 'popover' || type === 'tray') {
-    dismissButton = <DismissButton onDismiss={onDismiss} />;
+    dismissButton = <DismissButton onDismiss={onDismiss} />
   }
 
   // let hasHeader = useHasChild('[data-id="Header"]', domRef);
@@ -208,7 +208,7 @@ export const Dialog = forwardRef(function Dialog(
         padding: '@dialog-footer-v @dialog-padding-h',
       },
     },
-  };
+  }
 
   return (
     <FocusScope contain restoreFocus>
@@ -245,5 +245,5 @@ export const Dialog = forwardRef(function Dialog(
         </SlotProvider>
       </DialogElement>
     </FocusScope>
-  );
-});
+  )
+})

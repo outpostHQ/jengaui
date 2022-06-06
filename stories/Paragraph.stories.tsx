@@ -1,4 +1,4 @@
-import { Paragraph } from '@jenga-ui/content';
+import { Paragraph } from '@jenga-ui/content'
 
 export default {
   title: 'Generic/Paragraph',
@@ -64,13 +64,13 @@ export default {
       },
     },
   },
-};
+}
 
 const Template = ({ label, ...args }) => (
   <Paragraph {...args}>{label}</Paragraph>
-);
+)
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   label: 'Paragraph content',
-};
+}
