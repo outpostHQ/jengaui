@@ -1,4 +1,10 @@
-import { forwardRef, useContext, useImperativeHandle, useRef } from 'react'
+import {
+  ForwardedRef,
+  forwardRef,
+  useContext,
+  useImperativeHandle,
+  useRef,
+} from 'react'
 import { mergeProps, getOverlayTransitionCSS } from '@jenga-ui/utils'
 import { createDOMRef } from '@react-spectrum/utils'
 import { TooltipContext } from './context'
@@ -14,6 +20,7 @@ import {
 import type { AriaTooltipProps } from '@react-types/tooltip'
 import { PlacementAxis } from '@jenga-ui/form'
 import styled from 'styled-components'
+import { DOMRefValue } from '@react-types/shared'
 
 const TooltipElement = tasty({
   styles: {
@@ -91,7 +98,10 @@ export interface JengaTooltipProps
   isMaterial?: boolean
 }
 
-function Tooltip(props: JengaTooltipProps, ref) {
+function Tooltip(
+  props: JengaTooltipProps,
+  ref: ForwardedRef<DOMRefValue<HTMLDivElement>>
+) {
   let {
     ref: overlayRef,
     arrowProps,
@@ -104,7 +114,7 @@ function Tooltip(props: JengaTooltipProps, ref) {
 
   let defaultRef = useRef<HTMLDivElement>(null)
 
-  overlayRef = overlayRef || defaultRef
+  const finalOverlayRef = overlayRef ?? defaultRef
 
   props = mergeProps(props, tooltipProviderProps)
 
@@ -122,7 +132,7 @@ function Tooltip(props: JengaTooltipProps, ref) {
   let { tooltipProps } = useTooltip(props, state)
 
   // Sync ref with overlayRef from context.
-  useImperativeHandle(ref, () => (overlayRef ? createDOMRef(overlayRef) : null))
+  useImperativeHandle(ref, () => createDOMRef(finalOverlayRef))
 
   if (typeof minOffset === 'number') {
     minOffset = `${minOffset}px`

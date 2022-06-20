@@ -1,1 +1,1 @@
-export * from './src/FileTabs'
+export * from './src'

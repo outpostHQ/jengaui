@@ -10,7 +10,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react', 'tastycss', 'tastycss'],
+      external: ['react', 'tastycss'],
       output: {
         globals: {
           react: 'React',

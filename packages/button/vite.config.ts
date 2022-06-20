@@ -10,20 +10,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: [
-        'react',
-        'tastycss',
-        'tastycss',
-        '@ant-design/icons',
-        '@jenga-ui/core',
-        '@jenga-ui/atoms',
-        '@react-aria/button',
-        '@react-aria/interactions',
-        '@react-aria/utils',
-        '@react-spectrum/utils',
-        '@react-types/button',
-        '@react-types/shared',
-      ],
+      external: ['react', 'tastycss', '@jenga-ui//utils'],
       output: {
         globals: {
           react: 'React',

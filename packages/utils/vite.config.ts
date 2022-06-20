@@ -10,7 +10,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react', 'tastycss', '@jenga-ui/core', '@jenga-ui/atoms'],
+      external: [/^node:.*/],
       output: {
         globals: {
           react: 'React',
