@@ -13,8 +13,9 @@ import {
   Element,
 } from 'tastycss'
 import { useHover } from '@react-aria/interactions'
+import { useFocus } from '@jenga-ui/utils'
 import { useButton } from '@react-aria/button'
-import { mergeProps, useFocus } from '@jenga-ui/utils'
+import { mergeProps } from '@jenga-ui/utils'
 import { UIKitContext } from '@jenga-ui/providers'
 import { AriaButtonProps } from '@react-types/button'
 import { useFocusableRef } from '@react-spectrum/utils'

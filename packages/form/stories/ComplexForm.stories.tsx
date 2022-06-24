@@ -14,9 +14,9 @@ import {
   Switch,
   Block,
 } from '../../../index'
-import { NumberInput } from '../NumberInput/NumberInput'
+import { NumberInput } from '@jenga-ui/number-input'
 import { baseProps } from '../../../stories/lists/baseProps'
-import { Button } from '../../actions'
+import { Button } from '@jenga-ui/button'
 import { linkTo } from '@storybook/addon-links'
 
 export default {

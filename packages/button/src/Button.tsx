@@ -3,7 +3,7 @@ import { Action, JengaActionProps } from './Action'
 import { LoadingOutlined } from '@ant-design/icons'
 import { Styles } from 'tastycss'
 import { FocusableRef } from '@react-types/shared'
-import { accessibilityWarning } from '@jenga-ui//utils'
+import { accessibilityWarning } from '@jenga-ui/utils'
 
 export interface JengaButtonProps extends JengaActionProps {
   icon?: ReactNode

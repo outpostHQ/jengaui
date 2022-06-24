@@ -16,8 +16,7 @@ export type { JengaFormInstance } from './useForm'
 
 export * from './shared'
 export * from './Label'
-export * from './Field'
+
 export * from './FieldWrapper'
 export * from './HiddenInput'
 export * from './validation'
-export * from './Form'

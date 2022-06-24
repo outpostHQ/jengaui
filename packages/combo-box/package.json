@@ -44,17 +44,17 @@
     "@vitejs/plugin-react": "^1.3.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4",
-    "vite": "^2.9.9"
+    "vite": "^2.9.12"
   },
   "dependencies": {
-    "@react-aria/button": "^3.5.0",
-    "@react-aria/combobox": "^3.3.0",
-    "@react-aria/i18n": "^3.4.0",
-    "@react-aria/interactions": "^3.9.0",
-    "@react-aria/overlays": "^3.9.0",
-    "@react-stately/collections": "^3.4.0",
-    "@react-stately/combobox": "^3.1.0",
-    "tastycss": "^0.7.2"
+    "@react-aria/button": "^3.5.1",
+    "@react-aria/combobox": "^3.3.1",
+    "@react-aria/i18n": "^3.4.1",
+    "@react-aria/interactions": "^3.9.1",
+    "@react-aria/overlays": "^3.9.1",
+    "@react-stately/collections": "^3.4.1",
+    "@react-stately/combobox": "^3.1.1",
+    "tastycss": "^0.7.4"
   },
   "homepage": "https://github.com/numldesign/jenga-ui",
   "repository": {
