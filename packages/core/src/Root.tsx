@@ -16,7 +16,7 @@ import { TOKENS } from '../../../src/tokens'
 import { AlertDialogApiProvider } from '@jenga-ui/alert-dialog'
 
 const RootElement = tasty({
-  id: 'cube-ui-kit-root',
+  id: 'jenga-ui-kit-root',
   className: 'root',
 })
 
@@ -31,7 +31,7 @@ const DEFAULT_STYLES = {
 }
 const STYLES = [...BASE_STYLES, ...BLOCK_STYLES]
 
-export interface CubeRootProps extends BaseProps {
+export interface JengaRootProps extends BaseProps {
   tokens?: { [key: string]: string }
   bodyStyles?: { [key: string]: string }
   fonts?: boolean
@@ -42,7 +42,7 @@ export interface CubeRootProps extends BaseProps {
   applyLegacyTokens?: boolean
 }
 
-export const Root = (allProps: CubeRootProps) => {
+export const Root = (allProps: JengaRootProps) => {
   let {
     children,
     /** Raw css styles for body element */

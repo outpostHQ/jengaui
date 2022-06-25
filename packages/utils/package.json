@@ -39,33 +39,7 @@
     "build:types": "npx tsc -b --verbose"
   },
   "dependencies": {
-    "@jenga-ui/active-zone": "^0.1.1",
-    "@jenga-ui/alert": "^0.1.1",
-    "@jenga-ui/avatar": "^0.1.1",
-    "@jenga-ui/badge": "^0.1.1",
-    "@jenga-ui/base-input": "^0.1.1",
-    "@jenga-ui/button": "^0.1.1",
-    "@jenga-ui/button-group": "^0.1.1",
-    "@jenga-ui/card": "^0.1.1",
-    "@jenga-ui/checkbox": "^0.1.1",
-    "@jenga-ui/combo-box": "^0.1.1",
-    "@jenga-ui/content": "^0.1.1",
-    "@jenga-ui/file-input": "^0.1.1",
-    "@jenga-ui/file-tabs": "^0.1.1",
-    "@jenga-ui/input": "^0.1.1",
-    "@jenga-ui/link": "^0.1.1",
-    "@jenga-ui/modal": "^0.1.1",
-    "@jenga-ui/number-input": "^0.1.1",
-    "@jenga-ui/password-input": "^0.1.1",
-    "@jenga-ui/placeholder": "^0.1.1",
-    "@jenga-ui/radio": "^0.1.1",
-    "@jenga-ui/search-input": "^0.1.1",
-    "@jenga-ui/select": "^0.1.1",
-    "@jenga-ui/skeleton": "^0.1.1",
-    "@jenga-ui/switch": "^0.1.1",
-    "@jenga-ui/tabs": "^0.1.1",
-    "@jenga-ui/tag": "^0.1.1",
-    "@jenga-ui/textarea": "^0.1.1"
+    "tastycss": "^0.7.4"
   },
   "publishConfig": {
     "access": "public"

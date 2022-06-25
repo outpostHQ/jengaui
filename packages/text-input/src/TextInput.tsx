@@ -33,5 +33,4 @@ export const TextInput = forwardRef(function TextInput(
  * with a keyboard. Various decorations can be displayed around the field to
  * communicate the entry requirements.
  */
-
 ;(TextInput as any).jengaInputType = 'Text'

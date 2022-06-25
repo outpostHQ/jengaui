@@ -4,7 +4,7 @@ const SUGGESTED_PROP_MAP = {
   selected: 'isSelected',
 }
 
-const PREFIX = 'CubeUIKit'
+const PREFIX = 'JengaUIKit'
 const devMode = process.env.NODE_ENV !== 'production'
 
 export function propDeprecationWarning(name, props, propList) {

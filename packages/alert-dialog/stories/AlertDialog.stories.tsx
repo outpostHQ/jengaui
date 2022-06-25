@@ -9,7 +9,7 @@ import { DialogTrigger } from '@jenga-ui/dialog'
 import { Button } from '@jenga-ui/button'
 import { DialogProps } from '../src/types'
 import { Paragraph } from '@jenga-ui/content'
-import { wait } from '../test'
+import { wait } from '../../core/test'
 
 export default {
   title: 'Overlays/AlertDialog',
