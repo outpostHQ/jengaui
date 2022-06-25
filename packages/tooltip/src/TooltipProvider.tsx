@@ -17,7 +17,7 @@ function TooltipProvider(props: JengaTooltipProviderProps) {
 
   useEffect(() => {
     setRendered(true)
-  })
+  }, [])
 
   return rendered ? (
     <TooltipTrigger {...otherProps}>

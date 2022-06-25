@@ -8,10 +8,10 @@ import {
   useState,
 } from 'react'
 import { Block } from '@jenga-ui/core'
-import { Space, Flex, JengaFlexProps, Flow } from '@jenga-ui/layout'
 import { Button, JengaButtonProps } from '@jenga-ui/button'
 import { Styles, tasty } from 'tastycss'
 import styled from 'styled-components'
+import { Space, JengaFlexProps, Flex, Flow } from '@jenga-ui/layout'
 
 export interface JengaTabData {
   id: string | number

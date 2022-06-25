@@ -1,4 +1,4 @@
-import { Select } from '../src/index'
+import { Select } from '../src/Select'
 import { DollarCircleOutlined } from '@ant-design/icons'
 import { SELECTED_KEY_ARG } from '../../../stories/FormFieldArgs'
 import { baseProps } from '../../../stories/lists/baseProps'
@@ -6,14 +6,8 @@ import { baseProps } from '../../../stories/lists/baseProps'
 export default {
   title: 'Pickers/Select',
   component: Select,
-  parameters: {
-    controls: {
-      exclude: baseProps,
-    },
-  },
-  argTypes: {
-    ...SELECTED_KEY_ARG,
-  },
+  parameters: { controls: { exclude: baseProps } },
+  argTypes: SELECTED_KEY_ARG,
 }
 
 const options = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'violet']
@@ -42,6 +36,7 @@ const Template = ({
       defaultSelectedKey={defaultSelectedKey}
       onSelectionChange={(query) => console.log('change', query)}
       size={size}
+      width="200px"
       {...props}
     >
       {options.map((option) => {
@@ -59,6 +54,9 @@ WithDefaultValue.args = { defaultSelectedKey: 'purple' }
 
 export const WithIcon = Template.bind({})
 WithIcon.args = { icon: true }
+
+export const OverTheCustomBG = Template.bind({})
+OverTheCustomBG.parameters = { backgrounds: { default: 'gray' } }
 
 // export const Multiple = Template.bind({});
 // Multiple.args = { icon: true, defaultSelectedKeys: ['red', 'violet'] };

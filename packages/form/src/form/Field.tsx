@@ -9,9 +9,14 @@ import {
 } from 'react'
 import { useFormProps } from './Form'
 import { mergeProps } from '@jenga-ui/utils'
-import { OptionalFieldBaseProps, ValidationRule } from './shared'
+import {
+  LabelPosition,
+  OptionalFieldBaseProps,
+  ValidationRule,
+} from '../shared'
 import { JengaFormInstance } from './useForm'
-import { FieldWrapper } from './FieldWrapper'
+import { FieldWrapper } from '../FieldWrapper'
+import { Styles } from 'tastycss'
 
 const ID_MAP = {}
 
@@ -118,6 +123,9 @@ export interface JengaFieldProps extends OptionalFieldBaseProps {
   name?: string[] | string
   /** Whether the field is hidden. */
   isHidden?: boolean
+  styles?: Styles
+  labelPosition?: LabelPosition
+  labelStyles?: Styles
 }
 
 interface JengaFullFieldProps extends JengaFieldProps {
@@ -130,6 +138,7 @@ interface JengaReplaceFieldProps extends JengaFieldProps {
   onSelectionChange?: (any) => void
   onBlur: () => void
   onInputChange?: (any) => void
+  labelPosition?: LabelPosition
 }
 
 export function Field(allProps: JengaFieldProps) {
@@ -155,6 +164,9 @@ export function Field(allProps: JengaFieldProps) {
     description,
     tooltip,
     isHidden,
+    styles,
+    labelPosition,
+    labelStyles,
   } = props
   const nonInput = !name
   const fieldName: string =
@@ -187,26 +199,21 @@ export function Field(allProps: JengaFieldProps) {
 
   let field = form?.getFieldInstance(fieldName)
 
+  if (field) {
+    field.rules = rules
+  }
+
   let isRequired = rules && !!rules.find((rule) => rule.required)
 
   useEffect(() => {
     if (!form) return
 
     if (field) {
-      field.rules = rules
       form.forceReRender()
     } else {
       form.createField(fieldName)
     }
   }, [field])
-
-  useEffect(() => {
-    if (!form) return
-
-    if (field) {
-      field.rules = rules
-    }
-  }, [rules])
 
   if (typeof children === 'function') {
     children = children(form)
@@ -230,6 +237,9 @@ export function Field(allProps: JengaFieldProps) {
         message={message}
         description={description}
         Component={child}
+        styles={styles}
+        labelPosition={labelPosition}
+        labelStyles={labelStyles}
       />
     )
   }

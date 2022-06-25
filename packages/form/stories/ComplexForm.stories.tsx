@@ -1,22 +1,17 @@
 import { StoryFn } from '@storybook/react'
-import {
-  Submit,
-  TextInput,
-  Select,
-  ComboBox,
-  Form,
-  Radio,
-  Item,
-  Field,
-  Checkbox,
-  CheckboxGroup,
-  PasswordInput,
-  Switch,
-  Block,
-} from '../../../index'
+import { Item } from '@react-stately/collections'
+import { Block } from '@jenga-ui/core'
+import { TextInput } from '@jenga-ui/text-input'
+import { Switch } from '@jenga-ui/switch'
+import { Form, Field } from '@jenga-ui/form'
+import { PasswordInput } from '@jenga-ui/password-input'
+import { Checkbox, CheckboxGroup } from '@jenga-ui/checkbox'
 import { NumberInput } from '@jenga-ui/number-input'
+import { Radio } from '@jenga-ui/radio'
+import { Select } from '@jenga-ui/select'
+import { ComboBox } from '@jenga-ui/combo-box'
 import { baseProps } from '../../../stories/lists/baseProps'
-import { Button } from '@jenga-ui/button'
+import { Button, Submit } from '@jenga-ui/button'
 import { linkTo } from '@storybook/addon-links'
 
 export default {

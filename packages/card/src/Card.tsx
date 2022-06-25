@@ -3,6 +3,7 @@ import {
   BaseProps,
   CONTAINER_STYLES,
   ContainerStyleProps,
+  extractStyles,
   filterBaseProps,
   tasty,
 } from 'tastycss'
@@ -24,10 +25,12 @@ const CardElement = tasty({
 export interface JengaCardProps extends BaseProps, ContainerStyleProps {}
 
 export const Card = forwardRef((props: JengaCardProps, ref) => {
+  const styles = extractStyles(props, CONTAINER_STYLES)
+
   return (
     <CardElement
       {...filterBaseProps(props, { eventProps: true })}
-      styles={props.styles}
+      styles={styles}
       ref={ref}
     />
   )

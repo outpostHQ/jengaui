@@ -19,7 +19,7 @@ import {
 } from 'tastycss'
 import { JengaFormData, JengaFormInstance, useForm } from './useForm'
 import { useCombinedRefs, timeout } from '@jenga-ui/utils'
-import { FormBaseProps } from './shared'
+import { FormBaseProps } from '../shared'
 
 export const FormContext = createContext({})
 

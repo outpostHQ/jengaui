@@ -13,7 +13,7 @@ import {
   useRef,
   useState,
 } from 'react'
-import { useFormProps, FieldWrapper, FormFieldProps } from '@jenga-ui/form/'
+import { useFormProps, FormFieldProps, FieldWrapper } from '@jenga-ui/form'
 import { useHover } from '@react-aria/interactions'
 import { useProviderProps } from '@jenga-ui/providers'
 import {

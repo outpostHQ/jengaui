@@ -9,6 +9,7 @@ import { DialogTrigger } from '@jenga-ui/dialog'
 import { Button } from '@jenga-ui/button'
 import { DialogProps } from '../src/types'
 import { Paragraph } from '@jenga-ui/content'
+import { wait } from '../test'
 
 export default {
   title: 'Overlays/AlertDialog',
@@ -109,5 +110,6 @@ UsingApiWithCancel.play = async ({ canvasElement }) => {
   await userEvent.click(getByRole('button'))
   await expect(queryByRole('alertdialog')).toBeInTheDocument()
   await userEvent.click(getByTestId('CancelToken'))
+  await wait(300)
   await expect(queryByRole('alertdialog')).not.toBeInTheDocument()
 }

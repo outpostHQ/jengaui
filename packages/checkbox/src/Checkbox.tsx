@@ -22,11 +22,11 @@ import {
   WithNullableSelected,
 } from '@jenga-ui/utils'
 import {
-  INLINE_LABEL_STYLES,
-  LABEL_STYLES,
-  HiddenInput,
   useFormProps,
   FieldWrapper,
+  HiddenInput,
+  INLINE_LABEL_STYLES,
+  LABEL_STYLES,
   FormFieldProps,
 } from '@jenga-ui/form'
 import { CheckboxGroup } from './CheckboxGroup'

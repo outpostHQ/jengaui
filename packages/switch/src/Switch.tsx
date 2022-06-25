@@ -25,17 +25,20 @@ import {
 } from '@jenga-ui/utils'
 import { LoadingOutlined } from '@ant-design/icons'
 import {
-  useFormProps,
-  INLINE_LABEL_STYLES,
-  LABEL_STYLES,
   HiddenInput,
+  useFormProps,
   FieldWrapper,
   FormFieldProps,
+  INLINE_LABEL_STYLES,
+  LABEL_STYLES,
 } from '@jenga-ui/form'
 import type { AriaSwitchProps } from '@react-types/switch'
 
 const BaseSwitchWrapperElement = tasty({
   qa: 'SwitchWrapper',
+  styles: {
+    position: 'relative',
+  },
 })
 
 const SwitchWrapperElement = tasty({

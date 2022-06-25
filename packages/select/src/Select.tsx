@@ -66,6 +66,14 @@ const SelectWrapperElement = tasty({
   styles: {
     display: 'grid',
     position: 'relative',
+    radius: true,
+    fill: '#white',
+    color: {
+      '': '#dark.85',
+      invalid: '#danger-text',
+      focused: '#dark.85',
+      disabled: '#dark.30',
+    },
   },
 })
 
@@ -92,24 +100,18 @@ const SelectElement = tasty({
       valid: '#success-text.50',
       focused: true,
     },
-    radius: true,
-    reset: 'input',
+    radius: '@context-radius',
+    reset: 'button',
+    margin: 0,
     preset: 'default',
     outline: {
       '': '#purple-03.0',
       focused: '#purple-03',
     },
-    color: {
-      '': '#dark.85',
-      invalid: '#danger-text',
-      focused: '#dark.85',
-      disabled: '#dark.30',
-    },
+    color: 'inherit',
     fill: {
-      '': '#purple.0',
-      hovered: '#dark.04',
-      pressed: '#dark.08',
-      disabled: '#dark.04',
+      '': '#dark.0',
+      'hovered | disabled': '#dark.04',
     },
     fontWeight: 400,
     textAlign: 'left',
@@ -144,16 +146,16 @@ const OptionElement = tasty({
     cursor: 'pointer',
     radius: true,
     fill: {
-      '': '#white',
-      focused: '#dark.04',
-      selected: '#purple',
-      'focused & selected': '#purple-text',
-      disabled: '#dark.04',
+      '': '#dark.0',
+      'hovered | focused': '#dark.04',
+      'pressed | selected': '#purple.10',
+      '[disabled]': '#dark.04',
     },
     color: {
-      '': '#dark.85',
-      selected: '#white',
-      disabled: '#dark.30',
+      '': '#dark.75',
+      'hovered | focused': '#dark.75',
+      'pressed | selected': '#purple',
+      '[disabled]': '#dark.30',
     },
     preset: 't3m',
     transition: 'theme',
@@ -245,7 +247,6 @@ function Select<T extends object>(
     ...otherProps
   } = props
   let state = useSelectState(props)
-
   const outerStyles = extractStyles(otherProps, OUTER_STYLES, styles)
 
   inputStyles = extractStyles(otherProps, BLOCK_STYLES, inputStyles)
@@ -265,7 +266,6 @@ function Select<T extends object>(
     targetRef: triggerRef,
     overlayRef: popoverRef,
     scrollRef: listBoxRef,
-    // @ts-ignore
     placement: `${direction} end`,
     shouldFlip: shouldFlip,
     isOpen: state.isOpen,

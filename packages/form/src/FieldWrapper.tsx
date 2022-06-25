@@ -3,7 +3,7 @@ import { Text, Paragraph } from '@jenga-ui/content'
 import { Label } from './Label'
 import { Grid } from '@jenga-ui/layout'
 import { LabelPosition, NecessityIndicator, ValidationState } from './shared'
-import { Styles, tasty } from 'tastycss'
+import { Props, Styles, tasty } from 'tastycss'
 import { TooltipProvider } from '@jenga-ui/tooltip'
 import { InfoCircleOutlined } from '@ant-design/icons'
 import { wrapNodeIfPlain } from '@jenga-ui/utils'
@@ -68,8 +68,8 @@ export type JengaFieldWrapperProps = {
   /** Whether the input is disabled */
   isDisabled?: boolean
   necessityIndicator?: NecessityIndicator
-  labelProps?: any
-  fieldProps?: any
+  labelProps?: Props
+  fieldProps?: Props
   /** Custom message for the field. It will be placed below the label and the input */
   message?: string | ReactNode
   /** Styles for the message */

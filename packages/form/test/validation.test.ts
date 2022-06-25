@@ -1,4 +1,4 @@
-import { applyRules } from '../src/validation'
+import { applyRules } from '../src/form/validation'
 
 async function apply(rule, valid = [], invalid = []) {
   for (const validCase of valid) {

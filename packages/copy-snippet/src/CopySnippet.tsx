@@ -5,7 +5,7 @@ import { Styles, tasty } from 'tastycss'
 import { JengaPrismCodeProps, PrismCode } from '@jenga-ui/prism-code'
 import { notification } from '@jenga-ui/services'
 import { CopyOutlined } from '@ant-design/icons'
-import { Tooltip, TooltipTrigger } from '@jenga-ui/tooltip'
+import { TooltipTrigger, Tooltip } from '@jenga-ui/tooltip'
 
 const ActionElement = tasty(Action, {
   styles: {
