@@ -2672,23 +2672,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/file-tabs@^0.1.1, @jenga-ui/file-tabs@workspace:packages/file-tabs":
-  version: 0.0.0-use.local
-  resolution: "@jenga-ui/file-tabs@workspace:packages/file-tabs"
+"@jenga-ui/file-tabs@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@jenga-ui/file-tabs@npm:0.1.1"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@types/react": ^17.0.38
-    "@types/react-dom": ^17.0.11
-    "@vitejs/plugin-react": ^1.3.2
-    rimraf: ^3.0.2
-    tastycss: ^0.7.4
-    typescript: ^4.5.4
-    vite: ^2.9.12
+    tastycss-react: ^0.5.6
   peerDependencies:
     react: ^17.0.0
     react-dom: ^17.0.0
-  languageName: unknown
-  linkType: soft
+  checksum: ef5a24168a81afe24d262d8e78a0afe18fc0b940b8ff7c4523f89598e5bfff53f2a2b2c3311f3762eb73f74d1eaff5bbb4dfdfb586217314c79fee6f19d5c82e
+  languageName: node
+  linkType: hard
 
 "@jenga-ui/form@workspace:packages/form":
   version: 0.0.0-use.local
