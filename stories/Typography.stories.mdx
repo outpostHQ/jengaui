@@ -1,5 +1,14 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs'
-import { Paragraph, Title, Text, Link, Flow, Root, Space, Card } from '../index'
+import {
+  Paragraph,
+  Title,
+  Text,
+  Link,
+  Flow,
+  Root,
+  Space,
+  Card,
+} from '@jenga-ui/core'
 
 <Meta title="Typography" />
 
@@ -63,25 +72,21 @@ Paragraphs with gaps between them.
 Use `!` prefix to open link in new tab.
 
 ```jsx
-;(
-  <Link to="https://jenga-uikit-storybook.netlify.app/">
-    Open Jenga Cloud UI Kit
+;<Link to="https://jenga-ui-storybook.netlify.app/">Open Jenga-UI</Link> |
+(
+  <Link to="!https://jenga-ui-storybook.netlify.app/">
+    Open Jenga-UI in new tab
   </Link>
-) |
-  (
-    <Link to="!https://jenga-uikit-storybook.netlify.app/">
-      Open Jenga Cloud UI Kit in new tab
-    </Link>
-  )
+)
 ```
 
 <Canvas>
   <Story name="External link">
     <Paragraph>
-      <Link to="https://jenga-uikit-storybook.netlify.app/">
-        Open Jenga Cloud UI Kit
+      <Link to="https://jenga-ui-storybook.netlify.app/">Open Jenga-UI</Link>
+      &nbsp; | <Link to="!https://jenga-ui-storybook.netlify.app/">
+        Open Jenga-UI in new tab
       </Link>
-      &nbsp; | <Link to="!https://jenga-uikit-storybook.netlify.app/">Open Jenga Cloud UI Kit in new tab</Link>
     </Paragraph>
   </Story>
 </Canvas>

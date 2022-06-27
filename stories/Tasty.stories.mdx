@@ -9,7 +9,7 @@ import {
   Paragraph,
   Flow,
   Flex,
-} from '../index'
+} from '@jenga-ui/core'
 import { StyledButton, GlobalStyledHeading } from './components/StyledButton'
 
 <Meta title="Tasty API" />
@@ -78,7 +78,8 @@ const CustomElement = tasty(Element, {
 An example of styled component.
 
 ```typescript jsx
-import { Button, tasty } from '@jenga-dev/ui-kit'
+import { Button } from '@jenga-ui/core'
+import { tasty } from 'tastycss'
 
 const StyledButton = tasty(Button, {
   styles: {

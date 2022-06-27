@@ -99,6 +99,7 @@ export const DEFAULT_INPUT_STYLES: Styles = {
 }
 
 const InputElement = tasty({
+  qa: 'Input',
   styles: DEFAULT_INPUT_STYLES,
 })
 
@@ -260,7 +261,6 @@ function TextInputBase(props: JengaTextInputBaseProps, ref) {
       {...wrapperProps}
     >
       <InputElement
-        qa="Input"
         as={ElementType}
         {...mergeProps(inputProps, focusProps, hoverProps)}
         ref={inputRef}

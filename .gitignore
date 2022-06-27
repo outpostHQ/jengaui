@@ -5,6 +5,8 @@ dist-ssr
 .eslintcache
 *.local
 storybook-static
+storybook-docs
+build-storybook.log
 
 .pnp.*
 .yarn/*

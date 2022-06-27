@@ -3,7 +3,7 @@ import { Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { BulbFilled, LockFilled } from '@ant-design/icons'
 
 import { baseProps } from './lists/baseProps'
-import { Element, Button, Result, Space, Text, Title } from '../index'
+import { Element, Button, Result, Space, Text, Title } from '@jenga-ui/core'
 
 <Meta title="Content/Result" component={Result} />
 
@@ -149,10 +149,10 @@ Use when important operations need to inform the user to process the results and
 
 ## Differences from Ant Design
 
-| There are differences | Ant Design property | Jenga UIKit property |
-| :-------------------: | :-----------------: | :------------------: |
-|          No           |      `status`       |       `status`       |
-|          No           |       `title`       |       `title`        |
-|          Yes          |     `subTitle`      |      `subtitle`      |
-|          No           |       `icon`        |        `icon`        |
-|          Yes          |       `extra`       |      `children`      |
+| There are differences | Ant Design property | Jenga-UI property |
+| :-------------------: | :-----------------: | :---------------: |
+|          No           |      `status`       |     `status`      |
+|          No           |       `title`       |      `title`      |
+|          Yes          |     `subTitle`      |    `subtitle`     |
+|          No           |       `icon`        |      `icon`       |
+|          Yes          |       `extra`       |    `children`     |
