@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react'
 import { useFormProps } from './Form'
-import { mergeProps, warn } from '@jenga-ui/utils'
+import { mergeProps } from '@jenga-ui/utils'
 import {
   LabelPosition,
   OptionalFieldBaseProps,
@@ -244,10 +244,14 @@ export function Field(allProps: JengaFieldProps) {
     )
   }
 
+  if (!fieldName) {
+    console.error('invalid form name:', fieldName)
+
+    return null
+  }
+
   if (!form) {
-    warn(
-      'Form Field requires declared form instance if field name is specified'
-    )
+    console.error('form field requires declared form instance')
 
     return null
   }
