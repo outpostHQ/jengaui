@@ -7,6 +7,7 @@ dist-ssr
 storybook-static
 storybook-docs
 build-storybook.log
+coverage
 
 .pnp.*
 .yarn/*
