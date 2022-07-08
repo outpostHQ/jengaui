@@ -1,7 +1,5 @@
 # @jenga-ui/button-group
 
-Note: This project is WIP, API might change without notice.
-
 ## Installation
 
 ```sh

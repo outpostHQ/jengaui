@@ -14,9 +14,9 @@
     "dist",
     "types"
   ],
-  "repository": "numldesign/jenga-ui",
+  "repository": "OutpostHQ/jenga-ui",
   "license": "MIT",
-  "bugs": "https://github.com/numldesign/jenga-ui/issues",
+  "bugs": "https://github.com/OutpostHQ/jenga-ui/issues",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "exports": {

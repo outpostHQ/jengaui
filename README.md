@@ -2,10 +2,6 @@
 
 [![package-badge]][package]
 
-> 🚨&nbsp;&nbsp;Jenga-UI is still in early stages of development, so this means you can expect some bugs.
-> As much as we'll try not to break
-> existing API's, occasionally it _might_ happen.
-
 Jenga-UI is a fast, reusable, composable, and accessible React components for your React apps. It makes it super easy to create websites and apps.
 
 ## Installation

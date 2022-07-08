@@ -1,7 +1,5 @@
 # @jenga-ui/prism-code
 
-Note: This project is WIP, API might change without notice.
-
 ## Installation
 
 ```sh

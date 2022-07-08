@@ -53,12 +53,12 @@
     "@react-aria/switch": "^3.2.1",
     "tastycss": "^0.7.5"
   },
-  "homepage": "https://github.com/numldesign/jenga-ui",
+  "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/numldesign/jenga-ui.git"
+    "url": "git+https://github.com/OutpostHQ/jenga-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/numldesign/jenga-ui/issues"
+    "url": "https://github.com/OutpostHQ/jenga-ui/issues"
   }
 }
