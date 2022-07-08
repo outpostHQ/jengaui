@@ -12,7 +12,7 @@ import {
 import { Provider } from '@jenga-ui/providers'
 import { ModalProvider } from '@react-aria/overlays'
 import { StyleSheetManager } from 'styled-components'
-import { TOKENS } from '../../../src/tokens'
+import { TOKENS } from './tokens'
 import { AlertDialogApiProvider } from '@jenga-ui/alert-dialog'
 
 const RootElement = tasty({

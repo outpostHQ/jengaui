@@ -1,4 +1,4 @@
-import { TOKENS } from '../../../src/tokens'
+import { TOKENS } from './tokens'
 import { createGlobalStyle } from 'styled-components'
 
 interface GlobalStylesProps {
