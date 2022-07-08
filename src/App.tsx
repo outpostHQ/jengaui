@@ -1,13 +1,12 @@
 import { useState } from 'react'
-import { Block, Element, LoadingAnimation, Title } from './index'
+import { Block, Element, Title } from './index'
 import { Button } from '@jenga-ui/button'
 // import ResponsiveProvider from './providers/Responsive';
 // import { Modal } from './components/organisms/Modal/Modal';
 // import { notification } from './services/notification';
-import { color, StyleProvider } from 'tastycss'
+import { color } from 'tastycss'
 import { Card } from '@jenga-ui/card'
 import { Flex, Space, Grid } from '@jenga-ui/layout'
-import { Base64Upload } from './components/other/Base64Upload/Base64Upload'
 import { Link } from '@jenga-ui/link'
 import { Field, Form, useForm } from '@jenga-ui/form'
 import { TextInput } from '@jenga-ui/text-input'
@@ -104,33 +103,11 @@ function App() {
       >
         Clear
       </Button>
-      <LoadingAnimation />
       <Space padding="1x">
-        <StyleProvider
-          Button={() => ({
-            color: {
-              '': '#dark',
-              pressed: '#purple-text',
-            },
-          })}
-          BigTitle={{ color: '#purple' }}
-          Link={() => ({ color: '#dark' })}
-        >
-          <StyleProvider Button={() => ({ padding: '2x' })}>
-            <Title styleName="BigTitle">Test</Title>
-            <Button
-              onClick={(e) => console.log(e)}
-              styles={{ padding: '2x', border: '2bw #dark.50' }}
-            >
-              Default
-            </Button>
-          </StyleProvider>
-        </StyleProvider>
         <Button type="primary">Primary</Button>
         <Button type="primary">Other Primary</Button>
         <Button theme="danger">Danger</Button>
         <Button type="clear">Clear</Button>
-        <Base64Upload>123</Base64Upload>
       </Space>
       <Space padding="1x">
         <Link to="!https://outpost.run">Outpost.run</Link>

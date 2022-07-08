@@ -1,6 +1,6 @@
 import { setTimeout } from 'node:timers/promises'
 import { act } from '@testing-library/react'
-import { renderWithRoot } from '../../../../test/render'
+import { renderWithRoot } from '../../core/test/render'
 import { useAlertDialogAPI } from '../src/AlertDialogApiProvider'
 import userEvent from '@testing-library/user-event'
 
