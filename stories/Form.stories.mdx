@@ -85,7 +85,7 @@ const Demo = () => {
 An example of a simple login form with validation.
 
 ```tsx
-import { Form, Field, Submit, Input } from '@jenga-dev/ui-kit';
+import { Form, Field, Submit, Input } from '@jenga-ui/core';
 import { Auth } from '../path/to/AuthService';
 
 // `Form.Item` is an alias for `Field`.
@@ -180,7 +180,7 @@ import {
   Input,
   Text,
   JengaDialogFormProps,
-} from '@jenga-dev/ui-kit';
+} from '@jenga-ui/core';
 
 interface ConfirmDeletionDialogFormProps
   extends Pick<JengaDialogFormProps, 'onSubmit' | 'onDismiss' | 'form'> {
@@ -242,7 +242,7 @@ Then you can use this component inside your application:
 ```tsx
 /* DialogFormApp */
 import { useRef } from 'react';
-import { JengaDialogFormRef, Button } from '@jenga-dev/ui-kit';
+import { JengaDialogFormRef, Button } from '@jenga-ui/core';
 import { ConfirmDeletionDialogForm } from './ConfirmDeletionDialogForm';
 
 export function DialogFormApp() {
