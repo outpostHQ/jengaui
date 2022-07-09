@@ -1,22 +1,22 @@
-import { JengaButtonProps } from '@jenga-ui/button'
-import { Portal } from '@jenga-ui/portal'
-import { DialogContainer } from '@jenga-ui/dialog'
-import { AlertDialog, JengaAlertDialogActionsProps } from './AlertDialog'
-import { AlertDialogResolveStatus, Dialog } from './types'
+import { JengaButtonProps } from '@jenga-ui/button';
+import { Portal } from '@jenga-ui/portal';
+import { DialogContainer } from '@jenga-ui/dialog';
+import { AlertDialog, JengaAlertDialogActionsProps } from './AlertDialog';
+import { AlertDialogResolveStatus, Dialog } from './types';
 
 export interface DialogZoneProps {
-  openedDialog: Dialog | null
+  openedDialog: Dialog | null;
 }
 
-const PORTAL_KEY = 'AlertDialogZone'
+const PORTAL_KEY = 'AlertDialogZone';
 
 /**
  * @internal Do not use it
  */
 export function AlertDialogZone(props: DialogZoneProps): JSX.Element {
-  const { openedDialog } = props
+  const { openedDialog } = props;
 
-  if (openedDialog === null) return <Portal key={PORTAL_KEY} />
+  if (openedDialog === null) return <Portal key={PORTAL_KEY} />;
 
   const {
     type,
@@ -25,47 +25,47 @@ export function AlertDialogZone(props: DialogZoneProps): JSX.Element {
     onDismiss,
     content,
     ...options
-  } = openedDialog.props
-  const { resolve, reject, isVisible, dialogType } = openedDialog.meta
+  } = openedDialog.props;
+  const { resolve, reject, isVisible, dialogType } = openedDialog.meta;
 
   const _actions: JengaAlertDialogActionsProps = (() => {
     const mergeActionProps = <
       T extends
         | JengaAlertDialogActionsProps['confirm']
-        | JengaAlertDialogActionsProps['secondary']
+        | JengaAlertDialogActionsProps['secondary'],
     >(
       action: T,
-      status: AlertDialogResolveStatus
+      status: AlertDialogResolveStatus,
     ): T => {
       if (typeof action === 'undefined') {
-        return undefined as unknown as T
+        return undefined as unknown as T;
       }
 
       if (typeof action === 'boolean') {
         return (action
           ? { onPress: () => resolve(status) }
-          : false) as unknown as T
+          : false) as unknown as T;
       }
 
-      const onPress = action.onPress
+      const onPress = action.onPress;
 
       return {
         ...(action as JengaButtonProps),
         onPress: (e) => {
-          onPress?.(e)
-          resolve(status)
+          onPress?.(e);
+          resolve(status);
         },
-      } as T
-    }
+      } as T;
+    };
 
-    if (typeof actions === 'undefined') return {}
+    if (typeof actions === 'undefined') return {};
 
     return {
       confirm: mergeActionProps(actions.confirm, 'confirm'),
       secondary: mergeActionProps(actions.secondary, 'secondary'),
       cancel: mergeActionProps(actions.cancel, 'cancel'),
-    }
-  })()
+    };
+  })();
 
   return (
     <Portal key={PORTAL_KEY}>
@@ -88,5 +88,5 @@ export function AlertDialogZone(props: DialogZoneProps): JSX.Element {
         />
       </DialogContainer>
     </Portal>
-  )
+  );
 }

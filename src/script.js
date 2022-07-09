@@ -1,1 +1,1 @@
-import './storybook.tsx'
+import './storybook.tsx';

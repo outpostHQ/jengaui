@@ -2,8 +2,8 @@ import {
   CheckOutlined,
   LoadingOutlined,
   WarningOutlined,
-} from '@ant-design/icons'
-import { createFocusableRef } from '@react-spectrum/utils'
+} from '@ant-design/icons';
+import { createFocusableRef } from '@react-spectrum/utils';
 import {
   cloneElement,
   forwardRef,
@@ -12,10 +12,10 @@ import {
   useImperativeHandle,
   useRef,
   useState,
-} from 'react'
-import { useFormProps, FormFieldProps, FieldWrapper } from '@jenga-ui/form'
-import { useHover } from '@react-aria/interactions'
-import { useProviderProps } from '@jenga-ui/providers'
+} from 'react';
+import { useFormProps, FormFieldProps, FieldWrapper } from '@jenga-ui/form';
+import { useHover } from '@react-aria/interactions';
+import { useProviderProps } from '@jenga-ui/providers';
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -28,11 +28,11 @@ import {
   Props,
   Styles,
   tasty,
-} from 'tastycss'
-import { useFocus, mergeProps } from '@jenga-ui/utils'
-import { Prefix, Suffix, Space } from '@jenga-ui/layout'
-import { Block } from '@jenga-ui/core'
-import type { AriaTextFieldProps } from '@react-types/textfield'
+} from 'tastycss';
+import { useFocus, mergeProps } from '@jenga-ui/utils';
+import { Prefix, Suffix, Space } from '@jenga-ui/layout';
+import { Block } from '@jenga-ui/core';
+import type { AriaTextFieldProps } from '@react-types/textfield';
 
 const InputWrapperElement = tasty({
   styles: {
@@ -50,11 +50,11 @@ const InputWrapperElement = tasty({
       padding: '.5x left',
     },
   },
-})
+});
 
-const STYLE_LIST = [...POSITION_STYLES, ...DIMENSION_STYLES]
+const STYLE_LIST = [...POSITION_STYLES, ...DIMENSION_STYLES];
 
-const INPUT_STYLE_PROPS_LIST = [...BLOCK_STYLES, 'resize']
+const INPUT_STYLE_PROPS_LIST = [...BLOCK_STYLES, 'resize'];
 
 export const DEFAULT_INPUT_STYLES: Styles = {
   display: 'block',
@@ -96,12 +96,12 @@ export const DEFAULT_INPUT_STYLES: Styles = {
   flexGrow: 1,
   margin: 0,
   resize: 'none',
-}
+};
 
 const InputElement = tasty({
   qa: 'Input',
   styles: DEFAULT_INPUT_STYLES,
-})
+});
 
 export interface JengaTextInputBaseProps
   extends BaseProps,
@@ -111,42 +111,42 @@ export interface JengaTextInputBaseProps
     AriaTextFieldProps,
     FormFieldProps {
   /** Input decoration before the main input */
-  prefix?: ReactNode
+  prefix?: ReactNode;
   /** Input decoration after the main input */
-  suffix?: ReactNode
+  suffix?: ReactNode;
   /** Suffix position goes before or after the validation and loading statuses */
-  suffixPosition?: 'before' | 'after'
+  suffixPosition?: 'before' | 'after';
   /** Whether the input is multiline */
-  multiLine?: boolean
+  multiLine?: boolean;
   /** Whether the input should have auto focus */
-  autoFocus?: boolean
+  autoFocus?: boolean;
   /** Direct input props */
-  inputProps?: Props
+  inputProps?: Props;
   /** Direct input wrapper props */
-  wrapperProps?: Props
+  wrapperProps?: Props;
   /** The input ref */
-  inputRef?: RefObject<HTMLInputElement | HTMLTextAreaElement>
+  inputRef?: RefObject<HTMLInputElement | HTMLTextAreaElement>;
   /** The wrapper ref */
-  wrapperRef?: RefObject<HTMLDivElement>
+  wrapperRef?: RefObject<HTMLDivElement>;
   /** Whether the input has the loading status */
-  isLoading?: boolean
+  isLoading?: boolean;
   /** The loading status indicator */
-  loadingIndicator?: ReactNode
+  loadingIndicator?: ReactNode;
   /** Style map for the input */
-  inputStyles?: Styles
+  inputStyles?: Styles;
   /** Style map for the input wrapper */
-  wrapperStyles?: Styles
+  wrapperStyles?: Styles;
   /** The number of rows for the input. Only applies to textarea. */
-  rows?: number
+  rows?: number;
   /** The resize CSS property sets whether an element is resizable, and if so, in which directions. */
-  resize?: Styles['resize']
+  resize?: Styles['resize'];
   /** The size of the input */
-  size?: 'small' | 'default' | 'large' | string
+  size?: 'small' | 'default' | 'large' | string;
 }
 
 function TextInputBase(props: JengaTextInputBaseProps, ref) {
-  props = useProviderProps(props)
-  props = useFormProps(props)
+  props = useProviderProps(props);
+  props = useFormProps(props);
 
   let {
     qa,
@@ -182,67 +182,67 @@ function TextInputBase(props: JengaTextInputBaseProps, ref) {
     rows = 1,
     size,
     ...otherProps
-  } = props
-  let [suffixWidth, setSuffixWidth] = useState(0)
-  let [prefixWidth, setPrefixWidth] = useState(0)
+  } = props;
+  let [suffixWidth, setSuffixWidth] = useState(0);
+  let [prefixWidth, setPrefixWidth] = useState(0);
 
-  let styles = extractStyles(otherProps, STYLE_LIST)
-  let type = otherProps.type
+  let styles = extractStyles(otherProps, STYLE_LIST);
+  let type = otherProps.type;
 
-  inputStyles = extractStyles(otherProps, INPUT_STYLE_PROPS_LIST, inputStyles)
+  inputStyles = extractStyles(otherProps, INPUT_STYLE_PROPS_LIST, inputStyles);
 
   if (prefix) {
-    inputStyles.paddingLeft = `${prefixWidth}px`
+    inputStyles.paddingLeft = `${prefixWidth}px`;
   }
 
   if (validationState || isLoading || suffix) {
-    inputStyles.paddingRight = `${suffixWidth}px`
+    inputStyles.paddingRight = `${suffixWidth}px`;
   }
 
-  let ElementType: 'textarea' | 'input' = multiLine ? 'textarea' : 'input'
-  let { isFocused, focusProps } = useFocus({ isDisabled })
-  let { hoverProps, isHovered } = useHover({ isDisabled })
-  let domRef = useRef(null)
-  let defaultInputRef = useRef(null)
+  let ElementType: 'textarea' | 'input' = multiLine ? 'textarea' : 'input';
+  let { isFocused, focusProps } = useFocus({ isDisabled });
+  let { hoverProps, isHovered } = useHover({ isDisabled });
+  let domRef = useRef(null);
+  let defaultInputRef = useRef(null);
 
-  inputRef = inputRef || defaultInputRef
+  inputRef = inputRef || defaultInputRef;
 
   // Expose imperative interface for ref
   useImperativeHandle(ref, () => ({
     ...createFocusableRef(domRef, inputRef),
     select() {
       if (inputRef?.current) {
-        inputRef.current.select()
+        inputRef.current.select();
       }
     },
     getInputElement() {
-      return inputRef?.current
+      return inputRef?.current;
     },
-  }))
+  }));
 
-  let isInvalid = validationState === 'invalid'
+  let isInvalid = validationState === 'invalid';
 
   let validationIcon = isInvalid ? (
     <WarningOutlined style={{ color: 'var(--danger-color)' }} />
   ) : (
     <CheckOutlined style={{ color: 'var(--success-color)' }} />
-  )
-  let validation = cloneElement(validationIcon)
+  );
+  let validation = cloneElement(validationIcon);
 
   suffix =
     typeof suffix === 'string' ? (
       <Block padding="1x right">{suffix}</Block>
     ) : (
       suffix
-    )
+    );
 
   // Fix safari bug: https://github.com/philipwalton/flexbugs/issues/270
   if (!inputProps?.placeholder) {
     if (!inputProps) {
-      inputProps = {}
+      inputProps = {};
     }
 
-    inputProps.placeholder = ' '
+    inputProps.placeholder = ' ';
   }
 
   let textField = (
@@ -301,7 +301,7 @@ function TextInputBase(props: JengaTextInputBaseProps, ref) {
         {suffixPosition === 'after' ? suffix : null}
       </Suffix>
     </InputWrapperElement>
-  )
+  );
 
   return (
     <FieldWrapper
@@ -326,8 +326,8 @@ function TextInputBase(props: JengaTextInputBaseProps, ref) {
         ref: domRef,
       }}
     />
-  )
+  );
 }
 
-const _TextInputBase = forwardRef(TextInputBase)
-export { _TextInputBase as TextInputBase }
+const _TextInputBase = forwardRef(TextInputBase);
+export { _TextInputBase as TextInputBase };

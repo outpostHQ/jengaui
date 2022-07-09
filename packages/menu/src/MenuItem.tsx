@@ -1,34 +1,34 @@
-import React, { Key, useRef } from 'react'
-import { useHover } from '@react-aria/interactions'
-import { Node } from '@react-types/shared'
-import { TreeState } from '@react-stately/tree'
-import { FocusRing } from '@react-aria/focus'
-import { useMenuItem } from '@react-aria/menu'
-import { mergeProps, ClearSlots, SlotProvider } from '@jenga-ui/utils'
-import { useMenuContext } from './context'
-import { StyledMenuItem } from './styled'
-import { MenuButton, MenuSelectionType } from './MenuButton'
+import React, { Key, useRef } from 'react';
+import { useHover } from '@react-aria/interactions';
+import { Node } from '@react-types/shared';
+import { TreeState } from '@react-stately/tree';
+import { FocusRing } from '@react-aria/focus';
+import { useMenuItem } from '@react-aria/menu';
+import { mergeProps, ClearSlots, SlotProvider } from '@jenga-ui/utils';
+import { useMenuContext } from './context';
+import { StyledMenuItem } from './styled';
+import { MenuButton, MenuSelectionType } from './MenuButton';
 
 export interface MenuItemProps<T> {
-  item: Node<T>
-  state: TreeState<T>
-  selectionIcon?: MenuSelectionType
-  isVirtualized?: boolean
-  onAction?: (key: Key) => void
+  item: Node<T>;
+  state: TreeState<T>;
+  selectionIcon?: MenuSelectionType;
+  isVirtualized?: boolean;
+  onAction?: (key: Key) => void;
 }
 
 /** @private */
 export function MenuItem<T>(props: MenuItemProps<T>) {
-  const { item, state, selectionIcon, isVirtualized, onAction } = props
-  const { onClose, closeOnSelect } = useMenuContext()
-  const { rendered, key, props: itemProps } = item
+  const { item, state, selectionIcon, isVirtualized, onAction } = props;
+  const { onClose, closeOnSelect } = useMenuContext();
+  const { rendered, key, props: itemProps } = item;
 
-  const isSelectable = state.selectionManager.selectionMode !== 'none'
-  const isSelected = state.selectionManager.isSelected(key)
-  const isDisabled = state.disabledKeys.has(key)
+  const isSelectable = state.selectionManager.selectionMode !== 'none';
+  const isSelected = state.selectionManager.isSelected(key);
+  const isDisabled = state.disabledKeys.has(key);
 
-  const ref = useRef<HTMLLIElement>(null)
-  const { hoverProps, isHovered } = useHover({ isDisabled })
+  const ref = useRef<HTMLLIElement>(null);
+  const { hoverProps, isHovered } = useHover({ isDisabled });
   const { menuItemProps, labelProps, descriptionProps, keyboardShortcutProps } =
     useMenuItem(
       {
@@ -42,8 +42,8 @@ export function MenuItem<T>(props: MenuItemProps<T>) {
         onAction,
       },
       state,
-      ref
-    )
+      ref,
+    );
 
   let contents =
     typeof rendered === 'string' ? (
@@ -58,7 +58,7 @@ export function MenuItem<T>(props: MenuItemProps<T>) {
       </MenuButton>
     ) : (
       rendered
-    )
+    );
 
   return (
     <FocusRing>
@@ -87,5 +87,5 @@ export function MenuItem<T>(props: MenuItemProps<T>) {
         </ClearSlots>
       </StyledMenuItem>
     </FocusRing>
-  )
+  );
 }

@@ -24,10 +24,10 @@ const colors = {
   success: '49, 195, 124',
   'success-text': '48, 166, 102',
   note: '251, 188, 5',
-}
+};
 
 function color(name, opacity = 1) {
-  return `rgba(${colors[name]}, ${opacity})`
+  return `rgba(${colors[name]}, ${opacity})`;
 }
 
 const TOKENS = {
@@ -231,12 +231,12 @@ const TOKENS = {
   'scrollbar-outline-color': 'var(--clear-color)',
   'scrollbar-bg-color': 'var(--grey-light-color)',
   'scrollbar-corner-color': 'var(--clear-color)',
-}
+};
 
 // Map color tokens
 Object.keys(colors).forEach((name) => {
-  TOKENS[`${name}-color`] = color(name)
-  TOKENS[`${name}-color-rgb`] = colors[name]
-})
+  TOKENS[`${name}-color`] = color(name);
+  TOKENS[`${name}-color-rgb`] = colors[name];
+});
 
-export { TOKENS }
+export { TOKENS };

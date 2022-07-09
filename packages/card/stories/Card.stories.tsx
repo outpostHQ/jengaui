@@ -1,4 +1,4 @@
-import { Card } from '../src/Card'
+import { Card } from '../src/Card';
 
 export default {
   title: 'Content/Card',
@@ -39,8 +39,8 @@ export default {
       },
     },
   },
-}
+};
 
-const Template = (args) => <Card {...args}>Card content</Card>
+const Template = (args) => <Card {...args}>Card content</Card>;
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});

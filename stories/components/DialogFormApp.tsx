@@ -1,5 +1,5 @@
-import { Button, DialogTrigger } from '../../src/index'
-import { ConfirmDeletionDialogForm } from './ConfirmDeletionDialogForm'
+import { Button, DialogTrigger } from '../../src/index';
+import { ConfirmDeletionDialogForm } from './ConfirmDeletionDialogForm';
 
 export function DialogFormApp() {
   return (
@@ -8,5 +8,5 @@ export function DialogFormApp() {
 
       <ConfirmDeletionDialogForm name="instanceName" />
     </DialogTrigger>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from 'react'
+import { forwardRef, ReactNode } from 'react';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -7,7 +7,7 @@ import {
   extractStyles,
   filterBaseProps,
   Styles,
-} from 'tastycss'
+} from 'tastycss';
 
 const DEFAULT_STYLES = {
   display: 'grid',
@@ -22,11 +22,11 @@ const DEFAULT_STYLES = {
   fontSize: 'calc(@avatar-size / 2)',
   lineHeight: 'calc(@avatar-size / 2)',
   fontWeight: 500,
-}
+};
 
 export interface JengaAvatarProps extends BaseProps, ContainerStyleProps {
-  icon?: ReactNode
-  size?: Styles['size']
+  icon?: ReactNode;
+  size?: Styles['size'];
 }
 
 export const Avatar = forwardRef(
@@ -34,7 +34,7 @@ export const Avatar = forwardRef(
     const styles = extractStyles(props, CONTAINER_STYLES, {
       ...DEFAULT_STYLES,
       '--avatar-size': size,
-    })
+    });
 
     return (
       <Element
@@ -46,6 +46,6 @@ export const Avatar = forwardRef(
         {icon}
         {children}
       </Element>
-    )
-  }
-)
+    );
+  },
+);

@@ -1,12 +1,12 @@
-import { OpenTransition } from './OpenTransition'
-import { forwardRef, useCallback, useState } from 'react'
-import { Provider, useProviderProps } from '@jenga-ui/providers'
-import type { OverlayProps } from '@react-types/overlays'
-import { createPortal } from 'react-dom'
-import { Props } from 'tastycss'
+import { OpenTransition } from './OpenTransition';
+import { forwardRef, useCallback, useState } from 'react';
+import { Provider, useProviderProps } from '@jenga-ui/providers';
+import type { OverlayProps } from '@react-types/overlays';
+import { createPortal } from 'react-dom';
+import { Props } from 'tastycss';
 
 export interface JengaOverlayProps extends Omit<OverlayProps, 'container'> {
-  container?: HTMLElement | null
+  container?: HTMLElement | null;
 }
 
 function Overlay(props: JengaOverlayProps, ref) {
@@ -20,25 +20,25 @@ function Overlay(props: JengaOverlayProps, ref) {
     onExit,
     onExiting,
     onExited,
-  } = props
-  let [exited, setExited] = useState(!isOpen)
-  let { root } = useProviderProps({} as Props)
+  } = props;
+  let [exited, setExited] = useState(!isOpen);
+  let { root } = useProviderProps({} as Props);
 
   let handleEntered = useCallback(() => {
-    setExited(false)
-    onEntered?.()
-  }, [onEntered])
+    setExited(false);
+    onEntered?.();
+  }, [onEntered]);
 
   let handleExited = useCallback(() => {
-    setExited(true)
-    onExited?.()
-  }, [onExited])
+    setExited(true);
+    onExited?.();
+  }, [onExited]);
 
   // Don't un-render the overlay while it's transitioning out.
-  let mountOverlay = isOpen || !exited
+  let mountOverlay = isOpen || !exited;
   if (!mountOverlay) {
     // Don't bother showing anything if we don't have to.
-    return null
+    return null;
   }
 
   let contents = (
@@ -56,10 +56,10 @@ function Overlay(props: JengaOverlayProps, ref) {
         {children}
       </OpenTransition>
     </Provider>
-  )
+  );
 
-  return createPortal(contents, container || root || document.body)
+  return createPortal(contents, container || root || document.body);
 }
 
-let _Overlay = forwardRef(Overlay)
-export { _Overlay as Overlay }
+let _Overlay = forwardRef(Overlay);
+export { _Overlay as Overlay };

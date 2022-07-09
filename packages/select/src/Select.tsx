@@ -2,13 +2,13 @@ import {
   CheckOutlined,
   LoadingOutlined,
   WarningOutlined,
-} from '@ant-design/icons'
+} from '@ant-design/icons';
 import {
   mergeProps,
   useCombinedRefs,
   useFocus,
   getOverlayTransitionCSS,
-} from '@jenga-ui/utils'
+} from '@jenga-ui/utils';
 import {
   cloneElement,
   forwardRef,
@@ -16,20 +16,20 @@ import {
   RefObject,
   useRef,
   useState,
-} from 'react'
-import { useSelectState } from '@react-stately/select'
-import { HiddenSelect, useSelect } from '@react-aria/select'
-import { useListBox, useOption } from '@react-aria/listbox'
-import { useButton } from '@react-aria/button'
-import { FocusScope } from '@react-aria/focus'
+} from 'react';
+import { useSelectState } from '@react-stately/select';
+import { HiddenSelect, useSelect } from '@react-aria/select';
+import { useListBox, useOption } from '@react-aria/listbox';
+import { useButton } from '@react-aria/button';
+import { FocusScope } from '@react-aria/focus';
 import {
   DismissButton,
   useOverlay,
   useOverlayPosition,
-} from '@react-aria/overlays'
-import { useFormProps, FieldWrapper, FormFieldProps } from '@jenga-ui/form'
-import { useFocus as useAriaFocus, useHover } from '@react-aria/interactions'
-import { useProviderProps } from '@jenga-ui/providers'
+} from '@react-aria/overlays';
+import { useFormProps, FieldWrapper, FormFieldProps } from '@jenga-ui/form';
+import { useFocus as useAriaFocus, useHover } from '@react-aria/interactions';
+import { useProviderProps } from '@jenga-ui/providers';
 import {
   BasePropsWithoutChildren,
   BLOCK_STYLES,
@@ -40,12 +40,12 @@ import {
   Props,
   Styles,
   tasty,
-} from 'tastycss'
-import { Item } from '@react-stately/collections'
-import { OverlayWrapper } from '@jenga-ui/overlays'
-import type { AriaSelectProps } from '@react-types/select'
-import { DOMRef } from '@react-types/shared'
-import styled from 'styled-components'
+} from 'tastycss';
+import { Item } from '@react-stately/collections';
+import { OverlayWrapper } from '@jenga-ui/overlays';
+import type { AriaSelectProps } from '@react-types/select';
+import { DOMRef } from '@react-types/shared';
+import styled from 'styled-components';
 
 const CaretDownIcon = () => (
   <svg
@@ -60,7 +60,7 @@ const CaretDownIcon = () => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
 const SelectWrapperElement = tasty({
   styles: {
@@ -75,7 +75,7 @@ const SelectWrapperElement = tasty({
       disabled: '#dark.30',
     },
   },
-})
+});
 
 const SelectElement = tasty({
   as: 'button',
@@ -118,7 +118,7 @@ const SelectElement = tasty({
     cursor: 'pointer',
     transition: 'theme',
   },
-})
+});
 
 const ListBoxElement = tasty({
   as: 'ul',
@@ -136,7 +136,7 @@ const ListBoxElement = tasty({
     overflow: 'hidden auto',
     styledScrollbar: true,
   },
-})
+});
 
 const OptionElement = tasty({
   as: 'li',
@@ -160,19 +160,19 @@ const OptionElement = tasty({
     preset: 't3m',
     transition: 'theme',
   },
-})
+});
 
 const OverlayElement = tasty({
   styles: {
     position: 'absolute',
     width: 'min @overlay-min-width',
   },
-})
+});
 const StyledOverlayElement = styled(OverlayElement)`
   ${(props) => {
-    return getOverlayTransitionCSS({ placement: props?.['data-position'] })
+    return getOverlayTransitionCSS({ placement: props?.['data-position'] });
   }}
-`
+`;
 
 export interface JengaSelectBaseProps<T>
   extends BasePropsWithoutChildren,
@@ -180,36 +180,36 @@ export interface JengaSelectBaseProps<T>
     FormFieldProps,
     BlockStyleProps,
     AriaSelectProps<T> {
-  prefix?: ReactNode
-  suffix?: ReactNode
-  triggerRef?: RefObject<HTMLButtonElement>
-  isLoading?: boolean
-  loadingIndicator?: ReactNode
-  overlayOffset?: number
-  hideTrigger?: boolean
-  inputStyles?: Styles
-  optionStyles?: Styles
-  triggerStyles?: Styles
-  listBoxStyles?: Styles
-  overlayStyles?: Styles
-  direction?: 'top' | 'bottom'
-  shouldFlip?: boolean
-  inputProps?: Props
+  prefix?: ReactNode;
+  suffix?: ReactNode;
+  triggerRef?: RefObject<HTMLButtonElement>;
+  isLoading?: boolean;
+  loadingIndicator?: ReactNode;
+  overlayOffset?: number;
+  hideTrigger?: boolean;
+  inputStyles?: Styles;
+  optionStyles?: Styles;
+  triggerStyles?: Styles;
+  listBoxStyles?: Styles;
+  overlayStyles?: Styles;
+  direction?: 'top' | 'bottom';
+  shouldFlip?: boolean;
+  inputProps?: Props;
 }
 
 export interface JengaSelectProps<T> extends JengaSelectBaseProps<T> {
-  popoverRef?: RefObject<HTMLInputElement>
+  popoverRef?: RefObject<HTMLInputElement>;
   /** The ref for the list box. */
-  listBoxRef?: RefObject<HTMLElement>
-  size?: 'small' | 'default' | 'large' | string
+  listBoxRef?: RefObject<HTMLElement>;
+  size?: 'small' | 'default' | 'large' | string;
 }
 
 function Select<T extends object>(
   props: JengaSelectProps<T>,
-  ref: DOMRef<HTMLDivElement>
+  ref: DOMRef<HTMLDivElement>,
 ) {
-  props = useProviderProps(props)
-  props = useFormProps(props)
+  props = useProviderProps(props);
+  props = useFormProps(props);
 
   let {
     qa,
@@ -245,22 +245,22 @@ function Select<T extends object>(
     size,
     styles,
     ...otherProps
-  } = props
-  let state = useSelectState(props)
-  const outerStyles = extractStyles(otherProps, OUTER_STYLES, styles)
+  } = props;
+  let state = useSelectState(props);
+  const outerStyles = extractStyles(otherProps, OUTER_STYLES, styles);
 
-  inputStyles = extractStyles(otherProps, BLOCK_STYLES, inputStyles)
+  inputStyles = extractStyles(otherProps, BLOCK_STYLES, inputStyles);
 
-  ref = useCombinedRefs(ref)
-  triggerRef = useCombinedRefs(triggerRef)
-  popoverRef = useCombinedRefs(popoverRef)
-  listBoxRef = useCombinedRefs(listBoxRef)
+  ref = useCombinedRefs(ref);
+  triggerRef = useCombinedRefs(triggerRef);
+  popoverRef = useCombinedRefs(popoverRef);
+  listBoxRef = useCombinedRefs(listBoxRef);
 
   let { labelProps, triggerProps, valueProps, menuProps } = useSelect(
     props,
     state,
-    triggerRef
-  )
+    triggerRef,
+  );
 
   let { overlayProps, placement } = useOverlayPosition({
     targetRef: triggerRef,
@@ -271,24 +271,24 @@ function Select<T extends object>(
     isOpen: state.isOpen,
     onClose: state.close,
     offset: overlayOffset,
-  })
+  });
 
-  let { isFocused, focusProps } = useFocus({ isDisabled }, true)
-  let { hoverProps, isHovered } = useHover({ isDisabled })
+  let { isFocused, focusProps } = useFocus({ isDisabled }, true);
+  let { hoverProps, isHovered } = useHover({ isDisabled });
 
   // Get props for the button based on the trigger props from useSelect
-  let { buttonProps } = useButton(triggerProps, triggerRef)
+  let { buttonProps } = useButton(triggerProps, triggerRef);
 
-  let isInvalid = validationState === 'invalid'
+  let isInvalid = validationState === 'invalid';
 
   let validationIcon = isInvalid ? (
     <WarningOutlined style={{ color: 'var(--danger-color)' }} />
   ) : (
     <CheckOutlined style={{ color: 'var(--success-color)' }} />
-  )
-  let validation = cloneElement(validationIcon)
+  );
+  let validation = cloneElement(validationIcon);
 
-  let triggerWidth = triggerRef?.current?.offsetWidth
+  let triggerWidth = triggerRef?.current?.offsetWidth;
 
   let selectField = (
     <SelectWrapperElement
@@ -353,7 +353,7 @@ function Select<T extends object>(
         />
       </OverlayWrapper>
     </SelectWrapperElement>
-  )
+  );
 
   return (
     <FieldWrapper
@@ -376,7 +376,7 @@ function Select<T extends object>(
         ref: ref,
       }}
     />
-  )
+  );
 }
 
 export function ListBoxPopup({
@@ -400,8 +400,8 @@ export function ListBoxPopup({
       ...otherProps,
     },
     state,
-    listBoxRef
-  )
+    listBoxRef,
+  );
 
   // Handle events that should cause the popup to close,
   // e.g. blur, clicking outside, or pressing the escape key.
@@ -412,8 +412,8 @@ export function ListBoxPopup({
       isOpen: state.isOpen,
       isDismissable: true,
     },
-    popoverRef
-  )
+    popoverRef,
+  );
 
   // Wrap in <FocusScope> so that focus is restored back to the
   // trigger when the popup is closed. In addition, add hidden
@@ -451,14 +451,14 @@ export function ListBoxPopup({
         <DismissButton onDismiss={() => state.close()} />
       </FocusScope>
     </StyledOverlayElement>
-  )
+  );
 }
 
 function Option({ item, state, styles, shouldUseVirtualFocus }) {
-  let ref = useRef<HTMLDivElement>(null)
-  let isDisabled = state.disabledKeys.has(item.key)
-  let isSelected = state.selectionManager.isSelected(item.key)
-  let isVirtualFocused = state.selectionManager.focusedKey === item.key
+  let ref = useRef<HTMLDivElement>(null);
+  let isDisabled = state.disabledKeys.has(item.key);
+  let isSelected = state.selectionManager.isSelected(item.key);
+  let isVirtualFocused = state.selectionManager.focusedKey === item.key;
 
   let { optionProps } = useOption(
     {
@@ -470,13 +470,13 @@ function Option({ item, state, styles, shouldUseVirtualFocus }) {
       shouldUseVirtualFocus,
     },
     state,
-    ref
-  )
+    ref,
+  );
 
   // Handle focus events so we can apply highlighted
   // style to the focused option
-  let [isFocused, setFocused] = useState(false)
-  let { focusProps } = useAriaFocus({ onFocusChange: setFocused })
+  let [isFocused, setFocused] = useState(false);
+  let { focusProps } = useAriaFocus({ onFocusChange: setFocused });
 
   return (
     <OptionElement
@@ -493,18 +493,18 @@ function Option({ item, state, styles, shouldUseVirtualFocus }) {
     >
       {item.rendered}
     </OptionElement>
-  )
+  );
 }
 
-const _Select = forwardRef(Select)
+const _Select = forwardRef(Select);
 
-;(_Select as any).jengaInputType = 'Select'
+(_Select as any).jengaInputType = 'Select';
 
 const __Select = Object.assign(
   _Select as typeof _Select & {
-    Item: typeof Item
+    Item: typeof Item;
   },
-  { Item }
-)
+  { Item },
+);
 
-export { __Select as Select }
+export { __Select as Select };

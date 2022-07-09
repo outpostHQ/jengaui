@@ -1,8 +1,8 @@
-import { useFocusableRef } from '@react-spectrum/utils'
-import { forwardRef, useRef } from 'react'
-import { useHover } from '@react-aria/interactions'
-import { useRadio } from '@react-aria/radio'
-import { useRadioProvider } from './context'
+import { useFocusableRef } from '@react-spectrum/utils';
+import { forwardRef, useRef } from 'react';
+import { useHover } from '@react-aria/interactions';
+import { useRadio } from '@react-aria/radio';
+import { useRadioProvider } from './context';
 import {
   BaseProps,
   extractStyles,
@@ -10,17 +10,17 @@ import {
   OUTER_STYLES,
   Styles,
   tasty,
-} from 'tastycss'
-import { useFocus, mergeProps } from '@jenga-ui/utils'
-import { useProviderProps } from '@jenga-ui/providers'
-import { RadioGroup } from './RadioGroup'
+} from 'tastycss';
+import { useFocus, mergeProps } from '@jenga-ui/utils';
+import { useProviderProps } from '@jenga-ui/providers';
+import { RadioGroup } from './RadioGroup';
 import {
   useFormProps,
   INLINE_LABEL_STYLES,
   FormFieldProps,
   HiddenInput,
-} from '@jenga-ui/form'
-import type { AriaRadioProps } from '@react-types/radio'
+} from '@jenga-ui/form';
+import type { AriaRadioProps } from '@react-types/radio';
 
 const RadioWrapperElement = tasty({
   as: 'label',
@@ -34,7 +34,7 @@ const RadioWrapperElement = tasty({
     preset: 'default',
     width: 'min-content',
   },
-})
+});
 
 const RadioButtonElement = tasty({
   styles: {
@@ -69,7 +69,7 @@ const RadioButtonElement = tasty({
       focused: '#purple-03',
     },
   },
-})
+});
 
 const RadioNormalElement = tasty({
   styles: {
@@ -109,9 +109,9 @@ const RadioNormalElement = tasty({
       transition: 'theme',
     },
   },
-})
+});
 
-const RadioCircleElement = <div data-element="RadioCircle" />
+const RadioCircleElement = <div data-element="RadioCircle" />;
 
 const RadioLabelElement = tasty({
   qa: 'RadioLabel',
@@ -119,20 +119,20 @@ const RadioLabelElement = tasty({
     ...INLINE_LABEL_STYLES,
     fontWeight: 400,
   },
-})
+});
 
 export interface JengaRadioProps
   extends BaseProps,
     AriaRadioProps,
     FormFieldProps {
-  inputStyles?: Styles
+  inputStyles?: Styles;
   /* The visual type of the radio button */
-  type?: 'button' | 'radio'
+  type?: 'button' | 'radio';
 }
 
 function Radio(props: JengaRadioProps, ref) {
-  props = useProviderProps(props)
-  props = useFormProps(props)
+  props = useProviderProps(props);
+  props = useFormProps(props);
 
   let {
     qa,
@@ -147,33 +147,35 @@ function Radio(props: JengaRadioProps, ref) {
     type,
     'aria-label': ariaLabel,
     ...otherProps
-  } = props
+  } = props;
 
-  let isButton = type === 'button'
+  let isButton = type === 'button';
 
-  label = label || children
+  label = label || children;
 
-  let styles = extractStyles(otherProps, OUTER_STYLES)
+  let styles = extractStyles(otherProps, OUTER_STYLES);
 
-  const RadioElement = isButton ? RadioButtonElement : RadioNormalElement
+  const RadioElement = isButton ? RadioButtonElement : RadioNormalElement;
 
   labelStyles = {
     ...INLINE_LABEL_STYLES,
     fontWeight: 400,
     ...labelStyles,
-  }
+  };
 
-  let state = useRadioProvider()
+  let state = useRadioProvider();
 
   if (!state) {
-    throw new Error('JengaUI: The Radio button is used outside the RadioGroup.')
+    throw new Error(
+      'JengaUI: The Radio button is used outside the RadioGroup.',
+    );
   }
 
-  let { isFocused, focusProps } = useFocus({ isDisabled }, true)
-  let { hoverProps, isHovered } = useHover({ isDisabled })
+  let { isFocused, focusProps } = useFocus({ isDisabled }, true);
+  let { hoverProps, isHovered } = useHover({ isDisabled });
 
-  let inputRef = useRef(null)
-  let domRef = useFocusableRef(ref, inputRef)
+  let inputRef = useRef(null);
+  let domRef = useFocusableRef(ref, inputRef);
 
   let { inputProps } = useRadio(
     {
@@ -181,8 +183,8 @@ function Radio(props: JengaRadioProps, ref) {
       isDisabled,
     },
     state,
-    inputRef
-  )
+    inputRef,
+  );
 
   return (
     <RadioWrapperElement
@@ -229,36 +231,36 @@ function Radio(props: JengaRadioProps, ref) {
         </RadioLabelElement>
       )}
     </RadioWrapperElement>
-  )
+  );
 }
 
 function RadioButton(props: JengaRadioProps, ref) {
-  const Radio = _Radio
+  const Radio = _Radio;
 
-  return <Radio {...props} type="button" ref={ref} />
+  return <Radio {...props} type="button" ref={ref} />;
 }
 
 /**
  * Radio buttons allow users to select a single option from a list of mutually exclusive options.
  * All possible options are exposed up front for users to compare.
  */
-const _Radio = forwardRef(Radio)
+const _Radio = forwardRef(Radio);
 /**
  * Radio buttons allow users to select a single option from a list of mutually exclusive options.
  * All possible options are exposed up front for users to compare.
  */
-const _RadioButton = forwardRef(RadioButton)
+const _RadioButton = forwardRef(RadioButton);
 
 const __Radio = Object.assign(
   _Radio as typeof _Radio & {
-    Group: typeof RadioGroup
-    Button: typeof _RadioButton
+    Group: typeof RadioGroup;
+    Button: typeof _RadioButton;
   },
   {
     Group: RadioGroup,
     Button: _RadioButton,
-  }
-)
+  },
+);
 
-export { __Radio as Radio }
-export { _RadioButton as RadioButton }
+export { __Radio as Radio };
+export { _RadioButton as RadioButton };

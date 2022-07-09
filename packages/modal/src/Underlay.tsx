@@ -1,5 +1,5 @@
-import { forwardRef, HTMLAttributes } from 'react'
-import { tasty } from 'tastycss'
+import { forwardRef, HTMLAttributes } from 'react';
+import { tasty } from 'tastycss';
 
 const UnderlayElement = tasty({
   qa: 'Underlay',
@@ -24,10 +24,10 @@ const UnderlayElement = tasty({
     transition:
       'transform .25s ease-in-out, opacity .25s linear, visibility 0ms linear',
   },
-})
+});
 
 export interface JengaUnderlayProps extends HTMLAttributes<HTMLElement> {
-  isOpen?: boolean
+  isOpen?: boolean;
 }
 
 const Underlay = ({ isOpen, ...otherProps }, ref) => {
@@ -39,8 +39,8 @@ const Underlay = ({ isOpen, ...otherProps }, ref) => {
       }}
       {...otherProps}
     />
-  )
-}
+  );
+};
 
-let _Underlay = forwardRef(Underlay)
-export { _Underlay as Underlay }
+let _Underlay = forwardRef(Underlay);
+export { _Underlay as Underlay };

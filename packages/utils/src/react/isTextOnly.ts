@@ -1,5 +1,5 @@
-import { Children, isValidElement } from 'react'
+import { Children, isValidElement } from 'react';
 
 export function isTextOnly(children) {
-  return Children.toArray(children).every((c) => !isValidElement(c))
+  return Children.toArray(children).every((c) => !isValidElement(c));
 }

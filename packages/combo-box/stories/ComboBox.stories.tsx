@@ -1,8 +1,8 @@
-import { ComboBox } from '../src'
-import { Item } from '@react-stately/collections'
-import { DollarCircleOutlined } from '@ant-design/icons'
-import { SELECTED_KEY_ARG } from '../../../stories/FormFieldArgs'
-import { baseProps } from '../../../stories/lists/baseProps'
+import { ComboBox } from '../src';
+import { Item } from '@react-stately/collections';
+import { DollarCircleOutlined } from '@ant-design/icons';
+import { SELECTED_KEY_ARG } from '../../../stories/FormFieldArgs';
+import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Pickers/ComboBox',
@@ -15,7 +15,7 @@ export default {
   argTypes: {
     ...SELECTED_KEY_ARG,
   },
-}
+};
 
 const Template = ({ icon, ...props }) => {
   return (
@@ -39,14 +39,14 @@ const Template = ({ icon, ...props }) => {
         <Item key="violet">Violet</Item>
       </ComboBox>
     </>
-  )
-}
+  );
+};
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = Template.bind({});
+Default.args = {};
 
-export const WithDefaultValue = Template.bind({})
-WithDefaultValue.args = { defaultSelectedKey: 'purple' }
+export const WithDefaultValue = Template.bind({});
+WithDefaultValue.args = { defaultSelectedKey: 'purple' };
 
-export const WithIcon = Template.bind({})
-WithIcon.args = { icon: true }
+export const WithIcon = Template.bind({});
+WithIcon.args = { icon: true };

@@ -1,3 +1,3 @@
-export * from './Checkbox'
-export * from './CheckboxGroup'
-export * from './context'
+export * from './Checkbox';
+export * from './CheckboxGroup';
+export * from './context';

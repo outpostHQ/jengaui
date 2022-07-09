@@ -2,30 +2,30 @@ import {
   CheckOutlined,
   LoadingOutlined,
   WarningOutlined,
-} from '@ant-design/icons'
-import { mergeProps } from '@react-aria/utils'
-import { cloneElement, forwardRef, RefObject, useState } from 'react'
-import { useComboBoxState } from '@react-stately/combobox'
-import { useComboBox } from '@react-aria/combobox'
-import { useButton } from '@react-aria/button'
-import { useFormProps, FieldWrapper } from '@jenga-ui/form'
-import { useHover } from '@react-aria/interactions'
-import { useProviderProps } from '@jenga-ui/providers'
-import { useFilter } from '@react-aria/i18n'
-import { BLOCK_STYLES, extractStyles, OUTER_STYLES, tasty } from 'tastycss'
-import { useFocus, modAttrs, useCombinedRefs } from '@jenga-ui/utils'
-import { JengaSelectBaseProps, ListBoxPopup } from '@jenga-ui/select'
-import { Prefix, Suffix, Space } from '@jenga-ui/layout'
-import { Item } from '@react-stately/collections'
-import { DEFAULT_INPUT_STYLES } from '@jenga-ui/text-input'
-import { useOverlayPosition } from '@react-aria/overlays'
-import { OverlayWrapper } from '@jenga-ui/overlays'
+} from '@ant-design/icons';
+import { mergeProps } from '@react-aria/utils';
+import { cloneElement, forwardRef, RefObject, useState } from 'react';
+import { useComboBoxState } from '@react-stately/combobox';
+import { useComboBox } from '@react-aria/combobox';
+import { useButton } from '@react-aria/button';
+import { useFormProps, FieldWrapper } from '@jenga-ui/form';
+import { useHover } from '@react-aria/interactions';
+import { useProviderProps } from '@jenga-ui/providers';
+import { useFilter } from '@react-aria/i18n';
+import { BLOCK_STYLES, extractStyles, OUTER_STYLES, tasty } from 'tastycss';
+import { useFocus, modAttrs, useCombinedRefs } from '@jenga-ui/utils';
+import { JengaSelectBaseProps, ListBoxPopup } from '@jenga-ui/select';
+import { Prefix, Suffix, Space } from '@jenga-ui/layout';
+import { Item } from '@react-stately/collections';
+import { DEFAULT_INPUT_STYLES } from '@jenga-ui/text-input';
+import { useOverlayPosition } from '@react-aria/overlays';
+import { OverlayWrapper } from '@jenga-ui/overlays';
 import type {
   CollectionBase,
   KeyboardDelegate,
   LoadingState,
-} from '@react-types/shared'
-import type { ComboBoxProps } from '@react-types/combobox'
+} from '@react-types/shared';
+import type { ComboBoxProps } from '@react-types/combobox';
 
 const CaretDownIcon = () => (
   <svg
@@ -40,7 +40,7 @@ const CaretDownIcon = () => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
 const ComboBoxWrapperElement = tasty({
   styles: {
@@ -51,7 +51,7 @@ const ComboBoxWrapperElement = tasty({
       focused: 1,
     },
   },
-})
+});
 
 const InputElement = tasty({
   as: 'input',
@@ -59,7 +59,7 @@ const InputElement = tasty({
     ...DEFAULT_INPUT_STYLES,
     width: '100%',
   },
-})
+});
 
 const TriggerElement = tasty({
   as: 'button',
@@ -87,29 +87,29 @@ const TriggerElement = tasty({
     },
     cursor: 'pointer',
   },
-})
+});
 
 export interface JengaComboBoxProps<T>
   extends Omit<JengaSelectBaseProps<T>, 'onOpenChange'>,
     ComboBoxProps<T>,
     CollectionBase<T> {
-  multiLine?: boolean
-  autoComplete?: string
-  inputRef?: RefObject<HTMLInputElement>
+  multiLine?: boolean;
+  autoComplete?: string;
+  inputRef?: RefObject<HTMLInputElement>;
   /** The ref for the list box popover. */
-  popoverRef?: RefObject<HTMLDivElement>
+  popoverRef?: RefObject<HTMLDivElement>;
   /** The ref for the list box. */
-  listBoxRef?: RefObject<HTMLElement>
+  listBoxRef?: RefObject<HTMLElement>;
   /** An optional keyboard delegate implementation, to override the default. */
-  keyboardDelegate?: KeyboardDelegate
-  loadingState?: LoadingState
-  filter?: (val: any, str: string) => boolean
-  size?: 'small' | 'default' | 'large' | string
+  keyboardDelegate?: KeyboardDelegate;
+  loadingState?: LoadingState;
+  filter?: (val: any, str: string) => boolean;
+  size?: 'small' | 'default' | 'large' | string;
 }
 
 function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
-  props = useProviderProps(props)
-  props = useFormProps(props)
+  props = useProviderProps(props);
+  props = useFormProps(props);
 
   let {
     qa,
@@ -150,26 +150,26 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
     filter,
     styles,
     ...otherProps
-  } = props
-  let isAsync = loadingState != null
-  let { contains } = useFilter({ sensitivity: 'base' })
-  let [suffixWidth, setSuffixWidth] = useState(0)
-  let [prefixWidth, setPrefixWidth] = useState(0)
+  } = props;
+  let isAsync = loadingState != null;
+  let { contains } = useFilter({ sensitivity: 'base' });
+  let [suffixWidth, setSuffixWidth] = useState(0);
+  let [prefixWidth, setPrefixWidth] = useState(0);
   let state = useComboBoxState({
     ...props,
     defaultFilter: filter || contains,
     allowsEmptyCollection: isAsync,
-  })
+  });
 
-  const outerStyles = extractStyles(otherProps, OUTER_STYLES, styles)
+  const outerStyles = extractStyles(otherProps, OUTER_STYLES, styles);
 
-  inputStyles = extractStyles(otherProps, BLOCK_STYLES, inputStyles)
+  inputStyles = extractStyles(otherProps, BLOCK_STYLES, inputStyles);
 
-  ref = useCombinedRefs(ref)
-  inputRef = useCombinedRefs(inputRef)
-  triggerRef = useCombinedRefs(triggerRef)
-  popoverRef = useCombinedRefs(popoverRef)
-  listBoxRef = useCombinedRefs(listBoxRef)
+  ref = useCombinedRefs(ref);
+  inputRef = useCombinedRefs(inputRef);
+  triggerRef = useCombinedRefs(triggerRef);
+  popoverRef = useCombinedRefs(popoverRef);
+  listBoxRef = useCombinedRefs(listBoxRef);
 
   let {
     labelProps,
@@ -185,8 +185,8 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
       popoverRef,
       menuTrigger,
     },
-    state
-  )
+    state,
+  );
 
   let { overlayProps, placement } = useOverlayPosition({
     targetRef: triggerRef,
@@ -197,40 +197,40 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
     isOpen: state.isOpen,
     onClose: state.close,
     offset: overlayOffset,
-  })
+  });
 
   if (prefix) {
-    inputStyles.paddingLeft = `${prefixWidth}px`
+    inputStyles.paddingLeft = `${prefixWidth}px`;
   }
 
-  inputStyles.paddingRight = `${suffixWidth}px`
+  inputStyles.paddingRight = `${suffixWidth}px`;
 
-  let { isFocused, focusProps } = useFocus({ isDisabled })
-  let { hoverProps, isHovered } = useHover({ isDisabled })
+  let { isFocused, focusProps } = useFocus({ isDisabled });
+  let { hoverProps, isHovered } = useHover({ isDisabled });
 
   // Get props for the button based on the trigger props from useComboBox
   let { buttonProps, isPressed: isTriggerPressed } = useButton(
     triggerProps,
-    triggerRef
-  )
+    triggerRef,
+  );
   let { hoverProps: triggerHoverProps, isHovered: isTriggerHovered } = useHover(
-    { isDisabled }
-  )
+    { isDisabled },
+  );
   let { focusProps: triggerFocusProps, isFocused: isTriggerFocused } = useFocus(
     { isDisabled },
-    true
-  )
+    true,
+  );
 
-  let isInvalid = validationState === 'invalid'
+  let isInvalid = validationState === 'invalid';
 
   let validationIcon = isInvalid ? (
     <WarningOutlined style={{ color: 'var(--danger-color)' }} />
   ) : (
     <CheckOutlined style={{ color: 'var(--success-color)' }} />
-  )
-  let validation = cloneElement(validationIcon)
+  );
+  let validation = cloneElement(validationIcon);
 
-  let comboBoxWidth = inputRef?.current?.offsetWidth
+  let comboBoxWidth = inputRef?.current?.offsetWidth;
 
   let comboBoxField = (
     <ComboBoxWrapperElement
@@ -320,7 +320,7 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
         />
       </OverlayWrapper>
     </ComboBoxWrapperElement>
-  )
+  );
 
   return (
     <FieldWrapper
@@ -342,15 +342,15 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
         ref: ref,
       }}
     />
-  )
+  );
 }
 
-const _ComboBox = forwardRef(ComboBox)
+const _ComboBox = forwardRef(ComboBox);
 
 const __ComboBox = Object.assign(
   _ComboBox as typeof _ComboBox & { Item: typeof Item },
-  { Item }
-)
-;(__ComboBox as any).jengaInputType = 'ComboBox'
+  { Item },
+);
+(__ComboBox as any).jengaInputType = 'ComboBox';
 
-export { __ComboBox as ComboBox }
+export { __ComboBox as ComboBox };

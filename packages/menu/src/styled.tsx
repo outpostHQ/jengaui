@@ -1,5 +1,5 @@
-import { tasty } from 'tastycss'
-import { Space } from '@jenga-ui/layout'
+import { tasty } from 'tastycss';
+import { Space } from '@jenga-ui/layout';
 
 export const StyledMenu = tasty({
   as: 'ul',
@@ -34,7 +34,7 @@ export const StyledMenu = tasty({
       popover: '0px 5px 15px #dark.05',
     },
   },
-})
+});
 
 export const StyledDivider = tasty({
   as: 'li',
@@ -46,7 +46,7 @@ export const StyledDivider = tasty({
     fill: '#dark.05',
     height: '1bw',
   },
-})
+});
 
 export const StyledMenuHeader = tasty(Space, {
   as: 'li',
@@ -61,7 +61,7 @@ export const StyledMenuHeader = tasty(Space, {
     align: 'start',
     radius: '1r 1r 0 0',
   },
-})
+});
 
 export const StyledMenuSection = tasty({
   as: 'li',
@@ -73,7 +73,7 @@ export const StyledMenuSection = tasty({
     listStyle: 'none',
     fill: '#white',
   },
-})
+});
 
 export const StyledMenuItem = tasty({
   as: 'li',
@@ -90,7 +90,7 @@ export const StyledMenuItem = tasty({
       disabled: '#dark-04',
     },
   },
-})
+});
 
 export const StyledMenuSectionHeading = tasty(Space, {
   as: 'header',
@@ -102,4 +102,4 @@ export const StyledMenuSectionHeading = tasty(Space, {
     placeContent: 'space-between',
     align: 'start',
   },
-})
+});

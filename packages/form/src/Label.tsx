@@ -1,6 +1,6 @@
-import { useDOMRef } from '@react-spectrum/utils'
-import { forwardRef, MouseEventHandler } from 'react'
-import { useProviderProps } from '@jenga-ui/providers'
+import { useDOMRef } from '@react-spectrum/utils';
+import { forwardRef, MouseEventHandler } from 'react';
+import { useProviderProps } from '@jenga-ui/providers';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -10,8 +10,8 @@ import {
   Styles,
   TagNameProps,
   tasty,
-} from 'tastycss'
-import { LabelPosition, NecessityIndicator, ValidationState } from './shared'
+} from 'tastycss';
+import { LabelPosition, NecessityIndicator, ValidationState } from './shared';
 
 const REQUIRED_ICON = (
   <svg
@@ -37,12 +37,12 @@ const REQUIRED_ICON = (
       </g>
     </switch>
   </svg>
-)
+);
 
 const INTL_MESSAGES = {
   '(required)': '(required)',
   '(optional)': '(optional)',
-}
+};
 
 export const INLINE_LABEL_STYLES: Styles = {
   fontWeight: 400,
@@ -53,7 +53,7 @@ export const INLINE_LABEL_STYLES: Styles = {
     disabled: '#dark.30',
   },
   whiteSpace: 'nowrap',
-} as const
+} as const;
 
 export const LABEL_STYLES: Styles = {
   display: 'block',
@@ -73,30 +73,30 @@ export const LABEL_STYLES: Styles = {
     '': 'initial',
     side: '@(label-width, initial)',
   },
-}
+};
 
 const LabelElement = tasty({
   as: 'label',
   qa: 'Label',
   styles: LABEL_STYLES,
-})
+});
 
 export interface JengaLabelProps
   extends BaseProps,
     TagNameProps,
     ContainerStyleProps {
-  labelPosition?: LabelPosition
-  necessityIndicator?: NecessityIndicator
-  isRequired?: boolean
-  includeNecessityIndicatorInAccessibilityName?: boolean
-  htmlFor?: string
-  for?: string
-  validationState?: ValidationState
-  onClick?: MouseEventHandler
+  labelPosition?: LabelPosition;
+  necessityIndicator?: NecessityIndicator;
+  isRequired?: boolean;
+  includeNecessityIndicatorInAccessibilityName?: boolean;
+  htmlFor?: string;
+  for?: string;
+  validationState?: ValidationState;
+  onClick?: MouseEventHandler;
 }
 
 function Label(props: JengaLabelProps, ref) {
-  props = useProviderProps<JengaLabelProps>(props)
+  props = useProviderProps<JengaLabelProps>(props);
 
   let {
     as,
@@ -112,16 +112,16 @@ function Label(props: JengaLabelProps, ref) {
     for: labelFor,
     onClick,
     ...otherProps
-  } = props
+  } = props;
 
-  let domRef = useDOMRef(ref)
+  let domRef = useDOMRef(ref);
 
-  const styles = extractStyles(otherProps, CONTAINER_STYLES)
+  const styles = extractStyles(otherProps, CONTAINER_STYLES);
 
-  let formatMessage = (message) => INTL_MESSAGES[message]
+  let formatMessage = (message) => INTL_MESSAGES[message];
   let necessityLabel = isRequired
     ? formatMessage('(required)')
-    : formatMessage('(optional)')
+    : formatMessage('(optional)');
   let icon = (
     <span
       aria-label={
@@ -132,7 +132,7 @@ function Label(props: JengaLabelProps, ref) {
     >
       {REQUIRED_ICON}
     </span>
-  )
+  );
 
   return (
     <LabelElement
@@ -174,8 +174,8 @@ function Label(props: JengaLabelProps, ref) {
         </>
       )}
     </LabelElement>
-  )
+  );
 }
 
-let _Label = forwardRef(Label)
-export { _Label as Label }
+let _Label = forwardRef(Label);
+export { _Label as Label };

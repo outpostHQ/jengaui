@@ -1,18 +1,18 @@
-import { Action } from '@jenga-ui/button'
-import { Card, JengaCardProps } from '@jenga-ui/card'
-import { Block } from '@jenga-ui/core'
-import THEMES from '../../core/src/themes'
+import { Action } from '@jenga-ui/button';
+import { Card, JengaCardProps } from '@jenga-ui/card';
+import { Block } from '@jenga-ui/core';
+import THEMES from '../../core/src/themes';
 import {
   CheckOutlined,
   CloseOutlined,
   ExclamationOutlined,
   InfoOutlined,
-} from '@ant-design/icons'
-import { tasty } from 'tastycss'
+} from '@ant-design/icons';
+import { tasty } from 'tastycss';
 
 export interface JengaNotificationProps extends JengaCardProps {
-  type?: 'success' | 'note' | 'danger'
-  onClose?: () => void
+  type?: 'success' | 'note' | 'danger';
+  onClose?: () => void;
 }
 
 const NotificationElement = tasty(Card, {
@@ -41,22 +41,22 @@ const NotificationElement = tasty(Card, {
       color: {
         '': '#dark.75',
         ...Object.keys(THEMES).reduce((map, theme) => {
-          map[`[data-theme="${theme}"]`] = THEMES[theme].color
+          map[`[data-theme="${theme}"]`] = THEMES[theme].color;
 
-          return map
+          return map;
         }, {}),
       },
       fill: {
         '': '#clear',
         ...Object.keys(THEMES).reduce((map, theme) => {
-          map[`[data-theme="${theme}"]`] = THEMES[theme].fill
+          map[`[data-theme="${theme}"]`] = THEMES[theme].fill;
 
-          return map
+          return map;
         }, {}),
       },
     },
   },
-})
+});
 
 const CloseButton = tasty(Action, {
   styles: {
@@ -65,25 +65,25 @@ const CloseButton = tasty(Action, {
     height: '5x',
     label: 'Close',
   },
-})
+});
 
 export function Notification(allProps: JengaNotificationProps) {
-  let { theme, type, children, onClose, ...props } = allProps
+  let { theme, type, children, onClose, ...props } = allProps;
 
-  theme = theme || type || 'note'
+  theme = theme || type || 'note';
 
-  let Icon
+  let Icon;
 
   switch (theme) {
     case 'success':
-      Icon = CheckOutlined
-      break
+      Icon = CheckOutlined;
+      break;
     case 'danger':
-      Icon = ExclamationOutlined
-      break
+      Icon = ExclamationOutlined;
+      break;
     default:
-      Icon = InfoOutlined
-      break
+      Icon = InfoOutlined;
+      break;
   }
 
   return (
@@ -96,5 +96,5 @@ export function Notification(allProps: JengaNotificationProps) {
         <CloseOutlined />
       </CloseButton>
     </NotificationElement>
-  )
+  );
 }

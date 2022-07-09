@@ -1,12 +1,12 @@
-import { useDOMRef } from '@react-spectrum/utils'
-import { useViewportSize } from '@react-aria/utils'
-import { Overlay } from './Overlay'
-import { forwardRef, ReactNode } from 'react'
-import { Underlay } from './Underlay'
-import { useModal, useOverlay, usePreventScroll } from '@react-aria/overlays'
-import { BaseProps, Props, Styles, tasty } from 'tastycss'
-import { mergeProps } from '@jenga-ui/utils'
-import type { ModalProps } from '@react-types/overlays'
+import { useDOMRef } from '@react-spectrum/utils';
+import { useViewportSize } from '@react-aria/utils';
+import { Overlay } from './Overlay';
+import { forwardRef, ReactNode } from 'react';
+import { Underlay } from './Underlay';
+import { useModal, useOverlay, usePreventScroll } from '@react-aria/overlays';
+import { BaseProps, Props, Styles, tasty } from 'tastycss';
+import { mergeProps } from '@jenga-ui/utils';
+import type { ModalProps } from '@react-types/overlays';
 
 export const OVERLAY_WRAPPER_STYLES: Styles = {
   position: 'fixed',
@@ -24,12 +24,12 @@ export const OVERLAY_WRAPPER_STYLES: Styles = {
   pointerEvents: 'none',
   zIndex: 2,
   transition: 'visibility 0ms linear .13s',
-}
+};
 
 const ModalWrapperElement = tasty({
   qa: 'ModalWrapper',
   styles: OVERLAY_WRAPPER_STYLES,
-})
+});
 
 const ModalElement = tasty({
   styles: {
@@ -60,21 +60,21 @@ const ModalElement = tasty({
       open: 0.9999,
     },
   },
-})
+});
 
 export interface JengaModalProps extends Omit<ModalProps, 'container'> {
-  container?: HTMLElement
-  qa?: BaseProps['qa']
-  onClose?: (action?: string) => void
-  type?: 'modal' | 'fullscreen' | 'fullscreenTakeover'
-  styles?: Styles
+  container?: HTMLElement;
+  qa?: BaseProps['qa'];
+  onClose?: (action?: string) => void;
+  type?: 'modal' | 'fullscreen' | 'fullscreenTakeover';
+  styles?: Styles;
 }
 
 function Modal(props: JengaModalProps, ref) {
-  let { qa, children, onClose, type, styles, ...otherProps } = props
-  let domRef = useDOMRef(ref)
+  let { qa, children, onClose, type, styles, ...otherProps } = props;
+  let domRef = useDOMRef(ref);
 
-  let { overlayProps, underlayProps } = useOverlay(props, domRef)
+  let { overlayProps, underlayProps } = useOverlay(props, domRef);
 
   return (
     <Overlay {...otherProps}>
@@ -90,23 +90,23 @@ function Modal(props: JengaModalProps, ref) {
         {children}
       </ModalWrapper>
     </Overlay>
-  )
+  );
 }
 
 interface ModalWrapperProps {
-  children?: ReactNode
-  qa?: BaseProps['qa']
-  isOpen?: boolean
-  type?: 'modal' | 'fullscreen' | 'fullscreenTakeover'
-  placement?: 'top' | 'bottom'
-  styles?: Styles
-  overlayProps?: Props
-  onClose?: () => void
+  children?: ReactNode;
+  qa?: BaseProps['qa'];
+  isOpen?: boolean;
+  type?: 'modal' | 'fullscreen' | 'fullscreenTakeover';
+  placement?: 'top' | 'bottom';
+  styles?: Styles;
+  overlayProps?: Props;
+  onClose?: () => void;
 }
 
 let ModalWrapper = forwardRef(function ModalWrapper(
   props: ModalWrapperProps,
-  ref
+  ref,
 ) {
   let {
     qa,
@@ -117,15 +117,15 @@ let ModalWrapper = forwardRef(function ModalWrapper(
     styles,
     overlayProps,
     ...otherProps
-  } = props
+  } = props;
 
-  usePreventScroll()
+  usePreventScroll();
 
-  let { modalProps } = useModal()
-  let viewport = useViewportSize()
+  let { modalProps } = useModal();
+  let viewport = useViewportSize();
   let style = {
     '--jenga-visual-viewport-height': viewport.height + 'px',
-  }
+  };
 
   return (
     <ModalWrapperElement
@@ -146,8 +146,8 @@ let ModalWrapper = forwardRef(function ModalWrapper(
         {children}
       </ModalElement>
     </ModalWrapperElement>
-  )
-})
+  );
+});
 
-let _Modal = forwardRef(Modal)
-export { _Modal as Modal }
+let _Modal = forwardRef(Modal);
+export { _Modal as Modal };

@@ -5,17 +5,17 @@ import {
   Input,
   Text,
   JengaDialogFormProps,
-} from '../../src/index'
+} from '../../src/index';
 
 interface ConfirmDeletionDialogFormProps
   extends Pick<JengaDialogFormProps, 'onSubmit' | 'onDismiss' | 'form'> {
-  name?: string
+  name?: string;
 }
 
 export function ConfirmDeletionDialogForm(
-  props: ConfirmDeletionDialogFormProps
+  props: ConfirmDeletionDialogFormProps,
 ) {
-  let { name, onSubmit, onDismiss } = props
+  let { name, onSubmit, onDismiss } = props;
 
   return (
     <DialogForm
@@ -45,7 +45,7 @@ export function ConfirmDeletionDialogForm(
           {
             async validator(rule, value) {
               if (value !== name) {
-                throw new Error('Incorrect name')
+                throw new Error('Incorrect name');
               }
             },
           },
@@ -54,5 +54,5 @@ export function ConfirmDeletionDialogForm(
         <Input.Text placeholder="Enter the name of the instance" />
       </Field>
     </DialogForm>
-  )
+  );
 }

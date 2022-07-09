@@ -1,1 +1,1 @@
-export * from './LegacyTabs'
+export * from './LegacyTabs';

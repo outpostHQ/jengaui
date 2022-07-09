@@ -1,27 +1,27 @@
-import { useRef } from 'react'
-import { ComponentMeta, Story } from '@storybook/react'
+import { useRef } from 'react';
+import { ComponentMeta, Story } from '@storybook/react';
 
-import { Portal } from '../src/Portal'
-import { PortalProps } from '../src/types'
-import { Basic, PortalOrderTemplate } from './templates'
+import { Portal } from '../src/Portal';
+import { PortalProps } from '../src/types';
+import { Basic, PortalOrderTemplate } from './templates';
 
 export default {
   title: 'Helpers/Portal',
   component: Portal,
   parameters: { layout: 'centered' },
-} as ComponentMeta<typeof Portal>
+} as ComponentMeta<typeof Portal>;
 
-export const Default = Basic.bind({})
+export const Default = Basic.bind({});
 
-export const Disabled = Basic.bind({})
+export const Disabled = Basic.bind({});
 
-export const Playground = Basic.bind({})
+export const Playground = Basic.bind({});
 Disabled.args = {
   isDisabled: true,
-}
+};
 
 export const CustomRoot: Story<PortalProps> = (args) => {
-  const rootRef = useRef(null)
+  const rootRef = useRef(null);
 
   return (
     <>
@@ -34,13 +34,13 @@ export const CustomRoot: Story<PortalProps> = (args) => {
       </div>
       By default, Portal content should be there {' -> '}
     </>
-  )
-}
+  );
+};
 
 CustomRoot.parameters = {
   source: {
     type: 'code',
   },
-}
+};
 
-export { PortalOrderTemplate as PortalOrder }
+export { PortalOrderTemplate as PortalOrder };

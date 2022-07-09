@@ -1,1 +1,1 @@
-export * from './OverlayWrapper'
+export * from './OverlayWrapper';

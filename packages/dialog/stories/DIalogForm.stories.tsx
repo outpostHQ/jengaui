@@ -2,24 +2,24 @@ import {
   userEvent,
   waitForElementToBeRemoved,
   within,
-} from '@storybook/testing-library'
-import { ComponentMeta, StoryFn } from '@storybook/react'
-import { expect } from '@storybook/jest'
-import { JengaDialogFormProps, DialogForm } from '../src/DialogForm'
-import { Button } from '@jenga-ui/button'
-import { Text, Paragraph } from '@jenga-ui/content'
-import { Input } from '@jenga-ui/input'
-import { DialogTrigger } from '../src/DialogTrigger'
-import { baseProps } from '../../../stories/lists/baseProps'
-import { Form } from '@jenga-ui/form'
-import { DialogContainer } from '../src/DialogContainer'
-import { useState } from 'react'
+} from '@storybook/testing-library';
+import { ComponentMeta, StoryFn } from '@storybook/react';
+import { expect } from '@storybook/jest';
+import { JengaDialogFormProps, DialogForm } from '../src/DialogForm';
+import { Button } from '@jenga-ui/button';
+import { Text, Paragraph } from '@jenga-ui/content';
+import { Input } from '@jenga-ui/input';
+import { DialogTrigger } from '../src/DialogTrigger';
+import { baseProps } from '../../../stories/lists/baseProps';
+import { Form } from '@jenga-ui/form';
+import { DialogContainer } from '../src/DialogContainer';
+import { useState } from 'react';
 
 export default {
   title: 'Overlays/DialogForm',
   component: DialogForm,
   parameters: { controls: { exclude: baseProps } },
-} as ComponentMeta<typeof DialogForm>
+} as ComponentMeta<typeof DialogForm>;
 
 const TemplateTrigger: StoryFn<JengaDialogFormProps> = (args) => {
   return (
@@ -28,11 +28,11 @@ const TemplateTrigger: StoryFn<JengaDialogFormProps> = (args) => {
 
       <DialogForm {...args} />
     </DialogTrigger>
-  )
-}
+  );
+};
 
 const TemplateContainer: StoryFn<JengaDialogFormProps> = (args) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -42,8 +42,8 @@ const TemplateContainer: StoryFn<JengaDialogFormProps> = (args) => {
         <DialogForm {...args} />
       </DialogContainer>
     </>
-  )
-}
+  );
+};
 
 const DIALOG_CHILDREN = (
   <>
@@ -58,7 +58,7 @@ const DIALOG_CHILDREN = (
           validator(rule, value) {
             return value === 'deployment'
               ? Promise.resolve()
-              : Promise.reject('Please enter your deployment name!')
+              : Promise.reject('Please enter your deployment name!');
           },
         },
       ]}
@@ -69,60 +69,60 @@ const DIALOG_CHILDREN = (
       />
     </Form.Item>
   </>
-)
+);
 
-export const AsyncExampleTrigger = TemplateTrigger.bind({})
+export const AsyncExampleTrigger = TemplateTrigger.bind({});
 AsyncExampleTrigger.args = {
   title: 'Confirm delete',
   submitProps: { theme: 'danger', label: 'Delete', qa: 'Delete' },
   onSubmit: () => new Promise((resolve) => setTimeout(resolve, 1_500)),
   children: DIALOG_CHILDREN,
-}
+};
 
-export const AsyncExampleContainer = TemplateContainer.bind({})
+export const AsyncExampleContainer = TemplateContainer.bind({});
 AsyncExampleContainer.args = {
   title: 'Confirm delete',
   submitProps: { theme: 'danger', label: 'Delete', qa: 'Delete' },
   onSubmit: () => new Promise((resolve) => setTimeout(resolve, 1_500)),
   children: DIALOG_CHILDREN,
-}
+};
 
 AsyncExampleTrigger.play = async ({ viewMode, canvasElement }) => {
-  if (viewMode === 'docs') return
-  const screen = within(canvasElement)
-  await userEvent.click(screen.getByRole('button'))
-  const dialog = await screen.getByRole('dialog')
-  await expect(dialog).toBeInTheDocument()
+  if (viewMode === 'docs') return;
+  const screen = within(canvasElement);
+  await userEvent.click(screen.getByRole('button'));
+  const dialog = await screen.getByRole('dialog');
+  await expect(dialog).toBeInTheDocument();
 
-  const dialogCanvas = within(dialog)
+  const dialogCanvas = within(dialog);
 
   await userEvent.type(
     dialogCanvas.getByTestId('DeleteDeploymentName'),
     'deployment',
-    { delay: 50 }
-  )
+    { delay: 50 },
+  );
 
-  await userEvent.click(dialogCanvas.getByTestId('Delete'))
-  await waitForElementToBeRemoved(dialog)
-  await expect(dialog).not.toBeInTheDocument()
-}
+  await userEvent.click(dialogCanvas.getByTestId('Delete'));
+  await waitForElementToBeRemoved(dialog);
+  await expect(dialog).not.toBeInTheDocument();
+};
 
 AsyncExampleContainer.play = async ({ viewMode, canvasElement }) => {
-  if (viewMode === 'docs') return
-  const screen = within(canvasElement)
-  await userEvent.click(screen.getByRole('button'))
-  const dialog = await screen.getByRole('dialog')
-  await expect(dialog).toBeInTheDocument()
+  if (viewMode === 'docs') return;
+  const screen = within(canvasElement);
+  await userEvent.click(screen.getByRole('button'));
+  const dialog = await screen.getByRole('dialog');
+  await expect(dialog).toBeInTheDocument();
 
-  const dialogCanvas = within(dialog)
+  const dialogCanvas = within(dialog);
 
   await userEvent.type(
     dialogCanvas.getByTestId('DeleteDeploymentName'),
     'deployment',
-    { delay: 50 }
-  )
+    { delay: 50 },
+  );
 
-  await userEvent.click(dialogCanvas.getByTestId('Delete'))
-  await waitForElementToBeRemoved(dialog)
-  await expect(dialog).not.toBeInTheDocument()
-}
+  await userEvent.click(dialogCanvas.getByTestId('Delete'));
+  await waitForElementToBeRemoved(dialog);
+  await expect(dialog).not.toBeInTheDocument();
+};

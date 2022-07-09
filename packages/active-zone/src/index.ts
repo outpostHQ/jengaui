@@ -1,1 +1,1 @@
-export * from './ActiveZone'
+export * from './ActiveZone';

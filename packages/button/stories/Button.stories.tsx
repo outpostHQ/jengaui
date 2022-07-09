@@ -1,7 +1,7 @@
-import { DollarCircleOutlined } from '@ant-design/icons'
-import { Button } from '../src/Button'
-import { baseProps } from '../../../stories/lists/baseProps'
-import { Space } from '@jenga-ui/layout'
+import { DollarCircleOutlined } from '@ant-design/icons';
+import { Button } from '../src/Button';
+import { baseProps } from '../../../stories/lists/baseProps';
+import { Space } from '@jenga-ui/layout';
 
 export default {
   title: 'Actions/Button',
@@ -42,7 +42,7 @@ export default {
       },
     },
   },
-}
+};
 
 const Template = ({ icon, label, onClick, ...props }) => (
   <Button
@@ -52,7 +52,7 @@ const Template = ({ icon, label, onClick, ...props }) => (
   >
     {label}
   </Button>
-)
+);
 
 const TemplateStates = ({ label, mods, ...props }) => (
   <Space>
@@ -112,75 +112,75 @@ const TemplateStates = ({ label, mods, ...props }) => (
       {label || 'Disabled'}
     </Button>
   </Space>
-)
+);
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 Default.args = {
   label: 'Button',
-}
+};
 
-export const SecondaryStates = TemplateStates.bind({})
+export const SecondaryStates = TemplateStates.bind({});
 SecondaryStates.args = {
   type: 'default',
-}
+};
 
-export const PrimaryStates = TemplateStates.bind({})
+export const PrimaryStates = TemplateStates.bind({});
 PrimaryStates.args = {
   type: 'primary',
-}
+};
 
-export const OutlineStates = TemplateStates.bind({})
+export const OutlineStates = TemplateStates.bind({});
 OutlineStates.args = {
   type: 'outline',
-}
+};
 
-export const ClearStates = TemplateStates.bind({})
+export const ClearStates = TemplateStates.bind({});
 ClearStates.args = {
   type: 'clear',
-}
+};
 
-export const NeutralStates = TemplateStates.bind({})
+export const NeutralStates = TemplateStates.bind({});
 NeutralStates.args = {
   type: 'neutral',
-}
+};
 
-export const LinkStates = TemplateStates.bind({})
+export const LinkStates = TemplateStates.bind({});
 LinkStates.args = {
   type: 'link',
-}
+};
 
-export const Small = Template.bind({})
+export const Small = Template.bind({});
 Small.args = {
   label: 'Button',
   size: 'small',
-}
+};
 
-export const Large = Template.bind({})
+export const Large = Template.bind({});
 Large.args = {
   label: 'Button',
   size: 'large',
-}
+};
 
-export const Danger = Template.bind({})
+export const Danger = Template.bind({});
 Danger.args = {
   label: 'Button',
   theme: 'danger',
-}
+};
 
-export const IconAndText = Template.bind({})
+export const IconAndText = Template.bind({});
 IconAndText.args = {
   label: 'Button',
   icon: true,
-}
+};
 
-export const OnlyIcon = Template.bind({})
+export const OnlyIcon = Template.bind({});
 OnlyIcon.args = {
   icon: true,
-}
+};
 
-export const Loading = Template.bind({})
+export const Loading = Template.bind({});
 Loading.args = {
   icon: true,
   isLoading: true,
   label: 'Button',
-}
+};

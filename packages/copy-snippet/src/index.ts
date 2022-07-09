@@ -1,1 +1,1 @@
-export * from './CopySnippet'
+export * from './CopySnippet';

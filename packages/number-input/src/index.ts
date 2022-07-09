@@ -1,2 +1,2 @@
-export * from './NumberInput'
-export * from './StepButton'
+export * from './NumberInput';
+export * from './StepButton';

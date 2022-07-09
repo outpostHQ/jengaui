@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -6,7 +6,7 @@ import {
   extractStyles,
   filterBaseProps,
   tasty,
-} from 'tastycss'
+} from 'tastycss';
 
 const CardElement = tasty({
   role: 'region',
@@ -20,12 +20,12 @@ const CardElement = tasty({
     preset: 't3',
   },
   styleProps: CONTAINER_STYLES,
-})
+});
 
 export interface JengaCardProps extends BaseProps, ContainerStyleProps {}
 
 export const Card = forwardRef((props: JengaCardProps, ref) => {
-  const styles = extractStyles(props, CONTAINER_STYLES)
+  const styles = extractStyles(props, CONTAINER_STYLES);
 
   return (
     <CardElement
@@ -33,5 +33,5 @@ export const Card = forwardRef((props: JengaCardProps, ref) => {
       styles={styles}
       ref={ref}
     />
-  )
-})
+  );
+});

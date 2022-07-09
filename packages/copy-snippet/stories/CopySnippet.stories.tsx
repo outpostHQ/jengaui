@@ -1,6 +1,6 @@
-import { ComponentMeta, Story } from '@storybook/react'
-import { CopySnippet, JengaCopySnippetProps } from '../src/CopySnippet'
-import { baseProps } from '../../../stories/lists/baseProps'
+import { ComponentMeta, Story } from '@storybook/react';
+import { CopySnippet, JengaCopySnippetProps } from '../src/CopySnippet';
+import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Content/CopySnippet',
@@ -10,25 +10,25 @@ export default {
       exclude: baseProps,
     },
   },
-} as ComponentMeta<typeof CopySnippet>
+} as ComponentMeta<typeof CopySnippet>;
 
 const Template: Story<JengaCopySnippetProps> = (args) => (
   <CopySnippet {...args} />
-)
+);
 
-export const OneLine = Template.bind({})
+export const OneLine = Template.bind({});
 OneLine.args = {
   code: 'npm install -g jengajs-cli',
   prefix: '$ ',
-}
+};
 
-export const MultiLine = Template.bind({})
+export const MultiLine = Template.bind({});
 MultiLine.args = {
   code: 'npm install -g jengajs-cli\njengajs deploy',
   prefix: '$ ',
-}
+};
 
-export const JavascriptSyntax = Template.bind({})
+export const JavascriptSyntax = Template.bind({});
 JavascriptSyntax.args = {
   language: 'javascript',
   code: `jenga('LineItems', {
@@ -69,4 +69,4 @@ JavascriptSyntax.args = {
     }
   }
 });`,
-}
+};

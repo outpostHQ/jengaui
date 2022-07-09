@@ -1,7 +1,7 @@
-import { Story } from '@storybook/react'
-import { Block } from '@jenga-ui/core'
-import { Portal } from '../../src/Portal'
-import { PortalProps } from '../../src/types'
+import { Story } from '@storybook/react';
+import { Block } from '@jenga-ui/core';
+import { Portal } from '../../src/Portal';
+import { PortalProps } from '../../src/types';
 
 export const PortalOrderTemplate: Story<PortalProps> = (args) => (
   <>
@@ -18,4 +18,4 @@ export const PortalOrderTemplate: Story<PortalProps> = (args) => (
       <Block>Portal 2</Block>
     </Portal>
   </>
-)
+);

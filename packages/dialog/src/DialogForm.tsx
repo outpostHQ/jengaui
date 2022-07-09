@@ -1,31 +1,31 @@
-import { useImperativeHandle } from 'react'
-import { Dialog, JengaDialogProps } from './Dialog'
-import { Title, Content, Header } from '@jenga-ui/content'
-import { JengaFormProps, Form, useForm } from '@jenga-ui/form'
-import { Button, JengaButtonProps, Submit } from '@jenga-ui/button'
-import { ButtonGroup } from '@jenga-ui/button-group'
-import { useDialogContext } from './context'
+import { useImperativeHandle } from 'react';
+import { Dialog, JengaDialogProps } from './Dialog';
+import { Title, Content, Header } from '@jenga-ui/content';
+import { JengaFormProps, Form, useForm } from '@jenga-ui/form';
+import { Button, JengaButtonProps, Submit } from '@jenga-ui/button';
+import { ButtonGroup } from '@jenga-ui/button-group';
+import { useDialogContext } from './context';
 
 export interface JengaDialogFormProps
   extends JengaDialogProps,
     Omit<JengaFormProps, 'role'> {
   /** Whether the submit button has a `danger` theme */
-  danger?: boolean
+  danger?: boolean;
   /** Properties for submit button. Use `label` to change text. */
-  submitProps?: JengaButtonProps
+  submitProps?: JengaButtonProps;
   /** Properties for cancel button. Use `label` to change text. */
-  cancelProps?: JengaButtonProps
+  cancelProps?: JengaButtonProps;
   /** WIP. Preserve form values even if field is deleted */
-  preserve?: boolean
+  preserve?: boolean;
   /** Whether to hide action button so developer can manually specify them */
-  noActions?: boolean
+  noActions?: boolean;
   /** The title of the dialog */
-  title?: string
+  title?: string;
 }
 
 export interface JengaDialogFormRef {
-  open: () => void
-  close: () => void
+  open: () => void;
+  close: () => void;
 }
 
 /**
@@ -60,18 +60,18 @@ export const DialogForm = function DialogForm(props: JengaDialogFormProps) {
     size,
     closeIcon,
     ...dialogProps
-  } = props
+  } = props;
 
-  ;[form] = useForm(form)
+  [form] = useForm(form);
 
-  const { onClose } = useDialogContext()
+  const { onClose } = useDialogContext();
 
   function onLocalDismiss() {
-    onClose?.()
-    onDismiss?.()
+    onClose?.();
+    onDismiss?.();
 
     if (!preserve) {
-      form?.resetFields()
+      form?.resetFields();
     }
   }
 
@@ -91,12 +91,12 @@ export const DialogForm = function DialogForm(props: JengaDialogFormProps) {
           form={form}
           name={name}
           onSubmit={async (data) => {
-            await onSubmit?.(data)
+            await onSubmit?.(data);
 
-            onClose?.()
+            onClose?.();
 
             if (!preserve) {
-              form?.resetFields()
+              form?.resetFields();
             }
           }}
           onSubmitFailed={onSubmitFailed}
@@ -133,5 +133,5 @@ export const DialogForm = function DialogForm(props: JengaDialogFormProps) {
         </Form>
       </Content>
     </Dialog>
-  )
-}
+  );
+};

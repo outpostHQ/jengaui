@@ -1,48 +1,48 @@
-import { forwardRef, ReactNode } from 'react'
-import { chain } from '@react-aria/utils'
-import { Button, JengaButtonProps } from '@jenga-ui/button'
-import { ButtonGroup } from '@jenga-ui/button-group'
-import { JengaDialogProps, Dialog, useDialogContext } from '@jenga-ui/dialog'
-import { Title, Header, Paragraph, Content, Footer } from '@jenga-ui/content'
+import { forwardRef, ReactNode } from 'react';
+import { chain } from '@react-aria/utils';
+import { Button, JengaButtonProps } from '@jenga-ui/button';
+import { ButtonGroup } from '@jenga-ui/button-group';
+import { JengaDialogProps, Dialog, useDialogContext } from '@jenga-ui/dialog';
+import { Title, Header, Paragraph, Content, Footer } from '@jenga-ui/content';
 
 export interface JengaAlertDialogActionsProps {
-  confirm?: JengaButtonProps | boolean
-  secondary?: JengaButtonProps
-  cancel?: JengaButtonProps | boolean
+  confirm?: JengaButtonProps | boolean;
+  secondary?: JengaButtonProps;
+  cancel?: JengaButtonProps | boolean;
 }
 
 export interface JengaAlertDialogProps
   extends Omit<JengaDialogProps, 'children'> {
-  content?: ReactNode
+  content?: ReactNode;
   /** Whether the dialog is an important prompt */
-  danger?: boolean
-  actions?: JengaAlertDialogActionsProps
-  title?: string
-  noActions?: boolean
+  danger?: boolean;
+  actions?: JengaAlertDialogActionsProps;
+  title?: string;
+  noActions?: boolean;
 }
 
 const DEFAULT_CONFIRM_PROPS: JengaButtonProps = {
   label: 'Ok',
   type: 'primary',
-}
+};
 const DEFAULT_CANCEL_PROPS: JengaButtonProps = {
   label: 'Cancel',
-}
+};
 
 /**
  * AlertDialogs are a specific type of Dialog. They display important information that users need to acknowledge.
  */
 function AlertDialog(props: JengaAlertDialogProps, ref) {
-  const { onClose } = useDialogContext()
+  const { onClose } = useDialogContext();
 
   const { danger, actions, title, styles, noActions, content, ...otherProps } =
-    props
+    props;
 
   let {
     confirm: confirmProps,
     secondary: secondaryProps,
     cancel: cancelProps,
-  } = actions ?? {}
+  } = actions ?? {};
 
   // the confirm button is present by default
   confirmProps =
@@ -51,7 +51,7 @@ function AlertDialog(props: JengaAlertDialogProps, ref) {
           ...DEFAULT_CONFIRM_PROPS,
           ...(typeof confirmProps === 'object' ? confirmProps : null),
         }
-      : undefined
+      : undefined;
 
   // the cancel button is hidden by default
   cancelProps = cancelProps
@@ -59,7 +59,7 @@ function AlertDialog(props: JengaAlertDialogProps, ref) {
         ...DEFAULT_CANCEL_PROPS,
         ...(typeof cancelProps === 'object' ? cancelProps : null),
       }
-    : undefined
+    : undefined;
 
   return (
     <Dialog role="alertdialog" ref={ref} isDismissable={false} {...otherProps}>
@@ -87,7 +87,7 @@ function AlertDialog(props: JengaAlertDialogProps, ref) {
               onPress={(e) =>
                 chain(
                   (confirmProps as JengaButtonProps)?.onPress?.(e),
-                  onClose?.('confirm')
+                  onClose?.('confirm'),
                 )
               }
             />
@@ -105,7 +105,7 @@ function AlertDialog(props: JengaAlertDialogProps, ref) {
                 onPress={(e) =>
                   chain(
                     (cancelProps as JengaButtonProps)?.onPress?.(e),
-                    onClose?.('cancel')
+                    onClose?.('cancel'),
                   )
                 }
               />
@@ -114,11 +114,11 @@ function AlertDialog(props: JengaAlertDialogProps, ref) {
         </Footer>
       ) : null}
     </Dialog>
-  )
+  );
 }
 
 /**
  * AlertDialogs are a specific type of Dialog. They display important information that users need to acknowledge.
  */
-const _AlertDialog = forwardRef(AlertDialog)
-export { _AlertDialog as AlertDialog }
+const _AlertDialog = forwardRef(AlertDialog);
+export { _AlertDialog as AlertDialog };

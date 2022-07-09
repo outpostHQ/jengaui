@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
 import {
   AllBaseProps,
   CONTAINER_STYLES,
@@ -6,20 +6,20 @@ import {
   extractStyles,
   filterBaseProps,
   tasty,
-} from 'tastycss'
+} from 'tastycss';
 
 const BlockElement = tasty({
   styled: {
     display: 'block',
   },
-})
+});
 
 export interface JengaBlockProps
   extends Omit<AllBaseProps, keyof ContainerStyleProps | 'as'>,
     ContainerStyleProps {}
 
 export const Block = forwardRef((props: JengaBlockProps, ref) => {
-  const styles = extractStyles(props, CONTAINER_STYLES)
+  const styles = extractStyles(props, CONTAINER_STYLES);
 
   return (
     <BlockElement
@@ -27,5 +27,5 @@ export const Block = forwardRef((props: JengaBlockProps, ref) => {
       styles={styles}
       ref={ref}
     />
-  )
-})
+  );
+});

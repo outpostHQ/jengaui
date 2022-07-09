@@ -1,4 +1,4 @@
-import { CSSProperties, forwardRef, useEffect } from 'react'
+import { CSSProperties, forwardRef, useEffect } from 'react';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -7,8 +7,8 @@ import {
   filterBaseProps,
   parseStyle,
   tasty,
-} from 'tastycss'
-import { useCombinedRefs } from '@jenga-ui/utils'
+} from 'tastycss';
+import { useCombinedRefs } from '@jenga-ui/utils';
 
 const SuffixElement = tasty({
   element: 'Suffix',
@@ -25,23 +25,23 @@ const SuffixElement = tasty({
     color: '#dark.75',
     height: '(100% - (2 * @suffix-gap))',
   },
-})
+});
 
 export interface JengaSuffixProps extends BaseProps, ContainerStyleProps {
-  onWidthChange?: Function
-  outerGap?: CSSProperties['gap']
+  onWidthChange?: Function;
+  outerGap?: CSSProperties['gap'];
 }
 
 export const Suffix = forwardRef((allProps: JengaSuffixProps, outerRef) => {
-  let { onWidthChange, outerGap = '1bw', children, ...props } = allProps
-  const styles = extractStyles(props, CONTAINER_STYLES)
-  const ref = useCombinedRefs(outerRef)
+  let { onWidthChange, outerGap = '1bw', children, ...props } = allProps;
+  const styles = extractStyles(props, CONTAINER_STYLES);
+  const ref = useCombinedRefs(outerRef);
 
   useEffect(() => {
     if (ref && ref.current && onWidthChange) {
-      onWidthChange(ref.current.offsetWidth)
+      onWidthChange(ref.current.offsetWidth);
     }
-  }, [children, ref, onWidthChange])
+  }, [children, ref, onWidthChange]);
 
   return (
     <SuffixElement
@@ -54,5 +54,5 @@ export const Suffix = forwardRef((allProps: JengaSuffixProps, outerRef) => {
     >
       {children}
     </SuffixElement>
-  )
-})
+  );
+});

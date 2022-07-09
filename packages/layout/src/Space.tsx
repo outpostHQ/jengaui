@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -6,7 +6,7 @@ import {
   extractStyles,
   filterBaseProps,
   tasty,
-} from 'tastycss'
+} from 'tastycss';
 
 const SpaceElement = tasty({
   styles: {
@@ -21,15 +21,15 @@ const SpaceElement = tasty({
       vertical: 'stretch',
     },
   },
-})
+});
 
 export interface JengaSpaceProps extends BaseProps, ContainerStyleProps {
-  direction?: 'vertical' | 'horizontal'
+  direction?: 'vertical' | 'horizontal';
 }
 
 export const Space = forwardRef(function Space(props: JengaSpaceProps, ref) {
-  const { mods, direction, ...otherProps } = props
-  const styles = extractStyles(otherProps, CONTAINER_STYLES)
+  const { mods, direction, ...otherProps } = props;
+  const styles = extractStyles(otherProps, CONTAINER_STYLES);
 
   return (
     <SpaceElement
@@ -41,5 +41,5 @@ export const Space = forwardRef(function Space(props: JengaSpaceProps, ref) {
       styles={styles}
       ref={ref}
     />
-  )
-})
+  );
+});

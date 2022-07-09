@@ -1,80 +1,80 @@
-import { Props, Styles } from 'tastycss'
-import { ReactNode } from 'react'
+import { Props, Styles } from 'tastycss';
+import { ReactNode } from 'react';
 
 /** Where to place label relative to input */
-export type LabelPosition = 'side' | 'top'
+export type LabelPosition = 'side' | 'top';
 /** The type of necessity indicator */
-export type NecessityIndicator = 'icon' | 'label'
+export type NecessityIndicator = 'icon' | 'label';
 
 /** The validation state of the field */
-export type ValidationState = 'invalid' | 'valid'
+export type ValidationState = 'invalid' | 'valid';
 
 /** On which event perform the validation for the field */
-export type ValidateTrigger = 'onBlur' | 'onChange' | 'onSubmit'
+export type ValidateTrigger = 'onBlur' | 'onChange' | 'onSubmit';
 
 export interface OptionalFieldBaseProps {
   /** The label of the field */
-  label?: string
+  label?: string;
   /** An additional content next to the label */
-  extra?: ReactNode
+  extra?: ReactNode;
   /** The validation state of the field */
-  validationState?: ValidationState
+  validationState?: ValidationState;
   /** On which event perform the validation for the field */
-  validateTrigger?: ValidateTrigger
-  necessityIndicator?: NecessityIndicator
-  necessityLabel?: ReactNode
+  validateTrigger?: ValidateTrigger;
+  necessityIndicator?: NecessityIndicator;
+  necessityLabel?: ReactNode;
 }
 
 export interface FieldBaseProps extends OptionalFieldBaseProps {
   /** The field name */
-  name: string[] | string
+  name: string[] | string;
 }
 
 export interface FormBaseProps {
   /** Styles of the label */
-  labelStyles?: Styles
+  labelStyles?: Styles;
   /** Where to place label relative to input */
-  labelPosition?: LabelPosition
+  labelPosition?: LabelPosition;
   /** Whether the field presents required mark */
-  requiredMark?: boolean
+  requiredMark?: boolean;
   /** Whether the field is required */
-  isRequired?: boolean
+  isRequired?: boolean;
   /** The type of necessity indicator */
-  necessityIndicator?: NecessityIndicator
+  necessityIndicator?: NecessityIndicator;
   /** That can replace the necessity label */
-  necessityLabel?: ReactNode
+  necessityLabel?: ReactNode;
   /** Whether the field is read only */
-  isReadOnly?: boolean
+  isReadOnly?: boolean;
   /** The validation state of the field */
-  validationState?: ValidationState
+  validationState?: ValidationState;
   /** On which event perform validation for the field */
-  validateTrigger?: ValidateTrigger
+  validateTrigger?: ValidateTrigger;
 }
 
 export interface FormFieldProps extends FormBaseProps {
   /** Whether the field is inside the form. Private field. */
-  insideForm?: boolean
+  insideForm?: boolean;
   /** A text label of the field */
-  label?: ReactNode
+  label?: ReactNode;
   /** An additional content next to the label */
-  extra?: ReactNode
+  extra?: ReactNode;
   /** Custom label props */
-  labelProps?: Props
+  labelProps?: Props;
   /** Message for the field. Some additional information or error notice */
-  message?: ReactNode
+  message?: ReactNode;
   /** Description for the field. Will be placed below the label */
-  description?: ReactNode
+  description?: ReactNode;
   /** A tooltip that is shown inside the label */
-  tooltip?: ReactNode
+  tooltip?: ReactNode;
   /** Whether the element should receive focus on render */
-  autoFocus?: boolean
+  autoFocus?: boolean;
 }
 
 export type ValidationRuleBase = { [key: string]: any } & {
-  required?: boolean
-  message?: string
-}
+  required?: boolean;
+  message?: string;
+};
 
 export type ValidationRule = ValidationRuleBase & {
-  validator?: (ValidationRule, any) => Promise<string | void>
-}
+  validator?: (ValidationRule, any) => Promise<string | void>;
+};

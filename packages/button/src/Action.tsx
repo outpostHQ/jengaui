@@ -1,4 +1,4 @@
-import { forwardRef, MouseEventHandler, useCallback, useContext } from 'react'
+import { forwardRef, MouseEventHandler, useCallback, useContext } from 'react';
 import {
   BaseProps,
   BaseStyleProps,
@@ -11,15 +11,15 @@ import {
   TEXT_STYLES,
   TextStyleProps,
   Element,
-} from 'tastycss'
-import { useHover } from '@react-aria/interactions'
-import { useFocus } from '@jenga-ui/utils'
-import { useButton } from '@react-aria/button'
-import { mergeProps } from '@jenga-ui/utils'
-import { UIKitContext } from '@jenga-ui/providers'
-import { AriaButtonProps } from '@react-types/button'
-import { useFocusableRef } from '@react-spectrum/utils'
-import { FocusableRef } from '@react-types/shared'
+} from 'tastycss';
+import { useHover } from '@react-aria/interactions';
+import { useFocus } from '@jenga-ui/utils';
+import { useButton } from '@react-aria/button';
+import { mergeProps } from '@jenga-ui/utils';
+import { UIKitContext } from '@jenga-ui/providers';
+import { AriaButtonProps } from '@react-types/button';
+import { useFocusableRef } from '@react-spectrum/utils';
+import { FocusableRef } from '@react-types/shared';
 
 export interface JengaActionProps
   extends BaseProps,
@@ -28,15 +28,15 @@ export interface JengaActionProps
     ContainerStyleProps,
     TextStyleProps,
     Omit<AriaButtonProps, 'type'> {
-  to?: string
-  label?: string
-  htmlType?: 'button' | 'submit' | 'reset' | undefined
-  onClick?: MouseEventHandler
-  onMouseEnter?: MouseEventHandler
-  onMouseLeave?: MouseEventHandler
+  to?: string;
+  label?: string;
+  htmlType?: 'button' | 'submit' | 'reset' | undefined;
+  onClick?: MouseEventHandler;
+  onMouseEnter?: MouseEventHandler;
+  onMouseLeave?: MouseEventHandler;
 }
 
-const FILTER_OPTIONS = { propNames: new Set(['onMouseEnter', 'onMouseLeave']) }
+const FILTER_OPTIONS = { propNames: new Set(['onMouseEnter', 'onMouseLeave']) };
 
 /**
  * Helper to open link.
@@ -44,76 +44,76 @@ const FILTER_OPTIONS = { propNames: new Set(['onMouseEnter', 'onMouseLeave']) }
  * @param {String|Boolean} [target]
  */
 export function openLink(href, target?) {
-  const link = document.createElement('a')
+  const link = document.createElement('a');
 
-  link.href = href
+  link.href = href;
 
   if (target) {
-    link.target = target === true ? '_blank' : target
+    link.target = target === true ? '_blank' : target;
   }
 
-  document.body.appendChild(link)
+  document.body.appendChild(link);
 
-  link.click()
+  link.click();
 
-  document.body.removeChild(link)
+  document.body.removeChild(link);
 }
 
 export function parseTo(to): {
-  newTab: boolean
-  nativeRoute: boolean
-  href: string | undefined
+  newTab: boolean;
+  nativeRoute: boolean;
+  href: string | undefined;
 } {
-  const newTab = to && typeof to === 'string' && to.startsWith('!')
-  const nativeRoute = to && typeof to === 'string' && to.startsWith('@')
+  const newTab = to && typeof to === 'string' && to.startsWith('!');
+  const nativeRoute = to && typeof to === 'string' && to.startsWith('@');
   const href: string | undefined =
     to && typeof to === 'string'
       ? newTab || nativeRoute
         ? to.slice(1)
         : to
-      : undefined
+      : undefined;
 
   return {
     newTab,
     nativeRoute,
     href,
-  }
+  };
 }
 
 export function performClickHandler(evt, router, to, onPress) {
-  const { newTab, nativeRoute, href } = parseTo(to)
+  const { newTab, nativeRoute, href } = parseTo(to);
 
-  onPress?.(evt)
+  onPress?.(evt);
 
-  if (!to) return
+  if (!to) return;
 
   if (evt.shiftKey || evt.metaKey || newTab) {
-    openLink(href, true)
+    openLink(href, true);
 
-    return
+    return;
   }
 
   if (nativeRoute) {
-    openLink(href || window.location.href)
+    openLink(href || window.location.href);
   } else if (href && href.startsWith('#')) {
-    const id = href.slice(1)
-    const element = document.getElementById(id)
+    const id = href.slice(1);
+    const element = document.getElementById(id);
 
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest',
-      })
+      });
 
-      return
+      return;
     }
   }
 
   if (router) {
-    router.push(href)
+    router.push(href);
   } else if (href) {
-    window.location.href = href
+    window.location.href = href;
   }
 }
 
@@ -131,9 +131,9 @@ const DEFAULT_STYLES: Styles = {
   },
   transition: 'theme',
   cursor: 'pointer',
-} as const
+} as const;
 
-const STYLE_PROPS = [...CONTAINER_STYLES, ...TEXT_STYLES]
+const STYLE_PROPS = [...CONTAINER_STYLES, ...TEXT_STYLES];
 
 export const Action = forwardRef(
   (
@@ -147,41 +147,41 @@ export const Action = forwardRef(
       onPress,
       ...props
     }: JengaActionProps,
-    ref: FocusableRef<HTMLElement>
+    ref: FocusableRef<HTMLElement>,
   ) => {
-    as = to ? 'a' : as || 'button'
+    as = to ? 'a' : as || 'button';
 
-    const router = useContext(UIKitContext).router
-    const isDisabled = props.isDisabled
-    const { newTab, href } = parseTo(to)
-    const target = newTab ? '_blank' : undefined
-    const domRef = useFocusableRef(ref)
-    const styles = extractStyles(props, STYLE_PROPS, DEFAULT_STYLES)
+    const router = useContext(UIKitContext).router;
+    const isDisabled = props.isDisabled;
+    const { newTab, href } = parseTo(to);
+    const target = newTab ? '_blank' : undefined;
+    const domRef = useFocusableRef(ref);
+    const styles = extractStyles(props, STYLE_PROPS, DEFAULT_STYLES);
 
     const customOnPress = useCallback(
       (evt) => {
-        performClickHandler(evt, router, to, onPress)
+        performClickHandler(evt, router, to, onPress);
       },
-      [router, to, onPress]
-    )
+      [router, to, onPress],
+    );
 
     let { buttonProps, isPressed } = useButton(
       {
         ...props,
         onPress: customOnPress,
       },
-      domRef
-    )
-    let { hoverProps, isHovered } = useHover({ isDisabled })
-    let { focusProps, isFocused } = useFocus({ isDisabled }, true)
+      domRef,
+    );
+    let { hoverProps, isHovered } = useHover({ isDisabled });
+    let { focusProps, isFocused } = useFocus({ isDisabled }, true);
 
     const customProps = to
       ? {
           onClick(evt) {
-            evt.preventDefault()
+            evt.preventDefault();
           },
         }
-      : {}
+      : {};
 
     return (
       <Element
@@ -199,7 +199,7 @@ export const Action = forwardRef(
           hoverProps,
           focusProps,
           customProps,
-          filterBaseProps(props, FILTER_OPTIONS)
+          filterBaseProps(props, FILTER_OPTIONS),
         )}
         type={htmlType || 'button'}
         rel={as === 'a' && newTab ? 'rel="noopener noreferrer"' : undefined}
@@ -210,6 +210,6 @@ export const Action = forwardRef(
         target={target}
         href={href}
       />
-    )
-  }
-)
+    );
+  },
+);

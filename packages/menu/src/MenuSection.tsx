@@ -1,22 +1,22 @@
-import React from 'react'
-import { MenuItem, MenuItemProps } from './MenuItem'
-import { useMenuSection } from '@react-aria/menu'
+import React from 'react';
+import { MenuItem, MenuItemProps } from './MenuItem';
+import { useMenuSection } from '@react-aria/menu';
 import {
   StyledMenu,
   StyledMenuSection,
   StyledMenuSectionHeading,
-} from './styled'
+} from './styled';
 
-export type JengaMenuSectionProps<T> = MenuItemProps<T>
+export type JengaMenuSectionProps<T> = MenuItemProps<T>;
 
 /** @private */
 export function MenuSection<T>(props: JengaMenuSectionProps<T>) {
-  const { item, state, onAction } = props
-  const heading = item.rendered
+  const { item, state, onAction } = props;
+  const heading = item.rendered;
   const { itemProps, headingProps, groupProps } = useMenuSection({
     heading,
     'aria-label': item['aria-label'],
-  })
+  });
 
   return (
     <>
@@ -35,16 +35,16 @@ export function MenuSection<T>(props: JengaMenuSectionProps<T>) {
                 state={state}
                 onAction={onAction}
               />
-            )
+            );
 
             if (node.wrapper) {
-              item = node.wrapper(item)
+              item = node.wrapper(item);
             }
 
-            return item
+            return item;
           })}
         </StyledMenu>
       </StyledMenuSection>
     </>
-  )
+  );
 }

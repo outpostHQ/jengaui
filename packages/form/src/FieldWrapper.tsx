@@ -1,12 +1,12 @@
-import { forwardRef, ReactNode } from 'react'
-import { Text, Paragraph } from '@jenga-ui/content'
-import { Label } from './Label'
-import { Grid } from '@jenga-ui/layout'
-import { LabelPosition, NecessityIndicator, ValidationState } from './shared'
-import { Props, Styles, tasty } from 'tastycss'
-import { TooltipProvider } from '@jenga-ui/tooltip'
-import { InfoCircleOutlined } from '@ant-design/icons'
-import { wrapNodeIfPlain } from '@jenga-ui/utils'
+import { forwardRef, ReactNode } from 'react';
+import { Text, Paragraph } from '@jenga-ui/content';
+import { Label } from './Label';
+import { Grid } from '@jenga-ui/layout';
+import { LabelPosition, NecessityIndicator, ValidationState } from './shared';
+import { Props, Styles, tasty } from 'tastycss';
+import { TooltipProvider } from '@jenga-ui/tooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { wrapNodeIfPlain } from '@jenga-ui/utils';
 
 const FieldElement = tasty({
   qa: 'Field',
@@ -39,7 +39,7 @@ const FieldElement = tasty({
       },
     },
   },
-})
+});
 
 const MessageElement = tasty({
   qa: 'Field_Message',
@@ -55,32 +55,32 @@ const MessageElement = tasty({
     textAlign: 'left',
     userSelect: 'none',
   },
-})
+});
 
 export type JengaFieldWrapperProps = {
-  as: string
-  labelPosition: LabelPosition
-  label?: string
-  labelStyles?: Styles
-  styles?: Styles
+  as: string;
+  labelPosition: LabelPosition;
+  label?: string;
+  labelStyles?: Styles;
+  styles?: Styles;
   /** Whether the input is required */
-  isRequired?: boolean
+  isRequired?: boolean;
   /** Whether the input is disabled */
-  isDisabled?: boolean
-  necessityIndicator?: NecessityIndicator
-  labelProps?: Props
-  fieldProps?: Props
+  isDisabled?: boolean;
+  necessityIndicator?: NecessityIndicator;
+  labelProps?: Props;
+  fieldProps?: Props;
   /** Custom message for the field. It will be placed below the label and the input */
-  message?: string | ReactNode
+  message?: string | ReactNode;
   /** Styles for the message */
-  messageStyles?: Styles
+  messageStyles?: Styles;
   /** The description for the field. It will be placed below the label */
-  description?: string
-  Component?: JSX.Element
-  validationState?: ValidationState
-  requiredMark?: boolean
-  tooltip?: ReactNode
-}
+  description?: string;
+  Component?: JSX.Element;
+  validationState?: ValidationState;
+  requiredMark?: boolean;
+  tooltip?: ReactNode;
+};
 
 function FieldWrapper(props, ref) {
   const {
@@ -103,7 +103,7 @@ function FieldWrapper(props, ref) {
     requiredMark = true,
     tooltip,
     isHidden,
-  } = props
+  } = props;
 
   const labelComponent = label ? (
     <Label
@@ -138,7 +138,7 @@ function FieldWrapper(props, ref) {
         </>
       ) : null}
     </Label>
-  ) : null
+  ) : null;
 
   let descriptionComponent = description ? (
     <div data-element="Description">
@@ -146,14 +146,14 @@ function FieldWrapper(props, ref) {
         <Paragraph>{description}</Paragraph>
       ))}
     </div>
-  ) : null
+  ) : null;
 
   const mods = {
     'has-sider': labelPosition === 'side',
     'has-description': !!description,
     invalid: validationState === 'invalid',
     valid: validationState === 'valid',
-  }
+  };
 
   return (
     <FieldElement
@@ -183,11 +183,11 @@ function FieldWrapper(props, ref) {
         )}
       </div>
     </FieldElement>
-  )
+  );
 }
 
 /**
  * A wrapper for form fields to provide additional decoration for inputs.
  */
-const _FieldWrapper = forwardRef(FieldWrapper)
-export { _FieldWrapper as FieldWrapper }
+const _FieldWrapper = forwardRef(FieldWrapper);
+export { _FieldWrapper as FieldWrapper };

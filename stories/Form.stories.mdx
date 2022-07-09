@@ -1,8 +1,8 @@
-import { baseProps } from './lists/baseProps'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
-import { Form, Field, Submit, Input, DialogForm } from '../index'
-import { DialogFormApp } from './components/DialogFormApp'
-import { DISABLE_BASE_ARGS } from './FormFieldArgs'
+import { baseProps } from './lists/baseProps';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Form, Field, Submit, Input, DialogForm } from '../index';
+import { DialogFormApp } from './components/DialogFormApp';
+import { DISABLE_BASE_ARGS } from './FormFieldArgs';
 
 <Meta
   title="Forms/Form"
@@ -32,9 +32,9 @@ Form component default create an form instance by Form.useForm. But you can crea
 
 ```typescript
 const Demo = () => {
-  const [form] = Form.useForm()
-  return <Form form={form} />
-}
+  const [form] = Form.useForm();
+  return <Form form={form} />;
+};
 ```
 
 #### JengaFormInstance interface
@@ -85,14 +85,14 @@ const Demo = () => {
 An example of a simple login form with validation.
 
 ```tsx
-import { Form, Field, Submit, Input } from '@jenga-dev/ui-kit'
-import { Auth } from '../path/to/AuthService'
+import { Form, Field, Submit, Input } from '@jenga-dev/ui-kit';
+import { Auth } from '../path/to/AuthService';
 
 // `Form.Item` is an alias for `Field`.
 
 export function LoginForm() {
   async function onSubmit(data) {
-    await Auth.login(data) // { email, password }
+    await Auth.login(data); // { email, password }
   }
 
   return (
@@ -119,7 +119,7 @@ export function LoginForm() {
 
       <Submit>Submit</Submit>
     </Form>
-  )
+  );
 }
 ```
 
@@ -129,8 +129,8 @@ export function LoginForm() {
       <Form
         onSubmit={() => {
           return new Promise((resolve) => {
-            setTimeout(resolve, 1000) // 1s of submitting
-          })
+            setTimeout(resolve, 1000); // 1s of submitting
+          });
         }}
         requiredMark={false}
         {...args}
@@ -171,7 +171,7 @@ Here is the example of usage:
 
 ```tsx
 /* ConfirmDeletionDialogForm.tsx */
-import { ForwardedRef, forwardRef } from 'react'
+import { ForwardedRef, forwardRef } from 'react';
 import {
   JengaDialogFormRef,
   DialogForm,
@@ -180,19 +180,19 @@ import {
   Input,
   Text,
   JengaDialogFormProps,
-} from '@jenga-dev/ui-kit'
+} from '@jenga-dev/ui-kit';
 
 interface ConfirmDeletionDialogFormProps
   extends Pick<JengaDialogFormProps, 'onSubmit' | 'onDismiss' | 'form'> {
-  name?: string
+  name?: string;
 }
 
 export const ConfirmDeletionDialogForm = forwardRef(
   (
     props: ConfirmDeletionDialogFormProps,
-    ref: ForwardedRef<JengaDialogFormRef>
+    ref: ForwardedRef<JengaDialogFormRef>,
   ) => {
-    let { name, onSubmit, onDismiss } = props
+    let { name, onSubmit, onDismiss } = props;
 
     return (
       <DialogForm
@@ -223,7 +223,7 @@ export const ConfirmDeletionDialogForm = forwardRef(
             {
               async validator(rule, value) {
                 if (value !== name) {
-                  throw new Error('Incorrect name')
+                  throw new Error('Incorrect name');
                 }
               },
             },
@@ -232,28 +232,28 @@ export const ConfirmDeletionDialogForm = forwardRef(
           <Input.Text placeholder="Enter the name of the instance" />
         </Field>
       </DialogForm>
-    )
-  }
-)
+    );
+  },
+);
 ```
 
 Then you can use this component inside your application:
 
 ```tsx
 /* DialogFormApp */
-import { useRef } from 'react'
-import { JengaDialogFormRef, Button } from '@jenga-dev/ui-kit'
-import { ConfirmDeletionDialogForm } from './ConfirmDeletionDialogForm'
+import { useRef } from 'react';
+import { JengaDialogFormRef, Button } from '@jenga-dev/ui-kit';
+import { ConfirmDeletionDialogForm } from './ConfirmDeletionDialogForm';
 
 export function DialogFormApp() {
-  const ConfirmDeletionDialogFormRef = useRef<JengaDialogFormRef>(null)
+  const ConfirmDeletionDialogFormRef = useRef<JengaDialogFormRef>(null);
 
   function onConfirm() {
-    console.log('Deletion is confirmed')
+    console.log('Deletion is confirmed');
   }
 
   function onDismiss() {
-    console.log('Deletion is cancelled')
+    console.log('Deletion is cancelled');
   }
 
   return (
@@ -268,7 +268,7 @@ export function DialogFormApp() {
         onDismiss={onDismiss}
       />
     </>
-  )
+  );
 }
 ```
 

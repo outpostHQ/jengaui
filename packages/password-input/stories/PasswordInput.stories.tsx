@@ -1,6 +1,6 @@
-import { PasswordInput } from '../src/PasswordInput'
-import { LABEL_ARG } from '../../../stories/FormFieldArgs'
-import { baseProps } from '../../../stories/lists/baseProps'
+import { PasswordInput } from '../src/PasswordInput';
+import { LABEL_ARG } from '../../../stories/FormFieldArgs';
+import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Forms/PasswordInput',
@@ -13,14 +13,14 @@ export default {
   argTypes: {
     ...LABEL_ARG,
   },
-}
+};
 
 const Template = (props) => (
   <PasswordInput
     {...props}
     onChange={(query) => console.log('change', query)}
   />
-)
+);
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = Template.bind({});
+Default.args = {};

@@ -4,21 +4,21 @@ const DIRECTION_MAP = {
   right: 'center left',
   left: 'center right',
   bottom: 'top center',
-}
+};
 const TRANSLATE_MAP = {
   initial: 'translate(0px, calc(-1 * var(--overlay-offset)))',
   top: 'translate(0px, calc(1 * var(--overlay-offset)))',
   right: 'translate(calc(-1 * var(--overlay-offset)), 0px)',
   left: 'translate(calc(1 * var(--overlay-offset)), 0px)',
   bottom: 'translate(0px, calc(-1 * var(--overlay-offset)))',
-}
+};
 
 export interface OverlayTransitionCSSProps {
-  suffix?: string
-  placement?: string
-  minScale?: string | number
-  minOffset?: string
-  forChild?: boolean
+  suffix?: string;
+  placement?: string;
+  minScale?: string | number;
+  minOffset?: string;
+  forChild?: boolean;
 }
 
 export const getOverlayTransitionCSS = ({
@@ -65,4 +65,4 @@ export const getOverlayTransitionCSS = ({
       pointer-events: none;
       transition: transform var(--overlay-transition) cubic-bezier(.66, 0, .66, 0), opacity var(--overlay-transition) cubic-bezier(.66, 0, .66, 0);
     }
-  `
+  `;

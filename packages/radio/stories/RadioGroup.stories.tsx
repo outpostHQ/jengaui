@@ -1,6 +1,6 @@
-import { Radio } from '../src/Radio'
-import { baseProps } from '../../../stories/lists/baseProps'
-import { TEXT_VALUE_ARG } from '../../../stories/FormFieldArgs'
+import { Radio } from '../src/Radio';
+import { baseProps } from '../../../stories/lists/baseProps';
+import { TEXT_VALUE_ARG } from '../../../stories/FormFieldArgs';
 
 export default {
   title: 'Forms/RadioGroup',
@@ -24,7 +24,7 @@ export default {
       },
     },
   },
-}
+};
 
 const Template = ({ type, ...props }) => (
   <Radio.Group
@@ -45,10 +45,10 @@ const Template = ({ type, ...props }) => (
       </>
     )}
   </Radio.Group>
-)
+);
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = Template.bind({});
+Default.args = {};
 
-export const RadioButtons = Template.bind({})
-RadioButtons.args = { type: 'button' }
+export const RadioButtons = Template.bind({});
+RadioButtons.args = { type: 'button' };

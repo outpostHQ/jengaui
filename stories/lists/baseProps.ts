@@ -8,7 +8,7 @@ import {
   OUTER_STYLES,
   POSITION_STYLES,
   TEXT_STYLES,
-} from 'tastycss'
+} from 'tastycss';
 
 const allStyles: string[] = Array.from(
   new Set([
@@ -22,8 +22,8 @@ const allStyles: string[] = Array.from(
     ...DIMENSION_STYLES,
     ...TEXT_STYLES,
     ...POSITION_STYLES,
-  ])
-)
+  ]),
+);
 
 export const baseProps = [
   'qa',
@@ -41,4 +41,4 @@ export const baseProps = [
   'isHidden',
   'element',
   ...allStyles,
-]
+];

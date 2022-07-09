@@ -6,60 +6,60 @@ import {
   useEffect,
   useRef,
   useState,
-} from 'react'
-import { useFormProps } from './Form'
-import { mergeProps, warn } from '@jenga-ui/utils'
+} from 'react';
+import { useFormProps } from './Form';
+import { mergeProps, warn } from '@jenga-ui/utils';
 import {
   LabelPosition,
   OptionalFieldBaseProps,
   ValidationRule,
-} from '../shared'
-import { JengaFormInstance } from './useForm'
-import { FieldWrapper } from '../FieldWrapper'
-import { Styles } from 'tastycss'
+} from '../shared';
+import { JengaFormInstance } from './useForm';
+import { FieldWrapper } from '../FieldWrapper';
+import { Styles } from 'tastycss';
 
-const ID_MAP = {}
+const ID_MAP = {};
 
 function createId(name) {
-  if (!name) return
+  if (!name) return;
 
   if (!ID_MAP[name]) {
-    ID_MAP[name] = []
+    ID_MAP[name] = [];
   }
 
-  let i = 0
-  let id
+  let i = 0;
+  let id;
 
   do {
-    id = i ? `${name}_${i}` : name
-    i++
-  } while (ID_MAP[name].includes(id))
+    id = i ? `${name}_${i}` : name;
+    i++;
+  } while (ID_MAP[name].includes(id));
 
-  ID_MAP[name].push(id)
+  ID_MAP[name].push(id);
 
-  return id
+  return id;
 }
 
 function removeId(name, id) {
-  if (!ID_MAP[name]) return
+  if (!ID_MAP[name]) return;
 
-  ID_MAP[name] = ID_MAP[name].filter((_id) => _id !== id)
+  ID_MAP[name] = ID_MAP[name].filter((_id) => _id !== id);
 }
 
 function getDefaultValidateTrigger(type) {
-  type = type || ''
+  type = type || '';
 
-  return type === 'Number' || type.includes('Text') ? 'onBlur' : 'onChange'
+  return type === 'Number' || type.includes('Text') ? 'onBlur' : 'onChange';
 }
 
 function getValueProps(type, value?, onChange?) {
-  type = type || ''
+  type = type || '';
 
   if (type === 'Number') {
     return {
       value: value != null ? value : null,
       onChange: onChange,
-    }
+    };
   } else if (type === 'Text') {
     return {
       value:
@@ -67,82 +67,82 @@ function getValueProps(type, value?, onChange?) {
           ? String(value)
           : '',
       onChange: onChange,
-    }
+    };
   } else if (type === 'Checkbox') {
     return {
       isSelected: value != null ? value : false,
       isIndeterminate: false,
       onChange: onChange,
-    }
+    };
   } else if (type === 'CheckboxGroup') {
     return {
       value: value != null ? value : [],
       onChange: onChange,
-    }
+    };
   } else if (type === 'ComboBox') {
     return {
       inputValue: value != null ? value : '',
       onInputChange: onChange,
-    }
+    };
   } else if (type === 'Select') {
     return {
       selectedKey: value != null ? value : null,
       onSelectionChange: onChange,
-    }
+    };
   }
 
   return {
     value: value != null ? value : null,
     onChange,
-  }
+  };
 }
 
 export interface JengaFieldProps extends OptionalFieldBaseProps {
   /** The initial value of the input. */
-  defaultValue?: any
+  defaultValue?: any;
   /** The type of the input. `Input`, `Checkbox`, RadioGroup`, `Select`, `ComboBox` etc... */
-  type?: string
+  type?: string;
   /** The unique ID of the field */
-  id?: string
+  id?: string;
   /** The id prefix for the field to avoid collisions between forms */
-  idPrefix?: string
-  children?: ReactElement | ((JengaFormInstance) => ReactElement)
+  idPrefix?: string;
+  children?: ReactElement | ((JengaFormInstance) => ReactElement);
   /** Function that check whether to perform update of the form state. */
-  shouldUpdate?: boolean | ((prevValues, nextValues) => boolean)
+  shouldUpdate?: boolean | ((prevValues, nextValues) => boolean);
   /** Validation rules */
-  rules?: ValidationRule[]
+  rules?: ValidationRule[];
   /** The form instance */
-  form?: JengaFormInstance
+  form?: JengaFormInstance;
   /** The message for the field or text for the error */
-  message?: string
+  message?: string;
   /** The description for the field */
-  description?: ReactNode
+  description?: ReactNode;
   /** Tooltip for the label that explains something. */
-  tooltip?: ReactNode
+  tooltip?: ReactNode;
   /** Field name. It's used as a key the form data. */
-  name?: string[] | string
+  name?: string[] | string;
   /** Whether the field is hidden. */
-  isHidden?: boolean
-  styles?: Styles
-  labelPosition?: LabelPosition
-  labelStyles?: Styles
+  isHidden?: boolean;
+  styles?: Styles;
+  labelPosition?: LabelPosition;
+  labelStyles?: Styles;
 }
 
 interface JengaFullFieldProps extends JengaFieldProps {
-  form: JengaFormInstance
+  form: JengaFormInstance;
 }
 
 interface JengaReplaceFieldProps extends JengaFieldProps {
-  isRequired?: boolean
-  onChange?: (any) => void
-  onSelectionChange?: (any) => void
-  onBlur: () => void
-  onInputChange?: (any) => void
-  labelPosition?: LabelPosition
+  isRequired?: boolean;
+  onChange?: (any) => void;
+  onSelectionChange?: (any) => void;
+  onBlur: () => void;
+  onInputChange?: (any) => void;
+  labelPosition?: LabelPosition;
 }
 
 export function Field(allProps: JengaFieldProps) {
-  const props: JengaFullFieldProps = useFormProps(allProps)
+  const props: JengaFullFieldProps = useFormProps(allProps);
 
   let {
     defaultValue,
@@ -167,61 +167,61 @@ export function Field(allProps: JengaFieldProps) {
     styles,
     labelPosition,
     labelStyles,
-  } = props
-  const nonInput = !name
+  } = props;
+  const nonInput = !name;
   const fieldName: string =
-    name != null ? (Array.isArray(name) ? name.join('.') : name) : ''
+    name != null ? (Array.isArray(name) ? name.join('.') : name) : '';
 
-  let firstRunRef = useRef(true)
+  let firstRunRef = useRef(true);
   let [fieldId, setFieldId] = useState(
-    id || (idPrefix ? `${idPrefix}_${fieldName}` : fieldName)
-  )
+    id || (idPrefix ? `${idPrefix}_${fieldName}` : fieldName),
+  );
 
   useEffect(() => {
-    let newId
+    let newId;
 
     if (!id && !nonInput) {
-      newId = createId(fieldId)
+      newId = createId(fieldId);
 
-      setFieldId(newId)
+      setFieldId(newId);
     }
 
     return () => {
       if (!id) {
-        removeId(idPrefix ? `${idPrefix}_${fieldName}` : fieldName, newId)
+        removeId(idPrefix ? `${idPrefix}_${fieldName}` : fieldName, newId);
       }
 
       if (fieldName && form) {
-        form.removeField(fieldName)
+        form.removeField(fieldName);
       }
-    }
-  }, [])
+    };
+  }, []);
 
-  let field = form?.getFieldInstance(fieldName)
+  let field = form?.getFieldInstance(fieldName);
 
   if (field) {
-    field.rules = rules
+    field.rules = rules;
   }
 
-  let isRequired = rules && !!rules.find((rule) => rule.required)
+  let isRequired = rules && !!rules.find((rule) => rule.required);
 
   useEffect(() => {
-    if (!form) return
+    if (!form) return;
 
     if (field) {
-      form.forceReRender()
+      form.forceReRender();
     } else {
-      form.createField(fieldName)
+      form.createField(fieldName);
     }
-  }, [field])
+  }, [field]);
 
   if (typeof children === 'function') {
-    children = children(form)
+    children = children(form);
   }
 
-  if (!children) return null
+  if (!children) return null;
 
-  let child = Children.only(children)
+  let child = Children.only(children);
 
   if (nonInput) {
     return (
@@ -241,35 +241,35 @@ export function Field(allProps: JengaFieldProps) {
         labelPosition={labelPosition}
         labelStyles={labelStyles}
       />
-    )
+    );
   }
 
   if (!form) {
     warn(
-      'Form Field requires declared form instance if field name is specified'
-    )
+      'Form Field requires declared form instance if field name is specified',
+    );
 
-    return null
+    return null;
   }
 
   inputType =
-    inputType || ((child.type as any).jengaInputType as string) || 'Text'
+    inputType || ((child.type as any).jengaInputType as string) || 'Text';
 
-  const defaultValidateTrigger = getDefaultValidateTrigger(inputType)
+  const defaultValidateTrigger = getDefaultValidateTrigger(inputType);
 
   if (firstRunRef.current && defaultValue != null) {
     if (!field) {
-      form.createField(fieldName, true)
+      form.createField(fieldName, true);
     }
 
     if (field?.value == null) {
-      form.setFieldValue(fieldName, defaultValue, false, true)
+      form.setFieldValue(fieldName, defaultValue, false, true);
 
-      field = form?.getFieldInstance(fieldName)
+      field = form?.getFieldInstance(fieldName);
     }
   }
 
-  firstRunRef.current = false
+  firstRunRef.current = false;
 
   if (!field) {
     return cloneElement(
@@ -278,19 +278,19 @@ export function Field(allProps: JengaFieldProps) {
         ...getValueProps(inputType),
         name: fieldName,
         id: fieldId,
-      })
-    )
+      }),
+    );
   }
 
   if (!validateTrigger) {
-    validateTrigger = defaultValidateTrigger
+    validateTrigger = defaultValidateTrigger;
   }
 
   function onChangeHandler(val) {
-    const field = form.getFieldInstance(fieldName)
+    const field = form.getFieldInstance(fieldName);
 
     if (shouldUpdate) {
-      const fieldsValue = form.getFieldsValue()
+      const fieldsValue = form.getFieldsValue();
 
       // check if we should update the value of the field
       const shouldNotBeUpdated =
@@ -299,20 +299,20 @@ export function Field(allProps: JengaFieldProps) {
           : !shouldUpdate(fieldsValue, {
               ...fieldsValue,
               [fieldName]: val,
-            })
+            });
 
       if (shouldNotBeUpdated) {
-        return
+        return;
       }
     }
 
-    form.setFieldValue(fieldName, val, true)
+    form.setFieldValue(fieldName, val, true);
 
     if (
       validateTrigger === 'onChange' ||
       (field && field.errors && field.errors.length)
     ) {
-      form.validateField(fieldName).catch(() => {}) // do nothing on fail
+      form.validateField(fieldName).catch(() => {}); // do nothing on fail
     }
   }
 
@@ -323,64 +323,64 @@ export function Field(allProps: JengaFieldProps) {
       if (validateTrigger === 'onBlur') {
         // We need timeout so the change event can be done.
         setTimeout(() => {
-          form.validateField(fieldName).catch(() => {}) // do nothing on fail
-        })
+          form.validateField(fieldName).catch(() => {}); // do nothing on fail
+        });
       }
     },
-  }
+  };
 
   if (necessityIndicator != null) {
-    newProps.necessityIndicator = necessityIndicator
+    newProps.necessityIndicator = necessityIndicator;
   }
 
   if (necessityLabel) {
-    newProps.necessityLabel = necessityLabel
+    newProps.necessityLabel = necessityLabel;
   }
 
   if (validationState) {
-    newProps.validationState = validationState
+    newProps.validationState = validationState;
   }
 
   if (isRequired) {
-    newProps.isRequired = isRequired
+    newProps.isRequired = isRequired;
   }
 
   if (label) {
-    newProps.label = label
+    newProps.label = label;
   }
 
   if (extra) {
-    newProps.extra = extra
+    newProps.extra = extra;
   }
 
   if (tooltip) {
-    newProps.tooltip = tooltip
+    newProps.tooltip = tooltip;
   }
 
   if (message) {
-    newProps.message = message
+    newProps.message = message;
   }
 
   if (isHidden != null) {
-    newProps.isHidden = isHidden
+    newProps.isHidden = isHidden;
   }
 
   if (field && field.errors && field.errors.length) {
     if (!validationState) {
-      newProps.validationState = 'invalid'
+      newProps.validationState = 'invalid';
     }
 
     if (!message) {
-      newProps.message = field.errors[0]
+      newProps.message = field.errors[0];
     }
   }
 
   Object.assign(
     newProps,
-    getValueProps(inputType, field?.value, onChangeHandler)
-  )
+    getValueProps(inputType, field?.value, onChangeHandler),
+  );
 
-  const { onChange, onSelectionChange, ...childProps } = child.props
+  const { onChange, onSelectionChange, ...childProps } = child.props;
 
   // onChange event passed to the child should be executed after Form onChange logic
   return cloneElement(
@@ -389,7 +389,7 @@ export function Field(allProps: JengaFieldProps) {
       childProps,
       newProps,
       onChange ? { onChange } : {},
-      onSelectionChange ? { onSelectionChange } : {}
-    )
-  )
+      onSelectionChange ? { onSelectionChange } : {},
+    ),
+  );
 }

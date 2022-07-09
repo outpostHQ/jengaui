@@ -1,5 +1,5 @@
-import { forwardRef } from 'react'
-import THEMES from '../../core/src/themes'
+import { forwardRef } from 'react';
+import THEMES from '../../core/src/themes';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -8,10 +8,10 @@ import {
   filterBaseProps,
   Styles,
   tasty,
-} from 'tastycss'
-import { Action } from '@jenga-ui/button'
-import { Suffix } from '@jenga-ui/layout'
-import { CloseOutlined } from '@ant-design/icons'
+} from 'tastycss';
+import { Action } from '@jenga-ui/button';
+import { Suffix } from '@jenga-ui/layout';
+import { CloseOutlined } from '@ant-design/icons';
 
 const TagElement = tasty({
   qa: 'Tag',
@@ -34,25 +34,25 @@ const TagElement = tasty({
     fill: {
       '': '#dark.04',
       ...Object.keys(THEMES).reduce((map, type) => {
-        map[`[data-type="${type}"]`] = THEMES[type].fill
+        map[`[data-type="${type}"]`] = THEMES[type].fill;
 
-        return map
+        return map;
       }, {}),
     },
     color: {
       '': '#dark.65',
       ...Object.keys(THEMES).reduce((map, type) => {
-        map[`[data-type="${type}"]`] = THEMES[type].color
+        map[`[data-type="${type}"]`] = THEMES[type].color;
 
-        return map
+        return map;
       }, {}),
     },
     border: {
       '': true,
       ...Object.keys(THEMES).reduce((map, type) => {
-        map[`[data-type="${type}"]`] = THEMES[type].border
+        map[`[data-type="${type}"]`] = THEMES[type].border;
 
-        return map
+        return map;
       }, {}),
     },
 
@@ -64,7 +64,7 @@ const TagElement = tasty({
       pointerEvents: 'none',
     },
   },
-})
+});
 
 const CloseAction = tasty(Action, {
   label: 'Close',
@@ -80,20 +80,20 @@ const CloseAction = tasty(Action, {
     transition: 'opacity',
     padding: '0 .5x',
   },
-})
+});
 
 export interface JengaTagProps extends BaseProps, ContainerStyleProps {
-  type?: keyof typeof THEMES | string
-  isClosable?: boolean
-  onClose?: () => void
-  closeButtonStyles?: Styles
+  type?: keyof typeof THEMES | string;
+  isClosable?: boolean;
+  onClose?: () => void;
+  closeButtonStyles?: Styles;
 }
 
 const Tag = (allProps: JengaTagProps, ref) => {
   let { type, isClosable, onClose, closeButtonStyles, children, ...props } =
-    allProps
+    allProps;
 
-  const styles = extractStyles(props, CONTAINER_STYLES)
+  const styles = extractStyles(props, CONTAINER_STYLES);
 
   return (
     <TagElement
@@ -116,8 +116,8 @@ const Tag = (allProps: JengaTagProps, ref) => {
         </Suffix>
       ) : undefined}
     </TagElement>
-  )
-}
+  );
+};
 
-const _Tag = forwardRef(Tag)
-export { _Tag as Tag }
+const _Tag = forwardRef(Tag);
+export { _Tag as Tag };

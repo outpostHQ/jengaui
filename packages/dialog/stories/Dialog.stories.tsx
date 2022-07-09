@@ -1,14 +1,14 @@
-import { ModalProvider } from '@react-aria/overlays'
-import { within, userEvent } from '@storybook/testing-library'
-import { expect } from '@storybook/jest'
-import { Story } from '@storybook/react'
+import { ModalProvider } from '@react-aria/overlays';
+import { within, userEvent } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
+import { Story } from '@storybook/react';
 import {
   JengaDialogProps,
   JengaDialogTriggerProps,
   Dialog,
   DialogTrigger,
-} from '../src/index'
-import { Button } from '@jenga-ui/button'
+} from '../src/index';
+import { Button } from '@jenga-ui/button';
 import {
   Content,
   Text,
@@ -16,8 +16,8 @@ import {
   Header,
   Paragraph,
   Title,
-} from '@jenga-ui/content'
-import { baseProps } from '../../../stories/lists/baseProps'
+} from '@jenga-ui/content';
+import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Overlays/Dialog',
@@ -28,7 +28,7 @@ export default {
       exclude: baseProps,
     },
   },
-}
+};
 
 const Template: Story<
   JengaDialogTriggerProps & { size: JengaDialogProps['size'] }
@@ -61,12 +61,12 @@ const Template: Story<
         )}
       </DialogTrigger>
     </ModalProvider>
-  )
-}
+  );
+};
 
-export const Default: typeof Template = Template.bind({})
+export const Default: typeof Template = Template.bind({});
 Default.play = async ({ canvasElement }) => {
-  const { getByRole } = within(canvasElement)
-  await userEvent.click(getByRole('button'))
-  await expect(getByRole('dialog')).toBeInTheDocument()
-}
+  const { getByRole } = within(canvasElement);
+  await userEvent.click(getByRole('button'));
+  await expect(getByRole('dialog')).toBeInTheDocument();
+};

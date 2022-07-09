@@ -5,10 +5,10 @@ export function toFlatTree(tree, includingFolders) {
         ...result,
         ...(includingFolders ? [node] : []),
         ...toFlatTree(node.children || [], includingFolders),
-      ]
+      ];
     } else {
-      result.push(node)
+      result.push(node);
     }
-    return result
-  }, [])
+    return result;
+  }, []);
 }

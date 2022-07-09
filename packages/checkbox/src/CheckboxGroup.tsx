@@ -1,24 +1,24 @@
-import { forwardRef } from 'react'
-import { useDOMRef } from '@react-spectrum/utils'
-import { useProviderProps } from '@jenga-ui/providers'
-import { useCheckboxGroup } from '@react-aria/checkbox'
-import { useCheckboxGroupState } from '@react-stately/checkbox'
+import { forwardRef } from 'react';
+import { useDOMRef } from '@react-spectrum/utils';
+import { useProviderProps } from '@jenga-ui/providers';
+import { useCheckboxGroup } from '@react-aria/checkbox';
+import { useCheckboxGroupState } from '@react-stately/checkbox';
 import {
   FormContext,
   useFormProps,
   FieldWrapper,
   FormFieldProps,
-} from '@jenga-ui/form'
-import { CheckboxGroupContext } from './context'
+} from '@jenga-ui/form';
+import { CheckboxGroupContext } from './context';
 import {
   BaseProps,
   BLOCK_STYLES,
   extractStyles,
   OUTER_STYLES,
   tasty,
-} from 'tastycss'
-import type { AriaCheckboxGroupProps } from '@react-types/checkbox'
-import { castNullableArrayValue, WithNullableValue } from '@jenga-ui/utils'
+} from 'tastycss';
+import type { AriaCheckboxGroupProps } from '@react-types/checkbox';
+import { castNullableArrayValue, WithNullableValue } from '@jenga-ui/utils';
 
 const WRAPPER_STYLES = {
   display: 'grid',
@@ -31,7 +31,7 @@ const WRAPPER_STYLES = {
     'has-sider': '1x',
   },
   placeItems: 'baseline start',
-}
+};
 
 const CheckGroupElement = tasty({
   qa: 'CheckboxGroup',
@@ -49,19 +49,19 @@ const CheckGroupElement = tasty({
     },
     padding: '(1x - 1bw) 0',
   },
-})
+});
 
 export interface JengaCheckboxGroupProps
   extends BaseProps,
     AriaCheckboxGroupProps,
     FormFieldProps {
-  orientation?: 'vertical' | 'horizontal'
+  orientation?: 'vertical' | 'horizontal';
 }
 
 function CheckboxGroup(props: WithNullableValue<JengaCheckboxGroupProps>, ref) {
-  props = castNullableArrayValue(props)
-  props = useProviderProps(props)
-  props = useFormProps(props)
+  props = castNullableArrayValue(props);
+  props = useProviderProps(props);
+  props = useFormProps(props);
 
   let {
     isDisabled,
@@ -80,14 +80,14 @@ function CheckboxGroup(props: WithNullableValue<JengaCheckboxGroupProps>, ref) {
     requiredMark = true,
     tooltip,
     ...otherProps
-  } = props
-  let domRef = useDOMRef(ref)
+  } = props;
+  let domRef = useDOMRef(ref);
 
-  let styles = extractStyles(otherProps, OUTER_STYLES, WRAPPER_STYLES)
-  let groupStyles = extractStyles(otherProps, BLOCK_STYLES)
+  let styles = extractStyles(otherProps, OUTER_STYLES, WRAPPER_STYLES);
+  let groupStyles = extractStyles(otherProps, BLOCK_STYLES);
 
-  let state = useCheckboxGroupState(props)
-  let { groupProps, labelProps } = useCheckboxGroup(props, state)
+  let state = useCheckboxGroupState(props);
+  let { groupProps, labelProps } = useCheckboxGroup(props, state);
 
   let radioGroup = (
     <CheckGroupElement
@@ -107,7 +107,7 @@ function CheckboxGroup(props: WithNullableValue<JengaCheckboxGroupProps>, ref) {
         </CheckboxGroupContext.Provider>
       </FormContext.Provider>
     </CheckGroupElement>
-  )
+  );
 
   return (
     <FieldWrapper
@@ -132,15 +132,15 @@ function CheckboxGroup(props: WithNullableValue<JengaCheckboxGroupProps>, ref) {
         ref: domRef,
       }}
     />
-  )
+  );
 }
 
 /**
  * Checkbox groups allow users to select a single option from a list of mutually exclusive options.
  * All possible options are exposed up front for users to compare.
  */
-const _CheckboxGroup = forwardRef(CheckboxGroup)
+const _CheckboxGroup = forwardRef(CheckboxGroup);
 
-;(_CheckboxGroup as any).jengaInputType = 'CheckboxGroup'
+(_CheckboxGroup as any).jengaInputType = 'CheckboxGroup';
 
-export { _CheckboxGroup as CheckboxGroup }
+export { _CheckboxGroup as CheckboxGroup };

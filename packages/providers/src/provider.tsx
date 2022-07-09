@@ -3,24 +3,24 @@ import {
   ForwardedRef,
   PropsWithChildren,
   useContext,
-} from 'react'
-import { BreakpointsProvider, Props } from 'tastycss'
+} from 'react';
+import { BreakpointsProvider, Props } from 'tastycss';
 
 export interface ProviderProps extends Props {
-  breakpoints?: number[]
-  insideForm?: boolean
-  isDisabled?: boolean
-  isReadOnly?: boolean
-  isRequired?: boolean
-  validationState?: string
-  router?: Function
-  ref?: JSX.Element
-  root?: ForwardedRef<any>
+  breakpoints?: number[];
+  insideForm?: boolean;
+  isDisabled?: boolean;
+  isReadOnly?: boolean;
+  isRequired?: boolean;
+  validationState?: string;
+  router?: Function;
+  ref?: JSX.Element;
+  root?: ForwardedRef<any>;
 }
 
-export type ProviderInsideProps = Omit<ProviderProps, 'styles' | 'breakpoints'>
+export type ProviderInsideProps = Omit<ProviderProps, 'styles' | 'breakpoints'>;
 
-export const UIKitContext = createContext<ProviderInsideProps>({})
+export const UIKitContext = createContext<ProviderInsideProps>({});
 
 export function Provider(allProps: PropsWithChildren<ProviderProps>) {
   let {
@@ -34,15 +34,15 @@ export function Provider(allProps: PropsWithChildren<ProviderProps>) {
     router,
     root,
     ref,
-  } = allProps
+  } = allProps;
 
   if (breakpoints) {
     children = (
       <BreakpointsProvider value={breakpoints}>{children}</BreakpointsProvider>
-    )
+    );
   }
 
-  const parentContext = useContext(UIKitContext)
+  const parentContext = useContext(UIKitContext);
   const props = {
     ref,
     breakpoints,
@@ -53,22 +53,22 @@ export function Provider(allProps: PropsWithChildren<ProviderProps>) {
     validationState,
     router,
     root,
-  }
-  const newValue = Object.assign({}, parentContext)
+  };
+  const newValue = Object.assign({}, parentContext);
 
   Object.keys(props).forEach((key) => {
     if (props[key] != null) {
-      newValue[key] = props[key]
+      newValue[key] = props[key];
     }
-  })
+  });
 
   return (
     <UIKitContext.Provider value={newValue}>{children}</UIKitContext.Provider>
-  )
+  );
 }
 
 export function useProviderProps<T extends Props = Props>(props: T): T {
-  const contextProps = useContext(UIKitContext)
+  const contextProps = useContext(UIKitContext);
 
-  return { ...contextProps, ...props } as T
+  return { ...contextProps, ...props } as T;
 }

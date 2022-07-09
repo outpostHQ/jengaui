@@ -1,5 +1,5 @@
-import { Badge } from '../src/Badge'
-import { baseProps } from '../../../stories/lists/baseProps'
+import { Badge } from '../src/Badge';
+import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Content/Badge',
@@ -9,11 +9,11 @@ export default {
       exclude: baseProps,
     },
   },
-}
+};
 
-const Template = ({ label, ...props }) => <Badge {...props}>{label}</Badge>
+const Template = ({ label, ...props }) => <Badge {...props}>{label}</Badge>;
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 Default.args = {
   label: '1',
-}
+};

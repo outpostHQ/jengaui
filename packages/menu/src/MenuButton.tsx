@@ -1,9 +1,9 @@
-import { ReactNode } from 'react'
-import { Button, JengaButtonProps } from '@jenga-ui/button'
-import { Text } from '@jenga-ui/content'
-import { Styles, tasty } from 'tastycss'
-import { Space } from '@jenga-ui/layout'
-import { CheckOutlined, CheckCircleOutlined } from '@ant-design/icons'
+import { ReactNode } from 'react';
+import { Button, JengaButtonProps } from '@jenga-ui/button';
+import { Text } from '@jenga-ui/content';
+import { Styles, tasty } from 'tastycss';
+import { Space } from '@jenga-ui/layout';
+import { CheckOutlined, CheckCircleOutlined } from '@ant-design/icons';
 
 const ACTION_BUTTON: Styles = {
   border: {
@@ -45,7 +45,7 @@ const ACTION_BUTTON: Styles = {
       disabled: '#dark-04',
     },
   },
-}
+};
 
 const RadioIcon = tasty({
   styles: {
@@ -62,7 +62,7 @@ const RadioIcon = tasty({
       fill: '#current',
     },
   },
-})
+});
 
 const getPostfix = (postfix) =>
   typeof postfix === 'string' ? (
@@ -71,27 +71,27 @@ const getPostfix = (postfix) =>
     </Text>
   ) : (
     postfix
-  )
+  );
 
-export type MenuSelectionType = 'checkbox' | 'radio'
+export type MenuSelectionType = 'checkbox' | 'radio';
 
 export type MenuButtonProps = {
-  postfix: ReactNode
-  selectionIcon?: MenuSelectionType
-  isSelectable?: boolean
-  disabled?: boolean
-} & JengaButtonProps
+  postfix: ReactNode;
+  selectionIcon?: MenuSelectionType;
+  isSelectable?: boolean;
+  disabled?: boolean;
+} & JengaButtonProps;
 
 const getSelectionTypeIcon = (selectionIcon?: MenuSelectionType) => {
   switch (selectionIcon) {
     case 'checkbox':
-      return <CheckOutlined />
+      return <CheckOutlined />;
     case 'radio':
-      return <RadioIcon />
+      return <RadioIcon />;
     default:
-      return null
+      return null;
   }
-}
+};
 
 export function MenuButton({
   children,
@@ -99,15 +99,15 @@ export function MenuButton({
   postfix,
   ...props
 }: MenuButtonProps) {
-  const { selectionIcon, isSelected, isSelectable } = props
+  const { selectionIcon, isSelected, isSelectable } = props;
   const checkIcon =
-    isSelectable && isSelected ? getSelectionTypeIcon(selectionIcon) : null
+    isSelectable && isSelected ? getSelectionTypeIcon(selectionIcon) : null;
   const mods = {
     ...props.mods,
     selectionIcon: !!selectionIcon,
     selectable: isSelectable,
     selected: isSelected,
-  }
+  };
 
   return (
     <Button
@@ -126,5 +126,5 @@ export function MenuButton({
         {postfix && getPostfix(postfix)}
       </Space>
     </Button>
-  )
+  );
 }

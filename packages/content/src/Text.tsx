@@ -1,4 +1,4 @@
-import { CSSProperties, forwardRef } from 'react'
+import { CSSProperties, forwardRef } from 'react';
 import {
   BASE_STYLES,
   BaseProps,
@@ -12,16 +12,16 @@ import {
   tasty,
   TEXT_STYLES,
   TextStyleProps,
-} from 'tastycss'
-import { useSlotProps } from '@jenga-ui/utils'
+} from 'tastycss';
+import { useSlotProps } from '@jenga-ui/utils';
 
-const STYLE_LIST = [...BASE_STYLES, ...TEXT_STYLES, ...COLOR_STYLES] as const
+const STYLE_LIST = [...BASE_STYLES, ...TEXT_STYLES, ...COLOR_STYLES] as const;
 
 export const TEXT_PROP_MAP = {
   transform: 'textTransform',
   weight: 'fontWeight',
   italic: 'fontStyle',
-} as const
+} as const;
 
 export interface JengaTextProps
   extends BaseProps,
@@ -32,21 +32,21 @@ export interface JengaTextProps
   /**
    * Whether the text uses the monospace font.
    */
-  monospace?: boolean
+  monospace?: boolean;
   /**
    * Whether the text overflow is ellipsis
    */
-  ellipsis?: boolean
+  ellipsis?: boolean;
   /**
    * Whether the text is not wrapping
    */
-  nowrap?: boolean
+  nowrap?: boolean;
   /**
    * Whether the text has italic style
    */
-  italic?: ResponsiveStyleValue<CSSProperties['fontStyle']>
-  weight?: string | number
-  transform?: ResponsiveStyleValue<CSSProperties['textTransform']>
+  italic?: ResponsiveStyleValue<CSSProperties['fontStyle']>;
+  weight?: string | number;
+  transform?: ResponsiveStyleValue<CSSProperties['textTransform']>;
 }
 
 const TextElement = tasty({
@@ -75,13 +75,13 @@ const TextElement = tasty({
       ellipsis: 'max 100%',
     },
   },
-})
+});
 
 const _Text = forwardRef(function Text(allProps: JengaTextProps, ref) {
-  allProps = useSlotProps(allProps, 'text')
+  allProps = useSlotProps(allProps, 'text');
 
-  const { as, qa, block, styleName, ellipsis, nowrap, ...props } = allProps
-  const styles = extractStyles(props, STYLE_LIST, {}, TEXT_PROP_MAP)
+  const { as, qa, block, styleName, ellipsis, nowrap, ...props } = allProps;
+  const styles = extractStyles(props, STYLE_LIST, {}, TEXT_PROP_MAP);
 
   return (
     <TextElement
@@ -97,30 +97,30 @@ const _Text = forwardRef(function Text(allProps: JengaTextProps, ref) {
       styles={styles}
       ref={ref}
     />
-  )
-})
+  );
+});
 
 const Text = Object.assign(_Text, {
   Minor: forwardRef(function MinorText(props: JengaTextProps, ref) {
-    return <_Text ref={ref} color="#minor" {...props} />
+    return <_Text ref={ref} color="#minor" {...props} />;
   }),
   Danger: forwardRef(function DangerText(props: JengaTextProps, ref) {
-    return <_Text role="alert" ref={ref} color="#danger-text" {...props} />
+    return <_Text role="alert" ref={ref} color="#danger-text" {...props} />;
   }),
   Success: forwardRef(function SuccessText(props: JengaTextProps, ref) {
-    return <_Text ref={ref} color="#success-text" {...props} />
+    return <_Text ref={ref} color="#success-text" {...props} />;
   }),
   Strong: forwardRef(function StrongText(props: JengaTextProps, ref) {
     return (
       <_Text as="strong" preset="strong" ref={ref} color="#dark" {...props} />
-    )
+    );
   }),
   Emphasis: forwardRef(function EmphasisText(props: JengaTextProps, ref) {
-    return <_Text as="em" preset="em" ref={ref} {...props} />
+    return <_Text as="em" preset="em" ref={ref} {...props} />;
   }),
   Selection: forwardRef(function SelectionText(props: JengaTextProps, ref) {
-    return <_Text ref={ref} color="#dark" fill="#note.30" {...props} />
+    return <_Text ref={ref} color="#dark" fill="#note.30" {...props} />;
   }),
-})
+});
 
-export { Text }
+export { Text };

@@ -1,23 +1,23 @@
-import { JengaTooltipTriggerProps, TooltipTrigger } from './TooltipTrigger'
-import { JengaTooltipProps, Tooltip } from './Tooltip'
-import { ReactNode, useEffect, useState } from 'react'
-import { Styles } from 'tastycss'
+import { JengaTooltipTriggerProps, TooltipTrigger } from './TooltipTrigger';
+import { JengaTooltipProps, Tooltip } from './Tooltip';
+import { ReactNode, useEffect, useState } from 'react';
+import { Styles } from 'tastycss';
 
 export interface JengaTooltipProviderProps
   extends Omit<JengaTooltipTriggerProps, 'children'> {
-  children: JengaTooltipTriggerProps['children'][0]
-  title?: ReactNode
-  tooltipStyles?: Styles
-  width?: JengaTooltipProps['width']
+  children: JengaTooltipTriggerProps['children'][0];
+  title?: ReactNode;
+  tooltipStyles?: Styles;
+  width?: JengaTooltipProps['width'];
 }
 
 function TooltipProvider(props: JengaTooltipProviderProps) {
-  const [rendered, setRendered] = useState(false)
-  const { title, children, tooltipStyles, width, ...otherProps } = props
+  const [rendered, setRendered] = useState(false);
+  const { title, children, tooltipStyles, width, ...otherProps } = props;
 
   useEffect(() => {
-    setRendered(true)
-  }, [])
+    setRendered(true);
+  }, []);
 
   return rendered ? (
     <TooltipTrigger {...otherProps}>
@@ -28,8 +28,8 @@ function TooltipProvider(props: JengaTooltipProviderProps) {
     </TooltipTrigger>
   ) : (
     <>children</>
-  )
+  );
 }
 
-let _TooltipProvider = TooltipProvider
-export { _TooltipProvider as TooltipProvider }
+let _TooltipProvider = TooltipProvider;
+export { _TooltipProvider as TooltipProvider };

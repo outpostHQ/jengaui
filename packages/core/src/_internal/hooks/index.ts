@@ -1,1 +1,1 @@
-export * from './use-deprecation-warning'
+export * from './use-deprecation-warning';

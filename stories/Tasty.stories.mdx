@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import {
   Button,
   Root,
@@ -9,8 +9,8 @@ import {
   Paragraph,
   Flow,
   Flex,
-} from '../index'
-import { StyledButton, GlobalStyledHeading } from './components/StyledButton'
+} from '../index';
+import { StyledButton, GlobalStyledHeading } from './components/StyledButton';
 
 <Meta title="Tasty API" />
 
@@ -19,7 +19,7 @@ import { StyledButton, GlobalStyledHeading } from './components/StyledButton'
 Let's look at styled API:
 
 ```typescript jsx
-import { tasty } from 'tastycss'
+import { tasty } from 'tastycss';
 
 const Element = tasty({
   /** The tag name of the element. */
@@ -42,7 +42,7 @@ const Element = tasty({
   role: 'article',
   /** The list of styles that can be provided by props */
   styleProps: ['align'],
-})
+});
 ```
 
 Now you can use this element inside your React App:
@@ -54,7 +54,7 @@ export default function Component({ title, children }) {
       <Heading>{title}</Heading>
       <Element>{children}</Element>
     </>
-  )
+  );
 }
 ```
 
@@ -72,20 +72,20 @@ const CustomElement = tasty(Element, {
   },
   /** Add more default properties/attributes */
   role: 'article',
-})
+});
 ```
 
 An example of styled component.
 
 ```typescript jsx
-import { Button, tasty } from '@jenga-dev/ui-kit'
+import { Button, tasty } from '@jenga-dev/ui-kit';
 
 const StyledButton = tasty(Button, {
   styles: {
     padding: '3x 6x',
     preset: 't1',
   },
-})
+});
 ```
 
 <Canvas>
@@ -99,7 +99,7 @@ const StyledButton = tasty(Button, {
 Use `tasty()` to define global styles for elements:
 
 ```typescript jsx
-import { tasty } from 'tastycss'
+import { tasty } from 'tastycss';
 
 const GlobalStyledHeading = tasty('div.myButton', {
   display: 'inline-block',
@@ -107,7 +107,7 @@ const GlobalStyledHeading = tasty('div.myButton', {
   preset: 't2',
   border: true,
   radius: true,
-})
+});
 ```
 
 The `div` is used only for demonstration purposes. Do not use `div`s as buttons!

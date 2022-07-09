@@ -4,11 +4,11 @@ import {
   useContext,
   useImperativeHandle,
   useRef,
-} from 'react'
-import { mergeProps, getOverlayTransitionCSS } from '@jenga-ui/utils'
-import { createDOMRef } from '@react-spectrum/utils'
-import { TooltipContext } from './context'
-import { useTooltip } from '@react-aria/tooltip'
+} from 'react';
+import { mergeProps, getOverlayTransitionCSS } from '@jenga-ui/utils';
+import { createDOMRef } from '@react-spectrum/utils';
+import { TooltipContext } from './context';
+import { useTooltip } from '@react-aria/tooltip';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -16,11 +16,11 @@ import {
   extractStyles,
   Styles,
   tasty,
-} from 'tastycss'
-import type { AriaTooltipProps } from '@react-types/tooltip'
-import { PlacementAxis } from '@jenga-ui/form'
-import styled from 'styled-components'
-import { DOMRefValue } from '@react-types/shared'
+} from 'tastycss';
+import type { AriaTooltipProps } from '@react-types/tooltip';
+import { PlacementAxis } from '@jenga-ui/form';
+import styled from 'styled-components';
+import { DOMRefValue } from '@react-types/shared';
 
 const TooltipElement = tasty({
   styles: {
@@ -38,7 +38,7 @@ const TooltipElement = tasty({
       material: 'auto',
     },
   },
-})
+});
 
 const TooltipTipElement = tasty({
   styles: {
@@ -76,7 +76,7 @@ const TooltipTipElement = tasty({
         'translate(.375x, (-.375x - 1px)) rotate(90deg)',
     },
   },
-})
+});
 
 const StyledTooltipElement = styled(TooltipElement)`
   ${(props) => {
@@ -84,23 +84,23 @@ const StyledTooltipElement = styled(TooltipElement)`
       placement: props?.['data-position'],
       minOffset: props?.['data-min-offset'],
       minScale: props?.['data-min-scale'],
-    })
+    });
   }}
-`
+`;
 
 export interface JengaTooltipProps
   extends BaseProps,
     ContainerStyleProps,
     AriaTooltipProps {
-  tipStyles?: Styles
-  showIcon?: boolean
-  placement?: PlacementAxis
-  isMaterial?: boolean
+  tipStyles?: Styles;
+  showIcon?: boolean;
+  placement?: PlacementAxis;
+  isMaterial?: boolean;
 }
 
 function Tooltip(
   props: JengaTooltipProps,
-  ref: ForwardedRef<DOMRefValue<HTMLDivElement>>
+  ref: ForwardedRef<DOMRefValue<HTMLDivElement>>,
 ) {
   let {
     ref: overlayRef,
@@ -110,13 +110,13 @@ function Tooltip(
     minOffset,
     minScale,
     ...tooltipProviderProps
-  } = useContext(TooltipContext)
+  } = useContext(TooltipContext);
 
-  let defaultRef = useRef<HTMLDivElement>(null)
+  let defaultRef = useRef<HTMLDivElement>(null);
 
-  const finalOverlayRef = overlayRef ?? defaultRef
+  const finalOverlayRef = overlayRef ?? defaultRef;
 
-  props = mergeProps(props, tooltipProviderProps)
+  props = mergeProps(props, tooltipProviderProps);
 
   let {
     placement = 'top',
@@ -125,21 +125,21 @@ function Tooltip(
     showIcon,
     isMaterial,
     ...otherProps
-  } = props
+  } = props;
 
-  const styles = extractStyles(otherProps, CONTAINER_STYLES)
+  const styles = extractStyles(otherProps, CONTAINER_STYLES);
 
-  let { tooltipProps } = useTooltip(props, state)
+  let { tooltipProps } = useTooltip(props, state);
 
   // Sync ref with overlayRef from context.
-  useImperativeHandle(ref, () => createDOMRef(finalOverlayRef))
+  useImperativeHandle(ref, () => createDOMRef(finalOverlayRef));
 
   if (typeof minOffset === 'number') {
-    minOffset = `${minOffset}px`
+    minOffset = `${minOffset}px`;
   }
 
   if (typeof minScale === 'number') {
-    minScale = String(minScale)
+    minScale = String(minScale);
   }
 
   return (
@@ -163,11 +163,11 @@ function Tooltip(
         {...arrowProps}
       />
     </StyledTooltipElement>
-  )
+  );
 }
 
 /**
  * Display container for Tooltip content. Has a directional arrow dependent on its placement.
  */
-let _Tooltip = forwardRef(Tooltip)
-export { _Tooltip as Tooltip }
+let _Tooltip = forwardRef(Tooltip);
+export { _Tooltip as Tooltip };

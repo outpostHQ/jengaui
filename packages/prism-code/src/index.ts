@@ -1,1 +1,1 @@
-export * from './PrismCode'
+export * from './PrismCode';

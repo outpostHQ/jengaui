@@ -1,4 +1,4 @@
-import { MutableRefObject, ReactNode, RefObject } from 'react'
+import { MutableRefObject, ReactNode, RefObject } from 'react';
 
 export interface PortalProps {
   /**
@@ -7,16 +7,16 @@ export interface PortalProps {
    *
    * @default null
    */
-  root?: MutableRefObject<HTMLElement | null> | RefObject<HTMLElement | null>
+  root?: MutableRefObject<HTMLElement | null> | RefObject<HTMLElement | null>;
   /**
    * Disables portal's API
    *
    * @default false
    */
-  isDisabled?: boolean
+  isDisabled?: boolean;
   /**
    * Callback, will be called after portal's children mounted
    */
-  onMount?: () => void
-  children?: ReactNode
+  onMount?: () => void;
+  children?: ReactNode;
 }

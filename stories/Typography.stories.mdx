@@ -1,5 +1,14 @@
-import { Meta, Canvas, Story } from '@storybook/addon-docs'
-import { Paragraph, Title, Text, Link, Flow, Root, Space, Card } from '../index'
+import { Meta, Canvas, Story } from '@storybook/addon-docs';
+import {
+  Paragraph,
+  Title,
+  Text,
+  Link,
+  Flow,
+  Root,
+  Space,
+  Card,
+} from '../index';
 
 <Meta title="Typography" />
 
@@ -63,7 +72,7 @@ Paragraphs with gaps between them.
 Use `!` prefix to open link in new tab.
 
 ```jsx
-;(
+(
   <Link to="https://jenga-uikit-storybook.netlify.app/">
     Open Jenga Cloud UI Kit
   </Link>
@@ -72,7 +81,7 @@ Use `!` prefix to open link in new tab.
     <Link to="!https://jenga-uikit-storybook.netlify.app/">
       Open Jenga Cloud UI Kit in new tab
     </Link>
-  )
+  );
 ```
 
 <Canvas>
@@ -89,8 +98,8 @@ Use `!` prefix to open link in new tab.
 Use `@` prefix to navigate to the new page without using the Router.
 
 ```jsx
-;<Link to="@">Reload this page</Link> |
-<Link to="@/">Move to the Main Page</Link>
+<Link to="@">Reload this page</Link> |
+<Link to="@/">Move to the Main Page</Link>;
 ```
 
 <Canvas>

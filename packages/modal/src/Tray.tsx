@@ -1,13 +1,13 @@
-import { useDOMRef } from '@react-spectrum/utils'
-import { useViewportSize } from '@react-aria/utils'
-import { Overlay } from './Overlay'
-import { forwardRef, useEffect, useRef, useState } from 'react'
-import { Underlay } from './Underlay'
-import { useModal, useOverlay, usePreventScroll } from '@react-aria/overlays'
-import { OVERLAY_WRAPPER_STYLES } from './Modal'
-import { BaseProps, Props, Styles, tasty } from 'tastycss'
-import { mergeProps } from '@jenga-ui/utils'
-import type { TrayProps } from '@react-types/overlays'
+import { useDOMRef } from '@react-spectrum/utils';
+import { useViewportSize } from '@react-aria/utils';
+import { Overlay } from './Overlay';
+import { forwardRef, useEffect, useRef, useState } from 'react';
+import { Underlay } from './Underlay';
+import { useModal, useOverlay, usePreventScroll } from '@react-aria/overlays';
+import { OVERLAY_WRAPPER_STYLES } from './Modal';
+import { BaseProps, Props, Styles, tasty } from 'tastycss';
+import { mergeProps } from '@jenga-ui/utils';
+import type { TrayProps } from '@react-types/overlays';
 
 const TrayWrapperElement = tasty({
   qa: 'TrayWrapper',
@@ -16,7 +16,7 @@ const TrayWrapperElement = tasty({
     placeContent: 'end center',
     placeItems: 'end center',
   },
-})
+});
 
 const TrayElement = tasty({
   styles: {
@@ -31,20 +31,20 @@ const TrayElement = tasty({
       open: '.9999',
     },
   },
-})
+});
 
 export interface JengaTrayProps extends TrayProps {
-  container?: HTMLElement
-  qa?: BaseProps['qa']
-  onClose?: (action?: string) => void
-  isFixedHeight?: boolean
-  isNonModal?: boolean
-  styles?: Styles
+  container?: HTMLElement;
+  qa?: BaseProps['qa'];
+  onClose?: (action?: string) => void;
+  isFixedHeight?: boolean;
+  isNonModal?: boolean;
+  styles?: Styles;
 }
 
 interface JengaTrayWrapperProps extends JengaTrayProps {
-  isOpen?: boolean
-  overlayProps?: Props
+  isOpen?: boolean;
+  overlayProps?: Props;
 }
 
 function Tray(props: JengaTrayProps, ref) {
@@ -56,13 +56,13 @@ function Tray(props: JengaTrayProps, ref) {
     isNonModal,
     styles,
     ...otherProps
-  } = props
-  let domRef = useDOMRef(ref)
+  } = props;
+  let domRef = useDOMRef(ref);
 
   let { overlayProps, underlayProps } = useOverlay(
     { ...props, isDismissable: true },
-    domRef
-  )
+    domRef,
+  );
 
   return (
     <Overlay {...otherProps}>
@@ -79,7 +79,7 @@ function Tray(props: JengaTrayProps, ref) {
         {children}
       </TrayWrapper>
     </Overlay>
-  )
+  );
 }
 
 let TrayWrapper = forwardRef(function (props: JengaTrayWrapperProps, ref) {
@@ -92,11 +92,11 @@ let TrayWrapper = forwardRef(function (props: JengaTrayWrapperProps, ref) {
     isNonModal,
     overlayProps,
     ...otherProps
-  } = props
-  usePreventScroll()
+  } = props;
+  usePreventScroll();
   let { modalProps } = useModal({
     isDisabled: isNonModal,
-  })
+  });
 
   // We need to measure the window's height in JS rather than using percentages in CSS
   // so that contents (e.g. menu) can inherit the max-height properly. Using percentages
@@ -105,13 +105,13 @@ let TrayWrapper = forwardRef(function (props: JengaTrayWrapperProps, ref) {
   // when the address bar/bottom toolbars show and hide on scroll and vh units are fixed.
   // Also, the visual viewport is smaller than the layout viewport when the virtual keyboard
   // is up, so use the VisualViewport API to ensure the tray is displayed above the keyboard.
-  let viewport = useViewportSize()
-  let [height, setHeight] = useState(viewport.height)
-  let timeoutRef = useRef<NodeJS.Timeout>()
+  let viewport = useViewportSize();
+  let [height, setHeight] = useState(viewport.height);
+  let timeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
+      clearTimeout(timeoutRef.current);
     }
 
     // When the height is decreasing, and the keyboard is visible
@@ -120,18 +120,18 @@ let TrayWrapper = forwardRef(function (props: JengaTrayWrapperProps, ref) {
     // so that there isn't an empty space under the tray briefly.
     if (viewport.height < height && viewport.height < window.innerHeight) {
       timeoutRef.current = setTimeout(() => {
-        setHeight(viewport.height)
-      }, 500)
+        setHeight(viewport.height);
+      }, 500);
     } else {
-      setHeight(viewport.height)
+      setHeight(viewport.height);
     }
-  }, [height, viewport.height])
+  }, [height, viewport.height]);
 
   let wrapperStyle = {
     '--jenga-visual-viewport-height': height + 'px',
-  }
+  };
 
-  let domProps = mergeProps(otherProps, overlayProps)
+  let domProps = mergeProps(otherProps, overlayProps);
 
   return (
     <TrayWrapperElement
@@ -154,8 +154,8 @@ let TrayWrapper = forwardRef(function (props: JengaTrayWrapperProps, ref) {
         {children}
       </TrayElement>
     </TrayWrapperElement>
-  )
-})
+  );
+});
 
-let _Tray = forwardRef(Tray)
-export { _Tray as Tray }
+let _Tray = forwardRef(Tray);
+export { _Tray as Tray };

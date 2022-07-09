@@ -1,13 +1,13 @@
-import { TOKENS } from './tokens'
-import { createGlobalStyle } from 'styled-components'
+import { TOKENS } from './tokens';
+import { createGlobalStyle } from 'styled-components';
 
 interface GlobalStylesProps {
-  bodyStyles?: { [key: string]: string }
-  fonts?: boolean
-  publicUrl?: string
-  font?: string
-  monospaceFont?: string
-  applyLegacyTokens?: boolean
+  bodyStyles?: { [key: string]: string };
+  fonts?: boolean;
+  publicUrl?: string;
+  font?: string;
+  monospaceFont?: string;
+  applyLegacyTokens?: boolean;
 }
 
 const BODY_STYLES = {
@@ -22,7 +22,7 @@ const BODY_STYLES = {
   'line-height': '20px',
   'letter-spacing': '0.02em',
   'font-weight': '400',
-}
+};
 
 const fontsProvider = ({ publicUrl = '' }) => `
   @font-face {
@@ -81,7 +81,7 @@ const fontsProvider = ({ publicUrl = '' }) => `
     src: url(${publicUrl}/fonts/JetBrainsMono-Bold.woff2) format('woff2'),
       url(${publicUrl}/fonts/JetBrainsMono-Bold.woff) format('woff');
   }
-`
+`;
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -89,17 +89,17 @@ export const GlobalStyles = createGlobalStyle`
       return applyLegacyTokens
         ? Object.entries(TOKENS)
             .map(([key, value]) => {
-              return `--${key}: ${value};`
+              return `--${key}: ${value};`;
             })
             .join('\n    ')
-        : ''
+        : '';
     }}
     ${({ bodyStyles }: GlobalStylesProps) => {
       return Object.entries({ ...BODY_STYLES, ...bodyStyles })
         .map(([key, value]) => {
-          return `${key}: ${value};`
+          return `${key}: ${value};`;
         })
-        .join('\n    ')
+        .join('\n    ');
     }}
   }
   html {
@@ -286,4 +286,4 @@ export const GlobalStyles = createGlobalStyle`
   .token.entity {
     cursor: help;
   }
-`
+`;

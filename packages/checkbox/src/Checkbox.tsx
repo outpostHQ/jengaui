@@ -1,10 +1,10 @@
-import { useFocusableRef } from '@react-spectrum/utils'
-import { forwardRef, useContext, useRef } from 'react'
-import type { AriaCheckboxProps } from '@react-types/checkbox'
-import { useCheckbox, useCheckboxGroupItem } from '@react-aria/checkbox'
-import { useHover } from '@react-aria/interactions'
-import { useToggleState } from '@react-stately/toggle'
-import { useProviderProps } from '@jenga-ui/providers'
+import { useFocusableRef } from '@react-spectrum/utils';
+import { forwardRef, useContext, useRef } from 'react';
+import type { AriaCheckboxProps } from '@react-types/checkbox';
+import { useCheckbox, useCheckboxGroupItem } from '@react-aria/checkbox';
+import { useHover } from '@react-aria/interactions';
+import { useToggleState } from '@react-stately/toggle';
+import { useProviderProps } from '@jenga-ui/providers';
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -14,13 +14,13 @@ import {
   OUTER_STYLES,
   Styles,
   tasty,
-} from 'tastycss'
+} from 'tastycss';
 import {
   useFocus,
   mergeProps,
   castNullableIsSelected,
   WithNullableSelected,
-} from '@jenga-ui/utils'
+} from '@jenga-ui/utils';
 import {
   useFormProps,
   FieldWrapper,
@@ -28,10 +28,10 @@ import {
   INLINE_LABEL_STYLES,
   LABEL_STYLES,
   FormFieldProps,
-} from '@jenga-ui/form'
-import { CheckboxGroup } from './CheckboxGroup'
-import { CheckboxGroupContext } from './context'
-import type { FocusableRef } from '@react-types/shared'
+} from '@jenga-ui/form';
+import { CheckboxGroup } from './CheckboxGroup';
+import { CheckboxGroupContext } from './context';
+import type { FocusableRef } from '@react-types/shared';
 
 export interface JengaCheckboxProps
   extends BaseProps,
@@ -45,12 +45,12 @@ const CheckOutlined = () => (
       fill="currentColor"
     />
   </svg>
-)
+);
 const IndeterminateOutline = () => (
   <svg width="9" height="3" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 .044v2.001l.026.025h8.063V.044H0z" fill="#fff" />
   </svg>
-)
+);
 
 const CheckboxWrapperElement = tasty({
   as: 'label',
@@ -64,7 +64,7 @@ const CheckboxWrapperElement = tasty({
     preset: 'default',
     cursor: 'pointer',
   },
-})
+});
 
 const CheckboxElement = tasty({
   qa: 'Checkbox',
@@ -96,18 +96,18 @@ const CheckboxElement = tasty({
     },
     transition: 'theme',
   },
-})
+});
 
 function Checkbox(
   props: WithNullableSelected<JengaCheckboxProps>,
-  ref: FocusableRef
+  ref: FocusableRef,
 ) {
-  props = castNullableIsSelected(props)
+  props = castNullableIsSelected(props);
 
-  let originalProps = props
+  let originalProps = props;
 
-  props = useProviderProps(props)
-  props = useFormProps(props)
+  props = useProviderProps(props);
+  props = useFormProps(props);
 
   let {
     qa,
@@ -131,36 +131,36 @@ function Checkbox(
     tooltip,
     isHidden,
     ...otherProps
-  } = props
+  } = props;
 
-  label = label || children
+  label = label || children;
 
   // Swap hooks depending on whether this checkbox is inside a CheckboxGroup.
   // This is a bit unorthodox. Typically, hooks cannot be called in a conditional,
   // but since the checkbox won't move in and out of a group, it should be safe.
-  let groupState = useContext(CheckboxGroupContext)
+  let groupState = useContext(CheckboxGroupContext);
 
-  let styles: Styles = extractStyles(props, OUTER_STYLES)
-  let inputStyles = extractStyles(props, BLOCK_STYLES)
+  let styles: Styles = extractStyles(props, OUTER_STYLES);
+  let inputStyles = extractStyles(props, BLOCK_STYLES);
 
   labelStyles = {
     ...(insideForm && !groupState ? LABEL_STYLES : INLINE_LABEL_STYLES),
     ...labelStyles,
-  }
+  };
 
   if (!insideForm) {
-    labelStyles.fontWeight = 400
+    labelStyles.fontWeight = 400;
   }
 
   if (insideForm && labelPosition === 'side') {
-    inputStyles.marginTop = '1x'
+    inputStyles.marginTop = '1x';
   }
 
-  let { isFocused, focusProps } = useFocus({ isDisabled }, true)
-  let { hoverProps, isHovered } = useHover({ isDisabled })
+  let { isFocused, focusProps } = useFocus({ isDisabled }, true);
+  let { hoverProps, isHovered } = useHover({ isDisabled });
 
-  let inputRef = useRef(null)
-  let domRef = useFocusableRef(ref, inputRef)
+  let inputRef = useRef(null);
+  let domRef = useFocusableRef(ref, inputRef);
 
   let { inputProps } = groupState // eslint-disable-next-line react-hooks/rules-of-hooks
     ? useCheckboxGroupItem(
@@ -175,24 +175,24 @@ function Checkbox(
           validationState: originalProps.validationState,
         },
         groupState,
-        inputRef
+        inputRef,
       ) // eslint-disable-next-line react-hooks/rules-of-hooks
-    : useCheckbox(props, useToggleState(props), inputRef)
+    : useCheckbox(props, useToggleState(props), inputRef);
 
-  let markIcon = isIndeterminate ? <IndeterminateOutline /> : <CheckOutlined />
+  let markIcon = isIndeterminate ? <IndeterminateOutline /> : <CheckOutlined />;
 
   if (groupState) {
     for (let key of ['isSelected', 'defaultSelected', 'isEmphasized']) {
       if (originalProps[key] != null) {
         console.warn(
-          `JengaUIKit: ${key} is unsupported on individual <Checkbox> elements within a <CheckboxGroup>. Please apply these props to the group instead.`
-        )
+          `JengaUIKit: ${key} is unsupported on individual <Checkbox> elements within a <CheckboxGroup>. Please apply these props to the group instead.`,
+        );
       }
     }
     if (props.value == null) {
       console.warn(
-        'JengaUIKit: A <Checkbox> element within a <CheckboxGroup> requires a `value` property.'
-      )
+        'JengaUIKit: A <Checkbox> element within a <CheckboxGroup> requires a `value` property.',
+      );
     }
   }
 
@@ -204,7 +204,7 @@ function Checkbox(
     disabled: isDisabled,
     hovered: isHovered,
     focused: isFocused,
-  }
+  };
 
   const checkboxField = (
     <CheckboxWrapperElement
@@ -221,7 +221,7 @@ function Checkbox(
         {markIcon}
       </CheckboxElement>
     </CheckboxWrapperElement>
-  )
+  );
 
   if (insideForm && !groupState) {
     return (
@@ -248,7 +248,7 @@ function Checkbox(
           ref: domRef,
         }}
       />
-    )
+    );
   }
 
   return (
@@ -275,19 +275,19 @@ function Checkbox(
         </Element>
       )}
     </CheckboxWrapperElement>
-  )
+  );
 }
 
 /**
  * Checkboxes allow users to select multiple items from a list of individual items,
  * or to mark one individual item as selected.
  */
-let _Checkbox = forwardRef(Checkbox)
+let _Checkbox = forwardRef(Checkbox);
 
-;(_Checkbox as any).jengaInputType = 'Checkbox'
+(_Checkbox as any).jengaInputType = 'Checkbox';
 let __Checkbox = Object.assign(
   _Checkbox as typeof _Checkbox & { Group: typeof CheckboxGroup },
-  { Group: CheckboxGroup }
-)
+  { Group: CheckboxGroup },
+);
 
-export { __Checkbox as Checkbox }
+export { __Checkbox as Checkbox };

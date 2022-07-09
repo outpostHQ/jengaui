@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const HiddenInput = styled.input`
   &&&&& {
@@ -22,4 +22,4 @@ export const HiddenInput = styled.input`
     height: 100%;
     cursor: pointer;
   }
-`
+`;
