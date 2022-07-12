@@ -30,5 +30,5 @@
     "**/node_modules",
     "**/*.stories.tsx"
   ],
-  "include": ["./src"]
+  "include": ["./packages/**/*"]
 }

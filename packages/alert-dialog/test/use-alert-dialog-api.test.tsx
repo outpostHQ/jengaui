@@ -3,6 +3,7 @@ import { act } from '@testing-library/react';
 import { renderWithRoot } from '../../core/test/render';
 import { useAlertDialogAPI } from '../src/AlertDialogApiProvider';
 import userEvent from '@testing-library/user-event';
+import React from 'react';
 
 describe('useAlertDialogApi', () => {
   let prevDialogPromise: Promise<string> | null = null;
