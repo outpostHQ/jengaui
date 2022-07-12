@@ -78,9 +78,7 @@
     }
   },
   "workspaces": [
-    "packages/*",
-    "packages/core/src/*",
-    "packages/atoms/src/*"
+    "packages/*"
   ],
   "resolutions": {
     "es5-ext": "0.10.53",

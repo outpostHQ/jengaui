@@ -1,0 +1,9 @@
+{
+    "node": "16.*",
+    "installCommand": "install",
+    "buildCommand": "build",
+    "sandboxes": ["new", "vanilla"],
+    "packages": [
+      "packages/Atoms"
+    ]
+  }
