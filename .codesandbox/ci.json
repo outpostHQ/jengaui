@@ -1,5 +1,5 @@
 {
-    "node": "16.16.0",
+    "node": "16",
     "sandboxes": ["new", "vanilla"],
     "packages": [
         "packages/active-zone",
