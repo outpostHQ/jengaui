@@ -1,11 +1,12 @@
 {
-    "node": "16.*",
+    "node": "16.16.0",
     "sandboxes": ["new", "vanilla"],
     "packages": [
         "packages/active-zone",
         "packages/alert",
         "packages/alert-dialog",
         "packages/avatar",
-        "packages/button"
+        "packages/button",
+        "packages/core"
     ]
   }
