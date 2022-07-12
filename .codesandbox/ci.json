@@ -1,5 +1,11 @@
 {
     "node": "16.*",
     "sandboxes": ["new", "vanilla"],
-    "packages": ["packages/*"]
+    "packages": [
+        "packages/active-zone",
+        "packages/alert",
+        "packages/alert-dialog",
+        "packages/avatar",
+        "packages/button"
+    ]
   }
