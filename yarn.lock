@@ -3908,6 +3908,7 @@ __metadata:
     node-abort-controller: ^3.0.1
     react-transition-group: ^4.4.2
     rimraf: ^3.0.2
+    tastycss: ^0.7.5
     typescript: ^4.5.4
     vite: ^2.9.14
   peerDependencies:

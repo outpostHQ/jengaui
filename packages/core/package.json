@@ -81,7 +81,8 @@
     "@jenga-ui/tooltip": "^0.1.1",
     "@jenga-ui/utils": "^0.1.1",
     "@react-aria/overlays": "^3.9.1",
-    "react-transition-group": "^4.4.2"
+    "react-transition-group": "^4.4.2",
+    "tastycss": "^0.7.5"
   },
   "publishConfig": {
     "access": "public"
