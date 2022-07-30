@@ -78,9 +78,7 @@
     }
   },
   "workspaces": [
-    "packages/*",
-    "examples/*",
-    "vite-ts"
+    "packages/*"
   ],
   "resolutions": {
     "es5-ext": "0.10.53",
