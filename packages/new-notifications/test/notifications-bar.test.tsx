@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
-import { renderWithRoot } from '../../../../../test';
-import { NotificationsBar } from '../NotificationsBar';
+import { renderWithRoot } from '../../core/test';
+import { NotificationsBar } from '../src/Bar/NotificationsBar';
 
 describe('<NotificationsBar />', () => {
   it.each(['Delete', 'Esc', 'Backspace'])(
