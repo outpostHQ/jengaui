@@ -21,7 +21,6 @@ export type NotificationsBarProps = {
 const NotificationsContainer = tasty({
   styles: {
     boxSizing: 'border-box',
-
     position: 'fixed',
     bottom: 'env(safe-area-inset-bottom, 0)',
     right: 'env(safe-area-inset-right, 0)',
@@ -32,14 +31,10 @@ const NotificationsContainer = tasty({
     padding: '2x',
     gap: '1x',
     /* to be sure that we're over the legacy modal */
-    zIndex: '1001',
+    zIndex: 1001,
     overflow: 'hidden',
     isolation: 'isolate',
     pointerEvents: 'none',
-
-    '@supports (-webkit-touch-callout: none)': {
-      height: '-webkit-fill-available max',
-    },
   },
 });
 
