@@ -44,10 +44,10 @@
     "@vitejs/plugin-react": "^1.3.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4",
-    "vite": "^2.9.14"
+    "vite": "^3.0.4"
   },
   "dependencies": {
-    "tastycss": "^0.7.5"
+    "tastycss": "^0.7.6"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

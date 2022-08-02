@@ -34,6 +34,9 @@ export interface JengaNotificationOptions {
   duration?: number;
 }
 
+/**
+ * @deprecated consider using `useNotificationsApi` instead
+ */
 export const notification: NotificationService = {
   root: null,
   defaultOptions: {

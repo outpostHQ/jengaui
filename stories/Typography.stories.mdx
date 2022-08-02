@@ -56,7 +56,7 @@ Paragraphs with gaps between them.
 
 <Canvas>
   <Story name="Text">
-    <Space flow="row wrap" preset="t3">
+    <Space flow="row wrap" preset="t3" placeItems="baseline">
       <Text>Normal label</Text>
       <Text.Success>Success label</Text.Success>
       <Text.Danger>Danger label</Text.Danger>
@@ -73,12 +73,12 @@ Use `!` prefix to open link in new tab.
 
 ```jsx
 (
-  <Link to="https://jenga-uikit-storybook.netlify.app/">
+  <Link to="https://cube-uikit-storybook.netlify.app/">
     Open Jenga Cloud UI Kit
   </Link>
 ) |
   (
-    <Link to="!https://jenga-uikit-storybook.netlify.app/">
+    <Link to="!https://cube-uikit-storybook.netlify.app/">
       Open Jenga Cloud UI Kit in new tab
     </Link>
   );
@@ -87,10 +87,10 @@ Use `!` prefix to open link in new tab.
 <Canvas>
   <Story name="External link">
     <Paragraph>
-      <Link to="https://jenga-uikit-storybook.netlify.app/">
+      <Link to="https://cube-uikit-storybook.netlify.app/">
         Open Jenga Cloud UI Kit
       </Link>
-      &nbsp; | <Link to="!https://jenga-uikit-storybook.netlify.app/">Open Jenga Cloud UI Kit in new tab</Link>
+      &nbsp; | <Link to="!https://cube-uikit-storybook.netlify.app/">Open Cube Cloud UI Kit in new tab</Link>
     </Paragraph>
   </Story>
 </Canvas>

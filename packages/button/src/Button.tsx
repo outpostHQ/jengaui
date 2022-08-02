@@ -17,7 +17,7 @@ export interface JengaButtonProps extends JengaActionProps {
     | 'clear'
     | 'outline'
     | 'neutral'
-    | string;
+    | (string & {});
   size?: 'small' | 'default' | 'large' | (string & {});
 }
 

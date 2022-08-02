@@ -14,6 +14,7 @@ import { ModalProvider } from '@react-aria/overlays';
 import { StyleSheetManager } from 'styled-components';
 import { TOKENS } from './tokens';
 import { AlertDialogApiProvider } from '@jenga-ui/alert-dialog';
+import { NotificationsProvider } from '@jenga-ui/new-notifications';
 
 const RootElement = tasty({
   id: 'jenga-ui-kit-root',
@@ -87,7 +88,9 @@ export const Root = (allProps: JengaRootProps) => {
           />
           <ModalProvider>
             <PortalProvider value={ref}>
-              <AlertDialogApiProvider>{children}</AlertDialogApiProvider>
+              <NotificationsProvider rootRef={ref}>
+                <AlertDialogApiProvider>{children}</AlertDialogApiProvider>
+              </NotificationsProvider>
             </PortalProvider>
           </ModalProvider>
         </RootElement>
