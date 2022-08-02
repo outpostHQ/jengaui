@@ -29,7 +29,7 @@
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.5",
     "swc-loader": "^0.2.3",
-    "tastycss": "^0.7.6"
+    "tastycss": "^0.7.7"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.3",

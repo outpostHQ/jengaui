@@ -57,7 +57,7 @@
     "@react-spectrum/utils": "^3.7.2",
     "@react-stately/checkbox": "^3.2.0",
     "@react-stately/toggle": "^3.4.0",
-    "tastycss": "^0.7.6"
+    "tastycss": "^0.7.7"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

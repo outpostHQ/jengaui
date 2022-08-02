@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "tastycss": "^0.7.6",
+    "tastycss": "^0.7.7",
     "tiny-invariant": "^1.2.0"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
