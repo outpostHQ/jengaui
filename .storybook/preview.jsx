@@ -1,31 +1,13 @@
-import isChromatic from 'chromatic/isChromatic';
-import { config } from 'react-transition-group';
-import { DocsContainer } from '@storybook/addon-docs';
-import { Root } from '@jenga-ui/core';
-import { configure } from '@storybook/testing-library';
-
-configure({ testIdAttribute: 'data-qa', asyncUtilTimeout: 10000 });
-
-if (isChromatic()) {
-  // disabling transitions
-  config.disabled = true;
-}
+import React from 'react';
+import { Root } from '../packages/core/src/Root';
 
 export const parameters = {
-  docs: {
-    container: ({ children, context }) => (
-      <DocsContainer context={context}>
-        <Root>{children}</Root>
-      </DocsContainer>
-    ),
-  },
   actions: { argTypesRegex: '^on[A-Z].*' },
-  backgrounds: {
-    default: 'transparent',
-    values: [
-      { name: 'transparent', value: 'transparent' },
-      { name: 'gray', value: 'rgba(243,243,250, 1)' },
-    ],
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
   },
 };
 
@@ -36,3 +18,8 @@ export const decorators = [
     </Root>
   ),
 ];
+
+export default {
+  parameters,
+  decorators,
+};

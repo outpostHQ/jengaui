@@ -10,7 +10,7 @@ import { JengaNotificationProps } from '../src/types';
 import { useNotificationsApi } from '../src/hooks';
 import { NotificationsList } from '../src/NotificationsList';
 import { NotificationsDialog, NotificationsDialogTrigger } from '../src/Dialog';
-import { CloudLogo } from '../../other/CloudLogo/CloudLogo';
+import { CloudLogo } from '../src/CloudLogo';
 import { Flex } from '@jenga-ui/layout';
 import { Dialog, DialogTrigger } from '@jenga-ui/dialog';
 import { Paragraph, Header, Content, Footer, Title } from '@jenga-ui/content';
