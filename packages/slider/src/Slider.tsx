@@ -14,6 +14,7 @@ import { useCombinedRefs } from '@jenga-ui/utils';
 export const Slider = forwardRef((props: JengaSliderProps, ref) => {
   props = useProviderProps(props);
   let {
+    length = '150px',
     labelPosition = 'top',
     formatOptions,
     minValue = 0,
@@ -50,6 +51,7 @@ export const Slider = forwardRef((props: JengaSliderProps, ref) => {
       {...filterBaseProps(props)}
       mods={props.mods}
       styles={props.styles}
+      labelPosition={labelPosition}
     >
       {props.label && (
         <LabelContainer mods={props.mods}>
@@ -57,7 +59,13 @@ export const Slider = forwardRef((props: JengaSliderProps, ref) => {
           <output {...outputProps}>{state.getThumbValueLabel(0)}</output>
         </LabelContainer>
       )}
-      <Track {...trackProps} mods={props.mods} ref={trackRef}>
+      <Track
+        {...trackProps}
+        mods={props.mods}
+        ref={trackRef}
+        sliderOrientation={state.orientation}
+        length={length}
+      >
         <SliderThumb index={0} state={state} trackRef={trackRef} />
       </Track>
     </SliderWrapper>

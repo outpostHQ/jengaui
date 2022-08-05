@@ -51,6 +51,7 @@ export const RangeSlider = forwardRef((props: JengaSliderProps, ref) => {
       {...filterBaseProps(props)}
       mods={props.mods}
       styles={props.styles}
+      labelPosition={labelPosition}
     >
       {props.label && (
         <LabelContainer mods={props.mods}>
@@ -60,7 +61,13 @@ export const RangeSlider = forwardRef((props: JengaSliderProps, ref) => {
           </output>
         </LabelContainer>
       )}
-      <Track {...trackProps} mods={props.mods} ref={trackRef}>
+      <Track
+        {...trackProps}
+        mods={props.mods}
+        ref={trackRef}
+        sliderOrientation={state.orientation}
+        length={length}
+      >
         <SliderThumb index={0} state={state} trackRef={trackRef} />
         <SliderThumb index={1} state={state} trackRef={trackRef} />
       </Track>

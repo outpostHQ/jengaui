@@ -1,6 +1,10 @@
-import { tasty } from 'tastycss';
+import { forwardRef, ReactNode } from 'react';
+import { DOMAttributes } from '@react-types/shared';
+import { AriaSliderProps } from 'react-aria';
+import { BaseProps, tasty } from 'tastycss';
+import { JengaSliderProps } from './types';
 
-export const Track = tasty({
+export const TrackBase = tasty({
   styles: {
     '&:before': {
       content: 'attr(x)',
@@ -35,3 +39,30 @@ export const Track = tasty({
     },
   },
 });
+const StyesFromLength = (length, sliderOrientation) => {
+  return sliderOrientation === 'vertical'
+    ? { height: length }
+    : { width: length };
+};
+export const Track = forwardRef(
+  (
+    props: BaseProps &
+      DOMAttributes & {
+        sliderOrientation: 'vertical' | 'horizontal';
+        length: string;
+      },
+    ref,
+  ) => {
+    const { length, sliderOrientation, styles, children, ...otherProps } =
+      props;
+    return (
+      <TrackBase
+        ref={ref}
+        styles={{ ...StyesFromLength(length, sliderOrientation), ...styles }}
+        {...otherProps}
+      >
+        {children}
+      </TrackBase>
+    );
+  },
+);
