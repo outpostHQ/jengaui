@@ -4439,7 +4439,7 @@ __metadata:
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@internationalized/number": ^3.1.1
-    "@jenga-ui/tooltip": "workspace:packages/tooltip"
+    "@jenga-ui/providers": "workspace:packages/providers"
     "@jenga-ui/utils": "workspace:packages/utils"
     "@react-aria/focus": ^3.7.0
     "@react-aria/i18n": ^3.5.1
@@ -4448,6 +4448,7 @@ __metadata:
     "@react-aria/utils": ^3.13.2
     "@react-aria/visually-hidden": ^3.4.0
     "@react-stately/slider": ^3.2.0
+    "@react-types/shared": ^3.14.0
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     "@vitejs/plugin-react": ^1.3.2
