@@ -1,6 +1,4 @@
-import { ReactNode } from 'react';
 import { Styles, tasty } from 'tastycss';
-import { JengaSliderProps } from './types';
 
 export const StylesBasedOnLabelPos = {
   top: { flexDirection: 'column' },

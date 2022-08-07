@@ -12,7 +12,7 @@ const ThumbBase = tasty({
     },
     outline: {
       '': 'none',
-      focused: '#purple-03.45',
+      focused: '5px #purple-03.45',
     },
     borderRadius: '50%',
     top: {
@@ -26,7 +26,7 @@ const ThumbBase = tasty({
   },
 });
 export function SliderThumb(props) {
-  let { state, trackRef, index } = props;
+  let { state, trackRef, index, thumbSize = '20px' } = props;
   let inputRef = useRef<HTMLInputElement>(null);
   let { thumbProps, inputProps, isDragging, isDisabled } = useSliderThumb(
     {
@@ -38,6 +38,7 @@ export function SliderThumb(props) {
   );
 
   let { focusProps, isFocused } = useFocus({ isDisabled: isDisabled }, true);
+  console.log(thumbSize);
   return (
     <ThumbBase
       {...thumbProps}
@@ -48,6 +49,7 @@ export function SliderThumb(props) {
         focused: isFocused,
         dragging: isDragging,
       }}
+      styles={{ height: thumbSize, width: thumbSize }}
     >
       <VisuallyHidden>
         <input ref={inputRef} {...mergeProps(inputProps, focusProps)} />
