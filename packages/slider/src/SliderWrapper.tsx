@@ -33,7 +33,7 @@ export const SliderWrapper = (props) => {
     ...StylesFromLength(length, orientation),
     ...styles,
   };
-  console.log(labelPosition, StylesBasedOnLabelPos[labelPosition], newStyles);
+  // console.log(labelPosition, StylesBasedOnLabelPos[labelPosition], newStyles);
   return (
     <SliderWrapperBase {...otherProps} styles={newStyles}>
       {children}

@@ -1,14 +1,23 @@
-import { useRef } from 'react';
-import { mergeProps, useSliderThumb, VisuallyHidden } from 'react-aria';
-import { useFocus } from '@jenga-ui/utils';
+import { forwardRef, useRef } from 'react';
+import {
+  mergeProps,
+  SliderThumbAria,
+  useSliderThumb,
+  VisuallyHidden,
+} from 'react-aria';
+import { useCombinedRefs, useFocus } from '@jenga-ui/utils';
 import { tasty } from 'tastycss';
+import { JengaSliderThumbProps } from './types';
+import { useProviderProps } from '@jenga-ui/providers';
 
 const ThumbBase = tasty({
   styles: {
+    display: 'grid',
+    placeItems: 'center',
     fill: {
       '': '#primary',
       dragging: '#purple.9',
-      disabled: '#light-grey.60',
+      disabled: '#BCBCBC',
     },
     outline: {
       '': 'none',
@@ -25,9 +34,10 @@ const ThumbBase = tasty({
     height: '20px',
   },
 });
-export function SliderThumb(props) {
-  let { state, trackRef, index, thumbSize = '20px' } = props;
-  let inputRef = useRef<HTMLInputElement>(null);
+export const SliderThumb = forwardRef((props: JengaSliderThumbProps, ref) => {
+  props = useProviderProps(props);
+  let { state, trackRef, index, icon, thumbSize = '20px' } = props;
+  let inputRef = useCombinedRefs(ref);
   let { thumbProps, inputProps, isDragging, isDisabled } = useSliderThumb(
     {
       index,
@@ -38,22 +48,23 @@ export function SliderThumb(props) {
   );
 
   let { focusProps, isFocused } = useFocus({ isDisabled: isDisabled }, true);
-  console.log(thumbSize);
+  console.log(isDisabled);
   return (
     <ThumbBase
       {...thumbProps}
       mods={{
         horizontal: state.orientation === 'horizontal',
         vertical: state.orientation === 'vertical',
-        disabled: props.isDisabled,
+        disabled: isDisabled,
         focused: isFocused,
         dragging: isDragging,
       }}
       styles={{ height: thumbSize, width: thumbSize }}
     >
+      {icon}
       <VisuallyHidden>
         <input ref={inputRef} {...mergeProps(inputProps, focusProps)} />
       </VisuallyHidden>
     </ThumbBase>
   );
-}
+});

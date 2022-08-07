@@ -2,26 +2,26 @@ import { forwardRef } from 'react';
 import { DOMAttributes } from '@react-types/shared';
 import { BaseProps, tasty } from 'tastycss';
 import { Flex } from '@jenga-ui/layout';
-import { Block } from '@jenga-ui/core';
+import { Block, useProviderProps } from '@jenga-ui/core';
 
 const addPixels = (a: string, b: string) =>
   parseInt(a.replace(/px/, '')) + parseInt(b.replace(/px/, '')) + 'px';
+
 export const TrackBase = tasty({
   styles: {
     height: {
-      horizontal: '3px',
+      horizontal: '4px',
     },
     width: {
-      vertical: '3px',
+      vertical: '4px',
     },
     fill: {
       '': '#primary',
-      disabled: '#light-grey.09',
+      disabled: '#BCBCBC',
     },
   },
 });
 const StyesFromLength = (length, sliderOrientation) => {
-  console.log(length);
   return sliderOrientation === 'vertical'
     ? { height: length }
     : { width: length };
@@ -32,12 +32,13 @@ export const Track = forwardRef(
     props: BaseProps &
       DOMAttributes & {
         sliderOrientation: 'vertical' | 'horizontal';
-        sliderLength: string;
+        sliderLength: string | string[];
         thumbSize: string;
         fillPercentage: [number, number];
       },
     ref,
   ) => {
+    props = useProviderProps(props);
     const {
       sliderLength,
       thumbSize,
@@ -47,13 +48,19 @@ export const Track = forwardRef(
       children,
       ...otherProps
     } = props;
+
+    const getContainerLength = (sliderLength, thumbSize) => {
+      if (Array.isArray(sliderLength)) {
+        return sliderLength.map((len) => addPixels(len, thumbSize));
+      } else return addPixels(sliderLength, thumbSize);
+    };
     return (
       <Flex
         alignItems={'center'}
         justifyContent={'center'}
         styles={{
           ...StyesFromLength(
-            addPixels(sliderLength, thumbSize),
+            getContainerLength(sliderLength, thumbSize),
             sliderOrientation,
           ),
           ...StyesFromLength(
@@ -85,7 +92,7 @@ const StepMark = tasty(Block, {
   styles: {
     fill: {
       '': '#primary.05',
-      disabled: '#light-grey',
+      disabled: '#BCBCBC',
     },
     width: '6px',
     height: '6px',
