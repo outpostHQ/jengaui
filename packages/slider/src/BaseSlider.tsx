@@ -24,8 +24,10 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
     maxValue = 100,
     showOutputs = true,
     defaultValue,
+    step = 1,
     isDisabled = false,
     thumbIcon = null,
+    discrete = false,
     ...otherProps
   } = props;
 
@@ -67,6 +69,7 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
     minValue,
     maxValue,
     defaultValue,
+    step,
   });
 
   let { groupProps, trackProps, labelProps, outputProps } = useSlider(
@@ -108,6 +111,7 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
         state={state}
         mods={mods}
         withoutOutputs={!showOutputs}
+        {...outputProps}
       >
         <Track
           {...trackProps}
@@ -116,11 +120,15 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
           sliderOrientation={state.orientation}
           sliderLength={sliderLength}
           thumbSize={newThumbSize}
+          minValue={minValue}
+          maxValue={maxValue}
+          step={step}
           fillPercentage={
             thumbs === 1
               ? [0, state.getThumbPercent(0)]
               : [state.getThumbPercent(0), state.getThumbPercent(1)]
           }
+          discrete={discrete}
         >
           <SliderThumb
             index={0}

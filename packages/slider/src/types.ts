@@ -14,6 +14,7 @@ export interface JengaBaseSliderProps
   labelPosition?: 'top' | 'right' | 'bottom' | 'left';
   thumbSize?: 'small' | 'medium' | 'large' | string;
   thumbIcon?: ReactNode;
+  discrete?: boolean;
 }
 export type JengaSliderProps = Omit<JengaBaseSliderProps, 'thumbs'>;
 export type JengaSliderThumbProps = {

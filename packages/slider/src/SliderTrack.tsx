@@ -27,15 +27,22 @@ export const Track = forwardRef(
   (
     props: BaseProps &
       DOMAttributes & {
-        sliderOrientation: 'vertical' | 'horizontal';
+        minValue?: number;
+        maxValue?: number;
+        step?: number;
+        sliderOrientation?: 'vertical' | 'horizontal';
         sliderLength: string | string[];
-        thumbSize: string;
-        fillPercentage: [number, number];
+        thumbSize?: string;
+        fillPercentage?: [number, number];
+        discrete?: boolean;
       },
     ref,
   ) => {
     props = useProviderProps(props);
     const {
+      minValue = 0,
+      maxValue = 100,
+      step = 1,
       sliderLength,
       thumbSize,
       fillPercentage = [0, 0],
@@ -44,6 +51,7 @@ export const Track = forwardRef(
       theme = 'default',
       mods,
       children,
+      discrete = false,
       ...otherProps
     } = props;
     console.log(theme);
@@ -106,6 +114,18 @@ export const Track = forwardRef(
           }}
           {...otherProps}
         >
+          {discrete ? (
+            <DescreteMarks
+              minValue={minValue}
+              maxValue={maxValue}
+              step={step}
+              mods={{
+                ...mods,
+                default: theme === 'default',
+                danger: theme === 'danger',
+              }}
+            />
+          ) : null}
           {children}
         </TrackBase>
       </Flex>
@@ -116,20 +136,40 @@ export const Track = forwardRef(
 const StepMark = tasty(Block, {
   styles: {
     fill: {
-      '': '#primary.05',
+      '': '#121212',
       disabled: '#BCBCBC',
     },
-    width: '6px',
-    height: '6px',
+    width: '4px',
+    height: '4px',
     borderRadius: '50%',
   },
 });
-const DescreteMarks = (step, minValue, maxValue) => {
-  <Flex
-    alignItems="center"
-    justifyContent="space-evenly"
-    styles={{ zIndex: 0 }}
-  >
-    {}
-  </Flex>;
+const DescreteMarks = (props) => {
+  let { step, minValue, maxValue, mods } = props;
+  const n = (maxValue - minValue) * step;
+  console.log(n);
+  return (
+    <Flex
+      alignItems="center"
+      justifyContent="space-evenly"
+      styles={{
+        zIndex: 0,
+        flexDirection: {
+          horizontal: 'row',
+          vertical: 'column',
+        },
+        width: {
+          horizontal: '100%',
+        },
+        height: {
+          vertical: '100%',
+        },
+      }}
+      mods={mods}
+    >
+      {[...Array(n - 1)].map((e, i) => (
+        <StepMark key={i} />
+      ))}
+    </Flex>
+  );
 };
