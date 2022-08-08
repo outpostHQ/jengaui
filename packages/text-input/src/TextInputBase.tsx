@@ -13,7 +13,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { useFormProps, FormFieldProps, FieldWrapper } from '@jenga-ui/form';
+import { useFormProps } from '@jenga-ui/form';
 import { useHover } from '@react-aria/interactions';
 import { useProviderProps } from '@jenga-ui/providers';
 import {
@@ -31,6 +31,7 @@ import {
 } from 'tastycss';
 import { useFocus, mergeProps } from '@jenga-ui/utils';
 import { Prefix, Suffix, Space } from '@jenga-ui/layout';
+import { FieldWrapper, FormFieldProps } from '@jenga-ui/form';
 import { Block } from '@jenga-ui/core';
 import type { AriaTextFieldProps } from '@react-types/textfield';
 
@@ -279,6 +280,7 @@ function TextInputBase(props: JengaTextInputBaseProps, ref) {
         autoFocus={autoFocus}
         data-size={size}
         styles={inputStyles}
+        isDisabled={isDisabled}
       />
       <Prefix
         onWidthChange={setPrefixWidth}

@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "clipboard-copy": "^4.0.1",
-    "tastycss": "^0.7.7"
+    "tastycss": "^0.7.9"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

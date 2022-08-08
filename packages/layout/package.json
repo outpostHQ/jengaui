@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@jenga-ui/utils": "^0.1.1",
-    "tastycss": "^0.7.7"
+    "tastycss": "^0.7.9"
   },
   "publishConfig": {
     "access": "public"

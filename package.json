@@ -29,17 +29,17 @@
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.5",
     "swc-loader": "^0.2.3",
-    "tastycss": "^0.7.7"
+    "tastycss": "^0.7.9"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-docs": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-interactions": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-docs": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
     "@storybook/builder-vite": "^0.2.2",
     "@storybook/jest": "^0.0.10",
-    "@storybook/react": "^6.5.9",
+    "@storybook/react": "^6.5.10",
     "@storybook/test-runner": "^0.5.0",
     "@storybook/testing-library": "^0.0.13",
     "@swc/core": "^1.2.148",
@@ -55,7 +55,7 @@
     "@typescript-eslint/parser": "^5.8.1",
     "@vitejs/plugin-react": "^2.0.0",
     "bytes": "^3.1.2",
-    "chromatic": "^6.7.0",
+    "chromatic": "^6.7.3",
     "dedent": "^0.7.0",
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
@@ -81,16 +81,18 @@
     }
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "testi",
+    "testii"
   ],
   "resolutions": {
     "es5-ext": "0.10.53",
     "prettier": "2.5.1"
   },
   "browserslist": [
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Safari major versions"
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
   ],
   "lint-staged": {
     "*.js": "eslint --cache --fix",

@@ -52,7 +52,7 @@
     "@react-aria/numberfield": "^3.3.0",
     "@react-stately/numberfield": "^3.2.0",
     "@react-types/numberfield": "^3.3.2",
-    "tastycss": "^0.7.7"
+    "tastycss": "^0.7.9"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

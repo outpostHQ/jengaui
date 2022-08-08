@@ -2,12 +2,15 @@ import { ReactChild, ReactFragment, useMemo } from 'react';
 import { isElement, isFragment } from 'react-is';
 import { useNotificationsApi } from '@jenga-ui/new-notifications';
 import type { JengaToastsApiProps, JengaToastsApiToastCallback } from './types';
-import { JengaToastsApiToastShortcuts } from './types';
+import {
+  JengaToastsApiToastAction,
+  JengaToastsApiToastShortcuts,
+} from './types';
 
 export function useToastsApi() {
   const { notify, update, remove } = useNotificationsApi();
 
-  const toast = useMemo(
+  const toast: JengaToastsApiToastAction = useMemo(
     () =>
       Object.assign<JengaToastsApiToastCallback, JengaToastsApiToastShortcuts>(
         (props) =>
@@ -34,7 +37,7 @@ function unwrapProps(props: JengaToastsApiProps | ReactChild | ReactFragment) {
       ? {
           isDismissible: props.duration !== null,
           duration: 5_000,
-          ...(props as JengaToastsApiProps),
+          ...props,
         }
       : { description: props, isDismissible: true, duration: 5_000 }),
   };

@@ -50,7 +50,7 @@
     "@ant-design/icons": "^4.7.0",
     "@react-aria/utils": "^3.13.2",
     "@react-types/dialog": "^3.4.2",
-    "tastycss": "^0.7.7",
+    "tastycss": "^0.7.9",
     "tiny-invariant": "^1.2.0"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",

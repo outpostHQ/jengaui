@@ -44,7 +44,6 @@ const Transition = styled.div`
   transition-property: height, opacity, margin-top, margin-bottom;
   transition-duration: ${TRANSITION_TIMEOUT}ms;
   transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
-
   &.${CSS_TRANSITION_CLASS_NAME} {
     &-enter {
       height: 0;

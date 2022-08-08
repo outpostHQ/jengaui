@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { useEvent } from '@jenga-ui/core';
 import { JengaNotifyApiPropsWithID } from '../types';
-import { NotificationsContext } from '../NotificationsContext/index';
+import { NotificationsContext } from '../NotificationsContext';
 
 export function useNotificationsObserver(
   callback: (notification: JengaNotifyApiPropsWithID) => void,
