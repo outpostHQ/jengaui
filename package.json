@@ -81,8 +81,7 @@
     }
   },
   "workspaces": [
-    "packages/*",
-    "sltest"
+    "packages/*"
   ],
   "resolutions": {
     "es5-ext": "0.10.53",
