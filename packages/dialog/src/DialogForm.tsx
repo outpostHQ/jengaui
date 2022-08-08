@@ -1,7 +1,7 @@
 import { Dialog, JengaDialogProps } from './Dialog';
 import { Title, Content, Header } from '@jenga-ui/content';
 import { JengaFormProps, Form, useForm, FieldTypes } from '@jenga-ui/form';
-import { Submit, Button, JengaButtonProps } from '@jenga-ui/Button';
+import { Submit, Button, JengaButtonProps } from '@jenga-ui/button';
 import { ButtonGroup } from '@jenga-ui/button-group';
 import { useDialogContext } from './context';
 
