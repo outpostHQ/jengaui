@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import invariant from 'tiny-invariant';
-import { NotificationsContext } from '../NotificationsContext/index';
+import { NotificationsContext } from '../NotificationsContext';
 
 export function useNotificationsApi() {
   const context = useContext(NotificationsContext);

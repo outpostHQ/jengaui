@@ -5,7 +5,7 @@ import { Card, JengaCardProps } from '@jenga-ui/card';
 import { Styles, tasty } from 'tastycss';
 import { JengaPrismCodeProps, PrismCode } from '@jenga-ui/prism-code';
 import { TooltipTrigger, Tooltip } from '@jenga-ui/tooltip';
-import { useNotificationsApi } from '../../new-notifications/src/hooks/use-notifications-api';
+import { useNotificationsApi } from '@jenga-ui/new-notifications';
 import { useToastsApi } from '@jenga-ui/toast';
 
 const ActionElement = tasty(Action, {

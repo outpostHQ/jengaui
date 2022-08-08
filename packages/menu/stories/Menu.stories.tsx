@@ -4,13 +4,17 @@ import {
   CheckCircleFilled,
   MoreOutlined,
 } from '@ant-design/icons';
-import { Menu, MenuTrigger } from '../src';
-import { Button } from '@jenga-ui/button';
-import { Flex, Space } from '@jenga-ui/layout';
+import { Menu, MenuTrigger } from '../src/index';
 import { Text } from '@jenga-ui/content';
+import { Flex, Space } from '@jenga-ui/layout';
+import { Button } from '@jenga-ui/button';
+import { AlertDialog } from '@jenga-ui/alert-dialog';
+import { DialogContainer } from '@jenga-ui/dialog';
 import { Root } from '@jenga-ui/core';
 import { baseProps } from '../../../stories/lists/baseProps';
 import { action } from '@storybook/addon-actions';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 export default {
   title: 'Pickers/Menu',
@@ -82,6 +86,52 @@ export const Default = ({ ...props }) => {
       </Space>
     </Root>
   );
+};
+
+export const InsideModal = () => {
+  return (
+    <DialogContainer>
+      <AlertDialog
+        content={
+          <MenuTrigger>
+            <Button
+              size="small"
+              icon={<MoreOutlined />}
+              data-qa="contextMenuButton"
+              aria-label="Open Context Menu"
+            />
+            <Menu
+              data-qa="contextMenuList"
+              id="menu"
+              width="220px"
+              selectionMode="multiple"
+            >
+              <Menu.Item key="red" postfix="Ctr+C" onPress={action('Ctr+C')}>
+                Copy
+              </Menu.Item>
+              <Menu.Item key="orange" postfix="Ctr+V" onPress={action('Ctr+C')}>
+                Paste
+              </Menu.Item>
+              <Menu.Item key="yellow" postfix="Ctr+X" onPress={action('Ctr+C')}>
+                Cut
+              </Menu.Item>
+            </Menu>
+          </MenuTrigger>
+        }
+      />
+    </DialogContainer>
+  );
+};
+
+InsideModal.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const button = await canvas.findByTestId('contextMenuButton');
+
+  await userEvent.click(button);
+
+  const list = await canvas.findByTestId('contextMenuList');
+
+  await waitFor(() => expect(list).toBeInTheDocument());
 };
 
 export const Sections = (props) => {

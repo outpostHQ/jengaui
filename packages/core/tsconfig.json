@@ -28,5 +28,5 @@
     "**/node_modules",
     "**/*.stories.tsx"
   ],
-  "include": ["index.ts", "src/**/*"]
+  "include": ["index.ts", "src"]
 }

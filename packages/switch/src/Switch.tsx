@@ -16,32 +16,36 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import { Base } from '@jenga-ui/core';
 import {
   useFocus,
   mergeProps,
   castNullableIsSelected,
   WithNullableSelected,
 } from '@jenga-ui/utils';
-import { LoadingOutlined } from '@ant-design/icons';
 import {
-  HiddenInput,
-  useFormProps,
-  FieldWrapper,
-  FormFieldProps,
   INLINE_LABEL_STYLES,
   LABEL_STYLES,
+  useFormProps,
+  HiddenInput,
+  FieldWrapper,
+  FormFieldProps,
 } from '@jenga-ui/form';
+import { LoadingOutlined } from '@ant-design/icons';
 import type { AriaSwitchProps } from '@react-types/switch';
 
-const BaseSwitchWrapperElement = tasty({
+const SwitchWrapperElement = tasty({
   qa: 'SwitchWrapper',
   styles: {
     position: 'relative',
+    margin: {
+      '': 0,
+      'inside-form & side-label': '1x top',
+    },
   },
 });
 
-const SwitchWrapperElement = tasty({
+const SwitchLabelElement = tasty({
+  as: 'label',
   qa: 'SwitchWrapper',
   styles: {
     position: 'relative',
@@ -76,33 +80,29 @@ const SwitchElement = tasty({
     },
     transition: 'theme',
     cursor: 'pointer',
-    marginTop: {
-      '': null,
-      'inside-form & side-label': '-3px',
-    },
     placeSelf: {
       '': null,
       'inside-form & side-label': 'start',
     },
-  },
-});
 
-const SwitchThumbElement = tasty({
-  'aria-hidden': 'true',
-  styles: {
-    position: 'absolute',
-    width: '2.5x',
-    height: '2.5x',
-    radius: 'round',
-    fill: 'currentColor',
-    shadow: '0px 2px 4px #dark.20;',
-    top: '.25x',
-    left: {
-      '': '.25x',
-      checked: '2.5x',
+    Thumb: {
+      position: 'absolute',
+      width: '2.5x',
+      height: '2.5x',
+      radius: 'round',
+      fill: {
+        '': 'currentColor',
+        disabled: '#white.5',
+      },
+      shadow: '0px 2px 4px #dark.20;',
+      top: '.25x',
+      left: {
+        '': '.25x',
+        checked: '2.5x',
+      },
+      transition: 'left, theme',
+      cursor: 'pointer',
     },
-    transition: 'left',
-    cursor: 'pointer',
   },
 });
 
@@ -112,7 +112,6 @@ export interface JengaSwitchProps
     BlockStyleProps,
     FormFieldProps,
     AriaSwitchProps {
-  thumbStyles?: Styles;
   inputStyles?: Styles;
   isLoading?: boolean;
 }
@@ -131,7 +130,6 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
     extra,
     labelProps,
     labelStyles,
-    thumbStyles,
     isLoading,
     insideForm,
     validationState,
@@ -167,32 +165,26 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   let { inputProps } = useSwitch(props, useToggleState(props), inputRef);
 
+  const mods = {
+    'inside-form': insideForm,
+    'side-label': labelPosition === 'side',
+    checked: inputProps.checked,
+    disabled: isDisabled,
+    hovered: isHovered,
+    focused: isFocused,
+  };
+
   const switchField = (
-    <BaseSwitchWrapperElement qa={qa || 'Switch'}>
+    <SwitchWrapperElement qa={qa || 'Switch'} mods={mods}>
       <HiddenInput
         data-qa="HiddenInput"
         {...mergeProps(inputProps, focusProps)}
         ref={inputRef}
       />
-      <SwitchElement
-        mods={{
-          'inside-form': insideForm,
-          'side-label': labelPosition === 'side',
-          checked: inputProps.checked,
-          disabled: isDisabled,
-          hovered: isHovered,
-          focused: isFocused,
-        }}
-        styles={inputStyles}
-      >
-        <SwitchThumbElement
-          styles={thumbStyles}
-          mods={{
-            checked: inputProps.checked,
-          }}
-        />
+      <SwitchElement mods={mods} styles={inputStyles}>
+        <div data-element="Thumb" aria-hidden="true" />
       </SwitchElement>
-    </BaseSwitchWrapperElement>
+    </SwitchWrapperElement>
   );
 
   if (insideForm) {
@@ -220,9 +212,9 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
   }
 
   return (
-    <SwitchWrapperElement
-      as="label"
+    <SwitchLabelElement
       styles={styles}
+      mods={mods}
       {...hoverProps}
       {...filterBaseProps(otherProps)}
       ref={domRef}
@@ -245,7 +237,7 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
           ) : null}
         </Element>
       )}
-    </SwitchWrapperElement>
+    </SwitchLabelElement>
   );
 }
 

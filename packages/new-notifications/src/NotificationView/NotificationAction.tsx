@@ -15,7 +15,17 @@ export type NotificationActionProps = PropsWithChildren<{
   Omit<JengaButtonProps, 'type' | 'size' | 'mods'>;
 
 const Action = tasty(Button, {
-  color: { '': '#purple-text', primary: '#purple-text', secondary: '#dark-03' },
+  styles: {
+    display: 'block',
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+    color: {
+      '': '#purple-text',
+      primary: '#purple-text',
+      secondary: '#dark-03',
+    },
+  },
 });
 
 export function NotificationAction(

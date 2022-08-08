@@ -39,11 +39,13 @@ const Template: StoryFn<typeof Form> = (args) => {
         }}
         defaultValues={{
           text: 'some',
+          text2: 'some',
           checkbox: true,
           select: {
             one: 'three',
           },
           combobox: 'two',
+          combobox2: 'two',
           checkboxGroup: ['one', 'three'],
           radioGroup: 'three',
           switch: false,
@@ -66,6 +68,12 @@ const Template: StoryFn<typeof Form> = (args) => {
           ]}
         >
           <TextInput label="Text field" />
+        </Field>
+        <Field name="text2" label="Text disabled" isDisabled>
+          <TextInput />
+        </Field>
+        <Field name="text2" label="Text loading" isLoading>
+          <TextInput />
         </Field>
         <Field label="Custom field" tooltip="What?">
           <Block>Test</Block>
@@ -102,6 +110,13 @@ const Template: StoryFn<typeof Form> = (args) => {
           </Select>
         </Field>
         <Field name="combobox" label="ComboBox field">
+          <ComboBox>
+            <Item key="one">One</Item>
+            <Item key="two">Two</Item>
+            <Item key="three">Three</Item>
+          </ComboBox>
+        </Field>
+        <Field name="combobox2" isLoading label="ComboBox Loading field">
           <ComboBox>
             <Item key="one">One</Item>
             <Item key="two">Two</Item>

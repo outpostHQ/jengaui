@@ -1,14 +1,13 @@
-import { useImperativeHandle } from 'react';
 import { Dialog, JengaDialogProps } from './Dialog';
 import { Title, Content, Header } from '@jenga-ui/content';
-import { JengaFormProps, Form, useForm } from '@jenga-ui/form';
-import { Button, JengaButtonProps, Submit } from '@jenga-ui/button';
+import { JengaFormProps, Form, useForm, FieldTypes } from '@jenga-ui/form';
+import { Submit, Button, JengaButtonProps } from '@jenga-ui/Button';
 import { ButtonGroup } from '@jenga-ui/button-group';
 import { useDialogContext } from './context';
 
-export interface JengaDialogFormProps
+export interface JengaDialogFormProps<T extends FieldTypes = FieldTypes>
   extends JengaDialogProps,
-    Omit<JengaFormProps, 'role'> {
+    Omit<JengaFormProps<T>, 'role'> {
   /** Whether the submit button has a `danger` theme */
   danger?: boolean;
   /** Properties for submit button. Use `label` to change text. */
@@ -31,7 +30,9 @@ export interface JengaDialogFormRef {
 /**
  * DialogForms are a specific type of Dialog. They contain forms to fill.
  */
-export const DialogForm = function DialogForm(props: JengaDialogFormProps) {
+export const DialogForm = function DialogForm<
+  T extends FieldTypes = FieldTypes,
+>(props: JengaDialogFormProps<T>) {
   let {
     qa,
     name,
@@ -86,7 +87,7 @@ export const DialogForm = function DialogForm(props: JengaDialogFormProps) {
         <Title>{title}</Title>
       </Header>
       <Content>
-        <Form
+        <Form<T>
           qa={qa || 'DialogForm'}
           form={form}
           name={name}

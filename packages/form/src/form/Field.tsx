@@ -17,6 +17,7 @@ import {
 import { JengaFormInstance } from './useForm';
 import { FieldWrapper } from '../FieldWrapper';
 import { Styles } from 'tastycss';
+import { FieldTypes } from './types';
 
 const ID_MAP = {};
 
@@ -97,7 +98,8 @@ function getValueProps(type, value?, onChange?) {
   };
 }
 
-export interface JengaFieldProps extends OptionalFieldBaseProps {
+export interface JengaFieldProps<T extends FieldTypes>
+  extends OptionalFieldBaseProps {
   /** The initial value of the input. */
   defaultValue?: any;
   /** The type of the input. `Input`, `Checkbox`, RadioGroup`, `Select`, `ComboBox` etc... */
@@ -112,7 +114,7 @@ export interface JengaFieldProps extends OptionalFieldBaseProps {
   /** Validation rules */
   rules?: ValidationRule[];
   /** The form instance */
-  form?: JengaFormInstance;
+  form?: JengaFormInstance<T>;
   /** The message for the field or text for the error */
   message?: string;
   /** The description for the field */
@@ -123,16 +125,21 @@ export interface JengaFieldProps extends OptionalFieldBaseProps {
   name?: string[] | string;
   /** Whether the field is hidden. */
   isHidden?: boolean;
+  /** Whether the field is disabled. */
+  isDisabled?: boolean;
+  /** Whether the field is loading. */
+  isLoading?: boolean;
   styles?: Styles;
   labelPosition?: LabelPosition;
   labelStyles?: Styles;
 }
 
-interface JengaFullFieldProps extends JengaFieldProps {
-  form: JengaFormInstance;
+interface JengaFullFieldProps<T extends FieldTypes> extends JengaFieldProps<T> {
+  form: JengaFormInstance<T>;
 }
 
-interface JengaReplaceFieldProps extends JengaFieldProps {
+interface JengaReplaceFieldProps<T extends FieldTypes>
+  extends JengaFieldProps<T> {
   isRequired?: boolean;
   onChange?: (any) => void;
   onSelectionChange?: (any) => void;
@@ -141,8 +148,8 @@ interface JengaReplaceFieldProps extends JengaFieldProps {
   labelPosition?: LabelPosition;
 }
 
-export function Field(allProps: JengaFieldProps) {
-  const props: JengaFullFieldProps = useFormProps(allProps);
+export function Field<T extends FieldTypes>(allProps: JengaFieldProps<T>) {
+  const props: JengaFullFieldProps<T> = useFormProps(allProps);
 
   let {
     defaultValue,
@@ -164,6 +171,8 @@ export function Field(allProps: JengaFieldProps) {
     description,
     tooltip,
     isHidden,
+    isDisabled,
+    isLoading,
     styles,
     labelPosition,
     labelStyles,
@@ -227,6 +236,7 @@ export function Field(allProps: JengaFieldProps) {
     return (
       <FieldWrapper
         isHidden={isHidden}
+        isDisabled={isDisabled}
         validationState={validationState}
         necessityIndicator={necessityIndicator}
         necessityLabel={necessityLabel}
@@ -316,7 +326,7 @@ export function Field(allProps: JengaFieldProps) {
     }
   }
 
-  const newProps: JengaReplaceFieldProps = {
+  const newProps: JengaReplaceFieldProps<T> = {
     id: fieldId,
     name: fieldName,
     onBlur() {
@@ -363,6 +373,14 @@ export function Field(allProps: JengaFieldProps) {
 
   if (isHidden != null) {
     newProps.isHidden = isHidden;
+  }
+
+  if (isDisabled != null) {
+    newProps.isDisabled = isDisabled;
+  }
+
+  if (isLoading != null) {
+    newProps.isLoading = isLoading;
   }
 
   if (field && field.errors && field.errors.length) {
