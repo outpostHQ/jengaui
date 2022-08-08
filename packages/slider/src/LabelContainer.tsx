@@ -5,5 +5,6 @@ export const LabelContainer = tasty(Block, {
   styles: {
     display: 'flex',
     justifyContent: 'space-between',
+    fontSize: '1.1em',
   },
 });

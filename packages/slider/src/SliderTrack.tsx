@@ -15,10 +15,6 @@ export const TrackBase = tasty({
     width: {
       vertical: '4px',
     },
-    fill: {
-      '': '#primary',
-      disabled: '#BCBCBC',
-    },
   },
 });
 const StyesFromLength = (length, sliderOrientation) => {
@@ -45,15 +41,18 @@ export const Track = forwardRef(
       fillPercentage = [0, 0],
       sliderOrientation,
       styles,
+      theme = 'default',
+      mods,
       children,
       ...otherProps
     } = props;
-
+    console.log(theme);
     const getContainerLength = (sliderLength, thumbSize) => {
       if (Array.isArray(sliderLength)) {
         return sliderLength.map((len) => addPixels(len, thumbSize));
       } else return addPixels(sliderLength, thumbSize);
     };
+
     return (
       <Flex
         alignItems={'center'}
@@ -72,12 +71,38 @@ export const Track = forwardRef(
       >
         <TrackBase
           ref={ref}
+          mods={{
+            ...mods,
+            default: theme === 'default',
+            danger: theme === 'danger',
+          }}
           styles={{
             ...StyesFromLength(sliderLength, sliderOrientation),
-            //   background: `linear-gradient(90deg, #primary ${
-            //     fillPercentage[0] * 100
-            //   }%,
+            // backgroundImage: `linear-gradient(90deg, #primary ${
+            //   fillPercentage[0] * 100
+            // }%,
             //      #FF0000 ${fillPercentage[1] * 100}%)`,
+
+            backgroundImage: {
+              '': `linear-gradient(
+              to ${sliderOrientation === 'vertical' ? 'top' : 'right'},
+              rgba(var(--purple-color-rgb), 0.5) 0%,
+              rgba(var(--purple-color-rgb), 0.5) ${fillPercentage[0] * 100}%,
+              rgba(var(--purple-color-rgb), 1) ${fillPercentage[0] * 100}%,
+              rgba(var(--purple-color-rgb), 1) ${fillPercentage[1] * 100}%,
+              rgba(var(--purple-color-rgb), 0.5) ${fillPercentage[1] * 100}%,
+              rgba(var(--purple-color-rgb), 0.5) 100%)`,
+              default: `linear-gradient(
+                to ${sliderOrientation === 'vertical' ? 'top' : 'right'},
+                rgba(var(--purple-color-rgb), 0.5) 0%,
+                rgba(var(--purple-color-rgb), 0.5) ${fillPercentage[0] * 100}%,
+                rgba(var(--purple-color-rgb), 1) ${fillPercentage[0] * 100}%,
+                rgba(var(--purple-color-rgb), 1) ${fillPercentage[1] * 100}%,
+                rgba(var(--purple-color-rgb), 0.5) ${fillPercentage[1] * 100}%,
+                rgba(var(--purple-color-rgb), 0.5) 100%)`,
+              danger:
+                'linear-gradient(90deg, rgba(var(--danger-color-rgb), 0.5), rgba(var(--danger-color-rgb),1) )',
+            },
           }}
           {...otherProps}
         >
@@ -108,38 +133,3 @@ const DescreteMarks = (step, minValue, maxValue) => {
     {}
   </Flex>;
 };
-// export const TrackBase = tasty({
-//   styles: {
-//     '&:before': {
-//       content: 'attr(x)',
-//       display: 'block',
-//       position: 'absolute',
-//       fill: { '': '#primary', disabled: '#light-grey.60' },
-//       height: {
-//         horizontal: '3px',
-//         vertical: '100%',
-//       },
-//       width: {
-//         horizontal: '100%',
-//         vertical: '3px',
-//       },
-//       top: {
-//         '': 'initial',
-//         horizontal: '50%',
-//       },
-//       left: {
-//         '': 'initial',
-//         vertical: '50%',
-//       },
-//     },
-//     height: {
-//       '': '20px',
-//       horizontal: '30px',
-//       vertical: '100%',
-//     },
-//     width: {
-//       horizontal: '100%',
-//       vertical: '30px',
-//     },
-//   },
-// });

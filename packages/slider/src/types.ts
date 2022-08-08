@@ -2,10 +2,11 @@ import { AriaSliderProps } from 'react-aria';
 import { NumberFormatOptions } from '@internationalized/number';
 import { BasePropsWithoutChildren } from 'tastycss';
 import { SliderState } from '@react-stately/slider';
-import { MutableRefObject, ReactNode, Ref } from 'react';
+import { MutableRefObject, ReactNode } from 'react';
 export interface JengaBaseSliderProps
   extends AriaSliderProps,
     BasePropsWithoutChildren {
+  showOutputs?: boolean;
   isDisabled?: boolean;
   thumbs?: 1 | 2;
   sliderLength?: string | string[];
@@ -21,4 +22,5 @@ export type JengaSliderThumbProps = {
   trackRef: MutableRefObject<Element>;
   thumbSize: string;
   icon?: ReactNode;
+  theme?: 'default' | 'danger' | string;
 };

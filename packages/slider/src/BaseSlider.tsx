@@ -1,5 +1,5 @@
 import { useSliderState } from '@react-stately/slider';
-import { forwardRef, useRef } from 'react';
+import { forwardRef } from 'react';
 import { useSlider } from '@react-aria/slider';
 import { useNumberFormatter } from '@react-aria/i18n';
 import { Track } from './SliderTrack';
@@ -8,9 +8,9 @@ import { LabelContainer } from './LabelContainer';
 import { SliderWrapper } from './SliderWrapper';
 import { JengaBaseSliderProps } from './types';
 import { filterBaseProps } from 'tastycss';
-import { Tooltip, TooltipProvider, TooltipTrigger } from '@jenga-ui/tooltip';
 import { useProviderProps } from '@jenga-ui/providers';
 import { useCombinedRefs } from '@jenga-ui/utils';
+import { WithOutputs } from './SliderOutputs';
 
 const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
   props = useProviderProps(props);
@@ -22,6 +22,7 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
     thumbs = 1,
     minValue = 0,
     maxValue = 100,
+    showOutputs = true,
     defaultValue,
     isDisabled = false,
     thumbIcon = null,
@@ -83,30 +84,31 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
     state.setThumbEditable(0, false);
     if (thumbs === 2) state.setThumbEditable(1, false);
   }
+
   return (
-    <TooltipTrigger placement="left">
-      <SliderWrapper
-        {...groupProps}
-        {...filterBaseProps(props)}
+    <SliderWrapper
+      {...groupProps}
+      {...filterBaseProps(props)}
+      mods={mods}
+      styles={props.styles}
+      labelPosition={labelPosition}
+    >
+      {props.label && (
+        <LabelContainer
+          mods={mods}
+          // styles={{
+          //   paddingInline: parseInt(newThumbSize.replace(/px/, '')) / 2 + 'px',
+          // for aligning label with slider  }}
+        >
+          <label {...labelProps}>{props.label}</label>
+        </LabelContainer>
+      )}
+      <WithOutputs
+        thumbs={thumbs}
+        state={state}
         mods={mods}
-        styles={props.styles}
-        labelPosition={labelPosition}
+        withoutOutputs={!showOutputs}
       >
-        {props.label && (
-          <LabelContainer
-            mods={mods}
-            // styles={{
-            //   paddingInline: parseInt(newThumbSize.replace(/px/, '')) / 2 + 'px',
-            // for aligning slider with label}}
-          >
-            <label {...labelProps}>{props.label}</label>
-            {/* <output {...outputProps}>
-            {thumbs === 1
-              ? state.getThumbValueLabel(0)
-              : `${state.getThumbValueLabel(0)}-${state.getThumbValueLabel(1)}`}
-          </output> */}
-          </LabelContainer>
-        )}
         <Track
           {...trackProps}
           mods={mods}
@@ -115,7 +117,7 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
           sliderLength={sliderLength}
           thumbSize={newThumbSize}
           fillPercentage={
-            thumbs === 2
+            thumbs === 1
               ? [0, state.getThumbPercent(0)]
               : [state.getThumbPercent(0), state.getThumbPercent(1)]
           }
@@ -127,7 +129,6 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
             thumbSize={newThumbSize}
             icon={thumbIcon}
           />
-
           {thumbs === 2 ? (
             <SliderThumb
               index={1}
@@ -137,9 +138,8 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
             />
           ) : null}
         </Track>
-      </SliderWrapper>
-      <Tooltip>ToolTipOpen</Tooltip>
-    </TooltipTrigger>
+      </WithOutputs>
+    </SliderWrapper>
   );
 });
 export default BaseSlider;
