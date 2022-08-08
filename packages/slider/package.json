@@ -64,7 +64,7 @@
     "@react-stately/slider": "^3.2.0",
     "@react-types/shared": "^3.14.0",
     "react-aria": "^3.18.0",
-    "tastycss": "^0.7.5"
+    "tastycss": "^0.7.9"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {
