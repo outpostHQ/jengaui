@@ -8,10 +8,13 @@ type JengaSliderOutputProps = OutputHTMLAttributes<HTMLOutputElement> & {
   state: SliderState;
 };
 
-const StylesFromStringLength = (minValue, maxValue, sliderOrientation) => {
+const StylesFromState = (state: SliderState) => {
   const length =
-    Math.max((minValue + '').length, (maxValue + '').length) + 'ch';
-  return sliderOrientation === 'vertical'
+    Math.max(
+      state.getFormattedValue(state.getThumbMaxValue(0)).length,
+      state.getFormattedValue(state.getThumbMinValue(0)).length,
+    ) + 'ch';
+  return state.orientation === 'vertical'
     ? { width: length }
     : { width: length };
 };
@@ -19,13 +22,7 @@ const StylesFromStringLength = (minValue, maxValue, sliderOrientation) => {
 export const TrackPrefixOutput = (props: JengaSliderOutputProps) => {
   const { thumbs, state, ...outputProps } = props;
   return (
-    <Block
-      styles={StylesFromStringLength(
-        state.getThumbMinValue(0),
-        state.getThumbMaxValue(0),
-        state.orientation,
-      )}
-    >
+    <Block styles={StylesFromState(state)}>
       <output {...outputProps}>{state.getThumbValueLabel(0)}</output>
     </Block>
   );
@@ -34,13 +31,7 @@ export const TrackPrefixOutput = (props: JengaSliderOutputProps) => {
 export const TrackSuffixOutput = (props: JengaSliderOutputProps) => {
   const { thumbs, state, ...outputProps } = props;
   return (
-    <Block
-      styles={StylesFromStringLength(
-        state.getThumbMinValue(0),
-        state.getThumbMaxValue(0),
-        state.orientation,
-      )}
-    >
+    <Block styles={StylesFromState(state)}>
       {thumbs === 1 ? (
         <output {...outputProps}>
           {state.getFormattedValue(state.getThumbMaxValue(0))}

@@ -108,8 +108,9 @@ export const Track = forwardRef(
                 rgba(var(--purple-color-rgb), 1) ${fillPercentage[1] * 100}%,
                 rgba(var(--purple-color-rgb), 0.5) ${fillPercentage[1] * 100}%,
                 rgba(var(--purple-color-rgb), 0.5) 100%)`,
-              danger:
-                'linear-gradient(90deg, rgba(var(--danger-color-rgb), 0.5), rgba(var(--danger-color-rgb),1) )',
+              danger: `linear-gradient(to ${
+                sliderOrientation === 'vertical' ? 'top' : 'right'
+              }, rgba(var(--danger-color-rgb), 0.5), rgba(var(--danger-color-rgb),1) )`,
             },
           }}
           {...otherProps}

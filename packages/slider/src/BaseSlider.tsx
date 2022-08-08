@@ -28,6 +28,7 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
     isDisabled = false,
     thumbIcon = null,
     discrete = false,
+    theme = 'default',
     ...otherProps
   } = props;
 
@@ -123,6 +124,7 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
           minValue={minValue}
           maxValue={maxValue}
           step={step}
+          theme={theme}
           fillPercentage={
             thumbs === 1
               ? [0, state.getThumbPercent(0)]
@@ -136,6 +138,7 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
             trackRef={trackRef}
             thumbSize={newThumbSize}
             icon={thumbIcon}
+            theme={theme}
           />
           {thumbs === 2 ? (
             <SliderThumb
@@ -143,6 +146,7 @@ const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {
               state={state}
               trackRef={trackRef}
               thumbSize={newThumbSize}
+              theme={theme}
             />
           ) : null}
         </Track>
