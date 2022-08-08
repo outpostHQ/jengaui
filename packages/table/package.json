@@ -47,17 +47,6 @@
     "vite": "^3.0.4"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "@react-aria/button": "^3.6.0",
-    "@react-aria/focus": "^3.7.0",
-    "@react-aria/interactions": "^3.10.0",
-    "@react-aria/listbox": "^3.6.0",
-    "@react-aria/overlays": "^3.10.0",
-    "@react-aria/select": "^3.8.0",
-    "@react-stately/collections": "^3.4.2",
-    "@react-stately/select": "^3.3.0",
-    "@react-types/select": "^3.6.2",
-    "@react-types/shared": "^3.14.0",
     "tastycss": "^0.7.9"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
