@@ -4438,6 +4438,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jenga-ui/table@workspace:packages/table"
   dependencies:
+    "@jenga-ui/checkbox": "workspace:packages/checkbox"
+    "@jenga-ui/utils": "workspace:packages/utils"
+    "@react-aria/table": ^3.4.0
+    "@react-aria/visually-hidden": ^3.4.0
+    "@react-stately/table": ^3.3.0
+    "@react-types/grid": ^3.1.2
+    "@react-types/shared": ^3.14.0
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     "@vitejs/plugin-react": ^2.0.0
@@ -6393,6 +6400,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/grid@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@react-aria/grid@npm:3.4.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/focus": ^3.7.0
+    "@react-aria/i18n": ^3.5.0
+    "@react-aria/interactions": ^3.10.0
+    "@react-aria/live-announcer": ^3.1.1
+    "@react-aria/selection": ^3.10.0
+    "@react-aria/utils": ^3.13.2
+    "@react-stately/grid": ^3.3.0
+    "@react-stately/selection": ^3.10.2
+    "@react-stately/virtualizer": ^3.2.2
+    "@react-types/checkbox": ^3.3.2
+    "@react-types/grid": ^3.1.2
+    "@react-types/shared": ^3.14.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 01ca84495dbcb85a15412fd913957b13adb78a4a3238bd1dd73b5be6545086128b7117ad61dad39d4945fff244e63d0c482dfab04a3f6f46f05613ad6e6eb97a
+  languageName: node
+  linkType: hard
+
 "@react-aria/i18n@npm:^3.5.0, @react-aria/i18n@npm:^3.5.1":
   version: 3.5.1
   resolution: "@react-aria/i18n@npm:3.5.1"
@@ -6656,6 +6687,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/table@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@react-aria/table@npm:3.4.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/focus": ^3.7.0
+    "@react-aria/grid": ^3.4.0
+    "@react-aria/i18n": ^3.5.0
+    "@react-aria/interactions": ^3.10.0
+    "@react-aria/live-announcer": ^3.1.1
+    "@react-aria/selection": ^3.10.0
+    "@react-aria/utils": ^3.13.2
+    "@react-stately/table": ^3.3.0
+    "@react-stately/virtualizer": ^3.2.2
+    "@react-types/checkbox": ^3.3.2
+    "@react-types/grid": ^3.1.2
+    "@react-types/shared": ^3.14.0
+    "@react-types/table": ^3.3.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: f2fdc4a0916a9ef2de1e0d7d61d1f4a55c4f4aa7b84d2631635d34ec4588f024d785f679468c3ce980a9d6a4f4815b406dacc54a14a64f44d10287f01a11e4df
+  languageName: node
+  linkType: hard
+
 "@react-aria/textfield@npm:^3.7.0":
   version: 3.7.0
   resolution: "@react-aria/textfield@npm:3.7.0"
@@ -6796,6 +6852,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-stately/grid@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@react-stately/grid@npm:3.3.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-stately/selection": ^3.10.2
+    "@react-types/grid": ^3.1.2
+    "@react-types/shared": ^3.14.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: df087c3e53dea163f86b995a4731deb3da484431d7d809830cbb30282a1b5959bd624eb7809cdb95a572a6f027312e725937aaf157b9c4fc47af066c173ce10d
+  languageName: node
+  linkType: hard
+
 "@react-stately/layout@npm:^3.6.0":
   version: 3.6.0
   resolution: "@react-stately/layout@npm:3.6.0"
@@ -6925,6 +6995,23 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: fa13f472f2a0c311338c965035c6b5db9510620ff1c2ef230150beb55d3ac36948585016a090d30a6a606e0a0c15268639f6209e7da720d428f88dc7016bb4fa
+  languageName: node
+  linkType: hard
+
+"@react-stately/table@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@react-stately/table@npm:3.3.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-stately/collections": ^3.4.2
+    "@react-stately/grid": ^3.3.0
+    "@react-stately/selection": ^3.10.2
+    "@react-types/grid": ^3.1.2
+    "@react-types/shared": ^3.14.0
+    "@react-types/table": ^3.3.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: d8bbbc6ef344e7cb8e097aeb58eff49451e2f0364d79c95ef528328dc7f870d6d247428370bc3389c0a11deff117032a209273f51c6abc0ba40fd39dabe0c074
   languageName: node
   linkType: hard
 

@@ -47,6 +47,13 @@
     "vite": "^3.0.4"
   },
   "dependencies": {
+    "@jenga-ui/checkbox": "workspace:packages/checkbox",
+    "@jenga-ui/utils": "workspace:packages/utils",
+    "@react-aria/table": "^3.4.0",
+    "@react-aria/visually-hidden": "^3.4.0",
+    "@react-stately/table": "^3.3.0",
+    "@react-types/grid": "^3.1.2",
+    "@react-types/shared": "^3.14.0",
     "tastycss": "^0.7.9"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
