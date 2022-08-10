@@ -7,6 +7,7 @@ import { JengaTableElementBaseProps } from './types';
 export function TableRow(props: JengaTableElementBaseProps) {
   let { state, item, children, styles = {}, ...otherProps } = props;
   let ref = useRef(null);
+  console.log(item.key);
   let isSelected = state.selectionManager.isSelected(item.key);
   let { rowProps, isPressed } = useTableRow(
     {
@@ -21,12 +22,12 @@ export function TableRow(props: JengaTableElementBaseProps) {
     <Tr
       {...otherProps}
       styles={{
-        background: isSelected
-          ? 'blueviolet'
+        fill: isSelected
+          ? '#primary.20'
           : isPressed
-          ? 'var(--spectrum-global-color-gray-400)'
+          ? '#primary.10'
           : index % 2
-          ? 'var(--spectrum-alias-highlight-hover)'
+          ? 'none'
           : 'none',
         color: isSelected ? 'white' : '',
         outline: isFocused ? '2px solid #primary' : 'none',

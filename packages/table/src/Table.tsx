@@ -25,18 +25,29 @@ export function Table(props) {
     cellPadding = '10px',
     selectionMode,
     selectionBehavior,
+    // defaultSelectedKeys,
+    // disallowEmptySelection,
+    ...otherProps
   } = props;
   let state = useTableState({
     ...props,
     showSelectionCheckboxes:
       selectionMode === 'multiple' && selectionBehavior !== 'replace',
   });
+  console.log(state.selectionManager.selectedKeys);
 
   let ref = useRef(null);
   let { gridProps } = useTable(props, state, ref);
 
   return (
-    <TableBase {...gridProps} ref={ref} styles={{ borderCollapse: 'separate' }}>
+    <TableBase
+      {...gridProps}
+      ref={ref}
+      styles={{ borderCollapse: 'separate' }}
+      selectionMode={selectionMode}
+      selectionBehavior={selectionBehavior}
+      {...otherProps}
+    >
       <TableHeadSection state={state} cellPadding={cellPadding} />
       <TableBodySection state={state} cellPadding={cellPadding} />
     </TableBase>
