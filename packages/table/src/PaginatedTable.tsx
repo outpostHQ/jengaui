@@ -1,7 +1,7 @@
 import { useTable } from '@react-aria/table';
 import { useTableState } from '@react-stately/table';
 import { useRef, useState } from 'react';
-import { TableBase } from './TableElementsBase';
+import { TableBase, TableWrapper } from './TableElementsBase';
 import { TableHeadSection } from './TableHeadSection';
 import { TableBodySection } from './TableBodySection';
 import { Flex } from '@jenga-ui/layout';
@@ -108,7 +108,7 @@ export function PaginatedTable(props) {
   console.log(pages);
   const [currentPage, setCurrentPage] = useState(defaultPage || 1);
   return (
-    <>
+    <TableWrapper>
       <TablePaginationHeader
         pages={pages}
         setPage={setCurrentPage}
@@ -117,15 +117,26 @@ export function PaginatedTable(props) {
       <TableBase
         {...gridProps}
         ref={ref}
-        styles={{ borderCollapse: 'separate' }}
+        styles={{ borderCollapse: 'collapse', width: '100%' }}
         selectionMode={selectionMode}
         selectionBehavior={selectionBehavior}
         {...otherProps}
+        currentShow={[
+          recordsPerPage * currentPage - 1,
+          recordsPerPage * currentPage,
+        ]}
       >
         <TableHeadSection state={state} cellPadding={cellPadding} />
-        <TableBodySection state={state} cellPadding={cellPadding} />
+        <TableBodySection
+          state={state}
+          cellPadding={cellPadding}
+          currentShow={[
+            recordsPerPage * currentPage - 1,
+            recordsPerPage * currentPage,
+          ]}
+        />
       </TableBase>
       <TablePaginationBottomBar pages={pages} currentPage={currentPage} />
-    </>
+    </TableWrapper>
   );
 }

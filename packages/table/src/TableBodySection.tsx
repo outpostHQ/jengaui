@@ -11,14 +11,20 @@ export const TableBodySection = (
   props: BaseProps & {
     state: TableState<unknown>;
     cellPadding: string | string[];
+    currentShow?: [number, number];
   },
 ) => {
-  const { state, cellPadding, ...otherProps } = props;
+  const { state, cellPadding, currentShow = [0, 1000], ...otherProps } = props;
   const { collection } = state;
   return (
-    <TableRowGroup as="tbody" styles={{ borderCollapse: 'collapse' }}>
+    <TableRowGroup as="tbody">
       {[...collection.body.childNodes].map((row) => (
-        <TableRow key={row.key} item={row} state={state}>
+        <TableRow
+          key={row.key}
+          item={row}
+          state={state}
+          currentShow={currentShow}
+        >
           {[...row.childNodes].map((cell: GridNode<unknown>, index) => {
             // console.log(cell.column?.props.align, cell.column?.props.dataType);
             const align =

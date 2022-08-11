@@ -1,3 +1,4 @@
+import { Block } from '@jenga-ui/core';
 import { forwardRef } from 'react';
 import { tasty, Element, BaseProps } from 'tastycss';
 
@@ -11,23 +12,35 @@ export const Th = tasty({
 
 export const Td = tasty({
   as: 'td',
+  // styles: {
+  //   borderTop: '1px solid #E5E5FC',
+  // },
+});
+
+export const TableWrapper = tasty(Block, {
+  width: ['740px', '580px'],
+  border: '1px solid #E5E5FC',
   styles: {
-    borderTop: '1px solid #E5E5FC',
+    borderRadius: '8px',
+    overflowY: 'auto',
+    styledScrollbar: true,
   },
 });
 
 export const TableTemplate = tasty(Element, {
   as: 'table',
 });
-export const TableBase = forwardRef((props: BaseProps, ref) => {
-  const { styles, ...otherProps } = props;
-  return (
-    <TableTemplate
-      styles={{ border: '1px solid #E5E5FC', borderRadius: '8px', ...styles }}
-      {...otherProps}
-      ref={ref}
-    />
-  );
-});
+export const TableBase = forwardRef(
+  (props: BaseProps & { currentShow?: [number, number] }, ref) => {
+    const { styles, ...otherProps } = props;
+    return (
+      <TableTemplate
+        styles={{ border: '1px solid #E5E5FC', ...styles }}
+        {...otherProps}
+        ref={ref}
+      />
+    );
+  },
+);
 //created in order to make it easy to apply styles for specific tags
 //Note:if no styles needed then just delete this and just use Element=tasty({}) then <Element as={'t{d| h| r}'} />

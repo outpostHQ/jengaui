@@ -4,8 +4,17 @@ import { useTableRow } from '@react-aria/table';
 import { Tr } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';
 
-export function TableRow(props: JengaTableElementBaseProps) {
-  let { state, item, children, styles = {}, ...otherProps } = props;
+export function TableRow(
+  props: JengaTableElementBaseProps & { currentShow?: [number, number] },
+) {
+  let {
+    state,
+    item,
+    currentShow = [0, 0],
+    children,
+    styles = {},
+    ...otherProps
+  } = props;
   let ref = useRef(null);
   console.log(item.key);
   let isSelected = state.selectionManager.isSelected(item.key);
@@ -32,6 +41,8 @@ export function TableRow(props: JengaTableElementBaseProps) {
         color: isSelected ? 'white' : '',
         outline: isFocused ? '2px solid #primary' : 'none',
         borderTop: '1px solid #E5E5FC',
+        display:
+          index > currentShow[0] && index <= currentShow[1] ? '' : 'none',
         ...styles,
       }}
       {...mergeProps(rowProps, focusProps)}
