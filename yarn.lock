@@ -4438,10 +4438,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jenga-ui/table@workspace:packages/table"
   dependencies:
+    "@ant-design/icons": ^4.7.0
     "@jenga-ui/checkbox": "workspace:packages/checkbox"
+    "@jenga-ui/content": "workspace:packages/content"
+    "@jenga-ui/core": "workspace:packages/core"
+    "@jenga-ui/layout": "workspace:packages/layout"
     "@jenga-ui/utils": "workspace:packages/utils"
     "@react-aria/table": ^3.4.0
     "@react-aria/visually-hidden": ^3.4.0
+    "@react-stately/data": ^3.6.0
     "@react-stately/table": ^3.3.0
     "@react-types/grid": ^3.1.2
     "@react-types/shared": ^3.14.0
@@ -6849,6 +6854,18 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: d5536e1fc546f80ef09878b5034b1cce274e448d44f8e74bcfb55af38356eb8b4beff29d1aa9c947454f86daf1bc3d14767b0987c6767125234e5ffbc0cd2cd6
+  languageName: node
+  linkType: hard
+
+"@react-stately/data@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "@react-stately/data@npm:3.6.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-types/shared": ^3.14.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 8e2101dd7ac1369c9af980e7fc0dc0a5a32f39da47d82f0aa32760d2c29094f8826133ecda4017beaa82a43bc0ae4803b48c5824b62b23821076612b10e19d2b
   languageName: node
   linkType: hard
 

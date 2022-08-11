@@ -47,10 +47,15 @@
     "vite": "^3.0.4"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@jenga-ui/checkbox": "workspace:packages/checkbox",
+    "@jenga-ui/content": "workspace:packages/content",
+    "@jenga-ui/core": "workspace:packages/core",
+    "@jenga-ui/layout": "workspace:packages/layout",
     "@jenga-ui/utils": "workspace:packages/utils",
     "@react-aria/table": "^3.4.0",
     "@react-aria/visually-hidden": "^3.4.0",
+    "@react-stately/data": "^3.6.0",
     "@react-stately/table": "^3.3.0",
     "@react-types/grid": "^3.1.2",
     "@react-types/shared": "^3.14.0",
