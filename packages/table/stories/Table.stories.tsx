@@ -261,7 +261,7 @@ export const AsyncExample = AsyncTableTemplate.bind({});
 AsyncExample.args = {};
 
 export const WithStickyHeaderAndScrolling = AsyncTableTemplate.bind({});
-AsyncExample.args = { height: '200px' };
+WithStickyHeaderAndScrolling.args = { height: '200px' };
 export const PaginationExample = PaginatedTemplate.bind({});
 PaginationExample.args = {
   recordsPerPage: 3,
