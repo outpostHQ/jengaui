@@ -119,6 +119,7 @@ export const PaginatedTable = forwardRef(
       bodyStyles = {},
       headerStyles = {},
       totalPages,
+      IsEmpty = <></>,
       ...otherProps
     } = useProviderProps(props);
 
@@ -182,7 +183,11 @@ export const PaginatedTable = forwardRef(
             state={state}
             styles={headerStyles}
           />
-          <TableBodySection state={state} styles={bodyStyles} />
+          <TableBodySection
+            state={state}
+            styles={bodyStyles}
+            IsEmpty={IsEmpty}
+          />
         </TableBase>
         <TablePaginationBottomBar
           pages={totalPages}

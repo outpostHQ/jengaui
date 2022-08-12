@@ -10,54 +10,57 @@ import { TableRowGroup } from './TableRowGroup';
 import { JengaTableBodyProps } from './types';
 
 export const TableBodySection = (props: JengaTableBodyProps) => {
-  const { state, ...otherProps } = props;
+  const { state, IsEmpty, ...otherProps } = props;
   const { collection } = state;
   const { cellPadding } = useContext(JengaTablePropsContext);
-  if ([...collection.body.childNodes].length === 0) return <></>;
   return (
     <TableRowGroup as="tbody" {...otherProps}>
-      {[...collection.body.childNodes].map((row) => (
-        <TableRow
-          key={row.key}
-          item={row}
-          state={state}
-          styles={{ borderTop: '1px solid #E5E5FC' }}
-        >
-          {[...row.childNodes].map((cell: GridNode<unknown>, index) => {
-            // console.log(cell.column?.props.align, cell.column?.props.dataType);
-            const align =
-              cell.column?.props.align ||
-              AligmentFromDTCatalog[cell.column?.props.dataType || 'generic'] ||
-              'left';
-            const stylesFromColumn =
-              (cell.column?.props.styles as Styles) || {};
-            console.log(cell.column?.props.styles, stylesFromColumn);
-            return cell.props.isSelectionCell ? (
-              <TableCheckboxCell
-                key={cell.key}
-                item={cell}
-                state={state}
-                styles={{
-                  padding: cellPadding,
-                  textAlign: align,
-                  ...stylesFromColumn,
-                }}
-              />
-            ) : (
-              <TableCell
-                key={cell.key}
-                item={cell}
-                state={state}
-                styles={{
-                  padding: cellPadding,
-                  textAlign: align,
-                  ...stylesFromColumn,
-                }}
-              />
-            );
-          })}
-        </TableRow>
-      ))}
+      {[...collection.body.childNodes].length === 0
+        ? IsEmpty
+        : [...collection.body.childNodes].map((row) => (
+            <TableRow
+              key={row.key}
+              item={row}
+              state={state}
+              styles={{ borderTop: '1px solid #E5E5FC' }}
+            >
+              {[...row.childNodes].map((cell: GridNode<unknown>, index) => {
+                // console.log(cell.column?.props.align, cell.column?.props.dataType);
+                const align =
+                  cell.column?.props.align ||
+                  AligmentFromDTCatalog[
+                    cell.column?.props.dataType || 'generic'
+                  ] ||
+                  'left';
+                const stylesFromColumn =
+                  (cell.column?.props.styles as Styles) || {};
+                console.log(cell.column?.props.styles, stylesFromColumn);
+                return cell.props.isSelectionCell ? (
+                  <TableCheckboxCell
+                    key={cell.key}
+                    item={cell}
+                    state={state}
+                    styles={{
+                      padding: cellPadding,
+                      textAlign: align,
+                      ...stylesFromColumn,
+                    }}
+                  />
+                ) : (
+                  <TableCell
+                    key={cell.key}
+                    item={cell}
+                    state={state}
+                    styles={{
+                      padding: cellPadding,
+                      textAlign: align,
+                      ...stylesFromColumn,
+                    }}
+                  />
+                );
+              })}
+            </TableRow>
+          ))}
     </TableRowGroup>
   );
 };

@@ -29,6 +29,7 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
     headerStyles = {},
     checkboxAdditionalProps = {},
     checkboxStyles = {},
+    IsEmpty = <></>,
     checkboxPosition = 'left',
     ...otherProps
   } = useProviderProps(props);
@@ -61,7 +62,7 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
           stickyHeader={stickyHeader}
           styles={headerStyles}
         />
-        <TableBodySection state={state} styles={bodyStyles} />
+        <TableBodySection state={state} styles={bodyStyles} IsEmpty={IsEmpty} />
       </TableBase>
     </TableWrapper>
   );

@@ -4,6 +4,7 @@ import { BaseProps, Styles } from 'tastycss';
 import { Node } from '@react-types/shared';
 import { AriaTableProps } from '@react-aria/table';
 import { JengaCheckboxProps } from '@jenga-ui/checkbox';
+import { ReactComponentElement, ReactNode } from 'react';
 
 export type JengaTableElementBaseProps = BaseProps & {
   item: Node<unknown>;
@@ -31,6 +32,7 @@ export type JengaTableProps = AriaTableProps<HTMLTableElement> &
     zebraStripes?: boolean;
     stickyFirstCol?: boolean;
     setKeyboardNavigationDisabled?: boolean;
+    IsEmpty?: ReactNode;
   };
 export type JengaTableBaseProps = BaseProps &
   TableStateProps<HTMLTableElement> & {
@@ -55,4 +57,6 @@ export type JengaTableHeadProps = BaseProps & {
   stickyHeader: boolean;
 };
 
-export type JengaTableBodyProps = Omit<JengaTableHeadProps, 'stickyHeader'>;
+export type JengaTableBodyProps = Omit<JengaTableHeadProps, 'stickyHeader'> & {
+  IsEmpty: ReactNode;
+};

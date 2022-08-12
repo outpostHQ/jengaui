@@ -268,6 +268,24 @@ WithStickyHeaderAndScrolling.args = {
 export const PaginationExample = PaginatedTemplate.bind({});
 PaginationExample.args = {
   recordsPerPage: 3,
+  bodyStyles: {
+    background: '#fff',
+  },
+};
+const EmptyTemplate = (args) => (
+  <Table {...args}>
+    <TableHeader>
+      <Column>Name</Column>
+      <Column>Type</Column>
+      <Column>Size</Column>
+    </TableHeader>
+    <TableBody>{[]}</TableBody>
+  </Table>
+);
+
+export const WithEmpty = EmptyTemplate.bind({});
+WithEmpty.args = {
+  IsEmpty: <div>HEllo</div>,
 };
 // export const PaginationAsyncExample = PaginatedAsyncTemplate.bind({});
 // PaginationAsyncExample.args = {
