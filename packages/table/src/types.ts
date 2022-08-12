@@ -20,8 +20,18 @@ export type JengaTableProps = AriaTableProps<HTMLTableElement> &
     checkboxPosition?: string;
     selectionMode?: 'multiple' | 'single' | 'none';
     selectionBehavior?: 'replace' | 'toggle';
-    cellPadding?: string;
+    cellPadding?: string | string[];
     stickyHeader?: boolean;
+    zebraStripes?: boolean;
+    stickyFirstCol?: boolean;
+    setKeyboardNavigationDisabled?: boolean;
+  };
+export type JengaTableBaseProps = BaseProps &
+  TableStateProps<HTMLTableElement> & {
+    cellPadding: string | string[];
+    paginated: boolean;
+    zebraStripes: boolean;
+    currentlyVisibleRange?: [number, number];
   };
 
 export type JengaPaginatedTableProps = JengaTableProps & {
@@ -33,10 +43,7 @@ export type JengaPaginatedTableProps = JengaTableProps & {
 
 export type JengaTableHeadProps = BaseProps & {
   state: TableState<unknown>;
-  cellPadding: string | string[];
   stickyHeader: boolean;
 };
 
-export type JengaTableBodyProps = Omit<JengaTableHeadProps, 'stickyHeader'> & {
-  currentShow?: [number, number];
-};
+export type JengaTableBodyProps = Omit<JengaTableHeadProps, 'stickyHeader'>;

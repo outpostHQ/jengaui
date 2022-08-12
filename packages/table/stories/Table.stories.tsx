@@ -232,6 +232,8 @@ const PaginatedTemplate = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+export const WithZebraStripes = Template.bind({});
+WithZebraStripes.args = { zebraStripes: true };
 export const WithColumnTypesAndColumnAlignment = NewTemplate.bind({});
 WithColumnTypesAndColumnAlignment.args = {};
 export const WithSelection = Template.bind({});
@@ -256,8 +258,10 @@ WithDefaultSelection.args = {
 };
 
 export const AsyncExample = AsyncTableTemplate.bind({});
-AsyncExample.args = { height: '100px' };
+AsyncExample.args = {};
 
+export const WithStickyHeaderAndScrolling = AsyncTableTemplate.bind({});
+AsyncExample.args = { height: '200px' };
 export const PaginationExample = PaginatedTemplate.bind({});
 PaginationExample.args = {
   recordsPerPage: 3,

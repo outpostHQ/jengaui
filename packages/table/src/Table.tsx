@@ -4,7 +4,6 @@ import { forwardRef, RefObject, useRef } from 'react';
 import { TableBase, TableWrapper } from './TableElementsBase';
 import { TableHeadSection } from './TableHeadSection';
 import { TableBodySection } from './TableBodySection';
-import { BaseProps } from 'tastycss';
 import { JengaTableProps } from './types';
 import { useCombinedRefs } from '@jenga-ui/utils';
 
@@ -22,8 +21,10 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
     selectionBehavior = 'toggle',
     cellPadding = '10px',
     stickyHeader = false,
+    zebraStripes = false,
     ...otherProps
   } = props;
+  console.log(zebraStripes);
   let state = useTableState({
     ...props,
     showSelectionCheckboxes:
@@ -40,13 +41,12 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
         ref={ref}
         selectionMode={selectionMode}
         selectionBehavior={selectionBehavior}
+        cellPadding={cellPadding}
+        zebraStripes={zebraStripes}
+        paginated={false}
       >
-        <TableHeadSection
-          state={state}
-          stickyHeader={stickyHeader}
-          cellPadding={cellPadding}
-        />
-        <TableBodySection state={state} cellPadding={cellPadding} />
+        <TableHeadSection state={state} stickyHeader={stickyHeader} />
+        <TableBodySection state={state} />
       </TableBase>
     </TableWrapper>
   );

@@ -103,10 +103,12 @@ export const PaginatedTable = forwardRef(
       recordsPerPage,
       defaultPage = 1,
       stickyHeader = false,
+      zebraStripes = false,
       showPage,
       totalPages,
       ...otherProps
     } = props;
+
     let state = useTableState({
       ...props,
       showSelectionCheckboxes:
@@ -151,27 +153,19 @@ export const PaginatedTable = forwardRef(
             borderCollapse: 'collapse',
             width: '100%',
           }}
+          paginated={true}
           selectionMode={selectionMode}
           selectionBehavior={selectionBehavior}
           {...otherProps}
-          currentShow={[
+          currentlyVisibleRange={[
             recordsPerPage * (currentPage - 1),
             recordsPerPage * currentPage,
           ]}
+          cellPadding={cellPadding}
+          zebraStripes={zebraStripes}
         >
-          <TableHeadSection
-            stickyHeader={stickyHeader}
-            state={state}
-            cellPadding={cellPadding}
-          />
-          <TableBodySection
-            state={state}
-            cellPadding={cellPadding}
-            currentShow={[
-              recordsPerPage * (currentPage - 1),
-              recordsPerPage * currentPage,
-            ]}
-          />
+          <TableHeadSection stickyHeader={stickyHeader} state={state} />
+          <TableBodySection state={state} />
         </TableBase>
         <TablePaginationBottomBar
           pages={totalPages}

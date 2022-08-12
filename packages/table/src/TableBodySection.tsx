@@ -1,14 +1,17 @@
 import { GridNode } from '@react-types/grid';
+import { useContext } from 'react';
 import { AligmentFromDTCatalog } from './ReactStatelyCollections';
 import { TableCell } from './TableCell';
 import { TableCheckboxCell } from './TableCheckboxCell';
+import { JengaTablePropsContext } from './TableElementsBase';
 import { TableRow } from './TableRow';
 import { TableRowGroup } from './TableRowGroup';
 import { JengaTableBodyProps } from './types';
 
 export const TableBodySection = (props: JengaTableBodyProps) => {
-  const { state, cellPadding, currentShow = [0, 1000], ...otherProps } = props;
+  const { state, ...otherProps } = props;
   const { collection } = state;
+  const { cellPadding } = useContext(JengaTablePropsContext);
   if ([...collection.body.childNodes].length === 0) return <></>;
   return (
     <TableRowGroup as="tbody">
@@ -17,7 +20,6 @@ export const TableBodySection = (props: JengaTableBodyProps) => {
           key={row.key}
           item={row}
           state={state}
-          currentShow={currentShow}
           styles={{ borderTop: '1px solid #E5E5FC' }}
         >
           {[...row.childNodes].map((cell: GridNode<unknown>, index) => {

@@ -1,13 +1,15 @@
+import { useContext } from 'react';
 import { TableColumnHeader } from './TableColumnHeader';
+import { JengaTablePropsContext } from './TableElementsBase';
 import { TableHeaderRow } from './TableHeaderRow';
 import { TableRowGroup } from './TableRowGroup';
 import { TableSelectAllCell } from './TableSelectAllCells';
 import { JengaTableHeadProps } from './types';
 
 export const TableHeadSection = (props: JengaTableHeadProps) => {
-  const { state, stickyHeader = false, cellPadding, ...otherProps } = props;
+  const { state, stickyHeader = false, ...otherProps } = props;
   const { collection } = state;
-  console.log(collection);
+  const { cellPadding } = useContext(JengaTablePropsContext);
   const stickyStyles: { position?: 'sticky'; top?: 0 } = stickyHeader
     ? { position: 'sticky', top: 0 }
     : {};

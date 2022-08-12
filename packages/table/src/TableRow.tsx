@@ -1,26 +1,19 @@
 import { mergeProps, useFocus } from '@jenga-ui/utils';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { useTableRow } from '@react-aria/table';
-import { Tr } from './TableElementsBase';
+import { JengaTablePropsContext, Tr } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';
 
 const isOnCurrentPage = (rowNumber: number, range: [number, number]) => {
   // console.log(rowNumber, range);
   return rowNumber >= range[0] && rowNumber < range[1];
 };
-export function TableRow(
-  props: JengaTableElementBaseProps & { currentShow?: [number, number] },
-) {
-  let {
-    state,
-    item,
-    currentShow = [0, 0],
-    children,
-    styles = {},
-    ...otherProps
-  } = props;
+export function TableRow(props: JengaTableElementBaseProps) {
+  let { state, item, children, styles = {}, ...otherProps } = props;
+  const { zebraStripes, currentlyVisibleRange = [0, 1000] } = useContext(
+    JengaTablePropsContext,
+  );
   let ref = useRef(null);
-  // console.log(item.key);
   let isSelected = state.selectionManager.isSelected(item.key);
   let { rowProps, isPressed } = useTableRow(
     {
@@ -41,12 +34,16 @@ export function TableRow(
           : isPressed
           ? '#primary.10'
           : index % 2
-          ? 'none'
+          ? zebraStripes
+            ? '#primary.10'
+            : 'none'
           : 'none',
         color: isSelected ? 'white' : '',
         outline: isFocused ? '2px solid #primary' : 'hidden',
         borderTop: '1px solid #E5E5FC',
-        display: isOnCurrentPage(index, currentShow) ? 'table-row' : 'none',
+        display: isOnCurrentPage(index, currentlyVisibleRange)
+          ? 'table-row'
+          : 'none',
         ...styles,
       }}
       {...mergeProps(rowProps, focusProps)}
