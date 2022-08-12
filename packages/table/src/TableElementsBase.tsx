@@ -66,8 +66,12 @@ export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
         styles={{
           borderCollapse: 'collapse',
           width: '100%',
-          height: '100%',
+          maxWidth: '100%',
+          height: 'max 100%',
+          maxHeight: '100%',
           position: 'relative',
+          overflow: 'auto',
+          styledScrollbar: true,
           ...styles,
         }}
         {...otherProps}
