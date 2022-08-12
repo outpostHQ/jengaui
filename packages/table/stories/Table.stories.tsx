@@ -48,7 +48,12 @@ const AsyncTableTemplate = (args) => {
       {...args}
     >
       <TableHeader>
-        <Column key="name" align={'left'} allowsSorting>
+        <Column
+          key="name"
+          align={'left'}
+          allowsSorting
+          styles={{ position: 'sticky', insetInlineStart: 0 }}
+        >
           Name
         </Column>
         <Column key="height" dataType={'numeric'} allowsSorting>
@@ -72,11 +77,7 @@ const AsyncTableTemplate = (args) => {
   );
 };
 const Template = (args) => (
-  <Table
-    aria-label="Example static collection table"
-    styles={{ height: '210px', maxWidth: '400px' }}
-    {...args}
-  >
+  <Table aria-label="Example static collection table" {...args}>
     <TableHeader>
       <Column>Name</Column>
       <Column>Type</Column>
@@ -202,7 +203,7 @@ const PaginatedTemplate = (args) => (
   <PaginatedTable aria-label="Example static collection table" {...args}>
     <TableHeader>
       <Column>Name</Column>
-      <Column>Type</Column>
+      <Column styles={{ borderLeft: '1px solid green' }}>Type</Column>
       <Column dataType="date">Date Modified</Column>
     </TableHeader>
     <TableBody>
@@ -261,7 +262,9 @@ export const AsyncExample = AsyncTableTemplate.bind({});
 AsyncExample.args = {};
 
 export const WithStickyHeaderAndScrolling = AsyncTableTemplate.bind({});
-WithStickyHeaderAndScrolling.args = { height: '200px', width: '300px' };
+WithStickyHeaderAndScrolling.args = {
+  isVirtualized: true,
+};
 export const PaginationExample = PaginatedTemplate.bind({});
 PaginationExample.args = {
   recordsPerPage: 3,

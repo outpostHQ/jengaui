@@ -38,7 +38,6 @@ export type JengaTableBaseProps = BaseProps &
     paginated: boolean;
     zebraStripes: boolean;
     currentlyVisibleRange?: [number, number];
-    bodyStyles?: Styles;
     checkboxAdditionalProps: JengaCheckboxProps;
     checkboxStyles: Styles;
     checkboxPosition: string;

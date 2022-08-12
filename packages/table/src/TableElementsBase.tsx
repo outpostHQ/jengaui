@@ -19,12 +19,15 @@ export const Td = tasty({
 });
 
 export const TableWrapper = tasty(Block, {
-  width: ['740px', '580px'],
+  // width: ['740px', '580px'],
   border: '1px solid #E5E5FC',
   styles: {
     borderRadius: '8px',
-    overflowY: 'auto',
+    overflow: 'auto',
+    width: ' 300px max 300px min 300px',
+    height: ' 300px max 300px min 300px',
     styledScrollbar: true,
+    position: 'relative',
     padding: '0',
   },
 });
@@ -45,13 +48,30 @@ export const JengaTablePropsContext = createContext<{
   checkboxStyles?: Styles;
   checkboxPosition?: string;
 }>({ zebraStripes: false, paginated: false, cellPadding: '10px' });
+
+const cellPaddingCatalog = {
+  dense: '3px',
+  regular: '8px',
+  spacious: '12px',
+};
+const parseCellPadding = (cellPadding: string | string[]) => {
+  if (Array.isArray(cellPadding)) {
+    return cellPadding.map((cp) =>
+      cellPaddingCatalog.hasOwnProperty(cp) ? cellPaddingCatalog[cp] : cp,
+    );
+  }
+  return cellPaddingCatalog.hasOwnProperty(cellPadding)
+    ? cellPaddingCatalog[cellPadding]
+    : cellPadding;
+};
+
 export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
   const {
     styles,
     zebraStripes = false,
     paginated = false,
     currentlyVisibleRange = [0, 1000],
-    cellPadding = '10px',
+    cellPadding,
     checkboxAdditionalProps,
     checkboxPosition,
     checkboxStyles,
@@ -64,7 +84,7 @@ export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
         zebraStripes: zebraStripes,
         paginated: paginated,
         currentlyVisibleRange: currentlyVisibleRange,
-        cellPadding: cellPadding,
+        cellPadding: parseCellPadding(cellPadding),
         checkboxAdditionalProps: checkboxAdditionalProps,
         checkboxStyles: checkboxStyles,
         checkboxPosition: checkboxPosition,
@@ -73,13 +93,10 @@ export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
       <TableTemplate
         styles={{
           borderCollapse: 'collapse',
+          display: 'table',
+
+          height: '100%',
           width: '100%',
-          maxWidth: '100%',
-          height: 'max 100%',
-          maxHeight: '100%',
-          position: 'relative',
-          overflow: 'auto',
-          styledScrollbar: true,
           ...styles,
         }}
         {...otherProps}

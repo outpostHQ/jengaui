@@ -44,6 +44,7 @@ export function TableRow(props: JengaTableElementBaseProps) {
         display: isOnCurrentPage(index, currentlyVisibleRange)
           ? 'table-row'
           : 'none',
+
         ...item.props.styles,
         ...styles,
       }}

@@ -24,4 +24,5 @@ style props for row,cell,column,checkbox(also props)
 implement checkbox Position
 refs
 on focus,on hover,mods
-outline on focus bit janky
+outline on focus bit off
+rewrite using react-stately/virtualizer (currently not stable)

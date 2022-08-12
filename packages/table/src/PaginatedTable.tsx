@@ -6,7 +6,12 @@ import { TableHeadSection } from './TableHeadSection';
 import { TableBodySection } from './TableBodySection';
 import { Flex } from '@jenga-ui/layout';
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
-import { Button, Text, useCombinedRefs } from '@jenga-ui/core';
+import {
+  Button,
+  Text,
+  useCombinedRefs,
+  useProviderProps,
+} from '@jenga-ui/core';
 import { JengaPaginatedTableProps } from './types';
 
 const DEFAULT_RECORDS_PER_PAGE = 100;
@@ -16,6 +21,7 @@ export const TablePaginationHeader = (props) => {
     currentPage = 1,
     pages = 1,
     setPage = () => {},
+    styles,
     ...otherProps
   } = props;
   return (
@@ -25,6 +31,8 @@ export const TablePaginationHeader = (props) => {
       alignItems="center"
       justifyContent="center"
       fill={'#f9f9fe'}
+      as={'th'}
+      styles={{ display: 'table', ...styles }}
       {...otherProps}
     >
       <Button
@@ -99,7 +107,7 @@ export const PaginatedTable = forwardRef(
       checkboxAdditionalProps = {},
       checkboxStyles = {},
       checkboxPosition = 'left',
-      cellPadding = ['10px', '0'],
+      cellPadding = ['10px', '10px'],
       selectionMode,
       selectionBehavior,
       recordsPerPage,
@@ -107,12 +115,12 @@ export const PaginatedTable = forwardRef(
       stickyHeader = false,
       zebraStripes = false,
       showPage,
+      tableStyles = {},
       bodyStyles = {},
       headerStyles = {},
-      tableStyles = {},
       totalPages,
       ...otherProps
-    } = props;
+    } = useProviderProps(props);
 
     let state = useTableState({
       ...props,
@@ -145,7 +153,7 @@ export const PaginatedTable = forwardRef(
       recordsPerPage * currentPage,
     ]);
     return (
-      <TableWrapper>
+      <TableWrapper {...otherProps}>
         <TablePaginationHeader
           pages={totalPages}
           setPage={setCurrentPage}
@@ -154,7 +162,6 @@ export const PaginatedTable = forwardRef(
         <TableBase
           {...gridProps}
           ref={ref}
-          styles={tableStyles}
           paginated={true}
           selectionMode={selectionMode}
           selectionBehavior={selectionBehavior}
@@ -168,6 +175,7 @@ export const PaginatedTable = forwardRef(
           checkboxAdditionalProps={checkboxAdditionalProps}
           checkboxPosition={checkboxPosition}
           checkboxStyles={checkboxStyles}
+          styles={tableStyles}
         >
           <TableHeadSection
             stickyHeader={stickyHeader}

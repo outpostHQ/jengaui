@@ -9,7 +9,6 @@ export function TableCell(props: JengaTableElementBaseProps) {
   let ref = useRef(null);
   let { gridCellProps } = useTableCell({ node: cell }, state, ref);
   let { isFocused, focusProps } = useFocus({ isDisabled: false });
-
   return (
     <Td
       {...otherProps}
@@ -18,8 +17,8 @@ export function TableCell(props: JengaTableElementBaseProps) {
         outline: isFocused ? '1px solid rgba(94, 234, 212, 1)' : 'none',
         cursor: 'default',
         color: 'rgba(43, 41, 98, 1)',
-        ...cell.props.styles,
         ...styles,
+        ...cell.props.styles,
       }}
       ref={ref}
     >

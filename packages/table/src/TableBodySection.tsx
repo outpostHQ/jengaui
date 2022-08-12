@@ -1,5 +1,6 @@
 import { GridNode } from '@react-types/grid';
 import { useContext } from 'react';
+import { Styles } from 'tastycss';
 import { AligmentFromDTCatalog } from './ReactStatelyCollections';
 import { TableCell } from './TableCell';
 import { TableCheckboxCell } from './TableCheckboxCell';
@@ -14,7 +15,7 @@ export const TableBodySection = (props: JengaTableBodyProps) => {
   const { cellPadding } = useContext(JengaTablePropsContext);
   if ([...collection.body.childNodes].length === 0) return <></>;
   return (
-    <TableRowGroup as="tbody">
+    <TableRowGroup as="tbody" {...otherProps}>
       {[...collection.body.childNodes].map((row) => (
         <TableRow
           key={row.key}
@@ -28,6 +29,9 @@ export const TableBodySection = (props: JengaTableBodyProps) => {
               cell.column?.props.align ||
               AligmentFromDTCatalog[cell.column?.props.dataType || 'generic'] ||
               'left';
+            const stylesFromColumn =
+              (cell.column?.props.styles as Styles) || {};
+            console.log(cell.column?.props.styles, stylesFromColumn);
             return cell.props.isSelectionCell ? (
               <TableCheckboxCell
                 key={cell.key}
@@ -36,8 +40,8 @@ export const TableBodySection = (props: JengaTableBodyProps) => {
                 styles={{
                   padding: cellPadding,
                   textAlign: align,
+                  ...stylesFromColumn,
                 }}
-                {...otherProps}
               />
             ) : (
               <TableCell
@@ -47,8 +51,8 @@ export const TableBodySection = (props: JengaTableBodyProps) => {
                 styles={{
                   padding: cellPadding,
                   textAlign: align,
+                  ...stylesFromColumn,
                 }}
-                {...otherProps}
               />
             );
           })}

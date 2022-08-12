@@ -48,5 +48,5 @@ export const AligmentFromDTCatalog = {
 };
 
 export const Cell = _Cell as (
-  props: CellProps & { styles: Styles },
+  props: CellProps & { styles?: Styles },
 ) => JSX.Element;

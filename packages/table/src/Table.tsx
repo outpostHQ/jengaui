@@ -6,6 +6,8 @@ import { TableHeadSection } from './TableHeadSection';
 import { TableBodySection } from './TableBodySection';
 import { JengaTableProps } from './types';
 import { useCombinedRefs } from '@jenga-ui/utils';
+import { useProviderProps } from '@jenga-ui/core';
+import { extractStyles } from 'tastycss';
 
 export const Table = forwardRef((props: JengaTableProps, ref) => {
   const StylesFromCheckbox = (
@@ -15,27 +17,27 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
     if (CheckboxPosition === 'right') return { paddingLeft: CheckboxPadding };
     else return { paddingLeft: CheckboxPadding };
   };
+
   let {
     selectionMode = 'none',
     selectionBehavior = 'toggle',
-    cellPadding = ['10px', '0'],
+    cellPadding = ['10px', '10px'],
     stickyHeader = false,
     zebraStripes = false,
-    tableStyles = {},
     bodyStyles = {},
+    tableStyles = {},
     headerStyles = {},
     checkboxAdditionalProps = {},
     checkboxStyles = {},
     checkboxPosition = 'left',
     ...otherProps
-  } = props;
-  console.log(zebraStripes);
+  } = useProviderProps(props);
   let state = useTableState({
     ...props,
     showSelectionCheckboxes:
       selectionMode === 'multiple' && selectionBehavior !== 'replace',
   });
-  // console.log(state.selectionManager.selectedKeys);
+  console.log(state);
   ref = useCombinedRefs([ref, useRef(null)]);
   let { gridProps } = useTable(props, state, ref as RefObject<HTMLElement>);
 
@@ -49,10 +51,10 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
         cellPadding={cellPadding}
         zebraStripes={zebraStripes}
         paginated={false}
-        styles={tableStyles}
         checkboxAdditionalProps={checkboxAdditionalProps}
         checkboxPosition={checkboxPosition}
         checkboxStyles={checkboxStyles}
+        styles={tableStyles}
       >
         <TableHeadSection
           state={state}
