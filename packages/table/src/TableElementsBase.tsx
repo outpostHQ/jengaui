@@ -1,7 +1,6 @@
-import { Block } from '@jenga-ui/core';
-import { TableStateProps } from '@react-stately/table';
+import { Block, JengaCheckboxProps } from '@jenga-ui/core';
 import { createContext, forwardRef } from 'react';
-import { tasty, Element, BaseProps } from 'tastycss';
+import { tasty, Element, Styles } from 'tastycss';
 import { JengaTableBaseProps } from './types';
 
 export const Tr = tasty({
@@ -42,6 +41,9 @@ export const JengaTablePropsContext = createContext<{
   currentlyVisibleRange?: [number, number];
   recordsPerPage?: number;
   cellPadding: string | string[];
+  checkboxAdditionalProps?: JengaCheckboxProps;
+  checkboxStyles?: Styles;
+  checkboxPosition?: string;
 }>({ zebraStripes: false, paginated: false, cellPadding: '10px' });
 export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
   const {
@@ -50,6 +52,9 @@ export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
     paginated = false,
     currentlyVisibleRange = [0, 1000],
     cellPadding = '10px',
+    checkboxAdditionalProps,
+    checkboxPosition,
+    checkboxStyles,
     ...otherProps
   } = props;
 
@@ -60,6 +65,9 @@ export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
         paginated: paginated,
         currentlyVisibleRange: currentlyVisibleRange,
         cellPadding: cellPadding,
+        checkboxAdditionalProps: checkboxAdditionalProps,
+        checkboxStyles: checkboxStyles,
+        checkboxPosition: checkboxPosition,
       }}
     >
       <TableTemplate

@@ -89,15 +89,17 @@ export const TablePaginationBottomBar = (props) => {
 export const PaginatedTable = forwardRef(
   (props: JengaPaginatedTableProps, ref) => {
     const StylesFromCheckbox = (
-      CheckboxPadding: 'left' | 'right',
-      CheckboxPosition,
+      CheckboxPadding,
+      CheckboxPosition: 'left' | 'right',
     ) => {
       if (CheckboxPosition === 'right') return { paddingLeft: CheckboxPadding };
       else return { paddingLeft: CheckboxPadding };
     };
     let {
+      checkboxAdditionalProps = {},
+      checkboxStyles = {},
       checkboxPosition = 'left',
-      cellPadding = '10px',
+      cellPadding = ['10px', '0'],
       selectionMode,
       selectionBehavior,
       recordsPerPage,
@@ -105,6 +107,9 @@ export const PaginatedTable = forwardRef(
       stickyHeader = false,
       zebraStripes = false,
       showPage,
+      bodyStyles = {},
+      headerStyles = {},
+      tableStyles = {},
       totalPages,
       ...otherProps
     } = props;
@@ -149,10 +154,7 @@ export const PaginatedTable = forwardRef(
         <TableBase
           {...gridProps}
           ref={ref}
-          styles={{
-            borderCollapse: 'collapse',
-            width: '100%',
-          }}
+          styles={tableStyles}
           paginated={true}
           selectionMode={selectionMode}
           selectionBehavior={selectionBehavior}
@@ -163,9 +165,16 @@ export const PaginatedTable = forwardRef(
           ]}
           cellPadding={cellPadding}
           zebraStripes={zebraStripes}
+          checkboxAdditionalProps={checkboxAdditionalProps}
+          checkboxPosition={checkboxPosition}
+          checkboxStyles={checkboxStyles}
         >
-          <TableHeadSection stickyHeader={stickyHeader} state={state} />
-          <TableBodySection state={state} />
+          <TableHeadSection
+            stickyHeader={stickyHeader}
+            state={state}
+            styles={headerStyles}
+          />
+          <TableBodySection state={state} styles={bodyStyles} />
         </TableBase>
         <TablePaginationBottomBar
           pages={totalPages}

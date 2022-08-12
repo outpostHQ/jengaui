@@ -16,12 +16,17 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
     else return { paddingLeft: CheckboxPadding };
   };
   let {
-    checkboxPosition = 'left',
     selectionMode = 'none',
     selectionBehavior = 'toggle',
-    cellPadding = '10px',
+    cellPadding = ['10px', '0'],
     stickyHeader = false,
     zebraStripes = false,
+    tableStyles = {},
+    bodyStyles = {},
+    headerStyles = {},
+    checkboxAdditionalProps = {},
+    checkboxStyles = {},
+    checkboxPosition = 'left',
     ...otherProps
   } = props;
   console.log(zebraStripes);
@@ -44,9 +49,17 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
         cellPadding={cellPadding}
         zebraStripes={zebraStripes}
         paginated={false}
+        styles={tableStyles}
+        checkboxAdditionalProps={checkboxAdditionalProps}
+        checkboxPosition={checkboxPosition}
+        checkboxStyles={checkboxStyles}
       >
-        <TableHeadSection state={state} stickyHeader={stickyHeader} />
-        <TableBodySection state={state} />
+        <TableHeadSection
+          state={state}
+          stickyHeader={stickyHeader}
+          styles={headerStyles}
+        />
+        <TableBodySection state={state} styles={bodyStyles} />
       </TableBase>
     </TableWrapper>
   );

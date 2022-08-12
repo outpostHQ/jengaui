@@ -33,6 +33,7 @@ export function TableColumnHeader(props: JengaTableColumnHeaderProps) {
         outline: isFocused ? '2px solid orange' : 'none',
         cursor: 'default',
         color: 'rgba(43, 41, 98, 1)',
+        ...column.props.styles,
         ...styles,
       }}
       ref={ref}

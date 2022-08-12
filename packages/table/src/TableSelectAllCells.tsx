@@ -4,8 +4,8 @@ import {
   useTableSelectAllCheckbox,
 } from '@react-aria/table';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
-import { useRef } from 'react';
-import { Th } from './TableElementsBase';
+import { useContext, useRef } from 'react';
+import { JengaTablePropsContext, Th } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';
 
 export function TableSelectAllCell(props: JengaTableElementBaseProps) {
@@ -17,6 +17,8 @@ export function TableSelectAllCell(props: JengaTableElementBaseProps) {
     state,
     ref,
   );
+  const { checkboxAdditionalProps, checkboxPosition, checkboxStyles } =
+    useContext(JengaTablePropsContext);
   let { checkboxProps } = useTableSelectAllCheckbox(state);
 
   return (
@@ -24,7 +26,11 @@ export function TableSelectAllCell(props: JengaTableElementBaseProps) {
       {isSingleSelectionMode ? (
         <VisuallyHidden>{checkboxProps['aria-label']}</VisuallyHidden>
       ) : (
-        <Checkbox {...checkboxProps} />
+        <Checkbox
+          {...checkboxProps}
+          {...checkboxAdditionalProps}
+          styles={checkboxStyles}
+        />
       )}
     </Th>
   );

@@ -47,4 +47,6 @@ export const AligmentFromDTCatalog = {
   date: 'right',
 };
 
-export const Cell = _Cell;
+export const Cell = _Cell as (
+  props: CellProps & { styles: Styles },
+) => JSX.Element;
