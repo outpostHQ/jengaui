@@ -1,12 +1,15 @@
 import { useTable } from '@react-aria/table';
 import { useTableState } from '@react-stately/table';
-import { useRef, useState } from 'react';
+import { forwardRef, RefObject, useRef, useState } from 'react';
 import { TableBase, TableWrapper } from './TableElementsBase';
 import { TableHeadSection } from './TableHeadSection';
 import { TableBodySection } from './TableBodySection';
 import { Flex } from '@jenga-ui/layout';
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
-import { Button, Text } from '@jenga-ui/core';
+import { Button, Text, useCombinedRefs } from '@jenga-ui/core';
+import { JengaPaginatedTableProps } from './types';
+
+const DEFAULT_RECORDS_PER_PAGE = 100;
 
 export const TablePaginationHeader = (props) => {
   const {
@@ -27,31 +30,38 @@ export const TablePaginationHeader = (props) => {
       <Button
         type={'clear'}
         icon={<LeftCircleOutlined />}
-        onClick={() => {
-          setPage(currentPage - 1);
+        label="show previous results"
+        onPress={() => {
+          console.log('page->', currentPage);
+          if (currentPage !== 1) setPage(currentPage - 1);
         }}
       />
-      {[...Array(pages < 5 ? 5 : pages)].map((page) => (
+      {[...Array(pages)].map((page, index) => (
         <Button
+          type={'clear'}
+          key={`btn-pg-${index}`}
           styles={{
             padding: '0',
             margin: '3px',
             width: '10px',
             aspectRatio: 1,
             borderRadius: '50%',
-            fill: page + 1 === currentPage ? '#black' : '#BCBCBC',
+            fill: index + 1 === currentPage ? '#black' : '#BCBCBC',
             border: '1px solid black',
           }}
-          onClick={() => {
-            setPage(page);
+          onPress={() => {
+            console.log('page->', currentPage);
+            setPage(index + 1);
           }}
         />
       ))}
       <Button
         type={'clear'}
         icon={<RightCircleOutlined />}
-        onClick={() => {
-          setPage(currentPage + 1);
+        label="show next results"
+        onPress={() => {
+          console.log('page->', currentPage);
+          if (currentPage !== pages) setPage(currentPage + 1);
         }}
       />
     </Flex>
@@ -76,67 +86,98 @@ export const TablePaginationBottomBar = (props) => {
   );
 };
 
-export function PaginatedTable(props) {
-  const StylesFromCheckbox = (
-    CheckboxPadding: 'left' | 'right',
-    CheckboxPosition,
-  ) => {
-    if (CheckboxPosition === 'right') return { paddingLeft: CheckboxPadding };
-    else return { paddingLeft: CheckboxPadding };
-  };
-  let {
-    checkboxPosition = 'left',
-    cellPadding = '10px',
-    selectionMode,
-    selectionBehavior,
-    paginate = false,
-    recordsPerPage = 5,
-    defaultPage = 1,
-    ...otherProps
-  } = props;
-  let state = useTableState({
-    ...props,
-    showSelectionCheckboxes:
-      selectionMode === 'multiple' && selectionBehavior !== 'replace',
-  });
-  // console.log(state.selectionManager.selectedKeys);
+export const PaginatedTable = forwardRef(
+  (props: JengaPaginatedTableProps, ref) => {
+    const StylesFromCheckbox = (
+      CheckboxPadding: 'left' | 'right',
+      CheckboxPosition,
+    ) => {
+      if (CheckboxPosition === 'right') return { paddingLeft: CheckboxPadding };
+      else return { paddingLeft: CheckboxPadding };
+    };
+    let {
+      checkboxPosition = 'left',
+      cellPadding = '10px',
+      selectionMode,
+      selectionBehavior,
+      recordsPerPage,
+      defaultPage = 1,
+      stickyHeader = false,
+      showPage,
+      totalPages,
+      ...otherProps
+    } = props;
+    let state = useTableState({
+      ...props,
+      showSelectionCheckboxes:
+        selectionMode === 'multiple' && selectionBehavior !== 'replace',
+    });
+    ref = useCombinedRefs([ref, useRef(null)]);
+    let { gridProps } = useTable(props, state, ref as RefObject<HTMLElement>);
+    //test refs.
+    const totalRecords = state.collection.rows.length - 1;
+    if (totalPages && !recordsPerPage) {
+      //updating pages and records per page ... priority given to recordsPerPage prop over totalPagesProp.
+      recordsPerPage = totalRecords / totalPages;
+    } else {
+      if (recordsPerPage) {
+        if (recordsPerPage > totalRecords) recordsPerPage = totalRecords;
+        if (recordsPerPage < 0) recordsPerPage = DEFAULT_RECORDS_PER_PAGE;
+        totalPages = parseInt((totalRecords / recordsPerPage).toFixed(0));
+        totalPages += totalRecords % recordsPerPage === 0 ? 0 : 1;
+      } else {
+        recordsPerPage = DEFAULT_RECORDS_PER_PAGE;
+        totalPages = parseInt((totalRecords / recordsPerPage).toFixed(0));
+        totalPages += totalRecords % recordsPerPage === 0 ? 0 : 1;
+      }
+    }
 
-  let ref = useRef(null);
-  let { gridProps } = useTable(props, state, ref);
-  // console.log(state.collection.rows);
-  const pages = state.collection.rows.length - 1 / recordsPerPage;
-  console.log(pages);
-  const [currentPage, setCurrentPage] = useState(defaultPage || 1);
-  return (
-    <TableWrapper>
-      <TablePaginationHeader
-        pages={pages}
-        setPage={setCurrentPage}
-        currentPage={currentPage}
-      />
-      <TableBase
-        {...gridProps}
-        ref={ref}
-        styles={{ borderCollapse: 'collapse', width: '100%' }}
-        selectionMode={selectionMode}
-        selectionBehavior={selectionBehavior}
-        {...otherProps}
-        currentShow={[
-          recordsPerPage * currentPage - 1,
-          recordsPerPage * currentPage,
-        ]}
-      >
-        <TableHeadSection state={state} cellPadding={cellPadding} />
-        <TableBodySection
-          state={state}
-          cellPadding={cellPadding}
+    const [currentPage, setCurrentPage] = useState(showPage || defaultPage);
+    console.log([
+      recordsPerPage * (currentPage - 1),
+      recordsPerPage * currentPage,
+    ]);
+    return (
+      <TableWrapper>
+        <TablePaginationHeader
+          pages={totalPages}
+          setPage={setCurrentPage}
+          currentPage={currentPage}
+        />
+        <TableBase
+          {...gridProps}
+          ref={ref}
+          styles={{
+            borderCollapse: 'collapse',
+            width: '100%',
+          }}
+          selectionMode={selectionMode}
+          selectionBehavior={selectionBehavior}
+          {...otherProps}
           currentShow={[
-            recordsPerPage * currentPage - 1,
+            recordsPerPage * (currentPage - 1),
             recordsPerPage * currentPage,
           ]}
+        >
+          <TableHeadSection
+            stickyHeader={stickyHeader}
+            state={state}
+            cellPadding={cellPadding}
+          />
+          <TableBodySection
+            state={state}
+            cellPadding={cellPadding}
+            currentShow={[
+              recordsPerPage * (currentPage - 1),
+              recordsPerPage * currentPage,
+            ]}
+          />
+        </TableBase>
+        <TablePaginationBottomBar
+          pages={totalPages}
+          currentPage={currentPage}
         />
-      </TableBase>
-      <TablePaginationBottomBar pages={pages} currentPage={currentPage} />
-    </TableWrapper>
-  );
-}
+      </TableWrapper>
+    );
+  },
+);

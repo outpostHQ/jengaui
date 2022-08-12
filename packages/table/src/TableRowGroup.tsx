@@ -7,11 +7,7 @@ export function TableRowGroup(props: AllBaseProps) {
   const { children, styles, ...otherProps } = props;
   let { rowGroupProps } = useTableRowGroup();
   return (
-    <Element
-      {...otherProps}
-      {...rowGroupProps}
-      styles={{ borderCollapse: 'collapse', ...styles }}
-    >
+    <Element {...otherProps} {...rowGroupProps} styles={{ ...styles }}>
       {children}
     </Element>
   );

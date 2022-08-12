@@ -4,6 +4,10 @@ import { useTableRow } from '@react-aria/table';
 import { Tr } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';
 
+const isOnCurrentPage = (rowNumber: number, range: [number, number]) => {
+  // console.log(rowNumber, range);
+  return rowNumber >= range[0] && rowNumber < range[1];
+};
 export function TableRow(
   props: JengaTableElementBaseProps & { currentShow?: [number, number] },
 ) {
@@ -16,7 +20,7 @@ export function TableRow(
     ...otherProps
   } = props;
   let ref = useRef(null);
-  console.log(item.key);
+  // console.log(item.key);
   let isSelected = state.selectionManager.isSelected(item.key);
   let { rowProps, isPressed } = useTableRow(
     {
@@ -26,6 +30,7 @@ export function TableRow(
     ref,
   );
   const index = item.index ? item.index : 0;
+  // console.log(index);
   let { isFocused, focusProps } = useFocus({ isDisabled: false });
   return (
     <Tr
@@ -39,10 +44,9 @@ export function TableRow(
           ? 'none'
           : 'none',
         color: isSelected ? 'white' : '',
-        outline: isFocused ? '2px solid #primary' : 'none',
+        outline: isFocused ? '2px solid #primary' : 'hidden',
         borderTop: '1px solid #E5E5FC',
-        display:
-          index > currentShow[0] && index <= currentShow[1] ? '' : 'none',
+        display: isOnCurrentPage(index, currentShow) ? 'table-row' : 'none',
         ...styles,
       }}
       {...mergeProps(rowProps, focusProps)}

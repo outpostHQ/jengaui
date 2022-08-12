@@ -9,7 +9,12 @@ export function TableHeaderRow(props: JengaTableElementBaseProps) {
   let { rowProps } = useTableHeaderRow({ node: item }, state, ref);
 
   return (
-    <Tr {...rowProps} {...otherProps} ref={ref}>
+    <Tr
+      {...rowProps}
+      {...otherProps}
+      ref={ref}
+      styles={{ borderTop: '0', borderBottom: '1px solid #e5e5fc' }}
+    >
       {children}
     </Tr>
   );

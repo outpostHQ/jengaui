@@ -1,4 +1,5 @@
 import { Block } from '@jenga-ui/core';
+import { TableStateProps } from '@react-stately/table';
 import { forwardRef } from 'react';
 import { tasty, Element, BaseProps } from 'tastycss';
 
@@ -24,6 +25,7 @@ export const TableWrapper = tasty(Block, {
     borderRadius: '8px',
     overflowY: 'auto',
     styledScrollbar: true,
+    padding: '0',
   },
 });
 
@@ -31,11 +33,20 @@ export const TableTemplate = tasty(Element, {
   as: 'table',
 });
 export const TableBase = forwardRef(
-  (props: BaseProps & { currentShow?: [number, number] }, ref) => {
+  (
+    props: BaseProps &
+      TableStateProps<HTMLTableElement> & { currentShow?: [number, number] },
+    ref,
+  ) => {
     const { styles, ...otherProps } = props;
     return (
       <TableTemplate
-        styles={{ border: '1px solid #E5E5FC', ...styles }}
+        styles={{
+          borderCollapse: 'collapse',
+          width: '100%',
+          position: 'relative',
+          ...styles,
+        }}
         {...otherProps}
         ref={ref}
       />

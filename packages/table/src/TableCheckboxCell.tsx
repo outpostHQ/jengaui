@@ -1,6 +1,4 @@
 import { useTableSelectionCheckbox } from '@react-aria/table';
-
-// Reuse the Checkbox from your component library. See below for details.
 import { Checkbox } from '@jenga-ui/checkbox';
 import { useTableCell } from '@react-aria/table';
 import { useRef } from 'react';

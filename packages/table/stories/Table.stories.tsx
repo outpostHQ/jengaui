@@ -44,19 +44,20 @@ const AsyncTableTemplate = (args) => {
       aria-label="Example table with client side sorting"
       sortDescriptor={list.sortDescriptor}
       onSortChange={list.sort}
+      stickyHeader
       {...args}
     >
       <TableHeader>
-        <Column key="name" allowsSorting>
+        <Column key="name" align={'left'} allowsSorting>
           Name
         </Column>
-        <Column key="height" allowsSorting>
+        <Column key="height" dataType={'numeric'} allowsSorting>
           Height
         </Column>
-        <Column key="mass" allowsSorting>
+        <Column key="mass" dataType={'numeric'} allowsSorting>
           Mass
         </Column>
-        <Column key="birth_year" allowsSorting>
+        <Column key="birth_year" dataType={'date'} allowsSorting>
           Birth Year
         </Column>
       </TableHeader>
@@ -73,7 +74,7 @@ const AsyncTableTemplate = (args) => {
 const Template = (args) => (
   <Table
     aria-label="Example static collection table"
-    style={{ height: '210px', maxWidth: '400px' }}
+    styles={{ height: '210px', maxWidth: '400px' }}
     {...args}
   >
     <TableHeader>
@@ -173,16 +174,16 @@ const PaginatedAsyncTemplate = (args) => {
   return (
     <PaginatedTable paginate recordsPerPage={3} {...args}>
       <TableHeader>
-        <Column key="name" allowsSorting>
+        <Column key="name" align={'left'} allowsSorting>
           Name
         </Column>
-        <Column key="height" allowsSorting>
+        <Column key="height" dataType={'numeric'} allowsSorting>
           Height
         </Column>
-        <Column key="mass" allowsSorting>
+        <Column key="mass" dataType={'numeric'} allowsSorting>
           Mass
         </Column>
-        <Column key="birth_year" allowsSorting>
+        <Column key="birth_year" dataType={'date'} allowsSorting>
           Birth Year
         </Column>
       </TableHeader>
@@ -202,7 +203,7 @@ const PaginatedTemplate = (args) => (
     <TableHeader>
       <Column>Name</Column>
       <Column>Type</Column>
-      <Column>Date Modified</Column>
+      <Column dataType="date">Date Modified</Column>
     </TableHeader>
     <TableBody>
       <Row key={'r.1'}>
@@ -255,10 +256,13 @@ WithDefaultSelection.args = {
 };
 
 export const AsyncExample = AsyncTableTemplate.bind({});
-AsyncExample.args = {};
+AsyncExample.args = { height: '100px' };
 
 export const PaginationExample = PaginatedTemplate.bind({});
 PaginationExample.args = {
-  recordsPerPage: 1,
-  paginate: true,
+  recordsPerPage: 3,
 };
+// export const PaginationAsyncExample = PaginatedAsyncTemplate.bind({});
+// PaginationAsyncExample.args = {
+//   recordsPerPage: 3,
+// };
