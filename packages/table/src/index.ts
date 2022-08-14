@@ -1,3 +1,4 @@
-export * from './Table';
+// export * from './OldTable';
 export * from './ReactStatelyCollections';
-export * from './PaginatedTable';
+// export * from './OldPaginatedTable';
+export * from './Table';

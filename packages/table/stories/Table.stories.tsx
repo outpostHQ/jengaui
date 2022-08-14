@@ -1,10 +1,10 @@
 import { Cell, Column, Row, TableBody, TableHeader } from '../src';
 import { baseProps } from '../../../stories/lists/baseProps';
-import { Table, PaginatedTable } from '../src/';
+import { Table as NewTable } from '../src/';
 import { useAsyncList } from '@react-stately/data';
 export default {
   title: 'Forms/Table',
-  component: Table,
+  component: NewTable,
   parameters: {
     controls: {
       exclude: baseProps,
@@ -40,7 +40,7 @@ const AsyncTableTemplate = (args) => {
   });
 
   return (
-    <Table
+    <NewTable
       aria-label="Example table with client side sorting"
       sortDescriptor={list.sortDescriptor}
       onSortChange={list.sort}
@@ -52,7 +52,7 @@ const AsyncTableTemplate = (args) => {
           key="name"
           align={'left'}
           allowsSorting
-          styles={{ position: 'sticky', insetInlineStart: 0 }}
+          styles={{ position: 'sticky', insetInlineStart: 0, fill: '#fff' }}
         >
           Name
         </Column>
@@ -73,11 +73,11 @@ const AsyncTableTemplate = (args) => {
           </Row>
         )}
       </TableBody>
-    </Table>
+    </NewTable>
   );
 };
 const Template = (args) => (
-  <Table aria-label="Example static collection table" {...args}>
+  <NewTable aria-label="Example static collection table" {...args}>
     <TableHeader>
       <Column>Name</Column>
       <Column>Type</Column>
@@ -105,11 +105,11 @@ const Template = (args) => (
         <Cell>1/18/2016</Cell>
       </Row>
     </TableBody>
-  </Table>
+  </NewTable>
 );
 
 const NewTemplate = (args) => (
-  <Table
+  <NewTable
     aria-label="Example static collection table"
     style={{ height: '210px', maxWidth: '400px' }}
     {...args}
@@ -143,7 +143,7 @@ const NewTemplate = (args) => (
         <Cell>1/18/2016</Cell>
       </Row>
     </TableBody>
-  </Table>
+  </NewTable>
 );
 
 const PaginatedAsyncTemplate = (args) => {
@@ -173,7 +173,7 @@ const PaginatedAsyncTemplate = (args) => {
     },
   });
   return (
-    <PaginatedTable paginate recordsPerPage={3} {...args}>
+    <NewTable paginated recordsPerPage={3} {...args}>
       <TableHeader>
         <Column key="name" align={'left'} allowsSorting>
           Name
@@ -195,12 +195,12 @@ const PaginatedAsyncTemplate = (args) => {
           </Row>
         )}
       </TableBody>
-    </PaginatedTable>
+    </NewTable>
   );
 };
 
 const PaginatedTemplate = (args) => (
-  <PaginatedTable aria-label="Example static collection table" {...args}>
+  <NewTable paginated aria-label="Example static collection table" {...args}>
     <TableHeader>
       <Column>Name</Column>
       <Column styles={{ borderLeft: '1px solid green' }}>Type</Column>
@@ -228,7 +228,7 @@ const PaginatedTemplate = (args) => (
         <Cell>1/18/2016</Cell>
       </Row>
     </TableBody>
-  </PaginatedTable>
+  </NewTable>
 );
 
 export const Default = Template.bind({});
@@ -273,21 +273,21 @@ PaginationExample.args = {
   },
 };
 const EmptyTemplate = (args) => (
-  <Table {...args}>
+  <NewTable {...args}>
     <TableHeader>
       <Column>Name</Column>
       <Column>Type</Column>
       <Column>Size</Column>
     </TableHeader>
     <TableBody>{[]}</TableBody>
-  </Table>
+  </NewTable>
 );
 
 export const WithEmpty = EmptyTemplate.bind({});
 WithEmpty.args = {
   IsEmpty: <div>HEllo</div>,
 };
-// export const PaginationAsyncExample = PaginatedAsyncTemplate.bind({});
-// PaginationAsyncExample.args = {
-//   recordsPerPage: 3,
-// };
+export const PaginationAsyncExample = PaginatedAsyncTemplate.bind({});
+PaginationAsyncExample.args = {
+  recordsPerPage: 3,
+};

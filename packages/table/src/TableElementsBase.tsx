@@ -1,18 +1,21 @@
 import { Block, JengaCheckboxProps } from '@jenga-ui/core';
 import { createContext, forwardRef } from 'react';
-import { tasty, Element, Styles } from 'tastycss';
+import { tasty, Element, Styles, AllBaseProps } from 'tastycss';
 import { JengaTableBaseProps } from './types';
 
-export const Tr = tasty({
+export const Tr = tasty<AllBaseProps & HTMLTableRowElement>({
   as: 'tr',
+  role: 'row',
 });
 
-export const Th = tasty({
+export const Th = tasty<AllBaseProps & HTMLTableCellElement>({
   as: 'th',
+  role: 'gridcell',
 });
 
-export const Td = tasty({
+export const Td = tasty<AllBaseProps & HTMLTableCellElement>({
   as: 'td',
+  role: 'gridcell',
   // styles: {
   //   borderTop: '1px solid #E5E5FC',
   // },
@@ -20,12 +23,16 @@ export const Td = tasty({
 
 export const TableWrapper = tasty(Block, {
   // width: ['740px', '580px'],
-  border: '1px solid #E5E5FC',
   styles: {
     borderRadius: '8px',
+    border: '1px solid #e5e5fc',
     overflow: 'auto',
-    width: ' 300px max 300px min 300px',
-    height: ' 300px max 300px min 300px',
+    // width: [
+    //   // '740px max 740px min 740px',
+    //   // '580px max 580px min 580px',
+    //   '200px max 200px min 200px',
+    // ],
+    // height: [' 200px max 200px min 200px'],
     styledScrollbar: true,
     position: 'relative',
     padding: '0',
@@ -46,12 +53,11 @@ export const JengaTablePropsContext = createContext<{
   cellPadding: string | string[];
   checkboxAdditionalProps?: JengaCheckboxProps;
   checkboxStyles?: Styles;
-  checkboxPosition?: string;
 }>({ zebraStripes: false, paginated: false, cellPadding: '10px' });
 
 const cellPaddingCatalog = {
-  dense: '3px',
-  regular: '8px',
+  dense: '6px 12px',
+  regular: '16px 12px',
   spacious: '12px',
 };
 const parseCellPadding = (cellPadding: string | string[]) => {
@@ -71,10 +77,9 @@ export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
     zebraStripes = false,
     paginated = false,
     currentlyVisibleRange = [0, 1000],
-    cellPadding,
-    checkboxAdditionalProps,
-    checkboxPosition,
-    checkboxStyles,
+    cellPadding = ['regular', 'dense'],
+    checkboxAdditionalProps = {},
+    checkboxStyles = {},
     ...otherProps
   } = props;
 
@@ -87,16 +92,15 @@ export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
         cellPadding: parseCellPadding(cellPadding),
         checkboxAdditionalProps: checkboxAdditionalProps,
         checkboxStyles: checkboxStyles,
-        checkboxPosition: checkboxPosition,
       }}
     >
       <TableTemplate
         styles={{
           borderCollapse: 'collapse',
           display: 'table',
-
           height: '100%',
           width: '100%',
+          fill: '#fffff',
           ...styles,
         }}
         {...otherProps}

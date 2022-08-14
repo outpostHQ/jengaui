@@ -7,7 +7,13 @@ import { TableSelectAllCell } from './TableSelectAllCells';
 import { JengaTableHeadProps } from './types';
 
 export const TableHeadSection = (props: JengaTableHeadProps) => {
-  const { state, stickyHeader = false, styles, ...otherProps } = props;
+  const {
+    state,
+    stickyHeader = false,
+    styles,
+    children,
+    ...otherProps
+  } = props;
   const { collection } = state;
   const { cellPadding } = useContext(JengaTablePropsContext);
   const stickyStyles: { position?: 'sticky'; top?: 0 } = stickyHeader
@@ -25,6 +31,7 @@ export const TableHeadSection = (props: JengaTableHeadProps) => {
       }}
       {...otherProps}
     >
+      {children}
       {collection.headerRows.map((headerRow) => (
         <TableHeaderRow key={headerRow.key} item={headerRow} state={state}>
           {[...headerRow.childNodes].map((column) =>

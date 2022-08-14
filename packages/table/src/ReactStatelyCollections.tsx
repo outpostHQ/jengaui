@@ -26,21 +26,7 @@ export const Column = _Column as <T>(
     styles?: Styles;
   },
 ) => JSX.Element;
-// export const Column = (props) => {
-//   const AligmentFromDTCatalog = {
-//     generic: 'left',
-//     numeric: 'right',
-//   };
-//   const { dataType = 'generic', align, ...otherProps } = props;
-//   const alignFromDT = AligmentFromDTCatalog[dataType] || 'left';
-//   return (
-//     <ColumnBase
-//       {...otherProps}
-//       align={align || alignFromDT || 'left'}
-//       dataType={dataType}
-//     />
-//   );
-// };
+
 export const AligmentFromDTCatalog = {
   generic: 'left',
   numeric: 'right',

@@ -13,8 +13,9 @@ export function TableCheckboxCell(props: JengaTableElementBaseProps) {
     { key: cell.parentKey || 'randomKey' },
     state,
   );
-  const { checkboxAdditionalProps, checkboxPosition, checkboxStyles } =
-    useContext(JengaTablePropsContext);
+  const { checkboxAdditionalProps, checkboxStyles } = useContext(
+    JengaTablePropsContext,
+  );
   return (
     <Td {...gridCellProps} styles={{ ...styles }} {...otherProps} ref={ref}>
       <Checkbox

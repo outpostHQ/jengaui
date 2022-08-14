@@ -39,8 +39,7 @@ export function TableRow(props: JengaTableElementBaseProps) {
             : 'none'
           : 'none',
         color: isSelected ? 'white' : '',
-        outline: isFocused ? '2px solid #primary' : 'hidden',
-        borderTop: '1px solid #E5E5FC',
+        outline: isFocused ? '1px rgba(94, 234, 212, 1)' : 'none',
         display: isOnCurrentPage(index, currentlyVisibleRange)
           ? 'table-row'
           : 'none',

@@ -4,7 +4,7 @@ import { BaseProps, Styles } from 'tastycss';
 import { Node } from '@react-types/shared';
 import { AriaTableProps } from '@react-aria/table';
 import { JengaCheckboxProps } from '@jenga-ui/checkbox';
-import { ReactComponentElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export type JengaTableElementBaseProps = BaseProps & {
   item: Node<unknown>;
@@ -21,10 +21,11 @@ export type JengaTableProps = AriaTableProps<HTMLTableElement> &
   TableStateProps<HTMLTableElement> & {
     tableStyles?: Styles;
     bodyStyles?: Styles;
+    footerStyles?: Styles;
     headerStyles?: Styles;
     checkboxAdditionalProps?: JengaCheckboxProps;
     checkboxStyles?: Styles;
-    checkboxPosition?: string;
+    // checkboxPosition?: string;
     selectionMode?: 'multiple' | 'single' | 'none';
     selectionBehavior?: 'replace' | 'toggle';
     cellPadding?: string | string[];
@@ -36,13 +37,13 @@ export type JengaTableProps = AriaTableProps<HTMLTableElement> &
   };
 export type JengaTableBaseProps = BaseProps &
   TableStateProps<HTMLTableElement> & {
-    cellPadding: string | string[];
-    paginated: boolean;
-    zebraStripes: boolean;
+    cellPadding?: string | string[];
+    paginated?: boolean;
+    zebraStripes?: boolean;
     currentlyVisibleRange?: [number, number];
-    checkboxAdditionalProps: JengaCheckboxProps;
-    checkboxStyles: Styles;
-    checkboxPosition: string;
+    checkboxAdditionalProps?: JengaCheckboxProps;
+    checkboxStyles?: Styles;
+    // checkboxPosition: string;
   };
 
 export type JengaPaginatedTableProps = JengaTableProps & {
@@ -54,9 +55,9 @@ export type JengaPaginatedTableProps = JengaTableProps & {
 
 export type JengaTableHeadProps = BaseProps & {
   state: TableState<unknown>;
-  stickyHeader: boolean;
+  stickyHeader?: boolean;
 };
 
 export type JengaTableBodyProps = Omit<JengaTableHeadProps, 'stickyHeader'> & {
-  IsEmpty: ReactNode;
+  IsEmpty?: ReactNode;
 };
