@@ -19,7 +19,7 @@ export const TableHeadSection = (props: JengaTableHeadProps) => {
   const stickyStyles: { position?: 'sticky'; top?: 0 } = stickyHeader
     ? { position: 'sticky', top: 0 }
     : {};
-  console.log(stickyStyles);
+  // console.log(stickyStyles);
   return (
     <TableRowGroup
       as={'thead'}

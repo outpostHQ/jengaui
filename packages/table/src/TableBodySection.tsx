@@ -34,7 +34,7 @@ export const TableBodySection = (props: JengaTableBodyProps) => {
                   'left';
                 const stylesFromColumn =
                   (cell.column?.props.styles as Styles) || {};
-                console.log(cell.column?.props.styles, stylesFromColumn);
+                // console.log(cell.column?.props.styles, stylesFromColumn);
                 return cell.props.isSelectionCell ? (
                   <TableCheckboxCell
                     key={cell.key}

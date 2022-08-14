@@ -13,8 +13,8 @@ import { TableBody as _TableBody } from '@react-stately/table';
 import { TableHeader as _TableHeader } from '@react-stately/table';
 export const TableHeader = _TableHeader;
 export const TableBody = _TableBody;
-export const Row = _Row as <T>(
-  props: ColumnProps<T> & {
+export const Row = _Row as (
+  props: RowProps & {
     align?: 'left' | 'center' | 'right';
     styles?: Styles;
   },
@@ -24,6 +24,7 @@ export const Column = _Column as <T>(
     align?: 'left' | 'center' | 'right';
     dataType?: 'generic' | 'numeric' | 'date';
     styles?: Styles;
+    colCellStyles?: Styles;
   },
 ) => JSX.Element;
 

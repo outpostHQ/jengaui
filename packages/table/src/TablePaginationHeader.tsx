@@ -1,16 +1,15 @@
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
 import { Button } from '@jenga-ui/core';
 import { Flex } from '@jenga-ui/layout';
-import { Th, Tr } from './TableElementsBase';
+import { useContext } from 'react';
+import { JengaTablePropsContext, Th, Tr } from './TableElementsBase';
 
 export const TablePaginationHeader = (props) => {
-  const {
-    currentPage = 1,
-    pages = 1,
-    setPage = () => {},
-    styles,
-    ...otherProps
-  } = props;
+  const { setPage = () => {}, styles, ...otherProps } = props;
+  const { currentPage = 1, totalPages: pages = 1 } = useContext(
+    JengaTablePropsContext,
+  );
+  if (pages === 1) return <></>;
   return (
     <Tr styles={{ height: '52px', fill: '#f9f9fe', ...styles }} {...otherProps}>
       <Th colSpan={'100%'}>

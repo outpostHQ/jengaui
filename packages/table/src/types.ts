@@ -25,7 +25,6 @@ export type JengaTableProps = AriaTableProps<HTMLTableElement> &
     headerStyles?: Styles;
     checkboxAdditionalProps?: JengaCheckboxProps;
     checkboxStyles?: Styles;
-    // checkboxPosition?: string;
     selectionMode?: 'multiple' | 'single' | 'none';
     selectionBehavior?: 'replace' | 'toggle';
     cellPadding?: string | string[];
@@ -34,7 +33,12 @@ export type JengaTableProps = AriaTableProps<HTMLTableElement> &
     stickyFirstCol?: boolean;
     setKeyboardNavigationDisabled?: boolean;
     IsEmpty?: ReactNode;
+    paginated?: boolean;
+    showFooter?: boolean;
+    recordsPerPage?: number;
+    showPage?: number;
   };
+
 export type JengaTableBaseProps = BaseProps &
   TableStateProps<HTMLTableElement> & {
     cellPadding?: string | string[];
@@ -43,15 +47,10 @@ export type JengaTableBaseProps = BaseProps &
     currentlyVisibleRange?: [number, number];
     checkboxAdditionalProps?: JengaCheckboxProps;
     checkboxStyles?: Styles;
-    // checkboxPosition: string;
+    currentPage?: number;
+    totalPages?: number;
+    recordsPerPage?: number;
   };
-
-export type JengaPaginatedTableProps = JengaTableProps & {
-  recordsPerPage?: number;
-  defaultPage?: number;
-  showPage?: number;
-  totalPages?: number;
-};
 
 export type JengaTableHeadProps = BaseProps & {
   state: TableState<unknown>;

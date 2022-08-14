@@ -25,6 +25,7 @@ export function TableColumnHeader(props: JengaTableColumnHeaderProps) {
     state.sortDescriptor?.column === column.key
       ? state.sortDescriptor?.direction
       : 'unknown';
+  // console.log(sortState, state);
   return (
     <Th
       {...mergeProps(columnHeaderProps, focusProps)}
@@ -34,6 +35,7 @@ export function TableColumnHeader(props: JengaTableColumnHeaderProps) {
         cursor: 'default',
         color: 'rgba(43, 41, 98, 1)',
         ...column.props.styles,
+        ...column.props.colCellProps,
         ...styles,
       }}
       ref={ref}

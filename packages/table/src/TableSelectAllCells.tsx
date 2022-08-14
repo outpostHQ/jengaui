@@ -17,8 +17,9 @@ export function TableSelectAllCell(props: JengaTableElementBaseProps) {
     state,
     ref,
   );
-  const { checkboxAdditionalProps, checkboxPosition, checkboxStyles } =
-    useContext(JengaTablePropsContext);
+  const { checkboxAdditionalProps, checkboxStyles } = useContext(
+    JengaTablePropsContext,
+  );
   let { checkboxProps } = useTableSelectAllCheckbox(state);
 
   return (

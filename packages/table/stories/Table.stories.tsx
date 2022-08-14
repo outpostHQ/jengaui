@@ -2,14 +2,15 @@ import { Cell, Column, Row, TableBody, TableHeader } from '../src';
 import { baseProps } from '../../../stories/lists/baseProps';
 import { Table as NewTable } from '../src/';
 import { useAsyncList } from '@react-stately/data';
+import { JengaPaginatedTableProps } from '../src/types';
 export default {
   title: 'Forms/Table',
   component: NewTable,
-  parameters: {
-    controls: {
-      exclude: baseProps,
-    },
-  },
+  // parameters: {
+  //   controls: {
+  //     exclude: baseProps,
+  //   },
+  // },
 };
 
 const AsyncTableTemplate = (args) => {
@@ -173,7 +174,14 @@ const PaginatedAsyncTemplate = (args) => {
     },
   });
   return (
-    <NewTable paginated recordsPerPage={3} {...args}>
+    <NewTable
+      paginated
+      recordsPerPage={3}
+      {...args}
+      onSortChange={list.sort}
+      sortDescriptor={list.sortDescriptor}
+      loadingState={list.loadingState}
+    >
       <TableHeader>
         <Column key="name" align={'left'} allowsSorting>
           Name
@@ -231,6 +239,55 @@ const PaginatedTemplate = (args) => (
   </NewTable>
 );
 
+const AsyncNew = (args) => {
+  let columns = [
+    { name: 'Name', key: 'name' },
+    { name: 'Height', key: 'height' },
+    { name: 'Mass', key: 'mass' },
+    { name: 'Birth Year', key: 'birth_year' },
+  ];
+
+  let list = useAsyncList({
+    async load({ signal, cursor }) {
+      if (cursor) {
+        cursor = cursor.replace(/^http:\/\//i, 'https://');
+      }
+
+      let res = await fetch(
+        cursor || `https://swapi.py4e.com/api/people/?search=`,
+        { signal },
+      );
+      let json = await res.json();
+
+      return {
+        items: json.results,
+        cursor: json.next,
+      };
+    },
+  });
+
+  return (
+    <NewTable aria-label="example async loading table" {...args}>
+      <TableHeader columns={columns}>
+        {(column) => (
+          <Column align={column.key !== 'name' ? 'end' : 'start'}>
+            {column.name}
+          </Column>
+        )}
+      </TableHeader>
+      <TableBody
+        items={list.items}
+        loadingState={list.loadingState}
+        onLoadMore={list.loadMore}
+      >
+        {(item) => (
+          <Row key={item.name}>{(key) => <Cell>{item[key]}</Cell>}</Row>
+        )}
+      </TableBody>
+    </NewTable>
+  );
+};
+
 export const Default = Template.bind({});
 Default.args = {};
 export const WithZebraStripes = Template.bind({});
@@ -275,7 +332,9 @@ PaginationExample.args = {
 const EmptyTemplate = (args) => (
   <NewTable {...args}>
     <TableHeader>
-      <Column>Name</Column>
+      <Column allowsSorting allowsResizing>
+        Name
+      </Column>
       <Column>Type</Column>
       <Column>Size</Column>
     </TableHeader>
@@ -290,4 +349,12 @@ WithEmpty.args = {
 export const PaginationAsyncExample = PaginatedAsyncTemplate.bind({});
 PaginationAsyncExample.args = {
   recordsPerPage: 3,
+};
+
+export const NewAsync = AsyncNew.bind({});
+NewAsync.args = {
+  showFooter: false,
+  styles: {
+    height: 'max 300px',
+  },
 };

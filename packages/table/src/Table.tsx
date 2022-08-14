@@ -4,15 +4,18 @@ import { forwardRef, RefObject, useRef, useState } from 'react';
 import { TableBase, TableWrapper, Td, Tr } from './TableElementsBase';
 import { TableHeadSection } from './TableHeadSection';
 import { TableBodySection } from './TableBodySection';
-import { JengaPaginatedTableProps } from './types';
+import { JengaTableProps } from './types';
 import { useCombinedRefs } from '@jenga-ui/utils';
 import { useProviderProps } from '@jenga-ui/core';
-import { filterBaseProps } from 'tastycss';
+import { BaseProps, filterBaseProps } from 'tastycss';
 import { TableRowGroup } from './TableRowGroup';
 import { TablePaginationHeader } from './TablePaginationHeader';
 
-const DEFAULT_RECORDS_PER_PAGE = 100;
-
+const calcTotalPages = (bodyRows: number, recordsPerPage: number) => {
+  let totalPages = parseInt((bodyRows / recordsPerPage).toFixed(0));
+  totalPages += bodyRows % recordsPerPage === 0 ? 0 : 1;
+  return totalPages;
+};
 const DefaultTableProps = {
   showFooter: true,
   selectionMode: 'none',
@@ -25,7 +28,7 @@ const DefaultTableProps = {
   paginated: false,
 };
 
-const withDefaultTableProps = (props) => {
+const withDefaultTableProps = (props: JengaTableProps) => {
   for (let key of Object.keys(DefaultTableProps)) {
     if (!props.hasOwnProperty(key)) {
       props[key] = DefaultTableProps[key];
@@ -34,108 +37,113 @@ const withDefaultTableProps = (props) => {
   return props;
 };
 
-export const Table = forwardRef(
-  (
-    props: JengaPaginatedTableProps & {
-      paginated?: boolean;
-      showFooter?: boolean;
-    },
-    ref,
-  ) => {
-    props = withDefaultTableProps(useProviderProps(props));
-    let {
-      headerStyles = {},
-      tableStyles = {},
-      bodyStyles = {},
-      footerStyles = {},
-      ...otherProps
-    } = props;
+export const Table = forwardRef((props: JengaTableProps, ref) => {
+  props = withDefaultTableProps(useProviderProps(props));
+  let {
+    headerStyles = {},
+    tableStyles = {},
+    bodyStyles = {},
+    footerStyles = {},
+    ...otherProps
+  } = props;
 
-    const wrapperProps = filterBaseProps(props);
-    let state = useTableState({
-      ...props,
-      showSelectionCheckboxes:
-        props.selectionMode === 'multiple' &&
-        props.selectionBehavior !== 'replace',
-    });
-    ref = useCombinedRefs([ref, useRef(null)]);
-    let { gridProps } = useTable(props, state, ref as RefObject<HTMLElement>);
-
-    let { recordsPerPage, defaultPage = 1, showPage, totalPages } = props;
-    const totalRecords = state.collection.rows.length - 1;
-    if (props.paginated) {
-      if (totalPages && !recordsPerPage) {
-        //updating pages and records per page ... priority given to recordsPerPage prop over totalPagesProp.
-        recordsPerPage = totalRecords / totalPages;
-      } else {
-        if (recordsPerPage) {
-          if (recordsPerPage > totalRecords) recordsPerPage = totalRecords;
-          if (recordsPerPage < 0) recordsPerPage = DEFAULT_RECORDS_PER_PAGE;
-          totalPages = parseInt((totalRecords / recordsPerPage).toFixed(0));
-          totalPages += totalRecords % recordsPerPage === 0 ? 0 : 1;
-        } else {
-          recordsPerPage = DEFAULT_RECORDS_PER_PAGE;
-          totalPages = parseInt((totalRecords / recordsPerPage).toFixed(0));
-          totalPages += totalRecords % recordsPerPage === 0 ? 0 : 1;
-        }
-      }
-    } else {
-      recordsPerPage = totalRecords;
-      totalPages = 1;
-    }
-    const [currentPage, setCurrentPage] = useState(showPage || defaultPage);
-
-    return (
-      <TableWrapper {...wrapperProps}>
-        <TableBase
-          {...gridProps}
-          ref={ref}
-          {...otherProps}
-          styles={tableStyles}
-          paginated={props.paginated}
-          currentlyVisibleRange={[
-            recordsPerPage * (currentPage - 1),
-            recordsPerPage * currentPage,
-          ]}
+  const wrapperProps = filterBaseProps(props, {
+    propNames: new Set(['styles', 'style']),
+  }); //include more props
+  let state = useTableState({
+    ...props,
+    showSelectionCheckboxes:
+      props.selectionMode === 'multiple' &&
+      props.selectionBehavior !== 'replace',
+  });
+  ref = useCombinedRefs([ref, useRef(null)]);
+  let { gridProps } = useTable(props, state, ref as RefObject<HTMLElement>);
+  let { recordsPerPage = 20, showPage = 1 } = props;
+  const [currentPage, setCurrentPage] = useState(showPage);
+  console.log(wrapperProps);
+  return (
+    <TableWrapper {...wrapperProps}>
+      <TableBase
+        {...gridProps}
+        currentPage={currentPage}
+        totalPages={calcTotalPages(
+          [...state.collection.body.childNodes].length,
+          recordsPerPage,
+        )}
+        currentlyVisibleRange={[
+          (currentPage - 1) * recordsPerPage,
+          currentPage * recordsPerPage,
+        ]}
+        recordsPerPage={recordsPerPage}
+        ref={ref}
+        {...otherProps}
+        styles={tableStyles}
+      >
+        <TableHeadSection
+          state={state}
+          stickyHeader={props.stickyHeader}
+          styles={headerStyles}
         >
-          <TableHeadSection
-            state={state}
-            stickyHeader={props.stickyHeader}
-            styles={headerStyles}
-          >
-            {props.paginated && totalPages !== 1 ? (
-              <TablePaginationHeader
-                pages={totalPages}
-                setPage={setCurrentPage}
-                currentPage={currentPage}
-              />
-            ) : null}
-          </TableHeadSection>
-          <TableBodySection
-            state={state}
-            styles={bodyStyles}
-            IsEmpty={props.IsEmpty}
+          {props.paginated ? (
+            <TablePaginationHeader setPage={setCurrentPage} />
+          ) : null}
+        </TableHeadSection>
+        <TableBodySection
+          state={state}
+          styles={bodyStyles}
+          IsEmpty={props.IsEmpty}
+        />
+        {props.showFooter &&
+        [...state.collection.body.childNodes].length !== 0 ? (
+          <TableFooter
+            styles={footerStyles}
+            currentPage={currentPage}
+            totalRecords={[...state.collection.body.childNodes].length}
+            paginated={props.paginated || false}
+            recordsPerPage={recordsPerPage}
           />
-          {props.showFooter && state.collection.rows.length - 1 !== 0 ? (
-            <TableRowGroup
-              as={'tfoot'}
-              styles={{ height: '40px', fill: '#f9f9fe', ...footerStyles }}
-            >
-              <Tr>
-                <Td
-                  colSpan={'100%'}
-                  styles={{ textAlign: 'center', fontWeight: 400 }}
-                >
-                  Showing {state.collection.rows.length - 1} of{' '}
-                  {state.collection.rows.length - 1} results.
-                </Td>
-              </Tr>
-            </TableRowGroup>
-          ) : (
-            <></>
-          )}
-        </TableBase>
-      </TableWrapper>
-    );
+        ) : (
+          <></>
+        )}
+      </TableBase>
+    </TableWrapper>
+  );
+});
+
+const TableFooter = (
+  props: BaseProps & {
+    currentPage: number;
+    recordsPerPage: number;
+    totalRecords: number;
+    paginated: boolean;
   },
-);
+) => {
+  let {
+    currentPage,
+    recordsPerPage,
+    paginated,
+    totalRecords,
+    styles,
+    ...otherProps
+  } = props;
+  let currentlyVisible = totalRecords;
+  let totalPages = calcTotalPages(totalRecords, recordsPerPage);
+  if (paginated) {
+    if (currentPage === totalPages) {
+      currentlyVisible = totalRecords % recordsPerPage;
+    } else currentlyVisible = recordsPerPage;
+  }
+  return (
+    <TableRowGroup
+      as={'tfoot'}
+      styles={{ height: '40px', fill: '#f9f9fe', ...styles }}
+      {...otherProps}
+    >
+      <Tr>
+        <Td colSpan={'100%'} styles={{ textAlign: 'center', fontWeight: 400 }}>
+          Showing {currentlyVisible} of {totalRecords} results.
+        </Td>
+      </Tr>
+    </TableRowGroup>
+  );
+};

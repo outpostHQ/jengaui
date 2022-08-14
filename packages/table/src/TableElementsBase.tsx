@@ -32,7 +32,7 @@ export const TableWrapper = tasty(Block, {
     //   // '580px max 580px min 580px',
     //   '200px max 200px min 200px',
     // ],
-    // height: [' 200px max 200px min 200px'],
+    height: [' 200px max 200px min 200px'],
     styledScrollbar: true,
     position: 'relative',
     padding: '0',
@@ -53,6 +53,7 @@ export const JengaTablePropsContext = createContext<{
   cellPadding: string | string[];
   checkboxAdditionalProps?: JengaCheckboxProps;
   checkboxStyles?: Styles;
+  totalPages?: number;
 }>({ zebraStripes: false, paginated: false, cellPadding: '10px' });
 
 const cellPaddingCatalog = {
@@ -72,26 +73,32 @@ const parseCellPadding = (cellPadding: string | string[]) => {
 };
 
 export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
-  const {
+  let {
     styles,
     zebraStripes = false,
     paginated = false,
-    currentlyVisibleRange = [0, 1000],
+    currentlyVisibleRange = [0, Infinity],
     cellPadding = ['regular', 'dense'],
     checkboxAdditionalProps = {},
     checkboxStyles = {},
+    currentPage = 1,
+    totalPages = 1,
+    recordsPerPage = 20,
     ...otherProps
   } = props;
-
+  if (totalPages < 1) totalPages = 1;
   return (
     <JengaTablePropsContext.Provider
       value={{
         zebraStripes: zebraStripes,
         paginated: paginated,
         currentlyVisibleRange: currentlyVisibleRange,
+        currentPage: currentPage,
+        recordsPerPage: recordsPerPage,
         cellPadding: parseCellPadding(cellPadding),
         checkboxAdditionalProps: checkboxAdditionalProps,
         checkboxStyles: checkboxStyles,
+        totalPages: totalPages,
       }}
     >
       <TableTemplate
