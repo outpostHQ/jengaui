@@ -3735,6 +3735,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@jenga-ui/breadcrumbs@workspace:packages/breadcrumbs":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/breadcrumbs@workspace:packages/breadcrumbs"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@jenga-ui/utils": "workspace:packages/utils"
+    "@react-aria/breadcrumbs": ^3.3.0
+    "@react-types/breadcrumbs": ^3.4.2
+    "@types/react": ^17.0.38
+    "@types/react-dom": ^17.0.11
+    "@vitejs/plugin-react": ^2.0.0
+    rimraf: ^3.0.2
+    tastycss: ^0.7.9
+    typescript: ^4.5.4
+    vite: ^3.0.4
+  peerDependencies:
+    react: ^17.0.0
+    react-dom: ^17.0.0
+  languageName: unknown
+  linkType: soft
+
 "@jenga-ui/button-group@^0.1.1, @jenga-ui/button-group@workspace:packages/button-group":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/button-group@workspace:packages/button-group"
@@ -6283,6 +6304,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/breadcrumbs@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@react-aria/breadcrumbs@npm:3.3.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/i18n": ^3.5.0
+    "@react-aria/interactions": ^3.10.0
+    "@react-aria/link": ^3.3.2
+    "@react-aria/utils": ^3.13.2
+    "@react-types/breadcrumbs": ^3.4.2
+    "@react-types/shared": ^3.14.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 19a83b152b448020feaf23e4ab83c13f97d62b462bdd0a67fef739216d74952248c77183e9d6d917308740f237d813b08fbb410b9aac080a668558185c50417b
+  languageName: node
+  linkType: hard
+
 "@react-aria/button@npm:^3.6.0":
   version: 3.6.0
   resolution: "@react-aria/button@npm:3.6.0"
@@ -6418,6 +6456,22 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: f2527a8d517a46200fac23f2da0f801d17c678085110df248bd5098af2fa846e48e9477776029185f474bb5f3451864a7ef31adcc65263489bdbf4ab7e21662f
+  languageName: node
+  linkType: hard
+
+"@react-aria/link@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "@react-aria/link@npm:3.3.2"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/focus": ^3.7.0
+    "@react-aria/interactions": ^3.10.0
+    "@react-aria/utils": ^3.13.2
+    "@react-types/link": ^3.3.2
+    "@react-types/shared": ^3.14.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: e851d7cce222ec9bbd16bbd44bc55d4a2f4e139ad28f7b1de9d4f4b36442af87ffe7b1bcbda3f73e969319a0c3a81732fff0044a372448657b3ddcb401170234
   languageName: node
   linkType: hard
 
@@ -6978,6 +7032,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-types/breadcrumbs@npm:^3.4.2":
+  version: 3.4.2
+  resolution: "@react-types/breadcrumbs@npm:3.4.2"
+  dependencies:
+    "@react-types/link": ^3.3.2
+    "@react-types/shared": ^3.14.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 2780b44c28c687b76d58d05aea444f304b1e8c0ec5defe8ce11bdb74af862fa7fc863abfb55aedc5758741d5e31d7a95c06b131c1466d5e07591c3264d5387b6
+  languageName: node
+  linkType: hard
+
 "@react-types/button@npm:^3.6.0":
   version: 3.6.0
   resolution: "@react-types/button@npm:3.6.0"
@@ -7042,6 +7108,18 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: 9d0bef41d112b417d69b961dfb40bcba61825d9540ba4935fa9b768675bf238e9cd58ac644276292efff102270b1a38cd3c4c0042034bf93cd162c8b3acab767
+  languageName: node
+  linkType: hard
+
+"@react-types/link@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "@react-types/link@npm:3.3.2"
+  dependencies:
+    "@react-aria/interactions": ^3.10.0
+    "@react-types/shared": ^3.14.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 098a9ec2428a2782c6f62083e3034515eb26d23ad02d60e902c48d459e5914fd72a8d4b9c171536120b95b42c1a4423525acd6d4f2ac12fbd1e4670ab549e1a8
   languageName: node
   linkType: hard
 
