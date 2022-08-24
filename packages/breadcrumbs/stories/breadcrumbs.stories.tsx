@@ -8,13 +8,28 @@ export default {
   component: Breadcrumbs,
 };
 
+const Separator = (
+  <span aria-hidden="true" style={{ padding: '0' }}>
+    {'/'}
+  </span>
+);
 const Template = (args: JengaBreadCrumbProps) => (
-  <Breadcrumbs {...args}>
-    <BreadcrumbItem elementType="a" key={'a'} href={'https://google.com'}>
-      a
+  <Breadcrumbs {...args} listStyles={{ fontSize: '28px' }}>
+    <BreadcrumbItem
+      key={'a'}
+      href={'#project'}
+      separator={Separator}
+      styles={{ textDecoration: 'none' }}
+    >
+      Project
     </BreadcrumbItem>
-    <BreadcrumbItem elementType="a" key={'b'}>
-      b
+    <BreadcrumbItem
+      key={'b'}
+      href={'#scope'}
+      separator={Separator}
+      styles={{ color: 'rgba(71, 70, 109, 1)' }}
+    >
+      Scope
     </BreadcrumbItem>
   </Breadcrumbs>
 );

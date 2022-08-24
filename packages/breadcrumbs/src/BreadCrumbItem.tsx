@@ -70,7 +70,7 @@ export const BreadcrumbItem = forwardRef(
               current: 'bold',
             },
             fontSize: {
-              current: '1.1em',
+              '': '1em',
             },
             cursor: {
               '': 'pointer',
