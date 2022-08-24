@@ -35,7 +35,7 @@ export function TableColumnHeader(props: JengaTableColumnHeaderProps) {
         cursor: 'default',
         color: 'rgba(43, 41, 98, 1)',
         ...column.props.styles,
-        ...column.props.colCellProps,
+        ...column.props.colCellStyles,
         ...styles,
       }}
       ref={ref}
