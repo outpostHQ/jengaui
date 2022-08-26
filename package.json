@@ -2,24 +2,14 @@
   "name": "jenga-ui",
   "private": true,
   "scripts": {
-    "start": "yarn storybook",
-    "dev": "vite",
-    "build": "yarn workspaces foreach run build",
-    "build:types": "yarn workspaces foreach run build:types",
-    "test": "jest",
-    "test-cover": "jest --coverage",
-    "test-watch": "jest --watch",
-    "test-storybook": "test-storybook",
-    "serve": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "build-docs": "STORYBOOK_MODE=docs build-storybook --docs -o storybook-docs",
-    "lint": "prettier --check .",
-    "format": "prettier --write .",
-    "postinstall": "husky install",
-    "publish:all": "lerna publish --no-verify-access",
-    "publish:beta": "lerna publish --ignore-prepublish --ignore-scripts --canary --preid beta --dist-tag beta",
-    "publish:dev": "run-s build:dev publish:beta"
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md,svg}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "dependencies": {
     "@types/react-is": "^17.0.3",
@@ -32,16 +22,7 @@
     "tastycss": "^0.7.9"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.5.10",
-    "@storybook/addon-docs": "^6.5.10",
-    "@storybook/addon-essentials": "^6.5.10",
-    "@storybook/addon-interactions": "^6.5.10",
-    "@storybook/addon-links": "^6.5.10",
-    "@storybook/builder-vite": "^0.2.2",
-    "@storybook/jest": "^0.0.10",
-    "@storybook/react": "^6.5.10",
-    "@storybook/test-runner": "^0.5.0",
-    "@storybook/testing-library": "^0.0.13",
+    "@changesets/cli": "^2.24.3",
     "@swc/core": "^1.2.148",
     "@swc/jest": "^0.2.20",
     "@testing-library/jest-dom": "^5.16.1",
@@ -53,7 +34,6 @@
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
-    "@vitejs/plugin-react": "^2.0.0",
     "bytes": "^3.1.2",
     "chromatic": "^6.7.3",
     "dedent": "^0.7.0",
@@ -68,12 +48,12 @@
     "husky": "^8.0.1",
     "jest": "^27.5.1",
     "jest-styled-components": "^7.0.8",
-    "lerna": "^5.3.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "react-test-renderer": "^18.2.0",
-    "typescript": "^4.5.4",
-    "vite": "^3.0.4"
+    "tsup": "^6.2.2",
+    "turbo": "^1.4.3",
+    "typescript": "^4.5.4"
   },
   "husky": {
     "hooks": {
@@ -83,7 +63,8 @@
   "workspaces": [
     "packages/*",
     "testi",
-    "testii"
+    "testii",
+    "storybook"
   ],
   "resolutions": {
     "es5-ext": "0.10.53",
@@ -97,5 +78,6 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*": "prettier --write"
-  }
+  },
+  "packageManager": "yarn@3.0.2"
 }

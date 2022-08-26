@@ -9,27 +9,18 @@
     "jenga-ui",
     "ui"
   ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "types"
+    "dist/**"
   ],
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
-  "types": "types/index.d.ts",
-  "typings": "types/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "prebuild": "rimraf dist && rimraf types",
-    "postbuild": "yarn build:types",
-    "build:types": "npx tsc -b --verbose"
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "publishConfig": {
     "access": "public"
@@ -39,14 +30,14 @@
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@jenga-ui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "@vitejs/plugin-react": "^2.0.0",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.5.4",
-    "vite": "^3.0.4"
+    "tsup": "^6.2.2",
+    "typescript": "^4.5.4"
   },
   "dependencies": {
+    "styled-components": "^5.3.5",
     "tastycss": "^0.7.9"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",

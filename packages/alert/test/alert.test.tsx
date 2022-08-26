@@ -1,7 +1,17 @@
 import { renderHook } from '@testing-library/react-hooks';
+
 import { useAlert } from '../src/use-alert';
 
 describe('<Alert /> component', () => {
+  beforeAll(() => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+    jest.spyOn(console, 'group').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
+
   it('should correctly render disabled', () => {
     const { result } = renderHook(() =>
       useAlert({ theme: 'danger', isDisabled: true }),
