@@ -33,14 +33,14 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@jenga-ui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "tsup": "^6.2.2",
+    "tsup": "^6.2.3",
     "typescript": "^4.5.4"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
@@ -56,14 +56,14 @@
     "@jenga-ui/core": "*",
     "@jenga-ui/overlays": "*",
     "@jenga-ui/utils": "*",
-    "@react-aria/focus": "^3.7.0",
-    "@react-aria/overlays": "^3.10.0",
-    "@react-aria/tooltip": "^3.3.0",
-    "@react-spectrum/utils": "^3.7.2",
-    "@react-stately/tooltip": "^3.2.0",
-    "@react-types/shared": "^3.14.0",
-    "@react-types/tooltip": "^3.2.2",
+    "@react-aria/focus": "^3.8.0",
+    "@react-aria/overlays": "^3.10.1",
+    "@react-aria/tooltip": "^3.3.1",
+    "@react-spectrum/utils": "^3.7.3",
+    "@react-stately/tooltip": "^3.2.1",
+    "@react-types/shared": "^3.14.1",
+    "@react-types/tooltip": "^3.2.3",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.7.9"
+    "tastycss": "^0.8.1"
   }
 }

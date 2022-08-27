@@ -26,14 +26,14 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@jenga-ui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "tsup": "^6.2.2",
+    "tsup": "^6.2.3",
     "typescript": "^4.5.4"
   },
   "dependencies": {
@@ -43,12 +43,12 @@
     "@jenga-ui/providers": "*",
     "@jenga-ui/text-input": "*",
     "@jenga-ui/utils": "*",
-    "@react-aria/i18n": "^3.5.1",
-    "@react-aria/numberfield": "^3.3.0",
-    "@react-stately/numberfield": "^3.2.0",
-    "@react-types/numberfield": "^3.3.2",
+    "@react-aria/i18n": "^3.6.0",
+    "@react-aria/numberfield": "^3.3.1",
+    "@react-stately/numberfield": "^3.2.1",
+    "@react-types/numberfield": "^3.3.3",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.7.9"
+    "tastycss": "^0.8.1"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {
