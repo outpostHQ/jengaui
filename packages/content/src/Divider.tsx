@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+
 import {
   BASE_STYLES,
   BaseProps,
@@ -42,7 +43,10 @@ const DividerElement = tasty({
 
 export interface JengaDividerProps extends BaseProps, OuterStyleProps {}
 
-export const Divider = forwardRef((props: JengaDividerProps, ref) => {
+export const Divider = forwardRef(function Divider(
+  props: JengaDividerProps,
+  ref,
+) {
   const { mods, children, styles, ...otherProps } = useSlotProps(
     props,
     'divider',
@@ -57,8 +61,8 @@ export const Divider = forwardRef((props: JengaDividerProps, ref) => {
         ...mods,
       }}
       {...filterBaseProps(otherProps, { eventProps: true })}
-      styles={styles}
       ref={ref}
+      styles={styles}
     >
       {children && (
         <>

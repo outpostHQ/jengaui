@@ -4,13 +4,12 @@ import { useSearchFieldState } from '@react-stately/searchfield';
 import { useSearchField } from '@react-aria/searchfield';
 import {
   useCombinedRefs,
-  ariaToJengaButtonProps,
   castNullableStringValue,
   WithNullableValue,
 } from '@jenga-ui/utils';
 import { JengaTextInputBaseProps, TextInputBase } from '@jenga-ui/text-input';
 import { useProviderProps } from '@jenga-ui/providers';
-import { Button } from '@jenga-ui/button';
+import { Button, ariaToJengaButtonProps } from '@jenga-ui/button';
 
 export interface JengaSearchInputProps extends JengaTextInputBaseProps {
   /** Whether the search input is clearable using ESC keyboard button or clear button inside the input */

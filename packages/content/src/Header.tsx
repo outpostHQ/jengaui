@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -28,7 +29,7 @@ export interface JengaHeaderProps
     ContainerStyleProps,
     TextStyleProps {}
 
-export const Header = forwardRef((props: JengaHeaderProps, ref) => {
+export const Header = forwardRef(function Header(props: JengaHeaderProps, ref) {
   props = useSlotProps(props, 'header');
 
   const styles = extractStyles(props, STYLE_LIST);
@@ -36,8 +37,8 @@ export const Header = forwardRef((props: JengaHeaderProps, ref) => {
   return (
     <HeaderElement
       {...filterBaseProps(props, { eventProps: true })}
-      styles={styles}
       ref={ref}
+      styles={styles}
     />
   );
 });

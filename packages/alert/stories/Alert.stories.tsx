@@ -1,7 +1,9 @@
 import { ComponentMeta, Story } from '@storybook/react';
+
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
 import { Alert } from '../src/Alert';
 import { JengaAlertProps } from '../src/types';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Content/Alert',

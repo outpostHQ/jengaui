@@ -1,0 +1,101 @@
+{
+        "name": "@jenga-ui/react",
+        "version": "0.1.1",
+        "license": "MIT",
+        "description": "Responsive and accessible React UI components built with TastyCSS",
+        "keywords": [
+                "react",
+                "jenga-ui",
+                "ui",
+                "design-system",
+                "react-components",
+                "uikit",
+                "accessible",
+                "components",
+                "tastycss",
+                "library",
+                "design-system"
+        ],
+        "main": "./dist/index.js",
+        "module": "./dist/index.mjs",
+        "types": "./dist/index.d.ts",
+        "files": [
+                "dist/**"
+        ],
+        "sideEffects": false,
+        "scripts": {
+                "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+                "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+                "lint": "TIMING=1 eslint src/**/*.ts* --fix",
+                "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+        },
+        "dependencies": {
+                "@jenga-ui/active-zone": "*",
+                "@jenga-ui/alert": "*",
+                "@jenga-ui/alert-dialog": "*",
+                "@jenga-ui/avatar": "*",
+                "@jenga-ui/badge": "*",
+                "@jenga-ui/button": "*",
+                "@jenga-ui/button-group": "*",
+                "@jenga-ui/card": "*",
+                "@jenga-ui/checkbox": "*",
+                "@jenga-ui/combo-box": "*",
+                "@jenga-ui/content": "*",
+                "@jenga-ui/copy-snippet": "*",
+                "@jenga-ui/dialog": "*",
+                "@jenga-ui/file-input": "*",
+                "@jenga-ui/form": "*",
+                "@jenga-ui/hooks": "*",
+                "@jenga-ui/input": "*",
+                "@jenga-ui/layout": "*",
+                "@jenga-ui/link": "*",
+                "@jenga-ui/menu": "*",
+                "@jenga-ui/modal": "*",
+                "@jenga-ui/new-notifications": "*",
+                "@jenga-ui/notification": "*",
+                "@jenga-ui/number-input": "*",
+                "@jenga-ui/overlays": "*",
+                "@jenga-ui/password-input": "*",
+                "@jenga-ui/placeholder": "*",
+                "@jenga-ui/portal": "*",
+                "@jenga-ui/prism-code": "*",
+                "@jenga-ui/providers": "*",
+                "@jenga-ui/radio": "*",
+                "@jenga-ui/result": "*",
+                "@jenga-ui/root": "*",
+                "@jenga-ui/search-input": "*",
+                "@jenga-ui/select": "*",
+                "@jenga-ui/services": "*",
+                "@jenga-ui/skeleton": "*",
+                "@jenga-ui/switch": "*",
+                "@jenga-ui/tabs": "*",
+                "@jenga-ui/tag": "*",
+                "@jenga-ui/text-input": "*",
+                "@jenga-ui/textarea": "*",
+                "@jenga-ui/tooltip": "*",
+                "@jenga-ui/utils": "*"
+        },
+        "devDependencies": {
+                "@jenga-ui/tsconfig": "*",
+                "@types/react": "^17.0.38",
+                "@types/react-dom": "^17.0.11",
+                "node-abort-controller": "^3.0.1",
+                "tsup": "^6.2.3",
+                "typescript": "^4.5.4"
+        },
+        "publishConfig": {
+                "access": "public"
+        },
+        "peerDependencies": {
+                "react": "^17.0.0",
+                "react-dom": "^17.0.0"
+        },
+        "homepage": "https://github.com/OutpostHQ/jenga-ui",
+        "repository": {
+                "type": "git",
+                "url": "git+https://github.com/OutpostHQ/jenga-ui.git"
+        },
+        "bugs": {
+                "url": "https://github.com/OutpostHQ/jenga-ui/issues"
+        }
+}

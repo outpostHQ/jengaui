@@ -4,7 +4,8 @@ import {
   filterBaseProps,
   TEXT_STYLES,
 } from 'tastycss';
-import { useDeprecationWarning } from '../../core/src/_internal';
+import { useDeprecationWarning } from '@jenga-ui/hooks/src/_internal';
+
 import { JengaAlertProps } from './types';
 
 const STYLE_LIST = [...CONTAINER_STYLES, ...TEXT_STYLES] as const;
