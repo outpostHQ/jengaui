@@ -1,32 +1,5 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "module": "esnext",
-    "lib": ["dom", "esnext"],
-    "declaration": true,
-    "noEmitOnError": false,
-    "allowJs": true,
-    "checkJs": true,
-    "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noImplicitAny": false,
-    "target": "es2019",
-    "noEmit": true
-  },
-  "exclude": [
-    "**/dist",
-    "**/vite.config.ts",
-    "**/node_modules",
-    "**/*.stories.tsx"
-  ],
-  "include": ["index.ts", "src/**/*"]
+  "extends": "@jenga-ui/tsconfig/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
 }

@@ -1,46 +1,33 @@
-import { forwardRef, ReactNode } from 'react';
-import { Action, JengaActionProps } from './Action';
+import { cloneElement, forwardRef, ReactElement, useMemo } from 'react';
 import { LoadingOutlined } from '@ant-design/icons';
-import { Styles } from 'tastycss';
 import { FocusableRef } from '@react-types/shared';
+
+import { Action, JengaActionProps } from './Action';
+import { Styles } from 'tastycss';
 import { accessibilityWarning } from '@jenga-ui/utils';
 
 export interface JengaButtonProps extends JengaActionProps {
-  icon?: ReactNode;
+  icon?: ReactElement;
+  rightIcon?: ReactElement;
   isLoading?: boolean;
   isSelected?: boolean;
   type?:
     | 'primary'
-    | 'default'
+    | 'secondary'
     | 'danger'
     | 'link'
     | 'clear'
     | 'outline'
     | 'neutral'
     | (string & {});
-  size?: 'small' | 'default' | 'large' | (string & {});
+  size?: 'small' | 'medium' | 'large' | (string & {});
 }
 
-export function provideStyles({
-  size,
-  type,
-  theme,
-  isLoading,
-  icon,
-  children,
-  label,
-}) {
-  children = children || icon ? children : label;
-
+export function provideButtonStyles({ type, theme }) {
   return {
-    ...DEFAULT_STYLES,
-    ...STYLES_BY_SIZE[size ?? 'default'],
     ...(theme === 'danger' ? DANGER_STYLES_BY_TYPE : DEFAULT_STYLES_BY_TYPE)[
-      type ?? 'default'
+      type ?? 'secondary'
     ],
-    ...((isLoading || icon) && !children
-      ? ICON_ONLY_STYLES_BY_SIZE[size ?? 'default']
-      : null),
   };
 }
 
@@ -60,7 +47,7 @@ const DEFAULT_STYLES_BY_TYPE: { [key: string]: Styles } = {
       '[disabled]': '#dark.30',
     },
   },
-  default: {
+  secondary: {
     border: {
       '': '#clear',
       pressed: '#purple.30',
@@ -161,7 +148,7 @@ const DANGER_STYLES_BY_TYPE: { [key: string]: Styles } = {
       '[disabled]': '#dark.30',
     },
   },
-  default: {
+  secondary: {
     border: {
       '': '#clear',
       pressed: '#danger.30',
@@ -240,38 +227,7 @@ const DANGER_STYLES_BY_TYPE: { [key: string]: Styles } = {
   },
 };
 
-const STYLES_BY_SIZE = {
-  small: {
-    padding: '(.75x - 1px) (1.5x - 1px)',
-  },
-  default: {
-    padding: '(1.25x - 1px) (2x - 1px)',
-  },
-  large: {
-    padding: '(1.5x - 1px) (2.5x - 1px)',
-    preset: 't2m',
-  },
-};
-
-const ICON_ONLY_STYLES_BY_SIZE = {
-  small: {
-    padding: 0,
-    height: '4x',
-    width: '4x',
-  },
-  default: {
-    padding: 0,
-    height: '5x',
-    width: '5x',
-  },
-  large: {
-    padding: 0,
-    height: '6x',
-    width: '6x',
-  },
-};
-
-const DEFAULT_STYLES = {
+export const DEFAULT_BUTTON_STYLES = {
   display: 'inline-grid',
   placeItems: 'center stretch',
   placeContent: 'center',
@@ -279,82 +235,139 @@ const DEFAULT_STYLES = {
   flow: 'column',
   radius: true,
   fontWeight: 500,
-  preset: 't3',
+  preset: {
+    '': 't3m',
+    '[data-size="large"]': 't2m',
+  },
   textDecoration: 'none',
   transition: 'theme',
+  padding: {
+    '': '(1.25x - 1bw) (2x - 1bw)',
+    '[data-size="small"]': '(.75x - 1bw) (1.5x - 1bw)',
+    '[data-size="medium"]': '(1.25x - 1bw) (2x - 1bw)',
+    '[data-size="large"]': '(1.5x - 1bw) (2.5x - 1bw)',
+    'single-icon-only': 0,
+  },
+  width: {
+    '': 'initial',
+    '[data-size="small"] & single-icon-only': '4x',
+    '[data-size="medium"] & single-icon-only': '5x',
+    '[data-size="large"] & single-icon-only': '6x',
+  },
+  height: {
+    '': 'initial',
+    '[data-size="small"] & single-icon-only': '4x',
+    '[data-size="medium"] & single-icon-only': '5x',
+    '[data-size="large"] & single-icon-only': '6x',
+  },
   whiteSpace: 'nowrap',
-  '& .anticon.anticon-loading': {
+  '& .anticon': {
     transition:
       'display .2s steps(1, start), margin .2s linear, opacity .2s linear',
   },
+
+  ButtonIcon: {
+    fontSize: {
+      '': 'initial',
+      '[data-size="small"]': '14px',
+      '[data-size="medium"]': '16px',
+      '[data-size="large"]': '18px',
+    },
+  },
 } as Styles;
 
-export const Button = forwardRef(
-  (allProps: JengaButtonProps, ref: FocusableRef<HTMLElement>) => {
-    let { type, size, label, styles, children, theme, icon, mods, ...props } =
-      allProps;
+export const Button = forwardRef(function Button(
+  allProps: JengaButtonProps,
+  ref: FocusableRef<HTMLElement>,
+) {
+  let {
+    type,
+    size,
+    label,
+    styles,
+    children,
+    theme,
+    icon,
+    rightIcon,
+    mods,
+    ...props
+  } = allProps;
 
-    const isDisabled = props.isDisabled;
-    const isLoading = props.isLoading;
-    const isSelected = props.isSelected;
-    const propsForStyles = {
-      ...props,
-      label,
-      isLoading,
-      isDisabled,
-      theme,
-      size,
-      type,
-      icon,
-      children,
-    };
+  const isDisabled = props.isDisabled;
+  const isLoading = props.isLoading;
+  const isSelected = props.isSelected;
 
-    if (!children) {
-      if (icon) {
-        if (!label) {
-          accessibilityWarning(
-            'If you provide `icon` property for a Button and do not provide any children then you should specify the `label` property to make sure the Button element stays accessible.',
-          );
-        }
-      } else {
-        if (!label) {
-          accessibilityWarning(
-            'If you provide no children for a Button then you should specify the `label` property to make sure the Button element stays accessible.',
-          );
-        }
+  if (!children) {
+    if (icon) {
+      if (!label) {
+        accessibilityWarning(
+          'If you provide `icon` property for a Button and do not provide any children then you should specify the `label` property to make sure the Button element stays accessible.',
+        );
+      }
+    } else {
+      if (!label) {
+        accessibilityWarning(
+          'If you provide no children for a Button then you should specify the `label` property to make sure the Button element stays accessible.',
+        );
       }
     }
+  }
 
-    children = children || icon ? children : label;
+  children = children || icon || rightIcon ? children : label;
 
-    styles = {
-      ...provideStyles(propsForStyles),
+  styles = useMemo(
+    () => ({
+      ...DEFAULT_BUTTON_STYLES,
+      ...provideButtonStyles({ type, theme }),
       ...styles,
-    };
+    }),
+    [type, theme, styles],
+  );
 
-    if (isLoading && !children && styles) {
-      styles.fontSize = '1em';
-      styles.lineHeight = '1em';
-    }
+  if (icon) {
+    icon = cloneElement(icon, {
+      'data-element': 'ButtonIcon',
+    });
+  }
 
-    return (
-      <Action
-        as={props.to ? 'a' : undefined}
-        {...props}
-        ref={ref}
-        isDisabled={isLoading || isDisabled}
-        theme={theme}
-        data-type={type}
-        data-is-loading={isLoading ? '' : undefined}
-        data-is-selected={isSelected ? '' : undefined}
-        data-size={size}
-        mods={mods}
-        styles={styles}
-        label={label}
-      >
-        {icon || isLoading ? !isLoading ? icon : <LoadingOutlined /> : null}
-        {children}
-      </Action>
-    );
-  },
-);
+  if (rightIcon) {
+    rightIcon = cloneElement(rightIcon, {
+      'data-element': 'ButtonIcon',
+    });
+  }
+
+  const singleIcon = !!(
+    ((icon && !rightIcon) || (rightIcon && !icon)) &&
+    !children
+  );
+
+  const modifiers = useMemo(
+    () => ({
+      disabled: isDisabled,
+      loading: isLoading,
+      selected: isSelected,
+      'single-icon-only': singleIcon,
+      ...mods,
+    }),
+    [mods, isDisabled, isLoading, isSelected, singleIcon],
+  );
+
+  return (
+    <Action
+      as={props.to ? 'a' : undefined}
+      {...props}
+      ref={ref}
+      isDisabled={isLoading || isDisabled}
+      theme={theme}
+      data-type={type ?? 'secondary'}
+      data-size={size ?? 'medium'}
+      mods={modifiers}
+      styles={styles}
+      label={label}
+    >
+      {icon || isLoading ? !isLoading ? icon : <LoadingOutlined /> : null}
+      {children}
+      {rightIcon}
+    </Action>
+  );
+});

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { useEvent } from '@jenga-ui/core';
+import { useEvent } from '@jenga-ui/hooks';
 import { JengaNotifyApiPropsWithID } from '../types';
 import { NotificationsContext } from '../NotificationsContext';
 

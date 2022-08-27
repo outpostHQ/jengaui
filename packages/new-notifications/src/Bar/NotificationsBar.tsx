@@ -9,7 +9,7 @@ import { TransitionComponent } from './TransitionComponent';
 import { FloatingNotification } from './FloatingNotification';
 import { useNotificationsList, CollectionChildren } from '../hooks';
 import { mergeProps } from '@jenga-ui/utils';
-import { useEvent } from '@jenga-ui/core';
+import { useEvent } from '@jenga-ui/hooks';
 
 export type NotificationsBarProps = {
   items: Iterable<JengaNotifyApiPropsWithID>;

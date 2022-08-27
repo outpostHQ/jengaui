@@ -1,7 +1,9 @@
-import { DollarCircleOutlined } from '@ant-design/icons';
-import { Button } from '../src/Button';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { CaretDownOutlined, DollarCircleOutlined } from '@ant-design/icons';
+
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
 import { Space } from '@jenga-ui/layout';
+
+import { Button } from '../src/Button';
 
 export default {
   title: 'Actions/Button',
@@ -18,7 +20,7 @@ export default {
         type: 'radio',
         options: [
           undefined,
-          'default',
+          'secondary',
           'primary',
           'outline',
           'clear',
@@ -34,14 +36,44 @@ export default {
   },
 };
 
-const Template = ({ icon, label, onClick, ...props }) => (
+const Template = ({ icon, rightIcon, label, onClick, ...props }) => (
   <Button
     icon={icon ? <DollarCircleOutlined /> : undefined}
+    rightIcon={rightIcon ? <CaretDownOutlined /> : undefined}
     {...props}
     onPress={(e) => console.log('Press', e)}
   >
     {label}
   </Button>
+);
+
+const TemplateSizes = ({ label, icon, rightIcon, size, ...props }) => (
+  <Space>
+    <Button
+      icon={icon ? <DollarCircleOutlined /> : undefined}
+      rightIcon={rightIcon ? <CaretDownOutlined /> : undefined}
+      {...props}
+      size="small"
+    >
+      {label}
+    </Button>
+    <Button
+      icon={icon ? <DollarCircleOutlined /> : undefined}
+      rightIcon={rightIcon ? <CaretDownOutlined /> : undefined}
+      {...props}
+      size="medium"
+    >
+      {label}
+    </Button>
+    <Button
+      icon={icon ? <DollarCircleOutlined /> : undefined}
+      rightIcon={rightIcon ? <CaretDownOutlined /> : undefined}
+      {...props}
+      size="large"
+    >
+      {label}
+    </Button>
+  </Space>
 );
 
 const TemplateStates = ({ label, mods, ...props }) => (
@@ -55,7 +87,7 @@ const TemplateStates = ({ label, mods, ...props }) => (
         disabled: false,
       }}
     >
-      {label || 'Default'}
+      {label || 'Secondary'}
     </Button>
     <Button
       {...props}
@@ -111,7 +143,7 @@ Default.args = {
 
 export const SecondaryStates = TemplateStates.bind({});
 SecondaryStates.args = {
-  type: 'default',
+  type: 'secondary',
 };
 
 export const PrimaryStates = TemplateStates.bind({});
@@ -157,30 +189,31 @@ Danger.args = {
   theme: 'danger',
 };
 
-export const IconAndText = Template.bind({});
-IconAndText.args = {
+export const LeftIconAndText = TemplateSizes.bind({});
+LeftIconAndText.args = {
   label: 'Button',
   icon: true,
 };
 
-export const OnlyIcon = Template.bind({});
+export const RightIconAndText = TemplateSizes.bind({});
+RightIconAndText.args = {
+  label: 'Button',
+  rightIcon: true,
+};
+
+export const TwoIconsAndText = TemplateSizes.bind({});
+TwoIconsAndText.args = {
+  label: 'Button',
+  icon: true,
+  rightIcon: true,
+};
+
+export const OnlyIcon = TemplateSizes.bind({});
 OnlyIcon.args = {
   icon: true,
 };
 
-export const OnlyIconSmall = Template.bind({});
-OnlyIconSmall.args = {
-  icon: true,
-  size: 'small',
-};
-
-export const OnlyIconLarge = Template.bind({});
-OnlyIconLarge.args = {
-  icon: true,
-  size: 'large',
-};
-
-export const Loading = Template.bind({});
+export const Loading = TemplateSizes.bind({});
 Loading.args = {
   icon: true,
   isLoading: true,

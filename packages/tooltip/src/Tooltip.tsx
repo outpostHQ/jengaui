@@ -18,9 +18,11 @@ import {
   tasty,
 } from 'tastycss';
 import type { AriaTooltipProps } from '@react-types/tooltip';
-import { PlacementAxis } from '@jenga-ui/form';
 import styled from 'styled-components';
 import { DOMRefValue } from '@react-types/shared';
+
+type Axis = 'top' | 'right' | 'bottom' | 'left';
+type PlacementAxis = Axis | 'center';
 
 const TooltipElement = tasty({
   styles: {

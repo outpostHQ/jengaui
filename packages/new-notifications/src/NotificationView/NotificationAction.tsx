@@ -2,7 +2,7 @@ import { PressEvent } from '@react-types/shared/src/events';
 import { PropsWithChildren } from 'react';
 import { tasty } from 'tastycss';
 import { Button, JengaButtonProps } from '@jenga-ui/button';
-import { useEvent } from '@jenga-ui/core';
+import { useEvent } from '@jenga-ui/hooks';
 import { useNotificationContext } from './NotificationProvider';
 
 export type NotificationActionProps = PropsWithChildren<{

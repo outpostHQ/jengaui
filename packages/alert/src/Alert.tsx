@@ -1,8 +1,10 @@
 import { ForwardedRef, forwardRef } from 'react';
-import THEMES from '../../core/src/themes';
+
+import THEMES from '@jenga-ui/core/src/themes';
+import { tasty } from 'tastycss';
+
 import { JengaAlertProps } from './types';
 import { useAlert } from './use-alert';
-import { tasty } from 'tastycss';
 
 const AlertElement = tasty({
   name: 'Alert',
@@ -46,9 +48,9 @@ export const Alert = forwardRef(function Alert(
   return (
     <AlertElement
       {...filteredProps}
+      ref={ref}
       data-type={theme}
       styles={styles}
-      ref={ref}
     />
   );
 });

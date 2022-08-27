@@ -5,7 +5,7 @@ import {
   JengaNotifyApiProps,
   JengaNotifyApiPropsWithID,
 } from '../types';
-import { useEvent } from '@jenga-ui/core';
+import { useEvent } from '@jenga-ui/hooks';
 
 const DISMISS_EVENT_NAME = 'jenga:notification:dismiss';
 type DismissEvent = CustomEvent<JengaNotifyApiPropsWithID>;
