@@ -45,7 +45,8 @@
     "@jenga-ui/utils": "workspace:packages/utils",
     "@react-aria/breadcrumbs": "^3.3.0",
     "@react-types/breadcrumbs": "^3.4.2",
-    "tastycss": "^0.7.9"
+    "tastycss": "^0.7.9",
+    "tsup": "^6.2.3"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {
