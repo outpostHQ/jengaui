@@ -26,8 +26,8 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.38",
@@ -44,6 +44,7 @@
     "@jenga-ui/content": "workspace:packages/content",
     "@jenga-ui/core": "workspace:packages/core",
     "@jenga-ui/layout": "workspace:packages/layout",
+    "@jenga-ui/providers": "workspace:packages/providers",
     "@jenga-ui/utils": "workspace:packages/utils",
     "@react-aria/table": "^3.4.0",
     "@react-aria/visually-hidden": "^3.4.0",
@@ -60,5 +61,9 @@
   },
   "bugs": {
     "url": "https://github.com/OutpostHQ/jenga-ui/issues"
+  },
+  "resolutions": {
+    "@types/react": "17.0.14",
+    "@types/react-dom": "17.0.14"
   }
 }

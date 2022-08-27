@@ -1,6 +1,8 @@
-import { Block, JengaCheckboxProps } from '@jenga-ui/core';
+import { Block } from '@jenga-ui/core';
+import { JengaCheckboxProps } from '@jenga-ui/checkbox';
 import { createContext, forwardRef } from 'react';
 import { tasty, Element, Styles, AllBaseProps } from 'tastycss';
+
 import { JengaTableBaseProps } from './types';
 
 export const Tr = tasty<AllBaseProps & HTMLTableRowElement>({

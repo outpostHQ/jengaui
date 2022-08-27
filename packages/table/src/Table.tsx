@@ -1,13 +1,14 @@
 import { useTable } from '@react-aria/table';
 import { useTableState } from '@react-stately/table';
 import { forwardRef, RefObject, useRef, useState } from 'react';
+import { useCombinedRefs } from '@jenga-ui/utils';
+import { useProviderProps } from '@jenga-ui/providers';
+import { BaseProps, filterBaseProps } from 'tastycss';
+
 import { TableBase, TableWrapper, Td, Tr } from './TableElementsBase';
 import { TableHeadSection } from './TableHeadSection';
 import { TableBodySection } from './TableBodySection';
 import { JengaTableProps } from './types';
-import { useCombinedRefs } from '@jenga-ui/utils';
-import { useProviderProps } from '@jenga-ui/core';
-import { BaseProps, filterBaseProps } from 'tastycss';
 import { TableRowGroup } from './TableRowGroup';
 import { TablePaginationHeader } from './TablePaginationHeader';
 
@@ -65,6 +66,7 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
     <TableWrapper {...wrapperProps}>
       <TableBase
         {...gridProps}
+        ref={ref}
         currentPage={currentPage}
         totalPages={calcTotalPages(
           [...state.collection.body.childNodes].length,
@@ -75,7 +77,6 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
           currentPage * recordsPerPage,
         ]}
         recordsPerPage={recordsPerPage}
-        ref={ref}
         {...otherProps}
         styles={tableStyles}
       >
