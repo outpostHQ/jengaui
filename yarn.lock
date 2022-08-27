@@ -2386,6 +2386,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@jenga-ui/breadcrumbs@workspace:packages/breadcrumbs":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/breadcrumbs@workspace:packages/breadcrumbs"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@jenga-ui/utils": "workspace:packages/utils"
+    "@react-aria/breadcrumbs": ^3.3.0
+    "@react-types/breadcrumbs": ^3.4.2
+    "@types/react": ^17.0.38
+    "@types/react-dom": ^17.0.11
+    "@vitejs/plugin-react": ^2.0.0
+    rimraf: ^3.0.2
+    tastycss: ^0.7.9
+    tsup: ^6.2.3
+    typescript: ^4.5.4
+    vite: ^3.0.4
+  peerDependencies:
+    react: ^17.0.2
+    react-dom: ^17.0.2
+  languageName: unknown
+  linkType: soft
+
 "@jenga-ui/button-group@*, @jenga-ui/button-group@workspace:packages/button-group":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/button-group@workspace:packages/button-group"
@@ -4281,7 +4303,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/breadcrumbs@npm:^3.3.1":
+"@react-aria/breadcrumbs@npm:^3.3.0, @react-aria/breadcrumbs@npm:^3.3.1":
   version: 3.3.1
   resolution: "@react-aria/breadcrumbs@npm:3.3.1"
   dependencies:
@@ -5357,7 +5379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-types/breadcrumbs@npm:^3.4.3":
+"@react-types/breadcrumbs@npm:^3.4.2, @react-types/breadcrumbs@npm:^3.4.3":
   version: 3.4.3
   resolution: "@react-types/breadcrumbs@npm:3.4.3"
   dependencies:

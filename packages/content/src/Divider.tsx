@@ -7,7 +7,7 @@ import {
   filterBaseProps,
   OUTER_STYLES,
   OuterStyleProps,
-  tasty
+  tasty,
 } from 'tastycss';
 import { useSlotProps } from '@jenga-ui/utils';
 

@@ -5,7 +5,7 @@ import {
   ContainerStyleProps,
   extractStyles,
   Styles,
-  TEXT_STYLES
+  TEXT_STYLES,
 } from 'tastycss';
 
 import { JengaTextProps, Text } from './Text';

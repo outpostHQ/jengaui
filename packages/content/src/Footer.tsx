@@ -8,7 +8,7 @@ import {
   filterBaseProps,
   tasty,
   TEXT_STYLES,
-  TextStyleProps
+  TextStyleProps,
 } from 'tastycss';
 import { useSlotProps } from '@jenga-ui/utils';
 

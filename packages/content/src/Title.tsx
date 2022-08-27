@@ -9,7 +9,7 @@ import {
   PositionStyleProps,
   TagNameProps,
   tasty,
-  TEXT_STYLES
+  TEXT_STYLES,
 } from 'tastycss';
 import { useSlotProps } from '@jenga-ui/utils';
 
