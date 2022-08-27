@@ -1,12 +1,14 @@
 import { forwardRef } from 'react';
-import { JengaTextProps, Text } from './Text';
+
 import {
   CONTAINER_STYLES,
   ContainerStyleProps,
   extractStyles,
   Styles,
-  TEXT_STYLES,
+  TEXT_STYLES
 } from 'tastycss';
+
+import { JengaTextProps, Text } from './Text';
 
 const DEFAULT_STYLES: Styles = {
   preset: 'p3',
@@ -20,8 +22,11 @@ export interface JengaParagraphProps
   extends JengaTextProps,
     ContainerStyleProps {}
 
-export const Paragraph = forwardRef((props: JengaParagraphProps, ref) => {
+export const Paragraph = forwardRef(function Paragraph(
+  props: JengaParagraphProps,
+  ref,
+) {
   const styles = extractStyles(props, STYLE_PROPS, DEFAULT_STYLES);
 
-  return <Text as="p" qa="Paragraph" {...props} styles={styles} ref={ref} />;
+  return <Text as="p" qa="Paragraph" {...props} ref={ref} styles={styles} />;
 });
