@@ -1,6 +1,7 @@
-import { ActiveZone } from '../src/ActiveZone';
 import { TooltipTrigger, Tooltip } from '@jenga-ui/tooltip';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
+import { ActiveZone } from '../src/ActiveZone';
 
 export default {
   title: 'Content/ActiveZone',
