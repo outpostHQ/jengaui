@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -28,7 +29,7 @@ export interface JengaFooterProps
     ContainerStyleProps,
     TextStyleProps {}
 
-export const Footer = forwardRef((props: JengaFooterProps, ref) => {
+export const Footer = forwardRef(function Footer(props: JengaFooterProps, ref) {
   props = useSlotProps(props, 'footer');
 
   const styles = extractStyles(props, STYLE_LIST);
@@ -36,8 +37,8 @@ export const Footer = forwardRef((props: JengaFooterProps, ref) => {
   return (
     <FooterElement
       {...filterBaseProps(props, { eventProps: true })}
-      styles={styles}
       ref={ref}
+      styles={styles}
     />
   );
 });

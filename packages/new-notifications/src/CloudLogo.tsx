@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { useButton } from '@react-aria/button';
 import { useFocusableRef } from '@react-spectrum/utils';
 import { FocusableRef } from '@react-types/shared';
-import { JengaButtonProps } from '@jenga-ui/button';
-import { jengaToAriaButtonProps } from '@jenga-ui/utils';
+import { JengaButtonProps, jengaToAriaButtonProps } from '@jenga-ui/button';
 
 const Button = styled.button((props) => {
   return `

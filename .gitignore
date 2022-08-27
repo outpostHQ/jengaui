@@ -1,6 +1,7 @@
 node_modules
 .DS_Store
 dist
+build/**
 dist-ssr
 .eslintcache
 *.local
@@ -11,3 +12,16 @@ coverage
 
 .pnp.*
 .yarn
+.turbo
+
+
+node_modules
+
+*.log
+.next
+*.local
+.env
+.cache
+server/dist
+public/dist
+storybook-static/

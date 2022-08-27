@@ -1,4 +1,5 @@
 import { CSSProperties, forwardRef } from 'react';
+
 import {
   BASE_STYLES,
   BaseProps,
@@ -94,8 +95,8 @@ const _Text = forwardRef(function Text(allProps: JengaTextProps, ref) {
       }}
       block={!!(block || ellipsis)}
       {...filterBaseProps(props, { eventProps: true })}
-      styles={styles}
       ref={ref}
+      styles={styles}
     />
   );
 });
@@ -105,18 +106,18 @@ const Text = Object.assign(_Text, {
     return <_Text ref={ref} color="#minor" {...props} />;
   }),
   Danger: forwardRef(function DangerText(props: JengaTextProps, ref) {
-    return <_Text role="alert" ref={ref} color="#danger-text" {...props} />;
+    return <_Text ref={ref} role="alert" color="#danger-text" {...props} />;
   }),
   Success: forwardRef(function SuccessText(props: JengaTextProps, ref) {
     return <_Text ref={ref} color="#success-text" {...props} />;
   }),
   Strong: forwardRef(function StrongText(props: JengaTextProps, ref) {
     return (
-      <_Text as="strong" preset="strong" ref={ref} color="#dark" {...props} />
+      <_Text ref={ref} as="strong" preset="strong" color="#dark" {...props} />
     );
   }),
   Emphasis: forwardRef(function EmphasisText(props: JengaTextProps, ref) {
-    return <_Text as="em" preset="em" ref={ref} {...props} />;
+    return <_Text ref={ref} as="em" preset="em" {...props} />;
   }),
   Selection: forwardRef(function SelectionText(props: JengaTextProps, ref) {
     return <_Text ref={ref} color="#dark" fill="#note.30" {...props} />;

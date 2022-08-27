@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -33,7 +34,10 @@ export interface JengaContentProps
     ContainerStyleProps,
     TextStyleProps {}
 
-export const Content = forwardRef((props: JengaContentProps, ref) => {
+export const Content = forwardRef(function Content(
+  props: JengaContentProps,
+  ref,
+) {
   props = useSlotProps(props, 'content');
 
   const styles = extractStyles(props, STYLE_LIST);
@@ -41,8 +45,8 @@ export const Content = forwardRef((props: JengaContentProps, ref) => {
   return (
     <ContentElement
       {...filterBaseProps(props, { eventProps: true })}
-      styles={styles}
       ref={ref}
+      styles={styles}
     />
   );
 });

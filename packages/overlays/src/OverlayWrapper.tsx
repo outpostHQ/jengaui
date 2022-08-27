@@ -1,6 +1,7 @@
-import { OverlayTransitionCSSProps } from '@jenga-ui/utils';
 import { CSSTransition } from 'react-transition-group';
 import { ReactNode, useRef } from 'react';
+
+import { OverlayTransitionCSSProps } from '@jenga-ui/utils';
 import { Portal } from '@jenga-ui/portal';
 
 export interface JengaOverlayWrapperProps {
@@ -41,8 +42,8 @@ export function OverlayWrapper({
 
   const contents = (
     <CSSTransition
-      in={isOpen}
       unmountOnExit
+      in={isOpen}
       timeout={180}
       classNames="jenga-overlay-transition"
     >
