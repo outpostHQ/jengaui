@@ -1,6 +1,8 @@
-import { Avatar } from '../src/Avatar';
 import { DollarCircleOutlined } from '@ant-design/icons';
-import { baseProps } from '../../../stories/lists/baseProps';
+
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
+import { Avatar } from '../src/Avatar';
 
 export default {
   title: 'Content/Avatar',
@@ -20,5 +22,5 @@ const Template = ({ label, icon, ...args }) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'OP',
+  label: 'CU',
 };

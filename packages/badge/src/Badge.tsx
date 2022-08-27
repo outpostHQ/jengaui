@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
-import THEMES from '../../core/src/themes';
+
+import THEMES from '@jenga-ui/core/src/themes';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -43,7 +44,7 @@ export interface JengaBadgeProps extends BaseProps, ContainerStyleProps {
   type?: keyof typeof THEMES | string;
 }
 
-export const Badge = forwardRef((allProps: JengaBadgeProps, ref) => {
+export const Badge = forwardRef(function Badge(allProps: JengaBadgeProps, ref) {
   let { type, children, ...props } = allProps;
 
   const styles = extractStyles(props, CONTAINER_STYLES);
@@ -51,13 +52,13 @@ export const Badge = forwardRef((allProps: JengaBadgeProps, ref) => {
   return (
     <BadgeElement
       {...filterBaseProps(props, { eventProps: true })}
+      ref={ref}
       data-type={type}
       mods={{
         single: typeof children === 'string' && children.length === 1,
         multiple: typeof children === 'string' && children.length === 2,
       }}
       styles={styles}
-      ref={ref}
     >
       {children}
     </BadgeElement>

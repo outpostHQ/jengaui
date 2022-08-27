@@ -38,7 +38,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/icons@npm:^4.7.0":
+"@ant-design/icons@npm:*, @ant-design/icons@npm:^4.7.0":
   version: 4.7.0
   resolution: "@ant-design/icons@npm:4.7.0"
   dependencies:
@@ -2373,6 +2373,7 @@ __metadata:
   resolution: "@jenga-ui/badge@workspace:packages/badge"
   dependencies:
     "@ant-design/icons": ^4.7.0
+    "@jenga-ui/core": "*"
     "@jenga-ui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -2556,6 +2557,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jenga-ui/copy-snippet@workspace:packages/copy-snippet"
   dependencies:
+    "@ant-design/icons": "*"
     "@jenga-ui/button": "*"
     "@jenga-ui/card": "*"
     "@jenga-ui/new-notifications": "*"

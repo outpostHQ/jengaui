@@ -1,5 +1,6 @@
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
 import { Badge } from '../src/Badge';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Content/Badge',

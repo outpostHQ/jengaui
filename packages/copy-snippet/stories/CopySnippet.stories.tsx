@@ -1,6 +1,8 @@
 import { ComponentMeta, Story } from '@storybook/react';
+
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
 import { CopySnippet, JengaCopySnippetProps } from '../src/CopySnippet';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Content/CopySnippet',
