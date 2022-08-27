@@ -1,0 +1,69 @@
+{
+  "name": "@jenga-ui/slider",
+  "version": "0.1.1",
+  "license": "MIT",
+  "description": "Jenga-UI React tag component",
+  "keywords": [
+    "tag",
+    "react",
+    "jenga-ui",
+    "ui",
+    "clickable",
+    "tabbable"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@vitejs/plugin-react": "^1.3.2",
+    "rimraf": "^3.0.2",
+    "tsup": "^6.2.3",
+    "typescript": "^4.5.4",
+    "vite": "^3.0.4"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@internationalized/number": "^3.1.1",
+    "@jenga-ui/layout": "workspace:packages/layout",
+    "@jenga-ui/providers": "workspace:packages/providers",
+    "@jenga-ui/tooltip": "workspace:packages/tooltip",
+    "@jenga-ui/utils": "workspace:packages/utils",
+    "@react-aria/focus": "^3.7.0",
+    "@react-aria/i18n": "^3.5.1",
+    "@react-aria/interactions": "^3.10.0",
+    "@react-aria/slider": "^3.2.0",
+    "@react-aria/utils": "^3.13.2",
+    "@react-aria/visually-hidden": "^3.4.0",
+    "@react-stately/slider": "^3.2.1",
+    "@react-types/shared": "^3.14.0",
+    "react-aria": "^3.18.0",
+    "tastycss": "^0.7.9"
+  },
+  "homepage": "https://github.com/OutpostHQ/jenga-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OutpostHQ/jenga-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OutpostHQ/jenga-ui/issues"
+  }
+}
