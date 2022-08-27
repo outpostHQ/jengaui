@@ -3368,6 +3368,7 @@ __metadata:
     "@jenga-ui/content": "workspace:packages/content"
     "@jenga-ui/core": "workspace:packages/core"
     "@jenga-ui/layout": "workspace:packages/layout"
+    "@jenga-ui/providers": "workspace:packages/providers"
     "@jenga-ui/utils": "workspace:packages/utils"
     "@react-aria/table": ^3.4.0
     "@react-aria/visually-hidden": ^3.4.0
@@ -3384,8 +3385,8 @@ __metadata:
     typescript: ^4.5.4
     vite: ^3.0.4
   peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
   languageName: unknown
   linkType: soft
 

@@ -1,4 +1,3 @@
-import { Block } from '@jenga-ui/core';
 import { JengaCheckboxProps } from '@jenga-ui/checkbox';
 import { createContext, forwardRef } from 'react';
 import { tasty, Element, Styles, AllBaseProps } from 'tastycss';
@@ -23,7 +22,7 @@ export const Td = tasty<AllBaseProps & HTMLTableCellElement>({
   // },
 });
 
-export const TableWrapper = tasty(Block, {
+export const TableWrapper = tasty({
   // width: ['740px', '580px'],
   styles: {
     borderRadius: '8px',
@@ -74,7 +73,10 @@ const parseCellPadding = (cellPadding: string | string[]) => {
     : cellPadding;
 };
 
-export const TableBase = forwardRef((props: JengaTableBaseProps, ref) => {
+export const TableBase = forwardRef(function _TableBase(
+  props: JengaTableBaseProps,
+  ref,
+) {
   let {
     styles,
     zebraStripes = false,

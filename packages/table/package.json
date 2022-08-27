@@ -61,9 +61,5 @@
   },
   "bugs": {
     "url": "https://github.com/OutpostHQ/jenga-ui/issues"
-  },
-  "resolutions": {
-    "@types/react": "17.0.14",
-    "@types/react-dom": "17.0.14"
   }
 }

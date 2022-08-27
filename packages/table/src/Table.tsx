@@ -38,7 +38,7 @@ const withDefaultTableProps = (props: JengaTableProps) => {
   return props;
 };
 
-export const Table = forwardRef((props: JengaTableProps, ref) => {
+export const Table = forwardRef(function _Table(props: JengaTableProps, ref) {
   props = withDefaultTableProps(useProviderProps(props));
   let {
     headerStyles = {},
@@ -57,6 +57,7 @@ export const Table = forwardRef((props: JengaTableProps, ref) => {
       props.selectionMode === 'multiple' &&
       props.selectionBehavior !== 'replace',
   });
+
   ref = useCombinedRefs([ref, useRef(null)]);
   let { gridProps } = useTable(props, state, ref as RefObject<HTMLElement>);
   let { recordsPerPage = 20, showPage = 1 } = props;
