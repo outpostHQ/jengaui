@@ -1,4 +1,5 @@
-import { Block, Flex } from '@jenga-ui/core';
+import { Block } from '@jenga-ui/core';
+import { Flex } from '@jenga-ui/layout';
 import { SliderState } from '@react-stately/slider';
 import { OutputHTMLAttributes } from 'react';
 import { BaseProps } from 'tastycss';

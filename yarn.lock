@@ -3238,6 +3238,7 @@ __metadata:
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@internationalized/number": ^3.1.1
+    "@jenga-ui/layout": "workspace:packages/layout"
     "@jenga-ui/providers": "workspace:packages/providers"
     "@jenga-ui/tooltip": "workspace:packages/tooltip"
     "@jenga-ui/utils": "workspace:packages/utils"
@@ -3255,6 +3256,7 @@ __metadata:
     react-aria: ^3.18.0
     rimraf: ^3.0.2
     tastycss: ^0.7.9
+    tsup: ^6.2.3
     typescript: ^4.5.4
     vite: ^3.0.4
   peerDependencies:
