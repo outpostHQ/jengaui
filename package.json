@@ -14,12 +14,12 @@
   "dependencies": {
     "@types/react-is": "^17.0.3",
     "@types/react-transition-group": "^4.4.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.5",
     "swc-loader": "^0.2.3",
-    "tastycss": "^0.8.1"
+    "tastycss": "^0.8.2"
   },
   "devDependencies": {
     "@changesets/cli": "^2.24.3",
@@ -65,7 +65,9 @@
     "packages/*",
     "testi",
     "testii",
-    "storybook"
+    "storybook",
+    "next-app",
+    "my-app"
   ],
   "resolutions": {
     "es5-ext": "0.10.53",
@@ -73,9 +75,9 @@
     "@testing-library/user-event": "14.2.0"
   },
   "browserslist": [
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Safari major versions"
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
   ],
   "lint-staged": {
     "*.js": "eslint --cache --fix",

@@ -1,4 +1,5 @@
 import { CopyOutlined } from '@ant-design/icons';
+
 import copy from 'clipboard-copy';
 
 import { Action, Button } from '@jenga-ui/button';

@@ -45,7 +45,7 @@
     "@react-aria/searchfield": "^3.4.1",
     "@react-stately/searchfield": "^3.3.1",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.8.1"
+    "tastycss": "^0.8.2"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

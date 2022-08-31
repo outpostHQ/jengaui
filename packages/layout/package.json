@@ -32,7 +32,7 @@
   "dependencies": {
     "@jenga-ui/utils": "*",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.8.1"
+    "tastycss": "^0.8.2"
   },
   "publishConfig": {
     "access": "public"

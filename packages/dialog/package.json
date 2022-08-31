@@ -54,7 +54,7 @@
     "@react-types/dialog": "^3.4.3",
     "@react-types/shared": "^3.14.1",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.8.1",
+    "tastycss": "^0.8.2",
     "tiny-invariant": "^1.2.0"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",

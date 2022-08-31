@@ -48,7 +48,7 @@
     "@react-spectrum/utils": "^3.7.3",
     "@react-types/textfield": "^3.5.3",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.8.1"
+    "tastycss": "^0.8.2"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

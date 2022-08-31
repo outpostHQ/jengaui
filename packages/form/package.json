@@ -60,7 +60,7 @@
     "@react-types/shared": "^3.14.1",
     "email-validator": "^2.0.4",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.8.1",
+    "tastycss": "^0.8.2",
     "valid-url": "^1.0.9"
   }
 }

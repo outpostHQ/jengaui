@@ -53,7 +53,7 @@
     "@react-types/select": "^3.6.3",
     "@react-types/shared": "^3.14.1",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.8.1"
+    "tastycss": "^0.8.2"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

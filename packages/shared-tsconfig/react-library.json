@@ -3,9 +3,8 @@
   "display": "React Library",
   "extends": "./base.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "lib": ["dom", "esnext"],
-    "module": "ESNext",
-    "target": "es2019"
+    "declarationDir": "dist/types",
+    "outDir": "./dist/es",
+    "noEmit": false
   }
 }

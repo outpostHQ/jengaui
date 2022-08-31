@@ -41,7 +41,7 @@
     "@jenga-ui/utils": "*",
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.8.1"
+    "tastycss": "^0.8.2"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

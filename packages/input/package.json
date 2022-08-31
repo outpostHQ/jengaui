@@ -45,7 +45,7 @@
     "@jenga-ui/text-input": "*",
     "@jenga-ui/textarea": "*",
     "styled-components": "^5.3.5",
-    "tastycss": "^0.8.1"
+    "tastycss": "^0.8.2"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {
