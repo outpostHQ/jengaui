@@ -9,8 +9,8 @@
     "jenga-ui",
     "ui"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
@@ -53,7 +53,7 @@
     "@react-stately/overlays": "^3.4.1",
     "@react-types/dialog": "^3.4.3",
     "@react-types/shared": "^3.14.1",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.0",
     "tastycss": "^0.8.2",
     "tiny-invariant": "^1.2.0"
   },

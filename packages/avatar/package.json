@@ -12,8 +12,8 @@
     "tabbable"
   ],
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.0",
     "tastycss": "^0.8.2"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",

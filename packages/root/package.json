@@ -37,7 +37,7 @@
                 "@jenga-ui/providers": "*",
                 "@jenga-ui/utils": "*",
                 "@react-aria/overlays": "^3.10.1",
-                "styled-components": "^5.3.5",
+                "styled-components": "^5.3.0",
                 "tastycss": "^0.8.2"
         },
         "devDependencies": {

@@ -1,12 +1,13 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Default",
   "compilerOptions": {
     "baseUrl": ".",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
     "declaration": true,
     "noEmitOnError": false,
     "allowJs": true,
     "checkJs": true,
+    "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,11 +19,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noImplicitAny": false,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "lib": ["dom", "esnext"],
-    "module": "esnext",
-    "target": "es2019"
+    "target": "es2019",
+    "noEmit": true
   },
   "exclude": ["node_modules"]
 }
