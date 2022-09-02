@@ -1,11 +1,11 @@
 import { ReactChild, ReactFragment, useMemo } from 'react';
 import { isElement, isFragment } from 'react-is';
+
 import { useNotificationsApi } from '@jenga-ui/new-notifications';
+
+import { JengaToastsApiToastAction, JengaToastsApiToastShortcuts } from './types';
+
 import type { JengaToastsApiProps, JengaToastsApiToastCallback } from './types';
-import {
-  JengaToastsApiToastAction,
-  JengaToastsApiToastShortcuts,
-} from './types';
 
 export function useToastsApi() {
   const { notify, update, remove } = useNotificationsApi();

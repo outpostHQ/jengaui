@@ -1,12 +1,15 @@
 import { useDOMRef } from '@react-spectrum/utils';
 import { useViewportSize } from '@react-aria/utils';
-import { Overlay } from './Overlay';
 import { forwardRef, useEffect, useRef, useState } from 'react';
-import { Underlay } from './Underlay';
 import { useModal, useOverlay, usePreventScroll } from '@react-aria/overlays';
-import { OVERLAY_WRAPPER_STYLES } from './Modal';
+
 import { BaseProps, Props, Styles, tasty } from 'tastycss';
 import { mergeProps } from '@jenga-ui/utils';
+
+import { OVERLAY_WRAPPER_STYLES } from './Modal';
+import { Underlay } from './Underlay';
+import { Overlay } from './Overlay';
+
 import type { TrayProps } from '@react-types/overlays';
 
 const TrayWrapperElement = tasty({
@@ -68,13 +71,13 @@ function Tray(props: JengaTrayProps, ref) {
     <Overlay {...otherProps}>
       <Underlay {...underlayProps} />
       <TrayWrapper
-        qa={qa}
-        onClose={onClose}
         ref={domRef}
+        qa={qa}
         overlayProps={overlayProps}
         isFixedHeight={isFixedHeight}
         isNonModal={isNonModal}
         styles={styles}
+        onClose={onClose}
       >
         {children}
       </TrayWrapper>
@@ -82,7 +85,10 @@ function Tray(props: JengaTrayProps, ref) {
   );
 }
 
-let TrayWrapper = forwardRef(function (props: JengaTrayWrapperProps, ref) {
+let TrayWrapper = forwardRef(function TrayWrapper(
+  props: JengaTrayWrapperProps,
+  ref,
+) {
   let {
     qa,
     children,

@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+
 import {
   AllBaseProps,
   CONTAINER_STYLES,
@@ -18,14 +19,14 @@ export interface JengaBlockProps
   extends Omit<AllBaseProps, keyof ContainerStyleProps | 'as'>,
     ContainerStyleProps {}
 
-export const Block = forwardRef((props: JengaBlockProps, ref) => {
+export const Block = forwardRef(function Block(props: JengaBlockProps, ref) {
   const styles = extractStyles(props, CONTAINER_STYLES);
 
   return (
     <BlockElement
       {...filterBaseProps(props, { eventProps: true })}
-      styles={styles}
       ref={ref}
+      styles={styles}
     />
   );
 });

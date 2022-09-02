@@ -1,4 +1,5 @@
-import { CSSProperties, forwardRef, useEffect } from 'react';
+import { CSSProperties, forwardRef } from 'react';
+
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -8,7 +9,7 @@ import {
   parseStyle,
   tasty,
 } from 'tastycss';
-import { useCombinedRefs } from '@jenga-ui/utils';
+import { useCombinedRefs, useLayoutEffect } from '@jenga-ui/utils';
 
 const PrefixElement = tasty({
   element: 'Prefix',
@@ -32,13 +33,16 @@ export interface JengaPrefixProps extends BaseProps, ContainerStyleProps {
   outerGap?: CSSProperties['gap'];
 }
 
-export const Prefix = forwardRef((allProps: JengaPrefixProps, outerRef) => {
+export const Prefix = forwardRef(function Prefix(
+  allProps: JengaPrefixProps,
+  outerRef,
+) {
   let { onWidthChange, outerGap = '1bw', children, ...props } = allProps;
 
   const styles = extractStyles(props, CONTAINER_STYLES);
   const ref = useCombinedRefs(outerRef);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (ref?.current && onWidthChange) {
       onWidthChange(ref.current.offsetWidth);
     }
@@ -47,8 +51,8 @@ export const Prefix = forwardRef((allProps: JengaPrefixProps, outerRef) => {
   return (
     <PrefixElement
       {...filterBaseProps(props, { eventProps: true })}
-      styles={styles}
       ref={ref}
+      styles={styles}
       style={{
         // @ts-ignore
         '--prefix-gap': parseStyle(outerGap).value,

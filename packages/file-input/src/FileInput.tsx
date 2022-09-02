@@ -6,6 +6,8 @@ import {
   useRef,
   useState,
 } from 'react';
+import { createFocusableRef } from '@react-spectrum/utils';
+
 import { useProviderProps } from '@jenga-ui/providers';
 import { Action } from '@jenga-ui/button';
 import {
@@ -17,16 +19,19 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
+import {
+  FormFieldProps,
+  FieldWrapper,
+} from '@jenga-ui/form';
+
 import type { AriaTextFieldProps } from '@react-types/textfield';
-import { FormFieldProps, FieldWrapper } from '@jenga-ui/form';
-import { createFocusableRef } from '@react-spectrum/utils';
 
 const FileInputElement = tasty(Action, {
   styles: {
     display: 'inline-flex',
     position: 'relative',
     preset: 't3',
-    padding: '.75x 1x',
+    padding: '.5x 1x',
     gap: '1x',
     flow: 'row',
     placeItems: 'center start',
@@ -40,15 +45,23 @@ const FileInputElement = tasty(Action, {
     overflow: 'hidden',
 
     Button: {
-      radius: 'round',
-      fill: {
-        '': '#light',
-        'hovered | focused | pressed': '#purple-04',
-        disabled: '#light',
+      radius: true,
+      border: {
+        '': '#clear',
+        pressed: '#purple.30',
       },
-      color: '#dark',
-      padding: '.5x 1x',
-      transition: 'fill',
+      fill: {
+        '': '#purple.10',
+        hovered: '#purple.16',
+        pressed: '#purple.10',
+        '[disabled]': '#dark.04',
+      },
+      color: {
+        '': '#purple',
+        '[disabled]': '#dark.30',
+      },
+      padding: '.5x (1.5x - 1px)',
+      transition: 'theme',
     },
 
     Placeholder: {
@@ -134,6 +147,7 @@ function FileInput(props: JengaFileInputProps, ref) {
     tooltip,
     isHidden,
     inputStyles,
+    labelSuffix,
     type = 'file',
     ...otherProps
   } = useProviderProps(props);
@@ -175,10 +189,10 @@ function FileInput(props: JengaFileInputProps, ref) {
 
   const fileInput = (
     <FileInputElement
+      ref={domRef}
       qa={qa || 'FileInput'}
       styles={inputStyles}
       isDisabled={isDisabled}
-      ref={domRef}
       mods={{
         selected: !!value,
         'drag-hover': dragHover,
@@ -190,13 +204,13 @@ function FileInput(props: JengaFileInputProps, ref) {
       }}
     >
       <input
+        ref={inputRef}
         id={id}
         name={name}
-        ref={inputRef}
-        onChange={onLocalChange}
         data-element="Input"
         type="file"
         tabIndex={-1}
+        onChange={onLocalChange}
         onDragEnter={() => {
           setDragHover(true);
         }}
@@ -233,6 +247,7 @@ function FileInput(props: JengaFileInputProps, ref) {
         requiredMark,
         tooltip,
         isHidden,
+        labelSuffix,
         Component: fileInput,
         ref: domRef,
       }}

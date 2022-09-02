@@ -1,5 +1,4 @@
 import { useDOMRef } from '@react-spectrum/utils';
-import { Provider, useProviderProps } from '@jenga-ui/providers';
 import {
   createContext,
   FormHTMLAttributes,
@@ -8,6 +7,9 @@ import {
   useEffect,
   useRef,
 } from 'react';
+import { DOMRef } from '@react-types/shared';
+
+import { Provider, useProviderProps } from '@jenga-ui/providers';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -17,11 +19,11 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import { JengaFormData, JengaFormInstance, useForm } from './useForm';
 import { useCombinedRefs, timeout } from '@jenga-ui/utils';
 import { FormBaseProps } from '../shared';
+
+import { JengaFormData, JengaFormInstance, useForm } from './useForm';
 import { FieldTypes } from './types';
-import { DOMRef } from '@react-types/shared';
 
 export const FormContext = createContext({});
 
@@ -153,7 +155,7 @@ function Form<T extends FieldTypes>(
     };
   }
 
-  [form] = useForm(form, ref && ref.current, {
+  [form] = useForm<T>(form, ref && ref.current, {
     onSubmit: onSubmitCallback,
     onValuesChange,
   });
@@ -193,11 +195,11 @@ function Form<T extends FieldTypes>(
   return (
     <FormElement
       {...filterBaseProps(otherProps, { propNames: formPropNames })}
-      onSubmit={onSubmitCallback}
+      ref={domRef}
       noValidate
       styles={styles}
-      ref={domRef}
       mods={{ 'has-sider': labelPosition === 'side' }}
+      onSubmit={onSubmitCallback}
     >
       <FormContext.Provider value={ctx}>
         <Provider

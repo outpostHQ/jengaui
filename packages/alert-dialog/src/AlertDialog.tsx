@@ -1,9 +1,10 @@
 import { forwardRef, ReactNode } from 'react';
-import { chain } from '@react-aria/utils';
+
 import { Button, JengaButtonProps } from '@jenga-ui/button';
 import { ButtonGroup } from '@jenga-ui/button-group';
 import { JengaDialogProps, Dialog, useDialogContext } from '@jenga-ui/dialog';
 import { Title, Header, Paragraph, Content, Footer } from '@jenga-ui/content';
+import { chain } from '@react-aria/utils';
 
 export interface JengaAlertDialogActionsProps {
   confirm?: JengaButtonProps | boolean;
@@ -62,7 +63,7 @@ function AlertDialog(props: JengaAlertDialogProps, ref) {
     : undefined;
 
   return (
-    <Dialog role="alertdialog" ref={ref} isDismissable={false} {...otherProps}>
+    <Dialog ref={ref} role="alertdialog" isDismissable={false} {...otherProps}>
       {title ? (
         <Header>
           <Title>{title}</Title>
@@ -81,8 +82,8 @@ function AlertDialog(props: JengaAlertDialogProps, ref) {
         <Footer>
           <ButtonGroup align="end">
             <Button
-              theme={danger ? 'danger' : undefined}
               autoFocus
+              theme={danger ? 'danger' : undefined}
               {...confirmProps}
               onPress={(e) =>
                 chain(

@@ -1,6 +1,8 @@
 import { HTMLAttributes, memo } from 'react';
+
 import { Title } from '@jenga-ui/content';
 import { tasty } from 'tastycss';
+
 import { NotificationProps } from './types';
 
 export type NotificationHeaderProps = {

@@ -1,5 +1,6 @@
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
 import { FileInput } from '../src/FileInput';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Forms/FileInput',

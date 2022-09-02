@@ -1,5 +1,6 @@
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
 import { Placeholder } from '../src/Placeholder';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Content/Placeholder',

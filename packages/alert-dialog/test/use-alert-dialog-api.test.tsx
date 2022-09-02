@@ -1,9 +1,10 @@
 import { setTimeout } from 'node:timers/promises';
+
 import { act } from '@testing-library/react';
-import { renderWithRoot } from '../../core/test/render';
-import { useAlertDialogAPI } from '../src/AlertDialogApiProvider';
 import userEvent from '@testing-library/user-event';
-import React from 'react';
+
+import { renderWithRoot } from '@jenga-ui/core/test/render';
+import { useAlertDialogAPI } from '../src/AlertDialogApiProvider';
 
 describe('useAlertDialogApi', () => {
   let prevDialogPromise: Promise<string> | null = null;

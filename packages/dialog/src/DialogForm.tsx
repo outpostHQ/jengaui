@@ -1,9 +1,19 @@
-import { Dialog, JengaDialogProps } from './Dialog';
 import { Title, Content, Header } from '@jenga-ui/content';
-import { JengaFormProps, Form, useForm, FieldTypes } from '@jenga-ui/form';
-import { Submit, Button, JengaButtonProps } from '@jenga-ui/button';
+import {
+  JengaFormProps,
+  Form,
+  useForm,
+  FieldTypes,
+} from '@jenga-ui/form';
+import {
+  Submit,
+  Button,
+  JengaButtonProps,
+} from '@jenga-ui/button';
 import { ButtonGroup } from '@jenga-ui/button-group';
+
 import { useDialogContext } from './context';
+import { Dialog, JengaDialogProps } from './Dialog';
 
 export interface JengaDialogFormProps<T extends FieldTypes = FieldTypes>
   extends JengaDialogProps,
@@ -30,9 +40,9 @@ export interface JengaDialogFormRef {
 /**
  * DialogForms are a specific type of Dialog. They contain forms to fill.
  */
-export const DialogForm = function DialogForm<
-  T extends FieldTypes = FieldTypes,
->(props: JengaDialogFormProps<T>) {
+export function DialogForm<T extends FieldTypes = FieldTypes>(
+  props: JengaDialogFormProps<T>,
+) {
   let {
     qa,
     name,
@@ -91,6 +101,16 @@ export const DialogForm = function DialogForm<
           qa={qa || 'DialogForm'}
           form={form}
           name={name}
+          defaultValues={defaultValues}
+          labelStyles={labelStyles}
+          labelPosition={labelPosition}
+          requiredMark={requiredMark}
+          isRequired={isRequired}
+          necessityIndicator={necessityIndicator}
+          necessityLabel={necessityLabel}
+          isReadOnly={isReadOnly}
+          validationState={validationState}
+          validateTrigger={validateTrigger}
           onSubmit={async (data) => {
             await onSubmit?.(data);
 
@@ -101,17 +121,7 @@ export const DialogForm = function DialogForm<
             }
           }}
           onSubmitFailed={onSubmitFailed}
-          defaultValues={defaultValues}
           onValuesChange={onValuesChange}
-          labelStyles={labelStyles}
-          labelPosition={labelPosition}
-          requiredMark={requiredMark}
-          isRequired={isRequired}
-          necessityIndicator={necessityIndicator}
-          necessityLabel={necessityLabel}
-          isReadOnly={isReadOnly}
-          validationState={validationState}
-          validateTrigger={validateTrigger}
         >
           {typeof children === 'function' ? children(onLocalDismiss) : children}
 
@@ -125,8 +135,8 @@ export const DialogForm = function DialogForm<
               />
               <Button
                 qa={`${qa || ''}CancelButton`}
-                onPress={onLocalDismiss}
                 label="Cancel"
+                onPress={onLocalDismiss}
                 {...(cancelProps || {})}
               />
             </ButtonGroup>
@@ -135,4 +145,4 @@ export const DialogForm = function DialogForm<
       </Content>
     </Dialog>
   );
-};
+}

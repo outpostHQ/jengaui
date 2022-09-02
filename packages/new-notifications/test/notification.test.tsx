@@ -1,8 +1,10 @@
 import { render, getByTestId, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
 import { wait } from '@jenga-ui/core/test';
-import { Timer } from '@jenga-ui/core';
-import { NotificationView } from '../src/NotificationView';
+import { Timer } from '@jenga-ui/hooks';
+
+import { NotificationView } from '../src//NotificationView';
 
 describe('<Notification />', () => {
   it('should stop timer on hover', async () => {
@@ -41,9 +43,7 @@ describe('<Notification />', () => {
 
     const notification = screen.getByTestId('notification');
 
-    await userEvent.click(
-      getByTestId(notification, 'notification-close-button'),
-    );
+    await userEvent.click(getByTestId(notification, 'NotificationCloseButton'));
 
     expect(onClose).toBeCalledTimes(1);
   });
@@ -67,7 +67,7 @@ describe('<Notification />', () => {
     const timer = new Timer(timerCallback, 100);
 
     render(
-      <NotificationView description="test" onClose={onClose} timer={timer} />,
+      <NotificationView description="test" timer={timer} onClose={onClose} />,
     );
 
     await wait(500);

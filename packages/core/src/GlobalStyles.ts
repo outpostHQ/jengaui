@@ -1,5 +1,6 @@
-import { TOKENS } from './tokens';
 import { createGlobalStyle } from 'styled-components';
+
+import { TOKENS } from './tokens';
 
 interface GlobalStylesProps {
   bodyStyles?: { [key: string]: string };

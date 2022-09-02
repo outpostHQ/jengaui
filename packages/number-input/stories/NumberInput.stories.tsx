@@ -1,7 +1,9 @@
-import { NumberInput } from '../src/NumberInput';
 import { DollarCircleOutlined } from '@ant-design/icons';
-import { baseProps } from '../../../stories/lists/baseProps';
-import { NUMBER_VALUE_ARG } from '../../../stories/FormFieldArgs';
+
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+import { NUMBER_VALUE_ARG } from '../../../storybook/stories/FormFieldArgs';
+
+import { NumberInput } from '../src/NumberInput';
 
 export default {
   title: 'Forms/NumberInput',

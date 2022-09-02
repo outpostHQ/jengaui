@@ -1,6 +1,7 @@
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+import { MULTIPLE_VALUE_ARG } from '../../../storybook/stories/FormFieldArgs';
+
 import { Checkbox } from '../src/Checkbox';
-import { baseProps } from '../../../stories/lists/baseProps';
-import { MULTIPLE_VALUE_ARG } from '../../../stories/FormFieldArgs';
 
 export default {
   title: 'Forms/CheckboxGroup',
@@ -28,3 +29,6 @@ const Template = (props) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Invalid = Template.bind({});
+Invalid.args = { validationState: 'invalid' };

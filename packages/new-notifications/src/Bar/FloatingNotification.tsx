@@ -1,4 +1,5 @@
 import { Key, KeyboardEventHandler, memo, useRef } from 'react';
+
 import { useChainedCallback, useEvent, useTimer } from '@jenga-ui/hooks';
 import { tasty } from 'tastycss';
 import { JengaNotifyApiPropsWithID } from '../types';
@@ -79,9 +80,9 @@ export const FloatingNotification = memo(function FloatingNotification(
           role: 'status',
           'aria-atomic': 'true',
         }}
+        qa="FloatingNotification"
         onDismiss={chainedOnDismiss}
         onClose={onCloseEvent}
-        qa="floating-notification"
       />
     </NotificationContainer>
   );

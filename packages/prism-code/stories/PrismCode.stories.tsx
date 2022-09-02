@@ -1,5 +1,6 @@
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
 import { PrismCode } from '../src/PrismCode';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Content/PrismCode',

@@ -1,17 +1,19 @@
 import { ForwardedRef, forwardRef } from 'react';
 import { useHover } from '@react-aria/interactions';
 import { useFocusRing } from '@react-aria/focus';
-import { mergeProps, useId } from '@react-aria/utils';
+
 import { tasty } from 'tastycss';
 import { useEvent, useTimer } from '@jenga-ui/hooks';
-import { ClearSlots } from '@jenga-ui/utils';
+import { ClearSlots, mergeProps, useId } from '@jenga-ui/utils';
+
 import { NotificationIcon } from './NotificationIcon';
 import { NotificationHeader } from './NotificationHeader';
 import { NotificationDescription } from './NotificationDescription';
 import { NotificationFooter } from './NotificationFooter';
 import { NotificationCloseButton } from './NotificationCloseButton';
-import type { NotificationProps } from './types';
 import { NotificationProvider } from './NotificationProvider';
+
+import type { NotificationProps } from './types';
 
 const NotificationContainer = tasty({
   styles: {
@@ -85,8 +87,8 @@ export const NotificationView = forwardRef(function NotificationView(
       <NotificationProvider onClose={onClose}>
         <NotificationContainer
           {...mergeProps(attributes, hoverProps, focusProps)}
-          styles={styles}
           ref={ref}
+          styles={styles}
           data-id={id}
           data-qa={qa}
           aria-labelledby={labelID}
@@ -113,9 +115,9 @@ export const NotificationView = forwardRef(function NotificationView(
 
           {isDismissible && (
             <NotificationCloseButton
-              onPress={onDismissEvent}
               isHovered={isHovered}
               isFocused={isFocusVisible}
+              onPress={onDismissEvent}
             />
           )}
         </NotificationContainer>

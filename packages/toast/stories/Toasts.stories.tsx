@@ -2,10 +2,12 @@ import { expect } from '@storybook/jest';
 import { Meta, Story } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
 import { BellOutlined } from '@ant-design/icons';
+
+import { Button } from '@jenga-ui/button';
+
 import { Toast } from '../src/Toast';
 import { JengaToastsApiProps } from '../src/types';
 import { useToastsApi } from '../src/use-toasts-api';
-import { Button } from '@jenga-ui/button';
 
 export default {
   title: 'Overlays/Toasts',
@@ -28,7 +30,7 @@ UseToast.play = async ({ canvasElement }) => {
   const button = getByRole('button');
   await userEvent.click(button);
 
-  const notification = getByTestId('floating-notification');
+  const notification = getByTestId('FloatingNotification');
 
   await expect(notification).toBeInTheDocument();
 };

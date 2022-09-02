@@ -16,8 +16,8 @@
     "library",
     "design-system"
   ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
@@ -33,10 +33,10 @@
     "@react-aria/interactions": "^3.11.0",
     "@react-aria/ssr": "^3.3.0",
     "@react-aria/utils": "^3.13.3",
-    "clsx": "^1.2.1",
-    "react-is": "^18.2.0",
+    "clsx": "^1.1.1",
+    "react-is": "^17.0.0",
     "styled-components": "^5.3.0",
-    "tastycss": "^0.8.2"
+    "tastycss": "^0.8.6"
   },
   "publishConfig": {
     "access": "public"

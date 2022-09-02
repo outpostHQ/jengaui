@@ -1,10 +1,12 @@
-import React, { Key, useRef } from 'react';
+import { Key, useRef } from 'react';
 import { useHover } from '@react-aria/interactions';
 import { Node } from '@react-types/shared';
 import { TreeState } from '@react-stately/tree';
 import { FocusRing } from '@react-aria/focus';
 import { useMenuItem } from '@react-aria/menu';
+
 import { mergeProps, ClearSlots, SlotProvider } from '@jenga-ui/utils';
+
 import { useMenuContext } from './context';
 import { StyledMenuItem } from './styled';
 import { MenuButton, MenuSelectionType } from './MenuButton';
@@ -45,20 +47,17 @@ export function MenuItem<T>(props: MenuItemProps<T>) {
       ref,
     );
 
-  let contents =
-    typeof rendered === 'string' ? (
-      <MenuButton
-        {...itemProps}
-        selectionIcon={selectionIcon}
-        isSelectable={isSelectable}
-        isSelected={isSelected}
-        isDisabled={isDisabled}
-      >
-        {rendered}
-      </MenuButton>
-    ) : (
-      rendered
-    );
+  const contents = (
+    <MenuButton
+      {...itemProps}
+      selectionIcon={selectionIcon}
+      isSelectable={isSelectable}
+      isSelected={isSelected}
+      isDisabled={isDisabled}
+    >
+      {rendered}
+    </MenuButton>
+  );
 
   return (
     <FocusRing>

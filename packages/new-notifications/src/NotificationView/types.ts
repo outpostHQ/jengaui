@@ -1,8 +1,9 @@
-import type { ReactNode, HTMLAttributes } from 'react';
-import type { JengaNotificationType } from '../types';
 import { Styles } from 'tastycss';
 import { Timer } from '@jenga-ui/hooks';
 import { BaseNotificationProps } from '../types';
+
+import type { JengaNotificationType } from '../types';
+import type { ReactNode, HTMLAttributes } from 'react';
 
 export type NotificationProps = {
   qa?: string;

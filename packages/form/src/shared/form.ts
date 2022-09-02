@@ -1,5 +1,6 @@
-import { Props, Styles } from 'tastycss';
 import { ReactNode } from 'react';
+
+import { Props, Styles } from 'tastycss';
 
 /** Where to place label relative to input */
 export type LabelPosition = 'side' | 'top';
@@ -56,6 +57,7 @@ export interface FormFieldProps extends FormBaseProps {
   insideForm?: boolean;
   /** A text label of the field */
   label?: ReactNode;
+  labelSuffix?: ReactNode;
   /** An additional content next to the label */
   extra?: ReactNode;
   /** Custom label props */

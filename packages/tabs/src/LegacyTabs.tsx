@@ -3,15 +3,21 @@ import {
   ReactNode,
   useContext,
   useEffect,
-  useLayoutEffect,
   useRef,
   useState,
 } from 'react';
+import styled from 'styled-components';
+
 import { Block } from '@jenga-ui/core';
+import {
+  Space,
+  JengaFlexProps,
+  Flex,
+  Flow,
+} from '@jenga-ui/layout';
 import { Button, JengaButtonProps } from '@jenga-ui/button';
 import { Styles, tasty } from 'tastycss';
-import styled from 'styled-components';
-import { Space, JengaFlexProps, Flex, Flow } from '@jenga-ui/layout';
+import { useLayoutEffect } from '@jenga-ui/utils';
 
 export interface JengaTabData {
   id: string | number;
@@ -164,16 +170,16 @@ export interface LegacyJengaTabProps extends Omit<JengaButtonProps, 'id'> {
   onClose?: () => void;
 }
 
-const Tab = ({
+function Tab({
   isSelected,
   isHidden,
   onClose,
   ...props
-}: Omit<LegacyJengaTabProps, 'id'>) => {
+}: Omit<LegacyJengaTabProps, 'id'>) {
   return (
     <StyledTabElement isSelected={isSelected} isHidden={isHidden} {...props} />
   );
-};
+}
 
 export interface JengaTabsProps extends JengaFlexProps {
   /** The initial active key in the tabs (uncontrolled). */
@@ -337,12 +343,12 @@ export function LegacyTabs({
             {tabs.map((tab) => {
               return (
                 <Tab
-                  data-qa={tab.qa}
-                  onPress={() => onPress(tab)}
                   key={tab.id}
+                  data-qa={tab.qa}
                   isSelected={tab.id === activeKey || false}
                   isDisabled={tab.isDisabled}
                   isHidden={tab.isHidden}
+                  onPress={() => onPress(tab)}
                 >
                   {tab.title}
                 </Tab>

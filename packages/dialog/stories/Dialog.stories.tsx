@@ -2,6 +2,7 @@ import { ModalProvider } from '@react-aria/overlays';
 import { within, userEvent } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 import { Story } from '@storybook/react';
+
 import {
   JengaDialogProps,
   JengaDialogTriggerProps,
@@ -17,7 +18,7 @@ import {
   Paragraph,
   Title,
 } from '@jenga-ui/content';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
 
 export default {
   title: 'Overlays/Dialog',
@@ -49,7 +50,7 @@ const Template: Story<
             </Content>
             <Footer>
               <Button.Group>
-                <Button onPress={close} type="primary">
+                <Button type="primary" onPress={close}>
                   Action
                 </Button>
                 <Button onPress={close}>Sec</Button>

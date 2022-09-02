@@ -1,9 +1,9 @@
 import { useFocusableRef } from '@react-spectrum/utils';
 import { forwardRef, useContext, useRef } from 'react';
-import type { AriaCheckboxProps } from '@react-types/checkbox';
 import { useCheckbox, useCheckboxGroupItem } from '@react-aria/checkbox';
 import { useHover } from '@react-aria/interactions';
 import { useToggleState } from '@react-stately/toggle';
+
 import { useProviderProps } from '@jenga-ui/providers';
 import {
   BaseProps,
@@ -22,35 +22,42 @@ import {
   WithNullableSelected,
 } from '@jenga-ui/utils';
 import {
+  HiddenInput,
   useFormProps,
   FieldWrapper,
-  HiddenInput,
+  FormFieldProps,
   INLINE_LABEL_STYLES,
   LABEL_STYLES,
-  FormFieldProps,
 } from '@jenga-ui/form';
+
 import { CheckboxGroup } from './CheckboxGroup';
 import { CheckboxGroupContext } from './context';
+
 import type { FocusableRef } from '@react-types/shared';
+import type { AriaCheckboxProps } from '@react-types/checkbox';
 
 export interface JengaCheckboxProps
   extends BaseProps,
     AriaCheckboxProps,
     FormFieldProps {}
 
-const CheckOutlined = () => (
-  <svg width="10" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M3.417 7.604l-.017.018-3.4-3.4 1.433-1.433 1.985 1.985L8.192 0l1.432 1.433-6.189 6.189-.018-.018z"
-      fill="currentColor"
-    />
-  </svg>
-);
-const IndeterminateOutline = () => (
-  <svg width="9" height="3" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 .044v2.001l.026.025h8.063V.044H0z" fill="#fff" />
-  </svg>
-);
+function CheckOutlined() {
+  return (
+    <svg width="10" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3.417 7.604l-.017.018-3.4-3.4 1.433-1.433 1.985 1.985L8.192 0l1.432 1.433-6.189 6.189-.018-.018z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+function IndeterminateOutline() {
+  return (
+    <svg width="9" height="3" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 .044v2.001l.026.025h8.063V.044H0z" fill="#fff" />
+    </svg>
+  );
+}
 
 const CheckboxWrapperElement = tasty({
   as: 'label',
@@ -63,6 +70,10 @@ const CheckboxWrapperElement = tasty({
     flow: 'row',
     preset: 'default',
     cursor: 'pointer',
+    margin: {
+      '': 0,
+      'inside-form & side-label': '1.5x top',
+    },
   },
 });
 
@@ -130,6 +141,7 @@ function Checkbox(
     requiredMark = true,
     tooltip,
     isHidden,
+    labelSuffix,
     ...otherProps
   } = props;
 
@@ -150,10 +162,6 @@ function Checkbox(
 
   if (!insideForm) {
     labelStyles.fontWeight = 400;
-  }
-
-  if (insideForm && labelPosition === 'side') {
-    inputStyles.marginTop = '1x';
   }
 
   let { isFocused, focusProps } = useFocus({ isDisabled }, true);
@@ -204,6 +212,8 @@ function Checkbox(
     disabled: isDisabled,
     hovered: isHovered,
     focused: isFocused,
+    'side-label': labelPosition === 'side',
+    'inside-form': insideForm,
   };
 
   const checkboxField = (
@@ -244,6 +254,7 @@ function Checkbox(
           description,
           requiredMark,
           tooltip,
+          labelSuffix,
           Component: checkboxField,
           ref: domRef,
         }}

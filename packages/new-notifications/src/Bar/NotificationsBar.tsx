@@ -3,13 +3,15 @@ import { TransitionGroup } from 'react-transition-group';
 import { Item } from '@react-stately/collections';
 import { useHover } from '@react-aria/interactions';
 import { useFocusRing, focusSafely } from '@react-aria/focus';
+
 import { tasty } from 'tastycss';
 import { JengaNotifyApiPropsWithID } from '../types';
-import { TransitionComponent } from './TransitionComponent';
-import { FloatingNotification } from './FloatingNotification';
 import { useNotificationsList, CollectionChildren } from '../hooks';
 import { mergeProps } from '@jenga-ui/utils';
 import { useEvent } from '@jenga-ui/hooks';
+
+import { FloatingNotification } from './FloatingNotification';
+import { TransitionComponent } from './TransitionComponent';
 
 export type NotificationsBarProps = {
   items: Iterable<JengaNotifyApiPropsWithID>;
@@ -31,11 +33,15 @@ const NotificationsContainer = tasty({
     height: '100vh max',
     padding: '2x',
     gap: '1x',
-    /* to be sure that we're over the legacy modal */
-    zIndex: 1001,
+    /* to be sure that we're over the legacy modal and any widget as well */
+    zIndex: '2147483647',
     overflow: 'hidden',
     isolation: 'isolate',
     pointerEvents: 'none',
+
+    '@supports (-webkit-touch-callout: none)': {
+      height: '-webkit-fill-available max',
+    },
   },
 });
 
@@ -67,12 +73,12 @@ export function NotificationsBar(props: NotificationsBarProps): JSX.Element {
   return (
     <NotificationsContainer
       ref={ref}
-      data-qa="notifications-bar"
+      qa="NotificationsBar"
       role="region"
       aria-live="polite"
       {...mergeProps(listProps, hoverProps, focusProps)}
     >
-      <TransitionGroup component={null} enter exit>
+      <TransitionGroup enter exit component={null}>
         {[...state.collection].reverse().map((notification) => (
           <TransitionComponent key={notification.props.id}>
             <FloatingNotification

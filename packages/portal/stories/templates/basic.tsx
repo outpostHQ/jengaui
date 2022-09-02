@@ -1,5 +1,5 @@
-import React from 'react';
 import { Story } from '@storybook/react';
+
 import { Portal } from '../../src/Portal';
 import { PortalProps } from '../../src/types';
 import { Divider } from '@jenga-ui/content';

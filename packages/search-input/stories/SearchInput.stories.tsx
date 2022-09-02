@@ -1,6 +1,7 @@
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+import { TEXT_VALUE_ARG } from '../../../storybook/stories/FormFieldArgs';
+
 import { SearchInput } from '../src/SearchInput';
-import { baseProps } from '../../../stories/lists/baseProps';
-import { TEXT_VALUE_ARG } from '../../../stories/FormFieldArgs';
 
 export default {
   title: 'Forms/SearchInput',
@@ -29,3 +30,8 @@ Clearable.args = {
 
 export const WithDefaultValue = Template.bind({});
 WithDefaultValue.args = { value: 'Back to the Future' };
+
+export const Invalid = Template.bind({});
+Invalid.args = {
+  validationState: 'invalid',
+};

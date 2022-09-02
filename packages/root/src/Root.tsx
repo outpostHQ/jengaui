@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { GlobalStyles } from '@jenga-ui/core';
-import { PortalProvider } from '@jenga-ui/portal';
+import { ModalProvider } from '@react-aria/overlays';
+import { StyleSheetManager } from 'styled-components';
+
 import {
   BASE_STYLES,
   BaseProps,
@@ -10,9 +11,10 @@ import {
   tasty,
 } from 'tastycss';
 import { Provider } from '@jenga-ui/providers';
-import { ModalProvider } from '@react-aria/overlays';
-import { StyleSheetManager } from 'styled-components';
 import { TOKENS } from '@jenga-ui/core';
+
+import { PortalProvider } from '@jenga-ui/portal';
+import { GlobalStyles } from '@jenga-ui/core';
 import { AlertDialogApiProvider } from '@jenga-ui/alert-dialog';
 import { NotificationsProvider } from '@jenga-ui/new-notifications';
 
@@ -43,7 +45,7 @@ export interface JengaRootProps extends BaseProps {
   applyLegacyTokens?: boolean;
 }
 
-export const Root = (allProps: JengaRootProps) => {
+export function Root(allProps: JengaRootProps) {
   let {
     children,
     /** Raw css styles for body element */
@@ -97,4 +99,4 @@ export const Root = (allProps: JengaRootProps) => {
       </StyleSheetManager>
     </Provider>
   );
-};
+}

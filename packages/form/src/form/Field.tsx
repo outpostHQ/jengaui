@@ -7,16 +7,18 @@ import {
   useRef,
   useState,
 } from 'react';
-import { useFormProps } from './Form';
+
 import { mergeProps, warn } from '@jenga-ui/utils';
 import {
   LabelPosition,
   OptionalFieldBaseProps,
   ValidationRule,
 } from '../shared';
-import { JengaFormInstance } from './useForm';
 import { FieldWrapper } from '../FieldWrapper';
 import { Styles } from 'tastycss';
+
+import { JengaFormInstance } from './useForm';
+import { useFormProps } from './Form';
 import { FieldTypes } from './types';
 
 const ID_MAP = {};
@@ -53,7 +55,12 @@ function getDefaultValidateTrigger(type) {
   return type === 'Number' || type.includes('Text') ? 'onBlur' : 'onChange';
 }
 
-function getValueProps(type, value?, onChange?) {
+function getValueProps(
+  type?: string,
+  value?,
+  onChange?,
+  allowsCustomValue?: boolean,
+) {
   type = type || '';
 
   if (type === 'Number') {
@@ -83,7 +90,8 @@ function getValueProps(type, value?, onChange?) {
   } else if (type === 'ComboBox') {
     return {
       inputValue: value != null ? value : '',
-      onInputChange: onChange,
+      onInputChange: (val) => onChange(val, !allowsCustomValue),
+      onSelectionChange: onChange,
     };
   } else if (type === 'Select') {
     return {
@@ -109,14 +117,14 @@ export interface JengaFieldProps<T extends FieldTypes>
   /** The id prefix for the field to avoid collisions between forms */
   idPrefix?: string;
   children?: ReactElement | ((JengaFormInstance) => ReactElement);
-  /** Function that check whether to perform update of the form state. */
+  /** Function that checks whether to perform update of the form state. */
   shouldUpdate?: boolean | ((prevValues, nextValues) => boolean);
   /** Validation rules */
   rules?: ValidationRule[];
   /** The form instance */
   form?: JengaFormInstance<T>;
   /** The message for the field or text for the error */
-  message?: string;
+  message?: ReactNode;
   /** The description for the field */
   description?: ReactNode;
   /** Tooltip for the label that explains something. */
@@ -132,6 +140,7 @@ export interface JengaFieldProps<T extends FieldTypes>
   styles?: Styles;
   labelPosition?: LabelPosition;
   labelStyles?: Styles;
+  labelSuffix?: ReactNode;
 }
 
 interface JengaFullFieldProps<T extends FieldTypes> extends JengaFieldProps<T> {
@@ -174,8 +183,9 @@ export function Field<T extends FieldTypes>(allProps: JengaFieldProps<T>) {
     isDisabled,
     isLoading,
     styles,
-    labelPosition,
+    labelPosition = 'top',
     labelStyles,
+    labelSuffix,
   } = props;
   const nonInput = !name;
   const fieldName: string =
@@ -250,6 +260,7 @@ export function Field<T extends FieldTypes>(allProps: JengaFieldProps<T>) {
         styles={styles}
         labelPosition={labelPosition}
         labelStyles={labelStyles}
+        labelSuffix={labelSuffix}
       />
     );
   }
@@ -286,6 +297,7 @@ export function Field<T extends FieldTypes>(allProps: JengaFieldProps<T>) {
       child,
       mergeProps(child.props, {
         ...getValueProps(inputType),
+        label: fieldName,
         name: fieldName,
         id: fieldId,
       }),
@@ -296,7 +308,7 @@ export function Field<T extends FieldTypes>(allProps: JengaFieldProps<T>) {
     validateTrigger = defaultValidateTrigger;
   }
 
-  function onChangeHandler(val) {
+  function onChangeHandler(val, dontTouch) {
     const field = form.getFieldInstance(fieldName);
 
     if (shouldUpdate) {
@@ -316,11 +328,12 @@ export function Field<T extends FieldTypes>(allProps: JengaFieldProps<T>) {
       }
     }
 
-    form.setFieldValue(fieldName, val, true);
+    form.setFieldValue(fieldName, val, !dontTouch, false, dontTouch);
 
     if (
-      validateTrigger === 'onChange' ||
-      (field && field.errors && field.errors.length)
+      !dontTouch &&
+      (validateTrigger === 'onChange' ||
+        (field && field.errors && field.errors.length))
     ) {
       form.validateField(fieldName).catch(() => {}); // do nothing on fail
     }
@@ -331,7 +344,7 @@ export function Field<T extends FieldTypes>(allProps: JengaFieldProps<T>) {
     name: fieldName,
     onBlur() {
       if (validateTrigger === 'onBlur') {
-        // We need timeout so the change event can be done.
+        // We need a timeout so the change event can be done.
         setTimeout(() => {
           form.validateField(fieldName).catch(() => {}); // do nothing on fail
         });
@@ -395,7 +408,12 @@ export function Field<T extends FieldTypes>(allProps: JengaFieldProps<T>) {
 
   Object.assign(
     newProps,
-    getValueProps(inputType, field?.value, onChangeHandler),
+    getValueProps(
+      inputType,
+      field?.inputValue,
+      onChangeHandler,
+      child.props.allowsCustomValue,
+    ),
   );
 
   const { onChange, onSelectionChange, ...childProps } = child.props;

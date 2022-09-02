@@ -1,8 +1,0 @@
-{
-  "extends": "./base.json",
-  "compilerOptions": {
-    "declarationDir": "dist/types",
-    "outDir": "./dist/es",
-    "noEmit": false
-  }
-}

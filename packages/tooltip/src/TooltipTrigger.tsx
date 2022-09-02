@@ -1,13 +1,16 @@
 import { FocusableProvider } from '@react-aria/focus';
 import { Children, ReactElement, useRef } from 'react';
-import { TooltipContext } from './context';
 import { useOverlayPosition } from '@react-aria/overlays';
 import { useTooltipTrigger } from '@react-aria/tooltip';
 import { useTooltipTriggerState } from '@react-stately/tooltip';
+
 import { OverlayWrapper } from '@jenga-ui/overlays';
-import type { TooltipTriggerProps } from '@react-types/tooltip';
 import { ActiveZone } from '@jenga-ui/active-zone';
 import { Block } from '@jenga-ui/core';
+
+import { TooltipContext } from './context';
+
+import type { TooltipTriggerProps } from '@react-types/tooltip';
 
 const DEFAULT_OFFSET = 8; // Offset needed to reach 4px/5px (med/large) distance between tooltip and trigger button
 const DEFAULT_CROSS_OFFSET = 0;
@@ -32,14 +35,15 @@ function TooltipTrigger(props: JengaTooltipTriggerProps) {
     isMaterial,
     offset = DEFAULT_OFFSET,
     trigger: triggerAction,
+    delay = 250,
+    isOpen,
+    onOpenChange,
+    defaultOpen,
   } = props;
 
   let [trigger, tooltip] = Children.toArray(children);
 
-  let state = useTooltipTriggerState({
-    delay: 750,
-    ...props,
-  });
+  let state = useTooltipTriggerState({ delay, ...props });
 
   let tooltipTriggerRef = useRef(null);
   let overlayRef = useRef(null);
@@ -48,6 +52,10 @@ function TooltipTrigger(props: JengaTooltipTriggerProps) {
     {
       isDisabled,
       trigger: triggerAction,
+      delay,
+      isOpen,
+      onOpenChange,
+      defaultOpen,
     },
     state,
     tooltipTriggerRef,

@@ -1,7 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useTimer } from '../../hooks/src/_internal/hooks/use-timer/use-timer';
-import { wait } from './utils/wait';
-import { Timer } from '../../hooks/src/_internal/hooks/use-timer/timer';
+
+import { wait } from '@jenga-ui/core/test/utils/wait';
+
+import { useTimer } from '../src/_internal/hooks/use-timer/use-timer';
+import { Timer } from '../src/_internal/hooks/use-timer/timer';
 
 describe('useTimer', () => {
   const callback = jest.fn();

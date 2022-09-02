@@ -4,7 +4,7 @@ import {
   filterBaseProps,
   TEXT_STYLES,
 } from 'tastycss';
-import { useDeprecationWarning } from '@jenga-ui/hooks/src/_internal';
+import { useDeprecationWarning } from '@jenga-ui/hooks';
 
 import { JengaAlertProps } from './types';
 

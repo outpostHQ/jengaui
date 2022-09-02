@@ -5,15 +5,16 @@ import {
 } from '@storybook/testing-library';
 import { ComponentMeta, StoryFn } from '@storybook/react';
 import { expect } from '@storybook/jest';
+import { useState } from 'react';
+
 import { JengaDialogFormProps, DialogForm } from '../src/DialogForm';
 import { Button } from '@jenga-ui/button';
 import { Text, Paragraph } from '@jenga-ui/content';
 import { Input } from '@jenga-ui/input';
 import { DialogTrigger } from '../src/DialogTrigger';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
 import { Form } from '@jenga-ui/form';
 import { DialogContainer } from '../src/DialogContainer';
-import { useState } from 'react';
 
 export default {
   title: 'Overlays/DialogForm',

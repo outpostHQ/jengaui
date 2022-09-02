@@ -1,5 +1,6 @@
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
 import { Link } from '../src/Link';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Navigation/Link',
@@ -20,8 +21,8 @@ export default {
 const Template = ({ isDisabled, label }) => (
   <Link
     isDisabled={isDisabled}
+    to="!https://jenga.dev"
     onPress={() => console.log('Press')}
-    to="!https://outpost.run"
   >
     {label}
   </Link>

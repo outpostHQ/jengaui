@@ -1,5 +1,7 @@
 import { forwardRef } from 'react';
-import THEMES from '../../core/src/themes';
+import { CloseOutlined } from '@ant-design/icons';
+
+import THEMES from '@jenga-ui/core/src/themes';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -11,7 +13,6 @@ import {
 } from 'tastycss';
 import { Action } from '@jenga-ui/button';
 import { Suffix } from '@jenga-ui/layout';
-import { CloseOutlined } from '@ant-design/icons';
 
 const TagElement = tasty({
   qa: 'Tag',
@@ -89,7 +90,7 @@ export interface JengaTagProps extends BaseProps, ContainerStyleProps {
   closeButtonStyles?: Styles;
 }
 
-const Tag = (allProps: JengaTagProps, ref) => {
+function Tag(allProps: JengaTagProps, ref) {
   let { type, isClosable, onClose, closeButtonStyles, children, ...props } =
     allProps;
 
@@ -98,10 +99,10 @@ const Tag = (allProps: JengaTagProps, ref) => {
   return (
     <TagElement
       {...filterBaseProps(props, { eventProps: true })}
+      ref={ref}
       styles={styles}
       data-type={type}
       mods={{ closable: isClosable }}
-      ref={ref}
     >
       <div data-element="Content">{children}</div>
       {isClosable ? (
@@ -117,7 +118,7 @@ const Tag = (allProps: JengaTagProps, ref) => {
       ) : undefined}
     </TagElement>
   );
-};
+}
 
 const _Tag = forwardRef(Tag);
 export { _Tag as Tag };

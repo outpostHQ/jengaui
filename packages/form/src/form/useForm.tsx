@@ -1,7 +1,9 @@
-import { useRef, useState } from 'react';
+import { ReactNode, useRef, useState } from 'react';
+
 import { dotize } from 'tastycss';
+
 import { applyRules } from './validation';
-import { FieldTypes, JengaFieldData, SetFieldsArrType } from './types';
+import { JengaFieldData, FieldTypes, SetFieldsArrType } from './types';
 
 export type JengaFormData<T extends FieldTypes> = {
   [K in keyof T]?: JengaFieldData<K, T[K]>;
@@ -28,13 +30,13 @@ export class JengaFormInstance<
   TFormData extends JengaFormData<T> = JengaFormData<T>,
 > {
   public forceReRender: () => void = () => {};
-  private initialFields = {};
+  private initialFields: Partial<T> = {};
   private fields: TFormData = {} as TFormData;
   public ref = {};
   public isSubmitting = false;
-  public onValuesChange: (data: JengaFormData<T>) => void | Promise<void> =
-    () => {};
-  public onSubmit: (data: JengaFormData<T>) => void | Promise<void> = () => {};
+
+  public onValuesChange: (data: T) => void | Promise<void> = () => {};
+  public onSubmit: (data: T) => void | Promise<void> = () => {};
 
   constructor(forceReRender: () => void = () => {}) {
     this.forceReRender = forceReRender;
@@ -64,6 +66,7 @@ export class JengaFormInstance<
     touched?: boolean,
     skipRender?: boolean,
     createFields = false,
+    inputOnly = false,
   ) => {
     let flag = false;
 
@@ -85,7 +88,11 @@ export class JengaFormInstance<
 
       flag = true;
 
-      field.value = newData[name];
+      if (!inputOnly) {
+        field.value = newData[name];
+      }
+
+      field.inputValue = newData[name];
 
       if (touched === true) {
         field.touched = touched;
@@ -98,7 +105,7 @@ export class JengaFormInstance<
     if (flag && !skipRender) {
       this.forceReRender();
 
-      if (touched) {
+      if (touched && !inputOnly) {
         this.onValuesChange && this.onValuesChange(this.getFormData());
       }
     }
@@ -110,7 +117,7 @@ export class JengaFormInstance<
 
   getFieldsValue(): Partial<T> {
     return Object.values(this.fields).reduce((map, field) => {
-      map[field.name as keyof T] = field.value as T[typeof field.name];
+      map[field.name] = field.value;
 
       return map;
     }, {} as T);
@@ -119,7 +126,7 @@ export class JengaFormInstance<
   /**
    * Similar to getFieldsValue() but respects '.' notation and creates nested objects.
    */
-  getFormData(): JengaFormData<T> {
+  getFormData(): T {
     const fieldsValue = this.getFieldsValue();
 
     return Object.keys(fieldsValue).reduce((map, field) => {
@@ -130,7 +137,7 @@ export class JengaFormInstance<
       }
 
       return map;
-    }, {} as JengaFormData<T>);
+    }, {} as T);
   }
 
   setFieldValue<Name extends keyof T>(
@@ -138,6 +145,7 @@ export class JengaFormInstance<
     value: T[Name],
     touched = false,
     skipRender = false,
+    inputOnly = false,
   ) {
     const field = this.fields[name];
 
@@ -145,7 +153,11 @@ export class JengaFormInstance<
       return;
     }
 
-    field.value = value;
+    if (!inputOnly) {
+      field.value = value;
+    }
+
+    field.inputValue = value;
 
     if (touched) {
       field.touched = touched;
@@ -157,7 +169,7 @@ export class JengaFormInstance<
       this.forceReRender();
     }
 
-    if (touched) {
+    if (touched && !inputOnly) {
       this.onValuesChange && this.onValuesChange(this.getFormData());
     }
   }
@@ -204,11 +216,9 @@ export class JengaFormInstance<
         }
       })
       .catch((err) => {
-        if (!field.errors || !isEqual(field.errors, [err])) {
-          field.errors = [err];
+        field.errors = [err];
 
-          this.forceReRender();
-        }
+        this.forceReRender();
 
         return Promise.reject([err]);
       });
@@ -216,7 +226,7 @@ export class JengaFormInstance<
 
   validateFields<Names extends (keyof T)[]>(names?: Names): Promise<any> {
     const fieldsList = names || Object.keys(this.fields);
-    const errorList: { name: string; errors: string[] }[] = [];
+    const errorList: { name: string; errors: ReactNode[] }[] = [];
 
     return Promise.allSettled(
       fieldsList.map((name) => {
@@ -259,7 +269,7 @@ export class JengaFormInstance<
     return !!field.touched;
   }
 
-  getFieldError<Name extends keyof T>(name: Name): string[] {
+  getFieldError<Name extends keyof T>(name: Name): ReactNode[] {
     const field = this.getFieldInstance(name);
 
     if (!field) return [];
@@ -285,8 +295,6 @@ export class JengaFormInstance<
     if (!skipRender) {
       this.forceReRender();
     }
-
-    this.validateFields().catch(() => {});
   }
 
   setFields<Names extends keyof T>(newFields: SetFieldsArrType<T, Names>[]) {
@@ -309,13 +317,20 @@ export class JengaFormInstance<
     name: Name,
     data?: Data,
   ): Data {
-    return {
+    let obj = {
       name,
       validating: false,
       touched: false,
       errors: [],
       ...data,
     } as unknown as Data;
+
+    if (obj) {
+      // condition is here to avoid typing issues
+      obj.inputValue = obj.value;
+    }
+
+    return obj;
   }
 }
 
@@ -340,9 +355,7 @@ export function useForm<TSourceType extends FieldTypes>(
         forceUpdate({});
       };
 
-      form = formRef.current = new JengaFormInstance<TSourceType>(
-        forceReRender,
-      );
+      form = formRef.current = new JengaFormInstance<TSourceType>(forceReRender);
     }
 
     form.ref = ref;

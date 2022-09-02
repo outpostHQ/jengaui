@@ -5,22 +5,26 @@ import {
   Section as BaseSection,
 } from '@react-stately/collections';
 import { useMenu } from '@react-aria/menu';
-import { mergeProps, useSyncRef } from '@react-aria/utils';
+import { useSyncRef } from '@react-aria/utils';
 import { useDOMRef } from '@react-spectrum/utils';
 import { useTreeState } from '@react-stately/tree';
-import type { AriaMenuProps } from '@react-types/menu';
 
 import {
+  BaseProps,
   CONTAINER_STYLES,
   ContainerStyleProps,
   extractStyles,
   Styles,
 } from 'tastycss';
+import { mergeProps } from '@jenga-ui/utils';
+
 import { StyledMenu, StyledMenuHeader } from './styled';
 import { MenuItem } from './MenuItem';
 import { MenuSection } from './MenuSection';
 import { MenuButtonProps, MenuSelectionType } from './MenuButton';
 import { useMenuContext } from './context';
+
+import type { AriaMenuProps } from '@react-types/menu';
 
 export interface JengaMenuProps<T>
   extends ContainerStyleProps,
@@ -29,13 +33,14 @@ export interface JengaMenuProps<T>
   header?: ReactNode;
   footer?: ReactNode;
   styles?: Styles;
+  qa?: BaseProps['qa'];
 }
 
 function Menu<T extends object>(
   props: JengaMenuProps<T>,
   ref: DOMRef<HTMLUListElement>,
 ) {
-  const { header, footer, selectionIcon } = props;
+  const { header, footer, selectionIcon, qa } = props;
   const domRef = useDOMRef(ref);
   const contextProps = useMenuContext();
   const completeProps = mergeProps(contextProps, props);
@@ -48,6 +53,7 @@ function Menu<T extends object>(
   const styles = extractStyles(completeProps, CONTAINER_STYLES);
 
   const baseProps = {
+    qa,
     styles,
     mods: {
       sections: hasSections,

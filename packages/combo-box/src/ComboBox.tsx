@@ -3,23 +3,45 @@ import {
   LoadingOutlined,
   WarningOutlined,
 } from '@ant-design/icons';
-import { mergeProps } from '@react-aria/utils';
-import { cloneElement, forwardRef, RefObject, useState } from 'react';
+import {
+  cloneElement,
+  forwardRef,
+  ReactElement,
+  RefObject,
+  useMemo,
+} from 'react';
 import { useComboBoxState } from '@react-stately/combobox';
 import { useComboBox } from '@react-aria/combobox';
 import { useButton } from '@react-aria/button';
-import { useFormProps, FieldWrapper } from '@jenga-ui/form';
 import { useHover } from '@react-aria/interactions';
-import { useProviderProps } from '@jenga-ui/providers';
 import { useFilter } from '@react-aria/i18n';
-import { BLOCK_STYLES, extractStyles, OUTER_STYLES, tasty } from 'tastycss';
-import { useFocus, modAttrs, useCombinedRefs } from '@jenga-ui/utils';
-import { JengaSelectBaseProps, ListBoxPopup } from '@jenga-ui/select';
-import { Prefix, Suffix, Space } from '@jenga-ui/layout';
 import { Item } from '@react-stately/collections';
-import { DEFAULT_INPUT_STYLES } from '@jenga-ui/text-input';
 import { useOverlayPosition } from '@react-aria/overlays';
+
+import {
+  useFormProps,
+  FieldWrapper
+} from '@jenga-ui/form';
+import { useProviderProps } from '@jenga-ui/providers';
+import {
+  BLOCK_STYLES,
+  extractStyles,
+  OUTER_STYLES,
+  tasty,
+} from 'tastycss';
+import {
+  useFocus,
+  mergeProps,
+  modAttrs,
+  useCombinedRefs
+} from '@jenga-ui/utils';
+import { JengaSelectBaseProps, ListBoxPopup } from '@jenga-ui/select';
+import {
+  DEFAULT_INPUT_STYLES,
+  INPUT_WRAPPER_STYLES,
+} from '@jenga-ui/text-input';
 import { OverlayWrapper } from '@jenga-ui/overlays';
+
 import type {
   CollectionBase,
   KeyboardDelegate,
@@ -27,38 +49,30 @@ import type {
 } from '@react-types/shared';
 import type { ComboBoxProps } from '@react-types/combobox';
 
-const CaretDownIcon = () => (
-  <svg
-    aria-hidden="true"
-    width="14"
-    height="14"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M11.49 4.102H2.51c-.269 0-.42.284-.253.478l4.49 5.206a.342.342 0 00.506 0l4.49-5.206c.167-.194.016-.478-.253-.478z"
-      fill="currentColor"
-    />
-  </svg>
-);
+function CaretDownIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="14"
+      height="14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.49 4.102H2.51c-.269 0-.42.284-.253.478l4.49 5.206a.342.342 0 00.506 0l4.49-5.206c.167-.194.016-.478-.253-.478z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
 
 const ComboBoxWrapperElement = tasty({
-  styles: {
-    position: 'relative',
-    display: 'grid',
-    zIndex: {
-      '': 'initial',
-      focused: 1,
-    },
-  },
+  styles: INPUT_WRAPPER_STYLES,
 });
 
 const InputElement = tasty({
   as: 'input',
-  styles: {
-    ...DEFAULT_INPUT_STYLES,
-    width: '100%',
-  },
+  styles: DEFAULT_INPUT_STYLES,
 });
 
 const TriggerElement = tasty({
@@ -69,7 +83,7 @@ const TriggerElement = tasty({
     placeContent: 'center',
     placeSelf: 'stretch',
     radius: 'right',
-    padding: '0 1x',
+    width: '4x',
     color: {
       '': '#dark.75',
       hovered: '#dark.75',
@@ -93,8 +107,10 @@ export interface JengaComboBoxProps<T>
   extends Omit<JengaSelectBaseProps<T>, 'onOpenChange'>,
     ComboBoxProps<T>,
     CollectionBase<T> {
+  icon?: ReactElement;
   multiLine?: boolean;
   autoComplete?: string;
+  wrapperRef?: RefObject<HTMLDivElement>;
   inputRef?: RefObject<HTMLInputElement>;
   /** The ref for the list box popover. */
   popoverRef?: RefObject<HTMLDivElement>;
@@ -105,6 +121,7 @@ export interface JengaComboBoxProps<T>
   loadingState?: LoadingState;
   filter?: (val: any, str: string) => boolean;
   size?: 'small' | 'default' | 'large' | string;
+  suffixPosition?: 'before' | 'after';
 }
 
 function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
@@ -120,10 +137,12 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
     isRequired,
     necessityIndicator,
     validationState,
+    icon,
     prefix,
     isDisabled,
     multiLine,
     autoFocus,
+    wrapperRef,
     inputRef,
     triggerRef,
     popoverRef,
@@ -146,15 +165,16 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
     shouldFlip = true,
     requiredMark = true,
     menuTrigger = 'input',
+    suffixPosition = 'before',
     loadingState,
     filter,
     styles,
+    labelSuffix,
     ...otherProps
   } = props;
+
   let isAsync = loadingState != null;
   let { contains } = useFilter({ sensitivity: 'base' });
-  let [suffixWidth, setSuffixWidth] = useState(0);
-  let [prefixWidth, setPrefixWidth] = useState(0);
   let state = useComboBoxState({
     ...props,
     defaultFilter: filter || contains,
@@ -166,6 +186,7 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
   inputStyles = extractStyles(otherProps, BLOCK_STYLES, inputStyles);
 
   ref = useCombinedRefs(ref);
+  wrapperRef = useCombinedRefs(wrapperRef);
   inputRef = useCombinedRefs(inputRef);
   triggerRef = useCombinedRefs(triggerRef);
   popoverRef = useCombinedRefs(popoverRef);
@@ -199,12 +220,6 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
     offset: overlayOffset,
   });
 
-  if (prefix) {
-    inputStyles.paddingLeft = `${prefixWidth}px`;
-  }
-
-  inputStyles.paddingRight = `${suffixWidth}px`;
-
   let { isFocused, focusProps } = useFocus({ isDisabled });
   let { hoverProps, isHovered } = useHover({ isDisabled });
 
@@ -224,25 +239,62 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
   let isInvalid = validationState === 'invalid';
 
   let validationIcon = isInvalid ? (
-    <WarningOutlined style={{ color: 'var(--danger-color)' }} />
+    <WarningOutlined
+      data-element="ValidationIcon"
+      style={{ color: 'var(--danger-color)' }}
+    />
   ) : (
-    <CheckOutlined style={{ color: 'var(--success-color)' }} />
+    <CheckOutlined
+      data-element="ValidationIcon"
+      style={{ color: 'var(--success-color)' }}
+    />
   );
   let validation = cloneElement(validationIcon);
 
-  let comboBoxWidth = inputRef?.current?.offsetWidth;
+  let comboBoxWidth = wrapperRef?.current?.offsetWidth;
+
+  if (icon) {
+    icon = <div data-element="InputIcon">{icon}</div>;
+
+    if (prefix) {
+      prefix = (
+        <>
+          {icon}
+          {prefix}
+        </>
+      );
+    } else {
+      prefix = icon;
+    }
+  }
+
+  let mods = useMemo(
+    () => ({
+      invalid: isInvalid,
+      valid: validationState === 'valid',
+      disabled: isDisabled,
+      hovered: isHovered,
+      focused: isFocused,
+      loading: isLoading,
+      prefix: !!prefix,
+      suffix: true,
+    }),
+    [
+      isInvalid,
+      validationState,
+      isDisabled,
+      isHovered,
+      isFocused,
+      isLoading,
+      prefix,
+    ],
+  );
 
   let comboBoxField = (
     <ComboBoxWrapperElement
-      ref={ref}
+      ref={wrapperRef}
       qa={qa || 'ComboBox'}
-      {...modAttrs({
-        invalid: isInvalid,
-        valid: validationState === 'valid',
-        disabled: isDisabled,
-        hovered: isHovered,
-        focused: isFocused,
-      })}
+      {...modAttrs(mods)}
       styles={outerStyles}
       style={{
         zIndex: isFocused ? 1 : 'initial',
@@ -255,62 +307,46 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
         ref={inputRef}
         autoComplete={autoComplete}
         styles={inputStyles}
-        {...modAttrs({
-          invalid: isInvalid,
-          valid: validationState === 'valid',
-          disabled: isDisabled,
-          hovered: isHovered,
-          focused: isFocused,
-        })}
+        {...modAttrs(mods)}
         data-size={size}
       />
-      {prefix ? (
-        <Prefix
-          onWidthChange={setPrefixWidth}
-          padding="0 1x 0 1.5x"
-          opacity={isDisabled ? '@disabled-opacity' : false}
-          placeItems="center"
-          outerGap={0}
-        >
-          {prefix}
-        </Prefix>
-      ) : null}
-      <Suffix
-        onWidthChange={setSuffixWidth}
-        opacity={isDisabled ? '@disabled-opacity' : false}
-      >
+      {prefix ? <div data-element="Prefix">{prefix}</div> : null}
+      <div data-element="Suffix">
+        {suffixPosition === 'before' ? suffix : null}
         {validationState || isLoading ? (
-          <Space gap={false} padding="0 1x">
+          <>
             {validationState && !isLoading ? validation : null}
-            {isLoading && <LoadingOutlined />}
-          </Space>
+            {isLoading ? <LoadingOutlined /> : null}
+          </>
         ) : null}
-        {suffix}
+        {suffixPosition === 'after' ? suffix : null}
         {!hideTrigger ? (
           <TriggerElement
+            qa="ComboBoxTrigger"
             {...mergeProps(buttonProps, triggerFocusProps, triggerHoverProps)}
             {...modAttrs({
               pressed: isTriggerPressed,
               focused: isTriggerFocused,
               hovered: isTriggerHovered,
               disabled: isDisabled,
+              loading: isLoading,
             })}
+            ref={triggerRef}
             data-size={size}
             isDisabled={isDisabled}
-            ref={triggerRef}
             styles={triggerStyles}
           >
             <CaretDownIcon />
           </TriggerElement>
         ) : null}
-      </Suffix>
+      </div>
       <OverlayWrapper isOpen={state.isOpen && !isDisabled}>
         <ListBoxPopup
           {...listBoxProps}
+          shouldUseVirtualFocus
           listBoxRef={listBoxRef}
           popoverRef={popoverRef}
           overlayProps={overlayProps}
-          shouldUseVirtualFocus
           placement={placement}
           state={state}
           listBoxStyles={listBoxStyles}
@@ -338,6 +374,7 @@ function ComboBox<T extends object>(props: JengaComboBoxProps<T>, ref) {
         message,
         description,
         requiredMark,
+        labelSuffix,
         Component: comboBoxField,
         ref: ref,
       }}

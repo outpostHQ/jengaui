@@ -1,4 +1,5 @@
 import { memo } from 'react';
+
 import { Button } from '@jenga-ui/button';
 import { tasty } from 'tastycss';
 import { Cross } from '../icons';
@@ -36,12 +37,12 @@ export const NotificationCloseButton = memo(function NotificationCloseButton(
 
   return (
     <CloseButton
-      qa="notification-close-button"
+      qa="NotificationCloseButton"
       type="neutral"
       mods={{ show: isHovered || isFocused }}
-      onPress={onPress}
       icon={<Cross />}
       label="Close the notification"
+      onPress={onPress}
     />
   );
 });

@@ -11,8 +11,8 @@
     "clickable",
     "tabbable"
   ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
@@ -31,21 +31,17 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "typings": "types/index.d.ts",
   "devDependencies": {
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "@vitejs/plugin-react": "^2.0.0",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.5.4",
-    "vite": "^3.0.4"
+    "typescript": "^4.5.4"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@jenga-ui/utils": "workspace:packages/utils",
     "@react-aria/breadcrumbs": "^3.3.1",
     "@react-types/breadcrumbs": "^3.4.3",
-    "tastycss": "^0.8.2",
+    "tastycss": "^0.8.6",
     "tsup": "^6.2.3"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",

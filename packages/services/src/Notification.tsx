@@ -1,6 +1,10 @@
 import ReactDOM from 'react-dom';
-import { JengaNotificationProps, Notification } from '@jenga-ui/notification';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
+import {
+  JengaNotificationProps,
+  Notification,
+} from '@jenga-ui/notification';
 
 let ID = 0;
 

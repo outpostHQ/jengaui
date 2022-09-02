@@ -3,6 +3,8 @@ import { forwardRef, useMemo, useRef } from 'react';
 import { useSwitch } from '@react-aria/switch';
 import { useHover } from '@react-aria/interactions';
 import { useToggleState } from '@react-stately/toggle';
+import { LoadingOutlined } from '@ant-design/icons';
+
 import { useProviderProps } from '@jenga-ui/providers';
 import {
   BaseProps,
@@ -23,14 +25,14 @@ import {
   WithNullableSelected,
 } from '@jenga-ui/utils';
 import {
+  HiddenInput,
   INLINE_LABEL_STYLES,
   LABEL_STYLES,
   useFormProps,
-  HiddenInput,
   FieldWrapper,
   FormFieldProps,
 } from '@jenga-ui/form';
-import { LoadingOutlined } from '@ant-design/icons';
+
 import type { AriaSwitchProps } from '@react-types/switch';
 
 const SwitchWrapperElement = tasty({
@@ -139,6 +141,7 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
     inputStyles,
     requiredMark = true,
     tooltip,
+    labelSuffix,
     ...otherProps
   } = props;
 
@@ -204,6 +207,7 @@ function Switch(props: WithNullableSelected<JengaSwitchProps>, ref) {
           description,
           requiredMark,
           tooltip,
+          labelSuffix,
           Component: switchField,
           ref: domRef,
         }}

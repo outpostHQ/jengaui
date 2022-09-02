@@ -1,7 +1,9 @@
+import { ReactNode, useEffect, useState } from 'react';
+
+import { Styles } from 'tastycss';
+
 import { JengaTooltipTriggerProps, TooltipTrigger } from './TooltipTrigger';
 import { JengaTooltipProps, Tooltip } from './Tooltip';
-import { ReactNode, useEffect, useState } from 'react';
-import { Styles } from 'tastycss';
 
 export interface JengaTooltipProviderProps
   extends Omit<JengaTooltipTriggerProps, 'children'> {
@@ -27,7 +29,7 @@ function TooltipProvider(props: JengaTooltipProviderProps) {
       </Tooltip>
     </TooltipTrigger>
   ) : (
-    <>children</>
+    <>{children}</>
   );
 }
 

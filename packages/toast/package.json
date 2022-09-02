@@ -17,8 +17,8 @@
     "design-system",
     "toast"
   ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
@@ -47,9 +47,9 @@
   "dependencies": {
     "@jenga-ui/new-notifications": "*",
     "@react-aria/utils": "^3.13.3",
-    "react-is": "^18.2.0",
+    "react-is": "^17.0.0",
     "styled-components": "^5.3.0",
-    "tastycss": "^0.8.2"
+    "tastycss": "^0.8.6"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

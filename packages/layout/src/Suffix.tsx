@@ -1,4 +1,5 @@
 import { CSSProperties, forwardRef, useEffect } from 'react';
+
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -32,7 +33,10 @@ export interface JengaSuffixProps extends BaseProps, ContainerStyleProps {
   outerGap?: CSSProperties['gap'];
 }
 
-export const Suffix = forwardRef((allProps: JengaSuffixProps, outerRef) => {
+export const Suffix = forwardRef(function Suffix(
+  allProps: JengaSuffixProps,
+  outerRef,
+) {
   let { onWidthChange, outerGap = '1bw', children, ...props } = allProps;
   const styles = extractStyles(props, CONTAINER_STYLES);
   const ref = useCombinedRefs(outerRef);
@@ -46,8 +50,8 @@ export const Suffix = forwardRef((allProps: JengaSuffixProps, outerRef) => {
   return (
     <SuffixElement
       {...filterBaseProps(props, { eventProps: true })}
-      styles={styles}
       ref={ref}
+      styles={styles}
       style={{
         '--suffix-gap': parseStyle(outerGap).value,
       }}

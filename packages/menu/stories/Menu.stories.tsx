@@ -3,18 +3,22 @@ import {
   BulbOutlined,
   CheckCircleFilled,
   MoreOutlined,
+  ReloadOutlined,
+  BookOutlined,
+  PlusOutlined,
 } from '@ant-design/icons';
+import { action } from '@storybook/addon-actions';
+import { expect } from '@storybook/jest';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
+
 import { Menu, MenuTrigger } from '../src/index';
-import { Text } from '@jenga-ui/content';
-import { Flex, Space } from '@jenga-ui/layout';
 import { Button } from '@jenga-ui/button';
+import { Flex, Space } from '@jenga-ui/layout';
+import { Root } from '@jenga-ui/root';
 import { AlertDialog } from '@jenga-ui/alert-dialog';
 import { DialogContainer } from '@jenga-ui/dialog';
-import { Root } from '@jenga-ui/core';
-import { baseProps } from '../../../stories/lists/baseProps';
-import { action } from '@storybook/addon-actions';
-import { userEvent, waitFor, within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { Text } from '@jenga-ui/content';
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
 
 export default {
   title: 'Pickers/Menu',
@@ -97,11 +101,11 @@ export const InsideModal = () => {
             <Button
               size="small"
               icon={<MoreOutlined />}
-              data-qa="contextMenuButton"
+              qa="ContextMenuButton"
               aria-label="Open Context Menu"
             />
             <Menu
-              data-qa="contextMenuList"
+              qa="ContextMenuList"
               id="menu"
               width="220px"
               selectionMode="multiple"
@@ -125,11 +129,11 @@ export const InsideModal = () => {
 
 InsideModal.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  const button = await canvas.findByTestId('contextMenuButton');
+  const button = await canvas.findByTestId('ContextMenuButton');
 
   await userEvent.click(button);
 
-  const list = await canvas.findByTestId('contextMenuList');
+  const list = await canvas.findByTestId('ContextMenuList');
 
   await waitFor(() => expect(list).toBeInTheDocument());
 };
@@ -290,6 +294,46 @@ export const PaymentDetails = (props) => {
             Invoice #16C7B3AE manual
           </Menu.Item>
           <Menu.Item key="yellow" postfix="July, 2022">
+            #16C7B3AE
+          </Menu.Item>
+        </Menu>
+      </div>
+    </Root>
+  );
+};
+
+export const ItemCustomIcons = (props) => {
+  const [selectedKeys, setSelectedKeys] = useState(['1']);
+  const onSelectionChange = (key) => {
+    setSelectedKeys(key);
+  };
+
+  return (
+    <Root>
+      <div style={{ padding: '20px', width: '340px' }}>
+        <Menu
+          id="menu"
+          {...props}
+          selectionIcon="checkbox"
+          selectionMode="single"
+          selectedKeys={selectedKeys}
+          header="Custom Icons"
+          onSelectionChange={onSelectionChange}
+        >
+          <Menu.Item key="red" icon={<ReloadOutlined />} postfix="March, 2022">
+            #16C7B3AE-000113-000113
+          </Menu.Item>
+          <Menu.Item key="orange" icon={<BookOutlined />} postfix="Jan, 2022">
+            #16C7B3AE
+          </Menu.Item>
+          <Menu.Item key="purple" icon={<PlusOutlined />} postfix="Feb, 2022">
+            #16C7B3AE
+          </Menu.Item>
+          <Menu.Item
+            key="yellow"
+            icon={<ReloadOutlined />}
+            postfix="July, 2022"
+          >
             #16C7B3AE
           </Menu.Item>
         </Menu>

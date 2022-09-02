@@ -1,5 +1,6 @@
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
 import { Skeleton } from '../src/Skeleton';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Content/Skeleton',

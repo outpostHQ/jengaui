@@ -1,8 +1,10 @@
 import { PressEvent } from '@react-types/shared/src/events';
 import { PropsWithChildren } from 'react';
+
 import { tasty } from 'tastycss';
 import { Button, JengaButtonProps } from '@jenga-ui/button';
 import { useEvent } from '@jenga-ui/hooks';
+
 import { useNotificationContext } from './NotificationProvider';
 
 export type NotificationActionProps = PropsWithChildren<{
@@ -51,10 +53,10 @@ export function NotificationAction(
   return (
     <Action
       {...buttonProps}
-      onPress={onPressEvent}
       type="link"
       size="small"
       mods={{ primary: type === 'primary', secondary: type === 'secondary' }}
+      onPress={onPressEvent}
     >
       {children}
     </Action>

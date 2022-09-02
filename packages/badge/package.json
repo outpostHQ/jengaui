@@ -11,8 +11,8 @@
     "clickable",
     "tabbable"
   ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
@@ -42,7 +42,7 @@
     "@ant-design/icons": "^4.7.0",
     "@jenga-ui/core": "*",
     "styled-components": "^5.3.0",
-    "tastycss": "^0.8.2"
+    "tastycss": "^0.8.6"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

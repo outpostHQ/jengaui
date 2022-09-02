@@ -1,23 +1,62 @@
 import { StoryFn } from '@storybook/react';
+import { linkTo } from '@storybook/addon-links';
+
 import { Item } from '@react-stately/collections';
 import { Block } from '@jenga-ui/core';
-import { TextInput } from '@jenga-ui/text-input';
-import { Switch } from '@jenga-ui/switch';
+import { Checkbox, CheckboxGroup } from '@jenga-ui/checkbox';
+import { ComboBox } from '@jenga-ui/combo-box';
 import { Form, Field } from '@jenga-ui/form';
 import { PasswordInput } from '@jenga-ui/password-input';
-import { Checkbox, CheckboxGroup } from '@jenga-ui/checkbox';
-import { NumberInput } from '@jenga-ui/number-input';
 import { Radio } from '@jenga-ui/radio';
 import { Select } from '@jenga-ui/select';
-import { ComboBox } from '@jenga-ui/combo-box';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { Switch } from '@jenga-ui/switch';
+import { TextInput } from '@jenga-ui/text-input';
+import { NumberInput } from '@jenga-ui/number-input';
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
 import { Button, Submit } from '@jenga-ui/button';
-import { linkTo } from '@storybook/addon-links';
 
 export default {
   title: 'Forms/ComplexForm',
   component: Form,
   parameters: { controls: { exclude: baseProps } },
+};
+
+const ComplexErrorTemplate: StoryFn<typeof Form> = (args) => {
+  const [form] = Form.useForm();
+
+  return (
+    <Form
+      form={form}
+      {...args}
+      onSubmit={(v) => {
+        console.log('onSubmit:', v);
+      }}
+      onValuesChange={(v) => {
+        console.log('onChange', v);
+      }}
+    >
+      <Field
+        name="text"
+        label="Text input"
+        rules={[
+          { required: true, message: 'This field is required' },
+          () => ({
+            validator(rule, value) {
+              return value.length >= 8
+                ? Promise.resolve()
+                : Promise.reject(
+                    <>
+                      This field should be <b>at least 8 symbols</b> long
+                    </>,
+                  );
+            },
+          }),
+        ]}
+      >
+        <TextInput />
+      </Field>
+    </Form>
+  );
 };
 
 const Template: StoryFn<typeof Form> = (args) => {
@@ -31,12 +70,6 @@ const Template: StoryFn<typeof Form> = (args) => {
       <Form
         form={form}
         {...args}
-        onSubmit={(v) => {
-          console.log('onSubmit:', v);
-        }}
-        onValuesChange={(v) => {
-          console.log('onChange', v);
-        }}
         defaultValues={{
           text: 'some',
           text2: 'some',
@@ -49,6 +82,12 @@ const Template: StoryFn<typeof Form> = (args) => {
           checkboxGroup: ['one', 'three'],
           radioGroup: 'three',
           switch: false,
+        }}
+        onSubmit={(v) => {
+          console.log('onSubmit:', v);
+        }}
+        onValuesChange={(v) => {
+          console.log('onChange', v);
         }}
       >
         <Field
@@ -69,10 +108,10 @@ const Template: StoryFn<typeof Form> = (args) => {
         >
           <TextInput label="Text field" />
         </Field>
-        <Field name="text2" label="Text disabled" isDisabled>
+        <Field isDisabled name="text2" label="Text disabled">
           <TextInput />
         </Field>
-        <Field name="text2" label="Text loading" isLoading>
+        <Field isLoading name="text2" label="Text loading">
           <TextInput />
         </Field>
         <Field label="Custom field" tooltip="What?">
@@ -116,7 +155,7 @@ const Template: StoryFn<typeof Form> = (args) => {
             <Item key="three">Three</Item>
           </ComboBox>
         </Field>
-        <Field name="combobox2" isLoading label="ComboBox Loading field">
+        <Field isLoading name="combobox2" label="ComboBox Loading field">
           <ComboBox>
             <Item key="one">One</Item>
             <Item key="two">Two</Item>
@@ -179,3 +218,5 @@ export const FormInsideDialog: StoryFn = () => {
 };
 
 export const Default = Template.bind({});
+
+export const ComplexErrorMessage: StoryFn = ComplexErrorTemplate.bind({});

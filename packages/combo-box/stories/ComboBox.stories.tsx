@@ -1,52 +1,64 @@
-import { ComboBox } from '../src';
-import { Item } from '@react-stately/collections';
 import { DollarCircleOutlined } from '@ant-design/icons';
-import { SELECTED_KEY_ARG } from '../../../stories/FormFieldArgs';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { Meta, Story } from '@storybook/react';
+
+import { SELECTED_KEY_ARG } from '../../../storybook/stories/FormFieldArgs';
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
+import { ComboBox, JengaComboBoxProps } from '../src/ComboBox';
 
 export default {
   title: 'Pickers/ComboBox',
   component: ComboBox,
-  parameters: {
-    controls: {
-      exclude: baseProps,
-    },
-  },
-  argTypes: {
-    ...SELECTED_KEY_ARG,
-  },
-};
+  subcomponents: { Item: ComboBox.Item },
+  args: { id: 'name', width: '200px' },
+  parameters: { controls: { exclude: baseProps } },
+  argTypes: { ...SELECTED_KEY_ARG },
+} as Meta<JengaComboBoxProps<any>>;
 
-const Template = ({ icon, ...props }) => {
-  return (
-    <>
-      <ComboBox
-        id="name"
-        prefix={icon ? <DollarCircleOutlined /> : null}
-        {...props}
-        onSelectionChange={(query) =>
-          console.log('onSelectionChange event', query)
-        }
-        onInputChange={(query) => console.log('onInputChange event', query)}
-        width="200px"
-      >
-        <Item key="red">Red</Item>
-        <Item key="orange">Orange</Item>
-        <Item key="yellow">Yellow</Item>
-        <Item key="green">Green</Item>
-        <Item key="blue">Blue</Item>
-        <Item key="purple">Purple</Item>
-        <Item key="violet">Violet</Item>
-      </ComboBox>
-    </>
-  );
-};
+const Template: Story<JengaComboBoxProps<any>> = (args) => (
+  <>
+    <ComboBox {...args}>
+      <ComboBox.Item key="red">Red</ComboBox.Item>
+      <ComboBox.Item key="orange">Orange</ComboBox.Item>
+      <ComboBox.Item key="yellow">Yellow</ComboBox.Item>
+      <ComboBox.Item key="green">Green</ComboBox.Item>
+      <ComboBox.Item key="blue">Blue</ComboBox.Item>
+      <ComboBox.Item key="purple">Purple</ComboBox.Item>
+      <ComboBox.Item key="violet">Violet</ComboBox.Item>
+    </ComboBox>
+  </>
+);
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const WithPlaceholder = Template.bind({});
+WithPlaceholder.args = { placeholder: 'Enter a value' };
 
 export const WithDefaultValue = Template.bind({});
 WithDefaultValue.args = { defaultSelectedKey: 'purple' };
 
 export const WithIcon = Template.bind({});
-WithIcon.args = { icon: true };
+WithIcon.args = { icon: <DollarCircleOutlined /> };
+
+export const Invalid = Template.bind({});
+Invalid.args = { selectedKey: 'yellow', validationState: 'invalid' };
+
+export const Valid = Template.bind({});
+Valid.args = { selectedKey: 'yellow', validationState: 'valid' };
+
+export const Disabled = Template.bind({});
+Disabled.args = { selectedKey: 'yellow', isDisabled: true };
+
+export const Wide: Story<JengaComboBoxProps<any>> = (args) => (
+  <ComboBox {...args}>
+    <ComboBox.Item key="red">
+      Red lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </ComboBox.Item>
+    <ComboBox.Item key="blue">
+      Blue lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </ComboBox.Item>
+  </ComboBox>
+);
+
+Wide.args = { width: '600px', defaultSelectedKey: 'red' };

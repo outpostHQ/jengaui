@@ -1,15 +1,15 @@
 import { forwardRef } from 'react';
 import { useDOMRef } from '@react-spectrum/utils';
-import { useProviderProps } from '@jenga-ui/providers';
 import { useRadioGroup } from '@react-aria/radio';
 import { useRadioGroupState } from '@react-stately/radio';
+
+import { useProviderProps } from '@jenga-ui/providers';
 import {
   FormContext,
   useFormProps,
   FieldWrapper,
   FormFieldProps,
 } from '@jenga-ui/form';
-import { RadioContext } from './context';
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -18,8 +18,14 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
+import {
+  castNullableStringValue,
+  WithNullableValue,
+} from '@jenga-ui/utils';
+
+import { RadioContext } from './context';
+
 import type { AriaRadioGroupProps } from '@react-types/radio';
-import { castNullableStringValue, WithNullableValue } from '@jenga-ui/utils';
 
 export interface JengaRadioGroupProps
   extends BaseProps,
@@ -42,7 +48,10 @@ const RadioGroupElement = tasty({
       '': '1x',
       horizontal: '1x 2x',
     },
-    padding: '(1x - 1bw) 0',
+    padding: {
+      '': 0,
+      'inside-form & side-label': '1.5x 0',
+    },
   },
 });
 
@@ -69,6 +78,8 @@ function RadioGroup(props: WithNullableValue<JengaRadioGroupProps>, ref) {
     isHidden,
     styles,
     groupStyles,
+    insideForm,
+    labelSuffix,
     ...otherProps
   } = props;
   let domRef = useDOMRef(ref);
@@ -84,6 +95,8 @@ function RadioGroup(props: WithNullableValue<JengaRadioGroupProps>, ref) {
       styles={groupStyles}
       mods={{
         horizontal: orientation === 'horizontal',
+        'inside-form': insideForm,
+        'side-label': labelPosition === 'side',
       }}
     >
       <FormContext.Provider
@@ -119,6 +132,7 @@ function RadioGroup(props: WithNullableValue<JengaRadioGroupProps>, ref) {
         isHidden,
         Component: radioGroup,
         ref: domRef,
+        labelSuffix,
       }}
     />
   );

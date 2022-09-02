@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 import { Item } from '@react-stately/collections';
 import { CollectionElement } from '@react-types/shared';
+
 import { tasty } from 'tastycss';
+
 import { NotificationView } from './NotificationView';
-import type { JengaNotificationProps } from './types';
 import {
   CollectionChildren,
   NotificationItemNode,
@@ -11,6 +12,8 @@ import {
   useNotificationListItem,
   useNotificationsList,
 } from './hooks';
+
+import type { JengaNotificationProps } from './types';
 
 export type NotificationsListProps<T> = {
   items?: T[] | readonly T[];

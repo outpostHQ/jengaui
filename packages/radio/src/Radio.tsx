@@ -2,7 +2,7 @@ import { useFocusableRef } from '@react-spectrum/utils';
 import { forwardRef, useRef } from 'react';
 import { useHover } from '@react-aria/interactions';
 import { useRadio } from '@react-aria/radio';
-import { useRadioProvider } from './context';
+
 import {
   BaseProps,
   extractStyles,
@@ -13,13 +13,16 @@ import {
 } from 'tastycss';
 import { useFocus, mergeProps } from '@jenga-ui/utils';
 import { useProviderProps } from '@jenga-ui/providers';
-import { RadioGroup } from './RadioGroup';
 import {
-  useFormProps,
   INLINE_LABEL_STYLES,
-  FormFieldProps,
+  useFormProps,
   HiddenInput,
+  FormFieldProps,
 } from '@jenga-ui/form';
+
+import { RadioGroup } from './RadioGroup';
+import { useRadioProvider } from './context';
+
 import type { AriaRadioProps } from '@react-types/radio';
 
 const RadioWrapperElement = tasty({
@@ -166,9 +169,7 @@ function Radio(props: JengaRadioProps, ref) {
   let state = useRadioProvider();
 
   if (!state) {
-    throw new Error(
-      'JengaUI: The Radio button is used outside the RadioGroup.',
-    );
+    throw new Error('JengaUI: The Radio button is used outside the RadioGroup.');
   }
 
   let { isFocused, focusProps } = useFocus({ isDisabled }, true);
@@ -202,8 +203,8 @@ function Radio(props: JengaRadioProps, ref) {
         data-qa={qa || 'Radio'}
         aria-label={ariaLabel}
         {...mergeProps(inputProps, focusProps)}
-        isButton={isButton}
         ref={inputRef}
+        isButton={isButton}
       />
       <RadioElement
         mods={{
@@ -237,7 +238,7 @@ function Radio(props: JengaRadioProps, ref) {
 function RadioButton(props: JengaRadioProps, ref) {
   const Radio = _Radio;
 
-  return <Radio {...props} type="button" ref={ref} />;
+  return <Radio {...props} ref={ref} type="button" />;
 }
 
 /**

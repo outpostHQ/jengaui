@@ -1,8 +1,11 @@
 import { Story, ComponentMeta } from '@storybook/react';
 import { within, userEvent, waitFor } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
-import { Tooltip } from '../src/Tooltip';
+
 import { Button } from '@jenga-ui/button';
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
+import { Tooltip } from '../src/Tooltip';
 import {
   TooltipTrigger,
   JengaTooltipTriggerProps,
@@ -11,7 +14,6 @@ import {
   JengaTooltipProviderProps,
   TooltipProvider,
 } from '../src/TooltipProvider';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Overlays/Tooltip',
@@ -23,6 +25,9 @@ export default {
     },
   },
 } as ComponentMeta<typeof Button>;
+
+const timeout = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 const Template: Story<JengaTooltipTriggerProps> = (args) => (
   <TooltipTrigger {...args}>
@@ -51,26 +56,34 @@ Default.play = async ({ canvasElement }) => {
 export const ViaProvider: typeof ViaProviderTemplate = ViaProviderTemplate.bind(
   {},
 );
-ViaProvider.args = {};
+ViaProvider.args = {
+  delay: 0,
+};
 ViaProvider.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
+  // wait for TooltipProvider setRendered to true
+  await timeout(1000);
+
   const button = await canvas.findByRole('button');
   // this is a weird hack that makes tooltip working properly on page load
   await userEvent.unhover(button);
   await userEvent.hover(button);
 
-  await waitFor(() => expect(canvas.getByRole('tooltip')).toBeInTheDocument());
+  await waitFor(() => expect(canvas.getByRole('tooltip')).toBeVisible());
 };
 
 export const ViaProviderWithActiveWrap: typeof ViaProviderTemplate =
   ViaProviderTemplate.bind({});
-ViaProviderWithActiveWrap.args = { activeWrap: true };
+ViaProviderWithActiveWrap.args = { activeWrap: true, delay: 0 };
 ViaProviderWithActiveWrap.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
+  // wait for TooltipProvider setRendered to true
+  await timeout(1000);
+
   const button = await canvas.findByRole('button');
   // this is a weird hack that makes tooltip working properly on page load
   await userEvent.unhover(button);
   await userEvent.hover(button);
 
-  await waitFor(() => expect(canvas.getByRole('tooltip')).toBeInTheDocument());
+  await waitFor(() => expect(canvas.getByRole('tooltip')).toBeVisible());
 };

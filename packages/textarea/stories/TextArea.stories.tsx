@@ -1,7 +1,9 @@
-import { TextArea } from '../src/TextArea';
 import { DollarCircleOutlined } from '@ant-design/icons';
-import { baseProps } from '../../../stories/lists/baseProps';
-import { TEXT_VALUE_ARG } from '../../../stories/FormFieldArgs';
+
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+import { TEXT_VALUE_ARG } from '../../../storybook/stories/FormFieldArgs';
+
+import { TextArea } from '../src/TextArea';
 
 export default {
   title: 'Forms/TextArea',
@@ -18,7 +20,7 @@ export default {
 
 const Template = ({ icon, ...props }) => (
   <TextArea
-    prefix={icon ? <DollarCircleOutlined /> : null}
+    icon={icon ? <DollarCircleOutlined /> : null}
     {...props}
     onChange={(query) => console.log('change', query)}
   />

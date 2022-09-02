@@ -1,10 +1,18 @@
-import { forwardRef, useCallback, useLayoutEffect, useRef } from 'react';
-import { JengaTextInputBaseProps, TextInputBase } from '@jenga-ui/text-input';
+import { forwardRef, useCallback, useRef } from 'react';
 import { useControlledState } from '@react-stately/utils';
-import { useProviderProps } from '@jenga-ui/providers';
 import { useTextField } from '@react-aria/textfield';
-import { chain } from '@react-aria/utils';
-import { castNullableStringValue, WithNullableValue } from '@jenga-ui/utils';
+
+import {
+  JengaTextInputBaseProps,
+  TextInputBase,
+} from '@jenga-ui/text-input';
+import { useProviderProps } from '@jenga-ui/providers';
+import {
+  castNullableStringValue,
+  WithNullableValue,
+  chain,
+  useLayoutEffect,
+} from '@jenga-ui/utils';
 
 export interface JengaTextAreaProps extends JengaTextInputBaseProps {
   /** Whether the textarea should change its size depends on content */
@@ -74,10 +82,10 @@ function TextArea(props: WithNullableValue<JengaTextAreaProps>, ref) {
     <TextInputBase
       {...otherProps}
       ref={ref}
+      multiLine
       inputRef={inputRef}
       labelProps={labelProps}
       inputProps={inputProps}
-      multiLine
       isDisabled={isDisabled}
       isReadOnly={isReadOnly}
       isRequired={isRequired}

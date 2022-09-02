@@ -1,5 +1,6 @@
 import { useDOMRef } from '@react-spectrum/utils';
 import { forwardRef, MouseEventHandler } from 'react';
+
 import { useProviderProps } from '@jenga-ui/providers';
 import {
   BaseProps,
@@ -11,7 +12,11 @@ import {
   TagNameProps,
   tasty,
 } from 'tastycss';
-import { LabelPosition, NecessityIndicator, ValidationState } from './shared';
+import {
+  LabelPosition,
+  NecessityIndicator,
+  ValidationState,
+} from '../src/shared';
 
 const REQUIRED_ICON = (
   <svg
@@ -50,7 +55,6 @@ export const INLINE_LABEL_STYLES: Styles = {
   color: {
     '': '#dark.85',
     invalid: '#danger-text',
-    disabled: '#dark.30',
   },
   whiteSpace: 'nowrap',
 } as const;
@@ -59,14 +63,9 @@ export const LABEL_STYLES: Styles = {
   display: 'block',
   fontWeight: 600,
   preset: 'default',
-  padding: {
-    '': '0',
-    side: '(1x - 1bw) top',
-  },
   color: {
     '': '#dark',
     invalid: '#danger-text',
-    disabled: '#dark.30',
   },
   whiteSpace: 'nowrap',
   width: {
@@ -137,7 +136,6 @@ function Label(props: JengaLabelProps, ref) {
   return (
     <LabelElement
       {...filterBaseProps(otherProps)}
-      onClick={onClick}
       ref={domRef}
       styles={styles}
       htmlFor={labelFor || htmlFor}
@@ -147,6 +145,7 @@ function Label(props: JengaLabelProps, ref) {
         invalid: validationState === 'invalid',
         valid: validationState === 'valid',
       }}
+      onClick={onClick}
     >
       {typeof children !== 'string' ? (
         children

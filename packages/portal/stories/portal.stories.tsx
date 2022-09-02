@@ -3,6 +3,7 @@ import { ComponentMeta, Story } from '@storybook/react';
 
 import { Portal } from '../src/Portal';
 import { PortalProps } from '../src/types';
+
 import { Basic, PortalOrderTemplate } from './templates';
 
 export default {

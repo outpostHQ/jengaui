@@ -1,8 +1,13 @@
 import { ForwardedRef, forwardRef, useRef } from 'react';
-import { JengaTextInputBaseProps, TextInputBase } from './TextInputBase';
-import { useProviderProps } from '@jenga-ui/providers';
 import { useTextField } from '@react-aria/textfield';
-import { castNullableStringValue, WithNullableValue } from '@jenga-ui/utils';
+
+import { useProviderProps } from '@jenga-ui/providers';
+import {
+  castNullableStringValue,
+  WithNullableValue,
+} from '@jenga-ui/utils';
+
+import { JengaTextInputBaseProps, TextInputBase } from './TextInputBase';
 
 export type JengaTextInputProps = WithNullableValue<JengaTextInputBaseProps>;
 
@@ -20,9 +25,9 @@ export const TextInput = forwardRef(function TextInput(
   return (
     <TextInputBase
       {...props}
+      ref={ref}
       labelProps={labelProps}
       inputProps={inputProps}
-      ref={ref}
       inputRef={inputRef}
     />
   );
@@ -33,4 +38,5 @@ export const TextInput = forwardRef(function TextInput(
  * with a keyboard. Various decorations can be displayed around the field to
  * communicate the entry requirements.
  */
+
 (TextInput as any).jengaInputType = 'Text';

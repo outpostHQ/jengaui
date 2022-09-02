@@ -1,6 +1,7 @@
+import { IS_SELECTED_ARG } from '../../../storybook/stories/FormFieldArgs';
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
+
 import { Switch } from '../src/Switch';
-import { IS_SELECTED_ARG } from '../../../stories/FormFieldArgs';
-import { baseProps } from '../../../stories/lists/baseProps';
 
 export default {
   title: 'Forms/Switch',

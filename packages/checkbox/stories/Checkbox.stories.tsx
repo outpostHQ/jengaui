@@ -1,9 +1,10 @@
-import { Checkbox } from '../src/Checkbox';
-import { baseProps } from '../../../stories/lists/baseProps';
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
 import {
   IS_INDETERMINATE_ARG,
   IS_SELECTED_ARG,
-} from '../../../stories/FormFieldArgs';
+} from '../../../storybook/stories/FormFieldArgs';
+
+import { Checkbox } from '../src/Checkbox';
 
 export default {
   title: 'Forms/Checkbox',
@@ -47,4 +48,9 @@ Intermediate.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   isDisabled: true,
+};
+
+export const Invalid = Template.bind({});
+Invalid.args = {
+  validationState: 'invalid',
 };

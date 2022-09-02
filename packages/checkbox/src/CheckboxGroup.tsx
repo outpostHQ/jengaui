@@ -1,15 +1,15 @@
 import { forwardRef } from 'react';
 import { useDOMRef } from '@react-spectrum/utils';
-import { useProviderProps } from '@jenga-ui/providers';
 import { useCheckboxGroup } from '@react-aria/checkbox';
 import { useCheckboxGroupState } from '@react-stately/checkbox';
+
+import { useProviderProps } from '@jenga-ui/providers';
 import {
   FormContext,
   useFormProps,
   FieldWrapper,
-  FormFieldProps,
+  FormFieldProps
 } from '@jenga-ui/form';
-import { CheckboxGroupContext } from './context';
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -17,8 +17,14 @@ import {
   OUTER_STYLES,
   tasty,
 } from 'tastycss';
+import {
+  castNullableArrayValue,
+  WithNullableValue,
+} from '@jenga-ui/utils';
+
+import { CheckboxGroupContext } from './context';
+
 import type { AriaCheckboxGroupProps } from '@react-types/checkbox';
-import { castNullableArrayValue, WithNullableValue } from '@jenga-ui/utils';
 
 const WRAPPER_STYLES = {
   display: 'grid',
@@ -79,6 +85,7 @@ function CheckboxGroup(props: WithNullableValue<JengaCheckboxGroupProps>, ref) {
     labelStyles,
     requiredMark = true,
     tooltip,
+    labelSuffix,
     ...otherProps
   } = props;
   let domRef = useDOMRef(ref);
@@ -128,6 +135,7 @@ function CheckboxGroup(props: WithNullableValue<JengaCheckboxGroupProps>, ref) {
         description,
         requiredMark,
         tooltip,
+        labelSuffix,
         Component: radioGroup,
         ref: domRef,
       }}

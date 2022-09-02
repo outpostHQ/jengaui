@@ -10,24 +10,15 @@
     "clickable",
     "tabbable"
   ],
-  "files": [
-    "dist",
-    "types"
-  ],
   "repository": "OutpostHQ/jenga-ui",
   "license": "MIT",
   "bugs": "https://github.com/OutpostHQ/jenga-ui/issues",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
-    }
-  },
-  "type": "module",
-  "types": "types/index.d.ts",
-  "typings": "types/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --external react",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
@@ -60,7 +51,7 @@
     "@react-types/shared": "^3.14.1",
     "email-validator": "^2.0.4",
     "styled-components": "^5.3.0",
-    "tastycss": "^0.8.2",
+    "tastycss": "^0.8.6",
     "valid-url": "^1.0.9"
   }
 }

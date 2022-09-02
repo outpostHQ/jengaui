@@ -2,14 +2,16 @@ import { expect } from '@storybook/jest';
 import { ComponentMeta, Story } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
 import { action } from '@storybook/addon-actions';
-import { AlertDialog, JengaAlertDialogProps } from '../src/AlertDialog';
-import { useAlertDialogAPI } from '../src/AlertDialogApiProvider';
-import { baseProps } from '../../../stories/lists/baseProps';
+
+import { baseProps } from '../../../storybook/stories/lists/baseProps';
 import { DialogTrigger } from '@jenga-ui/dialog';
 import { Button } from '@jenga-ui/button';
-import { DialogProps } from '../src/types';
 import { Paragraph } from '@jenga-ui/content';
-import { wait } from '../../core/test';
+import { wait } from '@jenga-ui/core/test';
+
+import { useAlertDialogAPI } from '../src/AlertDialogApiProvider';
+import { AlertDialog, JengaAlertDialogProps } from '../src/AlertDialog';
+import { DialogProps } from '../src/types';
 
 export default {
   title: 'Overlays/AlertDialog',

@@ -5,10 +5,12 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react';
-import { mergeProps, getOverlayTransitionCSS } from '@jenga-ui/utils';
 import { createDOMRef } from '@react-spectrum/utils';
-import { TooltipContext } from './context';
 import { useTooltip } from '@react-aria/tooltip';
+import styled from 'styled-components';
+import { DOMRefValue } from '@react-types/shared';
+
+import { getOverlayTransitionCSS, mergeProps } from '@jenga-ui/utils';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -17,9 +19,10 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
+
+import { TooltipContext } from './context';
+
 import type { AriaTooltipProps } from '@react-types/tooltip';
-import styled from 'styled-components';
-import { DOMRefValue } from '@react-types/shared';
 
 type Axis = 'top' | 'right' | 'bottom' | 'left';
 type PlacementAxis = Axis | 'center';
@@ -148,6 +151,7 @@ function Tooltip(
     <StyledTooltipElement
       {...tooltipProps}
       {...overlayProps}
+      ref={overlayRef}
       styles={styles}
       mods={{
         open: isOpen,
@@ -156,7 +160,6 @@ function Tooltip(
       data-min-offset={minOffset}
       data-min-slale={minScale}
       data-placement={placement}
-      ref={overlayRef}
     >
       {props.children}
       <TooltipTipElement

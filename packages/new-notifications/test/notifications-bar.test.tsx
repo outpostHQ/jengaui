@@ -1,4 +1,5 @@
 import userEvent from '@testing-library/user-event';
+
 import { renderWithRoot } from '../../core/test';
 import { NotificationsBar } from '../src/Bar/NotificationsBar';
 

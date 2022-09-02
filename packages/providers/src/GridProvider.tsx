@@ -1,6 +1,8 @@
 import { forwardRef, ReactNode, useCallback, useEffect, useState } from 'react';
-import { filterBaseProps, Styles, tasty } from 'tastycss';
+
+import { filterBaseProps, Styles } from 'tastycss';
 import { useCombinedRefs } from '@jenga-ui/utils';
+import { tasty } from 'tastycss';
 
 const GridElement = tasty({
   styled: {
@@ -19,77 +21,78 @@ export interface JengaGridProviderProps {
   initialWidth?: Styles['width'];
 }
 
-export const GridProvider = forwardRef(
-  (props: JengaGridProviderProps, outerRef) => {
-    let ref = useCombinedRefs(outerRef);
+export const GridProvider = forwardRef(function GridProvider(
+  props: JengaGridProviderProps,
+  outerRef,
+) {
+  let ref = useCombinedRefs(outerRef);
 
-    let {
-      children,
-      columns = 2,
-      gap = '0',
-      width: forcedWidth,
-      initialWidth,
-    } = props;
+  let {
+    children,
+    columns = 2,
+    gap = '0',
+    width: forcedWidth,
+    initialWidth,
+  } = props;
 
-    let [width, setWidth] = useState<Styles['width']>(
-      forcedWidth || initialWidth || '100vw',
-    );
+  let [width, setWidth] = useState<Styles['width']>(
+    forcedWidth || initialWidth || '100vw',
+  );
 
-    const resizeCallback = useCallback(() => {
-      const el = ref?.current?.parentElement;
+  const resizeCallback = useCallback(() => {
+    const el = ref?.current?.parentElement;
 
-      if (!el) return;
+    if (!el) return;
 
-      const computedStyle = getComputedStyle(el);
-      const containerWidth =
-        el.clientWidth -
-        parseFloat(computedStyle.paddingLeft) -
-        parseFloat(computedStyle.paddingRight);
+    const computedStyle = getComputedStyle(el);
+    const containerWidth =
+      el.clientWidth -
+      parseFloat(computedStyle.paddingLeft) -
+      parseFloat(computedStyle.paddingRight);
 
-      setWidth(`${containerWidth}px`);
-    }, [ref, columns, gap]);
+    setWidth(`${containerWidth}px`);
+  }, [ref, columns, gap]);
 
-    useEffect(() => {
-      if (forcedWidth) return;
+  useEffect(() => {
+    if (forcedWidth) return;
 
-      const el = ref && ref.current && ref.current.parentNode;
+    const el = ref && ref.current && ref.current.parentNode;
 
-      if (!el) return;
+    if (!el) return;
 
-      let sensor;
+    let sensor;
 
-      import('@jenga-ui/utils')
-        .then((module) => module.ResizeSensor)
-        .then((ResizeSensor) => {
-          sensor = new ResizeSensor(el, resizeCallback);
-        });
+    import('@jenga-ui/utils')
+      .then((module) => module.ResizeSensor)
+      .then((ResizeSensor) => {
+        sensor = new ResizeSensor(el, resizeCallback);
+      });
 
-      return () => {
-        if (sensor) {
-          sensor.detach();
-        }
-      };
-    }, [resizeCallback]);
+    return () => {
+      if (sensor) {
+        sensor.detach();
+      }
+    };
+  }, [resizeCallback]);
 
-    useEffect(() => {
-      if (forcedWidth) return;
+  useEffect(() => {
+    if (forcedWidth) return;
 
-      resizeCallback();
-    }, [resizeCallback]);
+    resizeCallback();
+  }, [resizeCallback]);
 
-    return (
-      <GridElement
-        {...filterBaseProps(props, { eventProps: true })}
-        styles={{
-          '--grid-width': width,
-          '--columns-amount': columns,
-          '--column-gap': gap,
-          '--column-width': COLUMN_WIDTH,
-        }}
-        ref={ref}
-      >
-        {children}
-      </GridElement>
-    );
-  },
-);
+  return (
+    <GridElement
+      {...filterBaseProps(props, { eventProps: true })}
+      ref={ref}
+      styles={{
+        '--grid-width': width,
+        '--columns-amount': columns,
+        '--column-gap': gap,
+        '--column-width': COLUMN_WIDTH,
+      }}
+    >
+      {children}
+    </GridElement>
+  );
+});

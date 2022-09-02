@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
+import { CheckOutlined } from '@ant-design/icons';
+
 import { Button, JengaButtonProps } from '@jenga-ui/button';
 import { Text } from '@jenga-ui/content';
 import { Styles, tasty } from 'tastycss';
 import { Space } from '@jenga-ui/layout';
-import { CheckOutlined, CheckCircleOutlined } from '@ant-design/icons';
 
 const ACTION_BUTTON: Styles = {
   border: {
@@ -89,7 +90,7 @@ const getSelectionTypeIcon = (selectionIcon?: MenuSelectionType) => {
     case 'radio':
       return <RadioIcon />;
     default:
-      return null;
+      return undefined;
   }
 };
 
@@ -101,7 +102,9 @@ export function MenuButton({
 }: MenuButtonProps) {
   const { selectionIcon, isSelected, isSelectable } = props;
   const checkIcon =
-    isSelectable && isSelected ? getSelectionTypeIcon(selectionIcon) : null;
+    isSelectable && isSelected
+      ? getSelectionTypeIcon(selectionIcon)
+      : undefined;
   const mods = {
     ...props.mods,
     selectionIcon: !!selectionIcon,
@@ -120,7 +123,7 @@ export function MenuButton({
     >
       {icon && <Text color="inherit">{icon}</Text>}
       <Space gap="1x" placeContent="space-between" overflow="auto" width="100%">
-        <Text color="inherit" ellipsis>
+        <Text ellipsis color="inherit">
           {children}
         </Text>
         {postfix && getPostfix(postfix)}

@@ -1,12 +1,18 @@
 import { forwardRef, ReactNode } from 'react';
+import { InfoCircleOutlined } from '@ant-design/icons';
+
 import { Text, Paragraph } from '@jenga-ui/content';
-import { Label } from './Label';
-import { Grid } from '@jenga-ui/layout';
-import { LabelPosition, NecessityIndicator, ValidationState } from './shared';
+import {
+  LabelPosition,
+  NecessityIndicator,
+  ValidationState,
+} from './shared';
 import { Props, Styles, tasty } from 'tastycss';
 import { TooltipProvider } from '@jenga-ui/tooltip';
-import { InfoCircleOutlined } from '@ant-design/icons';
 import { wrapNodeIfPlain } from '@jenga-ui/utils';
+import { Space, Flex } from '@jenga-ui/layout';
+
+import { Label } from './Label';
 
 const FieldElement = tasty({
   qa: 'Field',
@@ -20,13 +26,17 @@ const FieldElement = tasty({
       '': '1x',
       'has-sider': '@(column-gap, 1x)',
     },
-    placeItems: 'baseline stretch',
+    placeItems: 'start stretch',
 
     LabelArea: {
       display: 'block',
       width: {
         '': 'initial',
         'has-sider': '@label-width',
+      },
+      padding: {
+        '': 'initial',
+        'has-sider': '1.25x top',
       },
     },
 
@@ -58,9 +68,10 @@ const MessageElement = tasty({
 });
 
 export type JengaFieldWrapperProps = {
-  as: string;
-  labelPosition: LabelPosition;
-  label?: string;
+  as?: string;
+  labelPosition?: LabelPosition;
+  label?: ReactNode;
+  labelSuffix?: ReactNode;
   labelStyles?: Styles;
   styles?: Styles;
   /** Whether the input is required */
@@ -75,17 +86,21 @@ export type JengaFieldWrapperProps = {
   /** Styles for the message */
   messageStyles?: Styles;
   /** The description for the field. It will be placed below the label */
-  description?: string;
+  description?: ReactNode;
   Component?: JSX.Element;
   validationState?: ValidationState;
+  // eslint-disable-next-line react/boolean-prop-naming
   requiredMark?: boolean;
   tooltip?: ReactNode;
+  extra?: ReactNode;
+  isHidden?: boolean;
+  necessityLabel?: ReactNode;
 };
 
-function FieldWrapper(props, ref) {
+function FieldWrapper(props: JengaFieldWrapperProps, ref) {
   const {
     as,
-    labelPosition,
+    labelPosition = 'top',
     label,
     extra,
     styles,
@@ -103,6 +118,7 @@ function FieldWrapper(props, ref) {
     requiredMark = true,
     tooltip,
     isHidden,
+    labelSuffix,
   } = props;
 
   const labelComponent = label ? (
@@ -117,26 +133,27 @@ function FieldWrapper(props, ref) {
       aria-label={label}
       {...labelProps}
     >
-      {extra ? (
-        <Grid placeContent="baseline space-between" flow="column">
+      <Flex placeContent="baseline space-between" width="100%">
+        <Space placeItems="center" gap="0.25x">
           <div>{label}</div>
-          <Text preset="t3">{extra}</Text>
-        </Grid>
-      ) : (
-        label
-      )}
-      {tooltip ? (
-        <>
-          &nbsp;
-          <TooltipProvider
-            title={tooltip}
-            activeWrap
-            width="initial max-content 40x"
-          >
-            <InfoCircleOutlined style={{ color: 'var(--primary-color)' }} />
-          </TooltipProvider>
-        </>
-      ) : null}
+
+          {tooltip ? (
+            <TooltipProvider
+              activeWrap
+              title={tooltip}
+              width="initial max-content 40x"
+            >
+              <InfoCircleOutlined
+                style={{ color: 'var(--primary-color)', margin: '0 4px' }}
+              />
+            </TooltipProvider>
+          ) : null}
+
+          <div>{labelSuffix}</div>
+        </Space>
+
+        {extra && <Text preset="t3">{extra}</Text>}
+      </Flex>
     </Label>
   ) : null;
 
@@ -157,8 +174,8 @@ function FieldWrapper(props, ref) {
 
   return (
     <FieldElement
-      as={as || 'div'}
       ref={ref}
+      as={as || 'div'}
       mods={mods}
       isHidden={isHidden}
       styles={styles}

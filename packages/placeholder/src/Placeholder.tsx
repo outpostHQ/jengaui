@@ -1,4 +1,6 @@
 import { forwardRef } from 'react';
+import styled from 'styled-components';
+
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -8,7 +10,6 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import styled from 'styled-components';
 
 const PlaceholderElement = tasty({
   role: 'alert',
@@ -54,24 +55,25 @@ export interface JengaPlaceholderProps extends BaseProps, ContainerStyleProps {
   circle?: boolean;
 }
 
-export const Placeholder = forwardRef(
-  (allProps: JengaPlaceholderProps, ref) => {
-    let { size = '2x', circle, ...props } = allProps;
+export const Placeholder = forwardRef(function Placeholder(
+  allProps: JengaPlaceholderProps,
+  ref,
+) {
+  let { size = '2x', circle, ...props } = allProps;
 
-    let styles = extractStyles(props, CONTAINER_STYLES);
+  let styles = extractStyles(props, CONTAINER_STYLES);
 
-    return (
-      <StyledPlaceholder
-        role="region"
-        {...filterBaseProps(props, { eventProps: true })}
-        styles={{
-          height: size,
-          width: circle ? size : false,
-          radius: circle ? '9999rem' : '1r',
-          ...styles,
-        }}
-        ref={ref}
-      />
-    );
-  },
-);
+  return (
+    <StyledPlaceholder
+      role="region"
+      {...filterBaseProps(props, { eventProps: true })}
+      ref={ref}
+      styles={{
+        height: size,
+        width: circle ? size : false,
+        radius: circle ? '9999rem' : '1r',
+        ...styles,
+      }}
+    />
+  );
+});

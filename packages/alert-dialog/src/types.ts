@@ -1,12 +1,14 @@
+import { AriaDialogProps } from '@react-types/dialog';
+import { ReactNode } from 'react';
+
 import {
   BaseProps,
   BaseStyleProps,
   BlockStyleProps,
   DimensionStyleProps,
 } from 'tastycss';
-import { AriaDialogProps } from '@react-types/dialog';
-import { ReactNode } from 'react';
 import { JengaDialogContainerProps } from '@jenga-ui/dialog';
+
 import { JengaAlertDialogProps } from './AlertDialog';
 
 export interface Dialog {
