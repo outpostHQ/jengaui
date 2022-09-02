@@ -42,8 +42,8 @@
     "@jenga-ui/providers": "*",
     "@jenga-ui/text-input": "*",
     "@jenga-ui/utils": "*",
-    "@react-aria/searchfield": "^3.4.1",
-    "@react-stately/searchfield": "^3.3.1",
+    "@react-aria/searchfield": "^3.2.2",
+    "@react-stately/searchfield": "^3.1.3",
     "styled-components": "^5.3.0",
     "tastycss": "^0.8.6"
   },

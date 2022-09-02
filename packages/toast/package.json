@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@jenga-ui/new-notifications": "*",
-    "@react-aria/utils": "^3.13.3",
+    "@react-aria/utils": "^3.11.0",
     "react-is": "^17.0.0",
     "styled-components": "^5.3.0",
     "tastycss": "^0.8.6"

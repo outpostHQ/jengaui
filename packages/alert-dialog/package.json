@@ -43,8 +43,8 @@
     "@jenga-ui/content": "*",
     "@jenga-ui/dialog": "*",
     "@jenga-ui/portal": "*",
-    "@react-aria/utils": "^3.13.3",
-    "@react-types/dialog": "^3.4.3",
+    "@react-aria/utils": "^3.11.0",
+    "@react-types/dialog": "^3.3.4",
     "styled-components": "^5.3.0",
     "tastycss": "^0.8.6",
     "tiny-invariant": "^1.2.0"
