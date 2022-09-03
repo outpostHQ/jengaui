@@ -12,6 +12,7 @@ export { Item, Section } from '@react-stately/collections';
 // generic components
 export { Base, Block } from '@jenga-ui/core';
 export type { JengaBlockProps } from '@jenga-ui/core';
+export * from '@jenga-ui/core';
 export { ActiveZone } from '@jenga-ui/active-zone';
 export type { JengaActiveZoneProps } from '@jenga-ui/active-zone';
 export * from '@jenga-ui/copy-snippet';
@@ -161,4 +162,4 @@ export * from '@jenga-ui/new-notifications';
 export * from '@jenga-ui/toast';
 export * from '@jenga-ui/slider';
 export * from '@jenga-ui/table';
-export * from '@jenga-ui/breadcrumbs'
+export * from '@jenga-ui/breadcrumbs';

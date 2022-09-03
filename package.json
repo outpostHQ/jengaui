@@ -62,7 +62,7 @@
   "workspaces": [
     "packages/*",
     "next-app",
-    "my-app"
+    "examples/*"
   ],
   "resolutions": {
     "es5-ext": "0.10.53",

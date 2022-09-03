@@ -11,10 +11,10 @@ import {
   tasty,
 } from 'tastycss';
 import { Provider } from '@jenga-ui/providers';
-import { TOKENS } from '@jenga-ui/core';
+import { TOKENS } from '@jenga-ui/core/src/tokens';
 
 import { PortalProvider } from '@jenga-ui/portal';
-import { GlobalStyles } from '@jenga-ui/core';
+import { GlobalStyles } from '@jenga-ui/core/src/GlobalStyles';
 import { AlertDialogApiProvider } from '@jenga-ui/alert-dialog';
 import { NotificationsProvider } from '@jenga-ui/new-notifications';
 
