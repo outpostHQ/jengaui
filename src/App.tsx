@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Block, Element, Title } from './index';
+import React, { useState } from 'react';
+import { Block, Title } from '@jenga-ui/react';
 import { Button } from '@jenga-ui/button';
 // import ResponsiveProvider from './providers/Responsive';
 // import { Modal } from './components/organisms/Modal/Modal';
 // import { notification } from './services/notification';
-import { color } from 'tastycss';
+import { color, Element } from 'tastycss';
 import { Card } from '@jenga-ui/card';
 import { Flex, Space, Grid } from '@jenga-ui/layout';
 import { Link } from '@jenga-ui/link';
