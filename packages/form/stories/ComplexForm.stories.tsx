@@ -14,11 +14,53 @@ import { TextInput } from '@jenga-ui/text-input';
 import { NumberInput } from '@jenga-ui/number-input';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
 import { Button, Submit } from '@jenga-ui/button';
+import { timeout } from '@jenga-ui/utils';
 
 export default {
   title: 'Forms/ComplexForm',
   component: Form,
   parameters: { controls: { exclude: baseProps } },
+};
+
+const AsyncValidationTemplate: StoryFn<typeof Form> = (args) => {
+  const [form] = Form.useForm();
+
+  return (
+    <Form
+      form={form}
+      {...args}
+      onSubmit={(v) => {
+        console.log('onSubmit:', v);
+      }}
+      onValuesChange={(v) => {
+        console.log('onChange', v);
+      }}
+    >
+      <Field
+        name="text"
+        label="Text input"
+        validateTrigger="onSubmit"
+        rules={[
+          () => ({
+            async validator(rule, value) {
+              await timeout(1000);
+
+              return value?.length >= 8
+                ? Promise.resolve()
+                : Promise.reject(
+                    <>
+                      This field should be <b>at least 8 symbols</b> long
+                    </>,
+                  );
+            },
+          }),
+        ]}
+      >
+        <TextInput />
+      </Field>
+      <Submit>Submit</Submit>
+    </Form>
+  );
 };
 
 const ComplexErrorTemplate: StoryFn<typeof Form> = (args) => {
@@ -219,4 +261,6 @@ export const FormInsideDialog: StoryFn = () => {
 
 export const Default = Template.bind({});
 
-export const ComplexErrorMessage: StoryFn = ComplexErrorTemplate.bind({});
+export const ComplexErrorMessage = ComplexErrorTemplate.bind({});
+
+export const AsyncValidation = AsyncValidationTemplate.bind({});
