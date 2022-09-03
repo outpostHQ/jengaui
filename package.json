@@ -61,9 +61,6 @@
   },
   "workspaces": [
     "packages/*",
-    "testi",
-    "testii",
-    "storybook",
     "next-app",
     "my-app"
   ],

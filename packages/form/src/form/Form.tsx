@@ -63,11 +63,11 @@ export interface JengaFormProps<T extends FieldTypes = FieldTypes>
   /** Form name */
   name?: string;
   /** Default field values */
-  defaultValues?: { [K in keyof T]?: T[K] };
+  defaultValues?: Partial<T>;
   /** Trigger when any value of Field changed */
-  onValuesChange?: (data: JengaFormData<T>) => void | Promise<void>;
+  onValuesChange?: JengaFormInstance<T>['onValuesChange'];
   /** Trigger when form submit and success */
-  onSubmit?: (data: JengaFormData<T>) => void | Promise<void>;
+  onSubmit?: JengaFormInstance<T>['onSubmit'];
   /** Trigger when form submit and failed */
   onSubmitFailed?: (any?) => void | Promise<any>;
   /** Set form instance created by useForm */

@@ -4,8 +4,8 @@ module.exports = {
   stories: [
     '../stories/**/*.stories.mdx',
     '../stories/**/*.stories.tsx',
-    '../packages/**/*.stories.mdx',
-    '../packages/**/*.stories.tsx',
+    '../../packages/**/*.stories.mdx',
+    '../../packages/**/*.stories.tsx',
   ],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
   framework: '@storybook/react',
