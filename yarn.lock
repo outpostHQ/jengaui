@@ -2922,6 +2922,7 @@ __metadata:
     "@jenga-ui/tooltip": "*"
     "@jenga-ui/tsconfig": "*"
     "@jenga-ui/utils": "*"
+    "@react-aria/overlays": ^3.7.5
     "@react-aria/ssr": ^3.2.0
     "@react-stately/collections": ^3.3.4
     "@types/react": ^17.0.38

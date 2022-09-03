@@ -80,6 +80,7 @@
                 "@jenga-ui/toast": "*",
                 "@jenga-ui/tooltip": "*",
                 "@jenga-ui/utils": "*",
+                "@react-aria/overlays": "^3.7.5",
                 "@react-aria/ssr": "^3.2.0",
                 "@react-stately/collections": "^3.3.4"
         },

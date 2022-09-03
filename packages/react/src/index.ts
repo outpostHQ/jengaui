@@ -13,6 +13,7 @@ export { Item, Section } from '@react-stately/collections';
 export { Base, Block } from '@jenga-ui/core';
 export type { JengaBlockProps } from '@jenga-ui/core';
 export * from '@jenga-ui/core';
+export { TOKENS, GlobalStyles } from '@jenga-ui/core';
 export { ActiveZone } from '@jenga-ui/active-zone';
 export type { JengaActiveZoneProps } from '@jenga-ui/active-zone';
 export * from '@jenga-ui/copy-snippet';
