@@ -1,4 +1,4 @@
-const theme = {
+const THEMES = {
   success: {
     fill: '#success-bg',
     color: '#success-text',
@@ -21,4 +21,4 @@ const theme = {
   },
 };
 
-export default theme;
+export default THEMES;
