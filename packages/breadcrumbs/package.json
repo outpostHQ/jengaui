@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/utils": "workspace:packages/utils",
+    "@jenga-ui/utils": "*",
     "@react-aria/breadcrumbs": "^3.3.1",
     "@react-types/breadcrumbs": "^3.4.3",
     "tastycss": "^0.8.6",

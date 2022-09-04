@@ -2205,7 +2205,7 @@ __metadata:
   resolution: "@jenga-ui/breadcrumbs@workspace:packages/breadcrumbs"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/utils": "workspace:packages/utils"
+    "@jenga-ui/utils": "*"
     "@react-aria/breadcrumbs": ^3.3.1
     "@react-types/breadcrumbs": ^3.4.3
     "@types/react": ^17.0.38
@@ -3081,11 +3081,11 @@ __metadata:
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@internationalized/number": ^3.1.1
-    "@jenga-ui/layout": "workspace:packages/layout"
-    "@jenga-ui/providers": "workspace:packages/providers"
-    "@jenga-ui/tooltip": "workspace:packages/tooltip"
+    "@jenga-ui/layout": "*"
+    "@jenga-ui/providers": "*"
+    "@jenga-ui/tooltip": "*"
     "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "workspace:packages/utils"
+    "@jenga-ui/utils": "*"
     "@react-aria/focus": ^3.5.0
     "@react-aria/i18n": ^3.5.1
     "@react-aria/interactions": ^3.7.0
@@ -3138,13 +3138,13 @@ __metadata:
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@jenga-ui/button": "*"
-    "@jenga-ui/checkbox": "workspace:packages/checkbox"
-    "@jenga-ui/content": "workspace:packages/content"
-    "@jenga-ui/core": "workspace:packages/core"
-    "@jenga-ui/layout": "workspace:packages/layout"
-    "@jenga-ui/providers": "workspace:packages/providers"
+    "@jenga-ui/checkbox": "*"
+    "@jenga-ui/content": "*"
+    "@jenga-ui/core": "*"
+    "@jenga-ui/layout": "*"
+    "@jenga-ui/providers": "*"
     "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "workspace:packages/utils"
+    "@jenga-ui/utils": "*"
     "@react-aria/table": ^3.4.1
     "@react-aria/visually-hidden": ^3.3.1
     "@react-stately/data": ^3.6.1
@@ -6078,6 +6078,147 @@ __metadata:
   dependencies:
     lodash: ^4.17.15
   checksum: fb57fa028b08a51edf44e1a2bf4be40a4607f5c6ccb58aae8924f476a42b9bbd61a0ad521cfc82196f23e6a912caae0a615e70a755e6800b284c91c509fd2de6
+  languageName: node
+  linkType: hard
+
+"@swc/core-android-arm-eabi@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-android-arm-eabi@npm:1.2.148"
+  checksum: d395de78b93d73354bbcebe018738e757d9227472fc898bfc3054fef60885971148ad38ea67716b7d2a46e87d636b977bc3818f401e5157d7cc81af295bdb5fa
+  languageName: node
+  linkType: hard
+
+"@swc/core-android-arm64@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-android-arm64@npm:1.2.148"
+  checksum: f465a9d275764880281ca92bca7c2c8d0853cb8ea61dbd12096ce20f5bbfeabfde24c4f3bf1e30cd9efdaeb62b6343366d286310b782e9fb702a58e015a70e1e
+  languageName: node
+  linkType: hard
+
+"@swc/core-darwin-arm64@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-darwin-arm64@npm:1.2.148"
+  checksum: 929919fd45224e6f71a87fa403257b9a62a0047839ce8ae33d7e8d39bfb3a7f25d30c338357d1674779abdb7173e0415c01dd370c64a4f6af49e6ffb3ff1bada
+  languageName: node
+  linkType: hard
+
+"@swc/core-darwin-x64@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-darwin-x64@npm:1.2.148"
+  checksum: b6e90aac40d9cd9b7798c4f398f1af358bcff94b4e54249fcb319a0d8ea53f3d460f1089ff85a124746a72607ea35ce96343b3e3b0e38c895b32613ae79a0bca
+  languageName: node
+  linkType: hard
+
+"@swc/core-freebsd-x64@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-freebsd-x64@npm:1.2.148"
+  checksum: beba8017e333500188d365169f57110b739212f8acd03bbc7f08b0ea8e44cfada92e958e820a01a2e915a8ee80288baa2bb08a7250b4162c0652cdb91b47b01d
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm-gnueabihf@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.2.148"
+  checksum: 267e22150ae13f7779b45a49fe9a722cbbedf964786463a97636696e0524c314b33d202b57b170c46234aec4d7656ce825241cf72cb64c015b1bdebd8fa7a360
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm64-gnu@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.2.148"
+  checksum: 3eb01a779e1489c2e390eb799f3bddb6f715d66dad3997a5768a8bf4c348f76682114575c5f89b24c73c5d4e50c076a9bb50de31c8040423d246d46f006f9341
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm64-musl@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-arm64-musl@npm:1.2.148"
+  checksum: 96dd04394f6dbb86cb464cefe79b7abb96e9c6eaf4662d5ca3cc489066573238eb45b99c4101e7478fff78380e0b75fdf8fbd1acda8d6aec61468863d6caf9f5
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-x64-gnu@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-x64-gnu@npm:1.2.148"
+  checksum: d0b23e1b9465f8d76716dff30f6e1a4ef1a95ad35a20509985c967e8a8ba12b25e21d7a87033a9fb668fc93864cc121afbabf349f85a8a8f3be9634ea3873a64
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-x64-musl@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-x64-musl@npm:1.2.148"
+  checksum: 1e498a0b722d1612325362b7836a7566cb3ef81d2a4287994150d86176fe6aa8c7f286473addf24c26755c8ee165b92de911c3c1bc6618658f6bbe48da63c0b8
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-arm64-msvc@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.2.148"
+  checksum: 55597b5ae8f7b44ac4e79529ebe8fd91739e6f259c0e8d48e790a67c7b8ae28890a919aa9d6384e8a0f790d3bc3df9822d1ef7b77bd21421e8536f28f60c8e2b
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-ia32-msvc@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.2.148"
+  checksum: 2d5470c192c838c02c6ded5ae125fe40ea4c36770d0d09a436865a6b1f436e80d1ff109402c6e4ccff9ab4ff643b0f58b77662c910daae1aef21dec6d81dae89
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-x64-msvc@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-win32-x64-msvc@npm:1.2.148"
+  checksum: 708e86e8a04307a37163d58e941e71240dd13d847e70031aced55afdf9d1188d28f9e4d082d7c9e0aac7cd9a17ec9d3dc96099ea96ee95dc29d43cd45cdd979e
+  languageName: node
+  linkType: hard
+
+"@swc/core@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core@npm:1.2.148"
+  dependencies:
+    "@swc/core-android-arm-eabi": 1.2.148
+    "@swc/core-android-arm64": 1.2.148
+    "@swc/core-darwin-arm64": 1.2.148
+    "@swc/core-darwin-x64": 1.2.148
+    "@swc/core-freebsd-x64": 1.2.148
+    "@swc/core-linux-arm-gnueabihf": 1.2.148
+    "@swc/core-linux-arm64-gnu": 1.2.148
+    "@swc/core-linux-arm64-musl": 1.2.148
+    "@swc/core-linux-x64-gnu": 1.2.148
+    "@swc/core-linux-x64-musl": 1.2.148
+    "@swc/core-win32-arm64-msvc": 1.2.148
+    "@swc/core-win32-ia32-msvc": 1.2.148
+    "@swc/core-win32-x64-msvc": 1.2.148
+  dependenciesMeta:
+    "@swc/core-android-arm-eabi":
+      optional: true
+    "@swc/core-android-arm64":
+      optional: true
+    "@swc/core-darwin-arm64":
+      optional: true
+    "@swc/core-darwin-x64":
+      optional: true
+    "@swc/core-freebsd-x64":
+      optional: true
+    "@swc/core-linux-arm-gnueabihf":
+      optional: true
+    "@swc/core-linux-arm64-gnu":
+      optional: true
+    "@swc/core-linux-arm64-musl":
+      optional: true
+    "@swc/core-linux-x64-gnu":
+      optional: true
+    "@swc/core-linux-x64-musl":
+      optional: true
+    "@swc/core-win32-arm64-msvc":
+      optional: true
+    "@swc/core-win32-ia32-msvc":
+      optional: true
+    "@swc/core-win32-x64-msvc":
+      optional: true
+  bin:
+    swcx: run_swcx.js
+  checksum: 3c3c68b36b2a1913246c029e73b84a1615eb4ba78bc478e70c3ba51d0c467d6d2e55d55b3936366a0a99bc7370028b5bd82931626515501d639e42397e039d2e
   languageName: node
   linkType: hard
 
@@ -10263,6 +10404,7 @@ __metadata:
   resolution: "jenga-ui@workspace:."
   dependencies:
     "@changesets/cli": ^2.24.3
+    "@swc/core": 1.2.148
     "@swc/jest": ^0.2.20
     "@testing-library/jest-dom": ^5.16.1
     "@testing-library/react": ^12.1.2
