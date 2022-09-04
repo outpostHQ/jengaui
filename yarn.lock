@@ -3084,6 +3084,7 @@ __metadata:
     "@jenga-ui/layout": "workspace:packages/layout"
     "@jenga-ui/providers": "workspace:packages/providers"
     "@jenga-ui/tooltip": "workspace:packages/tooltip"
+    "@jenga-ui/tsconfig": "*"
     "@jenga-ui/utils": "workspace:packages/utils"
     "@react-aria/focus": ^3.5.0
     "@react-aria/i18n": ^3.5.1
@@ -3136,11 +3137,13 @@ __metadata:
   resolution: "@jenga-ui/table@workspace:packages/table"
   dependencies:
     "@ant-design/icons": ^4.7.0
+    "@jenga-ui/button": "*"
     "@jenga-ui/checkbox": "workspace:packages/checkbox"
     "@jenga-ui/content": "workspace:packages/content"
     "@jenga-ui/core": "workspace:packages/core"
     "@jenga-ui/layout": "workspace:packages/layout"
     "@jenga-ui/providers": "workspace:packages/providers"
+    "@jenga-ui/tsconfig": "*"
     "@jenga-ui/utils": "workspace:packages/utils"
     "@react-aria/table": ^3.4.1
     "@react-aria/visually-hidden": ^3.3.1
