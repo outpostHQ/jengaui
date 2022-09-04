@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 
-import { Avatar } from '@jenga-ui/avatar';
-import { Block } from '@jenga-ui/core';
+import { Avatar, Block } from '@jenga-ui/react';
+
 
 import styles from '../styles/Home.module.css';
 

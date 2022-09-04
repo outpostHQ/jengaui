@@ -1,8 +1,10 @@
 import React, { HTMLAttributes, RefObject } from 'react';
 import { TooltipTriggerState } from '@react-stately/tooltip';
 
-import { PlacementAxis } from '@jenga-ui/form';
 import { Props } from 'tastycss';
+
+type Axis = 'top' | 'right' | 'bottom' | 'left';
+type PlacementAxis = Axis | 'center';
 
 interface TooltipContextProps {
   state?: TooltipTriggerState;
