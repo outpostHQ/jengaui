@@ -2,6 +2,7 @@ import { useTableSelectionCheckbox } from '@react-aria/table';
 import { Checkbox } from '@jenga-ui/checkbox';
 import { useTableCell } from '@react-aria/table';
 import { useContext, useRef } from 'react';
+
 import { JengaTablePropsContext, Td } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';
 

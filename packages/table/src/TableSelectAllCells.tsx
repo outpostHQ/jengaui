@@ -5,6 +5,7 @@ import {
 } from '@react-aria/table';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useContext, useRef } from 'react';
+
 import { JengaTablePropsContext, Th } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';
 

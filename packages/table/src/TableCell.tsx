@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useTableCell } from '@react-aria/table';
 import { mergeProps, useFocus } from '@jenga-ui/utils';
+
 import { Td } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';
 
@@ -13,6 +14,7 @@ export function TableCell(props: JengaTableElementBaseProps) {
     <Td
       {...otherProps}
       {...mergeProps(gridCellProps, focusProps)}
+      ref={ref}
       styles={{
         outline: isFocused ? '1px solid rgba(94, 234, 212, 1)' : 'none',
         cursor: 'default',
@@ -20,7 +22,6 @@ export function TableCell(props: JengaTableElementBaseProps) {
         ...styles,
         ...cell.props.styles,
       }}
-      ref={ref}
     >
       {cell.rendered}
     </Td>

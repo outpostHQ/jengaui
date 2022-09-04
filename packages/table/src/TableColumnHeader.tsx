@@ -1,10 +1,11 @@
 import { mergeProps, useFocus } from '@jenga-ui/utils';
 import { useRef } from 'react';
 import { useTableColumnHeader } from '@react-aria/table';
+import { Flex } from '@jenga-ui/layout';
+
 import { Th } from './TableElementsBase';
 import { JengaTableColumnHeaderProps } from './types';
 import { AligmentFromDTCatalog } from './ReactStatelyCollections';
-import { Flex } from '@jenga-ui/layout';
 
 export function TableColumnHeader(props: JengaTableColumnHeaderProps) {
   const { item: column, state, styles = {}, ...otherProps } = props;
@@ -29,6 +30,7 @@ export function TableColumnHeader(props: JengaTableColumnHeaderProps) {
   return (
     <Th
       {...mergeProps(columnHeaderProps, focusProps)}
+      ref={ref}
       colSpan={colspan}
       styles={{
         outline: isFocused ? '2px solid orange' : 'none',
@@ -38,7 +40,6 @@ export function TableColumnHeader(props: JengaTableColumnHeaderProps) {
         ...column.props.colCellStyles,
         ...styles,
       }}
-      ref={ref}
       {...otherProps}
     >
       <Flex

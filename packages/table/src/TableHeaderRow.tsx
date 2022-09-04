@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useTableHeaderRow } from '@react-aria/table';
+
 import { JengaTableElementBaseProps } from './types';
 import { Tr } from './TableElementsBase';
 

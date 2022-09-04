@@ -30,6 +30,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@jenga-ui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
@@ -37,6 +38,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@jenga-ui/button": "*",
     "@jenga-ui/checkbox": "workspace:packages/checkbox",
     "@jenga-ui/content": "workspace:packages/content",
     "@jenga-ui/core": "workspace:packages/core",

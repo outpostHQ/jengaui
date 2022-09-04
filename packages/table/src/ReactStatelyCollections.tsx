@@ -1,10 +1,4 @@
-import {
-  ColumnProps,
-  CellProps,
-  RowProps,
-  TableBodyProps,
-  TableHeaderProps,
-} from '@react-stately/table';
+import { ColumnProps, CellProps, RowProps } from '@react-stately/table';
 import { Styles } from 'tastycss';
 import { Column as _Column } from '@react-stately/table';
 import { Cell as _Cell } from '@react-stately/table';

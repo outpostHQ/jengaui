@@ -1,6 +1,7 @@
 import { mergeProps, useFocus } from '@jenga-ui/utils';
 import { useContext, useRef } from 'react';
 import { useTableRow } from '@react-aria/table';
+
 import { JengaTablePropsContext, Tr } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';
 

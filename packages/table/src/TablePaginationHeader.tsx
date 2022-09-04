@@ -2,10 +2,11 @@ import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
 import { Button } from '@jenga-ui/button';
 import { Flex } from '@jenga-ui/layout';
 import { useContext } from 'react';
+
 import { JengaTablePropsContext, Th, Tr } from './TableElementsBase';
 
 export const TablePaginationHeader = (props) => {
-  const { setPage = () => { }, styles, ...otherProps } = props;
+  const { setPage = () => {}, styles, ...otherProps } = props;
   const { currentPage = 1, totalPages: pages = 1 } = useContext(
     JengaTablePropsContext,
   );
@@ -36,24 +37,24 @@ export const TablePaginationHeader = (props) => {
           />
           {pages
             ? [...Array(pages)].map((page, index) => (
-              <Button
-                type={'clear'}
-                key={`btn-pg-${index}`}
-                styles={{
-                  padding: '0',
-                  margin: '0 3px',
-                  width: '6px',
-                  aspectRatio: 1,
-                  borderRadius: '50%',
-                  fill: index + 1 === currentPage ? '#2B2962' : '#BCBCBC',
-                  border: '1px solid black',
-                }}
-                onPress={() => {
-                  console.log('page->', currentPage);
-                  setPage(index + 1);
-                }}
-              />
-            ))
+                <Button
+                  key={`btn-pg-${index}`}
+                  type={'clear'}
+                  styles={{
+                    padding: '0',
+                    margin: '0 3px',
+                    width: '6px',
+                    aspectRatio: 1,
+                    borderRadius: '50%',
+                    fill: index + 1 === currentPage ? '#2B2962' : '#BCBCBC',
+                    border: '1px solid black',
+                  }}
+                  onPress={() => {
+                    console.log('page->', currentPage);
+                    setPage(index + 1);
+                  }}
+                />
+              ))
             : null}
           <Button
             type={'clear'}
