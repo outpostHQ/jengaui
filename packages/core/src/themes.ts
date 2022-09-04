@@ -1,4 +1,4 @@
-export default {
+const theme = {
   success: {
     fill: '#success-bg',
     color: '#success-text',
@@ -19,4 +19,6 @@ export default {
     color: '#dark.40',
     border: '#dark.20',
   },
-} as const;
+};
+
+export default theme;
