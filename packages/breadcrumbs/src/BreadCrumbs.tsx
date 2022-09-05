@@ -12,7 +12,10 @@ const Ol = tasty({
   as: 'ol',
 });
 
-export const Breadcrumbs = forwardRef((props: JengaBreadCrumbProps, ref) => {
+export const Breadcrumbs = forwardRef(function _BreadCrumbs(
+  props: JengaBreadCrumbProps,
+  ref,
+) {
   const { listStyles = {} } = props;
   let { navProps } = useBreadcrumbs(props);
   let children = React.Children.toArray(props.children);

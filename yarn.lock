@@ -3697,6 +3697,8 @@ __metadata:
   resolution: "@jenga-ui/breadcrumbs@workspace:packages/breadcrumbs"
   dependencies:
     "@ant-design/icons": ^4.7.0
+    "@jenga-ui/providers": "workspace:packages/providers"
+    "@jenga-ui/tsconfig": "*"
     "@jenga-ui/utils": "*"
     "@react-aria/breadcrumbs": ^3.3.1
     "@react-types/breadcrumbs": ^3.4.3
@@ -4418,6 +4420,7 @@ __metadata:
     "@react-stately/collections": ^3.3.4
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
+    clipboard-copy: ^4.0.1
     node-abort-controller: ^3.0.1
     tsup: ^6.2.3
     typescript: ^4.5.4
@@ -20767,6 +20770,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "next-app@workspace:next-app"
   dependencies:
+    "@jenga-ui/accordion": "workspace:packages/accordion"
     "@jenga-ui/avatar": "*"
     "@jenga-ui/button": "*"
     "@jenga-ui/core": "*"
