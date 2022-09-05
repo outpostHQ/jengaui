@@ -1,16 +1,19 @@
 import React, { memo } from 'react';
 import { isElement } from 'react-is';
-import flatten from 'react-keyed-flatten-children';
-
+import { flattenChildren } from '@jenga-ui/utils'
 import { JengaNotificationProps, NotificationActionComponent } from '../types';
 import { tasty } from 'tastycss';
 import { ButtonGroup } from '@jenga-ui/button-group';
+
+
+
 
 interface NotificationFooterProps {
   hasDescription: boolean;
   actions: JengaNotificationProps['actions'];
   onClose: () => void;
   onDismiss: () => void;
+  children?: Array<React.ReactNode>;
 }
 
 const FooterArea = tasty(ButtonGroup, {
@@ -31,7 +34,7 @@ export const NotificationFooter = memo(function NotificationFooter(
 
   return (
     <FooterArea mods={{ 'has-description': hasDescription }}>
-      {flatten(
+      {flattenChildren(
         typeof actions === 'function'
           ? actions({ onClose, onDismiss })
           : actions,
@@ -47,7 +50,7 @@ export const NotificationFooter = memo(function NotificationFooter(
               ...props,
               type: props.type ?? defaultType,
             },
-            props.children,
+            props.children
           );
         })}
     </FooterArea>
