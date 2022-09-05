@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 
-import { Avatar, Block, Root } from '@jenga-ui/react';
+import { Avatar, Block, Root, Slider, Button  } from '@jenga-ui/react';
 
 
 import styles from '../styles/Home.module.css';
@@ -9,9 +9,11 @@ const Home: NextPage = () => {
   return (
     <div>
       <Root>
-      <h1> hello</h1>
-      <Block> and it is this</Block>
-      <Avatar icon={null}>OP</Avatar>
+      <h1> Hello! </h1>
+      <Block> This is Jenga-UI </Block>
+      <Avatar icon={null}> OP </Avatar>
+      <Button> I'm Button </Button>
+      <Slider></Slider>
       </Root>
     </div>
   );

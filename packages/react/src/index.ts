@@ -164,3 +164,4 @@ export * from '@jenga-ui/toast';
 export * from '@jenga-ui/slider';
 export * from '@jenga-ui/table';
 export * from '@jenga-ui/breadcrumbs';
+export * from '@jenga-ui/accordion';

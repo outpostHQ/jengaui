@@ -3,7 +3,7 @@ import { useFocusRing } from '@react-aria/focus';
 import { useHover, usePress } from '@react-aria/interactions';
 import { tasty } from 'tastycss';
 import { Text } from '@jenga-ui/content';
-import { mergeProps } from '@jenga-ui/core';
+import { mergeProps } from '@jenga-ui/utils';
 
 import { DownOutlined } from '@ant-design/icons';
 

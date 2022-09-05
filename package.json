@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.24.3",
+    "@storybook/builder-vite": "^0.2.2",
     "@swc/core": "1.2.148",
     "@swc/jest": "^0.2.20",
     "@testing-library/jest-dom": "^5.16.1",
@@ -66,7 +67,8 @@
   "workspaces": [
     "packages/*",
     "next-app",
-    "examples/*"
+    "examples/*",
+    "storybook"
   ],
   "resolutions": {
     "es5-ext": "0.10.53",
