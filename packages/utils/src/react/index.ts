@@ -10,3 +10,4 @@ export { wrapNodeIfPlain } from './wrapNodeIfPlain';
 export * from './nullableValue';
 export * from './useId';
 export * from './get-display-name';
+export { flattenChildren } from './flattenChildren';
