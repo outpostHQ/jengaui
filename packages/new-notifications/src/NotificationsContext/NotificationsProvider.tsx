@@ -1,6 +1,6 @@
 import { createContext, PropsWithChildren, RefObject, useMemo } from 'react';
 
-import { Portal } from '../../../portal';
+import { Portal } from '@jenga-ui/portal';
 import { NotificationsBar } from '../Bar';
 import { JengaNotificationsApi, JengaNotifyApiPropsWithID } from '../types';
 

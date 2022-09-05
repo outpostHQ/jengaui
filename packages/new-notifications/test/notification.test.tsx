@@ -1,78 +1,40 @@
-import { render, getByTestId, screen, cleanup } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { renderWithRoot } from '@jenga-ui/core/test';
 
-import { wait } from '@jenga-ui/core/test';
-import { Timer } from '@jenga-ui/hooks';
+import { Notification } from '../src/Notification';
 
-import { NotificationView } from '../src//NotificationView';
+function TestComponent({ renderNotification = true, ...notificationProps }) {
+  return renderNotification ? (
+    <Notification description="Test" {...notificationProps} />
+  ) : null;
+}
 
 describe('<Notification />', () => {
-  it('should stop timer on hover', async () => {
-    const onClose = jest.fn();
+  beforeEach(() => jest.useFakeTimers('modern'));
+  afterEach(() => jest.useRealTimers());
 
-    render(
-      <NotificationView description="test" duration={50} onClose={onClose} />,
+  it('should unmount component by default', () => {
+    const { getByTestId, rerender } = renderWithRoot(<TestComponent />);
+
+    const notification = getByTestId('FloatingNotification');
+
+    rerender(
+      <TestComponent disableRemoveOnUnmount renderNotification={false} />,
     );
 
-    await userEvent.hover(screen.getByTestId('notification'));
-    await wait(100);
-
-    expect(onClose).not.toBeCalled();
+    expect(notification).not.toBeInTheDocument();
   });
 
-  it('should resume timer on unhover', async () => {
-    const onClose = jest.fn();
-
-    render(
-      <NotificationView description="test" duration={10} onDismiss={onClose} />,
+  it('should keep notification if disableRemoveOnUnmount set to true', () => {
+    const { rerender, getByTestId } = renderWithRoot(
+      <TestComponent disableRemoveOnUnmount />,
     );
 
-    const notification = screen.getByTestId('notification');
+    const notification = getByTestId('FloatingNotification');
 
-    await userEvent.hover(notification);
-    await wait(10);
-    await userEvent.unhover(notification);
-    await wait(20);
-
-    expect(onClose).toBeCalledTimes(1);
-  });
-
-  it('should close on click', async () => {
-    const onClose = jest.fn();
-    render(<NotificationView description="test" onDismiss={onClose} />);
-
-    const notification = screen.getByTestId('notification');
-
-    await userEvent.click(getByTestId(notification, 'NotificationCloseButton'));
-
-    expect(onClose).toBeCalledTimes(1);
-  });
-
-  it('should kill timer on unmount', async () => {
-    const onClose = jest.fn();
-
-    render(
-      <NotificationView description="test" duration={10} onClose={onClose} />,
-    );
-    cleanup();
-
-    await wait(100);
-
-    expect(onClose).toBeCalledTimes(0);
-  });
-
-  it('should work with custom timer', async () => {
-    const onClose = jest.fn();
-    const timerCallback = jest.fn();
-    const timer = new Timer(timerCallback, 100);
-
-    render(
-      <NotificationView description="test" timer={timer} onClose={onClose} />,
+    rerender(
+      <TestComponent disableRemoveOnUnmount renderNotification={false} />,
     );
 
-    await wait(500);
-
-    expect(timerCallback).toBeCalledTimes(1);
-    expect(onClose).toBeCalledTimes(0);
+    expect(notification).toBeInTheDocument();
   });
 });
