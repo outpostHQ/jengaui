@@ -5,6 +5,7 @@
     "fixed": [],
     "linked": [],
     "access": "public",
+    "baseBranch": "main",
     "updateInternalDependencies": "patch",
-    "ignore": ["@jenga/docs"]
+    "ignore": ["@jenga-ui/react-storybook", "next-app"]
   }

@@ -1,13 +1,13 @@
-# @jenga-ui/slider
+# @jenga-ui/react
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/slider
+npm install @jenga-ui/react
 
 # with yarn
-yarn add @jenga-ui/slider
+yarn add @jenga-ui/react
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.
