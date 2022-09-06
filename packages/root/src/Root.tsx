@@ -16,7 +16,7 @@ import { TOKENS } from '@jenga-ui/core/src/tokens';
 import { PortalProvider } from '@jenga-ui/portal';
 import { GlobalStyles } from '@jenga-ui/core';
 import { AlertDialogApiProvider } from '@jenga-ui/alert-dialog';
-import { NotificationsProvider } from '@jenga-ui/new-notifications';
+import { NotificationsProvider } from '@jenga-ui/notification';
 
 const RootElement = tasty({
   id: 'jenga-ui-kit-root',

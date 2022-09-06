@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
 
-import { renderWithRoot } from '../../core/test';
+import { renderWithRoot } from '@jenga-ui/core/test';
 import { NotificationsBar } from '../src/Bar/NotificationsBar';
 
 describe('<NotificationsBar />', () => {

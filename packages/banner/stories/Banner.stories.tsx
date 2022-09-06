@@ -1,10 +1,10 @@
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
 
-import { Notification } from '../src/Notification';
+import { Banner } from '../src/Banner';
 
 export default {
-  title: 'Overlays/Notification',
-  component: Notification,
+  title: 'Overlays/Banner',
+  component: Banner,
   parameters: {
     controls: {
       exclude: baseProps,
@@ -12,30 +12,30 @@ export default {
   },
   argTypes: {
     label: {
-      defaultValue: 'Notification text',
+      defaultValue: 'Banner text',
       control: 'text',
     },
   },
 };
 
 const Template = ({ type, label }) => (
-  <Notification type={type}>{label}</Notification>
+  <Banner type={type}>{label}</Banner>
 );
 
 export const Note = Template.bind({});
 Note.args = {
   type: 'note',
-  label: 'Notification text',
+  label: 'Banner text',
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
   type: 'danger',
-  label: 'Notification text',
+  label: 'Banner text',
 };
 
 export const Success = Template.bind({});
 Success.args = {
   type: 'success',
-  label: 'Notification text',
+  label: 'Banner text',
 };

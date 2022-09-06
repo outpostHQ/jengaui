@@ -126,8 +126,8 @@ export { AlertDialog, useAlertDialogAPI } from '@jenga-ui/alert-dialog';
 export type { JengaAlertDialogProps } from '@jenga-ui/alert-dialog';
 
 // services
-export { notification } from '@jenga-ui/services';
-export type { JengaNotificationOptions } from '@jenga-ui/services';
+export { banner } from '@jenga-ui/services';
+export type { JengaBannerOptions } from '@jenga-ui/services';
 
 export const Typography = {
   Text,
@@ -146,7 +146,8 @@ export { ModalProvider } from '@react-aria/overlays';
 export * from '@jenga-ui/utils';
 export { default as copy } from 'clipboard-copy';
 export * from '@react-aria/ssr';
-export * from '@jenga-ui/new-notifications';
+export * from '@jenga-ui/notification';
+export * from '@jenga-ui/banner';
 export * from '@jenga-ui/toast';
 export * from '@jenga-ui/slider';
 export * from '@jenga-ui/table';

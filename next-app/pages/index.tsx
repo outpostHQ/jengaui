@@ -5,6 +5,8 @@ import {
   Block,
   BreadcrumbItem,
   Breadcrumbs,
+  Banner,
+  Notification,
   Button,
   Cell,
   Column,
@@ -27,6 +29,7 @@ const Home: NextPage = () => {
         <Block> This is Jenga-UI </Block>
         <Avatar icon={null}> OP </Avatar>
         <Button> I'm Button </Button>
+        <Banner type="note"> Banner text </Banner>
         <Table
           aria-label="Example static collection table"
           styles={{ width: '600px', height: '600px' }}

@@ -1,6 +1,6 @@
 {
         "name": "@jenga-ui/root",
-        "version": "0.1.1",
+        "version": "2.0.0",
         "license": "MIT",
         "description": "Responsive and accessible React UI components built with TastyCSS",
         "keywords": [
@@ -32,7 +32,7 @@
         "dependencies": {
                 "@jenga-ui/alert-dialog": "*",
                 "@jenga-ui/core": "*",
-                "@jenga-ui/new-notifications": "*",
+                "@jenga-ui/notification": "*",
                 "@jenga-ui/portal": "*",
                 "@jenga-ui/providers": "*",
                 "@jenga-ui/utils": "*",

@@ -2,46 +2,46 @@ import ReactDOM from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import {
-  JengaNotificationProps,
-  Notification,
-} from '@jenga-ui/notification';
+  JengaBannerProps,
+  Banner,
+} from '@jenga-ui/banner';
 
 let ID = 0;
 
-export interface NotificationData {
+export interface BannerData {
   id: number;
-  type?: JengaNotificationProps['type'];
+  type?: JengaBannerProps['type'];
   message?: string;
 }
 
-export interface NotificationService {
+export interface BannerService {
   root: Element | null;
   defaultOptions: {
     duration: number;
   };
-  items: NotificationData[];
+  items: BannerData[];
   init: () => void;
   render: () => void;
-  _render: (items?: NotificationData[]) => void;
+  _render: (items?: BannerData[]) => void;
   show: (
-    type: JengaNotificationProps['type'],
+    type: JengaBannerProps['type'],
     message: string,
-    options?: JengaNotificationOptions,
+    options?: JengaBannerOptions,
   ) => void;
   close: (number) => void;
-  success: (message: string, options?: JengaNotificationOptions) => void;
-  info: (message: string, options?: JengaNotificationOptions) => void;
-  danger: (message: string, options?: JengaNotificationOptions) => void;
+  success: (message: string, options?: JengaBannerOptions) => void;
+  info: (message: string, options?: JengaBannerOptions) => void;
+  danger: (message: string, options?: JengaBannerOptions) => void;
 }
 
-export interface JengaNotificationOptions {
+export interface JengaBannerOptions {
   duration?: number;
 }
 
 /**
- * @deprecated consider using `useNotificationsApi` instead
+ * @deprecated consider using `useBannersApi` instead
  */
-export const notification: NotificationService = {
+export const banner: BannerService = {
   root: null,
   defaultOptions: {
     duration: 5000,
@@ -52,7 +52,7 @@ export const notification: NotificationService = {
 
     this.root = document.createElement('div');
 
-    this.root.classList.add('jenga-notification-container');
+    this.root.classList.add('jenga-banner-container');
 
     document.body.appendChild(this.root);
 
@@ -69,16 +69,16 @@ export const notification: NotificationService = {
     }
 
     ReactDOM.render(
-      <TransitionGroup className="jenga-notifications">
+      <TransitionGroup className="jenga-banners">
         {items.map((item) => (
           <CSSTransition
             key={item.id}
             timeout={400}
-            classNames="jenga-notification"
+            classNames="jenga-banner"
           >
-            <Notification type={item.type} onClose={() => this.close(item.id)}>
+            <Banner type={item.type} onClose={() => this.close(item.id)}>
               {item.message}
-            </Notification>
+            </Banner>
           </CSSTransition>
         ))}
       </TransitionGroup>,

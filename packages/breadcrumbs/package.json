@@ -1,6 +1,6 @@
 {
   "name": "@jenga-ui/breadcrumbs",
-  "version": "0.1.1",
+  "version": "2.0.0",
   "license": "MIT",
   "description": "Jenga-UI React tag component",
   "keywords": [
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/providers": "workspace:packages/providers",
+    "@jenga-ui/providers": "*",
     "@jenga-ui/utils": "*",
     "@react-aria/breadcrumbs": "^3.3.1",
     "@react-types/breadcrumbs": "^3.4.3",

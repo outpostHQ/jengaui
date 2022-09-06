@@ -1,5 +1,33 @@
 # Change Log
 
+## 2.0.0
+
+### Major Changes
+
+- Added new components - Banner, Notification, Slider, Breadcrumbs, Table, Root
+
+### Patch Changes
+
+- Updated dependencies
+  - @jenga-ui/number-input@2.0.0
+  - @jenga-ui/password-input@2.0.0
+  - @jenga-ui/text-input@2.0.0
+  - @jenga-ui/textarea@2.0.0
+
+## 1.0.0
+
+### Major Changes
+
+- 6e3e411: Added Accordion, Table, Slider, Breadcrumbs, and React
+
+### Patch Changes
+
+- Updated dependencies [6e3e411]
+  - @jenga-ui/number-input@1.0.0
+  - @jenga-ui/password-input@1.0.0
+  - @jenga-ui/text-input@1.0.0
+  - @jenga-ui/textarea@1.0.0
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 

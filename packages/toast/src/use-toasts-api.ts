@@ -1,7 +1,7 @@
 import { ReactChild, ReactFragment, useMemo } from 'react';
 import { isElement, isFragment } from 'react-is';
 
-import { useNotificationsApi } from '@jenga-ui/new-notifications';
+import { useNotificationsApi } from '@jenga-ui/notification';
 
 import { JengaToastsApiToastAction, JengaToastsApiToastShortcuts } from './types';
 
