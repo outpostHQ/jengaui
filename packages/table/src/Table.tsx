@@ -62,7 +62,7 @@ export const Table = forwardRef(function _Table(props: JengaTableProps, ref) {
   let { gridProps } = useTable(props, state, ref as RefObject<HTMLElement>);
   let { recordsPerPage = 20, showPage = 1 } = props;
   const [currentPage, setCurrentPage] = useState(showPage);
-  console.log(wrapperProps);
+  // console.log(wrapperProps);
   return (
     <TableWrapper {...wrapperProps}>
       <TableBase
