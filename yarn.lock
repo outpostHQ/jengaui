@@ -3935,17 +3935,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/eslint-config@workspace:packages/shared-eslint-config":
-  version: 0.0.0-use.local
-  resolution: "@jenga-ui/eslint-config@workspace:packages/shared-eslint-config"
-  dependencies:
-    eslint-config-next: ^12.0.8
-    eslint-config-prettier: ^8.3.0
-    eslint-config-turbo: latest
-    eslint-plugin-react: 7.28.0
-  languageName: unknown
-  linkType: soft
-
 "@jenga-ui/file-input@*, @jenga-ui/file-input@workspace:packages/file-input":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/file-input@workspace:packages/file-input"
@@ -4360,6 +4349,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@jenga-ui/react-storybook@workspace:storybook":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/react-storybook@workspace:storybook"
+  dependencies:
+    "@jenga-ui/react": "*"
+    "@jenga-ui/tsconfig": "*"
+    "@storybook/addon-actions": ^6.5.10
+    "@storybook/addon-docs": ^6.5.10
+    "@storybook/addon-essentials": ^6.5.10
+    "@storybook/addon-interactions": ^6.5.10
+    "@storybook/addon-links": ^6.5.10
+    "@storybook/builder-vite": ^0.2.2
+    "@storybook/jest": ^0.0.10
+    "@storybook/react": ^6.5.10
+    "@storybook/test-runner": ^0.7.0
+    "@storybook/testing-library": ^0.0.13
+    "@vitejs/plugin-react": ^1.3.2
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    serve: ^13.0.2
+    tastycss: ^0.8.6
+    typescript: ^4.5.4
+    vite: ^3.0.9
+  languageName: unknown
+  linkType: soft
+
 "@jenga-ui/react@*, @jenga-ui/react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/react@workspace:packages/react"
@@ -4597,32 +4612,6 @@ __metadata:
   peerDependencies:
     react: ^17.0.2
     react-dom: ^17.0.2
-  languageName: unknown
-  linkType: soft
-
-"@jenga-ui/storybook@workspace:storybook":
-  version: 0.0.0-use.local
-  resolution: "@jenga-ui/storybook@workspace:storybook"
-  dependencies:
-    "@jenga-ui/react": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@storybook/addon-actions": ^6.5.10
-    "@storybook/addon-docs": ^6.5.10
-    "@storybook/addon-essentials": ^6.5.10
-    "@storybook/addon-interactions": ^6.5.10
-    "@storybook/addon-links": ^6.5.10
-    "@storybook/builder-vite": ^0.2.2
-    "@storybook/jest": ^0.0.10
-    "@storybook/react": ^6.5.10
-    "@storybook/test-runner": ^0.7.0
-    "@storybook/testing-library": ^0.0.13
-    "@vitejs/plugin-react": ^1.3.2
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    serve: ^13.0.2
-    tastycss: ^0.8.6
-    typescript: ^4.5.4
-    vite: ^3.0.9
   languageName: unknown
   linkType: soft
 
@@ -14927,7 +14916,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:12.2.5, eslint-config-next@npm:^12.0.8":
+"eslint-config-next@npm:12.2.5":
   version: 12.2.5
   resolution: "eslint-config-next@npm:12.2.5"
   dependencies:
@@ -14982,17 +14971,6 @@ __metadata:
   peerDependencies:
     eslint: ^8.0.0
   checksum: dac130cfcb9689596ce3495692fecb25d913ba81de0e0c3e4b078ae79f0f0d20a77751f30823c5b3c09d66981c1df7f2836aa193f5c6c542faeb17761cd62019
-  languageName: node
-  linkType: hard
-
-"eslint-config-turbo@npm:latest":
-  version: 0.0.3
-  resolution: "eslint-config-turbo@npm:0.0.3"
-  dependencies:
-    eslint-plugin-turbo: 0.0.3
-  peerDependencies:
-    eslint: ^7.23.0 || ^8.0.0
-  checksum: c92255e91dd0865faeebc857eb3a862e8ca2ccb37fc54ffce93b73cd41e95ad456826ae6634772450dfa9c705b67c288f476e8e413fab3d8194dc271754528e2
   languageName: node
   linkType: hard
 
@@ -15162,7 +15140,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:7.28.0, eslint-plugin-react@npm:^7.27.1, eslint-plugin-react@npm:^7.28.0":
+"eslint-plugin-react@npm:^7.27.1, eslint-plugin-react@npm:^7.28.0":
   version: 7.28.0
   resolution: "eslint-plugin-react@npm:7.28.0"
   dependencies:
@@ -15231,15 +15209,6 @@ __metadata:
   peerDependencies:
     eslint: ^7.5.0 || ^8.0.0
   checksum: a609f65d4ef4d2c68904e6a52ed22a9dd6ed4de3157937c16a56de1021c6270dc8041785a2f0603d619575c4a957e93476c29e28a756cf6973526a8aeafc9e13
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-turbo@npm:0.0.3":
-  version: 0.0.3
-  resolution: "eslint-plugin-turbo@npm:0.0.3"
-  peerDependencies:
-    eslint: ^7.23.0 || ^8.0.0
-  checksum: 18e2b13ede03eee7635d0c67ca792cf46483e90443143bdc06555bf231045fb5f70b2f6f1d67492365b7fe47620408eea22f7548879f3afcb07ccc070aec5c15
   languageName: node
   linkType: hard
 
