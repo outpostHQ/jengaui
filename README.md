@@ -8,10 +8,10 @@ Jenga-UI is a fast, reusable, composable, and accessible React components for yo
 
 ```sh
 # with npm
-npm install @jenga-ui/core
+npm install @jenga-ui/react
 
 # with yarn
-yarn add @jenga-ui/core
+yarn add @jenga-ui/react
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.
