@@ -1,5 +1,5 @@
 {
-    "name": "@jenga-ui/storybook",
+    "name": "@jenga-ui/react-storybook",
     "version": "0.1.0",
     "private": true,
     "scripts": {
