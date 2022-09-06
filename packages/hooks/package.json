@@ -1,6 +1,6 @@
 {
         "name": "@jenga-ui/hooks",
-        "version": "0.1.1",
+        "version": "2.0.0",
         "license": "MIT",
         "description": "Responsive and accessible React UI components built with TastyCSS",
         "keywords": [

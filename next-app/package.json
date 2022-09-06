@@ -10,7 +10,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next"
   },
   "dependencies": {
-    "@jenga-ui/accordion": "workspace:packages/accordion",
+    "@jenga-ui/accordion": "*",
     "@jenga-ui/avatar": "*",
     "@jenga-ui/button": "*",
     "@jenga-ui/core": "*",

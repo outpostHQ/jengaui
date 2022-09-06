@@ -1,6 +1,6 @@
 {
         "name": "@jenga-ui/react",
-        "version": "0.1.1",
+        "version": "2.0.0",
         "license": "MIT",
         "description": "Responsive and accessible React UI components built with TastyCSS",
         "keywords": [
@@ -36,6 +36,7 @@
                 "@jenga-ui/alert-dialog": "*",
                 "@jenga-ui/avatar": "*",
                 "@jenga-ui/badge": "*",
+                "@jenga-ui/banner": "*",
                 "@jenga-ui/breadcrumbs": "*",
                 "@jenga-ui/button": "*",
                 "@jenga-ui/button-group": "*",
@@ -54,7 +55,6 @@
                 "@jenga-ui/link": "*",
                 "@jenga-ui/menu": "*",
                 "@jenga-ui/modal": "*",
-                "@jenga-ui/new-notifications": "*",
                 "@jenga-ui/notification": "*",
                 "@jenga-ui/number-input": "*",
                 "@jenga-ui/overlays": "*",

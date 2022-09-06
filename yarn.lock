@@ -3692,12 +3692,33 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@jenga-ui/banner@*, @jenga-ui/banner@workspace:packages/banner":
+  version: 0.0.0-use.local
+  resolution: "@jenga-ui/banner@workspace:packages/banner"
+  dependencies:
+    "@ant-design/icons": ^4.7.0
+    "@jenga-ui/button": "*"
+    "@jenga-ui/card": "*"
+    "@jenga-ui/core": "*"
+    "@jenga-ui/tsconfig": "*"
+    "@types/react": ^17.0.38
+    "@types/react-dom": ^17.0.11
+    styled-components: ^5.3.0
+    tastycss: ^0.8.6
+    tsup: ^6.2.3
+    typescript: ^4.5.4
+  peerDependencies:
+    react: ^17.0.2
+    react-dom: ^17.0.2
+  languageName: unknown
+  linkType: soft
+
 "@jenga-ui/breadcrumbs@*, @jenga-ui/breadcrumbs@workspace:packages/breadcrumbs":
   version: 0.0.0-use.local
   resolution: "@jenga-ui/breadcrumbs@workspace:packages/breadcrumbs"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/providers": "workspace:packages/providers"
+    "@jenga-ui/providers": "*"
     "@jenga-ui/tsconfig": "*"
     "@jenga-ui/utils": "*"
     "@react-aria/breadcrumbs": ^3.3.1
@@ -3864,7 +3885,7 @@ __metadata:
     "@ant-design/icons": "*"
     "@jenga-ui/button": "*"
     "@jenga-ui/card": "*"
-    "@jenga-ui/new-notifications": "*"
+    "@jenga-ui/notification": "*"
     "@jenga-ui/prism-code": "*"
     "@jenga-ui/toast": "*"
     "@jenga-ui/tooltip": "*"
@@ -4122,9 +4143,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/new-notifications@*, @jenga-ui/new-notifications@workspace:packages/new-notifications":
+"@jenga-ui/notification@*, @jenga-ui/notification@workspace:packages/notification":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/new-notifications@workspace:packages/new-notifications"
+  resolution: "@jenga-ui/notification@workspace:packages/notification"
   dependencies:
     "@jenga-ui/button": "*"
     "@jenga-ui/button-group": "*"
@@ -4152,27 +4173,6 @@ __metadata:
     styled-components: ^5.3.0
     tastycss: ^0.8.6
     tiny-invariant: ^1.2.0
-    tsup: ^6.2.3
-    typescript: ^4.5.4
-  peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-  languageName: unknown
-  linkType: soft
-
-"@jenga-ui/notification@*, @jenga-ui/notification@workspace:packages/notification":
-  version: 0.0.0-use.local
-  resolution: "@jenga-ui/notification@workspace:packages/notification"
-  dependencies:
-    "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/card": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@types/react": ^17.0.38
-    "@types/react-dom": ^17.0.11
-    styled-components: ^5.3.0
-    tastycss: ^0.8.6
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4385,6 +4385,7 @@ __metadata:
     "@jenga-ui/alert-dialog": "*"
     "@jenga-ui/avatar": "*"
     "@jenga-ui/badge": "*"
+    "@jenga-ui/banner": "*"
     "@jenga-ui/breadcrumbs": "*"
     "@jenga-ui/button": "*"
     "@jenga-ui/button-group": "*"
@@ -4403,7 +4404,6 @@ __metadata:
     "@jenga-ui/link": "*"
     "@jenga-ui/menu": "*"
     "@jenga-ui/modal": "*"
-    "@jenga-ui/new-notifications": "*"
     "@jenga-ui/notification": "*"
     "@jenga-ui/number-input": "*"
     "@jenga-ui/overlays": "*"
@@ -4471,7 +4471,7 @@ __metadata:
   dependencies:
     "@jenga-ui/alert-dialog": "*"
     "@jenga-ui/core": "*"
-    "@jenga-ui/new-notifications": "*"
+    "@jenga-ui/notification": "*"
     "@jenga-ui/portal": "*"
     "@jenga-ui/providers": "*"
     "@jenga-ui/tsconfig": "*"
@@ -4550,7 +4550,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jenga-ui/services@workspace:packages/services"
   dependencies:
-    "@jenga-ui/notification": "*"
+    "@jenga-ui/banner": "*"
     "@jenga-ui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -4766,7 +4766,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jenga-ui/toast@workspace:packages/toast"
   dependencies:
-    "@jenga-ui/new-notifications": "*"
+    "@jenga-ui/notification": "*"
     "@jenga-ui/tsconfig": "*"
     "@react-aria/utils": ^3.11.0
     "@types/react": ^17.0.38
@@ -20739,7 +20739,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "next-app@workspace:next-app"
   dependencies:
-    "@jenga-ui/accordion": "workspace:packages/accordion"
+    "@jenga-ui/accordion": "*"
     "@jenga-ui/avatar": "*"
     "@jenga-ui/button": "*"
     "@jenga-ui/core": "*"

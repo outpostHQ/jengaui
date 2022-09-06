@@ -1,6 +1,6 @@
 {
   "name": "@jenga-ui/copy-snippet",
-  "version": "0.1.1",
+  "version": "2.0.0",
   "license": "MIT",
   "description": "Jenga-UI React alert component",
   "keywords": [
@@ -40,7 +40,7 @@
     "@ant-design/icons": "*",
     "@jenga-ui/button": "*",
     "@jenga-ui/card": "*",
-    "@jenga-ui/new-notifications": "*",
+    "@jenga-ui/notification": "*",
     "@jenga-ui/prism-code": "*",
     "@jenga-ui/toast": "*",
     "@jenga-ui/tooltip": "*",
