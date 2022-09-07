@@ -1,8 +1,7 @@
-import { Cell, Column, Row, TableBody, TableHeader } from '../src';
-import { baseProps } from '../../../stories/lists/baseProps';
-import { Table as NewTable } from '../src/';
 import { useAsyncList } from '@react-stately/data';
-import { JengaPaginatedTableProps } from '../src/types';
+
+import { Cell, Column, Row, TableBody, TableHeader } from '../src';
+import { Table as NewTable } from '../src/';
 export default {
   title: 'Forms/Table',
   component: NewTable,
@@ -42,28 +41,28 @@ const AsyncTableTemplate = (args) => {
 
   return (
     <NewTable
+      stickyHeader
       aria-label="Example table with client side sorting"
       sortDescriptor={list.sortDescriptor}
       onSortChange={list.sort}
-      stickyHeader
       {...args}
     >
       <TableHeader>
         <Column
           key="name"
-          align={'left'}
           allowsSorting
+          align={'left'}
           styles={{ position: 'sticky', insetInlineStart: 0, fill: '#fff' }}
         >
           Name
         </Column>
-        <Column key="height" dataType={'numeric'} allowsSorting>
+        <Column key="height" allowsSorting dataType={'numeric'}>
           Height
         </Column>
-        <Column key="mass" dataType={'numeric'} allowsSorting>
+        <Column key="mass" allowsSorting dataType={'numeric'}>
           Mass
         </Column>
-        <Column key="birth_year" dataType={'date'} allowsSorting>
+        <Column key="birth_year" allowsSorting dataType={'date'}>
           Birth Year
         </Column>
       </TableHeader>
@@ -178,21 +177,21 @@ const PaginatedAsyncTemplate = (args) => {
       paginated
       recordsPerPage={3}
       {...args}
-      onSortChange={list.sort}
       sortDescriptor={list.sortDescriptor}
       loadingState={list.loadingState}
+      onSortChange={list.sort}
     >
       <TableHeader>
-        <Column key="name" align={'left'} allowsSorting>
+        <Column key="name" allowsSorting align={'left'}>
           Name
         </Column>
-        <Column key="height" dataType={'numeric'} allowsSorting>
+        <Column key="height" allowsSorting dataType={'numeric'}>
           Height
         </Column>
-        <Column key="mass" dataType={'numeric'} allowsSorting>
+        <Column key="mass" allowsSorting dataType={'numeric'}>
           Mass
         </Column>
-        <Column key="birth_year" dataType={'date'} allowsSorting>
+        <Column key="birth_year" allowsSorting dataType={'date'}>
           Birth Year
         </Column>
       </TableHeader>
