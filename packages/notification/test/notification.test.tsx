@@ -1,4 +1,4 @@
-import { renderWithRoot } from '@jenga-ui/core/test';
+import { renderWithRoot } from '../../../test';
 
 import { Notification } from '../src/Notification';
 

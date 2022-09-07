@@ -1,10 +1,10 @@
 import { render, getByTestId, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { wait } from '@jenga-ui/core/test';
+import { wait } from '../../../test';
 import { Timer } from '@jenga-ui/hooks';
 
-import { NotificationView } from './NotificationView';
+import { NotificationView } from '../src/NotificationView/NotificationView';
 
 describe('<Notification />', () => {
   it('should stop timer on hover', async () => {
