@@ -7,7 +7,7 @@ import { baseProps } from '../../../storybook/stories/lists/baseProps';
 import { DialogTrigger } from '@jenga-ui/dialog';
 import { Button } from '@jenga-ui/button';
 import { Paragraph } from '@jenga-ui/content';
-import { wait } from '@jenga-ui/core/test';
+import { wait } from '../../../test';
 
 import { useAlertDialogAPI } from '../src/AlertDialogApiProvider';
 import { AlertDialog, JengaAlertDialogProps } from '../src/AlertDialog';

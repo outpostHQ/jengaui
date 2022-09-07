@@ -3,7 +3,7 @@ import { setTimeout } from 'node:timers/promises';
 import { act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithRoot } from '@jenga-ui/core/test/render';
+import { renderWithRoot } from '../../../test';
 import { useAlertDialogAPI } from '../src/AlertDialogApiProvider';
 
 describe('useAlertDialogApi', () => {

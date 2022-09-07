@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { wait } from '@jenga-ui/core/test/utils/wait';
+import { wait } from '../../../test';
 
 import { useTimer } from '../src/_internal/hooks/use-timer/use-timer';
 import { Timer } from '../src/_internal/hooks/use-timer/timer';
