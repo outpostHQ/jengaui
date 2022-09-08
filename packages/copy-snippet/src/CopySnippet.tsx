@@ -1,15 +1,15 @@
 import { CopyOutlined } from '@ant-design/icons';
 import copy from 'clipboard-copy';
 
-import { Action, Button } from '@jenga-ui/button';
-import { Card, JengaCardProps } from '@jenga-ui/card';
+import { Action, Button } from '@jengaui/button';
+import { Card, JengaCardProps } from '@jengaui/card';
 import { Styles, tasty } from 'tastycss';
 import {
   JengaPrismCodeProps,
   PrismCode,
-} from '@jenga-ui/prism-code';
-import { TooltipTrigger, Tooltip } from '@jenga-ui/tooltip';
-import { useToastsApi } from '@jenga-ui/toast';
+} from '@jengaui/prism-code';
+import { TooltipTrigger, Tooltip } from '@jengaui/tooltip';
+import { useToastsApi } from '@jengaui/toast';
 
 const ActionElement = tasty(Action, {
   styles: {

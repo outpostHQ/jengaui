@@ -4,17 +4,17 @@ import { userEvent, within } from '@storybook/testing-library';
 import { Meta, Story } from '@storybook/react';
 import { BellFilled, BellOutlined, WechatFilled } from '@ant-design/icons';
 
-import { Button } from '@jenga-ui/button';
+import { Button } from '@jengaui/button';
 import { CloudLogo } from '../src/CloudLogo';
-import { Flex } from '@jenga-ui/layout';
-import { Dialog, DialogTrigger } from '@jenga-ui/dialog';
+import { Flex } from '@jengaui/layout';
+import { Dialog, DialogTrigger } from '@jengaui/dialog';
 import {
   Paragraph,
   Header,
   Content,
   Footer,
   Title,
-} from '@jenga-ui/content';
+} from '@jengaui/content';
 
 import { NotificationsDialog, NotificationsDialogTrigger } from '../src/Dialog';
 import { NotificationsList } from '../src/NotificationsList';

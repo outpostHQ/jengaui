@@ -3,8 +3,8 @@ import { useHover } from '@react-aria/interactions';
 import { useFocusRing } from '@react-aria/focus';
 
 import { tasty } from 'tastycss';
-import { useEvent, useTimer } from '@jenga-ui/hooks';
-import { ClearSlots, mergeProps, useId } from '@jenga-ui/utils';
+import { useEvent, useTimer } from '@jengaui/hooks';
+import { ClearSlots, mergeProps, useId } from '@jengaui/utils';
 
 import { NotificationIcon } from './NotificationIcon';
 import { NotificationHeader } from './NotificationHeader';

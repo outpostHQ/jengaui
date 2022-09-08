@@ -1,6 +1,6 @@
 import { memo, ReactNode, useLayoutEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { Flex } from '@jenga-ui/layout';
+import { Flex } from '@jengaui/layout';
 import styled from 'styled-components';
 
 import { AccordionItemProps } from './types';

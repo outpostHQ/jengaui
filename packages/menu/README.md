@@ -1,13 +1,13 @@
-# @jenga-ui/menu
+# @jengaui/menu
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/menu
+npm install @jengaui/menu
 
 # with yarn
-yarn add @jenga-ui/menu
+yarn add @jengaui/menu
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

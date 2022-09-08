@@ -4,7 +4,7 @@ import { FocusableRef } from '@react-types/shared';
 
 import { Action, JengaActionProps } from './Action';
 import { Styles } from 'tastycss';
-import { accessibilityWarning } from '@jenga-ui/utils';
+import { accessibilityWarning } from '@jengaui/utils';
 
 export interface JengaButtonProps extends JengaActionProps {
   icon?: ReactElement;

@@ -1,4 +1,4 @@
-import { Block } from '@jenga-ui/core';
+import { Block } from '@jengaui/core';
 import { tasty } from 'tastycss';
 
 export const LabelContainer = tasty(Block, {

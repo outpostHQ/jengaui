@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { deprecationWarning } from '@jenga-ui/utils';
+import { deprecationWarning } from '@jengaui/utils';
 
 export function useDeprecationWarning(
   ...args: Parameters<typeof deprecationWarning>

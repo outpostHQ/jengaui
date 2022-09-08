@@ -20,8 +20,8 @@ import {
   useFormProps,
   FieldWrapper,
   FormFieldProps,
-} from '@jenga-ui/form';
-import { useProviderProps } from '@jenga-ui/providers';
+} from '@jengaui/form';
+import { useProviderProps } from '@jengaui/providers';
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -35,7 +35,7 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import { useFocus, mergeProps } from '@jenga-ui/utils';
+import { useFocus, mergeProps } from '@jengaui/utils';
 
 import type { AriaTextFieldProps } from '@react-types/textfield';
 

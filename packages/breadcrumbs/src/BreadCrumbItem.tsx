@@ -1,9 +1,9 @@
 import React, { forwardRef, ReactNode, RefObject } from 'react';
 import { useBreadcrumbItem } from '@react-aria/breadcrumbs';
-import { useCombinedRefs } from '@jenga-ui/utils';
+import { useCombinedRefs } from '@jengaui/utils';
 import { AriaBreadcrumbItemProps } from '@react-types/breadcrumbs';
 import { FocusableElement } from '@react-types/shared';
-import { useProviderProps } from '@jenga-ui/providers';
+import { useProviderProps } from '@jengaui/providers';
 import { BasePropsWithoutChildren, Styles, tasty } from 'tastycss';
 export interface JengaBreadCrumbItemProps
   extends AriaBreadcrumbItemProps,

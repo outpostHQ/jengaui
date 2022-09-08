@@ -3,17 +3,17 @@ import { useLocale } from '@react-aria/i18n';
 import { useNumberFieldState } from '@react-stately/numberfield';
 import { useNumberField } from '@react-aria/numberfield';
 
-import { useFormProps } from '@jenga-ui/form';
-import { useProviderProps } from '@jenga-ui/providers';
+import { useFormProps } from '@jengaui/form';
+import { useProviderProps } from '@jengaui/providers';
 import {
   JengaTextInputBaseProps,
   TextInputBase,
-} from '@jenga-ui/text-input';
+} from '@jengaui/text-input';
 import { tasty } from 'tastycss';
 import {
   castNullableNumberValue,
   WithNullableValue,
-} from '@jenga-ui/utils';
+} from '@jengaui/utils';
 
 import { StepButton } from './StepButton';
 

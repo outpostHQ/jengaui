@@ -6,7 +6,7 @@ import {
   ReactElement,
 } from 'react';
 
-import { Modal } from '@jenga-ui/modal';
+import { Modal } from '@jengaui/modal';
 
 import { DialogContext } from './context';
 

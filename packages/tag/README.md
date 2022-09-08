@@ -1,13 +1,13 @@
-# @jenga-ui/tag
+# @jengaui/tag
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/tag
+npm install @jengaui/tag
 
 # with yarn
-yarn add @jenga-ui/tag
+yarn add @jengaui/tag
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

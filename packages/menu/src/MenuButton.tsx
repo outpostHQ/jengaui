@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import { CheckOutlined } from '@ant-design/icons';
 
-import { Button, JengaButtonProps } from '@jenga-ui/button';
-import { Text } from '@jenga-ui/content';
+import { Button, JengaButtonProps } from '@jengaui/button';
+import { Text } from '@jengaui/content';
 import { Styles, tasty } from 'tastycss';
-import { Space } from '@jenga-ui/layout';
+import { Space } from '@jengaui/layout';
 
 const ACTION_BUTTON: Styles = {
   border: {

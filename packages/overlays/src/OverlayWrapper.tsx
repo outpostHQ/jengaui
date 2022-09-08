@@ -1,8 +1,8 @@
 import { CSSTransition } from 'react-transition-group';
 import { ReactNode, useRef } from 'react';
 
-import { OverlayTransitionCSSProps } from '@jenga-ui/utils';
-import { Portal } from '@jenga-ui/portal';
+import { OverlayTransitionCSSProps } from '@jengaui/utils';
+import { Portal } from '@jengaui/portal';
 
 export interface JengaOverlayWrapperProps {
   isOpen?: boolean;

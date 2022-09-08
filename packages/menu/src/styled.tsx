@@ -1,5 +1,5 @@
 import { tasty } from 'tastycss';
-import { Space } from '@jenga-ui/layout';
+import { Space } from '@jengaui/layout';
 
 export const StyledMenu = tasty({
   as: 'ul',

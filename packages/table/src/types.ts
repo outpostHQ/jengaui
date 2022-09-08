@@ -3,7 +3,7 @@ import { GridNode } from '@react-types/grid';
 import { BaseProps, Styles } from 'tastycss';
 import { Node } from '@react-types/shared';
 import { AriaTableProps } from '@react-aria/table';
-import { JengaCheckboxProps } from '@jenga-ui/checkbox';
+import { JengaCheckboxProps } from '@jengaui/checkbox';
 import { ReactNode } from 'react';
 
 export type JengaTableElementBaseProps = BaseProps & {

@@ -2,19 +2,19 @@ import { StoryFn } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 
 import { Item } from '@react-stately/collections';
-import { Block } from '@jenga-ui/core';
-import { Checkbox, CheckboxGroup } from '@jenga-ui/checkbox';
-import { ComboBox } from '@jenga-ui/combo-box';
-import { Form, Field } from '@jenga-ui/form';
-import { PasswordInput } from '@jenga-ui/password-input';
-import { Radio } from '@jenga-ui/radio';
-import { Select } from '@jenga-ui/select';
-import { Switch } from '@jenga-ui/switch';
-import { TextInput } from '@jenga-ui/text-input';
-import { NumberInput } from '@jenga-ui/number-input';
+import { Block } from '@jengaui/core';
+import { Checkbox, CheckboxGroup } from '@jengaui/checkbox';
+import { ComboBox } from '@jengaui/combo-box';
+import { Form, Field } from '@jengaui/form';
+import { PasswordInput } from '@jengaui/password-input';
+import { Radio } from '@jengaui/radio';
+import { Select } from '@jengaui/select';
+import { Switch } from '@jengaui/switch';
+import { TextInput } from '@jengaui/text-input';
+import { NumberInput } from '@jengaui/number-input';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
-import { Button, Submit } from '@jenga-ui/button';
-import { timeout } from '@jenga-ui/utils';
+import { Button, Submit } from '@jengaui/button';
+import { timeout } from '@jengaui/utils';
 
 export default {
   title: 'Forms/ComplexForm',

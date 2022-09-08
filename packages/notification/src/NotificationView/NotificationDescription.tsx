@@ -1,8 +1,8 @@
 import { HTMLAttributes, memo } from 'react';
 
 import { tasty } from 'tastycss';
-import { Paragraph } from '@jenga-ui/content';
-import { mergeProps } from '@jenga-ui/utils';
+import { Paragraph } from '@jengaui/content';
+import { mergeProps } from '@jengaui/utils';
 
 import { NotificationProps } from './types';
 

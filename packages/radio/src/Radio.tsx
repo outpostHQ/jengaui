@@ -11,14 +11,14 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import { useFocus, mergeProps } from '@jenga-ui/utils';
-import { useProviderProps } from '@jenga-ui/providers';
+import { useFocus, mergeProps } from '@jengaui/utils';
+import { useProviderProps } from '@jengaui/providers';
 import {
   INLINE_LABEL_STYLES,
   useFormProps,
   HiddenInput,
   FormFieldProps,
-} from '@jenga-ui/form';
+} from '@jengaui/form';
 
 import { RadioGroup } from './RadioGroup';
 import { useRadioProvider } from './context';

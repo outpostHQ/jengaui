@@ -21,8 +21,8 @@ import { useOverlayPosition } from '@react-aria/overlays';
 import {
   useFormProps,
   FieldWrapper
-} from '@jenga-ui/form';
-import { useProviderProps } from '@jenga-ui/providers';
+} from '@jengaui/form';
+import { useProviderProps } from '@jengaui/providers';
 import {
   BLOCK_STYLES,
   extractStyles,
@@ -34,13 +34,13 @@ import {
   mergeProps,
   modAttrs,
   useCombinedRefs
-} from '@jenga-ui/utils';
-import { JengaSelectBaseProps, ListBoxPopup } from '@jenga-ui/select';
+} from '@jengaui/utils';
+import { JengaSelectBaseProps, ListBoxPopup } from '@jengaui/select';
 import {
   DEFAULT_INPUT_STYLES,
   INPUT_WRAPPER_STYLES,
-} from '@jenga-ui/text-input';
-import { OverlayWrapper } from '@jenga-ui/overlays';
+} from '@jengaui/text-input';
+import { OverlayWrapper } from '@jengaui/overlays';
 
 import type {
   CollectionBase,

@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import THEMES from '@jenga-ui/core/src/themes';
+import THEMES from '@jengaui/core/src/themes';
 import {
   BaseProps,
   CONTAINER_STYLES,

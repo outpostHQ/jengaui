@@ -8,8 +8,8 @@ import { LabelContainer } from './LabelContainer';
 import { SliderWrapper } from './SliderWrapper';
 import { JengaBaseSliderProps } from './types';
 import { filterBaseProps } from 'tastycss';
-import { useProviderProps } from '@jenga-ui/providers';
-import { useCombinedRefs } from '@jenga-ui/utils';
+import { useProviderProps } from '@jengaui/providers';
+import { useCombinedRefs } from '@jengaui/utils';
 import { WithOutputs } from './SliderOutputs';
 
 const BaseSlider = forwardRef((props: JengaBaseSliderProps, ref) => {

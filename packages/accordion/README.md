@@ -1,13 +1,13 @@
-# @jenga-ui/accordion
+# @jengaui/accordion
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/accordion
+npm install @jengaui/accordion
 
 # with yarn
-yarn add @jenga-ui/accordion
+yarn add @jengaui/accordion
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

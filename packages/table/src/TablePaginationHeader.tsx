@@ -1,6 +1,6 @@
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
-import { Button } from '@jenga-ui/button';
-import { Flex } from '@jenga-ui/layout';
+import { Button } from '@jengaui/button';
+import { Flex } from '@jengaui/layout';
 import { useContext } from 'react';
 
 import { JengaTablePropsContext, Th, Tr } from './TableElementsBase';

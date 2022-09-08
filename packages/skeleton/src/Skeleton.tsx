@@ -1,5 +1,5 @@
-import { JengaPlaceholderProps, Placeholder } from '@jenga-ui/placeholder';
-import { JengaGridProps, Grid, Space, Flow } from '@jenga-ui/layout';
+import { JengaPlaceholderProps, Placeholder } from '@jengaui/placeholder';
+import { JengaGridProps, Grid, Space, Flow } from '@jengaui/layout';
 import { BaseProps, ContainerStyleProps } from 'tastycss';
 
 const LAYOUT_MAP = {

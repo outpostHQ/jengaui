@@ -1,13 +1,13 @@
-# @jenga-ui/textarea
+# @jengaui/textarea
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/textarea
+npm install @jengaui/textarea
 
 # with yarn
-yarn add @jenga-ui/textarea
+yarn add @jengaui/textarea
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

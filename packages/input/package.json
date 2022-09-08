@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/input",
-  "version": "2.0.0",
+  "name": "@jengaui/input",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Jenga-UI React input component",
   "keywords": [
@@ -32,7 +32,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
@@ -40,10 +40,10 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/number-input": "*",
-    "@jenga-ui/password-input": "*",
-    "@jenga-ui/text-input": "*",
-    "@jenga-ui/textarea": "*",
+    "@jengaui/number-input": "*",
+    "@jengaui/password-input": "*",
+    "@jengaui/text-input": "*",
+    "@jengaui/textarea": "*",
     "styled-components": "^5.3.0",
     "tastycss": "^0.8.6"
   },

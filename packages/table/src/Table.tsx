@@ -1,8 +1,8 @@
 import { useTable } from '@react-aria/table';
 import { useTableState } from '@react-stately/table';
 import { forwardRef, RefObject, useRef, useState } from 'react';
-import { useCombinedRefs } from '@jenga-ui/utils';
-import { useProviderProps } from '@jenga-ui/providers';
+import { useCombinedRefs } from '@jengaui/utils';
+import { useProviderProps } from '@jengaui/providers';
 import { BaseProps, filterBaseProps } from 'tastycss';
 
 import { TableBase, TableWrapper, Td, Tr } from './TableElementsBase';

@@ -1,9 +1,9 @@
 import { forwardRef } from 'react';
 import { DOMAttributes } from '@react-types/shared';
 import { BaseProps, tasty } from 'tastycss';
-import { Flex } from '@jenga-ui/layout';
-import { Block } from '@jenga-ui/core';
-import { useProviderProps } from '@jenga-ui/providers';
+import { Flex } from '@jengaui/layout';
+import { Block } from '@jengaui/core';
+import { useProviderProps } from '@jengaui/providers';
 const addPixels = (a: string, b: string) =>
   parseInt(a.replace(/px/, '')) + parseInt(b.replace(/px/, '')) + 'px';
 

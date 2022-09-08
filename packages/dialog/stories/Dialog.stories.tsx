@@ -9,7 +9,7 @@ import {
   Dialog,
   DialogTrigger,
 } from '../src/index';
-import { Button } from '@jenga-ui/button';
+import { Button } from '@jengaui/button';
 import {
   Content,
   Text,
@@ -17,7 +17,7 @@ import {
   Header,
   Paragraph,
   Title,
-} from '@jenga-ui/content';
+} from '@jengaui/content';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
 
 export default {

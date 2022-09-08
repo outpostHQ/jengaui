@@ -16,7 +16,7 @@ import {
   extractStyles,
   Styles,
 } from 'tastycss';
-import { mergeProps } from '@jenga-ui/utils';
+import { mergeProps } from '@jengaui/utils';
 
 import { StyledMenu, StyledMenuHeader } from './styled';
 import { MenuItem } from './MenuItem';

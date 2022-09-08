@@ -5,13 +5,13 @@ import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
 import {
   JengaTextInputBaseProps,
   TextInputBase,
-} from '@jenga-ui/text-input';
-import { useProviderProps } from '@jenga-ui/providers';
-import { Button } from '@jenga-ui/button';
+} from '@jengaui/text-input';
+import { useProviderProps } from '@jengaui/providers';
+import { Button } from '@jengaui/button';
 import {
   castNullableStringValue,
   WithNullableValue,
-} from '@jenga-ui/utils';
+} from '@jengaui/utils';
 
 function PasswordInput(props: WithNullableValue<JengaTextInputBaseProps>, ref) {
   props = castNullableStringValue(props);

@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/link",
-  "version": "2.0.0",
+  "name": "@jengaui/link",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Jenga-UI React link component",
   "keywords": [
@@ -30,14 +30,14 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jenga-ui/button": "*",
+    "@jengaui/button": "*",
     "@react-types/shared": "^3.10.1",
     "styled-components": "^5.3.0",
     "tastycss": "^0.8.6"

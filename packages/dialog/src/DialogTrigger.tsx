@@ -4,7 +4,7 @@ import { PressResponder } from '@react-aria/interactions';
 import { useMediaQuery } from '@react-spectrum/utils';
 import { useOverlayPosition, useOverlayTrigger } from '@react-aria/overlays';
 
-import { Modal, Popover, Tray } from '@jenga-ui/modal';
+import { Modal, Popover, Tray } from '@jengaui/modal';
 import { Styles } from 'tastycss';
 
 import { DialogContext } from './context';

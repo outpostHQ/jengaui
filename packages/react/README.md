@@ -1,13 +1,13 @@
-# @jenga-ui/react
+# @jengaui/react
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/react
+npm install @jengaui/react
 
 # with yarn
-yarn add @jenga-ui/react
+yarn add @jengaui/react
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

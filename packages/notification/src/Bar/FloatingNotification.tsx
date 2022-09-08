@@ -1,6 +1,6 @@
 import { Key, KeyboardEventHandler, memo, useRef } from 'react';
 
-import { useChainedCallback, useEvent, useTimer } from '@jenga-ui/hooks';
+import { useChainedCallback, useEvent, useTimer } from '@jengaui/hooks';
 import { tasty } from 'tastycss';
 import { JengaNotifyApiPropsWithID } from '../types';
 import { NotificationView } from '../NotificationView';

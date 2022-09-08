@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
   JengaBannerProps,
   Banner,
-} from '@jenga-ui/banner';
+} from '@jengaui/banner';
 
 let ID = 0;
 

@@ -10,7 +10,7 @@ import { useTooltip } from '@react-aria/tooltip';
 import styled from 'styled-components';
 import { DOMRefValue } from '@react-types/shared';
 
-import { getOverlayTransitionCSS, mergeProps } from '@jenga-ui/utils';
+import { getOverlayTransitionCSS, mergeProps } from '@jengaui/utils';
 import {
   BaseProps,
   CONTAINER_STYLES,

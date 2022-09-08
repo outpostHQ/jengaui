@@ -1,5 +1,5 @@
 import { Styles } from 'tastycss';
-import { Timer } from '@jenga-ui/hooks';
+import { Timer } from '@jengaui/hooks';
 import { BaseNotificationProps } from '../types';
 
 import type { JengaNotificationType } from '../types';

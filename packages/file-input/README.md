@@ -1,13 +1,13 @@
-# @jenga-ui/file-input
+# @jengaui/file-input
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/file-input
+npm install @jengaui/file-input
 
 # with yarn
-yarn add @jenga-ui/file-input
+yarn add @jengaui/file-input
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

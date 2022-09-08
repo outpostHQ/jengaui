@@ -1,7 +1,7 @@
 import { useDOMRef } from '@react-spectrum/utils';
 import { forwardRef, MouseEventHandler } from 'react';
 
-import { useProviderProps } from '@jenga-ui/providers';
+import { useProviderProps } from '@jengaui/providers';
 import {
   BaseProps,
   CONTAINER_STYLES,

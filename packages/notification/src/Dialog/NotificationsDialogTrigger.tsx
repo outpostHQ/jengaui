@@ -6,11 +6,11 @@ import {
   JengaDialogTriggerProps,
   Dialog,
   DialogTrigger,
-} from '@jenga-ui/dialog';
+} from '@jengaui/dialog';
 import { tasty } from 'tastycss';
-import { Flex } from '@jenga-ui/layout';
-import { Title } from '@jenga-ui/content';
-import { ClearSlots } from '@jenga-ui/utils';
+import { Flex } from '@jengaui/layout';
+import { Title } from '@jengaui/content';
+import { ClearSlots } from '@jengaui/utils';
 import { JengaNotifyApiPropsWithID } from '../types';
 import { useNotificationsObserver } from '../hooks';
 

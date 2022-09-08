@@ -1,13 +1,13 @@
-# @jenga-ui/active-zone
+# @jengaui/active-zone
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/active-zone
+npm install @jengaui/active-zone
 
 # with yarn
-yarn add @jenga-ui/active-zone
+yarn add @jengaui/active-zone
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

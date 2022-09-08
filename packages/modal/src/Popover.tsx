@@ -3,8 +3,8 @@ import { useModal, useOverlay } from '@react-aria/overlays';
 import { OverlayProps } from '@react-types/overlays';
 
 import { BaseProps, tasty } from 'tastycss';
-import { mergeProps } from '@jenga-ui/utils';
-import { PlacementAxis } from '@jenga-ui/form';
+import { mergeProps } from '@jengaui/utils';
+import { PlacementAxis } from '@jengaui/form';
 
 import { Overlay } from './Overlay';
 

@@ -8,10 +8,10 @@ Jenga-UI is a fast, reusable, composable, and accessible React components for yo
 
 ```sh
 # with npm
-npm install @jenga-ui/react
+npm install @jengaui/react
 
 # with yarn
-yarn add @jenga-ui/react
+yarn add @jengaui/react
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.
@@ -22,5 +22,5 @@ Jenga-UI is a project by [Outpost](https://outpost.run).
 
 Released under the MIT License.
 
-[package]: https://www.npmjs.com/package/@jenga-ui/core
-[package-badge]: https://img.shields.io/npm/v/@jenga-ui/core?style=flat-square
+[package]: https://www.npmjs.com/package/@jengaui/core
+[package-badge]: https://img.shields.io/npm/v/@jengaui/core?style=flat-square

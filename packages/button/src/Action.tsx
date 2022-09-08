@@ -5,9 +5,9 @@ import { AriaButtonProps } from '@react-types/button';
 import { useFocusableRef } from '@react-spectrum/utils';
 import { FocusableRef } from '@react-types/shared';
 
-import { UIKitContext } from '@jenga-ui/providers';
-import { mergeProps } from '@jenga-ui/utils';
-import { useFocus } from '@jenga-ui/utils';
+import { UIKitContext } from '@jengaui/providers';
+import { mergeProps } from '@jengaui/utils';
+import { useFocus } from '@jengaui/utils';
 import {
   BaseProps,
   BaseStyleProps,

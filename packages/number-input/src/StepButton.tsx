@@ -1,6 +1,6 @@
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 
-import { Button } from '@jenga-ui/button';
+import { Button } from '@jengaui/button';
 import { Styles } from 'tastycss';
 
 const STEP_BUTTON_STYLES: Styles = {

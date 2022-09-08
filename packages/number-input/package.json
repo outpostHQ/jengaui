@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/number-input",
-  "version": "2.0.0",
+  "name": "@jengaui/number-input",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Jenga-UI React number-input component",
   "keywords": [
@@ -30,7 +30,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
@@ -38,11 +38,11 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/button": "*",
-    "@jenga-ui/form": "*",
-    "@jenga-ui/providers": "*",
-    "@jenga-ui/text-input": "*",
-    "@jenga-ui/utils": "*",
+    "@jengaui/button": "*",
+    "@jengaui/form": "*",
+    "@jengaui/providers": "*",
+    "@jengaui/text-input": "*",
+    "@jengaui/utils": "*",
     "@react-aria/i18n": "^3.3.4",
     "@react-aria/numberfield": "^3.1.1",
     "@react-stately/numberfield": "^3.0.2",

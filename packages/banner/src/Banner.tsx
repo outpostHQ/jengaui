@@ -5,10 +5,10 @@ import {
   InfoOutlined,
 } from '@ant-design/icons';
 
-import { Action } from '@jenga-ui/button';
-import { Card, JengaCardProps } from '@jenga-ui/card';
-import { Block } from '@jenga-ui/core';
-import THEMES from '@jenga-ui/core/src/themes';
+import { Action } from '@jengaui/button';
+import { Card, JengaCardProps } from '@jengaui/card';
+import { Block } from '@jengaui/core';
+import THEMES from '@jengaui/core/src/themes';
 import { tasty } from 'tastycss';
 
 export interface JengaBannerProps extends JengaCardProps {

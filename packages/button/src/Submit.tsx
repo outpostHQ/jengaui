@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
-import { useProviderProps } from '@jenga-ui/providers';
-import { useFormProps } from '@jenga-ui/form';
+import { useProviderProps } from '@jengaui/providers';
+import { useFormProps } from '@jengaui/form';
 
 import { Button } from './Button';
 

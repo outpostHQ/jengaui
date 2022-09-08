@@ -8,16 +8,16 @@ import {
 } from 'react';
 import styled from 'styled-components';
 
-import { Block } from '@jenga-ui/core';
+import { Block } from '@jengaui/core';
 import {
   Space,
   JengaFlexProps,
   Flex,
   Flow,
-} from '@jenga-ui/layout';
-import { Button, JengaButtonProps } from '@jenga-ui/button';
+} from '@jengaui/layout';
+import { Button, JengaButtonProps } from '@jengaui/button';
 import { Styles, tasty } from 'tastycss';
-import { useLayoutEffect } from '@jenga-ui/utils';
+import { useLayoutEffect } from '@jengaui/utils';
 
 export interface JengaTabData {
   id: string | number;

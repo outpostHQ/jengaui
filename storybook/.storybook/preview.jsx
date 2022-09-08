@@ -1,5 +1,5 @@
 import React from 'react';
-import { Root } from '@jenga-ui/react';
+import { Root } from '@jengaui/react';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

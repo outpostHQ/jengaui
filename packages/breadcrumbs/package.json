@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/breadcrumbs",
-  "version": "2.0.0",
+  "name": "@jengaui/breadcrumbs",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Jenga-UI React tag component",
   "keywords": [
@@ -32,15 +32,15 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "typescript": "^4.5.4"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/providers": "*",
-    "@jenga-ui/utils": "*",
+    "@jengaui/providers": "*",
+    "@jengaui/utils": "*",
     "@react-aria/breadcrumbs": "^3.3.1",
     "@react-types/breadcrumbs": "^3.4.3",
     "tastycss": "^0.8.6",

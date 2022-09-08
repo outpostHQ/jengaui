@@ -1,10 +1,10 @@
 import { forwardRef } from 'react';
 import { mergeProps, useSliderThumb, VisuallyHidden } from 'react-aria';
-import { useCombinedRefs, useFocus } from '@jenga-ui/utils';
+import { useCombinedRefs, useFocus } from '@jengaui/utils';
 import { tasty } from 'tastycss';
 import { JengaSliderThumbProps } from './types';
-import { useProviderProps } from '@jenga-ui/providers';
-// import { Tooltip, TooltipProvider } from '@jenga-ui/tooltip';
+import { useProviderProps } from '@jengaui/providers';
+// import { Tooltip, TooltipProvider } from '@jengaui/tooltip';
 
 const ThumbBase = tasty({
   display: 'grid',

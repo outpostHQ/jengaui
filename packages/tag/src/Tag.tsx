@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
 
-import THEMES from '@jenga-ui/core/src/themes';
+import THEMES from '@jengaui/core/src/themes';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -11,8 +11,8 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import { Action } from '@jenga-ui/button';
-import { Suffix } from '@jenga-ui/layout';
+import { Action } from '@jengaui/button';
+import { Suffix } from '@jengaui/layout';
 
 const TagElement = tasty({
   qa: 'Tag',

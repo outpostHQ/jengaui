@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Accordion } from '@jenga-ui/accordion';
+import { Accordion } from '@jengaui/accordion';
 import {
   Avatar,
   Block,
@@ -18,7 +18,7 @@ import {
   Table,
   TableBody,
   TableHeader,
-} from '@jenga-ui/react';
+} from '@jengaui/react';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
