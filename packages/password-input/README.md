@@ -1,13 +1,13 @@
-# @jenga-ui/password-input
+# @jengaui/password-input
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/password-input
+npm install @jengaui/password-input
 
 # with yarn
-yarn add @jenga-ui/password-input
+yarn add @jengaui/password-input
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

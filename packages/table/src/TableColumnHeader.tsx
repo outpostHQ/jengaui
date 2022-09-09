@@ -1,7 +1,7 @@
-import { mergeProps, useFocus } from '@jenga-ui/utils';
+import { mergeProps, useFocus } from '@jengaui/utils';
 import { useRef } from 'react';
 import { useTableColumnHeader } from '@react-aria/table';
-import { Flex } from '@jenga-ui/layout';
+import { Flex } from '@jengaui/layout';
 
 import { Th } from './TableElementsBase';
 import { JengaTableColumnHeaderProps } from './types';

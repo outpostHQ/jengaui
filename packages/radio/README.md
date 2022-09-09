@@ -1,13 +1,13 @@
-# @jenga-ui/radio
+# @jengaui/radio
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/radio
+npm install @jengaui/radio
 
 # with yarn
-yarn add @jenga-ui/radio
+yarn add @jengaui/radio
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

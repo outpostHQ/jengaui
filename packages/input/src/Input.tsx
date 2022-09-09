@@ -1,10 +1,10 @@
 import { ForwardedRef, forwardRef } from 'react';
 
-import { TextInput } from '@jenga-ui/text-input';
-import { PasswordInput } from '@jenga-ui/password-input';
-import { NumberInput } from '@jenga-ui/number-input';
-import { FileInput } from '@jenga-ui/file-input';
-import { TextArea } from '@jenga-ui/textarea';
+import { TextInput } from '@jengaui/text-input';
+import { PasswordInput } from '@jengaui/password-input';
+import { NumberInput } from '@jengaui/number-input';
+import { FileInput } from '@jengaui/file-input';
+import { TextArea } from '@jengaui/textarea';
 
 type JengaInput = typeof TextInput & {
   Text: typeof TextInput;

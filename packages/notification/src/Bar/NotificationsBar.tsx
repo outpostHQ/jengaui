@@ -7,8 +7,8 @@ import { useFocusRing, focusSafely } from '@react-aria/focus';
 import { tasty } from 'tastycss';
 import { JengaNotifyApiPropsWithID } from '../types';
 import { useNotificationsList, CollectionChildren } from '../hooks';
-import { mergeProps } from '@jenga-ui/utils';
-import { useEvent } from '@jenga-ui/hooks';
+import { mergeProps } from '@jengaui/utils';
+import { useEvent } from '@jengaui/hooks';
 
 import { FloatingNotification } from './FloatingNotification';
 import { TransitionComponent } from './TransitionComponent';

@@ -1,13 +1,13 @@
-# @jenga-ui/checkbox
+# @jengaui/checkbox
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/checkbox
+npm install @jengaui/checkbox
 
 # with yarn
-yarn add @jenga-ui/checkbox
+yarn add @jengaui/checkbox
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

@@ -1,13 +1,13 @@
-# @jenga-ui/badge
+# @jengaui/badge
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/badge
+npm install @jengaui/badge
 
 # with yarn
-yarn add @jenga-ui/badge
+yarn add @jengaui/badge
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

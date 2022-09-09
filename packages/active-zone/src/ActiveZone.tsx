@@ -3,7 +3,7 @@ import { useHover } from '@react-aria/interactions';
 import { useFocusableRef } from '@react-spectrum/utils';
 import { FocusableOptions, useFocusable } from '@react-aria/focus';
 
-import { mergeProps, useFocus } from '@jenga-ui/utils';
+import { mergeProps, useFocus } from '@jengaui/utils';
 import {
   BaseProps,
   BaseStyleProps,

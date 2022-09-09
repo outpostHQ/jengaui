@@ -1,13 +1,13 @@
-# @jenga-ui/copy-snippet
+# @jengaui/copy-snippet
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/copy-snippet
+npm install @jengaui/copy-snippet
 
 # with yarn
-yarn add @jenga-ui/copy-snippet
+yarn add @jengaui/copy-snippet
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

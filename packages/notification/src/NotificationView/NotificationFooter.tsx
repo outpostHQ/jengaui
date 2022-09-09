@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { isElement } from 'react-is';
-import { flattenChildren } from '@jenga-ui/utils'
+import { flattenChildren } from '@jengaui/utils'
 import { JengaNotificationProps, NotificationActionComponent } from '../types';
 import { tasty } from 'tastycss';
-import { ButtonGroup } from '@jenga-ui/button-group';
+import { ButtonGroup } from '@jengaui/button-group';
 
 
 

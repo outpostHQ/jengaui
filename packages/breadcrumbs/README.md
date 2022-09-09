@@ -1,13 +1,13 @@
-# @jenga-ui/breadcrumbs
+# @jengaui/breadcrumbs
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/breadcrumbs
+npm install @jengaui/breadcrumbs
 
 # with yarn
-yarn add @jenga-ui/breadcrumbs
+yarn add @jengaui/breadcrumbs
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

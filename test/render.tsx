@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 
-import { Root } from '@jenga-ui/root';
+import { Root } from '@jengaui/root';
 
 export function renderWithRoot(
   ui: React.ReactElement,

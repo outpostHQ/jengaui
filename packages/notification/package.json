@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/notification",
-  "version": "2.0.0",
+  "name": "@jengaui/notification",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Responsive and accessible React UI components built with TastyCSS",
   "keywords": [
@@ -37,21 +37,21 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jenga-ui/button": "*",
-    "@jenga-ui/button-group": "*",
-    "@jenga-ui/content": "*",
-    "@jenga-ui/dialog": "*",
-    "@jenga-ui/hooks": "*",
-    "@jenga-ui/layout": "*",
-    "@jenga-ui/portal": "*",
-    "@jenga-ui/utils": "*",
+    "@jengaui/button": "*",
+    "@jengaui/button-group": "*",
+    "@jengaui/content": "*",
+    "@jengaui/dialog": "*",
+    "@jengaui/hooks": "*",
+    "@jengaui/layout": "*",
+    "@jengaui/portal": "*",
+    "@jengaui/utils": "*",
     "@react-aria/button": "^3.3.4",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/interactions": "^3.7.0",

@@ -9,7 +9,7 @@ import {
   parseStyle,
   tasty,
 } from 'tastycss';
-import { useCombinedRefs, useLayoutEffect } from '@jenga-ui/utils';
+import { useCombinedRefs, useLayoutEffect } from '@jengaui/utils';
 
 const PrefixElement = tasty({
   element: 'Prefix',

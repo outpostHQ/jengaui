@@ -5,14 +5,14 @@ import { useTextField } from '@react-aria/textfield';
 import {
   JengaTextInputBaseProps,
   TextInputBase,
-} from '@jenga-ui/text-input';
-import { useProviderProps } from '@jenga-ui/providers';
+} from '@jengaui/text-input';
+import { useProviderProps } from '@jengaui/providers';
 import {
   castNullableStringValue,
   WithNullableValue,
   chain,
   useLayoutEffect,
-} from '@jenga-ui/utils';
+} from '@jengaui/utils';
 
 export interface JengaTextAreaProps extends JengaTextInputBaseProps {
   /** Whether the textarea should change its size depends on content */

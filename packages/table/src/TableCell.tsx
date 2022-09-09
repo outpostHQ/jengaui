@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useTableCell } from '@react-aria/table';
-import { mergeProps, useFocus } from '@jenga-ui/utils';
+import { mergeProps, useFocus } from '@jengaui/utils';
 
 import { Td } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';

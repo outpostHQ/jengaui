@@ -1,13 +1,13 @@
-# @jenga-ui/portal
+# @jengaui/portal
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/portal
+npm install @jengaui/portal
 
 # with yarn
-yarn add @jenga-ui/portal
+yarn add @jengaui/portal
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

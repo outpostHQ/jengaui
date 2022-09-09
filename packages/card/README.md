@@ -1,13 +1,13 @@
-# @jenga-ui/card
+# @jengaui/card
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/card
+npm install @jengaui/card
 
 # with yarn
-yarn add @jenga-ui/card
+yarn add @jengaui/card
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

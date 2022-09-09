@@ -7,13 +7,13 @@ import {
   useCombinedRefs,
   castNullableStringValue,
   WithNullableValue,
-} from '@jenga-ui/utils';
+} from '@jengaui/utils';
 import {
   JengaTextInputBaseProps,
   TextInputBase,
-} from '@jenga-ui/text-input';
-import { useProviderProps } from '@jenga-ui/providers';
-import { Button, ariaToJengaButtonProps } from '@jenga-ui/button';
+} from '@jengaui/text-input';
+import { useProviderProps } from '@jengaui/providers';
+import { Button, ariaToJengaButtonProps } from '@jengaui/button';
 import { tasty } from 'tastycss';
 
 export interface JengaSearchInputProps extends JengaTextInputBaseProps {

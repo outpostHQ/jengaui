@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/button-group",
-  "version": "2.0.0",
+  "name": "@jengaui/button-group",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Jenga-UI React button-group component",
   "keywords": [
@@ -32,7 +32,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
@@ -40,8 +40,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/layout": "*",
-    "@jenga-ui/utils": "*",
+    "@jengaui/layout": "*",
+    "@jengaui/utils": "*",
     "styled-components": "^5.3.0",
     "tastycss": "^0.8.6"
   },

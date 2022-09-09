@@ -1,7 +1,7 @@
 import { forwardRef, ReactNode, useCallback, useEffect, useState } from 'react';
 
 import { filterBaseProps, Styles } from 'tastycss';
-import { useCombinedRefs } from '@jenga-ui/utils';
+import { useCombinedRefs } from '@jengaui/utils';
 import { tasty } from 'tastycss';
 
 const GridElement = tasty({
@@ -62,7 +62,7 @@ export const GridProvider = forwardRef(function GridProvider(
 
     let sensor;
 
-    import('@jenga-ui/utils')
+    import('@jengaui/utils')
       .then((module) => module.ResizeSensor)
       .then((ResizeSensor) => {
         sensor = new ResizeSensor(el, resizeCallback);

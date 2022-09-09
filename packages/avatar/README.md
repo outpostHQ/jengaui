@@ -1,13 +1,13 @@
-# @jenga-ui/avatar
+# @jengaui/avatar
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/avatar
+npm install @jengaui/avatar
 
 # with yarn
-yarn add @jenga-ui/avatar
+yarn add @jengaui/avatar
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

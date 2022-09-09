@@ -7,7 +7,7 @@ import {
   BlockStyleProps,
   DimensionStyleProps,
 } from 'tastycss';
-import { JengaDialogContainerProps } from '@jenga-ui/dialog';
+import { JengaDialogContainerProps } from '@jengaui/dialog';
 
 import { JengaAlertDialogProps } from './AlertDialog';
 

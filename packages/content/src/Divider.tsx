@@ -9,7 +9,7 @@ import {
   OuterStyleProps,
   tasty,
 } from 'tastycss';
-import { useSlotProps } from '@jenga-ui/utils';
+import { useSlotProps } from '@jengaui/utils';
 
 const DividerElement = tasty({
   styles: {

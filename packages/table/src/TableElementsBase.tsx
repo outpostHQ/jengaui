@@ -1,4 +1,4 @@
-import { JengaCheckboxProps } from '@jenga-ui/checkbox';
+import { JengaCheckboxProps } from '@jengaui/checkbox';
 import { createContext, forwardRef } from 'react';
 import { tasty, Element, Styles, AllBaseProps } from 'tastycss';
 

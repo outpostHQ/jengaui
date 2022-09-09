@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/copy-snippet",
-  "version": "2.0.0",
+  "name": "@jengaui/copy-snippet",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Jenga-UI React alert component",
   "keywords": [
@@ -30,7 +30,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
@@ -38,12 +38,12 @@
   },
   "dependencies": {
     "@ant-design/icons": "*",
-    "@jenga-ui/button": "*",
-    "@jenga-ui/card": "*",
-    "@jenga-ui/notification": "*",
-    "@jenga-ui/prism-code": "*",
-    "@jenga-ui/toast": "*",
-    "@jenga-ui/tooltip": "*",
+    "@jengaui/button": "*",
+    "@jengaui/card": "*",
+    "@jengaui/notification": "*",
+    "@jengaui/prism-code": "*",
+    "@jengaui/toast": "*",
+    "@jengaui/tooltip": "*",
     "clipboard-copy": "^4.0.1",
     "styled-components": "^5.3.0",
     "tastycss": "^0.8.6"

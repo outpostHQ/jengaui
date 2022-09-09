@@ -4,7 +4,7 @@ import { useCheckbox, useCheckboxGroupItem } from '@react-aria/checkbox';
 import { useHover } from '@react-aria/interactions';
 import { useToggleState } from '@react-stately/toggle';
 
-import { useProviderProps } from '@jenga-ui/providers';
+import { useProviderProps } from '@jengaui/providers';
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -20,7 +20,7 @@ import {
   mergeProps,
   castNullableIsSelected,
   WithNullableSelected,
-} from '@jenga-ui/utils';
+} from '@jengaui/utils';
 import {
   HiddenInput,
   useFormProps,
@@ -28,7 +28,7 @@ import {
   FormFieldProps,
   INLINE_LABEL_STYLES,
   LABEL_STYLES,
-} from '@jenga-ui/form';
+} from '@jengaui/form';
 
 import { CheckboxGroup } from './CheckboxGroup';
 import { CheckboxGroupContext } from './context';

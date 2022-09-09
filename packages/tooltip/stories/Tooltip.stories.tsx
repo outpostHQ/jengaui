@@ -2,7 +2,7 @@ import { Story, ComponentMeta } from '@storybook/react';
 import { within, userEvent, waitFor } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 
-import { Button } from '@jenga-ui/button';
+import { Button } from '@jengaui/button';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
 
 import { Tooltip } from '../src/Tooltip';

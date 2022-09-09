@@ -3,13 +3,13 @@ import { useDOMRef } from '@react-spectrum/utils';
 import { useCheckboxGroup } from '@react-aria/checkbox';
 import { useCheckboxGroupState } from '@react-stately/checkbox';
 
-import { useProviderProps } from '@jenga-ui/providers';
+import { useProviderProps } from '@jengaui/providers';
 import {
   FormContext,
   useFormProps,
   FieldWrapper,
   FormFieldProps
-} from '@jenga-ui/form';
+} from '@jengaui/form';
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -20,7 +20,7 @@ import {
 import {
   castNullableArrayValue,
   WithNullableValue,
-} from '@jenga-ui/utils';
+} from '@jengaui/utils';
 
 import { CheckboxGroupContext } from './context';
 

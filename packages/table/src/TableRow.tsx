@@ -1,4 +1,4 @@
-import { mergeProps, useFocus } from '@jenga-ui/utils';
+import { mergeProps, useFocus } from '@jengaui/utils';
 import { useContext, useRef } from 'react';
 import { useTableRow } from '@react-aria/table';
 

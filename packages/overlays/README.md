@@ -1,13 +1,13 @@
-# @jenga-ui/overlays
+# @jengaui/overlays
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/overlays
+npm install @jengaui/overlays
 
 # with yarn
-yarn add @jenga-ui/overlays
+yarn add @jengaui/overlays
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

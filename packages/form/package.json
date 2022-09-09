@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/form",
-  "version": "2.0.0",
+  "name": "@jengaui/form",
+  "version": "0.1.0",
   "description": "Jenga-UI React form component",
   "keywords": [
     "form",
@@ -33,7 +33,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
@@ -41,11 +41,11 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/content": "*",
-    "@jenga-ui/layout": "*",
-    "@jenga-ui/providers": "*",
-    "@jenga-ui/tooltip": "*",
-    "@jenga-ui/utils": "*",
+    "@jengaui/content": "*",
+    "@jengaui/layout": "*",
+    "@jengaui/providers": "*",
+    "@jengaui/tooltip": "*",
+    "@jengaui/utils": "*",
     "@react-spectrum/utils": "^3.6.3",
     "@react-stately/collections": "^3.3.4",
     "@react-types/shared": "^3.10.1",

@@ -1,13 +1,13 @@
-# @jenga-ui/root
+# @jengaui/root
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/root
+npm install @jengaui/root
 
 # with yarn
-yarn add @jenga-ui/root
+yarn add @jengaui/root
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

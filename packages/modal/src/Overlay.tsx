@@ -1,7 +1,7 @@
 import { forwardRef, useCallback, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import { Provider, useProviderProps } from '@jenga-ui/providers';
+import { Provider, useProviderProps } from '@jengaui/providers';
 import { Props } from 'tastycss';
 
 import { OpenTransition } from './OpenTransition';

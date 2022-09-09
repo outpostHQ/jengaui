@@ -1,13 +1,13 @@
-# @jenga-ui/skeleton
+# @jengaui/skeleton
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/skeleton
+npm install @jengaui/skeleton
 
 # with yarn
-yarn add @jenga-ui/skeleton
+yarn add @jengaui/skeleton
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

@@ -1,4 +1,4 @@
-import { TooltipTrigger, Tooltip } from '@jenga-ui/tooltip';
+import { TooltipTrigger, Tooltip } from '@jengaui/tooltip';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
 
 import { ActiveZone } from '../src/ActiveZone';

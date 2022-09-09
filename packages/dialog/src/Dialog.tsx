@@ -19,8 +19,8 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import { mergeProps, SlotProvider } from '@jenga-ui/utils';
-import { Button } from '@jenga-ui/button';
+import { mergeProps, SlotProvider } from '@jengaui/utils';
+import { Button } from '@jengaui/button';
 
 import { useDialogContext } from './context';
 

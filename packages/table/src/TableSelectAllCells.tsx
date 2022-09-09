@@ -1,4 +1,4 @@
-import { Checkbox } from '@jenga-ui/checkbox';
+import { Checkbox } from '@jengaui/checkbox';
 import {
   useTableColumnHeader,
   useTableSelectAllCheckbox,

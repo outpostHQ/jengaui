@@ -10,13 +10,13 @@ import {
   filterBaseProps,
   tasty,
 } from 'tastycss';
-import { Provider } from '@jenga-ui/providers';
-import { TOKENS } from '@jenga-ui/core/src/tokens';
+import { Provider } from '@jengaui/providers';
+import { TOKENS } from '@jengaui/core/src/tokens';
 
-import { PortalProvider } from '@jenga-ui/portal';
-import { GlobalStyles } from '@jenga-ui/core';
-import { AlertDialogApiProvider } from '@jenga-ui/alert-dialog';
-import { NotificationsProvider } from '@jenga-ui/notification';
+import { PortalProvider } from '@jengaui/portal';
+import { GlobalStyles } from '@jengaui/core';
+import { AlertDialogApiProvider } from '@jengaui/alert-dialog';
+import { NotificationsProvider } from '@jengaui/notification';
 
 const RootElement = tasty({
   id: 'jenga-ui-kit-root',

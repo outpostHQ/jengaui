@@ -1,6 +1,6 @@
 import { AriaButtonProps } from '@react-types/button';
 
-import { JengaButtonProps } from '@jenga-ui/button';
+import { JengaButtonProps } from '@jengaui/button';
 
 /** Converts AriaButtonProps to JengaButtonProps */
 export function ariaToJengaButtonProps(

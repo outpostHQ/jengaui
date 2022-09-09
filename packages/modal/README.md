@@ -1,13 +1,13 @@
-# @jenga-ui/modal
+# @jengaui/modal
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/modal
+npm install @jengaui/modal
 
 # with yarn
-yarn add @jenga-ui/modal
+yarn add @jengaui/modal
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

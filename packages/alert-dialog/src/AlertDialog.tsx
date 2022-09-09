@@ -1,9 +1,9 @@
 import { forwardRef, ReactNode } from 'react';
 
-import { Button, JengaButtonProps } from '@jenga-ui/button';
-import { ButtonGroup } from '@jenga-ui/button-group';
-import { JengaDialogProps, Dialog, useDialogContext } from '@jenga-ui/dialog';
-import { Title, Header, Paragraph, Content, Footer } from '@jenga-ui/content';
+import { Button, JengaButtonProps } from '@jengaui/button';
+import { ButtonGroup } from '@jengaui/button-group';
+import { JengaDialogProps, Dialog, useDialogContext } from '@jengaui/dialog';
+import { Title, Header, Paragraph, Content, Footer } from '@jengaui/content';
 import { chain } from '@react-aria/utils';
 
 export interface JengaAlertDialogActionsProps {

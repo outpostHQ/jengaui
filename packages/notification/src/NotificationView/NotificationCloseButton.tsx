@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { Button } from '@jenga-ui/button';
+import { Button } from '@jengaui/button';
 import { tasty } from 'tastycss';
 import { Cross } from '../icons';
 

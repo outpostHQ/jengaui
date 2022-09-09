@@ -6,7 +6,7 @@ import {
   WarningFilled,
 } from '@ant-design/icons';
 
-import { Title } from '@jenga-ui/content';
+import { Title } from '@jengaui/content';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -15,7 +15,7 @@ import {
   filterBaseProps,
   tasty,
 } from 'tastycss';
-import { wrapNodeIfPlain } from '@jenga-ui/utils';
+import { wrapNodeIfPlain } from '@jengaui/utils';
 
 export interface JengaResultProps extends BaseProps, ContainerStyleProps {
   /** Additional block content. For example, a set of buttons */

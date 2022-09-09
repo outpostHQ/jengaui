@@ -32,8 +32,8 @@ import {
   useFormProps,
   FieldWrapper,
   FormFieldProps,
-} from '@jenga-ui/form';
-import { useProviderProps } from '@jenga-ui/providers';
+} from '@jengaui/form';
+import { useProviderProps } from '@jengaui/providers';
 import {
   BasePropsWithoutChildren,
   BLOCK_STYLES,
@@ -50,13 +50,13 @@ import {
   getOverlayTransitionCSS,
   mergeProps,
   useCombinedRefs,
-} from '@jenga-ui/utils';
-import { OverlayWrapper } from '@jenga-ui/overlays';
+} from '@jengaui/utils';
+import { OverlayWrapper } from '@jengaui/overlays';
 import {
   DEFAULT_INPUT_STYLES,
   INPUT_WRAPPER_STYLES,
-} from '@jenga-ui/text-input';
-import { JengaButtonProps, provideButtonStyles } from '@jenga-ui/button';
+} from '@jengaui/text-input';
+import { JengaButtonProps, provideButtonStyles } from '@jengaui/button';
 
 import type { AriaSelectProps } from '@react-types/select';
 

@@ -1,13 +1,13 @@
-# @jenga-ui/tooltip
+# @jengaui/tooltip
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/tooltip
+npm install @jengaui/tooltip
 
 # with yarn
-yarn add @jenga-ui/tooltip
+yarn add @jengaui/tooltip
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

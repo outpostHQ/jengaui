@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/menu",
-  "version": "2.0.0",
+  "name": "@jengaui/menu",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Jenga-UI React link component",
   "keywords": [
@@ -30,7 +30,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
@@ -38,11 +38,11 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/button": "*",
-    "@jenga-ui/content": "*",
-    "@jenga-ui/layout": "*",
-    "@jenga-ui/modal": "*",
-    "@jenga-ui/utils": "*",
+    "@jengaui/button": "*",
+    "@jengaui/content": "*",
+    "@jengaui/layout": "*",
+    "@jengaui/modal": "*",
+    "@jengaui/utils": "*",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/interactions": "^3.7.0",
     "@react-aria/menu": "^3.4.3",

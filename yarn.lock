@@ -3566,15 +3566,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenga-ui/accordion@*, @jenga-ui/accordion@workspace:packages/accordion":
+"@jengaui/accordion@*, @jengaui/accordion@workspace:packages/accordion":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/accordion@workspace:packages/accordion"
+  resolution: "@jengaui/accordion@workspace:packages/accordion"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/content": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/content": "*"
+    "@jengaui/core": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/tsconfig": "*"
     "@react-aria/focus": ^3.5.0
     "@react-aria/interactions": ^3.7.0
     "@types/react": ^17.0.38
@@ -3589,12 +3589,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/active-zone@*, @jenga-ui/active-zone@workspace:packages/active-zone":
+"@jengaui/active-zone@*, @jengaui/active-zone@workspace:packages/active-zone":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/active-zone@workspace:packages/active-zone"
+  resolution: "@jengaui/active-zone@workspace:packages/active-zone"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/tsconfig": "*"
     "@react-aria/focus": ^3.5.0
     "@react-aria/interactions": ^3.7.0
     "@react-spectrum/utils": ^3.6.3
@@ -3610,17 +3610,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/alert-dialog@*, @jenga-ui/alert-dialog@workspace:packages/alert-dialog":
+"@jengaui/alert-dialog@*, @jengaui/alert-dialog@workspace:packages/alert-dialog":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/alert-dialog@workspace:packages/alert-dialog"
+  resolution: "@jengaui/alert-dialog@workspace:packages/alert-dialog"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/button-group": "*"
-    "@jenga-ui/content": "*"
-    "@jenga-ui/dialog": "*"
-    "@jenga-ui/portal": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/button": "*"
+    "@jengaui/button-group": "*"
+    "@jengaui/content": "*"
+    "@jengaui/dialog": "*"
+    "@jengaui/portal": "*"
+    "@jengaui/tsconfig": "*"
     "@react-aria/utils": ^3.11.0
     "@react-types/dialog": ^3.3.4
     "@types/react": ^17.0.38
@@ -3636,13 +3636,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/alert@*, @jenga-ui/alert@workspace:packages/alert":
+"@jengaui/alert@*, @jengaui/alert@workspace:packages/alert":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/alert@workspace:packages/alert"
+  resolution: "@jengaui/alert@workspace:packages/alert"
   dependencies:
-    "@jenga-ui/core": "*"
-    "@jenga-ui/hooks": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/core": "*"
+    "@jengaui/hooks": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -3655,12 +3655,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/avatar@*, @jenga-ui/avatar@workspace:packages/avatar":
+"@jengaui/avatar@*, @jengaui/avatar@workspace:packages/avatar":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/avatar@workspace:packages/avatar"
+  resolution: "@jengaui/avatar@workspace:packages/avatar"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -3673,13 +3673,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/badge@*, @jenga-ui/badge@workspace:packages/badge":
+"@jengaui/badge@*, @jengaui/badge@workspace:packages/badge":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/badge@workspace:packages/badge"
+  resolution: "@jengaui/badge@workspace:packages/badge"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/core": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/core": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -3692,15 +3692,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/banner@*, @jenga-ui/banner@workspace:packages/banner":
+"@jengaui/banner@*, @jengaui/banner@workspace:packages/banner":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/banner@workspace:packages/banner"
+  resolution: "@jengaui/banner@workspace:packages/banner"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/card": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/button": "*"
+    "@jengaui/card": "*"
+    "@jengaui/core": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -3713,14 +3713,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/breadcrumbs@*, @jenga-ui/breadcrumbs@workspace:packages/breadcrumbs":
+"@jengaui/breadcrumbs@*, @jengaui/breadcrumbs@workspace:packages/breadcrumbs":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/breadcrumbs@workspace:packages/breadcrumbs"
+  resolution: "@jengaui/breadcrumbs@workspace:packages/breadcrumbs"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/breadcrumbs": ^3.3.1
     "@react-types/breadcrumbs": ^3.4.3
     "@types/react": ^17.0.38
@@ -3734,14 +3734,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/button-group@*, @jenga-ui/button-group@workspace:packages/button-group":
+"@jengaui/button-group@*, @jengaui/button-group@workspace:packages/button-group":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/button-group@workspace:packages/button-group"
+  resolution: "@jengaui/button-group@workspace:packages/button-group"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -3754,15 +3754,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/button@*, @jenga-ui/button@workspace:packages/button":
+"@jengaui/button@*, @jengaui/button@workspace:packages/button":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/button@workspace:packages/button"
+  resolution: "@jengaui/button@workspace:packages/button"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/form": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/form": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/button": ^3.3.4
     "@react-aria/interactions": ^3.7.0
     "@react-spectrum/utils": ^3.6.3
@@ -3781,11 +3781,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/card@*, @jenga-ui/card@workspace:packages/card":
+"@jengaui/card@*, @jengaui/card@workspace:packages/card":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/card@workspace:packages/card"
+  resolution: "@jengaui/card@workspace:packages/card"
   dependencies:
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -3798,15 +3798,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/checkbox@*, @jenga-ui/checkbox@workspace:packages/checkbox":
+"@jengaui/checkbox@*, @jengaui/checkbox@workspace:packages/checkbox":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/checkbox@workspace:packages/checkbox"
+  resolution: "@jengaui/checkbox@workspace:packages/checkbox"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/form": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/form": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/checkbox": ^3.3.1
     "@react-aria/interactions": ^3.7.0
     "@react-spectrum/utils": ^3.6.3
@@ -3826,18 +3826,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/combo-box@*, @jenga-ui/combo-box@workspace:packages/combo-box":
+"@jengaui/combo-box@*, @jengaui/combo-box@workspace:packages/combo-box":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/combo-box@workspace:packages/combo-box"
+  resolution: "@jengaui/combo-box@workspace:packages/combo-box"
   dependencies:
-    "@jenga-ui/form": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/overlays": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/select": "*"
-    "@jenga-ui/text-input": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/form": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/overlays": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/select": "*"
+    "@jengaui/text-input": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/button": ^3.3.4
     "@react-aria/combobox": ^3.2.1
     "@react-aria/i18n": ^3.3.4
@@ -3860,12 +3860,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/content@*, @jenga-ui/content@workspace:packages/content":
+"@jengaui/content@*, @jengaui/content@workspace:packages/content":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/content@workspace:packages/content"
+  resolution: "@jengaui/content@workspace:packages/content"
   dependencies:
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -3878,18 +3878,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/copy-snippet@*, @jenga-ui/copy-snippet@workspace:packages/copy-snippet":
+"@jengaui/copy-snippet@*, @jengaui/copy-snippet@workspace:packages/copy-snippet":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/copy-snippet@workspace:packages/copy-snippet"
+  resolution: "@jengaui/copy-snippet@workspace:packages/copy-snippet"
   dependencies:
     "@ant-design/icons": "*"
-    "@jenga-ui/button": "*"
-    "@jenga-ui/card": "*"
-    "@jenga-ui/notification": "*"
-    "@jenga-ui/prism-code": "*"
-    "@jenga-ui/toast": "*"
-    "@jenga-ui/tooltip": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/button": "*"
+    "@jengaui/card": "*"
+    "@jengaui/notification": "*"
+    "@jengaui/prism-code": "*"
+    "@jengaui/toast": "*"
+    "@jengaui/tooltip": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     clipboard-copy: ^4.0.1
@@ -3903,14 +3903,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/core@*, @jenga-ui/core@workspace:packages/core":
+"@jengaui/core@*, @jengaui/core@workspace:packages/core":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/core@workspace:packages/core"
+  resolution: "@jengaui/core@workspace:packages/core"
   dependencies:
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
-    node-abort-controller: ^3.0.1
     react-transition-group: ^4.4.2
     styled-components: ^5.3.0
     tastycss: ^0.8.6
@@ -3922,18 +3921,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/dialog@*, @jenga-ui/dialog@workspace:packages/dialog":
+"@jengaui/dialog@*, @jengaui/dialog@workspace:packages/dialog":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/dialog@workspace:packages/dialog"
+  resolution: "@jengaui/dialog@workspace:packages/dialog"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/button-group": "*"
-    "@jenga-ui/content": "*"
-    "@jenga-ui/form": "*"
-    "@jenga-ui/modal": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/button": "*"
+    "@jengaui/button-group": "*"
+    "@jengaui/content": "*"
+    "@jengaui/form": "*"
+    "@jengaui/modal": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/dialog": ^3.1.4
     "@react-aria/focus": ^3.5.0
     "@react-aria/i18n": ^3.3.4
@@ -3956,14 +3955,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/file-input@*, @jenga-ui/file-input@workspace:packages/file-input":
+"@jengaui/file-input@*, @jengaui/file-input@workspace:packages/file-input":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/file-input@workspace:packages/file-input"
+  resolution: "@jengaui/file-input@workspace:packages/file-input"
   dependencies:
-    "@jenga-ui/button": "*"
-    "@jenga-ui/form": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/button": "*"
+    "@jengaui/form": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
     "@react-spectrum/utils": ^3.6.3
     "@react-types/textfield": ^3.3.0
     "@types/react": ^17.0.38
@@ -3978,17 +3977,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/form@*, @jenga-ui/form@workspace:packages/form":
+"@jengaui/form@*, @jengaui/form@workspace:packages/form":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/form@workspace:packages/form"
+  resolution: "@jengaui/form@workspace:packages/form"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/content": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tooltip": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/content": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tooltip": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-spectrum/utils": ^3.6.3
     "@react-stately/collections": ^3.3.4
     "@react-types/shared": ^3.10.1
@@ -4006,15 +4005,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/hooks@*, @jenga-ui/hooks@workspace:packages/hooks":
+"@jengaui/hooks@*, @jengaui/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/hooks@workspace:packages/hooks"
+  resolution: "@jengaui/hooks@workspace:packages/hooks"
   dependencies:
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
-    node-abort-controller: ^3.0.1
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4023,16 +4021,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/input@*, @jenga-ui/input@workspace:packages/input":
+"@jengaui/input@*, @jengaui/input@workspace:packages/input":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/input@workspace:packages/input"
+  resolution: "@jengaui/input@workspace:packages/input"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/number-input": "*"
-    "@jenga-ui/password-input": "*"
-    "@jenga-ui/text-input": "*"
-    "@jenga-ui/textarea": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/number-input": "*"
+    "@jengaui/password-input": "*"
+    "@jengaui/text-input": "*"
+    "@jengaui/textarea": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -4045,12 +4043,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/layout@*, @jenga-ui/layout@workspace:packages/layout":
+"@jengaui/layout@*, @jengaui/layout@workspace:packages/layout":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/layout@workspace:packages/layout"
+  resolution: "@jengaui/layout@workspace:packages/layout"
   dependencies:
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -4063,12 +4061,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/link@*, @jenga-ui/link@workspace:packages/link":
+"@jengaui/link@*, @jengaui/link@workspace:packages/link":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/link@workspace:packages/link"
+  resolution: "@jengaui/link@workspace:packages/link"
   dependencies:
-    "@jenga-ui/button": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/button": "*"
+    "@jengaui/tsconfig": "*"
     "@react-types/shared": ^3.10.1
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -4082,17 +4080,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/menu@*, @jenga-ui/menu@workspace:packages/menu":
+"@jengaui/menu@*, @jengaui/menu@workspace:packages/menu":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/menu@workspace:packages/menu"
+  resolution: "@jengaui/menu@workspace:packages/menu"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/content": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/modal": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/button": "*"
+    "@jengaui/content": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/modal": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/focus": ^3.5.0
     "@react-aria/interactions": ^3.7.0
     "@react-aria/menu": ^3.4.3
@@ -4117,15 +4115,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/modal@*, @jenga-ui/modal@workspace:packages/modal":
+"@jengaui/modal@*, @jengaui/modal@workspace:packages/modal":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/modal@workspace:packages/modal"
+  resolution: "@jengaui/modal@workspace:packages/modal"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/form": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/form": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/overlays": ^3.7.5
     "@react-aria/utils": ^3.11.0
     "@react-spectrum/utils": ^3.6.3
@@ -4143,19 +4141,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/notification@*, @jenga-ui/notification@workspace:packages/notification":
+"@jengaui/notification@*, @jengaui/notification@workspace:packages/notification":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/notification@workspace:packages/notification"
+  resolution: "@jengaui/notification@workspace:packages/notification"
   dependencies:
-    "@jenga-ui/button": "*"
-    "@jenga-ui/button-group": "*"
-    "@jenga-ui/content": "*"
-    "@jenga-ui/dialog": "*"
-    "@jenga-ui/hooks": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/portal": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/button": "*"
+    "@jengaui/button-group": "*"
+    "@jengaui/content": "*"
+    "@jengaui/dialog": "*"
+    "@jengaui/hooks": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/portal": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/button": ^3.3.4
     "@react-aria/focus": ^3.5.0
     "@react-aria/interactions": ^3.7.0
@@ -4181,17 +4179,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/number-input@*, @jenga-ui/number-input@workspace:packages/number-input":
+"@jengaui/number-input@*, @jengaui/number-input@workspace:packages/number-input":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/number-input@workspace:packages/number-input"
+  resolution: "@jengaui/number-input@workspace:packages/number-input"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/form": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/text-input": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/button": "*"
+    "@jengaui/form": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/text-input": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/i18n": ^3.3.4
     "@react-aria/numberfield": ^3.1.1
     "@react-stately/numberfield": ^3.0.2
@@ -4208,13 +4206,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/overlays@*, @jenga-ui/overlays@workspace:packages/overlays":
+"@jengaui/overlays@*, @jengaui/overlays@workspace:packages/overlays":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/overlays@workspace:packages/overlays"
+  resolution: "@jengaui/overlays@workspace:packages/overlays"
   dependencies:
-    "@jenga-ui/portal": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/portal": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     react-transition-group: ^4.4.2
@@ -4228,16 +4226,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/password-input@*, @jenga-ui/password-input@workspace:packages/password-input":
+"@jengaui/password-input@*, @jengaui/password-input@workspace:packages/password-input":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/password-input@workspace:packages/password-input"
+  resolution: "@jengaui/password-input@workspace:packages/password-input"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/text-input": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/button": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/text-input": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/textfield": ^3.5.0
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -4251,11 +4249,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/placeholder@*, @jenga-ui/placeholder@workspace:packages/placeholder":
+"@jengaui/placeholder@*, @jengaui/placeholder@workspace:packages/placeholder":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/placeholder@workspace:packages/placeholder"
+  resolution: "@jengaui/placeholder@workspace:packages/placeholder"
   dependencies:
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -4268,12 +4266,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/portal@*, @jenga-ui/portal@workspace:packages/portal":
+"@jengaui/portal@*, @jengaui/portal@workspace:packages/portal":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/portal@workspace:packages/portal"
+  resolution: "@jengaui/portal@workspace:packages/portal"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -4287,11 +4285,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/prism-code@*, @jenga-ui/prism-code@workspace:packages/prism-code":
+"@jengaui/prism-code@*, @jengaui/prism-code@workspace:packages/prism-code":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/prism-code@workspace:packages/prism-code"
+  resolution: "@jengaui/prism-code@workspace:packages/prism-code"
   dependencies:
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     prismjs: ^1.25.0
@@ -4305,12 +4303,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/providers@*, @jenga-ui/providers@workspace:packages/providers":
+"@jengaui/providers@*, @jengaui/providers@workspace:packages/providers":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/providers@workspace:packages/providers"
+  resolution: "@jengaui/providers@workspace:packages/providers"
   dependencies:
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -4323,15 +4321,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/radio@*, @jenga-ui/radio@workspace:packages/radio":
+"@jengaui/radio@*, @jengaui/radio@workspace:packages/radio":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/radio@workspace:packages/radio"
+  resolution: "@jengaui/radio@workspace:packages/radio"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/form": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/form": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/interactions": ^3.7.0
     "@react-aria/radio": ^3.1.6
     "@react-spectrum/utils": ^3.6.3
@@ -4349,12 +4347,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/react-storybook@workspace:storybook":
+"@jengaui/react-storybook@workspace:storybook":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/react-storybook@workspace:storybook"
+  resolution: "@jengaui/react-storybook@workspace:storybook"
   dependencies:
-    "@jenga-ui/react": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/react": "*"
+    "@jengaui/tsconfig": "*"
     "@storybook/addon-actions": ^6.5.10
     "@storybook/addon-docs": ^6.5.10
     "@storybook/addon-essentials": ^6.5.10
@@ -4375,68 +4373,67 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/react@*, @jenga-ui/react@workspace:packages/react":
+"@jengaui/react@*, @jengaui/react@workspace:packages/react":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/react@workspace:packages/react"
+  resolution: "@jengaui/react@workspace:packages/react"
   dependencies:
-    "@jenga-ui/accordion": "*"
-    "@jenga-ui/active-zone": "*"
-    "@jenga-ui/alert": "*"
-    "@jenga-ui/alert-dialog": "*"
-    "@jenga-ui/avatar": "*"
-    "@jenga-ui/badge": "*"
-    "@jenga-ui/banner": "*"
-    "@jenga-ui/breadcrumbs": "*"
-    "@jenga-ui/button": "*"
-    "@jenga-ui/button-group": "*"
-    "@jenga-ui/card": "*"
-    "@jenga-ui/checkbox": "*"
-    "@jenga-ui/combo-box": "*"
-    "@jenga-ui/content": "*"
-    "@jenga-ui/copy-snippet": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/dialog": "*"
-    "@jenga-ui/file-input": "*"
-    "@jenga-ui/form": "*"
-    "@jenga-ui/hooks": "*"
-    "@jenga-ui/input": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/link": "*"
-    "@jenga-ui/menu": "*"
-    "@jenga-ui/modal": "*"
-    "@jenga-ui/notification": "*"
-    "@jenga-ui/number-input": "*"
-    "@jenga-ui/overlays": "*"
-    "@jenga-ui/password-input": "*"
-    "@jenga-ui/placeholder": "*"
-    "@jenga-ui/portal": "*"
-    "@jenga-ui/prism-code": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/radio": "*"
-    "@jenga-ui/result": "*"
-    "@jenga-ui/root": "*"
-    "@jenga-ui/search-input": "*"
-    "@jenga-ui/select": "*"
-    "@jenga-ui/services": "*"
-    "@jenga-ui/skeleton": "*"
-    "@jenga-ui/slider": "*"
-    "@jenga-ui/switch": "*"
-    "@jenga-ui/table": "*"
-    "@jenga-ui/tabs": "*"
-    "@jenga-ui/tag": "*"
-    "@jenga-ui/text-input": "*"
-    "@jenga-ui/textarea": "*"
-    "@jenga-ui/toast": "*"
-    "@jenga-ui/tooltip": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/accordion": "*"
+    "@jengaui/active-zone": "*"
+    "@jengaui/alert": "*"
+    "@jengaui/alert-dialog": "*"
+    "@jengaui/avatar": "*"
+    "@jengaui/badge": "*"
+    "@jengaui/banner": "*"
+    "@jengaui/breadcrumbs": "*"
+    "@jengaui/button": "*"
+    "@jengaui/button-group": "*"
+    "@jengaui/card": "*"
+    "@jengaui/checkbox": "*"
+    "@jengaui/combo-box": "*"
+    "@jengaui/content": "*"
+    "@jengaui/copy-snippet": "*"
+    "@jengaui/core": "*"
+    "@jengaui/dialog": "*"
+    "@jengaui/file-input": "*"
+    "@jengaui/form": "*"
+    "@jengaui/hooks": "*"
+    "@jengaui/input": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/link": "*"
+    "@jengaui/menu": "*"
+    "@jengaui/modal": "*"
+    "@jengaui/notification": "*"
+    "@jengaui/number-input": "*"
+    "@jengaui/overlays": "*"
+    "@jengaui/password-input": "*"
+    "@jengaui/placeholder": "*"
+    "@jengaui/portal": "*"
+    "@jengaui/prism-code": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/radio": "*"
+    "@jengaui/result": "*"
+    "@jengaui/root": "*"
+    "@jengaui/search-input": "*"
+    "@jengaui/select": "*"
+    "@jengaui/services": "*"
+    "@jengaui/skeleton": "*"
+    "@jengaui/slider": "*"
+    "@jengaui/switch": "*"
+    "@jengaui/table": "*"
+    "@jengaui/tabs": "*"
+    "@jengaui/tag": "*"
+    "@jengaui/text-input": "*"
+    "@jengaui/textarea": "*"
+    "@jengaui/toast": "*"
+    "@jengaui/tooltip": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/overlays": ^3.7.5
     "@react-aria/ssr": ^3.2.0
     "@react-stately/collections": ^3.3.4
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     clipboard-copy: ^4.0.1
-    node-abort-controller: ^3.0.1
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4445,14 +4442,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/result@*, @jenga-ui/result@workspace:packages/result":
+"@jengaui/result@*, @jengaui/result@workspace:packages/result":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/result@workspace:packages/result"
+  resolution: "@jengaui/result@workspace:packages/result"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/content": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/content": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -4465,21 +4462,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/root@*, @jenga-ui/root@workspace:packages/root":
+"@jengaui/root@*, @jengaui/root@workspace:packages/root":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/root@workspace:packages/root"
+  resolution: "@jengaui/root@workspace:packages/root"
   dependencies:
-    "@jenga-ui/alert-dialog": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/notification": "*"
-    "@jenga-ui/portal": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/alert-dialog": "*"
+    "@jengaui/core": "*"
+    "@jengaui/notification": "*"
+    "@jengaui/portal": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/overlays": ^3.7.5
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
-    node-abort-controller: ^3.0.1
     styled-components: ^5.3.0
     tastycss: ^0.8.6
     tsup: ^6.2.3
@@ -4490,16 +4486,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/search-input@*, @jenga-ui/search-input@workspace:packages/search-input":
+"@jengaui/search-input@*, @jengaui/search-input@workspace:packages/search-input":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/search-input@workspace:packages/search-input"
+  resolution: "@jengaui/search-input@workspace:packages/search-input"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/text-input": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/button": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/text-input": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/searchfield": ^3.2.2
     "@react-stately/searchfield": ^3.1.3
     "@types/react": ^17.0.38
@@ -4514,16 +4510,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/select@*, @jenga-ui/select@workspace:packages/select":
+"@jengaui/select@*, @jengaui/select@workspace:packages/select":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/select@workspace:packages/select"
+  resolution: "@jengaui/select@workspace:packages/select"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/form": "*"
-    "@jenga-ui/overlays": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/form": "*"
+    "@jengaui/overlays": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/button": ^3.3.4
     "@react-aria/focus": ^3.5.0
     "@react-aria/interactions": ^3.7.0
@@ -4546,12 +4542,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/services@*, @jenga-ui/services@workspace:packages/services":
+"@jengaui/services@*, @jengaui/services@workspace:packages/services":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/services@workspace:packages/services"
+  resolution: "@jengaui/services@workspace:packages/services"
   dependencies:
-    "@jenga-ui/banner": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/banner": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     react-transition-group: ^4.4.2
@@ -4565,13 +4561,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/skeleton@*, @jenga-ui/skeleton@workspace:packages/skeleton":
+"@jengaui/skeleton@*, @jengaui/skeleton@workspace:packages/skeleton":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/skeleton@workspace:packages/skeleton"
+  resolution: "@jengaui/skeleton@workspace:packages/skeleton"
   dependencies:
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/placeholder": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/placeholder": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -4584,17 +4580,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/slider@*, @jenga-ui/slider@workspace:packages/slider":
+"@jengaui/slider@*, @jengaui/slider@workspace:packages/slider":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/slider@workspace:packages/slider"
+  resolution: "@jengaui/slider@workspace:packages/slider"
   dependencies:
     "@ant-design/icons": ^4.7.0
     "@internationalized/number": ^3.1.1
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tooltip": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tooltip": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/focus": ^3.5.0
     "@react-aria/i18n": ^3.5.1
     "@react-aria/interactions": ^3.7.0
@@ -4615,15 +4611,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/switch@*, @jenga-ui/switch@workspace:packages/switch":
+"@jengaui/switch@*, @jengaui/switch@workspace:packages/switch":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/switch@workspace:packages/switch"
+  resolution: "@jengaui/switch@workspace:packages/switch"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/form": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/form": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/interactions": ^3.7.0
     "@react-aria/switch": ^3.1.3
     "@react-spectrum/utils": ^3.6.3
@@ -4641,19 +4637,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/table@*, @jenga-ui/table@workspace:packages/table":
+"@jengaui/table@*, @jengaui/table@workspace:packages/table":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/table@workspace:packages/table"
+  resolution: "@jengaui/table@workspace:packages/table"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/checkbox": "*"
-    "@jenga-ui/content": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/button": "*"
+    "@jengaui/checkbox": "*"
+    "@jengaui/content": "*"
+    "@jengaui/core": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/table": ^3.4.1
     "@react-aria/visually-hidden": ^3.3.1
     "@react-stately/data": ^3.6.1
@@ -4671,14 +4667,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/tabs@*, @jenga-ui/tabs@workspace:packages/tabs":
+"@jengaui/tabs@*, @jengaui/tabs@workspace:packages/tabs":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/tabs@workspace:packages/tabs"
+  resolution: "@jengaui/tabs@workspace:packages/tabs"
   dependencies:
-    "@jenga-ui/button": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/button": "*"
+    "@jengaui/core": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -4691,15 +4687,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/tag@*, @jenga-ui/tag@workspace:packages/tag":
+"@jengaui/tag@*, @jengaui/tag@workspace:packages/tag":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/tag@workspace:packages/tag"
+  resolution: "@jengaui/tag@workspace:packages/tag"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/button": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/button": "*"
+    "@jengaui/core": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
@@ -4712,17 +4708,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/text-input@*, @jenga-ui/text-input@workspace:packages/text-input":
+"@jengaui/text-input@*, @jengaui/text-input@workspace:packages/text-input":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/text-input@workspace:packages/text-input"
+  resolution: "@jengaui/text-input@workspace:packages/text-input"
   dependencies:
     "@ant-design/icons": ^4.7.0
-    "@jenga-ui/core": "*"
-    "@jenga-ui/form": "*"
-    "@jenga-ui/layout": "*"
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/core": "*"
+    "@jengaui/form": "*"
+    "@jengaui/layout": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/interactions": ^3.7.0
     "@react-aria/textfield": ^3.5.0
     "@react-spectrum/utils": ^3.6.3
@@ -4739,14 +4735,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/textarea@*, @jenga-ui/textarea@workspace:packages/textarea":
+"@jengaui/textarea@*, @jengaui/textarea@workspace:packages/textarea":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/textarea@workspace:packages/textarea"
+  resolution: "@jengaui/textarea@workspace:packages/textarea"
   dependencies:
-    "@jenga-ui/providers": "*"
-    "@jenga-ui/text-input": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/providers": "*"
+    "@jengaui/text-input": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/textfield": ^3.5.0
     "@react-aria/utils": ^3.11.0
     "@react-stately/utils": ^3.5.0
@@ -4762,12 +4758,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/toast@*, @jenga-ui/toast@workspace:packages/toast":
+"@jengaui/toast@*, @jengaui/toast@workspace:packages/toast":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/toast@workspace:packages/toast"
+  resolution: "@jengaui/toast@workspace:packages/toast"
   dependencies:
-    "@jenga-ui/notification": "*"
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/notification": "*"
+    "@jengaui/tsconfig": "*"
     "@react-aria/utils": ^3.11.0
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -4782,15 +4778,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/tooltip@*, @jenga-ui/tooltip@workspace:packages/tooltip":
+"@jengaui/tooltip@*, @jengaui/tooltip@workspace:packages/tooltip":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/tooltip@workspace:packages/tooltip"
+  resolution: "@jengaui/tooltip@workspace:packages/tooltip"
   dependencies:
-    "@jenga-ui/active-zone": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/overlays": "*"
-    "@jenga-ui/tsconfig": "*"
-    "@jenga-ui/utils": "*"
+    "@jengaui/active-zone": "*"
+    "@jengaui/core": "*"
+    "@jengaui/overlays": "*"
+    "@jengaui/tsconfig": "*"
+    "@jengaui/utils": "*"
     "@react-aria/focus": ^3.5.0
     "@react-aria/overlays": ^3.7.5
     "@react-aria/tooltip": ^3.1.3
@@ -4810,17 +4806,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/tsconfig@*, @jenga-ui/tsconfig@workspace:packages/shared-tsconfig":
+"@jengaui/tsconfig@*, @jengaui/tsconfig@workspace:packages/shared-tsconfig":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/tsconfig@workspace:packages/shared-tsconfig"
+  resolution: "@jengaui/tsconfig@workspace:packages/shared-tsconfig"
   languageName: unknown
   linkType: soft
 
-"@jenga-ui/utils@*, @jenga-ui/utils@workspace:packages/utils":
+"@jengaui/utils@*, @jengaui/utils@workspace:packages/utils":
   version: 0.0.0-use.local
-  resolution: "@jenga-ui/utils@workspace:packages/utils"
+  resolution: "@jengaui/utils@workspace:packages/utils"
   dependencies:
-    "@jenga-ui/tsconfig": "*"
+    "@jengaui/tsconfig": "*"
     "@react-aria/interactions": ^3.7.0
     "@react-aria/ssr": ^3.2.0
     "@react-aria/utils": ^3.11.0
@@ -18253,6 +18249,7 @@ fsevents@^1.2.7:
     jest: ^27.5.1
     jest-styled-components: ^7.0.8
     lint-staged: ">=10"
+    node-abort-controller: ^3.0.1
     prettier: ^2.5.1
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -20739,11 +20736,11 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "next-app@workspace:next-app"
   dependencies:
-    "@jenga-ui/accordion": "*"
-    "@jenga-ui/avatar": "*"
-    "@jenga-ui/button": "*"
-    "@jenga-ui/core": "*"
-    "@jenga-ui/react": "*"
+    "@jengaui/accordion": "*"
+    "@jengaui/avatar": "*"
+    "@jengaui/button": "*"
+    "@jengaui/core": "*"
+    "@jengaui/react": "*"
     "@types/node": 18.7.14
     "@types/react": 17.0.38
     "@types/react-dom": ^17.0.11

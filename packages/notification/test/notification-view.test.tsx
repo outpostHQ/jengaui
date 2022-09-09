@@ -2,7 +2,7 @@ import { render, getByTestId, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { wait } from '../../../test';
-import { Timer } from '@jenga-ui/hooks';
+import { Timer } from '@jengaui/hooks';
 
 import { NotificationView } from '../src/NotificationView/NotificationView';
 

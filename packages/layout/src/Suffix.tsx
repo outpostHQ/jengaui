@@ -9,7 +9,7 @@ import {
   parseStyle,
   tasty,
 } from 'tastycss';
-import { useCombinedRefs } from '@jenga-ui/utils';
+import { useCombinedRefs } from '@jengaui/utils';
 
 const SuffixElement = tasty({
   element: 'Suffix',
