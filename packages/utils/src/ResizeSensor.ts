@@ -6,7 +6,7 @@
  * @param {HTMLElement|HTMLElement[]} elements
  * @param {Function}                  callback
  */
-function forEachElement(elements, callback) {
+ function forEachElement(elements, callback) {
   let elementsType = Object.prototype.toString.call(elements);
   let isCollectionTyped =
     '[object Array]' === elementsType ||

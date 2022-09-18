@@ -11,3 +11,4 @@ export * from './nullableValue';
 export * from './useId';
 export * from './get-display-name';
 export { flattenChildren } from './flattenChildren';
+export { useViewportSize } from './useViewportSize';
