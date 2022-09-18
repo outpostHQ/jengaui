@@ -3580,7 +3580,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3601,7 +3601,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3626,7 +3626,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tiny-invariant: ^1.2.0
     tsup: ^6.2.3
     typescript: ^4.5.4
@@ -3646,7 +3646,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3664,7 +3664,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3683,7 +3683,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3704,7 +3704,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3725,7 +3725,7 @@ __metadata:
     "@react-types/breadcrumbs": ^3.4.3
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3745,7 +3745,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3772,7 +3772,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3789,7 +3789,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3817,7 +3817,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3851,7 +3851,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3869,7 +3869,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3894,7 +3894,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     clipboard-copy: ^4.0.1
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3912,7 +3912,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     react-transition-group: ^4.4.2
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3945,7 +3945,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tiny-invariant: ^1.2.0
     tsup: ^6.2.3
     typescript: ^4.5.4
@@ -3968,7 +3968,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -3995,7 +3995,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     email-validator: ^2.0.4
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
     valid-url: ^1.0.9
@@ -4034,7 +4034,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4052,7 +4052,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4071,7 +4071,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4106,7 +4106,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4132,7 +4132,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     react-transition-group: ^4.4.2
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4169,7 +4169,7 @@ __metadata:
     react-is: ^17.0.0
     react-transition-group: ^4.4.2
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tiny-invariant: ^1.2.0
     tsup: ^6.2.3
     typescript: ^4.5.4
@@ -4197,7 +4197,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4217,7 +4217,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     react-transition-group: ^4.4.2
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4240,7 +4240,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4257,7 +4257,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4275,7 +4275,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tiny-invariant: ^1.2.0
     tsup: ^6.2.3
     typescript: ^4.5.4
@@ -4294,7 +4294,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     prismjs: ^1.25.0
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4312,7 +4312,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4338,7 +4338,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4367,7 +4367,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     serve: ^13.0.2
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     typescript: ^4.5.4
     vite: ^3.0.9
   languageName: unknown
@@ -4453,7 +4453,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4477,7 +4477,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4501,7 +4501,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4533,7 +4533,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4552,7 +4552,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     react-transition-group: ^4.4.2
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4571,7 +4571,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4602,7 +4602,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     react-aria: ^3.19.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4628,7 +4628,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4658,7 +4658,7 @@ __metadata:
     "@react-types/shared": ^3.10.1
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4678,7 +4678,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4699,7 +4699,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4726,7 +4726,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4749,7 +4749,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4769,7 +4769,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     react-is: ^17.0.0
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4797,7 +4797,7 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -4825,7 +4825,7 @@ __metadata:
     clsx: ^1.1.1
     react-is: ^17.0.0
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
@@ -18257,7 +18257,7 @@ fsevents@^1.2.7:
     react-test-renderer: ^17.0.2
     react-transition-group: ^4.4.2
     styled-components: ^5.3.0
-    tastycss: ^0.8.6
+    tastycss: ^0.8.7
     tsup: ^6.2.3
     turbo: ^1.4.3
     typescript: ^4.5.4
@@ -22596,7 +22596,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-dom@npm:17.0.2, react-dom@npm:^17, react-dom@npm:^17.0.2":
+"react-dom@npm:17.0.2, react-dom@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
   dependencies:
@@ -22748,7 +22748,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react@npm:17.0.2, react@npm:^17, react@npm:^17.0.2":
+"react@npm:17.0.2, react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
@@ -24792,18 +24792,18 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tastycss@npm:^0.8.6":
-  version: 0.8.6
-  resolution: "tastycss@npm:0.8.6"
+"tastycss@npm:^0.8.7":
+  version: 0.8.7
+  resolution: "tastycss@npm:0.8.7"
   dependencies:
     find-up: ^6.3.0
-    react: ^17
-    react-dom: ^17
+    react: ^17.0.2
+    react-dom: ^17.0.2
     react-is: ^17.0.0
     styled-components: 5.3.0
   peerDependencies:
     react: ^17.0.0
-  checksum: 7facfce1a495e07ec4c25e9ce926c7a48116b7f109a500c1424a6e4591ed5a8c50e786b5708c625d2e89a8998516d61ba0f9d13c7a5e7c0f3397e7e87d97319d
+  checksum: da38bca4cd35f5963ad840cec1ebe0ef84d69627ce62b4a6763c26235f6b3b90b6a5180d53c55dca55175ec1075e584002da460e04d25f1948f32e6772646533
   languageName: node
   linkType: hard
 
