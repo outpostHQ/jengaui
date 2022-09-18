@@ -1,8 +1,9 @@
-import { memo, ReactNode, useLayoutEffect, useRef, useState } from 'react';
+import { memo, ReactNode, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Flex, JengaFlexProps } from '@jengaui/layout';
 import styled from 'styled-components';
 import { BasePropsWithoutChildren } from 'tastycss';
+import { useLayoutEffect } from '@jengaui/utils';
 
 import { AccordionItemProps } from './types';
 
@@ -81,9 +82,8 @@ export const AccordionDetails = memo(function AccordionDetails(
   })();
 
   //  https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
-  const useBrowserLayoutEffect =
-    typeof window !== 'undefined' ? useLayoutEffect : () => {};
-  useBrowserLayoutEffect(() => {
+
+  useLayoutEffect(() => {
     accordionContentRef.current?.style.setProperty(
       ACCORDION_CONTENT_HEIGHT_VARIABLE,
       `${accordionContentRef.current.scrollHeight}px`,
