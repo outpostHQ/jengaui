@@ -14,7 +14,7 @@ import {
   TEXT_STYLES,
   TextStyleProps,
 } from 'tastycss';
-import { useSlotProps } from '@jenga-ui/utils';
+import { useSlotProps } from '@jengaui/utils';
 
 const STYLE_LIST = [...BASE_STYLES, ...TEXT_STYLES, ...COLOR_STYLES] as const;
 

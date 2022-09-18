@@ -12,12 +12,12 @@ import { expect } from '@storybook/jest';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
 
 import { Menu, MenuTrigger } from '../src/index';
-import { Button } from '@jenga-ui/button';
-import { Flex, Space } from '@jenga-ui/layout';
-import { Root } from '@jenga-ui/root';
-import { AlertDialog } from '@jenga-ui/alert-dialog';
-import { DialogContainer } from '@jenga-ui/dialog';
-import { Text } from '@jenga-ui/content';
+import { Button } from '@jengaui/button';
+import { Flex, Space } from '@jengaui/layout';
+import { Root } from '@jengaui/root';
+import { AlertDialog } from '@jengaui/alert-dialog';
+import { DialogContainer } from '@jengaui/dialog';
+import { Text } from '@jengaui/content';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
 
 export default {
@@ -247,6 +247,12 @@ export const MenuSelectableMultiple = (props) => {
     selectedKeys,
     onSelectionChange,
   });
+};
+
+MenuSelectableMultiple.play = async ({ canvasElement }) => {
+  const { getByTestId } = within(canvasElement);
+
+  await userEvent.tab(getByTestId('Menu'));
 };
 
 export const MenuSelectableCheckboxes = (props) => {

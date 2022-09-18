@@ -1,13 +1,13 @@
-# @jenga-ui/alert-dialog
+# @jengaui/alert-dialog
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/alert-dialog
+npm install @jengaui/alert-dialog
 
 # with yarn
-yarn add @jenga-ui/alert-dialog
+yarn add @jengaui/alert-dialog
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

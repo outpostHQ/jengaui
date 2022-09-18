@@ -1,13 +1,13 @@
-# @jenga-ui/alert
+# @jengaui/alert
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/alert
+npm install @jengaui/alert
 
 # with yarn
-yarn add @jenga-ui/alert
+yarn add @jengaui/alert
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

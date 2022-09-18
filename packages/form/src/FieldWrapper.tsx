@@ -1,16 +1,16 @@
 import { forwardRef, ReactNode } from 'react';
 import { InfoCircleOutlined } from '@ant-design/icons';
 
-import { Text, Paragraph } from '@jenga-ui/content';
+import { Text, Paragraph } from '@jengaui/content';
 import {
   LabelPosition,
   NecessityIndicator,
   ValidationState,
 } from './shared';
 import { Props, Styles, tasty } from 'tastycss';
-import { TooltipProvider } from '@jenga-ui/tooltip';
-import { wrapNodeIfPlain } from '@jenga-ui/utils';
-import { Space, Flex } from '@jenga-ui/layout';
+import { TooltipProvider } from '@jengaui/tooltip';
+import { wrapNodeIfPlain } from '@jengaui/utils';
+import { Space, Flex } from '@jengaui/layout';
 
 import { Label } from './Label';
 

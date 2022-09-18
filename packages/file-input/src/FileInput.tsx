@@ -8,8 +8,8 @@ import {
 } from 'react';
 import { createFocusableRef } from '@react-spectrum/utils';
 
-import { useProviderProps } from '@jenga-ui/providers';
-import { Action } from '@jenga-ui/button';
+import { useProviderProps } from '@jengaui/providers';
+import { Action } from '@jengaui/button';
 import {
   BaseProps,
   BlockStyleProps,
@@ -22,7 +22,7 @@ import {
 import {
   FormFieldProps,
   FieldWrapper,
-} from '@jenga-ui/form';
+} from '@jengaui/form';
 
 import type { AriaTextFieldProps } from '@react-types/textfield';
 

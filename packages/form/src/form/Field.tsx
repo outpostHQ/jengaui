@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-import { mergeProps, warn } from '@jenga-ui/utils';
+import { mergeProps, warn } from '@jengaui/utils';
 import {
   LabelPosition,
   OptionalFieldBaseProps,

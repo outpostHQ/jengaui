@@ -20,7 +20,7 @@
     "react-dom": "^17.0.2",
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.0",
-    "tastycss": "^0.8.6"
+    "tastycss": "^0.8.7"
   },
   "devDependencies": {
     "@changesets/cli": "^2.24.3",
@@ -52,6 +52,7 @@
     "jest": "^27.5.1",
     "jest-styled-components": "^7.0.8",
     "lint-staged": ">=10",
+    "node-abort-controller": "^3.0.1",
     "prettier": "^2.5.1",
     "react-router": "^6.2.1",
     "react-test-renderer": "^17.0.2",

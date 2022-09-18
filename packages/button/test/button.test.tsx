@@ -1,4 +1,4 @@
-import { render, screen } from '@jenga-ui/core/test';
+import { render, screen } from '../../../test';
 
 import { Button } from '../src/Button';
 

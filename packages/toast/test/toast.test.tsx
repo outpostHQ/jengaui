@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
 
-import { renderWithRoot, screen, wait } from '@jenga-ui/core/test';
+import { renderWithRoot, screen, wait } from '../../../test';
 
 import { Toast } from '../src/Toast';
 

@@ -1,13 +1,13 @@
-# @jenga-ui/number-input
+# @jengaui/number-input
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/number-input
+npm install @jengaui/number-input
 
 # with yarn
-yarn add @jenga-ui/number-input
+yarn add @jengaui/number-input
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

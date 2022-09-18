@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/table",
-  "version": "0.1.1",
+  "name": "@jengaui/table",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Jenga-UI React table component",
   "keywords": [
@@ -31,7 +31,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
@@ -39,20 +39,20 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/button": "*",
-    "@jenga-ui/checkbox": "*",
-    "@jenga-ui/content": "*",
-    "@jenga-ui/core": "*",
-    "@jenga-ui/layout": "*",
-    "@jenga-ui/providers": "*",
-    "@jenga-ui/utils": "*",
+    "@jengaui/button": "*",
+    "@jengaui/checkbox": "*",
+    "@jengaui/content": "*",
+    "@jengaui/core": "*",
+    "@jengaui/layout": "*",
+    "@jengaui/providers": "*",
+    "@jengaui/utils": "*",
     "@react-aria/table": "^3.4.1",
     "@react-aria/visually-hidden": "^3.4.1",
     "@react-stately/data": "^3.6.1",
     "@react-stately/table": "^3.4.0",
     "@react-types/grid": "^3.1.3",
     "@react-types/shared": "^3.14.1",
-    "tastycss": "^0.8.6"
+    "tastycss": "^0.8.7"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

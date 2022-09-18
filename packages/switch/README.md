@@ -1,13 +1,13 @@
-# @jenga-ui/switch
+# @jengaui/switch
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/switch
+npm install @jengaui/switch
 
 # with yarn
-yarn add @jenga-ui/switch
+yarn add @jengaui/switch
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

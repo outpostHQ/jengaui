@@ -1,13 +1,13 @@
-# @jenga-ui/form
+# @jengaui/form
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/form
+npm install @jengaui/form
 
 # with yarn
-yarn add @jenga-ui/form
+yarn add @jengaui/form
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

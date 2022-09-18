@@ -1,13 +1,13 @@
-# @jenga-ui/input
+# @jengaui/input
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/input
+npm install @jengaui/input
 
 # with yarn
-yarn add @jenga-ui/input
+yarn add @jengaui/input
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

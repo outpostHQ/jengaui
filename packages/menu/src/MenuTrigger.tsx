@@ -8,8 +8,8 @@ import { MenuTriggerProps as BaseTriggerProps } from '@react-types/menu';
 import { useMenuTrigger } from '@react-aria/menu';
 import { useMenuTriggerState } from '@react-stately/menu';
 
-import { Popover, Tray } from '@jenga-ui/modal';
-import { SlotProvider } from '@jenga-ui/utils';
+import { Popover, Tray } from '@jengaui/modal';
+import { SlotProvider } from '@jengaui/utils';
 
 import { MenuContext, MenuContextValue } from './context';
 

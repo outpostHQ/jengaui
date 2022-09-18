@@ -9,7 +9,7 @@ import {
 } from 'react';
 import { DOMRef } from '@react-types/shared';
 
-import { Provider, useProviderProps } from '@jenga-ui/providers';
+import { Provider, useProviderProps } from '@jengaui/providers';
 import {
   BaseProps,
   CONTAINER_STYLES,
@@ -19,7 +19,7 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import { useCombinedRefs, timeout } from '@jenga-ui/utils';
+import { useCombinedRefs, timeout } from '@jengaui/utils';
 import { FormBaseProps } from '../shared';
 
 import { JengaFormData, JengaFormInstance, useForm } from './useForm';

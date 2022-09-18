@@ -1,7 +1,7 @@
 import { Key, useEffect } from 'react';
 
-import { useEvent, useSyncRef } from '@jenga-ui/hooks';
-import { useId } from '@jenga-ui/utils';
+import { useEvent, useSyncRef } from '@jengaui/hooks';
+import { useId } from '@jengaui/utils';
 
 import { useToastsApi } from './use-toasts-api';
 import { JengaToastsApiProps } from './types';

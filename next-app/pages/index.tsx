@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
-import { Accordion } from '@jenga-ui/accordion';
+import { Accordion } from '@jengaui/accordion';
 import {
   Avatar,
   Block,
   BreadcrumbItem,
   Breadcrumbs,
+  Banner,
+  Notification,
   Button,
   Cell,
   Column,
@@ -16,7 +18,7 @@ import {
   Table,
   TableBody,
   TableHeader,
-} from '@jenga-ui/react';
+} from '@jengaui/react';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -27,6 +29,7 @@ const Home: NextPage = () => {
         <Block> This is Jenga-UI </Block>
         <Avatar icon={null}> OP </Avatar>
         <Button> I'm Button </Button>
+        <Banner type="note"> Banner text </Banner>
         <Table
           aria-label="Example static collection table"
           styles={{ width: '600px', height: '600px' }}

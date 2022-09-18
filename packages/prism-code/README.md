@@ -1,13 +1,13 @@
-# @jenga-ui/prism-code
+# @jengaui/prism-code
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/prism-code
+npm install @jengaui/prism-code
 
 # with yarn
-yarn add @jenga-ui/prism-code
+yarn add @jengaui/prism-code
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

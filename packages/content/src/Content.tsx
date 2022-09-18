@@ -10,7 +10,7 @@ import {
   TEXT_STYLES,
   TextStyleProps,
 } from 'tastycss';
-import { useSlotProps } from '@jenga-ui/utils';
+import { useSlotProps } from '@jengaui/utils';
 
 const STYLE_LIST = [...CONTAINER_STYLES, ...TEXT_STYLES];
 

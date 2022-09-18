@@ -1,16 +1,16 @@
-import { Title, Content, Header } from '@jenga-ui/content';
+import { Title, Content, Header } from '@jengaui/content';
 import {
   JengaFormProps,
   Form,
   useForm,
   FieldTypes,
-} from '@jenga-ui/form';
+} from '@jengaui/form';
 import {
   Submit,
   Button,
   JengaButtonProps,
-} from '@jenga-ui/button';
-import { ButtonGroup } from '@jenga-ui/button-group';
+} from '@jengaui/button';
+import { ButtonGroup } from '@jengaui/button-group';
 
 import { useDialogContext } from './context';
 import { Dialog, JengaDialogProps } from './Dialog';

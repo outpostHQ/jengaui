@@ -3,13 +3,13 @@ import { useDOMRef } from '@react-spectrum/utils';
 import { useRadioGroup } from '@react-aria/radio';
 import { useRadioGroupState } from '@react-stately/radio';
 
-import { useProviderProps } from '@jenga-ui/providers';
+import { useProviderProps } from '@jengaui/providers';
 import {
   FormContext,
   useFormProps,
   FieldWrapper,
   FormFieldProps,
-} from '@jenga-ui/form';
+} from '@jengaui/form';
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -21,7 +21,7 @@ import {
 import {
   castNullableStringValue,
   WithNullableValue,
-} from '@jenga-ui/utils';
+} from '@jengaui/utils';
 
 import { RadioContext } from './context';
 

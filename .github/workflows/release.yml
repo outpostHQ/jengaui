@@ -2,6 +2,8 @@ name: Release
 
 on:
   push:
+    paths:
+      - "packages/**"
     branches:
       - main
 
@@ -25,6 +27,9 @@ jobs:
         
       - name: Build packages
         run: yarn build
+      
+      - name: Run Tests
+        run: yarn test
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets

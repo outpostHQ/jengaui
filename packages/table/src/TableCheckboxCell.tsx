@@ -1,5 +1,5 @@
 import { useTableSelectionCheckbox } from '@react-aria/table';
-import { Checkbox } from '@jenga-ui/checkbox';
+import { Checkbox } from '@jengaui/checkbox';
 import { useTableCell } from '@react-aria/table';
 import { useContext, useRef } from 'react';
 

@@ -1,13 +1,13 @@
-# @jenga-ui/notification
+# @jengaui/notification
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/notification
+npm install @jengaui/notification
 
 # with yarn
-yarn add @jenga-ui/notification
+yarn add @jengaui/notification
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

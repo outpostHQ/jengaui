@@ -1,13 +1,13 @@
-# @jenga-ui/button-group
+# @jengaui/button-group
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/button-group
+npm install @jengaui/button-group
 
 # with yarn
-yarn add @jenga-ui/button-group
+yarn add @jengaui/button-group
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

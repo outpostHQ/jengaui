@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import { CheckOutlined } from '@ant-design/icons';
 
-import { Button, JengaButtonProps } from '@jenga-ui/button';
-import { Text } from '@jenga-ui/content';
+import { Button, JengaButtonProps } from '@jengaui/button';
+import { Text } from '@jengaui/content';
 import { Styles, tasty } from 'tastycss';
-import { Space } from '@jenga-ui/layout';
+import { Space } from '@jengaui/layout';
 
 const ACTION_BUTTON: Styles = {
   border: {
@@ -13,14 +13,18 @@ const ACTION_BUTTON: Styles = {
   },
   fill: {
     '': '#clear',
-    hovered: '#dark.04',
-    'pressed | selected': '#purple.1',
+    'hovered | focused': '#dark.04',
+    'pressed | selected': '#purple.10',
+    'focused & selected': '##purple.16',
+    'focused & pressed': '#purple.10',
     disabled: '#clear',
   },
   color: {
     '': '#dark-02',
-    hovered: '#dark-02',
+    'hovered | focused': '#dark-02',
     'pressed | selected': '#purple-text',
+    'focused & selected': '#purple-text',
+    'focused & pressed': '#purple-text',
     disabled: '#dark-04',
   },
   cursor: {
@@ -41,7 +45,7 @@ const ACTION_BUTTON: Styles = {
   Postfix: {
     color: {
       '': '#dark-03',
-      hovered: '#dark-03',
+      'hovered | focused': '#dark-03',
       'pressed | selected': '#purple-text',
       disabled: '#dark-04',
     },

@@ -11,7 +11,7 @@ import {
   tasty,
   TEXT_STYLES,
 } from 'tastycss';
-import { useSlotProps } from '@jenga-ui/utils';
+import { useSlotProps } from '@jengaui/utils';
 
 import { JengaTextProps, TEXT_PROP_MAP } from './Text';
 

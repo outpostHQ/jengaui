@@ -1,13 +1,13 @@
-# @jenga-ui/toast
+# @jengaui/toast
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/toast
+npm install @jengaui/toast
 
 # with yarn
-yarn add @jenga-ui/toast
+yarn add @jengaui/toast
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

@@ -1,13 +1,13 @@
-# @jenga-ui/search-input
+# @jengaui/search-input
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/search-input
+npm install @jengaui/search-input
 
 # with yarn
-yarn add @jenga-ui/search-input
+yarn add @jengaui/search-input
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

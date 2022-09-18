@@ -1,5 +1,5 @@
 {
-    "name": "@jenga-ui/storybook",
+    "name": "@jengaui/react-storybook",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -8,13 +8,13 @@
         "clean": "rm -rf .turbo && rm -rf node_modules"
     },
     "dependencies": {
-        "@jenga-ui/react": "*",
+        "@jengaui/react": "*",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "tastycss": "^0.8.6"
+        "tastycss": "^0.8.7"
     },
     "devDependencies": {
-        "@jenga-ui/tsconfig": "*",
+        "@jengaui/tsconfig": "*",
         "@storybook/addon-actions": "^6.5.10",
         "@storybook/addon-docs": "^6.5.10",
         "@storybook/addon-essentials": "^6.5.10",

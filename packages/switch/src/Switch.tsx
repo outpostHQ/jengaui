@@ -5,7 +5,7 @@ import { useHover } from '@react-aria/interactions';
 import { useToggleState } from '@react-stately/toggle';
 import { LoadingOutlined } from '@ant-design/icons';
 
-import { useProviderProps } from '@jenga-ui/providers';
+import { useProviderProps } from '@jengaui/providers';
 import {
   BaseProps,
   BLOCK_STYLES,
@@ -23,7 +23,7 @@ import {
   mergeProps,
   castNullableIsSelected,
   WithNullableSelected,
-} from '@jenga-ui/utils';
+} from '@jengaui/utils';
 import {
   HiddenInput,
   INLINE_LABEL_STYLES,
@@ -31,7 +31,7 @@ import {
   useFormProps,
   FieldWrapper,
   FormFieldProps,
-} from '@jenga-ui/form';
+} from '@jengaui/form';
 
 import type { AriaSwitchProps } from '@react-types/switch';
 

@@ -4,9 +4,9 @@ import { useOverlayPosition } from '@react-aria/overlays';
 import { useTooltipTrigger } from '@react-aria/tooltip';
 import { useTooltipTriggerState } from '@react-stately/tooltip';
 
-import { OverlayWrapper } from '@jenga-ui/overlays';
-import { ActiveZone } from '@jenga-ui/active-zone';
-import { Block } from '@jenga-ui/core';
+import { OverlayWrapper } from '@jengaui/overlays';
+import { ActiveZone } from '@jengaui/active-zone';
+import { Block } from '@jengaui/core';
 
 import { TooltipContext } from './context';
 

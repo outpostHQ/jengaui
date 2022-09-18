@@ -1,13 +1,13 @@
-# @jenga-ui/placeholder
+# @jengaui/placeholder
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/placeholder
+npm install @jengaui/placeholder
 
 # with yarn
-yarn add @jenga-ui/placeholder
+yarn add @jengaui/placeholder
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

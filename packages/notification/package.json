@@ -1,6 +1,6 @@
 {
-  "name": "@jenga-ui/notification",
-  "version": "0.1.1",
+  "name": "@jengaui/notification",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Responsive and accessible React UI components built with TastyCSS",
   "keywords": [
@@ -37,19 +37,36 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@jenga-ui/tsconfig": "*",
+    "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "@jenga-ui/button": "*",
-    "@jenga-ui/card": "*",
-    "@jenga-ui/core": "*",
+    "@jengaui/button": "*",
+    "@jengaui/button-group": "*",
+    "@jengaui/content": "*",
+    "@jengaui/dialog": "*",
+    "@jengaui/hooks": "*",
+    "@jengaui/layout": "*",
+    "@jengaui/portal": "*",
+    "@jengaui/utils": "*",
+    "@react-aria/button": "^3.3.4",
+    "@react-aria/focus": "^3.5.0",
+    "@react-aria/interactions": "^3.7.0",
+    "@react-aria/selection": "^3.9.1",
+    "@react-aria/utils": "^3.11.0",
+    "@react-aria/visually-hidden": "^3.3.1",
+    "@react-spectrum/utils": "^3.6.3",
+    "@react-stately/collections": "^3.3.4",
+    "@react-stately/list": "^3.5.1",
+    "@react-types/shared": "^3.10.1",
+    "react-is": "^17.0.0",
+    "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.0",
-    "tastycss": "^0.8.6"
+    "tastycss": "^0.8.7",
+    "tiny-invariant": "^1.2.0"
   },
   "homepage": "https://github.com/OutpostHQ/jenga-ui",
   "repository": {

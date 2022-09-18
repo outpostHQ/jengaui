@@ -1,6 +1,6 @@
 import { ForwardedRef, forwardRef } from 'react';
 
-import THEMES from '@jenga-ui/core/src/themes';
+import THEMES from '@jengaui/core/src/themes';
 import { tasty } from 'tastycss';
 
 import { JengaAlertProps } from './types';

@@ -4,7 +4,7 @@ import { forwardRef, useEffect, useRef, useState } from 'react';
 import { useModal, useOverlay, usePreventScroll } from '@react-aria/overlays';
 
 import { BaseProps, Props, Styles, tasty } from 'tastycss';
-import { mergeProps } from '@jenga-ui/utils';
+import { mergeProps } from '@jengaui/utils';
 
 import { OVERLAY_WRAPPER_STYLES } from './Modal';
 import { Underlay } from './Underlay';

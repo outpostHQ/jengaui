@@ -1,13 +1,13 @@
-# @jenga-ui/combo-box
+# @jengaui/combo-box
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/combo-box
+npm install @jengaui/combo-box
 
 # with yarn
-yarn add @jenga-ui/combo-box
+yarn add @jengaui/combo-box
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

@@ -1,13 +1,13 @@
-# @jenga-ui/select
+# @jengaui/select
 
 ## Installation
 
 ```sh
 # with npm
-npm install @jenga-ui/select
+npm install @jengaui/select
 
 # with yarn
-yarn add @jenga-ui/select
+yarn add @jengaui/select
 ```
 
 For discussions, suggestions and contributions, create an issue or join our [Discord](https://discord.gg/sHnHPnAPZj) channel to chat.

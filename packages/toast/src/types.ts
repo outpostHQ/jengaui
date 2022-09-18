@@ -2,7 +2,7 @@ import type { Key, ReactChild, ReactFragment, ReactNode } from 'react';
 import type {
   JengaNotificationType,
   JengaNotifyApiProps,
-} from '@jenga-ui/new-notifications';
+} from '@jengaui/notification';
 
 export type JengaToastsApiProps = {
   description: ReactChild | ReactFragment;

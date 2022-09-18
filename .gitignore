@@ -13,6 +13,7 @@ coverage
 .pnp.*
 .yarn
 .turbo
+.swc
 
 
 node_modules
