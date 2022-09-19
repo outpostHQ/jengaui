@@ -1,4 +1,4 @@
-import { memo, ReactElement, ReactNode, ReactText } from 'react';
+import { memo, ReactNode, ReactText } from 'react';
 import { useFocusRing } from '@react-aria/focus';
 import { useHover, usePress } from '@react-aria/interactions';
 import { BaseProps, BasePropsWithoutChildren, Element, tasty } from 'tastycss';
@@ -6,19 +6,7 @@ import { Text } from '@jengaui/content';
 import { mergeProps } from '@jengaui/utils';
 import { DownOutlined } from '@ant-design/icons';
 
-import { AccordionItemProps } from './types';
-
-export type AccordionItemTitleProps = BaseProps & {
-  title: AccordionItemProps['title'];
-  extra: AccordionItemProps['extra'];
-  onExpand: () => void;
-  isExpanded: boolean;
-  contentID: string;
-  titleID: string;
-  isIconVisible: boolean;
-  titleWrapperProps: BasePropsWithoutChildren;
-  disclosureIcon?: ReactElement;
-};
+import { AccordionItemTitleProps } from './types';
 
 const StyledAccordionItemTitleWrap = tasty<
   BasePropsWithoutChildren & Omit<Omit<HTMLElement, 'children'>, 'style'>
