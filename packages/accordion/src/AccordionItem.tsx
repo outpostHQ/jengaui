@@ -1,5 +1,6 @@
 import { createContext, RefObject, useCallback, useRef, useState } from 'react';
 import { BaseProps, Element, tasty } from 'tastycss';
+import { Flex } from '@jengaui/layout';
 
 import { useUniqID } from './use-unique-id';
 import { AccordionDetails } from './AccordionDetails';
@@ -30,6 +31,7 @@ export function AccordionItem(props: AccordionItemProps) {
     itemTitleProps = {},
     titleWrapperProps = {},
     contentWrapperProps = {},
+    contentProps = {},
     disclosureIcon,
     ...remBaseProps
   } = props;
@@ -44,35 +46,37 @@ export function AccordionItem(props: AccordionItemProps) {
     <AccordionItemContext.Provider
       value={{ isExpanded: expanded, setExpand: onExpand }}
     >
-      <AccordionItemTitle
-        titleWrapperProps={titleWrapperProps}
-        titleID={titleID}
-        contentID={contentID}
-        isExpanded={expanded}
-        title={title}
-        extra={extra}
-        isIconVisible={isIconVisible}
-        disclosureIcon={disclosureIcon}
-        onExpand={onExpand}
-        {...itemTitleProps}
-      />
-
-      <StyledAccordionItemContent
-        ref={contentRef}
-        id={contentID}
-        role="region"
-        aria-labelledby={titleID}
-        mods={{ expanded: expanded, ...mods }}
-        {...contentWrapperProps}
-      >
-        <AccordionDetails
-          isLazy={isLazy}
+      <Flex flow={'column'} width={'100%'} {...remBaseProps}>
+        <AccordionItemTitle
+          titleWrapperProps={titleWrapperProps}
+          titleID={titleID}
+          contentID={contentID}
           isExpanded={expanded}
-          {...remBaseProps}
+          title={title}
+          extra={extra}
+          isIconVisible={isIconVisible}
+          disclosureIcon={disclosureIcon}
+          onExpand={onExpand}
+          {...itemTitleProps}
+        />
+
+        <StyledAccordionItemContent
+          ref={contentRef}
+          id={contentID}
+          role="region"
+          aria-labelledby={titleID}
+          mods={{ expanded: expanded, ...mods }}
+          {...contentWrapperProps}
         >
-          {children}
-        </AccordionDetails>
-      </StyledAccordionItemContent>
+          <AccordionDetails
+            isLazy={isLazy}
+            isExpanded={expanded}
+            {...contentProps}
+          >
+            {children}
+          </AccordionDetails>
+        </StyledAccordionItemContent>
+      </Flex>
     </AccordionItemContext.Provider>
   );
 }

@@ -20,6 +20,7 @@ export type AccordionItemProps = BaseProps & {
   itemTitleProps?: BasePropsWithoutChildren;
   contentWrapperProps?: BasePropsWithoutChildren;
   disclosureIcon?: ReactElement;
+  contentProps?: BasePropsWithoutChildren;
 };
 
 export type AccordionDetailsProps = BasePropsWithoutChildren &

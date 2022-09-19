@@ -78,19 +78,23 @@ export function AccordionItemTitle(props: AccordionItemTitleProps) {
   return (
     <StyledAccordionItemTitleWrap
       {...mergeProps(hoverProps, focusProps, pressProps)}
-      mods={{ focused: isFocusVisible }}
+      mods={{ focused: isFocusVisible, expanded: isExpanded }}
       aria-expanded={isExpanded}
       aria-controls={contentID}
       aria-labelledby={titleID}
       {...titleWrapperProps}
     >
-      <StyledAccordionItemTitle {...baseProps}>
+      <StyledAccordionItemTitle {...baseProps} mods={{ expanded: isExpanded }}>
         {isIconVisible
           ? disclosureIcon ?? <AccordionItemIcon isExpanded={isExpanded} />
           : null}
-        <AccordionItemContent title={title} id={titleID} />
+        <AccordionItemContent
+          title={title}
+          id={titleID}
+          isExpanded={isExpanded}
+        />
       </StyledAccordionItemTitle>
-      <AccordionItemExtra>{extra}</AccordionItemExtra>
+      <AccordionItemExtra isExpanded={isExpanded}>{extra}</AccordionItemExtra>
     </StyledAccordionItemTitleWrap>
   );
 }
@@ -110,12 +114,13 @@ const AccordionItemIcon = memo(function StyledAccordionItemIcon(props: {
 const AccordionItemContent = memo(function AccordionItemContent(props: {
   id: string;
   title: ReactText;
+  isExpanded: boolean;
 }) {
-  const { id, title } = props;
+  const { id, title, isExpanded } = props;
 
   return (
-    <TitleSection id={id}>
-      <Text key="text" preset="t3s">
+    <TitleSection id={id} mods={{ expanded: isExpanded }}>
+      <Text key="text" preset="t3s" mods={{ expanded: isExpanded }}>
         {title}
       </Text>
     </TitleSection>
@@ -124,10 +129,15 @@ const AccordionItemContent = memo(function AccordionItemContent(props: {
 
 const AccordionItemExtra = memo(function AccordionItemExtra(props: {
   children: ReactNode;
+  isExpanded: boolean;
 }) {
   if (!props.children) {
     return null;
   }
 
-  return <ExtraSection>{props.children}</ExtraSection>;
+  return (
+    <ExtraSection mods={{ expanded: props.isExpanded }}>
+      {props.children}
+    </ExtraSection>
+  );
 });
