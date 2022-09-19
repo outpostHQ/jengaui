@@ -36,7 +36,6 @@ export function AccordionItem(props: AccordionItemProps) {
     ...remBaseProps
   } = props;
   const contentRef = useRef<HTMLElement>(null);
-
   const { isLazy } = useAccordionContext();
   const [expanded, setExpanded] = useState(isDefaultExpanded);
   const onExpand = useCallback(() => setExpanded((current) => !current), []);
