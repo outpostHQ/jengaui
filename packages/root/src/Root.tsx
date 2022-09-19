@@ -124,7 +124,9 @@ export function Root(allProps: JengaRootProps) {
           {...filterBaseProps(props, { eventProps: true })}
           styles={styles}
           style={{
-            '--jenga-dynamic-viewport-height': height ? height + 'px' : '100dvh',
+            '--jenga-dynamic-viewport-height': height
+              ? height + 'px'
+              : '100dvh',
           }}
         >
           <GlobalStyles

@@ -82,7 +82,9 @@ export const NotifyAsComponent: Story<JengaNotificationProps> = (args) => {
         actions={
           <>
             <NotificationAction>Check logs</NotificationAction>
-            <NotificationAction>Upload updated Jenga project</NotificationAction>
+            <NotificationAction>
+              Upload updated Jenga project
+            </NotificationAction>
           </>
         }
         {...args}

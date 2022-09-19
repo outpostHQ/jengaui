@@ -1,10 +1,7 @@
 import ReactDOM from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import {
-  JengaBannerProps,
-  Banner,
-} from '@jengaui/banner';
+import { JengaBannerProps, Banner } from '@jengaui/banner';
 
 let ID = 0;
 
@@ -71,11 +68,7 @@ export const banner: BannerService = {
     ReactDOM.render(
       <TransitionGroup className="jenga-banners">
         {items.map((item) => (
-          <CSSTransition
-            key={item.id}
-            timeout={400}
-            classNames="jenga-banner"
-          >
+          <CSSTransition key={item.id} timeout={400} classNames="jenga-banner">
             <Banner type={item.type} onClose={() => this.close(item.id)}>
               {item.message}
             </Banner>

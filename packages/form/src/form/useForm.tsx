@@ -355,7 +355,9 @@ export function useForm<TSourceType extends FieldTypes>(
         forceUpdate({});
       };
 
-      form = formRef.current = new JengaFormInstance<TSourceType>(forceReRender);
+      form = formRef.current = new JengaFormInstance<TSourceType>(
+        forceReRender,
+      );
     }
 
     form.ref = ref;

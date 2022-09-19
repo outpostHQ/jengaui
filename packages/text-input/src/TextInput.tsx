@@ -2,10 +2,7 @@ import { ForwardedRef, forwardRef, useRef } from 'react';
 import { useTextField } from '@react-aria/textfield';
 
 import { useProviderProps } from '@jengaui/providers';
-import {
-  castNullableStringValue,
-  WithNullableValue,
-} from '@jengaui/utils';
+import { castNullableStringValue, WithNullableValue } from '@jengaui/utils';
 
 import { JengaTextInputBaseProps, TextInputBase } from './TextInputBase';
 

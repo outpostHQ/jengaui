@@ -18,22 +18,14 @@ import { useFilter } from '@react-aria/i18n';
 import { Item } from '@react-stately/collections';
 import { useOverlayPosition } from '@react-aria/overlays';
 
-import {
-  useFormProps,
-  FieldWrapper
-} from '@jengaui/form';
+import { useFormProps, FieldWrapper } from '@jengaui/form';
 import { useProviderProps } from '@jengaui/providers';
-import {
-  BLOCK_STYLES,
-  extractStyles,
-  OUTER_STYLES,
-  tasty,
-} from 'tastycss';
+import { BLOCK_STYLES, extractStyles, OUTER_STYLES, tasty } from 'tastycss';
 import {
   useFocus,
   mergeProps,
   modAttrs,
-  useCombinedRefs
+  useCombinedRefs,
 } from '@jengaui/utils';
 import { JengaSelectBaseProps, ListBoxPopup } from '@jengaui/select';
 import {

@@ -19,10 +19,7 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import {
-  FormFieldProps,
-  FieldWrapper,
-} from '@jengaui/form';
+import { FormFieldProps, FieldWrapper } from '@jengaui/form';
 
 import type { AriaTextFieldProps } from '@react-types/textfield';
 

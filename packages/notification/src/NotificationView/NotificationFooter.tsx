@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { isElement } from 'react-is';
-import flatten from '@jengaui/utils';
+import { flattenChildren } from '@jengaui/utils';
 
 import { JengaNotificationProps, NotificationActionComponent } from '../types';
 import { tasty } from 'tastycss';
@@ -34,7 +34,7 @@ export const NotificationFooter = memo(function NotificationFooter(
 
   return (
     <FooterArea mods={{ 'has-description': hasDescription }}>
-      {flatten(
+      {flattenChildren(
         typeof actions === 'function'
           ? actions({ onClose, onDismiss })
           : actions,

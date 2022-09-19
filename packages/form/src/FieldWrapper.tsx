@@ -2,11 +2,7 @@ import { forwardRef, ReactNode } from 'react';
 import { InfoCircleOutlined } from '@ant-design/icons';
 
 import { Text, Paragraph } from '@jengaui/content';
-import {
-  LabelPosition,
-  NecessityIndicator,
-  ValidationState,
-} from './shared';
+import { LabelPosition, NecessityIndicator, ValidationState } from './shared';
 import { Props, Styles, tasty } from 'tastycss';
 import { TooltipProvider } from '@jengaui/tooltip';
 import { wrapNodeIfPlain } from '@jengaui/utils';

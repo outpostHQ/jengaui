@@ -18215,9 +18215,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jenga-ui@workspace:.":
+"jengaui@workspace:.":
   version: 0.0.0-use.local
-  resolution: "jenga-ui@workspace:."
+  resolution: "jengaui@workspace:."
   dependencies:
     "@changesets/cli": ^2.24.3
     "@storybook/builder-vite": ^0.2.2

@@ -5,15 +5,9 @@ import { useNumberField } from '@react-aria/numberfield';
 
 import { useFormProps } from '@jengaui/form';
 import { useProviderProps } from '@jengaui/providers';
-import {
-  JengaTextInputBaseProps,
-  TextInputBase,
-} from '@jengaui/text-input';
+import { JengaTextInputBaseProps, TextInputBase } from '@jengaui/text-input';
 import { tasty } from 'tastycss';
-import {
-  castNullableNumberValue,
-  WithNullableValue,
-} from '@jengaui/utils';
+import { castNullableNumberValue, WithNullableValue } from '@jengaui/utils';
 
 import { StepButton } from './StepButton';
 

@@ -1,5 +1,5 @@
 {
-  "name": "jenga-ui",
+  "name": "jengaui",
   "private": true,
   "scripts": {
     "build": "turbo run build",

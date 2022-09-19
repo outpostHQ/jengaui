@@ -4,10 +4,7 @@ import copy from 'clipboard-copy';
 import { Action, Button } from '@jengaui/button';
 import { Card, JengaCardProps } from '@jengaui/card';
 import { Styles, tasty } from 'tastycss';
-import {
-  JengaPrismCodeProps,
-  PrismCode,
-} from '@jengaui/prism-code';
+import { JengaPrismCodeProps, PrismCode } from '@jengaui/prism-code';
 import { TooltipTrigger, Tooltip } from '@jengaui/tooltip';
 import { useToastsApi } from '@jengaui/toast';
 
