@@ -2,16 +2,10 @@ import { forwardRef, useCallback, useRef, useState } from 'react';
 import { useTextField } from '@react-aria/textfield';
 import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
 
-import {
-  JengaTextInputBaseProps,
-  TextInputBase,
-} from '@jengaui/text-input';
+import { JengaTextInputBaseProps, TextInputBase } from '@jengaui/text-input';
 import { useProviderProps } from '@jengaui/providers';
 import { Button } from '@jengaui/button';
-import {
-  castNullableStringValue,
-  WithNullableValue,
-} from '@jengaui/utils';
+import { castNullableStringValue, WithNullableValue } from '@jengaui/utils';
 
 function PasswordInput(props: WithNullableValue<JengaTextInputBaseProps>, ref) {
   props = castNullableStringValue(props);

@@ -1,24 +1,30 @@
-import { memo, ReactNode, ReactText } from 'react';
+import { memo, ReactElement, ReactNode, ReactText } from 'react';
 import { useFocusRing } from '@react-aria/focus';
 import { useHover, usePress } from '@react-aria/interactions';
-import { tasty } from 'tastycss';
+import { BaseProps, BasePropsWithoutChildren, Element, tasty } from 'tastycss';
 import { Text } from '@jengaui/content';
 import { mergeProps } from '@jengaui/utils';
-
 import { DownOutlined } from '@ant-design/icons';
 
 import { AccordionItemProps } from './types';
 
-export type AccordionItemTitleProps = {
+export type AccordionItemTitleProps = BaseProps & {
   title: AccordionItemProps['title'];
   extra: AccordionItemProps['extra'];
   onExpand: () => void;
   isExpanded: boolean;
   contentID: string;
   titleID: string;
+  isIconVisible: boolean;
+  titleWrapperProps: BasePropsWithoutChildren;
+  disclosureIcon?: ReactElement;
 };
 
-const StyledAccordionItemTitleWrap = tasty({
+const StyledAccordionItemTitleWrap = tasty<
+  BasePropsWithoutChildren & Omit<Omit<HTMLElement, 'children'>, 'style'>
+>(Element, {
+  role: 'button',
+  tabIndex: 0,
   styles: {
     display: 'flex',
     width: '100%',
@@ -28,7 +34,7 @@ const StyledAccordionItemTitleWrap = tasty({
 });
 
 const StyledAccordionItemTitle = memo(
-  tasty({
+  tasty<BaseProps>(Element, {
     styles: {
       display: 'grid',
       width: '100%',
@@ -41,27 +47,41 @@ const StyledAccordionItemTitle = memo(
     },
   }),
 );
-const TitleSection = tasty({ styles: { gridArea: 'title' } });
-const ExtraSection = tasty({
+const TitleSection = tasty<BaseProps>(Element, {
+  styles: { gridArea: 'title' },
+});
+const ExtraSection = tasty<BaseProps>(Element, {
   styles: {
     display: 'flex',
     alignItems: 'center',
     padding: '0.5x right',
   },
 });
-const ExpandDownOutlinedSection = tasty({
+
+const ExpandDownOutlinedSection = tasty<BaseProps>(Element, {
   styles: {
     gridArea: 'icon',
     width: '2x',
     height: '2x',
-    transform: { '': 'rotate(0)', expanded: 'rotate(-90deg)' },
+    transform: { '': 'rotate(-90deg)', expanded: 'rotate(0deg)' },
     transition: 'transform 0.2s ease-out',
     transformOrigin: 'center',
   },
 });
 
 export function AccordionItemTitle(props: AccordionItemTitleProps) {
-  const { title, extra, onExpand, isExpanded, contentID, titleID } = props;
+  const {
+    title,
+    extra,
+    onExpand,
+    isExpanded,
+    contentID,
+    titleID,
+    isIconVisible,
+    titleWrapperProps,
+    disclosureIcon,
+    ...baseProps
+  } = props;
 
   const { hoverProps } = useHover({});
   const { focusProps, isFocusVisible } = useFocusRing({});
@@ -73,15 +93,15 @@ export function AccordionItemTitle(props: AccordionItemTitleProps) {
       mods={{ focused: isFocusVisible }}
       aria-expanded={isExpanded}
       aria-controls={contentID}
-      role="button"
-      tabIndex="0"
       aria-labelledby={titleID}
+      {...titleWrapperProps}
     >
-      <StyledAccordionItemTitle>
-        <AccordionItemIcon isExpanded={isExpanded} />
+      <StyledAccordionItemTitle {...baseProps}>
+        {isIconVisible
+          ? disclosureIcon ?? <AccordionItemIcon isExpanded={isExpanded} />
+          : null}
         <AccordionItemContent title={title} id={titleID} />
       </StyledAccordionItemTitle>
-
       <AccordionItemExtra>{extra}</AccordionItemExtra>
     </StyledAccordionItemTitleWrap>
   );
@@ -94,7 +114,7 @@ const AccordionItemIcon = memo(function StyledAccordionItemIcon(props: {
 
   return (
     <ExpandDownOutlinedSection mods={{ expanded: isExpanded }}>
-      <DownOutlined style={{ transform: 'rotate(90deg)' }} />
+      <DownOutlined />
     </ExpandDownOutlinedSection>
   );
 });

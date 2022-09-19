@@ -16,11 +16,7 @@ import {
 } from 'react';
 import { useHover } from '@react-aria/interactions';
 
-import {
-  useFormProps,
-  FieldWrapper,
-  FormFieldProps,
-} from '@jengaui/form';
+import { useFormProps, FieldWrapper, FormFieldProps } from '@jengaui/form';
 import { useProviderProps } from '@jengaui/providers';
 import {
   BaseProps,

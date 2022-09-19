@@ -18,9 +18,7 @@ export default {
   },
 };
 
-const Template = ({ type, label }) => (
-  <Banner type={type}>{label}</Banner>
-);
+const Template = ({ type, label }) => <Banner type={type}>{label}</Banner>;
 
 export const Note = Template.bind({});
 Note.args = {

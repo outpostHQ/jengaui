@@ -8,7 +8,7 @@ import {
   FormContext,
   useFormProps,
   FieldWrapper,
-  FormFieldProps
+  FormFieldProps,
 } from '@jengaui/form';
 import {
   BaseProps,
@@ -17,10 +17,7 @@ import {
   OUTER_STYLES,
   tasty,
 } from 'tastycss';
-import {
-  castNullableArrayValue,
-  WithNullableValue,
-} from '@jengaui/utils';
+import { castNullableArrayValue, WithNullableValue } from '@jengaui/utils';
 
 import { CheckboxGroupContext } from './context';
 

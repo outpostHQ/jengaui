@@ -18,10 +18,7 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import {
-  castNullableStringValue,
-  WithNullableValue,
-} from '@jengaui/utils';
+import { castNullableStringValue, WithNullableValue } from '@jengaui/utils';
 
 import { RadioContext } from './context';
 

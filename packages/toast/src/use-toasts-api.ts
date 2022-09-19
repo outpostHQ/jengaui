@@ -3,7 +3,10 @@ import { isElement, isFragment } from 'react-is';
 
 import { useNotificationsApi } from '@jengaui/notification';
 
-import { JengaToastsApiToastAction, JengaToastsApiToastShortcuts } from './types';
+import {
+  JengaToastsApiToastAction,
+  JengaToastsApiToastShortcuts,
+} from './types';
 
 import type { JengaToastsApiProps, JengaToastsApiToastCallback } from './types';
 

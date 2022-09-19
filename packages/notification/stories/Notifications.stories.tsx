@@ -1,4 +1,4 @@
-import { Key, useState } from 'react';
+import { Key, useRef, useState } from 'react';
 import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 import { Meta, Story } from '@storybook/react';
@@ -14,7 +14,10 @@ import {
   Content,
   Footer,
   Title,
+  Text,
 } from '@jengaui/content';
+import { range, random } from '@jengaui/utils';
+import { wait } from '../../../test';
 
 import { NotificationsDialog, NotificationsDialogTrigger } from '../src/Dialog';
 import { NotificationsList } from '../src/NotificationsList';
@@ -26,6 +29,13 @@ import { NotificationView, NotificationAction } from '../src/NotificationView';
 export default {
   title: 'Overlays/Notifications',
   component: NotificationView,
+  argTypes: {
+    attributes: { table: { disable: true } },
+    styles: { table: { disable: true } },
+    timer: { table: { disable: true } },
+    duration: { type: 'number' },
+    id: { type: 'string' },
+  },
   args: {
     header: 'Development mode available',
     description: 'Edit and test your schema without affecting the production.',
@@ -33,11 +43,17 @@ export default {
   subcomponents: { NotificationAction },
 } as Meta<JengaNotificationProps>;
 
-const ActionTemplate: Story<JengaNotificationProps> = (args) => {
+const ActionTemplate: Story<JengaNotificationProps> = ({ ...args }) => {
   const { notify } = useNotificationsApi();
+  const idRef = useRef(0);
 
   return (
-    <Button qa="ClickMeButton" onPress={() => notify({ ...args })}>
+    <Button
+      qa="ClickMeButton"
+      onPress={() =>
+        notify({ ...args, header: args.header + ' ' + idRef.current++ })
+      }
+    >
       Click Me!
     </Button>
   );
@@ -66,7 +82,9 @@ export const NotifyAsComponent: Story<JengaNotificationProps> = (args) => {
         actions={
           <>
             <NotificationAction>Check logs</NotificationAction>
-            <NotificationAction>Upload updated Jenga project</NotificationAction>
+            <NotificationAction>
+              Upload updated Jenga project
+            </NotificationAction>
           </>
         }
         {...args}
@@ -284,8 +302,8 @@ export const ComplexInteraction: Story<JengaNotificationProps> = (args) => {
   const [notifications, setNotifications] = useState<
     { id?: Key; type: JengaNotificationProps['type'] }[]
   >([
-    { id: '1', type: 'attention' },
-    { id: '2', type: 'danger' },
+    { id: 'id1', type: 'attention' },
+    { id: 'id2', type: 'danger' },
   ]);
 
   return (
@@ -313,57 +331,70 @@ export const ComplexInteraction: Story<JengaNotificationProps> = (args) => {
           />
 
           <NotificationsDialog>
-            <NotificationsList items={notifications}>
-              {({ id, type, ...props }) => {
-                if (type === 'attention') {
-                  return (
-                    <NotificationsList.Item
-                      key={id}
-                      type="attention"
-                      header="Update available"
-                      description="Click to update your schema."
-                      actions={[
-                        <NotificationAction key="upd">
-                          Update
-                        </NotificationAction>,
-                        <NotificationAction key="hide">
-                          Don't show this again
-                        </NotificationAction>,
-                      ]}
-                      {...props}
-                    />
+            {notifications.length > 0 ? (
+              <NotificationsList
+                items={notifications}
+                onDismiss={(id) => {
+                  setNotifications((current) =>
+                    current.filter((item) => item.id !== id),
                   );
-                }
+                }}
+              >
+                {({ id, type, ...props }) => {
+                  if (type === 'attention') {
+                    return (
+                      <NotificationsList.Item
+                        key={id}
+                        type="attention"
+                        header="Update available"
+                        description="Click to update your schema."
+                        actions={[
+                          <NotificationAction key="upd">
+                            Update
+                          </NotificationAction>,
+                          <NotificationAction key="hide">
+                            Don't show this again
+                          </NotificationAction>,
+                        ]}
+                        {...props}
+                      />
+                    );
+                  }
 
-                if (type === 'danger') {
-                  return (
-                    <NotificationsList.Item
-                      key={id}
-                      type="danger"
-                      header="Error"
-                      description="Click to view the error."
-                      actions={
-                        <NotificationAction to="/">View</NotificationAction>
-                      }
-                      {...props}
-                    />
-                  );
-                }
+                  if (type === 'danger') {
+                    return (
+                      <NotificationsList.Item
+                        key={id}
+                        type="danger"
+                        header="Error"
+                        description="Click to view the error."
+                        actions={
+                          <NotificationAction to="/">View</NotificationAction>
+                        }
+                        {...props}
+                      />
+                    );
+                  }
 
-                if (type === 'success') {
-                  return (
-                    <NotificationsList.Item
-                      key={id}
-                      description="Development mode available"
-                      type="success"
-                      {...props}
-                    />
-                  );
-                }
+                  if (type === 'success') {
+                    return (
+                      <NotificationsList.Item
+                        key={id}
+                        description="Development mode available"
+                        type="success"
+                        {...props}
+                      />
+                    );
+                  }
 
-                return <NotificationsList.Item {...args} />;
-              }}
-            </NotificationsList>
+                  return <NotificationsList.Item {...args} />;
+                }}
+              </NotificationsList>
+            ) : (
+              <Flex padding="5x 4x" textAlign="center" margin="auto">
+                <Text.Minor>No notifications 🎉</Text.Minor>
+              </Flex>
+            )}
           </NotificationsDialog>
         </NotificationsDialogTrigger>
       </Header>
@@ -425,3 +456,15 @@ export const WithWidget: Story<JengaNotificationProps> = (args) => (
 );
 
 WithWidget.play = ActionTemplate.play;
+
+export const NotificationsQueue = ActionTemplate.bind({});
+NotificationsQueue.play = async ({ canvasElement }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  for await (const _ of range(10)) {
+    const { getByTestId } = within(canvasElement);
+
+    const button = getByTestId('ClickMeButton');
+    await userEvent.click(button);
+    await wait(random(400, 800));
+  }
+};

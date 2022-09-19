@@ -1,19 +1,16 @@
 import React, { memo } from 'react';
 import { isElement } from 'react-is';
-import { flattenChildren } from '@jengaui/utils'
+import { flattenChildren } from '@jengaui/utils';
+
 import { JengaNotificationProps, NotificationActionComponent } from '../types';
 import { tasty } from 'tastycss';
 import { ButtonGroup } from '@jengaui/button-group';
-
-
-
 
 interface NotificationFooterProps {
   hasDescription: boolean;
   actions: JengaNotificationProps['actions'];
   onClose: () => void;
   onDismiss: () => void;
-  children?: Array<React.ReactNode>;
 }
 
 const FooterArea = tasty(ButtonGroup, {
@@ -27,6 +24,9 @@ const FooterArea = tasty(ButtonGroup, {
   },
 });
 
+/**
+ * @internal This component is unstable and must not be used outside of `NotificationView`.
+ */
 export const NotificationFooter = memo(function NotificationFooter(
   props: NotificationFooterProps,
 ): JSX.Element {
@@ -50,7 +50,7 @@ export const NotificationFooter = memo(function NotificationFooter(
               ...props,
               type: props.type ?? defaultType,
             },
-            props.children
+            props.children,
           );
         })}
     </FooterArea>
