@@ -3575,7 +3575,7 @@ __metadata:
     "@jengaui/core": "*"
     "@jengaui/layout": "*"
     "@jengaui/tsconfig": "*"
-    "@jengaui/utils": "workspace:packages/utils"
+    "@jengaui/utils": "*"
     "@react-aria/focus": ^3.5.0
     "@react-aria/interactions": ^3.7.0
     "@types/react": ^17.0.38
