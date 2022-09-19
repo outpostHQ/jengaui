@@ -1,18 +1,10 @@
 import { memo, ReactNode, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { Flex, JengaFlexProps } from '@jengaui/layout';
+import { Flex } from '@jengaui/layout';
 import styled from 'styled-components';
-import { BasePropsWithoutChildren } from 'tastycss';
 import { useLayoutEffect } from '@jengaui/utils';
 
-import { AccordionItemProps } from './types';
-
-type AccordionDetailsProps = BasePropsWithoutChildren &
-  JengaFlexProps & {
-    children: AccordionItemProps['children'];
-    isLazy?: boolean;
-    isExpanded?: boolean;
-  };
+import { AccordionDetailsProps } from './types';
 
 const ACCORDION_CONTENT_HEIGHT_VARIABLE = '--__accordion-content-height__';
 const ANIMATION_TIMEOUT = 180;
