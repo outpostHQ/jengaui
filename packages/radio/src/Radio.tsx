@@ -169,7 +169,9 @@ function Radio(props: JengaRadioProps, ref) {
   let state = useRadioProvider();
 
   if (!state) {
-    throw new Error('JengaUI: The Radio button is used outside the RadioGroup.');
+    throw new Error(
+      'JengaUI: The Radio button is used outside the RadioGroup.',
+    );
   }
 
   let { isFocused, focusProps } = useFocus({ isDisabled }, true);

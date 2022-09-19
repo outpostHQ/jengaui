@@ -8,10 +8,7 @@ import {
   castNullableStringValue,
   WithNullableValue,
 } from '@jengaui/utils';
-import {
-  JengaTextInputBaseProps,
-  TextInputBase,
-} from '@jengaui/text-input';
+import { JengaTextInputBaseProps, TextInputBase } from '@jengaui/text-input';
 import { useProviderProps } from '@jengaui/providers';
 import { Button, ariaToJengaButtonProps } from '@jengaui/button';
 import { tasty } from 'tastycss';

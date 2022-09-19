@@ -1,15 +1,6 @@
 import { Title, Content, Header } from '@jengaui/content';
-import {
-  JengaFormProps,
-  Form,
-  useForm,
-  FieldTypes,
-} from '@jengaui/form';
-import {
-  Submit,
-  Button,
-  JengaButtonProps,
-} from '@jengaui/button';
+import { JengaFormProps, Form, useForm, FieldTypes } from '@jengaui/form';
+import { Submit, Button, JengaButtonProps } from '@jengaui/button';
 import { ButtonGroup } from '@jengaui/button-group';
 
 import { useDialogContext } from './context';

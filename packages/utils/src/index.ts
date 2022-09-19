@@ -5,3 +5,5 @@ export * from './ResizeSensor';
 export * from './transitions';
 export * from './tree';
 export * from './warnings';
+export * from './range';
+export * from './random';
