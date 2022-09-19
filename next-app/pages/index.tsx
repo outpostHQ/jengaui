@@ -1,12 +1,11 @@
 import type { NextPage } from 'next';
-import { Accordion } from '@jengaui/accordion';
+import { Accordion, AccordionItemContext } from '@jengaui/accordion';
 import {
   Avatar,
   Block,
   BreadcrumbItem,
   Breadcrumbs,
   Banner,
-  Notification,
   Button,
   Cell,
   Column,
@@ -18,14 +17,24 @@ import {
   Table,
   TableBody,
   TableHeader,
+  TOKENS,
 } from '@jengaui/react';
 import styles from '../styles/Home.module.css';
+import { useContext } from 'react';
+
+const Extra = () => {
+  const ctx = useContext(AccordionItemContext);
+  console.log(ctx);
+  return (
+    <Button onPress={ctx.setExpand}>{ctx.isExpanded ? 'Hide' : 'Show'}</Button>
+  );
+};
 
 const Home: NextPage = () => {
   return (
     <SSRProvider>
-      <Root>
-        <h1> Hello! </h1>
+      <Root fonts={false} tokens={TOKENS}>
+        {/* <h1> Hello! </h1>
         <Block> This is Jenga-UI </Block>
         <Avatar icon={null}> OP </Avatar>
         <Button> I'm Button </Button>
@@ -70,12 +79,29 @@ const Home: NextPage = () => {
         <Breadcrumbs>
           <BreadcrumbItem>A</BreadcrumbItem>
           <BreadcrumbItem>B</BreadcrumbItem>
-        </Breadcrumbs>
-        <Accordion>
-          <Accordion.Item key="1" isDefaultExpanded title="Create Jenga">
-            <Paragraph fill="#purple_03" height={150}></Paragraph>
-          </Accordion.Item>
-        </Accordion>
+        </Breadcrumbs> */}
+        <Block padding={'10px'}>
+          <Accordion styles={{ padding: 0 }}>
+            <Accordion.Item
+              styles={{
+                fill: '#black',
+                paddingTop: '0',
+                paddingBottom: '0',
+                paddingLeft: '0',
+                paddingRight: '0',
+              }}
+              key="1"
+              title="Create Jenga"
+              extra={<Extra />}
+              isIconVisible={false}
+            >
+              <Paragraph fill="#purple_03" height={150}></Paragraph>
+            </Accordion.Item>
+            <Accordion.Item key="2" title="Create 2 Jenga" extra={<Extra />}>
+              <Paragraph fill="#purple_03" height={150}></Paragraph>
+            </Accordion.Item>
+          </Accordion>
+        </Block>
       </Root>
     </SSRProvider>
   );

@@ -1,15 +1,18 @@
-import { memo, ReactNode, useLayoutEffect, useRef, useState } from 'react';
+import { memo, ReactNode, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { Flex } from '@jengaui/layout';
+import { Flex, JengaFlexProps } from '@jengaui/layout';
 import styled from 'styled-components';
+import { BasePropsWithoutChildren } from 'tastycss';
+import { useLayoutEffect } from '@jengaui/utils';
 
 import { AccordionItemProps } from './types';
 
-type AccordionDetailsProps = {
-  children: AccordionItemProps['children'];
-  isLazy?: boolean;
-  isExpanded?: boolean;
-};
+type AccordionDetailsProps = BasePropsWithoutChildren &
+  JengaFlexProps & {
+    children: AccordionItemProps['children'];
+    isLazy?: boolean;
+    isExpanded?: boolean;
+  };
 
 const ACCORDION_CONTENT_HEIGHT_VARIABLE = '--__accordion-content-height__';
 const ANIMATION_TIMEOUT = 180;
@@ -51,10 +54,11 @@ const AccordionDetailsContent = memo(styled.div<{ expanded: boolean }>`
     }
   }
 `);
+
 export const AccordionDetails = memo(function AccordionDetails(
   props: AccordionDetailsProps,
 ): JSX.Element {
-  const { children, isLazy, isExpanded } = props;
+  const { children, isLazy, isExpanded, ...baseProps } = props;
 
   const [innerExpandingState, setInnerExpandingState] = useState<
     'expanded' | 'collapsed' | 'collapsing' | 'expanding'
@@ -77,6 +81,8 @@ export const AccordionDetails = memo(function AccordionDetails(
     return renderChildren(children);
   })();
 
+  //  https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
+
   useLayoutEffect(() => {
     accordionContentRef.current?.style.setProperty(
       ACCORDION_CONTENT_HEIGHT_VARIABLE,
@@ -95,7 +101,7 @@ export const AccordionDetails = memo(function AccordionDetails(
       onExited={() => setInnerExpandingState('collapsed')}
     >
       <AccordionDetailsContent ref={accordionContentRef} expanded={isExpanded}>
-        <Flex padding="1x 3x 3x" gap="0" flow="column">
+        <Flex padding="1x 3x 3x" gap="0" flow="column" {...baseProps}>
           {content}
         </Flex>
       </AccordionDetailsContent>
