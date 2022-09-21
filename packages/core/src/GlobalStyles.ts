@@ -157,8 +157,8 @@ export const GlobalStyles = createGlobalStyle`
       margin-bottom: 0px;
     }
   }
-  b {
-    font-weight: 600;
+  b, strong {
+    font-weight: var(--bold-font-weight, 700);
   }
   [type=reset], [type=submit], button, html [type=button] {
     -webkit-appearance: none;
