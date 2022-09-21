@@ -149,7 +149,7 @@ export class JengaFormInstance<
   ) {
     const field = this.fields[name];
 
-    if (!field || isEqual(value, field.value)) {
+    if (!field || isEqual(value, inputOnly ? field.inputValue : field.value)) {
       return;
     }
 
@@ -355,9 +355,7 @@ export function useForm<TSourceType extends FieldTypes>(
         forceUpdate({});
       };
 
-      form = formRef.current = new JengaFormInstance<TSourceType>(
-        forceReRender,
-      );
+      form = formRef.current = new JengaFormInstance<TSourceType>(forceReRender);
     }
 
     form.ref = ref;
