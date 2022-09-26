@@ -1,8 +1,8 @@
-# Jenga-UI
+# Jenga UI
 
 [![package-badge]][package]
 
-Jenga-UI is a fast, reusable, composable, and accessible React components for your React apps. It makes it super easy to create websites and apps.
+Jenga UI is a fast, reusable, composable, and accessible React components for your React apps. It makes it super easy to create websites and apps.
 
 ## Installation
 
@@ -18,7 +18,7 @@ For discussions, suggestions and contributions, create an issue or join our [Dis
 
 ## License
 
-Jenga-UI is a project by [Outpost](https://outpost.run).
+Jenga UI is a project by [Outpost](https://outpost.run).
 
 Released under the MIT License.
 

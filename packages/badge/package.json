@@ -2,11 +2,11 @@
   "name": "@jengaui/badge",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "Jenga-UI React badge component",
+  "description": "Jenga UI Badge component in React",
   "keywords": [
     "badge",
     "react",
-    "jenga-ui",
+    "Jenga UI",
     "ui",
     "clickable",
     "tabbable"
@@ -44,12 +44,12 @@
     "styled-components": "^5.3.0",
     "tastycss": "^0.8.7"
   },
-  "homepage": "https://github.com/OutpostHQ/jenga-ui",
+  "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OutpostHQ/jenga-ui.git"
+    "url": "git+https://github.com/Outposthq/jengaui.git"
   },
   "bugs": {
-    "url": "https://github.com/OutpostHQ/jenga-ui/issues"
+    "url": "https://github.com/Outposthq/jengaui/issues"
   }
 }

@@ -35,7 +35,7 @@ const Home: NextPage = () => {
     <SSRProvider>
       <Root fonts={false} tokens={TOKENS}>
         {/* <h1> Hello! </h1>
-        <Block> This is Jenga-UI </Block>
+        <Block> This is Jenga UI </Block>
         <Avatar icon={null}> OP </Avatar>
         <Button> I'm Button </Button>
         <Banner type="note"> Banner text </Banner>

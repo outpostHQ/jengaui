@@ -14,6 +14,6 @@ For discussions, suggestions and contributions, create an issue or join our [Dis
 
 ## License
 
-Jenga-UI is a project by [Outpost](https://outpost.run).
+Jenga UI is a project by [Outpost](https://outpost.run).
 
 Released under the MIT License.
