@@ -2,10 +2,11 @@
   "name": "@jengaui/utils",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "Responsive and accessible React UI components built with TastyCSS",
+  "description": "Jenga UI Utils component in React",
   "keywords": [
     "react",
-    "jenga-ui",
+    "utils",
+    "Jenga UI",
     "ui",
     "design-system",
     "react-components",
@@ -52,12 +53,12 @@
     "tsup": "^6.2.3",
     "typescript": "^4.5.4"
   },
-  "homepage": "https://github.com/OutpostHQ/jenga-ui",
+  "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OutpostHQ/jenga-ui.git"
+    "url": "git+https://github.com/Outposthq/jengaui.git"
   },
   "bugs": {
-    "url": "https://github.com/OutpostHQ/jenga-ui/issues"
+    "url": "https://github.com/Outposthq/jengaui/issues"
   }
 }

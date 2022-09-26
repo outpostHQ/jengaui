@@ -1,18 +1,18 @@
 {
   "name": "@jengaui/form",
   "version": "0.1.0",
-  "description": "Jenga-UI React form component",
+  "description": "Jenga UI Form component in React",
   "keywords": [
     "form",
     "react",
-    "jenga-ui",
+    "Jenga UI",
     "ui",
     "clickable",
     "tabbable"
   ],
-  "repository": "OutpostHQ/jenga-ui",
+  "repository": "Outposthq/jengaui",
   "license": "MIT",
-  "bugs": "https://github.com/OutpostHQ/jenga-ui/issues",
+  "bugs": "https://github.com/Outposthq/jengaui/issues",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

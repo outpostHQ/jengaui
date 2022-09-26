@@ -20,7 +20,7 @@ import { AlertDialogApiProvider } from '@jengaui/alert-dialog';
 import { NotificationsProvider } from '@jengaui/notification';
 
 const RootElement = tasty({
-  id: 'jenga-ui-kit-root',
+  id: 'Jenga UI-kit-root',
   className: 'root',
 });
 

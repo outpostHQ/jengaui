@@ -1,4 +1,4 @@
-# Contributing to Jenga-UI
+# Contributing to Jenga UI
 
 Welcome and thanks for your interest! Before submitting a pull request, please take a moment to review these guidelines.
 
@@ -20,10 +20,10 @@ scope and avoid unrelated commits.
 
    ```bash
    # Clone your fork of the repo into the current directory
-   git clone git@github.com:$(npx github-username-cli $(git config user.email))/jenga-ui.git
+   git clone git@github.com:$(npx github-username-cli $(git config user.email))/Jenga UI.git
 
    # Navigate to the newly cloned directory
-   cd jenga-ui
+   cd Jenga UI
 
    # Assign the original repo to a remote called "upstream"
    git remote add upstream git@github.com:tenphi/tastefulcss.git
@@ -68,8 +68,8 @@ scope and avoid unrelated commits.
 
 That’s it! Now [open a pull request] with a clear title and description.
 
-[already been reported]: https://github.com/OutpostHQ/jenga-ui/issues
-[fork this project]: https://github.com/OutpostHQ/jenga-ui/fork
+[already been reported]: https://github.com/Outposthq/jengaui/issues
+[fork this project]: https://github.com/Outposthq/jengaui/fork
 [live example]: https://codesandbox.io/
 [open a pull request]: https://help.github.com/articles/using-pull-requests/
 [reduced test case]: https://css-tricks.com/reduced-test-cases/

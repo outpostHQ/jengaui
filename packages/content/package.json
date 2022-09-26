@@ -2,11 +2,11 @@
   "name": "@jengaui/content",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "Jenga-UI React content component",
+  "description": "Jenga UI Content component in React",
   "keywords": [
     "content",
     "react",
-    "jenga-ui",
+    "Jenga UI",
     "ui"
   ],
   "main": "./dist/index.js",
@@ -41,12 +41,12 @@
     "styled-components": "^5.3.0",
     "tastycss": "^0.8.7"
   },
-  "homepage": "https://github.com/OutpostHQ/jenga-ui",
+  "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OutpostHQ/jenga-ui.git"
+    "url": "git+https://github.com/Outposthq/jengaui.git"
   },
   "bugs": {
-    "url": "https://github.com/OutpostHQ/jenga-ui/issues"
+    "url": "https://github.com/Outposthq/jengaui/issues"
   }
 }
