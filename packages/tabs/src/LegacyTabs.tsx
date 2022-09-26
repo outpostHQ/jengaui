@@ -131,7 +131,7 @@ const StyledTabsContainerElement = styled(TabsContainerElement)`
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 1)
     );
-    z-index: 10;
+    z-index: 1;
   }
   &::after {
     content: '';
@@ -149,7 +149,7 @@ const StyledTabsContainerElement = styled(TabsContainerElement)`
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 1)
     );
-    z-index: 10;
+    z-index: 1;
   }
   &[data-is-left-fade]::before,
   &[data-is-right-fade]::after {
