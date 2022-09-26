@@ -22,5 +22,5 @@ Jenga UI is a project by [Outpost](https://outpost.run).
 
 Released under the MIT License.
 
-[package]: https://www.npmjs.com/package/@jengaui/core
-[package-badge]: https://img.shields.io/npm/v/@jengaui/core?style=flat-square
+[package]: https://www.npmjs.com/package/@jengaui/react
+[package-badge]: https://img.shields.io/npm/v/@jengaui/react?style=flat-square
