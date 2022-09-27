@@ -12,7 +12,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md,svg}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "release": "turbo run build && changeset publish"
   },
   "dependencies": {
     "@types/react-transition-group": "^4.4.2",
@@ -23,6 +23,7 @@
     "tastycss": "^0.8.7"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.6",
     "@changesets/cli": "^2.24.4",
     "@storybook/builder-vite": "^0.2.2",
     "@swc/core": "1.2.148",
