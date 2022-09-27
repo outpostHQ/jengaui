@@ -11,7 +11,7 @@ import {
   tasty,
 } from 'tastycss';
 import { Provider } from '@jengaui/providers';
-import { TOKENS } from '@jengaui/core/src/tokens';
+import { TOKENS } from '@jengaui/core';
 import { useViewportSize } from '@jengaui/utils';
 
 import { PortalProvider } from '@jengaui/portal';

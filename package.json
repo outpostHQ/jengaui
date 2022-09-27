@@ -68,7 +68,7 @@
   "workspaces": [
     "packages/*",
     "next-app",
-    "examples/*",
+    "examples",
     "storybook"
   ],
   "resolutions": {

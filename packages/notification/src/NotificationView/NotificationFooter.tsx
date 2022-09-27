@@ -11,6 +11,7 @@ interface NotificationFooterProps {
   actions: JengaNotificationProps['actions'];
   onClose: () => void;
   onDismiss: () => void;
+  children?: Array<React.ReactNode>;
 }
 
 const FooterArea = tasty(ButtonGroup, {
@@ -50,7 +51,7 @@ export const NotificationFooter = memo(function NotificationFooter(
               ...props,
               type: props.type ?? defaultType,
             },
-            props.children,
+            props.children
           );
         })}
     </FooterArea>
