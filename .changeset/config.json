@@ -10,8 +10,5 @@
     "access": "public",
     "baseBranch": "main",
     "updateInternalDependencies": "patch",
-    "ignore": ["@jengaui/react-storybook", "next-app"],
-    "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
-      "onlyUpdatePeerDependentsWhenOutOfRange": true
-  }
+    "ignore": ["@jengaui/react-storybook", "next-app"]
 }
