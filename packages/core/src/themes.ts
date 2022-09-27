@@ -21,4 +21,4 @@ const THEMES = {
   },
 };
 
-export default THEMES;
+export { THEMES };

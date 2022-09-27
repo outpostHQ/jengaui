@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/button",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "Jenga UI Button component in React",
   "keywords": [

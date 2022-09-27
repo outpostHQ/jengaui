@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/alert-dialog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "Jenga UI Alert Dialog component in React",
   "keywords": [
