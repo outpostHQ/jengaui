@@ -31,6 +31,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
@@ -38,7 +39,6 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
     "@jengaui/button": "*",
     "@jengaui/checkbox": "*",
     "@jengaui/content": "*",

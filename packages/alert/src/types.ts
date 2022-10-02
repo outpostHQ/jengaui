@@ -1,5 +1,5 @@
 import { BaseProps, ContainerStyleProps, TextStyleProps } from 'tastycss';
-import { THEMES } from '@jengaui/core';
+import THEMES from '@jengaui/core';
 
 export interface JengaAlertProps
   extends Omit<BaseProps, 'theme'>,

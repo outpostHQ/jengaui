@@ -30,17 +30,19 @@
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "styled-components": "^5.3.0",
     "tsup": "^6.2.3",
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
     "@jengaui/content": "*",
     "@jengaui/layout": "*",
     "@jengaui/providers": "*",
@@ -50,7 +52,6 @@
     "@react-stately/collections": "^3.3.4",
     "@react-types/shared": "^3.10.1",
     "email-validator": "^2.0.4",
-    "styled-components": "^5.3.0",
     "tastycss": "^0.8.7",
     "valid-url": "^1.0.9"
   }
