@@ -78,9 +78,9 @@
     "@testing-library/user-event": "14.2.0"
   },
   "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all"
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari major versions"
   ],
   "lint-staged": {
     "*.js": "eslint --cache --fix",
