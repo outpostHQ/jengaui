@@ -54,7 +54,7 @@
     "@react-stately/select": "^3.2.1",
     "@react-types/select": "^3.6.1",
     "@react-types/shared": "^3.10.1",
-    "tastycss": "^0.8.7"
+    "tastycss": "^0.8.8"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {

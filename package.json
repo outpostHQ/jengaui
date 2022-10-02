@@ -2,24 +2,24 @@
   "name": "jengaui",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo build",
     "test": "jest",
     "test-cover": "jest --coverage",
     "test-watch": "jest --watch",
-    "dev": "turbo run dev --no-cache --parallel --continue",
-    "lint": "turbo run lint",
-    "clean": "turbo run clean && rm -rf node_modules",
+    "dev": "turbo dev --no-cache --parallel --continue",
+    "lint": "turbo lint",
+    "clean": "turbo clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md,svg}\"",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "turbo run build && changeset publish"
+    "release": "turbo build && changeset publish"
   },
   "dependencies": {
     "@types/react-transition-group": "^4.4.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-transition-group": "^4.4.2",
-    "tastycss": "^0.8.7"
+    "tastycss": "^0.8.8"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.6",

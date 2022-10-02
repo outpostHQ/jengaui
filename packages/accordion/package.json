@@ -49,7 +49,7 @@
     "@react-aria/focus": "^3.5.0",
     "@react-aria/interactions": "^3.7.0",
     "react-transition-group": "^4.4.5",
-    "tastycss": "^0.8.7"
+    "tastycss": "^0.8.8"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {

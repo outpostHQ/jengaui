@@ -39,7 +39,7 @@
   "dependencies": {
     "@jengaui/core": "*",
     "@jengaui/hooks": "*",
-    "tastycss": "^0.8.7"
+    "tastycss": "^0.8.8"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {

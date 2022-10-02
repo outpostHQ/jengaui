@@ -43,7 +43,7 @@
     "@jengaui/utils": "*",
     "@react-aria/breadcrumbs": "^3.3.1",
     "@react-types/breadcrumbs": "^3.4.3",
-    "tastycss": "^0.8.7",
+    "tastycss": "^0.8.8",
     "tsup": "^6.2.3"
   },
   "homepage": "https://github.com/Outposthq/jengaui",

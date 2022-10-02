@@ -46,7 +46,7 @@
     "@react-spectrum/utils": "^3.6.3",
     "@react-types/overlays": "^3.5.5",
     "react-transition-group": "^4.4.2",
-    "tastycss": "^0.8.7"
+    "tastycss": "^0.8.8"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {

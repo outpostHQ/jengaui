@@ -38,7 +38,7 @@
                 "@jengaui/providers": "*",
                 "@jengaui/utils": "*",
                 "@react-aria/overlays": "^3.7.5",
-                "tastycss": "^0.8.7"
+                "tastycss": "^0.8.8"
         },
         "devDependencies": {
                 "@jengaui/tsconfig": "*",

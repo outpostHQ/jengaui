@@ -44,7 +44,7 @@
     "@jengaui/text-input": "*",
     "@jengaui/utils": "*",
     "@react-aria/textfield": "^3.5.0",
-    "tastycss": "^0.8.7"
+    "tastycss": "^0.8.8"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {

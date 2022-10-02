@@ -41,7 +41,7 @@
   "dependencies": {
     "@jengaui/layout": "*",
     "@jengaui/placeholder": "*",
-    "tastycss": "^0.8.7"
+    "tastycss": "^0.8.8"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {

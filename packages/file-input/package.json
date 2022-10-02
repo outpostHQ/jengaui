@@ -43,7 +43,7 @@
     "@jengaui/providers": "*",
     "@react-spectrum/utils": "^3.6.3",
     "@react-types/textfield": "^3.3.0",
-    "tastycss": "^0.8.7"
+    "tastycss": "^0.8.8"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
