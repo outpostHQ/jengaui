@@ -3591,9 +3591,9 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    styled-components: ^5.3.0
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
+    styled-components: ">= 5.3.0"
   languageName: unknown
   linkType: soft
 
@@ -3611,8 +3611,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3636,8 +3636,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3654,8 +3654,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3671,8 +3671,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3689,8 +3689,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3709,8 +3709,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3730,8 +3730,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3749,8 +3749,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3775,8 +3775,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3791,8 +3791,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3818,8 +3818,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3851,8 +3851,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3868,8 +3868,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3892,8 +3892,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3910,9 +3910,9 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    styled-components: ^5.3.0
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
+    styled-components: ">= 5.3.0"
   languageName: unknown
   linkType: soft
 
@@ -3944,8 +3944,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3965,8 +3965,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -3993,9 +3993,9 @@ __metadata:
     typescript: ^4.5.4
     valid-url: ^1.0.9
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    styled-components: ^5.3.0
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
+    styled-components: ">= 5.3.0"
   languageName: unknown
   linkType: soft
 
@@ -4010,8 +4010,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4027,12 +4027,11 @@ __metadata:
     "@jengaui/tsconfig": "*"
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
-    tastycss: ^0.8.8
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4048,8 +4047,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4062,12 +4061,11 @@ __metadata:
     "@react-types/shared": ^3.10.1
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
-    tastycss: ^0.8.8
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4100,8 +4098,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4125,8 +4123,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4163,9 +4161,9 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    styled-components: ^5.3.0
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
+    styled-components: ">= 5.3.0"
   languageName: unknown
   linkType: soft
 
@@ -4190,8 +4188,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4205,12 +4203,11 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     react-transition-group: ^4.4.2
-    tastycss: ^0.8.8
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4227,12 +4224,11 @@ __metadata:
     "@react-aria/textfield": ^3.5.0
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
-    tastycss: ^0.8.8
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4248,9 +4244,9 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    styled-components: ^5.3.0
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
+    styled-components: ">= 5.3.0"
   languageName: unknown
   linkType: soft
 
@@ -4265,8 +4261,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4282,8 +4278,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4299,8 +4295,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4324,8 +4320,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4419,8 +4415,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4438,8 +4434,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4462,9 +4458,9 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    styled-components: ^5.3.0
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
+    styled-components: ">= 5.3.0"
   languageName: unknown
   linkType: soft
 
@@ -4486,8 +4482,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4518,9 +4514,9 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    styled-components: ^5.3.0
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
+    styled-components: ">= 5.3.0"
   languageName: unknown
   linkType: soft
 
@@ -4533,12 +4529,11 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     react-transition-group: ^4.4.2
-    tastycss: ^0.8.8
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4555,8 +4550,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4586,8 +4581,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4611,8 +4606,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4641,8 +4636,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4661,9 +4656,9 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    styled-components: ^5.3.0
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
+    styled-components: ">= 5.3.0"
   languageName: unknown
   linkType: soft
 
@@ -4682,8 +4677,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4708,8 +4703,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4726,12 +4721,11 @@ __metadata:
     "@react-stately/utils": ^3.5.0
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
-    tastycss: ^0.8.8
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4745,12 +4739,11 @@ __metadata:
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     react-is: ^17.0.0
-    tastycss: ^0.8.8
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -4777,9 +4770,9 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    styled-components: ^5.3.0
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
+    styled-components: ">= 5.3.0"
   languageName: unknown
   linkType: soft
 
@@ -4805,8 +4798,8 @@ __metadata:
     tsup: ^6.2.3
     typescript: ^4.5.4
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">= 17.0.0"
+    react-dom: ">= 17.0.0"
   languageName: unknown
   linkType: soft
 

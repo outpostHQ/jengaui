@@ -49,8 +49,7 @@
   "dependencies": {
     "@jengaui/notification": "*",
     "@react-aria/utils": "^3.11.0",
-    "react-is": "^17.0.0",
-    "tastycss": "^0.8.8"
+    "react-is": "^17.0.0"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
