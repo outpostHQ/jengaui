@@ -4,11 +4,10 @@ import {
   ExclamationOutlined,
   InfoOutlined,
 } from '@ant-design/icons';
-
 import { Action } from '@jengaui/button';
 import { Card, JengaCardProps } from '@jengaui/card';
 import { Block } from '@jengaui/core';
-import { THEMES } from '@jengaui/core';
+import THEMES from '@jengaui/core';
 import { tasty } from 'tastycss';
 
 export interface JengaBannerProps extends JengaCardProps {
