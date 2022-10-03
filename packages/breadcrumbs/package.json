@@ -19,8 +19,8 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "build": "tsup src/index.ts --minify --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --minify --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
@@ -28,22 +28,22 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": ">= 17.0.0",
+    "react-dom": ">= 17.0.0"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
     "@jengaui/providers": "*",
     "@jengaui/utils": "*",
     "@react-aria/breadcrumbs": "^3.3.1",
     "@react-types/breadcrumbs": "^3.4.3",
-    "tastycss": "^0.8.7",
+    "tastycss": "^0.8.8",
     "tsup": "^6.2.3"
   },
   "homepage": "https://github.com/Outposthq/jengaui",

@@ -51,7 +51,7 @@ export const NotificationFooter = memo(function NotificationFooter(
               ...props,
               type: props.type ?? defaultType,
             },
-            props.children
+            props.children,
           );
         })}
     </FooterArea>
