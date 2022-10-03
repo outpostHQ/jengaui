@@ -10,9 +10,9 @@
     "lint": "turbo lint",
     "clean": "turbo clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md,svg}\"",
-    "changeset": "changeset",
-    "version": "changeset version",
-    "release": "turbo build && changeset publish"
+    "publish:all": "lerna publish --no-verify-access --no-private",
+    "publish:beta": "lerna publish --ignore-prepublish --ignore-scripts --canary --preid beta --dist-tag beta",
+    "publish:dev": "run-s build:dev publish:beta"
   },
   "dependencies": {
     "@types/react-transition-group": "^4.4.2",
@@ -22,8 +22,6 @@
     "tastycss": "^0.8.8"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.6",
-    "@changesets/cli": "^2.24.4",
     "@storybook/builder-vite": "^0.2.2",
     "@swc/core": "1.2.148",
     "@swc/jest": "^0.2.20",
@@ -51,6 +49,7 @@
     "husky": ">=6",
     "jest": "^27.5.1",
     "jest-styled-components": "^7.0.8",
+    "lerna": "^5.4.3",
     "lint-staged": ">=10",
     "node-abort-controller": "^3.0.1",
     "prettier": "^2.5.1",
