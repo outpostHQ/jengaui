@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/menu",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Jenga UI Menu component in React",
   "keywords": [
@@ -38,11 +38,11 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "*",
-    "@jengaui/content": "*",
-    "@jengaui/layout": "*",
-    "@jengaui/modal": "*",
-    "@jengaui/utils": "*",
+    "@jengaui/button": "^0.1.2",
+    "@jengaui/content": "^0.1.2",
+    "@jengaui/layout": "^0.1.2",
+    "@jengaui/modal": "^0.1.2",
+    "@jengaui/utils": "^0.1.2",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/interactions": "^3.7.0",
     "@react-aria/menu": "^3.4.3",

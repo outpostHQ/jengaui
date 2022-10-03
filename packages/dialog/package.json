@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/dialog",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Jenga UI Dialog component in React",
   "keywords": [
@@ -38,12 +38,12 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "*",
-    "@jengaui/button-group": "*",
-    "@jengaui/content": "*",
-    "@jengaui/form": "*",
-    "@jengaui/modal": "*",
-    "@jengaui/utils": "*",
+    "@jengaui/button": "^0.1.2",
+    "@jengaui/button-group": "^0.1.2",
+    "@jengaui/content": "^0.1.2",
+    "@jengaui/form": "^0.1.2",
+    "@jengaui/modal": "^0.1.2",
+    "@jengaui/utils": "^0.1.2",
     "@react-aria/dialog": "^3.1.4",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/i18n": "^3.3.4",

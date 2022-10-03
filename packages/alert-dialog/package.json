@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/alert-dialog",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Jenga UI Alert Dialog component in React",
   "keywords": [
@@ -40,11 +40,11 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "*",
-    "@jengaui/button-group": "*",
-    "@jengaui/content": "*",
-    "@jengaui/dialog": "*",
-    "@jengaui/portal": "*",
+    "@jengaui/button": "^0.1.2",
+    "@jengaui/button-group": "^0.1.2",
+    "@jengaui/content": "^0.1.2",
+    "@jengaui/dialog": "^0.1.2",
+    "@jengaui/portal": "^0.1.2",
     "@react-aria/utils": "^3.11.0",
     "@react-types/dialog": "^3.3.4",
     "tastycss": "^0.8.8",

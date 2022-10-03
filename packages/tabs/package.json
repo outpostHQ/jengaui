@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/tabs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Jenga UI Tabs component in React",
   "keywords": [
@@ -39,9 +39,9 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "*",
-    "@jengaui/core": "*",
-    "@jengaui/layout": "*",
+    "@jengaui/button": "^0.1.2",
+    "@jengaui/core": "^0.1.2",
+    "@jengaui/layout": "^0.1.2",
     "tastycss": "^0.8.8"
   },
   "homepage": "https://github.com/Outposthq/jengaui",

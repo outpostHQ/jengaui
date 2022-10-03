@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/slider",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Jenga UI Slider component in React",
   "keywords": [
@@ -42,10 +42,10 @@
   },
   "dependencies": {
     "@internationalized/number": "^3.1.1",
-    "@jengaui/layout": "*",
-    "@jengaui/providers": "*",
-    "@jengaui/tooltip": "*",
-    "@jengaui/utils": "*",
+    "@jengaui/layout": "^0.1.2",
+    "@jengaui/providers": "^0.1.2",
+    "@jengaui/tooltip": "^0.1.2",
+    "@jengaui/utils": "^0.1.2",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/i18n": "^3.5.1",
     "@react-aria/interactions": "^3.7.0",

@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/combo-box",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Jenga UI Combo-Box component in React",
   "keywords": [
@@ -37,13 +37,13 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/form": "*",
-    "@jengaui/layout": "*",
-    "@jengaui/overlays": "*",
-    "@jengaui/providers": "*",
-    "@jengaui/select": "*",
-    "@jengaui/text-input": "*",
-    "@jengaui/utils": "*",
+    "@jengaui/form": "^0.1.2",
+    "@jengaui/layout": "^0.1.2",
+    "@jengaui/overlays": "^0.1.2",
+    "@jengaui/providers": "^0.1.2",
+    "@jengaui/select": "^0.1.2",
+    "@jengaui/text-input": "^0.1.2",
+    "@jengaui/utils": "^0.1.2",
     "@react-aria/button": "^3.3.4",
     "@react-aria/combobox": "^3.2.1",
     "@react-aria/i18n": "^3.3.4",

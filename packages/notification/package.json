@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/notification",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Jenga UI Notification component in React",
   "keywords": [
@@ -47,14 +47,14 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "*",
-    "@jengaui/button-group": "*",
-    "@jengaui/content": "*",
-    "@jengaui/dialog": "*",
-    "@jengaui/hooks": "*",
-    "@jengaui/layout": "*",
-    "@jengaui/portal": "*",
-    "@jengaui/utils": "*",
+    "@jengaui/button": "^0.1.2",
+    "@jengaui/button-group": "^0.1.2",
+    "@jengaui/content": "^0.1.2",
+    "@jengaui/dialog": "^0.1.2",
+    "@jengaui/hooks": "^0.1.2",
+    "@jengaui/layout": "^0.1.2",
+    "@jengaui/portal": "^0.1.2",
+    "@jengaui/utils": "^0.1.2",
     "@react-aria/button": "^3.3.4",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/interactions": "^3.7.0",
