@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/form",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Jenga UI Form component in React",
   "keywords": [
     "form",
@@ -43,11 +43,11 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/content": "^0.1.2",
-    "@jengaui/layout": "^0.1.2",
-    "@jengaui/providers": "^0.1.2",
-    "@jengaui/tooltip": "^0.1.2",
-    "@jengaui/utils": "^0.1.2",
+    "@jengaui/content": "^0.1.3",
+    "@jengaui/layout": "^0.1.3",
+    "@jengaui/providers": "^0.1.3",
+    "@jengaui/tooltip": "^0.1.3",
+    "@jengaui/utils": "^0.1.3",
     "@react-spectrum/utils": "^3.6.3",
     "@react-stately/collections": "^3.3.4",
     "@react-types/shared": "^3.10.1",

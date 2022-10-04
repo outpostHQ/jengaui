@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/select",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "description": "Jenga UI Select component in React",
   "keywords": [
@@ -40,10 +40,10 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/form": "^0.1.2",
-    "@jengaui/overlays": "^0.1.2",
-    "@jengaui/providers": "^0.1.2",
-    "@jengaui/utils": "^0.1.2",
+    "@jengaui/form": "^0.1.3",
+    "@jengaui/overlays": "^0.1.3",
+    "@jengaui/providers": "^0.1.3",
+    "@jengaui/utils": "^0.1.3",
     "@react-aria/button": "^3.3.4",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/interactions": "^3.7.0",

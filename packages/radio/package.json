@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/radio",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "description": "Jenga UI Radio component in React",
   "keywords": [
@@ -40,9 +40,9 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/form": "^0.1.2",
-    "@jengaui/providers": "^0.1.2",
-    "@jengaui/utils": "^0.1.2",
+    "@jengaui/form": "^0.1.3",
+    "@jengaui/providers": "^0.1.3",
+    "@jengaui/utils": "^0.1.3",
     "@react-aria/interactions": "^3.7.0",
     "@react-aria/radio": "^3.1.6",
     "@react-spectrum/utils": "^3.6.3",

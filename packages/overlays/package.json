@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/overlays",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "description": "Jenga UI Overlays component in React",
   "keywords": [
@@ -37,8 +37,8 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/portal": "^0.1.2",
-    "@jengaui/utils": "^0.1.2",
+    "@jengaui/portal": "^0.1.3",
+    "@jengaui/utils": "^0.1.3",
     "react-transition-group": "^4.4.2"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
