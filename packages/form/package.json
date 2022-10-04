@@ -20,8 +20,8 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --minify --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.ts --minify --format esm,cjs --watch --dts --external react",
+    "build": "tsup src/index.ts --minify --treeshake --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --minify --treeshake --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
