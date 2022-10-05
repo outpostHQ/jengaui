@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/textarea",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "description": "Jenga UI Textarea component in React",
   "keywords": [
@@ -38,9 +38,9 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/providers": "^0.1.3",
-    "@jengaui/text-input": "^0.1.3",
-    "@jengaui/utils": "^0.1.3",
+    "@jengaui/providers": "^0.1.4",
+    "@jengaui/text-input": "^0.1.4",
+    "@jengaui/utils": "^0.1.4",
     "@react-aria/textfield": "^3.5.0",
     "@react-aria/utils": "^3.11.0",
     "@react-stately/utils": "^3.5.0"

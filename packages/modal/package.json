@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/modal",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "description": "Jenga UI Modal component in React",
   "keywords": [
@@ -38,9 +38,9 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/form": "^0.1.3",
-    "@jengaui/providers": "^0.1.3",
-    "@jengaui/utils": "^0.1.3",
+    "@jengaui/form": "^0.1.4",
+    "@jengaui/providers": "^0.1.4",
+    "@jengaui/utils": "^0.1.4",
     "@react-aria/overlays": "^3.7.5",
     "@react-aria/utils": "^3.11.0",
     "@react-spectrum/utils": "^3.6.3",
