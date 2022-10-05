@@ -18,7 +18,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsup src/index.ts --minify --treeshake --format esm,cjs --dts --external react",
+    "build": "JSX=1 tsup --minify --treeshake",
     "dev": "tsup src/index.ts --minify --treeshake --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
