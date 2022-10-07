@@ -35,7 +35,8 @@ function NumberInput(props: WithNullableValue<JengaNumberInputProps>, ref) {
   props = useProviderProps(props);
   props = useFormProps(props);
 
-  let { hideStepper, value, defaultValue, onChange, ...otherProps } = props;
+  let { hideStepper, suffix, value, defaultValue, onChange, ...otherProps } =
+    props;
   let showStepper = !hideStepper;
   let { locale } = useLocale();
   let state = useNumberFieldState({ ...props, locale });
@@ -60,10 +61,22 @@ function NumberInput(props: WithNullableValue<JengaNumberInputProps>, ref) {
       suffix={
         showStepper ? (
           <StepperContainer>
-            <StepButton direction="up" {...incrementButtonProps} />
-            <StepButton direction="down" {...decrementButtonProps} />
+            <StepButton
+              isDisabled={props.isDisabled}
+              direction="up"
+              {...incrementButtonProps}
+              size={otherProps.size}
+            />
+            <StepButton
+              isDisabled={props.isDisabled}
+              direction="down"
+              {...decrementButtonProps}
+              size={otherProps.size}
+            />
           </StepperContainer>
-        ) : null
+        ) : (
+          suffix
+        )
       }
     />
   );
