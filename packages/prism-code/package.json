@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "prismjs": "^1.25.0",
-    "tastycss": "^0.8.8"
+    "tastycss": "^0.8.9"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
