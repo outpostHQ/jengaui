@@ -10,6 +10,7 @@
     "lint": "turbo lint",
     "clean": "turbo clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md,svg}\"",
+    "preinstall": "npx only-allow pnpm",
     "publish:all": "lerna publish --no-verify-access --no-private",
     "publish:beta": "lerna publish --ignore-prepublish --ignore-scripts --canary --preid beta --dist-tag beta",
     "publish:dev": "run-s build:dev publish:beta"
@@ -66,12 +67,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "workspaces": [
-    "packages/*",
-    "next-app",
-    "examples",
-    "storybook"
-  ],
   "resolutions": {
     "es5-ext": "0.10.53",
     "prettier": "2.5.1",
