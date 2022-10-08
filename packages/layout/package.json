@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@jengaui/utils": "^0.1.4",
-    "tastycss": "^0.8.8"
+    "tastycss": "^0.8.9"
   },
   "publishConfig": {
     "access": "public"

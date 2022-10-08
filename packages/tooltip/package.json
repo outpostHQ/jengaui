@@ -66,6 +66,6 @@
     "@react-stately/tooltip": "^3.0.8",
     "@react-types/shared": "^3.10.1",
     "@react-types/tooltip": "^3.1.5",
-    "tastycss": "^0.8.8"
+    "tastycss": "^0.8.9"
   }
 }
