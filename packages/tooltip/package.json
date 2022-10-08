@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/tooltip",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Tooltip component in React",
   "keywords": [
@@ -55,10 +55,10 @@
     "url": "https://github.com/Outposthq/jengaui/issues"
   },
   "dependencies": {
-    "@jengaui/active-zone": "^0.1.4",
-    "@jengaui/core": "^0.1.4",
-    "@jengaui/overlays": "^0.1.4",
-    "@jengaui/utils": "^0.1.4",
+    "@jengaui/active-zone": "^0.1.5",
+    "@jengaui/core": "^0.1.5",
+    "@jengaui/overlays": "^0.1.5",
+    "@jengaui/utils": "^0.1.5",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/overlays": "^3.7.5",
     "@react-aria/tooltip": "^3.1.3",

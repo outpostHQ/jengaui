@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/table",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Table component in React",
   "keywords": [
@@ -39,13 +39,13 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "^0.1.4",
-    "@jengaui/checkbox": "^0.1.4",
-    "@jengaui/content": "^0.1.4",
-    "@jengaui/core": "^0.1.4",
-    "@jengaui/layout": "^0.1.4",
-    "@jengaui/providers": "^0.1.4",
-    "@jengaui/utils": "^0.1.4",
+    "@jengaui/button": "^0.1.5",
+    "@jengaui/checkbox": "^0.1.5",
+    "@jengaui/content": "^0.1.5",
+    "@jengaui/core": "^0.1.5",
+    "@jengaui/layout": "^0.1.5",
+    "@jengaui/providers": "^0.1.5",
+    "@jengaui/utils": "^0.1.5",
     "@react-aria/table": "^3.4.1",
     "@react-aria/visually-hidden": "^3.4.1",
     "@react-stately/data": "^3.6.1",

@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/link",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Link component in React",
   "keywords": [
@@ -37,7 +37,7 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "^0.1.4",
+    "@jengaui/button": "^0.1.5",
     "@react-types/shared": "^3.10.1"
   },
   "homepage": "https://github.com/Outposthq/jengaui",

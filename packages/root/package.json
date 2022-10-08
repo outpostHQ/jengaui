@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/root",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Root component in React",
   "keywords": [
@@ -31,12 +31,12 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@jengaui/alert-dialog": "^0.1.4",
-    "@jengaui/core": "^0.1.4",
-    "@jengaui/notification": "^0.1.4",
-    "@jengaui/portal": "^0.1.4",
-    "@jengaui/providers": "^0.1.4",
-    "@jengaui/utils": "^0.1.4",
+    "@jengaui/alert-dialog": "^0.1.5",
+    "@jengaui/core": "^0.1.5",
+    "@jengaui/notification": "^0.1.5",
+    "@jengaui/portal": "^0.1.5",
+    "@jengaui/providers": "^0.1.5",
+    "@jengaui/utils": "^0.1.5",
     "@react-aria/overlays": "^3.7.5",
     "tastycss": "^0.8.9"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/copy-snippet",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Copy-Snippet component in React",
   "keywords": [
@@ -40,12 +40,12 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "^0.1.4",
-    "@jengaui/card": "^0.1.4",
-    "@jengaui/notification": "^0.1.4",
-    "@jengaui/prism-code": "^0.1.4",
-    "@jengaui/toast": "^0.1.4",
-    "@jengaui/tooltip": "^0.1.4",
+    "@jengaui/button": "^0.1.5",
+    "@jengaui/card": "^0.1.5",
+    "@jengaui/notification": "^0.1.5",
+    "@jengaui/prism-code": "^0.1.5",
+    "@jengaui/toast": "^0.1.5",
+    "@jengaui/tooltip": "^0.1.5",
     "clipboard-copy": "^4.0.1",
     "tastycss": "^0.8.9"
   },

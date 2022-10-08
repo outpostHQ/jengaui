@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/alert",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Alert component in React",
   "keywords": [
@@ -37,8 +37,8 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/core": "^0.1.4",
-    "@jengaui/hooks": "^0.1.4",
+    "@jengaui/core": "^0.1.5",
+    "@jengaui/hooks": "^0.1.5",
     "tastycss": "^0.8.9"
   },
   "homepage": "https://github.com/Outposthq/jengaui",

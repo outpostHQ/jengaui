@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/file-input",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI File-Input component in React",
   "keywords": [
@@ -38,9 +38,9 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "^0.1.4",
-    "@jengaui/form": "^0.1.4",
-    "@jengaui/providers": "^0.1.4",
+    "@jengaui/button": "^0.1.5",
+    "@jengaui/form": "^0.1.5",
+    "@jengaui/providers": "^0.1.5",
     "@react-spectrum/utils": "^3.6.3",
     "@react-types/textfield": "^3.3.0",
     "tastycss": "^0.8.9"

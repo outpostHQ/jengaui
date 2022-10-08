@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/breadcrumbs",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Breadcrumbs component in React",
   "keywords": [
@@ -39,8 +39,8 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/providers": "^0.1.4",
-    "@jengaui/utils": "^0.1.4",
+    "@jengaui/providers": "^0.1.5",
+    "@jengaui/utils": "^0.1.5",
     "@react-aria/breadcrumbs": "^3.3.1",
     "@react-types/breadcrumbs": "^3.4.3",
     "tastycss": "^0.8.9",

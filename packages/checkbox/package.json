@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/checkbox",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Checkbox component in React",
   "keywords": [
@@ -42,9 +42,9 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/form": "^0.1.4",
-    "@jengaui/providers": "^0.1.4",
-    "@jengaui/utils": "^0.1.4",
+    "@jengaui/form": "^0.1.5",
+    "@jengaui/providers": "^0.1.5",
+    "@jengaui/utils": "^0.1.5",
     "@react-aria/checkbox": "^3.3.1",
     "@react-aria/interactions": "^3.7.0",
     "@react-spectrum/utils": "^3.6.3",
