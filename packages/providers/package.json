@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/providers",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Providers component in React",
   "keywords": [
@@ -45,8 +45,8 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/utils": "^0.1.3",
-    "tastycss": "^0.8.8"
+    "@jengaui/utils": "^0.1.5",
+    "tastycss": "^0.8.9"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {

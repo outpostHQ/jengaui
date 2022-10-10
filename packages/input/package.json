@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/input",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Input component in React",
   "keywords": [
@@ -40,10 +40,10 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/number-input": "^0.1.3",
-    "@jengaui/password-input": "^0.1.3",
-    "@jengaui/text-input": "^0.1.3",
-    "@jengaui/textarea": "^0.1.3"
+    "@jengaui/number-input": "^0.1.5",
+    "@jengaui/password-input": "^0.1.5",
+    "@jengaui/text-input": "^0.1.5",
+    "@jengaui/textarea": "^0.1.5"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
