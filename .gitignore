@@ -26,3 +26,5 @@ node_modules
 server/dist
 public/dist
 storybook-static/
+
+.idea/
