@@ -1,5 +1,2 @@
-export * from './Slider';
-export * from './RangeSlider';
-export * from './types';
-
-//FutureScope: custom backgroundGradients, different orientations,tooltips
+export { RangeSlider } from './RangeSlider';
+export type { JengaRangeSliderProps } from './RangeSlider';

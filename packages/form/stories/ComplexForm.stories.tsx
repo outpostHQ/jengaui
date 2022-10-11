@@ -11,6 +11,7 @@ import { Radio } from '@jengaui/radio';
 import { Select } from '@jengaui/select';
 import { Switch } from '@jengaui/switch';
 import { TextInput } from '@jengaui/text-input';
+import { RangeSlider } from '@jengaui/slider';
 import { NumberInput } from '@jengaui/number-input';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
 import { Button, Submit } from '@jengaui/button';
@@ -124,6 +125,7 @@ const Template: StoryFn<typeof Form> = (args) => {
           checkboxGroup: ['one', 'three'],
           radioGroup: 'three',
           switch: false,
+          slider: [20, 40],
         }}
         onSubmit={(v) => {
           console.log('onSubmit:', v);
@@ -244,6 +246,12 @@ const Template: StoryFn<typeof Form> = (args) => {
           rules={[{ required: true, message: 'This field is required' }]}
         >
           <NumberInput label="Number field" minValue={-1} />
+        </Field>
+        <Field
+          name="slider"
+          rules={[{ required: true, message: 'This field is required' }]}
+        >
+          <RangeSlider showInput minValue={0} maxValue={100} />
         </Field>
         <Submit>Submit</Submit>
       </Form>
