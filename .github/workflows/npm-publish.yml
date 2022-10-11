@@ -13,12 +13,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
-          cache-dependency-path: .yarn/cache
       - name: Install
-        run: yarn install
+        run: pnpm install
       - name: Build
-        run: yarn build
+        run: pnpm build
   publish:
     name: Publish
     needs: test
@@ -35,15 +33,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install
-        run: yarn install
+        run: pnpm install
       - name: Build
-        run: yarn build
+        run: pnpm build
       - name: Setup Node ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
           registry-url: 'https://registry.npmjs.org'
       - name: Publish
-        run: yarn publish:all
+        run: pnpm run publish:all
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
