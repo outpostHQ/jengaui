@@ -8,7 +8,7 @@ import { useMenu } from '@react-aria/menu';
 import { useSyncRef } from '@react-aria/utils';
 import { useDOMRef } from '@react-spectrum/utils';
 import { useTreeState } from '@react-stately/tree';
-
+import type {} from "csstype";
 import {
   BaseProps,
   CONTAINER_STYLES,

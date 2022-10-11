@@ -3,6 +3,7 @@ import { NumberFormatOptions } from '@internationalized/number';
 import { BasePropsWithoutChildren } from 'tastycss';
 import { SliderState } from '@react-stately/slider';
 import { MutableRefObject, ReactNode } from 'react';
+import type {} from "csstype";
 export interface JengaBaseSliderProps
   extends AriaSliderProps,
     BasePropsWithoutChildren {

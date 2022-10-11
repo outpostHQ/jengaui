@@ -42,6 +42,7 @@
     "@jengaui/button": "^0.1.5",
     "@jengaui/core": "^0.1.5",
     "@jengaui/layout": "^0.1.5",
+    "@jengaui/utils": "workspace:^0.1.5",
     "tastycss": "^0.8.9"
   },
   "homepage": "https://github.com/Outposthq/jengaui",

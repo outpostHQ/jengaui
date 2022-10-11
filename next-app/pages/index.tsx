@@ -1,26 +1,28 @@
-import type { NextPage } from 'next';
 import { Accordion, AccordionItemContext } from '@jengaui/accordion';
 import {
-  Avatar,
+  // Avatar,
   Block,
-  BreadcrumbItem,
-  Breadcrumbs,
-  Banner,
+  // BreadcrumbItem,
+  // Breadcrumbs,
+  // Banner,
   Button,
-  Cell,
-  Column,
+  // Cell,
+  // Column,
   Paragraph,
   Root,
-  Row,
-  Slider,
+  // Row,
+  // Slider,
   SSRProvider,
-  Table,
-  TableBody,
-  TableHeader,
+  // Table,
+  // TableBody,
+  // TableHeader,
   TOKENS,
 } from '@jengaui/react';
-import styles from '../styles/Home.module.css';
 import { useContext } from 'react';
+
+// import styles from '../styles/Home.module.css';
+
+import type { NextPage } from 'next';
 
 const Extra = () => {
   const ctx = useContext(AccordionItemContext);
@@ -83,6 +85,7 @@ const Home: NextPage = () => {
         <Block padding={'10px'}>
           <Accordion styles={{ padding: 0 }}>
             <Accordion.Item
+              key="1"
               styles={{
                 fill: '#black',
                 paddingTop: '0',
@@ -90,15 +93,14 @@ const Home: NextPage = () => {
                 paddingLeft: '0',
                 paddingRight: '0',
               }}
-              key="1"
               title="Create Jenga"
               extra={<Extra />}
               isIconVisible={false}
             >
-              <Paragraph fill="#purple_03" height={150}></Paragraph>
+              <Paragraph fill="#purple_03" height={150} />
             </Accordion.Item>
             <Accordion.Item key="2" title="Create 2 Jenga" extra={<Extra />}>
-              <Paragraph fill="#purple_03" height={150}></Paragraph>
+              <Paragraph fill="#purple_03" height={150} />
             </Accordion.Item>
           </Accordion>
         </Block>

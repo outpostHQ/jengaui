@@ -1,10 +1,11 @@
 import { cloneElement, forwardRef, ReactElement, useMemo } from 'react';
 import { LoadingOutlined } from '@ant-design/icons';
 import { FocusableRef } from '@react-types/shared';
-
-import { Action, JengaActionProps } from './Action';
 import { Styles } from 'tastycss';
 import { accessibilityWarning } from '@jengaui/utils';
+import type {} from "csstype";
+
+import { Action, JengaActionProps } from './Action';
 
 export interface JengaButtonProps extends JengaActionProps {
   icon?: ReactElement;

@@ -37,11 +37,13 @@
     "@jengaui/tsconfig": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "csstype": "3.1.1",
     "tsup": "^6.2.3",
     "typescript": "^4.5.4"
   },
   "dependencies": {
     "@internationalized/number": "^3.1.1",
+    "@jengaui/core": "^0.1.5",
     "@jengaui/layout": "^0.1.5",
     "@jengaui/providers": "^0.1.5",
     "@jengaui/tooltip": "^0.1.5",
