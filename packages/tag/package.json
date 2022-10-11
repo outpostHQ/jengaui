@@ -33,16 +33,16 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "*",
+    "@jengaui/tsconfig": "workspace:*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "^0.1.5",
-    "@jengaui/core": "^0.1.5",
-    "@jengaui/layout": "^0.1.5",
+    "@jengaui/button": "workspace:*",
+    "@jengaui/core": "workspace:*",
+    "@jengaui/layout": "workspace:*",
     "tastycss": "^0.8.9"
   },
   "homepage": "https://github.com/Outposthq/jengaui",

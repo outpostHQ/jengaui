@@ -31,10 +31,10 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@jengaui/utils": "^0.1.5"
+    "@jengaui/utils": "workspace:*"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "*",
+    "@jengaui/tsconfig": "workspace:*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "tsup": "^6.2.3",

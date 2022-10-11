@@ -39,7 +39,7 @@
     "styled-components": ">= 5.3.0"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "*",
+    "@jengaui/tsconfig": "workspace:*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "styled-components": "^5.3.0",
@@ -47,14 +47,14 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "^0.1.5",
-    "@jengaui/button-group": "^0.1.5",
-    "@jengaui/content": "^0.1.5",
-    "@jengaui/dialog": "^0.1.5",
-    "@jengaui/hooks": "^0.1.5",
-    "@jengaui/layout": "^0.1.5",
-    "@jengaui/portal": "^0.1.5",
-    "@jengaui/utils": "^0.1.5",
+    "@jengaui/button": "workspace:*",
+    "@jengaui/button-group": "workspace:*",
+    "@jengaui/content": "workspace:*",
+    "@jengaui/dialog": "workspace:*",
+    "@jengaui/hooks": "workspace:*",
+    "@jengaui/layout": "workspace:*",
+    "@jengaui/portal": "workspace:*",
+    "@jengaui/utils": "workspace:*",
     "@react-aria/button": "^3.3.4",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/interactions": "^3.7.0",

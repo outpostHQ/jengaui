@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "*",
+    "@jengaui/tsconfig": "workspace:*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "csstype": "3.1.1",
@@ -39,11 +39,11 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@jengaui/button": "^0.1.5",
-    "@jengaui/content": "^0.1.5",
-    "@jengaui/layout": "^0.1.5",
-    "@jengaui/modal": "^0.1.5",
-    "@jengaui/utils": "^0.1.5",
+    "@jengaui/button": "workspace:*",
+    "@jengaui/content": "workspace:*",
+    "@jengaui/layout": "workspace:*",
+    "@jengaui/modal": "workspace:*",
+    "@jengaui/utils": "workspace:*",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/interactions": "^3.7.0",
     "@react-aria/menu": "^3.4.3",

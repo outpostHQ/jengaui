@@ -39,7 +39,7 @@
     "styled-components": ">= 5.3.0"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "*",
+    "@jengaui/tsconfig": "workspace:*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "styled-components": "^5.3.0",
@@ -55,10 +55,10 @@
     "url": "https://github.com/Outposthq/jengaui/issues"
   },
   "dependencies": {
-    "@jengaui/active-zone": "^0.1.5",
-    "@jengaui/core": "^0.1.5",
-    "@jengaui/overlays": "^0.1.5",
-    "@jengaui/utils": "^0.1.5",
+    "@jengaui/active-zone": "workspace:*",
+    "@jengaui/core": "workspace:*",
+    "@jengaui/overlays": "workspace:*",
+    "@jengaui/utils": "workspace:*",
     "@react-aria/focus": "^3.5.0",
     "@react-aria/overlays": "^3.7.5",
     "@react-aria/tooltip": "^3.1.3",
