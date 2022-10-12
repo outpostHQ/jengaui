@@ -50,7 +50,7 @@
     "@react-aria/interactions": "^3.7.0",
     "nanoid": "^3.0.0",
     "react-transition-group": "^4.4.5",
-    "tastycss": "^0.8.9"
+    "tastycss": "^0.9.0"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {

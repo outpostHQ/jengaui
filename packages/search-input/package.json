@@ -45,7 +45,7 @@
     "@jengaui/utils": "workspace:*",
     "@react-aria/searchfield": "^3.2.2",
     "@react-stately/searchfield": "^3.1.3",
-    "tastycss": "^0.8.9"
+    "tastycss": "^0.9.0"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {

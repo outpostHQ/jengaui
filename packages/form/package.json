@@ -52,7 +52,7 @@
     "@react-stately/collections": "^3.3.4",
     "@react-types/shared": "^3.10.1",
     "email-validator": "^2.0.4",
-    "tastycss": "^0.8.9",
+    "tastycss": "^0.9.0",
     "valid-url": "^1.0.9"
   }
 }

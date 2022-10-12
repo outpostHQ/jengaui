@@ -43,7 +43,7 @@
     "@jengaui/core": "workspace:*",
     "@jengaui/layout": "workspace:*",
     "@jengaui/utils": "workspace:*",
-    "tastycss": "^0.8.9"
+    "tastycss": "^0.9.0"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
