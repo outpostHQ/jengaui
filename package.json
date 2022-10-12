@@ -11,6 +11,7 @@
     "clean": "turbo clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md,svg}\"",
     "preinstall": "npx only-allow pnpm",
+    "changeset": "changeset",
     "version": "changeset version",
     "release": "changeset publish",
     "version:dev": "changeset version --snapshot dev",
