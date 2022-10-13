@@ -10,21 +10,25 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next"
   },
   "dependencies": {
-    "@jengaui/accordion": "workspace:*",
-    "@jengaui/avatar": "workspace:*",
-    "@jengaui/button": "workspace:*",
-    "@jengaui/core": "workspace:*",
-    "@jengaui/react": "workspace:*",
+    "@jengaui/accordion": "workspace:0.1.5",
+    "@jengaui/avatar": "workspace:0.1.5",
+    "@jengaui/button": "workspace:0.1.5",
+    "@jengaui/core": "workspace:0.1.5",
+    "@jengaui/react": "workspace:0.1.5",
     "next": "12.1.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/node": "18.7.14",
     "@types/react": "17.0.38",
-    "@types/react-dom": "^17.0.11",
+    "@types/react-dom": "^17.0.17",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
     "typescript": "4.8.2"
+  },
+  "peerDependencies": {
+    "react": ">= 17.0.0",
+    "react-dom": ">= 17.0.0"
   }
 }
