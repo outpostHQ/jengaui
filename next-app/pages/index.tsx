@@ -1,21 +1,21 @@
 import { Accordion, AccordionItemContext } from '@jengaui/accordion';
 import {
-  // Avatar,
+  Avatar,
   Block,
-  // BreadcrumbItem,
-  // Breadcrumbs,
-  // Banner,
+  BreadcrumbItem,
+  Breadcrumbs,
+  Banner,
   Button,
-  // Cell,
-  // Column,
+  Cell,
+  Column,
   Paragraph,
   Root,
-  // Row,
-  // Slider,
+  Row,
+  RangeSlider,
   SSRProvider,
-  // Table,
-  // TableBody,
-  // TableHeader,
+  Table,
+  TableBody,
+  TableHeader,
   TOKENS,
 } from '@jengaui/react';
 import { useContext } from 'react';
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
   return (
     <SSRProvider>
       <Root fonts={false} tokens={TOKENS}>
-        {/* <h1> Hello! </h1>
+        <h1> Hello! </h1>
         <Block> This is Jenga UI </Block>
         <Avatar icon={null}> OP </Avatar>
         <Button> I'm Button </Button>
@@ -73,15 +73,26 @@ const Home: NextPage = () => {
             </Row>
           </TableBody>
         </Table>
-        <Slider
-          sliderLength={'100px'}
-          labelPosition={'bottom'}
-          styles={{ width: '200px' }}
-        />
+        
         <Breadcrumbs>
           <BreadcrumbItem>A</BreadcrumbItem>
           <BreadcrumbItem>B</BreadcrumbItem>
-        </Breadcrumbs> */}
+        </Breadcrumbs>
+        <RangeSlider
+  defaultValue={[
+    20,
+    80
+  ]}
+  id="name"
+  label="Label"
+  maxValue={100}
+  minValue={0}
+  onChange={function $e(){}}
+  onChangeEnd={function $e(){}}
+  showInput
+  step={2}
+  width="50x"
+/>
         <Block padding={'10px'}>
           <Accordion styles={{ padding: 0 }}>
             <Accordion.Item

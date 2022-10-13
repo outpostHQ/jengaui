@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
-import { MULTIPLE_NUMBER_VALUE_ARG } from '../../../stories/FormFieldArgs';
+import { MULTIPLE_NUMBER_VALUE_ARG } from '../../../storybook/stories/FormFieldArgs';
 
 import { JengaRangeSliderProps, RangeSlider } from '../src/RangeSlider';
 
