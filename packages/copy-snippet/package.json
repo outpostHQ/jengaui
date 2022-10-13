@@ -33,20 +33,22 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:*",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
+    "@jengaui/tsconfig": "workspace:0.1.1",
+    "@types/react": "^17.0.50",
+    "@types/react-dom": "^17.0.17",
     "tsup": "^6.2.3",
-    "typescript": "^4.5.4"
+    "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@jengaui/button": "workspace:*",
-    "@jengaui/card": "workspace:*",
-    "@jengaui/notification": "workspace:*",
-    "@jengaui/prism-code": "workspace:*",
-    "@jengaui/toast": "workspace:*",
-    "@jengaui/tooltip": "workspace:*",
+    "@jengaui/button": "workspace:0.1.5",
+    "@jengaui/card": "workspace:0.1.5",
+    "@jengaui/notification": "workspace:0.1.5",
+    "@jengaui/prism-code": "workspace:0.1.5",
+    "@jengaui/toast": "workspace:0.1.5",
+    "@jengaui/tooltip": "workspace:0.1.5",
     "clipboard-copy": "^4.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tastycss": "^0.9.0"
   },
   "homepage": "https://github.com/Outposthq/jengaui",

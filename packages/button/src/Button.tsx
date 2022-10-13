@@ -10,6 +10,7 @@ import { Action, JengaActionProps } from './Action';
 export interface JengaButtonProps extends JengaActionProps {
   icon?: ReactElement;
   rightIcon?: ReactElement;
+  isDisabled?: boolean;
   isLoading?: boolean;
   isSelected?: boolean;
   type?:

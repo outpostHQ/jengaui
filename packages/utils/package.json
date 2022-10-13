@@ -31,12 +31,14 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@react-aria/interactions": "^3.7.0",
+    "@react-aria/interactions": "^3.12.0",
+    "@react-aria/ssr": "^3.3.0",
+    "@react-aria/utils": "^3.14.0",
     "@react-types/shared": "3.15.0",
-    "@react-aria/ssr": "^3.2.0",
-    "@react-aria/utils": "^3.11.0",
-    "clsx": "^1.1.1",
-    "react-is": "^17.0.0",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^17.0.2",
     "tastycss": "^0.9.0"
   },
   "publishConfig": {
@@ -47,11 +49,11 @@
     "react-dom": ">= 17.0.0"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "workspace:*",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
+    "@jengaui/tsconfig": "workspace:0.1.1",
+    "@types/react": "^17.0.50",
+    "@types/react-dom": "^17.0.17",
     "tsup": "^6.2.3",
-    "typescript": "^4.5.4"
+    "typescript": "^4.8.4"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
