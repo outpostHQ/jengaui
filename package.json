@@ -18,18 +18,14 @@
     "release:dev": "changeset publish --tag dev"
   },
   "dependencies": {
-    "@types/react-transition-group": "^4.4.5",
     "find-up": "^6.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-transition-group": "^4.4.5",
     "tastycss": "^0.9.1"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.0",
-    "@storybook/builder-vite": "^0.2.4",
-    "@swc/core": "1.2.173",
     "@swc/jest": "^0.2.23",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",

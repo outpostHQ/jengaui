@@ -46,9 +46,7 @@ export function OverlayWrapper({
       timeout={180}
       classNames="jenga-overlay-transition"
     >
-      <>
         {children}
-      </>
     </CSSTransition>
   );
 
