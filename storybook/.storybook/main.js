@@ -1,5 +1,6 @@
 // @ts-check
 const webpack = require('webpack');
+const fs = require("fs");
 
 /**
  * @readonly
@@ -11,6 +12,17 @@ const swcConfig = {
     transform: { react: { runtime: 'automatic' } },
   },
 };
+
+// [Workaround] This logic means `"../packages/components/*/stories/*.stories.tsx"` but it's much faster.
+function getStories(pkg) {
+  const scope = pkg ? [pkg] : fs.readdirSync("../packages")
+  const res = scope
+    .map((_package) => `../packages/${_package}/stories`)
+    .filter((storyDir) => fs.existsSync(storyDir))
+    .map((storyDir) => `../${storyDir}/*.stories.tsx`);
+  console.log(res);
+  return res;
+}
 
 /** @type {import('@storybook/core-common').StorybookConfig} */
 const config = {
@@ -32,7 +44,7 @@ const config = {
     storyStoreV7: true,
     modernInlineRender: true,
   },
-  stories: ['../../packages/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: getStories(),
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -49,8 +61,12 @@ const config = {
   webpackFinal: (config) => {
     config.plugins.push(new webpack.DefinePlugin({ SC_DISABLE_SPEEDY: true }));
     config.performance.hints = false;
+    config.resolve.extensions.push(".ts", ".tsx");
 
     return config;
+  },
+  typescript: {
+    reactDocgen: false,
   },
 };
 

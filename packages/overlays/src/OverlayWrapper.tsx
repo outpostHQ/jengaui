@@ -1,6 +1,5 @@
 import { CSSTransition } from 'react-transition-group';
 import { ReactNode, useRef } from 'react';
-
 import { OverlayTransitionCSSProps } from '@jengaui/utils';
 import { Portal } from '@jengaui/portal';
 
@@ -47,7 +46,9 @@ export function OverlayWrapper({
       timeout={180}
       classNames="jenga-overlay-transition"
     >
-      {children}
+      <>
+        {children}
+      </>
     </CSSTransition>
   );
 

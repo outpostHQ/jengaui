@@ -1,37 +1,37 @@
 {
-    "name": "@jengaui/react-storybook",
-    "version": "0.1.1",
-    "private": true,
-    "scripts": {
-        "storybook": "STORYBOOK_MODE=stories start-storybook -p 6006",
-        "build-storybook": "STORYBOOK_MODE=stories build-storybook",
-        "clean": "rm -rf .turbo && rm -rf node_modules"
-    },
-    "dependencies": {
-        "@jengaui/react": "workspace:0.1.5",
-        "chromatic": "^6.10.2",
-        "eslint-plugin-storybook": "^0.5.13",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-transition-group": "^4.4.5",
-        "tastycss": "^0.9.1"
-    },
-    "devDependencies": {
-        "@jengaui/tsconfig": "workspace:0.1.1",
-        "@storybook/addon-actions": "6.5.9",
-        "@storybook/addon-essentials": "6.5.9",
-        "@storybook/addon-interactions": "6.5.9",
-        "@storybook/addon-links": "6.5.9",
-        "@storybook/builder-webpack5": "6.5.9",
-        "@storybook/jest": "0.0.10",
-        "@storybook/manager-webpack5": "6.5.9",
-        "@storybook/react": "6.5.9",
-        "@storybook/testing-library": "0.0.13",
-        "storybook-addon-turbo-build": "1.1.0",
-        "@types/react-transition-group": "^4.4.2",
-        "@swc/core": "1.2.173",
-        "swc-loader": "0.2.3",
-        "serve": "^13.0.4",
-        "typescript": "^4.8.4"
-    }
+  "name": "@jengaui/react-storybook",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "storybook": "STORYBOOK_MODE=stories start-storybook -p 6006",
+    "build-storybook": "STORYBOOK_MODE=stories build-storybook",
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
+  "dependencies": {
+    "@jengaui/react": "workspace:0.1.5",
+    "chromatic": "^6.10.2",
+    "eslint-plugin-storybook": "^0.5.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-transition-group": "^4.4.5",
+    "tastycss": "^0.9.1"
+  },
+  "devDependencies": {
+    "@jengaui/tsconfig": "workspace:0.1.1",
+    "@storybook/addon-actions": "6.5.9",
+    "@storybook/addon-essentials": "6.5.9",
+    "@storybook/addon-interactions": "6.5.9",
+    "@storybook/addon-links": "6.5.9",
+    "@storybook/builder-webpack5": "6.5.9",
+    "@storybook/jest": "0.0.10",
+    "@storybook/manager-webpack5": "6.5.9",
+    "@storybook/react": "6.5.9",
+    "@storybook/testing-library": "0.0.13",
+    "storybook-addon-turbo-build": "1.1.0",
+    "@types/react-transition-group": "^4.4.2",
+    "@swc/core": "1.2.173",
+    "swc-loader": "0.2.3",
+    "serve": "^13.0.4",
+    "typescript": "^4.8.4"
+  }
 }
