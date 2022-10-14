@@ -2,8 +2,8 @@ import { Meta, Story } from '@storybook/react';
 import { DollarCircleFilled } from '@ant-design/icons';
 
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
-import { TextInput } from '@jengaui/text-input';
-import { Button } from '@jengaui/button';
+import { TextInput } from '../../text-input';
+import { Button } from '../../button';
 
 import { JengaFieldProps, Field } from '../src/form/Field';
 

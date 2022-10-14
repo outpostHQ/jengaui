@@ -2,7 +2,7 @@ import { Story } from '@storybook/react';
 
 import { Portal } from '../../src/Portal';
 import { PortalProps } from '../../src/types';
-import { Divider } from '@jengaui/content';
+import { Divider } from '../../../content';
 
 export const Basic: Story<PortalProps> = (args) => (
   <>

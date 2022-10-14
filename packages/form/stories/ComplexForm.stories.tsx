@@ -2,20 +2,20 @@ import { StoryFn } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 
 import { Item } from '@react-stately/collections';
-import { Block } from '@jengaui/core';
-import { Checkbox, CheckboxGroup } from '@jengaui/checkbox';
-import { ComboBox } from '@jengaui/combo-box';
-import { Form, Field } from '@jengaui/form';
-import { PasswordInput } from '@jengaui/password-input';
-import { Radio } from '@jengaui/radio';
-import { Select } from '@jengaui/select';
-import { Switch } from '@jengaui/switch';
-import { TextInput } from '@jengaui/text-input';
-import { RangeSlider } from '@jengaui/slider';
-import { NumberInput } from '@jengaui/number-input';
+import { Block } from '../../core';
+import { Checkbox, CheckboxGroup } from '../../checkbox';
+import { ComboBox } from '../../combo-box';
+import { Form, Field } from '../../form';
+import { PasswordInput } from '../../password-input';
+import { Radio } from '../../radio';
+import { Select } from '../../select';
+import { Switch } from '../../switch';
+import { TextInput } from '../../text-input';
+import { RangeSlider } from '../../slider';
+import { NumberInput } from '../../number-input';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
-import { Button, Submit } from '@jengaui/button';
-import { timeout } from '@jengaui/utils';
+import { Button, Submit } from '../../button';
+import { timeout } from '../../utils';
 
 export default {
   title: 'Forms/ComplexForm',

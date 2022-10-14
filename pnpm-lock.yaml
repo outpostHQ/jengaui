@@ -946,6 +946,7 @@ importers:
       '@react-types/overlays': ^3.6.4
       '@types/react': ^17.0.50
       '@types/react-dom': ^17.0.17
+      '@types/react-transition-group': ^4.4.5
       react: ^18.2.0
       react-dom: ^18.2.0
       react-transition-group: ^4.4.5
@@ -969,6 +970,7 @@ importers:
       '@jengaui/tsconfig': link:../shared-tsconfig
       '@types/react': 17.0.50
       '@types/react-dom': 17.0.17
+      '@types/react-transition-group': 4.4.5
       tsup: 6.2.3_typescript@4.8.4
       typescript: 4.8.4
 
@@ -1085,6 +1087,7 @@ importers:
       '@jengaui/utils': workspace:0.1.5
       '@types/react': ^17.0.50
       '@types/react-dom': ^17.0.17
+      '@types/react-transition-group': ^4.4.5
       react: ^18.2.0
       react-dom: ^18.2.0
       react-transition-group: ^4.4.5
@@ -1100,6 +1103,7 @@ importers:
       '@jengaui/tsconfig': link:../shared-tsconfig
       '@types/react': 17.0.50
       '@types/react-dom': 17.0.17
+      '@types/react-transition-group': 4.4.5
       tsup: 6.2.3_typescript@4.8.4
       typescript: 4.8.4
 
@@ -7322,14 +7326,14 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 16.11.65
+      '@types/node': 18.8.5
     dev: true
 
   /@types/glob/8.0.0:
     resolution: {integrity: sha512-l6NQsDDyQUVeoTynNpC9uRvCUint/gSUXQA2euwmTuWGvPY5LSDUu6tkCtJB2SvGQlJQzLaKqcGZP4//7EDveA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 16.11.65
+      '@types/node': 18.8.5
     dev: true
 
   /@types/graceful-fs/4.1.5:
@@ -7413,7 +7417,7 @@ packages:
   /@types/node-fetch/2.6.2:
     resolution: {integrity: sha512-DHqhlq5jeESLy19TYhLakJ07kNumXWjcDdxXsLUMJZ6ue8VZJj4kLPQVE/2mdHh3xZziNF1xppu5lwmS53HR+A==}
     dependencies:
-      '@types/node': 16.11.65
+      '@types/node': 18.8.5
       form-data: 3.0.1
     dev: true
 
@@ -7561,7 +7565,7 @@ packages:
   /@types/webpack-sources/3.2.0:
     resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
     dependencies:
-      '@types/node': 16.11.65
+      '@types/node': 18.8.5
       '@types/source-list-map': 0.1.2
       source-map: 0.7.4
     dev: true
@@ -7569,7 +7573,7 @@ packages:
   /@types/webpack/4.41.32:
     resolution: {integrity: sha512-cb+0ioil/7oz5//7tZUSwbrSAN/NWHrQylz5cW8G0dWTcF/g+/dSdMlKVZspBYuMAN1+WnwHrkxiRrLcwd0Heg==}
     dependencies:
-      '@types/node': 16.11.65
+      '@types/node': 18.8.5
       '@types/tapable': 1.0.8
       '@types/uglify-js': 3.17.0
       '@types/webpack-sources': 3.2.0
@@ -8648,7 +8652,7 @@ packages:
       babel-plugin-syntax-jsx: 6.18.0
       lodash: 4.17.21
       picomatch: 2.3.1
-      styled-components: 5.3.6_v5ja746gkdtknuc6tj46sve3be
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
 
   /babel-plugin-syntax-jsx/6.18.0:
     resolution: {integrity: sha512-qrPaCSo9c8RHNRHIotaufGbuOBN8rtdC4QrrFFc43vyWCCz7Kl7GL1PGaXtMGQZUXrkCjNEgxDfmAuAabr/rlw==}
@@ -13555,7 +13559,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 16.11.65
+      '@types/node': 18.8.5
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true

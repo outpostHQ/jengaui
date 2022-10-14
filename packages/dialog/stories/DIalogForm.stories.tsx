@@ -8,12 +8,12 @@ import { expect } from '@storybook/jest';
 import { useState } from 'react';
 
 import { JengaDialogFormProps, DialogForm } from '../src/DialogForm';
-import { Button } from '@jengaui/button';
-import { Text, Paragraph } from '@jengaui/content';
-import { Input } from '@jengaui/input';
+import { Button } from '../../button';
+import { Text, Paragraph } from '../../content';
+import { Input } from '../../input';
 import { DialogTrigger } from '../src/DialogTrigger';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
-import { Form } from '@jengaui/form';
+import { Form } from '../../form';
 import { DialogContainer } from '../src/DialogContainer';
 
 export default {

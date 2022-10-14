@@ -4,9 +4,9 @@ import { userEvent, within } from '@storybook/testing-library';
 import { action } from '@storybook/addon-actions';
 
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
-import { DialogTrigger } from '@jengaui/dialog';
-import { Button } from '@jengaui/button';
-import { Paragraph } from '@jengaui/content';
+import { DialogTrigger } from '../../dialog';
+import { Button } from '../../button';
+import { Paragraph } from '../../content';
 import { wait } from '../../../test/utils/wait';
 
 import { useAlertDialogAPI } from '../src/AlertDialogApiProvider';
