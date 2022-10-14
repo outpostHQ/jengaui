@@ -16,12 +16,10 @@ const swcConfig = {
 // [Workaround] This logic means `"../packages/components/*/stories/*.stories.tsx"` but it's much faster.
 function getStories(pkg) {
   const scope = pkg ? [pkg] : fs.readdirSync("../packages")
-  const res = scope
+  return scope
     .map((_package) => `../packages/${_package}/stories`)
     .filter((storyDir) => fs.existsSync(storyDir))
     .map((storyDir) => `../${storyDir}/*.stories.tsx`);
-  console.log(res);
-  return res;
 }
 
 /** @type {import('@storybook/core-common').StorybookConfig} */
