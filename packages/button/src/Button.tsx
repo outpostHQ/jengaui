@@ -25,7 +25,7 @@ export interface JengaButtonProps extends JengaActionProps {
   size?: 'small' | 'medium' | 'large' | (string & {});
 }
 
-function provideButtonStyles({ type, theme }) {
+export function provideButtonStyles({ type, theme }) {
   return {
     ...(theme === 'danger' ? DANGER_STYLES_BY_TYPE : DEFAULT_STYLES_BY_TYPE)[
       type ?? 'secondary'
