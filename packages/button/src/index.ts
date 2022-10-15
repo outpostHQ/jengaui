@@ -1,4 +1,4 @@
-export * from './Button';
-export * from './Action';
-export * from './Submit';
+export { Button } from './Button';
+export { Action } from './Action';
+export { Submit } from './Submit';
 export * from './utils';

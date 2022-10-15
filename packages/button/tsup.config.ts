@@ -3,7 +3,7 @@ import { findUpSync } from 'find-up';
 
 export default defineConfig({
   entry: ['./src/index.ts'],
-  dts: false,
+  dts: true,
   clean: true,
   format: ['cjs', 'esm'],
   inject: process.env.JSX ? [findUpSync('react-shim.js')!] : undefined,
