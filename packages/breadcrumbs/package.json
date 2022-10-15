@@ -36,7 +36,10 @@
     "@jengaui/tsconfig": "workspace:0.1.1",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
-    "typescript": "^4.8.4"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.8.4",
+    "tsup": "^6.2.3"
   },
   "dependencies": {
     "@jengaui/providers": "workspace:0.2.0",
@@ -44,10 +47,7 @@
     "@react-aria/breadcrumbs": "^3.3.2",
     "@react-types/breadcrumbs": "^3.4.4",
     "@react-types/shared": "3.15.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tastycss": "^0.9.1",
-    "tsup": "^6.2.3"
+    "tastycss": "^0.9.1"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
