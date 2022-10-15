@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/layout",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Jenga UI Layout component in React",
   "keywords": [
@@ -31,7 +31,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@jengaui/utils": "workspace:0.1.5",
+    "@jengaui/utils": "workspace:0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tastycss": "^0.9.1"
