@@ -10,11 +10,11 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next"
   },
   "dependencies": {
-    "@jengaui/accordion": "workspace:0.2.0",
-    "@jengaui/avatar": "workspace:0.2.0",
-    "@jengaui/button": "workspace:0.2.0",
-    "@jengaui/core": "workspace:0.2.0",
-    "@jengaui/react": "workspace:0.2.0",
+    "@jengaui/accordion": "workspace:*",
+    "@jengaui/avatar": "workspace:*",
+    "@jengaui/button": "workspace:*",
+    "@jengaui/core": "workspace:*",
+    "@jengaui/react": "workspace:*",
     "next": "12.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"

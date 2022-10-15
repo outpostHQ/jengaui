@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/switch",
-  "version": "0.2.0",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Switch component in React",
   "keywords": [
@@ -40,9 +40,9 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@jengaui/form": "workspace:0.2.0",
-    "@jengaui/providers": "workspace:0.2.0",
-    "@jengaui/utils": "workspace:0.2.0",
+    "@jengaui/form": "workspace:0.1.5",
+    "@jengaui/providers": "workspace:0.1.5",
+    "@jengaui/utils": "workspace:0.1.5",
     "@react-aria/interactions": "^3.12.0",
     "@react-aria/switch": "^3.2.4",
     "@react-spectrum/utils": "^3.7.4",

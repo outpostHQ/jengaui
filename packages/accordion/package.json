@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/accordion",
-  "version": "0.2.0",
+  "version": "0.1.5",
   "license": "MIT",
   "description": "Jenga UI Accordion component in React",
   "keywords": [
@@ -42,10 +42,10 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@jengaui/content": "workspace:0.2.0",
-    "@jengaui/core": "workspace:0.2.0",
-    "@jengaui/layout": "workspace:0.2.0",
-    "@jengaui/utils": "workspace:0.2.0",
+    "@jengaui/content": "workspace:0.1.5",
+    "@jengaui/core": "workspace:0.1.5",
+    "@jengaui/layout": "workspace:0.1.5",
+    "@jengaui/utils": "workspace:0.1.5",
     "@react-aria/focus": "^3.9.0",
     "@react-aria/interactions": "^3.12.0",
     "nanoid": "^3.3.4",

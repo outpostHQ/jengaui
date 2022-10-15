@@ -7,8 +7,8 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "@jengaui/radio": "workspace:0.2.0",
-    "@jengaui/root": "workspace:0.2.0",
+    "@jengaui/radio": "workspace:*",
+    "@jengaui/root": "workspace:*",
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
