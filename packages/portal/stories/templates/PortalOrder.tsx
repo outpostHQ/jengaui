@@ -1,6 +1,6 @@
 import { Story } from '@storybook/react';
 
-import { Block } from '@jengaui/core';
+import { Block } from '../../../core';
 import { Portal } from '../../src/Portal';
 import { PortalProps } from '../../src/types';
 

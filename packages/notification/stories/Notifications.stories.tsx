@@ -4,10 +4,10 @@ import { userEvent, within } from '@storybook/testing-library';
 import { Meta, Story } from '@storybook/react';
 import { BellFilled, BellOutlined, WechatFilled } from '@ant-design/icons';
 
-import { Button } from '@jengaui/button';
+import { Button } from '../../button';
 import { CloudLogo } from '../src/CloudLogo';
-import { Flex } from '@jengaui/layout';
-import { Dialog, DialogTrigger } from '@jengaui/dialog';
+import { Flex } from '../../layout';
+import { Dialog, DialogTrigger } from '../../dialog';
 import {
   Paragraph,
   Header,
@@ -15,8 +15,8 @@ import {
   Footer,
   Title,
   Text,
-} from '@jengaui/content';
-import { range, random } from '@jengaui/utils';
+} from '../../content';
+import { range, random } from '../../utils';
 import { wait } from '../../../test';
 
 import { NotificationsDialog, NotificationsDialogTrigger } from '../src/Dialog';

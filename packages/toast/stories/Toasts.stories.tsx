@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
 import { BellOutlined } from '@ant-design/icons';
 
-import { Button } from '@jengaui/button';
+import { Button } from '../../button';
 
 import { Toast } from '../src/Toast';
 import { JengaToastsApiProps } from '../src/types';

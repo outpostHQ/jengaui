@@ -1,7 +1,7 @@
 import { CaretDownOutlined, DollarCircleOutlined } from '@ant-design/icons';
 
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
-import { Space } from '@jengaui/layout';
+import { Space } from '../../layout';
 
 import { Button } from '../src/Button';
 

@@ -13,7 +13,6 @@
       "onlyUpdatePeerDependentsWhenOutOfRange": true
     },
     "ignore": [
-      "next-app",
       "@jengaui/react-storybook"
     ]
   }

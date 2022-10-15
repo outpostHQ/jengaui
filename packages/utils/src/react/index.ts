@@ -9,6 +9,6 @@ export { useCombinedRefs } from './useCombinedRefs';
 export { wrapNodeIfPlain } from './wrapNodeIfPlain';
 export * from './nullableValue';
 export * from './useId';
-export * from './get-display-name';
+export * from './getDisplayName';
 export { flattenChildren } from './flattenChildren';
 export { useViewportSize } from './useViewportSize';

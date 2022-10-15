@@ -12,12 +12,12 @@ import { expect } from '@storybook/jest';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
 
 import { Menu, MenuTrigger } from '../src/index';
-import { Button } from '@jengaui/button';
-import { Flex, Space } from '@jengaui/layout';
-import { Root } from '@jengaui/root';
-import { AlertDialog } from '@jengaui/alert-dialog';
-import { DialogContainer } from '@jengaui/dialog';
-import { Text } from '@jengaui/content';
+import { Button } from '../../button';
+import { Flex, Space } from '../../layout';
+import { Root } from '../../root';
+import { AlertDialog } from '../../alert-dialog';
+import { DialogContainer } from '../../dialog';
+import { Text } from '../../content';
 import { baseProps } from '../../../storybook/stories/lists/baseProps';
 
 export default {

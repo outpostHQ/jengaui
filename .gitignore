@@ -27,4 +27,6 @@ server/dist
 public/dist
 storybook-static/
 
+#IDE
 .idea/
+jengaui.iml

@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, RenderOptions } from '@testing-library/react';
-
 import { Root } from '@jengaui/root';
 
 export function renderWithRoot(

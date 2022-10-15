@@ -1,5 +1,5 @@
-import { Button } from '@jengaui/button';
-import { Paragraph } from '@jengaui/content';
+import { Button } from '../../button';
+import { Paragraph } from '../../content';
 import { SettingOutlined } from '@ant-design/icons';
 import { ComponentMeta, Story } from '@storybook/react';
 import { useLayoutEffect, useRef } from 'react';
