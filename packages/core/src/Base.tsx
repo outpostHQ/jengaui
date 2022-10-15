@@ -63,7 +63,7 @@ function Base<K extends keyof HTMLElementTagNameMap>(
         : 'inline-block';
   }
 
-  const contextBreakpoints = useContext(BreakpointsContext);
+  const contextBreakpoints = useContext<number[]>(BreakpointsContext);
   const zones = pointsToZones(breakpoints || contextBreakpoints);
 
   css = `${css ?? ''}${renderStyles(styles, zones)}`;

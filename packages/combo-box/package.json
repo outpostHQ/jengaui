@@ -26,35 +26,38 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": ">= 17.0.0",
-    "react-dom": ">= 17.0.0"
+    "react": ">= 18.2.0",
+    "react-dom": ">= 18.2.0"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "*",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
+    "@jengaui/tsconfig": "workspace:0.1.1",
+    "@types/react": "^17.0.50",
+    "@types/react-dom": "^17.0.17",
     "tsup": "^6.2.3",
-    "typescript": "^4.5.4"
+    "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@jengaui/form": "^0.1.5",
-    "@jengaui/layout": "^0.1.5",
-    "@jengaui/overlays": "^0.1.5",
-    "@jengaui/providers": "^0.1.5",
-    "@jengaui/select": "^0.1.5",
-    "@jengaui/text-input": "^0.1.5",
-    "@jengaui/utils": "^0.1.5",
-    "@react-aria/button": "^3.3.4",
-    "@react-aria/combobox": "^3.2.1",
-    "@react-aria/i18n": "^3.3.4",
-    "@react-aria/interactions": "^3.7.0",
-    "@react-aria/overlays": "^3.7.5",
-    "@react-aria/utils": "^3.11.0",
-    "@react-stately/collections": "^3.3.4",
-    "@react-stately/combobox": "^3.0.1",
-    "@react-types/combobox": "^3.2.1",
-    "@react-types/shared": "^3.10.1",
-    "tastycss": "^0.8.9"
+    "@ant-design/icons": "4.7.0",
+    "@jengaui/form": "workspace:0.1.5",
+    "@jengaui/layout": "workspace:0.1.5",
+    "@jengaui/overlays": "workspace:0.1.5",
+    "@jengaui/providers": "workspace:0.1.5",
+    "@jengaui/select": "workspace:0.1.5",
+    "@jengaui/text-input": "workspace:0.1.5",
+    "@jengaui/utils": "workspace:0.1.5",
+    "@react-aria/button": "^3.6.2",
+    "@react-aria/combobox": "^3.4.2",
+    "@react-aria/i18n": "^3.6.1",
+    "@react-aria/interactions": "^3.12.0",
+    "@react-aria/overlays": "^3.11.0",
+    "@react-aria/utils": "^3.14.0",
+    "@react-stately/collections": "^3.4.4",
+    "@react-stately/combobox": "^3.2.2",
+    "@react-types/combobox": "^3.5.4",
+    "@react-types/shared": "^3.15.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tastycss": "^0.9.1"
   },
   "homepage": "https://github.com/Outposthq/jengaui",
   "repository": {
