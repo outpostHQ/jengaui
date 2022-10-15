@@ -52,4 +52,11 @@
 '@jengaui/utils': minor
 ---
 
-Resolved PNPM import issue
+- Migrate Components from `yarn workspace` to `pnpm workspace`
+- Migrate Storybook from `vite` to `webpack`
+- Fix: Stories import path
+- Fix: Refactor `Slider` (RangeSlider)
+- Fix: `Modal` { Transition } Import
+- Fix: `Base` type annotation to useContext
+- Fix: `OverlayWrapper` type issue
+
