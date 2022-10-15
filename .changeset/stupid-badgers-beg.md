@@ -54,6 +54,7 @@
 
 - Migrate Components from `yarn workspace` to `pnpm workspace`
 - Migrate Storybook from `vite` to `webpack`
+- Upgrade dependencies to latest
 - Fix: Stories import path
 - Fix: Refactor `Slider` (RangeSlider)
 - Fix: `Modal` { Transition } Import
