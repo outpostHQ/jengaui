@@ -8,6 +8,5 @@ export default defineConfig({
   format: ['cjs', 'esm'],
   inject: process.env.JSX ? [findUpSync('react-shim.js')!] : undefined,
   external: ['react'],
-  minify: true,
   treeshake: true,
 });
