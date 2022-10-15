@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/slider",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Jenga UI Slider component in React",
   "keywords": [
@@ -42,10 +42,10 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@jengaui/form": "workspace:0.1.5",
-    "@jengaui/layout": "workspace:0.1.5",
-    "@jengaui/number-input": "workspace:0.1.5",
-    "@jengaui/utils": "workspace:0.1.5",
+    "@jengaui/form": "workspace:0.2.0",
+    "@jengaui/layout": "workspace:0.2.0",
+    "@jengaui/number-input": "workspace:0.2.0",
+    "@jengaui/utils": "workspace:0.2.0",
     "@react-aria/focus": "^3.9.0",
     "@react-aria/interactions": "^3.12.0",
     "@react-aria/slider": "3.2.1",

@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/overlays",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Jenga UI Overlays component in React",
   "keywords": [
@@ -38,8 +38,8 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@jengaui/portal": "workspace:0.1.5",
-    "@jengaui/utils": "workspace:0.1.5",
+    "@jengaui/portal": "workspace:0.2.0",
+    "@jengaui/utils": "workspace:0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-transition-group": "^4.4.5"
