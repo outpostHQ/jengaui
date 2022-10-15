@@ -1,7 +1,6 @@
 {
   "name": "@jengaui/table",
   "version": "0.2.0",
-  "license": "MIT",
   "description": "Jenga UI Table component in React",
   "keywords": [
     "table",
@@ -10,35 +9,27 @@
     "ui",
     "react 17"
   ],
+  "homepage": "https://github.com/Outposthq/jengaui",
+  "bugs": {
+    "url": "https://github.com/Outposthq/jengaui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Outposthq/jengaui.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
   ],
-  "sideEffects": false,
   "scripts": {
     "build": "JSX=1 tsup --minify",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsup src/index.ts --minify --treeshake --format esm,cjs --watch --dts --external react",
-    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "react": ">= 18.2.0",
-    "react-dom": ">= 18.2.0"
-  },
-  "devDependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:0.1.1",
-    "@types/react": "^17.0.50",
-    "@types/react-dom": "^17.0.17",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tsup": "^6.2.3",
-    "typescript": "^4.8.4"
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
     "@jengaui/button": "workspace:0.2.0",
@@ -56,12 +47,21 @@
     "@react-types/shared": "^3.15.0",
     "tastycss": "^0.9.1"
   },
-  "homepage": "https://github.com/Outposthq/jengaui",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Outposthq/jengaui.git"
+  "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@jengaui/tsconfig": "workspace:0.1.1",
+    "@types/react": "^17.0.50",
+    "@types/react-dom": "^17.0.17",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.4"
   },
-  "bugs": {
-    "url": "https://github.com/Outposthq/jengaui/issues"
+  "peerDependencies": {
+    "react": ">= 18.2.0",
+    "react-dom": ">= 18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,7 +1,6 @@
 {
   "name": "@jengaui/hooks",
   "version": "0.2.0",
-  "license": "MIT",
   "description": "Jenga UI Hooks component in React",
   "keywords": [
     "react",
@@ -14,21 +13,29 @@
     "accessible",
     "components",
     "tastycss",
-    "library",
-    "design-system"
+    "library"
   ],
+  "homepage": "https://github.com/Outposthq/jengaui",
+  "bugs": {
+    "url": "https://github.com/Outposthq/jengaui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Outposthq/jengaui.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
   ],
-  "sideEffects": false,
   "scripts": {
     "build": "JSX=1 tsup --minify",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsup src/index.ts --minify --treeshake --format esm,cjs --watch --dts --external react",
-    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
     "@jengaui/utils": "workspace:0.2.0"
@@ -42,19 +49,11 @@
     "tsup": "^6.2.3",
     "typescript": "^4.8.4"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0"
   },
-  "homepage": "https://github.com/Outposthq/jengaui",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Outposthq/jengaui.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Outposthq/jengaui/issues"
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -6,9 +6,9 @@
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "react": "^17.0.2",
     "@jengaui/radio": "workspace:*",
     "@jengaui/root": "workspace:*",
+    "react": "^17.0.2",
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {

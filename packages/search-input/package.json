@@ -1,7 +1,6 @@
 {
   "name": "@jengaui/search-input",
   "version": "0.2.0",
-  "license": "MIT",
   "description": "Jenga UI Search-Input component in React",
   "keywords": [
     "search-input",
@@ -10,25 +9,36 @@
     "Jenga UI",
     "ui"
   ],
+  "homepage": "https://github.com/Outposthq/jengaui",
+  "bugs": {
+    "url": "https://github.com/Outposthq/jengaui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Outposthq/jengaui.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
   ],
-  "sideEffects": false,
   "scripts": {
     "build": "JSX=1 tsup --minify",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsup src/index.ts --minify --treeshake --format esm,cjs --watch --dts --external react",
-    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "react": ">= 18.2.0",
-    "react-dom": ">= 18.2.0"
+  "dependencies": {
+    "@jengaui/button": "workspace:0.2.0",
+    "@jengaui/providers": "workspace:0.2.0",
+    "@jengaui/text-input": "workspace:0.2.0",
+    "@jengaui/utils": "workspace:0.2.0",
+    "@react-aria/searchfield": "^3.4.2",
+    "@react-stately/searchfield": "^3.3.2",
+    "tastycss": "^0.9.1"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
@@ -40,21 +50,11 @@
     "tsup": "^6.2.3",
     "typescript": "^4.8.4"
   },
-  "dependencies": {
-    "@jengaui/button": "workspace:0.2.0",
-    "@jengaui/providers": "workspace:0.2.0",
-    "@jengaui/text-input": "workspace:0.2.0",
-    "@jengaui/utils": "workspace:0.2.0",
-    "@react-aria/searchfield": "^3.4.2",
-    "@react-stately/searchfield": "^3.3.2",
-    "tastycss": "^0.9.1"
+  "peerDependencies": {
+    "react": ">= 18.2.0",
+    "react-dom": ">= 18.2.0"
   },
-  "homepage": "https://github.com/Outposthq/jengaui",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Outposthq/jengaui.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Outposthq/jengaui/issues"
+  "publishConfig": {
+    "access": "public"
   }
 }

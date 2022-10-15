@@ -3,19 +3,39 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "changeset": "changeset",
+    "clean": "turbo clean && rm -rf node_modules",
+    "dev": "turbo dev --no-cache --parallel --continue",
+    "format": "prettier --write \"**/*.{ts,tsx,md,svg}\"",
+    "preinstall": "npx only-allow pnpm",
+    "lint": "turbo lint",
+    "release": "changeset publish",
+    "release:dev": "changeset publish --tag dev",
     "test": "jest",
     "test-cover": "jest --coverage",
     "test-watch": "jest --watch",
-    "dev": "turbo dev --no-cache --parallel --continue",
-    "lint": "turbo lint",
-    "clean": "turbo clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md,svg}\"",
-    "preinstall": "npx only-allow pnpm",
-    "changeset": "changeset",
     "version": "changeset version",
-    "release": "changeset publish",
     "version:dev": "changeset version --snapshot dev",
-    "release:dev": "changeset publish --tag dev"
+    "sort": "sort-package-json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*": "prettier --write"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari major versions"
+  ],
+  "resolutions": {
+    "@testing-library/user-event": "14.2.0",
+    "es5-ext": "0.10.53",
+    "prettier": "2.5.1"
   },
   "dependencies": {
     "find-up": "^6.3.0",
@@ -61,24 +81,5 @@
     "tsup": "^6.2.3",
     "turbo": "^1.5.6",
     "typescript": "^4.8.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "resolutions": {
-    "es5-ext": "0.10.53",
-    "prettier": "2.5.1",
-    "@testing-library/user-event": "14.2.0"
-  },
-  "browserslist": [
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Safari major versions"
-  ],
-  "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*": "prettier --write"
   }
 }
