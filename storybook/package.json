@@ -3,9 +3,9 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "storybook": "STORYBOOK_MODE=stories start-storybook -p 6006",
     "build-storybook": "STORYBOOK_MODE=stories build-storybook",
-    "clean": "rm -rf .turbo && rm -rf node_modules"
+    "clean": "rm -rf .turbo && rm -rf node_modules",
+    "storybook": "STORYBOOK_MODE=stories start-storybook -p 6006"
   },
   "dependencies": {
     "@jengaui/react": "workspace:*",

@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next",
+    "dev": "next dev",
     "lint": "next lint",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next"
+    "start": "next start"
   },
   "dependencies": {
     "@jengaui/accordion": "workspace:*",
