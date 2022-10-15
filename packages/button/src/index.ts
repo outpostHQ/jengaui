@@ -1,4 +1,4 @@
-export * from './Button';
-export * from './Action';
-export * from './Submit';
+export { Button, type JengaButtonProps } from './Button';
+export { Action, type JengaActionProps } from './Action';
+export { Submit } from './Submit';
 export * from './utils';

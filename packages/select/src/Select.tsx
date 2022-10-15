@@ -52,7 +52,7 @@ import {
   DEFAULT_INPUT_STYLES,
   INPUT_WRAPPER_STYLES,
 } from '@jengaui/text-input';
-import { JengaButtonProps, provideButtonStyles } from '@jengaui/button';
+import { JengaButtonProps } from '@jengaui/button';
 
 import type { AriaSelectProps } from '@react-types/select';
 
@@ -277,7 +277,9 @@ function Select<T extends object>(
 
   inputStyles = extractStyles(otherProps, BLOCK_STYLES, {
     ...(() => {
-      let styles = provideButtonStyles({ type, theme });
+      let styles = {
+        color: ''
+      };
 
       delete styles['border'];
 
