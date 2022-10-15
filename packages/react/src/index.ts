@@ -7,8 +7,6 @@ import {
   Paragraph,
 } from '@jengaui/content';
 
-export { Item, Section } from '@react-stately/collections';
-
 // generic components
 export { Base, Block } from '@jengaui/core';
 export type { JengaBlockProps } from '@jengaui/core';
@@ -85,8 +83,7 @@ export { Switch } from '@jengaui/switch';
 export type { JengaSwitchProps } from '@jengaui/switch';
 export { Radio } from '@jengaui/radio';
 export type { JengaRadioProps, JengaRadioGroupProps } from '@jengaui/radio';
-export { ComboBox } from '@jengaui/combo-box';
-export type { JengaComboBoxProps } from '@jengaui/combo-box';
+export * from '@jengaui/combo-box';
 export { Menu, MenuTrigger } from '@jengaui/menu';
 export type { JengaMenuProps, JengaMenuTriggerProps } from '@jengaui/menu';
 export { Select, ListBoxPopup } from '@jengaui/select';
@@ -95,19 +92,7 @@ export { NumberInput } from '@jengaui/number-input';
 export type { JengaNumberInputProps } from '@jengaui/number-input';
 export { Avatar } from '@jengaui/avatar';
 export type { JengaAvatarProps } from '@jengaui/avatar';
-export {
-  Dialog,
-  DialogTrigger,
-  DialogContainer,
-  DialogForm,
-} from '@jengaui/dialog';
-export type {
-  JengaDialogTriggerProps,
-  JengaDialogContainerProps,
-  JengaDialogProps,
-  JengaDialogFormRef,
-  JengaDialogFormProps,
-} from '@jengaui/dialog';
+export * from '@jengaui/dialog';
 export { Tooltip, TooltipTrigger, TooltipProvider } from '@jengaui/tooltip';
 export type {
   JengaTooltipProps,
@@ -142,10 +127,8 @@ export { Portal } from '@jengaui/portal';
 export type { PortalProps } from '@jengaui/portal';
 export * from '@jengaui/form';
 
-export { ModalProvider } from '@react-aria/overlays';
 export * from '@jengaui/utils';
-export { default as copy } from 'clipboard-copy';
-export * from '@react-aria/ssr';
+
 export * from '@jengaui/notification';
 export * from '@jengaui/banner';
 export * from '@jengaui/toast';
