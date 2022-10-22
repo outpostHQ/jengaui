@@ -16,7 +16,6 @@ import {
   Title,
   Text,
 } from '../../content';
-import { range, random } from '../../utils';
 import { wait } from '../../../test';
 
 import { NotificationsDialog, NotificationsDialogTrigger } from '../src/Dialog';
@@ -459,12 +458,13 @@ WithWidget.play = ActionTemplate.play;
 
 export const NotificationsQueue = ActionTemplate.bind({});
 NotificationsQueue.play = async ({ canvasElement }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  for await (const _ of range(10)) {
-    const { getByTestId } = within(canvasElement);
+  const timeouts = [780, 580, 480, 494, 743, 749, 680, 750, 569, 510];
 
-    const button = getByTestId('ClickMeButton');
+  const { getByTestId } = within(canvasElement);
+  const button = getByTestId('ClickMeButton');
+
+  for await (const timeout of timeouts) {
     await userEvent.click(button);
-    await wait(random(400, 800));
+    await wait(timeout);
   }
 };
