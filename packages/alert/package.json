@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/alert",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Jenga UI Alert component in React",
   "keywords": [
     "alert",
@@ -31,12 +31,12 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/core": "workspace:0.2.0",
-    "@jengaui/hooks": "workspace:0.2.0",
+    "@jengaui/core": "workspace:0.2.1",
+    "@jengaui/hooks": "workspace:0.2.1",
     "tastycss": "^0.9.1"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "workspace:0.1.1",
+    "@jengaui/tsconfig": "workspace:0.1.2",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",
