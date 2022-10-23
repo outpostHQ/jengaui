@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/menu",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Jenga UI Menu component in React",
   "keywords": [
     "menu",
@@ -31,11 +31,11 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/button": "workspace:0.2.0",
-    "@jengaui/content": "workspace:0.2.0",
-    "@jengaui/layout": "workspace:0.2.0",
-    "@jengaui/modal": "workspace:0.2.0",
-    "@jengaui/utils": "workspace:0.2.0",
+    "@jengaui/button": "workspace:0.2.1",
+    "@jengaui/content": "workspace:0.2.1",
+    "@jengaui/layout": "workspace:0.2.1",
+    "@jengaui/modal": "workspace:0.2.1",
+    "@jengaui/utils": "workspace:0.2.1",
     "@react-aria/focus": "^3.9.0",
     "@react-aria/interactions": "^3.12.0",
     "@react-aria/menu": "^3.6.2",
@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:0.1.1",
+    "@jengaui/tsconfig": "workspace:0.1.2",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "csstype": "3.1.1",

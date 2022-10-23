@@ -1,5 +1,65 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- [#73](https://github.com/OutpostHQ/jengaui/pull/73) [`6f13369`](https://github.com/OutpostHQ/jengaui/commit/6f13369d55a63fab51dee071cd5c372461e0e16f) Thanks [@shubham-kaushal](https://github.com/shubham-kaushal)! - optimize packages to reduce bundle size
+
+- [#77](https://github.com/OutpostHQ/jengaui/pull/77) [`ee2a70d`](https://github.com/OutpostHQ/jengaui/commit/ee2a70d001328effde868c9ac52bbb2476ec3c08) Thanks [@shubham-kaushal](https://github.com/shubham-kaushal)! - Optimized packages
+
+- Updated dependencies [[`6f13369`](https://github.com/OutpostHQ/jengaui/commit/6f13369d55a63fab51dee071cd5c372461e0e16f), [`ee2a70d`](https://github.com/OutpostHQ/jengaui/commit/ee2a70d001328effde868c9ac52bbb2476ec3c08)]:
+  - @jengaui/combo-box@0.2.1
+  - @jengaui/copy-snippet@0.2.1
+  - @jengaui/dialog@0.2.1
+  - @jengaui/utils@0.2.1
+  - @jengaui/accordion@0.2.1
+  - @jengaui/active-zone@0.2.1
+  - @jengaui/alert@0.2.1
+  - @jengaui/alert-dialog@0.2.1
+  - @jengaui/avatar@0.2.1
+  - @jengaui/badge@0.2.1
+  - @jengaui/banner@0.2.1
+  - @jengaui/breadcrumbs@0.2.1
+  - @jengaui/button@0.2.1
+  - @jengaui/button-group@0.2.1
+  - @jengaui/card@0.2.1
+  - @jengaui/checkbox@0.2.1
+  - @jengaui/content@0.2.1
+  - @jengaui/core@0.2.1
+  - @jengaui/file-input@0.2.1
+  - @jengaui/form@0.2.1
+  - @jengaui/hooks@0.2.1
+  - @jengaui/input@0.2.1
+  - @jengaui/layout@0.2.1
+  - @jengaui/link@0.2.1
+  - @jengaui/menu@0.2.1
+  - @jengaui/modal@0.2.1
+  - @jengaui/notification@0.2.1
+  - @jengaui/number-input@0.2.1
+  - @jengaui/overlays@0.2.1
+  - @jengaui/password-input@0.2.1
+  - @jengaui/placeholder@0.2.1
+  - @jengaui/portal@0.2.1
+  - @jengaui/prism-code@0.2.1
+  - @jengaui/providers@0.2.1
+  - @jengaui/radio@0.2.1
+  - @jengaui/result@0.2.1
+  - @jengaui/root@0.2.1
+  - @jengaui/search-input@0.2.1
+  - @jengaui/select@0.2.1
+  - @jengaui/services@0.2.1
+  - @jengaui/skeleton@0.2.1
+  - @jengaui/slider@0.2.1
+  - @jengaui/switch@0.2.1
+  - @jengaui/table@0.2.1
+  - @jengaui/tabs@0.2.1
+  - @jengaui/tag@0.2.1
+  - @jengaui/text-input@0.2.1
+  - @jengaui/textarea@0.2.1
+  - @jengaui/toast@0.2.1
+  - @jengaui/tooltip@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

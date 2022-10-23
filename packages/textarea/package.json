@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/textarea",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Jenga UI Textarea component in React",
   "keywords": [
     "textarea",
@@ -32,15 +32,15 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/providers": "workspace:0.2.0",
-    "@jengaui/text-input": "workspace:0.2.0",
-    "@jengaui/utils": "workspace:0.2.0",
+    "@jengaui/providers": "workspace:0.2.1",
+    "@jengaui/text-input": "workspace:0.2.1",
+    "@jengaui/utils": "workspace:0.2.1",
     "@react-aria/textfield": "^3.7.2",
     "@react-aria/utils": "^3.14.0",
     "@react-stately/utils": "^3.5.1"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "workspace:0.1.1",
+    "@jengaui/tsconfig": "workspace:0.1.2",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",
