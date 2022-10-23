@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@jengaui/content": "workspace:0.2.0",
+    "@jengaui/alert": "workspace:0.2.0",
     "@jengaui/layout": "workspace:0.2.0",
     "@jengaui/providers": "workspace:0.2.0",
     "@jengaui/tooltip": "workspace:0.2.0",
