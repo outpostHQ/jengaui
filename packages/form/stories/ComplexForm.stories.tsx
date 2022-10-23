@@ -1,11 +1,15 @@
 import { StoryFn } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
+import { Alert } from '../../alert';
 import { Item } from '@react-stately/collections';
 import { Block } from '../../core';
 import { Checkbox, CheckboxGroup } from '../../checkbox';
 import { ComboBox } from '../../combo-box';
 import { Form, Field } from '../../form';
+import { SubmitError } from '../../form/src/form/SubmitError';
 import { PasswordInput } from '../../password-input';
 import { Radio } from '../../radio';
 import { Select } from '../../select';
@@ -21,6 +25,56 @@ export default {
   title: 'Forms/ComplexForm',
   component: Form,
   parameters: { controls: { exclude: baseProps } },
+};
+
+const CustomSubmitErrorTemplate: StoryFn<typeof Form> = (args) => {
+  const [form] = Form.useForm();
+
+  return (
+    <Form
+      form={form}
+      {...args}
+      onSubmit={(v) => {
+        console.log('onSubmit:', v);
+
+        throw <>Submission failed. Sorry for that :/</>;
+      }}
+      onValuesChange={(v) => {
+        console.log('onChange', v);
+      }}
+    >
+      <Field name="text" label="Text input">
+        <TextInput />
+      </Field>
+      <Submit>Submit</Submit>
+      {form.submitError ? <Alert>{form.submitError}</Alert> : null}
+    </Form>
+  );
+};
+
+const SubmitErrorTemplate: StoryFn<typeof Form> = (args) => {
+  const [form] = Form.useForm();
+
+  return (
+    <Form
+      form={form}
+      {...args}
+      onSubmit={(v) => {
+        console.log('onSubmit:', v);
+
+        throw <>Submission failed. Sorry for that :/</>;
+      }}
+      onValuesChange={(v) => {
+        console.log('onChange', v);
+      }}
+    >
+      <Field name="text" label="Text input">
+        <TextInput />
+      </Field>
+      <Submit>Submit</Submit>
+      <SubmitError />
+    </Form>
+  );
 };
 
 const AsyncValidationTemplate: StoryFn<typeof Form> = (args) => {
@@ -272,3 +326,16 @@ export const Default = Template.bind({});
 export const ComplexErrorMessage = ComplexErrorTemplate.bind({});
 
 export const AsyncValidation = AsyncValidationTemplate.bind({});
+
+export const ErrorMessage = SubmitErrorTemplate.bind({});
+
+export const CustomErrorMessage = CustomSubmitErrorTemplate.bind({});
+
+ErrorMessage.play = CustomErrorMessage.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const button = await canvas.getByRole('button');
+
+  await userEvent.click(button);
+
+  await waitFor(() => expect(canvas.getByRole('alert')).toBeInTheDocument());
+};
