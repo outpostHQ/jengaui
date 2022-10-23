@@ -42,7 +42,9 @@ export interface JengaPrismCodeProps extends ContainerStyleProps {
     | 'editorconfig'
     | 'php'
     | 'python'
-    | 'typescript';
+    | 'typescript' 
+    | 'jsx' 
+    | 'tsx';
 }
 
 function PrismCode(props: JengaPrismCodeProps, ref) {
