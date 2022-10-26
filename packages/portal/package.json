@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/portal",
-  "version": "0.2.1",
+  "version": "0.2.0",
   "description": "Jenga UI Portal component in React",
   "keywords": [
     "portal",
@@ -34,7 +34,7 @@
     "tiny-invariant": "^1.3.1"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "workspace:0.1.2",
+    "@jengaui/tsconfig": "workspace:0.1.1",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",

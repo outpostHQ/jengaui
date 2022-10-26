@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/button-group",
-  "version": "0.2.1",
+  "version": "0.2.0",
   "description": "Jenga UI Button-Group component in React",
   "keywords": [
     "button-group",
@@ -34,13 +34,13 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/layout": "workspace:0.2.1",
-    "@jengaui/utils": "workspace:0.2.1",
+    "@jengaui/layout": "workspace:0.2.0",
+    "@jengaui/utils": "workspace:0.2.0",
     "tastycss": "^0.9.1"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:0.1.2",
+    "@jengaui/tsconfig": "workspace:0.1.1",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",
