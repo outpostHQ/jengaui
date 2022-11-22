@@ -18,19 +18,22 @@
   },
   "license": "MIT",
   "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
   "files": [
-    "dist/**"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "build": "JSX=1 tsup src/index.ts --dts --minify --treeshake",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "build": "parcel build",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf tsup.config.ts",
     "dev": "tsup src/index.ts --minify --treeshake --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@jengaui/form": "workspace:0.2.1",
     "@jengaui/layout": "workspace:0.2.1",
     "@jengaui/overlays": "workspace:0.2.1",
@@ -48,11 +51,11 @@
     "@react-stately/combobox": "^3.2.2",
     "@react-types/combobox": "^3.5.4",
     "@react-types/shared": "^3.15.0",
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.0.0-dev-20221117103514"
   },
   "devDependencies": {
-    "@ant-design/icons": "^4.7.0",
     "@jengaui/tsconfig": "workspace:0.1.2",
+    "@types/node": "18.11.9",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",

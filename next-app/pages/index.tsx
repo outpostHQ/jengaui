@@ -94,26 +94,7 @@ const Home: NextPage = () => {
   width="50x"
 />
         <Block padding={'10px'}>
-          <Accordion styles={{ padding: 0 }}>
-            <Accordion.Item
-              key="1"
-              styles={{
-                fill: '#black',
-                paddingTop: '0',
-                paddingBottom: '0',
-                paddingLeft: '0',
-                paddingRight: '0',
-              }}
-              title="Create Jenga"
-              extra={<Extra />}
-              isIconVisible={false}
-            >
-              <Paragraph fill="#purple_03" height={150} />
-            </Accordion.Item>
-            <Accordion.Item key="2" title="Create 2 Jenga" extra={<Extra />}>
-              <Paragraph fill="#purple_03" height={150} />
-            </Accordion.Item>
-          </Accordion>
+          
         </Block>
       </Root>
     </SSRProvider>

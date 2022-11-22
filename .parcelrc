@@ -1,0 +1,8 @@
+{
+  "extends": "@parcel/config-default",
+  "validators": {
+	"./packages/${_package}/src/*.{ts,tsx}": [
+	  "@parcel/validator-typescript"
+	]
+  }
+}
