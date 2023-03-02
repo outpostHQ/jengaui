@@ -73,26 +73,23 @@ const Home: NextPage = () => {
             </Row>
           </TableBody>
         </Table>
-        
+
         <Breadcrumbs>
           <BreadcrumbItem>A</BreadcrumbItem>
           <BreadcrumbItem>B</BreadcrumbItem>
         </Breadcrumbs>
         <RangeSlider
-  defaultValue={[
-    20,
-    80
-  ]}
-  id="name"
-  label="Label"
-  maxValue={100}
-  minValue={0}
-  onChange={function $e(){}}
-  onChangeEnd={function $e(){}}
-  showInput
-  step={2}
-  width="50x"
-/>
+          defaultValue={[20, 80]}
+          id="name"
+          label="Label"
+          maxValue={100}
+          minValue={0}
+          onChange={function $e() {}}
+          onChangeEnd={function $e() {}}
+          showInput
+          step={2}
+          width="50x"
+        />
         <Block padding={'10px'}>
           <Accordion styles={{ padding: 0 }}>
             <Accordion.Item
