@@ -1,0 +1,23 @@
+name: Check Size Limit
+on: [pull_request]
+jobs:
+  check-size-limit-react:
+    runs-on: ubuntu-latest
+    env:
+      CI_JOB_NUMBER: 1
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v1
+
+      - name: Checkout branch
+        uses: actions/checkout@v3
+
+      - name: Install
+        uses: ./.github/composite-actions/install
+
+      - name: Perform Size limit Checkup
+        uses: andresz1/size-limit-action@v1.7.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: ./
+          package_manager: pnpm

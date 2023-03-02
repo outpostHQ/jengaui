@@ -41,7 +41,7 @@
     "@react-spectrum/utils": "^3.7.4",
     "@react-stately/radio": "^3.6.0",
     "@react-types/radio": "^3.3.0",
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.13.0"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",

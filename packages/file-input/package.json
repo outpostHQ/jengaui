@@ -37,7 +37,7 @@
     "@jengaui/providers": "workspace:0.2.1",
     "@react-spectrum/utils": "^3.7.4",
     "@react-types/textfield": "^3.6.0",
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.13.0"
   },
   "devDependencies": {
     "@jengaui/tsconfig": "workspace:0.1.2",

@@ -45,7 +45,7 @@
     "@jengaui/providers": "workspace:0.2.1",
     "@jengaui/utils": "workspace:0.2.1",
     "@react-aria/overlays": "^3.11.0",
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.13.0"
   },
   "devDependencies": {
     "@jengaui/tsconfig": "workspace:0.1.2",

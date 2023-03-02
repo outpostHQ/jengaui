@@ -39,7 +39,7 @@
     "@react-spectrum/utils": "^3.7.4",
     "@react-types/overlays": "^3.6.4",
     "react-transition-group": "^4.4.5",
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.13.0"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
