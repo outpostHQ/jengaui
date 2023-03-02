@@ -41,7 +41,7 @@
     "@react-spectrum/utils": "^3.7.4",
     "@react-stately/toggle": "^3.4.2",
     "@react-types/switch": "^3.2.4",
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.13.0"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",

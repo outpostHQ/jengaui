@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "prismjs": "^1.29.0",
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.13.0"
   },
   "devDependencies": {
     "@jengaui/tsconfig": "workspace:0.1.2",

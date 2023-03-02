@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@jengaui/utils": "workspace:0.2.1",
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.13.0"
   },
   "devDependencies": {
     "@jengaui/tsconfig": "workspace:0.1.2",

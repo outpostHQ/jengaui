@@ -182,10 +182,10 @@ for (const configPath of PACKAGE_JSON) {
 
     const buildScript = preProcessCMD(config['scripts']['build']);
 
-    if (buildScript !== OLD_buildScript) {
-      console.log('Different Build Script', configPath);
-      continue;
-    }
+    // if (buildScript !== OLD_buildScript) {
+    //   console.log('Different Build Script', configPath);
+    //   continue;
+    // }
 
     config['scripts']['build'] = NEW_buildScript;
 

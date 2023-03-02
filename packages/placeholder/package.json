@@ -33,7 +33,7 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.13.0"
   },
   "devDependencies": {
     "@jengaui/tsconfig": "workspace:0.1.2",

@@ -42,7 +42,7 @@
     "@jengaui/button": "workspace:0.2.1",
     "@jengaui/card": "workspace:0.2.1",
     "@jengaui/core": "workspace:0.2.1",
-    "tastycss": "^0.9.1"
+    "tastycss": "^0.13.0"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
