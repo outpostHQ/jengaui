@@ -13,6 +13,9 @@
       "onlyUpdatePeerDependentsWhenOutOfRange": true
     },
     "ignore": [
-      "@jengaui/react-storybook"
+      "@jengaui/react-storybook",
+      "@jengaui/tsconfig",
+      "next-app",
+      "test"      
     ]
   }
