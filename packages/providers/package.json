@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/providers",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Jenga UI Providers component in React",
   "keywords": [
     "react",
@@ -38,11 +38,11 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/utils": "workspace:0.3.0",
+    "@jengaui/utils": "workspace:0.4.0",
     "tastycss": "^0.13.0"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "workspace:0.2.0",
+    "@jengaui/tsconfig": "workspace:0.3.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",

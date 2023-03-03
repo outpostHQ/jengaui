@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/card",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Jenga UI Card component in React",
   "keywords": [
     "card",
@@ -34,7 +34,7 @@
     "tastycss": "^0.13.0"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "workspace:0.2.0",
+    "@jengaui/tsconfig": "workspace:0.3.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",
