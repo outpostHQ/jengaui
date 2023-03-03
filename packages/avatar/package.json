@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/avatar",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Jenga UI Avatar component in React",
   "keywords": [
     "avatar",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:0.2.0",
+    "@jengaui/tsconfig": "workspace:0.3.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.0
+
+### Minor Changes
+
+- [#99](https://github.com/OutpostHQ/jengaui/pull/99) [`3ce48c4`](https://github.com/OutpostHQ/jengaui/commit/3ce48c40f8488c4e02c63003b6abd7086d48ee85) Thanks [@shubham-kaushal](https://github.com/shubham-kaushal)! - fix import
+
 ## 0.3.0
 
 ### Minor Changes
