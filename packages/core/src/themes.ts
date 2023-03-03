@@ -1,4 +1,4 @@
-const THEMES = {
+export const THEMES = {
   success: {
     fill: '#success-bg',
     color: '#success-text',

@@ -20,16 +20,14 @@
   },
   "license": "MIT",
   "sideEffects": false,
-  "main": "./dist/cjs/index.js",
+  "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
   ],
   "scripts": {
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build": "pnpm build:esm && pnpm build:cjs",
+    "build": "tsup --config ./tsup.config.ts",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsup src/index.ts --minify --treeshake --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
@@ -43,7 +41,6 @@
     "@react-spectrum/utils": "^3.7.4",
     "@react-types/shared": "^3.15.0",
     "react-is": "^17.0.2",
-    "styled-components": "^5.3.6",
     "tastycss": "^0.13.0"
   },
   "devDependencies": {
@@ -65,5 +62,11 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js"
+    }
   }
 }

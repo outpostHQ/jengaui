@@ -127,29 +127,29 @@ export default defineConfig({
 })
 `);
 
+const TSUP_LEGACY_OUTPUT = true;
+
 const NEW_CFG = preProcess(`import { defineConfig } from 'tsup';
+import { findUpSync } from 'find-up';
+
 import packageJSON from './package.json';
 
 export default defineConfig({
   clean: true,
   format: ['cjs', 'esm'],
+  entry: ['./src/**/*'],
+  inject: process.env.JSX ? [findUpSync('react-shim.js')!] : undefined,
   treeshake: true,
   minify: true,
   dts: true,
-  external: [
-    ...Object.keys(packageJSON['dependencies']),
-    ...Object.keys(packageJSON['devDependencies']),
-    ...Object.keys(packageJSON['peerDependencies']),
-  ],
+  legacyOutput: ${TSUP_LEGACY_OUTPUT}
 });
 `);
 
 const OLD_buildScript = preProcessCMD(
   'JSX=1 tsup src/index.ts --dts --minify --treeshake',
 );
-const NEW_buildScript = preProcessCMD(
-  'tsup src/index.ts --config ./tsup.config.ts',
-);
+const NEW_buildScript = preProcessCMD('tsup --config ./tsup.config.ts');
 
 const path = require('path');
 const fs = require('fs');
@@ -157,7 +157,7 @@ const BACKUP = 1;
 
 for (const configPath of paths) {
   try {
-    const config = preProcess(fs.readFileSync(configPath, 'utf-8'));
+    // const config = preProcess(fs.readFileSync(configPath, 'utf-8'));
 
     // if (NEW_CFG !== config) {
     //   console.log('Different Config', configPath);
@@ -178,7 +178,7 @@ for (const configPath of PACKAGE_JSON) {
   try {
     const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
-    const buildScript = preProcessCMD(config['scripts']['build']);
+    // const buildScript = preProcessCMD(config['scripts']['build']);
 
     // if (buildScript !== OLD_buildScript) {
     //   console.log('Different Build Script', configPath);
@@ -186,6 +186,19 @@ for (const configPath of PACKAGE_JSON) {
     // }
 
     config['scripts']['build'] = NEW_buildScript;
+
+    if (TSUP_LEGACY_OUTPUT) {
+      config['module'] = './dist/esm/index.js';
+    } else {
+      config['module'] = './dist/index.mjs';
+    }
+
+    config['exports'] = {
+      '.': {
+        import: config['module'],
+        require: config['main'],
+      },
+    };
 
     fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
   } catch (error) {
