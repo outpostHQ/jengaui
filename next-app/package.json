@@ -10,7 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@jenga-dev/ui-kit": "0.18.2",
+    "@cube-dev/ui-kit": "0.18.2",
     "@jengaui/accordion": "workspace:*",
     "@jengaui/avatar": "workspace:*",
     "@jengaui/button": "workspace:*",
