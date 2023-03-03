@@ -1,5 +1,4 @@
 {
-  "name": "jengaui",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -16,7 +15,8 @@
     "test-watch": "jest --watch",
     "version": "changeset version",
     "version:dev": "changeset version --snapshot dev",
-    "sort": "sort-package-json"
+    "sort": "sort-package-json",
+    "publish:scoped": "cd packages && for dir in */; do (cd $dir && npm publish --access public); done"
   },
   "husky": {
     "hooks": {
