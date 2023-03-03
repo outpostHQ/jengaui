@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
-
-import THEMES from '@jengaui/core';
+import { THEMES } from '@jengaui/core';
 import {
   BaseProps,
   CONTAINER_STYLES,
