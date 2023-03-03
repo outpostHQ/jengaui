@@ -17,6 +17,7 @@
     "version": "changeset version",
     "version:dev": "changeset version --snapshot dev",
     "sort": "sort-package-json"
+    
   },
   "husky": {
     "hooks": {
