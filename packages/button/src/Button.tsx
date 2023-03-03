@@ -3,7 +3,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { FocusableRef } from '@react-types/shared';
 import { Styles } from 'tastycss';
 import { accessibilityWarning } from '@jengaui/utils';
-import type {} from "csstype";
+import type {} from 'csstype';
 
 import { Action, JengaActionProps } from './Action';
 

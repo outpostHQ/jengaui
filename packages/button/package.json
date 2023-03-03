@@ -20,14 +20,16 @@
   },
   "license": "MIT",
   "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
   ],
   "scripts": {
-    "build": "JSX=1 tsup src/index.ts --config ./tsup.config.ts",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "pnpm build:esm && pnpm build:cjs",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsup src/index.ts --minify --treeshake --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
@@ -40,6 +42,8 @@
     "@react-aria/interactions": "^3.12.0",
     "@react-spectrum/utils": "^3.7.4",
     "@react-types/shared": "^3.15.0",
+    "react-is": "^17.0.2",
+    "styled-components": "^5.3.6",
     "tastycss": "^0.13.0"
   },
   "devDependencies": {

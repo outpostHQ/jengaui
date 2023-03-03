@@ -128,13 +128,11 @@ export default defineConfig({
 `);
 
 const NEW_CFG = preProcess(`import { defineConfig } from 'tsup';
-import { findUpSync } from 'find-up';
 import packageJSON from './package.json';
 
 export default defineConfig({
   clean: true,
   format: ['cjs', 'esm'],
-  inject: process.env.JSX ? [findUpSync('react-shim.js')!] : undefined,
   treeshake: true,
   minify: true,
   dts: true,
@@ -150,7 +148,7 @@ const OLD_buildScript = preProcessCMD(
   'JSX=1 tsup src/index.ts --dts --minify --treeshake',
 );
 const NEW_buildScript = preProcessCMD(
-  'JSX=1 tsup src/index.ts --config ./tsup.config.ts',
+  'tsup src/index.ts --config ./tsup.config.ts',
 );
 
 const path = require('path');

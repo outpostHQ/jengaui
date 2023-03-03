@@ -90,9 +90,9 @@
   },
   "size-limit": [
     {
-      "name": "@jengaui/react",
+      "name": "@jengaui/button (Button)",
       "limit": "200 kb",
-      "path": "./packages/react/dist/index.mjs",
+      "path": "./packages/button/dist/esm/index.js",
       "import": "{ Button }"
     }
   ]

@@ -1,0 +1,30 @@
+{
+  "extends": "@jengaui/tsconfig/react-library.json",
+  "include": ["./index.ts", "src/**/*"],
+  "exclude": ["dist", "build", "node_modules", "./dist"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["dom", "esnext"],
+    "noEmitOnError": false,
+    "allowJs": true,
+    "checkJs": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "preserveSymlinks": true,
+    "noImplicitAny": false,
+    "target": "es2021",
+    "module": "CommonJS",
+    "outDir": "./dist/cjs",
+    "noEmit": false,
+    "declaration": false
+  }
+}
