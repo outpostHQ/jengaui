@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.3.0
+
+### Minor Changes
+
+- [#91](https://github.com/OutpostHQ/jengaui/pull/91) [`b29284e`](https://github.com/OutpostHQ/jengaui/commit/b29284e048e7b6248e38f74dc12b58a9834312c7) Thanks [@shubham-kaushal](https://github.com/shubham-kaushal)! - fix: treeshaking
+
+### Patch Changes
+
+- Updated dependencies [[`b29284e`](https://github.com/OutpostHQ/jengaui/commit/b29284e048e7b6248e38f74dc12b58a9834312c7)]:
+  - @jengaui/file-input@0.3.0
+  - @jengaui/number-input@0.3.0
+  - @jengaui/password-input@0.3.0
+  - @jengaui/text-input@0.3.0
+  - @jengaui/textarea@0.3.0
+
 ## 0.2.1
 
 ### Patch Changes

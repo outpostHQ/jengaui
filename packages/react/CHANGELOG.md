@@ -1,5 +1,65 @@
 # Change Log
 
+## 0.3.0
+
+### Minor Changes
+
+- [#91](https://github.com/OutpostHQ/jengaui/pull/91) [`b29284e`](https://github.com/OutpostHQ/jengaui/commit/b29284e048e7b6248e38f74dc12b58a9834312c7) Thanks [@shubham-kaushal](https://github.com/shubham-kaushal)! - fix: treeshaking
+
+### Patch Changes
+
+- Updated dependencies [[`b29284e`](https://github.com/OutpostHQ/jengaui/commit/b29284e048e7b6248e38f74dc12b58a9834312c7)]:
+  - @jengaui/accordion@0.3.0
+  - @jengaui/active-zone@0.3.0
+  - @jengaui/alert@0.3.0
+  - @jengaui/alert-dialog@0.3.0
+  - @jengaui/avatar@0.3.0
+  - @jengaui/badge@0.3.0
+  - @jengaui/banner@0.3.0
+  - @jengaui/breadcrumbs@0.3.0
+  - @jengaui/button@0.3.0
+  - @jengaui/button-group@0.3.0
+  - @jengaui/card@0.3.0
+  - @jengaui/checkbox@0.3.0
+  - @jengaui/combo-box@0.3.0
+  - @jengaui/content@0.3.0
+  - @jengaui/copy-snippet@0.3.0
+  - @jengaui/core@0.3.0
+  - @jengaui/dialog@0.3.0
+  - @jengaui/file-input@0.3.0
+  - @jengaui/form@0.3.0
+  - @jengaui/hooks@0.3.0
+  - @jengaui/input@0.3.0
+  - @jengaui/layout@0.3.0
+  - @jengaui/link@0.3.0
+  - @jengaui/menu@0.3.0
+  - @jengaui/modal@0.3.0
+  - @jengaui/notification@0.3.0
+  - @jengaui/number-input@0.3.0
+  - @jengaui/overlays@0.3.0
+  - @jengaui/password-input@0.3.0
+  - @jengaui/placeholder@0.3.0
+  - @jengaui/portal@0.3.0
+  - @jengaui/prism-code@0.3.0
+  - @jengaui/providers@0.3.0
+  - @jengaui/radio@0.3.0
+  - @jengaui/result@0.3.0
+  - @jengaui/root@0.3.0
+  - @jengaui/search-input@0.3.0
+  - @jengaui/select@0.3.0
+  - @jengaui/services@0.3.0
+  - @jengaui/skeleton@0.3.0
+  - @jengaui/slider@0.3.0
+  - @jengaui/switch@0.3.0
+  - @jengaui/table@0.3.0
+  - @jengaui/tabs@0.3.0
+  - @jengaui/tag@0.3.0
+  - @jengaui/text-input@0.3.0
+  - @jengaui/textarea@0.3.0
+  - @jengaui/toast@0.3.0
+  - @jengaui/tooltip@0.3.0
+  - @jengaui/utils@0.3.0
+
 ## 0.2.1
 
 ### Patch Changes

@@ -17,7 +17,7 @@
     "tastycss": "^0.13.0"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "workspace:0.1.2",
+    "@jengaui/tsconfig": "workspace:0.2.0",
     "@storybook/addon-actions": "6.5.12",
     "@storybook/addon-essentials": "6.5.12",
     "@storybook/addon-interactions": "6.5.12",

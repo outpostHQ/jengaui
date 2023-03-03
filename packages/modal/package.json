@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/modal",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Jenga UI Modal component in React",
   "keywords": [
     "modal",
@@ -31,9 +31,9 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/form": "workspace:0.2.1",
-    "@jengaui/providers": "workspace:0.2.1",
-    "@jengaui/utils": "workspace:0.2.1",
+    "@jengaui/form": "workspace:0.3.0",
+    "@jengaui/providers": "workspace:0.3.0",
+    "@jengaui/utils": "workspace:0.3.0",
     "@react-aria/overlays": "^3.11.0",
     "@react-aria/utils": "^3.14.0",
     "@react-spectrum/utils": "^3.7.4",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:0.1.2",
+    "@jengaui/tsconfig": "workspace:0.2.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "@types/react-transition-group": "^4.4.5",
