@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.3.0
+
+### Minor Changes
+
+- [#97](https://github.com/OutpostHQ/jengaui/pull/97) [`57579ce`](https://github.com/OutpostHQ/jengaui/commit/57579ced34fd760484d5dbb4c73d31e5cb9fbcec) Thanks [@shubham-kaushal](https://github.com/shubham-kaushal)! - optimize packages for treeshaking
+
+### Patch Changes
+
+- Updated dependencies [[`57579ce`](https://github.com/OutpostHQ/jengaui/commit/57579ced34fd760484d5dbb4c73d31e5cb9fbcec)]:
+  - @jengaui/button@0.3.0
+  - @jengaui/providers@0.3.0
+  - @jengaui/text-input@0.3.0
+  - @jengaui/utils@0.3.0
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
     "name": "@jengaui/tsconfig",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "private": true,
     "license": "MIT",
     "main": "index.js",

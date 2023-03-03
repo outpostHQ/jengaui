@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/root",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Jenga UI Root component in React",
   "keywords": [
     "react",
@@ -38,17 +38,17 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/alert-dialog": "workspace:0.2.1",
-    "@jengaui/core": "workspace:0.2.1",
-    "@jengaui/notification": "workspace:0.2.1",
-    "@jengaui/portal": "workspace:0.2.1",
-    "@jengaui/providers": "workspace:0.2.1",
-    "@jengaui/utils": "workspace:0.2.1",
+    "@jengaui/alert-dialog": "workspace:0.3.0",
+    "@jengaui/core": "workspace:0.3.0",
+    "@jengaui/notification": "workspace:0.3.0",
+    "@jengaui/portal": "workspace:0.3.0",
+    "@jengaui/providers": "workspace:0.3.0",
+    "@jengaui/utils": "workspace:0.3.0",
     "@react-aria/overlays": "^3.11.0",
     "tastycss": "^0.13.0"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "workspace:0.1.2",
+    "@jengaui/tsconfig": "workspace:0.2.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",
