@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/form",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Jenga UI Form component in React",
   "keywords": [
     "form",
@@ -26,12 +26,12 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/content": "workspace:0.2.1",
-    "@jengaui/alert": "workspace:0.2.1",
-    "@jengaui/layout": "workspace:0.2.1",
-    "@jengaui/providers": "workspace:0.2.1",
-    "@jengaui/tooltip": "workspace:0.2.1",
-    "@jengaui/utils": "workspace:0.2.1",
+    "@jengaui/content": "workspace:0.3.0",
+    "@jengaui/alert": "workspace:0.3.0",
+    "@jengaui/layout": "workspace:0.3.0",
+    "@jengaui/providers": "workspace:0.3.0",
+    "@jengaui/tooltip": "workspace:0.3.0",
+    "@jengaui/utils": "workspace:0.3.0",
     "@react-spectrum/utils": "^3.7.4",
     "@react-stately/collections": "^3.4.4",
     "@react-types/shared": "^3.15.0",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:0.1.2",
+    "@jengaui/tsconfig": "workspace:0.2.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",

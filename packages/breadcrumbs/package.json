@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/breadcrumbs",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Jenga UI Breadcrumbs component in React",
   "keywords": [
     "breadcrumbs",
@@ -33,8 +33,8 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/providers": "workspace:0.2.1",
-    "@jengaui/utils": "workspace:0.2.1",
+    "@jengaui/providers": "workspace:0.3.0",
+    "@jengaui/utils": "workspace:0.3.0",
     "@react-aria/breadcrumbs": "^3.3.2",
     "@react-types/breadcrumbs": "^3.4.4",
     "@react-types/shared": "3.15.0",
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:0.1.2",
+    "@jengaui/tsconfig": "workspace:0.2.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",
