@@ -13,6 +13,7 @@ import {
 import { Provider } from '@jengaui/providers';
 import { TOKENS } from '@jengaui/core';
 import { useViewportSize } from '@jengaui/utils';
+import { TrackingProps, TrackingProvider } from '@jengaui/providers';
 
 import { PortalProvider } from '@jengaui/portal';
 import { GlobalStyles } from '@jengaui/core';
@@ -20,7 +21,7 @@ import { AlertDialogApiProvider } from '@jengaui/alert-dialog';
 import { NotificationsProvider } from '@jengaui/notification';
 
 const RootElement = tasty({
-  id: 'Jenga UI-kit-root',
+  id: 'jenga-ui-kit-root',
   className: 'root',
 });
 
@@ -44,6 +45,7 @@ export interface JengaRootProps extends BaseProps {
   font?: string;
   monospaceFont?: string;
   applyLegacyTokens?: boolean;
+  tracking?: TrackingProps;
 }
 
 const IS_DVH_SUPPORTED =
@@ -62,6 +64,7 @@ export function Root(allProps: JengaRootProps) {
     font,
     monospaceFont,
     applyLegacyTokens,
+    tracking,
     ...props
   } = allProps;
 
@@ -118,34 +121,36 @@ export function Root(allProps: JengaRootProps) {
 
   return (
     <Provider router={router} root={rootRef}>
-      <StyleSheetManager disableVendorPrefixes>
-        <RootElement
-          ref={ref}
-          {...filterBaseProps(props, { eventProps: true })}
-          styles={styles}
-          style={{
-            '--jenga-dynamic-viewport-height': height
-              ? height + 'px'
-              : '100dvh',
-          }}
-        >
-          <GlobalStyles
-            bodyStyles={bodyStyles}
-            applyLegacyTokens={applyLegacyTokens}
-            publicUrl={publicUrl}
-            fonts={fonts}
-            font={font}
-            monospaceFont={monospaceFont}
-          />
-          <ModalProvider>
-            <PortalProvider value={ref}>
-              <NotificationsProvider rootRef={ref}>
-                <AlertDialogApiProvider>{children}</AlertDialogApiProvider>
-              </NotificationsProvider>
-            </PortalProvider>
-          </ModalProvider>
-        </RootElement>
-      </StyleSheetManager>
+      <TrackingProvider event={tracking?.event}>
+        <StyleSheetManager disableVendorPrefixes>
+          <RootElement
+            ref={ref}
+            {...filterBaseProps(props, { eventProps: true })}
+            styles={styles}
+            style={{
+              '--jenga-dynamic-viewport-height': height
+                ? height + 'px'
+                : '100dvh',
+            }}
+          >
+            <GlobalStyles
+              bodyStyles={bodyStyles}
+              applyLegacyTokens={applyLegacyTokens}
+              publicUrl={publicUrl}
+              fonts={fonts}
+              font={font}
+              monospaceFont={monospaceFont}
+            />
+            <ModalProvider>
+              <PortalProvider value={ref}>
+                <NotificationsProvider rootRef={ref}>
+                  <AlertDialogApiProvider>{children}</AlertDialogApiProvider>
+                </NotificationsProvider>
+              </PortalProvider>
+            </ModalProvider>
+          </RootElement>
+        </StyleSheetManager>
+      </TrackingProvider>
     </Provider>
   );
 }
