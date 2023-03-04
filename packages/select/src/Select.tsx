@@ -41,18 +41,13 @@ import {
   Styles,
   tasty,
 } from 'tastycss';
-import {
-  useFocus,
-  getOverlayTransitionCSS,
-  mergeProps,
-  useCombinedRefs,
-} from '@jengaui/utils';
+import { useFocus, getOverlayTransitionCSS, mergeProps, useCombinedRefs } from '@jengaui/utils';
 import { OverlayWrapper } from '@jengaui/overlays';
 import {
   DEFAULT_INPUT_STYLES,
   INPUT_WRAPPER_STYLES,
 } from '@jengaui/text-input';
-import { JengaButtonProps, provideButtonStyles } from '@jengaui/button';
+import { DEFAULT_BUTTON_STYLES } from '@jengaui/button';
 
 import type { AriaSelectProps } from '@react-types/select';
 
@@ -81,6 +76,7 @@ const SelectWrapperElement = tasty({
     fill: {
       '': '#white',
       disabled: '#dark.04',
+      '[data-theme="special"]': '#clear',
     },
     color: {
       '': '#dark.85',
@@ -91,6 +87,10 @@ const SelectWrapperElement = tasty({
 
     Value: {
       ...DEFAULT_INPUT_STYLES,
+      preset: {
+        '': 't3',
+        '[data-type="primary"]': 't3m',
+      },
       color: 'inherit',
       opacity: {
         '': 1,
@@ -98,6 +98,11 @@ const SelectWrapperElement = tasty({
       },
       textAlign: 'left',
       fill: '#clear',
+      textOverflow: 'ellipsis',
+      overflow: {
+        '': 'initial',
+        ellipsis: 'hidden',
+      },
     },
 
     CaretIcon: {
@@ -105,6 +110,7 @@ const SelectWrapperElement = tasty({
       placeItems: 'center',
       width: 'min 4x',
       cursor: 'pointer',
+      fontSize: 'inherit',
     },
 
     ButtonIcon: {
@@ -112,11 +118,7 @@ const SelectWrapperElement = tasty({
       placeItems: 'center',
       width: 'min 4x',
       color: 'inherit',
-      fontSize: {
-        '': 'initial',
-        '[data-size="small"]': '14px',
-        '[data-size="medium"]': '16px',
-      },
+      fontSize: '@icon-size',
     },
   },
 });
@@ -126,14 +128,64 @@ const SelectElement = tasty({
   qa: 'Button',
   styles: {
     ...INPUT_WRAPPER_STYLES,
+    ...DEFAULT_BUTTON_STYLES,
+    preset: 't3m',
     cursor: 'pointer',
     padding: '0',
+    gap: '0',
     border: {
       '': true,
       valid: '#success-text.50',
       invalid: '#danger-text.50',
+      '[data-type="primary"]': '#clear',
       '[data-type="clear"]': '#clear',
+      '[data-theme="special"] & [data-type="secondary"] & pressed': '#white.44',
       disabled: true,
+    },
+    fill: {
+      '': '#clear',
+      '[data-type="primary"]': '#purple',
+      '[data-type="primary"] & pressed': '#purple',
+      '[data-type="primary"] & hovered': '#purple-text',
+
+      '[data-type="secondary"]': '#dark.0',
+      '[data-type="secondary"] & hovered': '#dark.04',
+      '[data-type="secondary"] & pressed': '#dark.05',
+
+      '[disabled]': '#dark.04',
+
+      '([data-type="clear"] | [data-type="outline"])': '#purple.0',
+      '([data-type="clear"] | [data-type="outline"]) & hovered': '#purple.16',
+      '([data-type="clear"] | [data-type="outline"]) & pressed': '#purple.10',
+      '([data-type="clear"] | [data-type="outline"]) & [disabled]': '#purple.0',
+
+      // special
+      '[data-theme="special"] & [data-type="secondary"]': '#white.12',
+
+      '[data-theme="special"] & [data-type="clear"]': '#white',
+      '[data-theme="special"] & [data-type="clear"] & hovered': '#white.94',
+      '[data-theme="special"] & [data-type="clear"] & pressed': '#white',
+
+      '[data-theme="special"] & [disabled]': '#white.12',
+
+      '[data-theme="special"] & [data-type="clear"] & [disabled]': '#white.0',
+    },
+    color: {
+      '': '#white',
+
+      '[data-type="secondary"]': '#dark.75',
+      '[data-type="secondary"] & hovered': '#dark.75',
+      '[data-type="clear"]': '#purple-text',
+      '[data-type="secondary"] & pressed': '#purple',
+
+      '[disabled]': '#dark.30',
+
+      // special
+      '[data-theme="special"]': '#white',
+      '[data-theme="special"] & [data-type="clear"]': '#purple',
+
+      // other
+      '[data-theme="special"] & [disabled]': '#white.30',
     },
   },
 });
@@ -165,17 +217,17 @@ const OptionElement = tasty({
     radius: true,
     fill: {
       '': '#dark.0',
-      'hovered | focused': '#dark.04',
       'pressed | selected': '#purple.10',
-      '[disabled]': '#dark.04',
+      'hovered | focused': '#dark.04',
+      disabled: '#dark.0',
     },
     color: {
       '': '#dark.75',
       'hovered | focused': '#dark.75',
       'pressed | selected': '#purple',
-      '[disabled]': '#dark.30',
+      disabled: '#dark.3',
     },
-    preset: 't3m',
+    preset: 't3',
     transition: 'theme',
   },
 });
@@ -214,7 +266,7 @@ export interface JengaSelectBaseProps<T>
   direction?: 'top' | 'bottom';
   shouldFlip?: boolean;
   inputProps?: Props;
-  type?: JengaButtonProps['type'];
+  type?: 'secondary' | 'clear' | 'primary' | (string & {});
   suffixPosition?: 'before' | 'after';
 }
 
@@ -223,6 +275,7 @@ export interface JengaSelectProps<T> extends JengaSelectBaseProps<T> {
   /** The ref for the list box. */
   listBoxRef?: RefObject<HTMLElement>;
   size?: 'small' | 'default' | 'large' | string;
+  ellipsis?: boolean;
 }
 
 function Select<T extends object>(
@@ -266,29 +319,17 @@ function Select<T extends object>(
     tooltip,
     size,
     styles,
-    type = 'neutral',
-    theme,
+    type = 'secondary',
+    theme = 'default',
     labelSuffix,
+    ellipsis,
     suffixPosition = 'before',
     ...otherProps
   } = props;
   let state = useSelectState(props);
   const outerStyles = extractStyles(otherProps, OUTER_STYLES, styles);
 
-  inputStyles = extractStyles(otherProps, BLOCK_STYLES, {
-    ...(() => {
-      let styles = provideButtonStyles({ type, theme });
-
-      delete styles['border'];
-
-      if (isDisabled || validationState === 'invalid') {
-        styles.color = 'inherit';
-      }
-
-      return styles;
-    })(),
-    ...inputStyles,
-  });
+  inputStyles = extractStyles(otherProps, BLOCK_STYLES, inputStyles);
 
   ref = useCombinedRefs(ref);
   triggerRef = useCombinedRefs(triggerRef);
@@ -354,6 +395,7 @@ function Select<T extends object>(
 
   const modifiers = useMemo(
     () => ({
+      ellipsis,
       invalid: isInvalid,
       valid: validationState === 'valid',
       disabled: isDisabled,
@@ -365,6 +407,7 @@ function Select<T extends object>(
       suffix: true,
     }),
     [
+      ellipsis,
       validationState,
       isDisabled,
       isLoading,
@@ -381,6 +424,8 @@ function Select<T extends object>(
       mods={modifiers}
       styles={outerStyles}
       data-size={size}
+      data-type={type}
+      data-theme={theme}
     >
       <HiddenSelect
         state={state}
@@ -392,8 +437,9 @@ function Select<T extends object>(
         {...mergeProps(buttonProps, hoverProps, focusProps)}
         ref={triggerRef}
         styles={inputStyles}
+        data-theme={theme}
         data-size={size}
-        data-type={type || 'neutral'}
+        data-type={type}
         mods={modifiers}
       >
         {prefix ? <div data-element="Prefix">{prefix}</div> : null}

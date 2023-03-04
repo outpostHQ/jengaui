@@ -36,7 +36,7 @@
     "@jengaui/button": "workspace:0.4.0",
     "@jengaui/core": "workspace:0.4.0",
     "@jengaui/layout": "workspace:0.4.0",
-    "tastycss": "^0.13.0"
+    "tastycss": "^0.17.2"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
@@ -49,8 +49,8 @@
     "typescript": "^4.8.4"
   },
   "peerDependencies": {
-    "react": ">= 18.2.0",
-    "react-dom": ">= 18.2.0"
+    "react": ">= 17.0.0",
+    "react-dom": ">= 17.0.0"
   },
   "publishConfig": {
     "access": "public"

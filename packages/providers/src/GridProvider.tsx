@@ -1,8 +1,7 @@
 import { forwardRef, ReactNode, useCallback, useEffect, useState } from 'react';
 
-import { filterBaseProps, Styles } from 'tastycss';
+import { filterBaseProps, Styles, tasty } from 'tastycss';
 import { useCombinedRefs } from '@jengaui/utils';
-import { tasty } from 'tastycss';
 
 const GridElement = tasty({
   styled: {
