@@ -41,7 +41,7 @@
     "@react-aria/numberfield": "^3.3.2",
     "@react-stately/numberfield": "^3.2.2",
     "@react-types/numberfield": "^3.3.4",
-    "tastycss": "^0.13.0"
+    "tastycss": "^0.17.2"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",

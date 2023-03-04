@@ -33,7 +33,7 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "tastycss": "^0.13.0"
+    "tastycss": "^0.17.2"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",

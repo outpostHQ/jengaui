@@ -38,7 +38,7 @@
     "@jengaui/utils": "workspace:0.4.0",
     "@react-aria/searchfield": "^3.4.2",
     "@react-stately/searchfield": "^3.3.2",
-    "tastycss": "^0.13.0"
+    "tastycss": "^0.17.2"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
