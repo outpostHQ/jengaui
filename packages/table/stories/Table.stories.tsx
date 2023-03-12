@@ -5,11 +5,6 @@ import { Table as NewTable } from '../src/';
 export default {
   title: 'Forms/Table',
   component: NewTable,
-  // parameters: {
-  //   controls: {
-  //     exclude: baseProps,
-  //   },
-  // },
 };
 
 const AsyncTableTemplate = (args) => {
@@ -269,7 +264,7 @@ const AsyncNew = (args) => {
     <NewTable aria-label="example async loading table" {...args}>
       <TableHeader columns={columns}>
         {(column) => (
-          <Column align={column.key !== 'name' ? 'end' : 'start'}>
+          <Column align={column.key !== 'name' ? 'right' : 'start'}>
             {column.name}
           </Column>
         )}

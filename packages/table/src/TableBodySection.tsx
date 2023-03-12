@@ -10,23 +10,28 @@ import { TableRow } from './TableRow';
 import { TableRowGroup } from './TableRowGroup';
 import { JengaTableBodyProps } from './types';
 
-export const TableBodySection = (props: JengaTableBodyProps) => {
-  const { state, IsEmpty, ...otherProps } = props;
+export function TableBodySection<T>(props: JengaTableBodyProps<T>) {
+  const { state, alternateBody, showAlternateBody, onEmpty, ...otherProps } =
+    props;
   const { collection } = state;
   const { cellPadding } = useContext(JengaTablePropsContext);
+
   return (
     <TableRowGroup as="tbody" {...otherProps}>
-      {[...collection.body.childNodes].length === 0
-        ? IsEmpty
+      {showAlternateBody
+        ? alternateBody
+        : [...collection.body.childNodes].length === 0
+        ? onEmpty
         : [...collection.body.childNodes].map((row) => (
             <TableRow
               key={row.key}
               item={row}
               state={state}
-              styles={{ borderTop: '1px solid #E5E5FC' }}
+              styles={{
+                borderTop: '1px solid #E5E5FC',
+              }}
             >
-              {[...row.childNodes].map((cell: GridNode<unknown>, index) => {
-                // console.log(cell.column?.props.align, cell.column?.props.dataType);
+              {[...row.childNodes].map((cell: GridNode<T>) => {
                 const align =
                   cell.column?.props.align ||
                   AligmentFromDTCatalog[
@@ -34,10 +39,10 @@ export const TableBodySection = (props: JengaTableBodyProps) => {
                   ] ||
                   'left';
                 const stylesFromColumn =
-                  (cell.column?.props.styles as Styles) || {};
-                // console.log(cell.column?.props.styles, stylesFromColumn);
+                  (cell.column?.props.colCellStyles as Styles) || {};
+
                 return cell.props.isSelectionCell ? (
-                  <TableCheckboxCell
+                  <TableCheckboxCell<T>
                     key={cell.key}
                     item={cell}
                     state={state}
@@ -64,4 +69,4 @@ export const TableBodySection = (props: JengaTableBodyProps) => {
           ))}
     </TableRowGroup>
   );
-};
+}

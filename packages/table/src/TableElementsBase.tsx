@@ -1,39 +1,36 @@
 import { JengaCheckboxProps } from '@jengaui/checkbox';
-import { createContext, forwardRef } from 'react';
-import { tasty, Element, Styles, AllBaseProps } from 'tastycss';
+import {
+  createContext,
+  // ForwardedRef,
+  forwardRef,
+  HTMLProps,
+  ReactElement,
+  Ref,
+  // ReactElement,
+} from 'react';
+import { tasty, Element, Styles, BasePropsWithoutChildren } from 'tastycss';
 
 import { JengaTableBaseProps } from './types';
 
-export const Tr = tasty<AllBaseProps & HTMLTableRowElement>({
+export const Tr = tasty({
   as: 'tr',
   role: 'row',
 });
-
-export const Th = tasty<AllBaseProps & HTMLTableCellElement>({
+export const Th = tasty({
   as: 'th',
   role: 'gridcell',
 });
 
-export const Td = tasty<AllBaseProps & HTMLTableCellElement>({
+export const Td = tasty({
   as: 'td',
   role: 'gridcell',
-  // styles: {
-  //   borderTop: '1px solid #E5E5FC',
-  // },
 });
 
 export const TableWrapper = tasty({
-  // width: ['740px', '580px'],
   styles: {
     borderRadius: '8px',
     border: '1px solid #e5e5fc',
     overflow: 'auto',
-    // width: [
-    //   // '740px max 740px min 740px',
-    //   // '580px max 580px min 580px',
-    //   '200px max 200px min 200px',
-    // ],
-    height: [' 200px max 200px min 200px'],
     styledScrollbar: true,
     position: 'relative',
     padding: '0',
@@ -46,16 +43,23 @@ export const TableTemplate = tasty(Element, {
 
 export const JengaTablePropsContext = createContext<{
   zebraStripes: boolean;
-  paginated: boolean;
-  pages?: number;
-  currentPage?: number;
-  currentlyVisibleRange?: [number, number];
-  recordsPerPage?: number;
   cellPadding: string | string[];
-  checkboxAdditionalProps?: JengaCheckboxProps;
-  checkboxStyles?: Styles;
-  totalPages?: number;
-}>({ zebraStripes: false, paginated: false, cellPadding: '10px' });
+  checkboxProps: JengaCheckboxProps;
+  checkboxStyles: Styles;
+  cellProps: BasePropsWithoutChildren & HTMLProps<HTMLTableCellElement>;
+  cellStyles: Styles;
+  rowStyles: Styles;
+  rowProps: BasePropsWithoutChildren & HTMLProps<HTMLTableRowElement>;
+}>({
+  zebraStripes: false,
+  cellPadding: '10px',
+  rowProps: {},
+  rowStyles: {},
+  cellProps: {},
+  cellStyles: {},
+  checkboxProps: {},
+  checkboxStyles: {},
+});
 
 const cellPaddingCatalog = {
   dense: '6px 12px',
@@ -73,36 +77,31 @@ const parseCellPadding = (cellPadding: string | string[]) => {
     : cellPadding;
 };
 
-export const TableBase = forwardRef(function _TableBase(
-  props: JengaTableBaseProps,
-  ref,
-) {
+export function _TableBase<T>(props: JengaTableBaseProps<T>, ref) {
   let {
     styles,
     zebraStripes = false,
-    paginated = false,
-    currentlyVisibleRange = [0, Infinity],
     cellPadding = ['regular', 'dense'],
-    checkboxAdditionalProps = {},
+    checkboxProps = {},
     checkboxStyles = {},
-    currentPage = 1,
-    totalPages = 1,
-    recordsPerPage = 20,
+    cellStyles = {},
+    cellProps = {},
+    rowProps = {},
+    rowStyles = {},
     ...otherProps
   } = props;
-  if (totalPages < 1) totalPages = 1;
+
   return (
     <JengaTablePropsContext.Provider
       value={{
-        zebraStripes: zebraStripes,
-        paginated: paginated,
-        currentlyVisibleRange: currentlyVisibleRange,
-        currentPage: currentPage,
-        recordsPerPage: recordsPerPage,
+        zebraStripes,
         cellPadding: parseCellPadding(cellPadding),
-        checkboxAdditionalProps: checkboxAdditionalProps,
-        checkboxStyles: checkboxStyles,
-        totalPages: totalPages,
+        checkboxProps,
+        checkboxStyles,
+        cellStyles,
+        cellProps,
+        rowProps,
+        rowStyles,
       }}
     >
       <TableTemplate
@@ -114,11 +113,16 @@ export const TableBase = forwardRef(function _TableBase(
           fill: '#fffff',
           ...styles,
         }}
+        role={'Table'}
         {...otherProps}
         ref={ref}
       />
     </JengaTablePropsContext.Provider>
   );
-});
+}
+
+export const TableBase = forwardRef(_TableBase) as <T>(
+  props: JengaTableBaseProps<T> & { ref?: Ref<unknown> },
+) => ReactElement;
 //created in order to make it easy to apply styles for specific tags
 //Note:if no styles needed then just delete this and just use Element=tasty({}) then <Element as={'t{d| h| r}'} />
