@@ -50,9 +50,9 @@ export type JengaTableExtendedProps = {
   alternateBody?: ReactNode;
   showAlternateBody?: boolean;
   showFooter?: boolean;
-  customHeaderPostion?: 'top' | 'bottom';
+  customHeaderRowPostion?: 'top' | 'bottom';
   customFooter?: ReactNode;
-  customHeader?: ReactNode;
+  customHeaderRow?: ReactNode;
   onEmpty?: ReactNode;
   cellStyles?: Styles;
   cellProps?: HTMLProps<HTMLTableCellElement> & BasePropsWithoutChildren;
@@ -64,7 +64,7 @@ export type JengaTableProps<T> = AriaTableProps<T> &
   BasePropsWithoutChildren &
   JengaTableExtendedProps;
 
-export type JengaTableBaseProps<T> = TableStateProps<T> &
+export type JengaTableBaseProps<T> = Omit<TableStateProps<T>, 'children'> &
   BaseProps & {
     cellPadding?: string | string[];
     zebraStripes?: boolean;

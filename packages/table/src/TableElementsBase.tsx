@@ -88,6 +88,7 @@ export function _TableBase<T>(props: JengaTableBaseProps<T>, ref) {
     cellProps = {},
     rowProps = {},
     rowStyles = {},
+
     ...otherProps
   } = props;
 

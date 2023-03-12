@@ -9,7 +9,7 @@ export const TableFooter = (
   },
 ) => {
   const { totalRecords, styles, ...otherProps } = props;
-
+  if (totalRecords === 0) return <></>;
   return (
     <TableRowGroup
       as={'tfoot'}

@@ -13,11 +13,11 @@ import { TableFooter } from './TableFooter';
 const DefaultTableProps: Required<
   Omit<
     JengaTableExtendedProps,
-    'customFooter' | 'customHeader' | 'alternateBody' | 'onEmpty'
+    'customFooter' | 'customHeaderRow' | 'alternateBody' | 'onEmpty'
   >
 > = {
   showFooter: true,
-  customHeaderPostion: 'top',
+  customHeaderRowPostion: 'top',
   selectionMode: 'none',
   selectionBehavior: 'toggle',
   stickyHeader: false,
@@ -64,10 +64,10 @@ function _Table<T extends object>(props: JengaTableProps<T>, ref) {
     wrapperStyles,
     footerProps,
     footerStyles,
-    customHeaderPostion,
+    customHeaderRowPostion,
     tableBodyProps,
     tableBodyStyles,
-    customHeader,
+    customHeaderRow,
     customFooter,
     onEmpty,
     headerRowProps,
@@ -99,7 +99,7 @@ function _Table<T extends object>(props: JengaTableProps<T>, ref) {
     >
       <TableBase<T> ref={ref} {...gridProps} {...otherProps}>
         <TableHeadSection<T>
-          customHeaderPosition={customHeaderPostion || 'top'}
+          customHeaderPosition={customHeaderRowPostion || 'top'}
           state={state}
           headerRowProps={{
             ...headerRowProps,
@@ -112,9 +112,8 @@ function _Table<T extends object>(props: JengaTableProps<T>, ref) {
           {...headerOtherProps}
           styles={{ ...headerStylesFromProps, ...headerStyles }}
         >
-          {customHeader}
+          {customHeaderRow}
         </TableHeadSection>
-
         <TableBodySection<T>
           state={state}
           alternateBody={alternateBody}
@@ -123,15 +122,17 @@ function _Table<T extends object>(props: JengaTableProps<T>, ref) {
           {...tableBodyOtherProps}
           styles={{ ...tableBodyStylesFromProps, ...tableBodyStyles }}
         />
-        {showFooter && [...state.collection.body.childNodes].length !== 0 ? (
-          <TableFooter
-            styles={{ ...footerStylesFromProps, ...footerStyles }}
-            {...footerOtherProps}
-            totalRecords={[...state.collection.body.childNodes].length}
-          />
-        ) : (
-          <></>
-        )}
+        {showFooter ? (
+          customFooter ? (
+            customFooter
+          ) : (
+            <TableFooter
+              styles={{ ...footerStylesFromProps, ...footerStyles }}
+              {...footerOtherProps}
+              totalRecords={[...state.collection.body.childNodes].length}
+            />
+          )
+        ) : null}
       </TableBase>
     </TableWrapper>
   );
