@@ -28,10 +28,8 @@ export const Td = tasty({
 
 export const TableWrapper = tasty({
   styles: {
-    borderRadius: '8px',
     border: '1px solid #e5e5fc',
     overflow: 'auto',
-    styledScrollbar: true,
     position: 'relative',
     padding: '0',
   },
