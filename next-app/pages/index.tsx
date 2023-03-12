@@ -1,6 +1,8 @@
 import {
   Cell,
   Column,
+  Flex,
+  Grid,
   Row,
   Table,
   TableBody,
@@ -45,33 +47,101 @@ function Home() {
   });
 
   return (
-    <Table
-      aria-label="Example table with client side sorting"
-      sortDescriptor={list.sortDescriptor}
-      onSortChange={list.sort}
+    <Grid
+      placeItems={'center'}
+      margin={'50px'}
+      width={'800px'}
+      height={'300px'}
     >
-      <TableHeader>
-        <Column key="name" allowsSorting>
-          Name
-        </Column>
-        <Column key="height" allowsSorting>
-          Height
-        </Column>
-        <Column key="mass" allowsSorting>
-          Mass
-        </Column>
-        <Column key="birth_year" allowsSorting>
-          Birth Year
-        </Column>
-      </TableHeader>
-      <TableBody items={list.items}>
-        {(item) => (
-          <Row key={item.name}>
-            {(columnKey) => <Cell>{item[columnKey]}</Cell>}
-          </Row>
-        )}
-      </TableBody>
-    </Table>
+      <Table
+        wrapperStyles={{
+          width: '800px',
+          height: '400px',
+          overflow: 'auto',
+          styledScrollbar: false,
+        }}
+        styles={{ width: '100px', height: '100px' }}
+        aria-label="Example table with client side sorting"
+        sortDescriptor={list.sortDescriptor}
+        onSortChange={list.sort}
+        showFooter={true}
+        customFooter={
+          <tfoot>
+            <tr>
+              <td colSpan={4}>
+                <Flex
+                  width={'100%'}
+                  alignItems={'center'}
+                  justifyContent={'center'}
+                >
+                  Hey
+                </Flex>
+              </td>
+            </tr>
+          </tfoot>
+        }
+        customHeaderRow={
+          <tr>
+            <td colSpan={4}>
+              <Flex
+                width={'100%'}
+                alignItems={'center'}
+                justifyContent={'center'}
+              >
+                Hey
+              </Flex>
+            </td>
+          </tr>
+        }
+        customHeaderRowPostion={'bottom'}
+        headerRowProps={{
+          styles: {
+            borderBottom: 'none',
+          },
+        }}
+        // showAlternateBody={true}
+        // alternateBody={
+        //   <tr>
+        //     <td colSpan={4}>
+        //       <Flex
+        //         width={'100%'}
+        //         alignItems={'center'}
+        //         justifyContent={'center'}
+        //       >
+        //         Hey
+        //       </Flex>
+        //     </td>
+        //   </tr>
+        // }
+      >
+        <TableHeader>
+          <Column
+            key="name"
+            allowsSorting
+            colCellStyles={{ border: '1px solid #afafaf' }}
+            styles={{ border: 'none' }}
+          >
+            Name
+          </Column>
+          <Column key="height" allowsSorting>
+            Height
+          </Column>
+          <Column key="mass" allowsSorting>
+            Mass
+          </Column>
+          <Column key="birth_year" allowsSorting>
+            Birth Year
+          </Column>
+        </TableHeader>
+        <TableBody items={list.items}>
+          {(item) => (
+            <Row key={item.name}>
+              {(columnKey) => <Cell>{item[columnKey]}</Cell>}
+            </Row>
+          )}
+        </TableBody>
+      </Table>
+    </Grid>
   );
 }
 
