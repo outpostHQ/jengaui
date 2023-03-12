@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.0
+
+### Minor Changes
+
+- [#104](https://github.com/OutpostHQ/jengaui/pull/104) [`0576a0c`](https://github.com/OutpostHQ/jengaui/commit/0576a0cc70736de66cfff05db6161423d14db61c) Thanks [@aj-ya](https://github.com/aj-ya)! - @jengaui/table: removed internal pagination and allowed more control over styling.
+
 ## 0.4.0
 
 ### Minor Changes
