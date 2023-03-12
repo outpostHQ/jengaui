@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/radio",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Jenga UI Radio component in React",
   "keywords": [
     "radio",
@@ -33,9 +33,9 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/form": "workspace:0.4.0",
-    "@jengaui/providers": "workspace:0.4.0",
-    "@jengaui/utils": "workspace:0.4.0",
+    "@jengaui/form": "workspace:0.5.0",
+    "@jengaui/providers": "workspace:0.5.0",
+    "@jengaui/utils": "workspace:0.5.0",
     "@react-aria/interactions": "^3.12.0",
     "@react-aria/radio": "^3.4.0",
     "@react-spectrum/utils": "^3.7.4",
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:0.3.0",
+    "@jengaui/tsconfig": "workspace:0.4.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",

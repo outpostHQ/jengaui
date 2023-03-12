@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/table",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Jenga UI Table component in React",
   "keywords": [
     "table",
@@ -32,12 +32,12 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/button": "workspace:0.4.0",
-    "@jengaui/checkbox": "workspace:0.4.0",
-    "@jengaui/content": "workspace:0.4.0",
-    "@jengaui/core": "workspace:0.4.0",
-    "@jengaui/layout": "workspace:0.4.0",
-    "@jengaui/providers": "workspace:0.4.0",
+    "@jengaui/button": "workspace:0.5.0",
+    "@jengaui/checkbox": "workspace:0.5.0",
+    "@jengaui/content": "workspace:0.5.0",
+    "@jengaui/core": "workspace:0.5.0",
+    "@jengaui/layout": "workspace:0.5.0",
+    "@jengaui/providers": "workspace:0.5.0",
     "@jengaui/utils": "workspace:*",
     "@react-aria/interactions": "^3.12.0",
     "@react-aria/table": "^3.5.0",
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@jengaui/tsconfig": "workspace:0.3.0",
+    "@jengaui/tsconfig": "workspace:0.4.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "@types/styled-components": "5.1.26",

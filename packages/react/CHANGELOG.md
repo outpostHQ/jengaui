@@ -1,5 +1,65 @@
 # Change Log
 
+## 0.5.0
+
+### Minor Changes
+
+- [#104](https://github.com/OutpostHQ/jengaui/pull/104) [`0576a0c`](https://github.com/OutpostHQ/jengaui/commit/0576a0cc70736de66cfff05db6161423d14db61c) Thanks [@aj-ya](https://github.com/aj-ya)! - @jengaui/table: removed internal pagination and allowed more control over styling.
+
+### Patch Changes
+
+- Updated dependencies [[`0576a0c`](https://github.com/OutpostHQ/jengaui/commit/0576a0cc70736de66cfff05db6161423d14db61c)]:
+  - @jengaui/table@0.5.0
+  - @jengaui/accordion@0.5.0
+  - @jengaui/active-zone@0.5.0
+  - @jengaui/alert@0.5.0
+  - @jengaui/alert-dialog@0.5.0
+  - @jengaui/avatar@0.5.0
+  - @jengaui/badge@0.5.0
+  - @jengaui/banner@0.5.0
+  - @jengaui/breadcrumbs@0.5.0
+  - @jengaui/button@0.5.0
+  - @jengaui/button-group@0.5.0
+  - @jengaui/card@0.5.0
+  - @jengaui/checkbox@0.5.0
+  - @jengaui/combo-box@0.5.0
+  - @jengaui/content@0.5.0
+  - @jengaui/copy-snippet@0.5.0
+  - @jengaui/core@0.5.0
+  - @jengaui/dialog@0.5.0
+  - @jengaui/file-input@0.5.0
+  - @jengaui/form@0.5.0
+  - @jengaui/hooks@0.5.0
+  - @jengaui/input@0.5.0
+  - @jengaui/layout@0.5.0
+  - @jengaui/link@0.5.0
+  - @jengaui/menu@0.5.0
+  - @jengaui/modal@0.5.0
+  - @jengaui/notification@0.5.0
+  - @jengaui/number-input@0.5.0
+  - @jengaui/overlays@0.5.0
+  - @jengaui/password-input@0.5.0
+  - @jengaui/placeholder@0.5.0
+  - @jengaui/portal@0.5.0
+  - @jengaui/prism-code@0.5.0
+  - @jengaui/providers@0.5.0
+  - @jengaui/radio@0.5.0
+  - @jengaui/result@0.5.0
+  - @jengaui/root@0.5.0
+  - @jengaui/search-input@0.5.0
+  - @jengaui/select@0.5.0
+  - @jengaui/services@0.5.0
+  - @jengaui/skeleton@0.5.0
+  - @jengaui/slider@0.5.0
+  - @jengaui/switch@0.5.0
+  - @jengaui/tabs@0.5.0
+  - @jengaui/tag@0.5.0
+  - @jengaui/text-input@0.5.0
+  - @jengaui/textarea@0.5.0
+  - @jengaui/toast@0.5.0
+  - @jengaui/tooltip@0.5.0
+  - @jengaui/utils@0.5.0
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@jengaui/services",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Jenga UI Services component in React",
   "keywords": [
     "services",
@@ -31,11 +31,11 @@
     "lint": "TIMING=1 eslint src/**/*.ts* --fix"
   },
   "dependencies": {
-    "@jengaui/banner": "workspace:0.4.0",
+    "@jengaui/banner": "workspace:0.5.0",
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
-    "@jengaui/tsconfig": "workspace:0.3.0",
+    "@jengaui/tsconfig": "workspace:0.4.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "react": "^18.2.0",
