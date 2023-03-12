@@ -1,13 +1,12 @@
 import { TableState, TableStateProps } from '@react-stately/table';
 import { GridNode } from '@react-types/grid';
 import { BaseProps, BasePropsWithoutChildren, Styles } from 'tastycss';
-import { Node } from '@react-types/shared';
 import { AriaTableProps } from '@react-aria/table';
 import { JengaCheckboxProps } from '@jengaui/checkbox';
-import { HTMLProps, ReactNode } from 'react';
+import { HTMLProps } from 'react';
 
 export type JengaTableElementBaseProps<T> = {
-  item: Node<unknown>;
+  item: GridNode<T>;
   state: TableState<T>;
 } & BaseProps;
 
@@ -17,9 +16,8 @@ export type JengaTableCellProps<T> = HTMLProps<HTMLTableCellElement> &
 export type JengaTableCheckboxCellProps<T> = JengaTableElementBaseProps<T>;
 
 export type JengaTableColumnHeaderProps<T> = HTMLProps<HTMLTableCellElement> &
-  Omit<JengaTableElementBaseProps<T>, 'item'> & {
-    item: GridNode<unknown>;
-  } & BaseProps;
+  JengaTableElementBaseProps<T> &
+  BaseProps;
 
 export type JengaTableExtendedProps = {
   wrapperStyles?: Styles;
@@ -47,13 +45,13 @@ export type JengaTableExtendedProps = {
   stickyHeader?: boolean;
   zebraStripes?: boolean;
   setKeyboardNavigationDisabled?: boolean;
-  alternateBody?: ReactNode;
+  alternateBody?: JSX.Element;
   showAlternateBody?: boolean;
   showFooter?: boolean;
   customHeaderRowPostion?: 'top' | 'bottom';
-  customFooter?: ReactNode;
-  customHeaderRow?: ReactNode;
-  onEmpty?: ReactNode;
+  customFooter?: JSX.Element;
+  customHeaderRow?: JSX.Element;
+  onEmpty?: JSX.Element;
   cellStyles?: Styles;
   cellProps?: HTMLProps<HTMLTableCellElement> & BasePropsWithoutChildren;
   rowProps?: HTMLProps<HTMLTableRowElement> & BasePropsWithoutChildren;
@@ -64,7 +62,7 @@ export type JengaTableProps<T> = AriaTableProps<T> &
   BasePropsWithoutChildren &
   JengaTableExtendedProps;
 
-export type JengaTableBaseProps<T> = Omit<TableStateProps<T>, 'children'> &
+export type JengaTableBaseProps<T> = TableStateProps<T> &
   BaseProps & {
     cellPadding?: string | string[];
     zebraStripes?: boolean;
@@ -86,7 +84,7 @@ export type JengaTableHeadProps<T> = BaseProps & {
 export type JengaTableBodyProps<T> = BaseProps & {
   state: TableState<T>;
 } & {
-  alternateBody?: ReactNode;
+  alternateBody?: JSX.Element;
   showAlternateBody?: boolean;
-  onEmpty?: ReactNode;
+  onEmpty?: JSX.Element;
 };

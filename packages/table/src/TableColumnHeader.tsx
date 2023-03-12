@@ -42,9 +42,9 @@ export function TableColumnHeader<T>(props: JengaTableColumnHeaderProps<T>) {
         outline: { '': 'none', focused: '2px solid orange' },
         cursor: 'default',
         color: 'rgba(43, 41, 98, 1)',
-        ...(column.props?.styles || {}),
-        ...(column.props?.colCellStyles || {}),
         ...styles,
+        ...(column.props?.colCellStyles || {}),
+        ...(column.props?.styles || {}),
       }}
       {...otherProps}
     >

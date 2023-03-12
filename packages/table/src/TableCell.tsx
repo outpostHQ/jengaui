@@ -30,9 +30,9 @@ export function TableCell<T>(props: JengaTableElementBaseProps<T>) {
         outline: isFocused ? '1px solid rgba(94, 234, 212, 1)' : 'none',
         cursor: 'default',
         color: 'rgba(43, 41, 98, 1)',
-        ...styles,
         ...cellStylesFromProps,
         ...cellStyles,
+        ...styles,
         ...(cell.props.styles || {}),
       }}
     >

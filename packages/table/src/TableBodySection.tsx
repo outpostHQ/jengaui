@@ -42,7 +42,7 @@ export function TableBodySection<T>(props: JengaTableBodyProps<T>) {
                   (cell.column?.props.colCellStyles as Styles) || {};
 
                 return cell.props.isSelectionCell ? (
-                  <TableCheckboxCell<T>
+                  <TableCheckboxCell
                     key={cell.key}
                     item={cell}
                     state={state}

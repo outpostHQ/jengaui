@@ -132,7 +132,9 @@ function _Table<T extends object>(props: JengaTableProps<T>, ref) {
               totalRecords={[...state.collection.body.childNodes].length}
             />
           )
-        ) : null}
+        ) : (
+          <></>
+        )}
       </TableBase>
     </TableWrapper>
   );
