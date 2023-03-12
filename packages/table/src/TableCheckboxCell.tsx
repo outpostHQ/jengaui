@@ -4,25 +4,27 @@ import { useTableCell } from '@react-aria/table';
 import { useContext, useRef } from 'react';
 
 import { JengaTablePropsContext, Td } from './TableElementsBase';
-import { JengaTableElementBaseProps } from './types';
+import { JengaTableCheckboxCellProps } from './types';
 
-export function TableCheckboxCell(props: JengaTableElementBaseProps) {
-  const { item: cell, state, styles, ...otherProps } = props;
+export function TableCheckboxCell<T>(props: JengaTableCheckboxCellProps<T>) {
+  const { item: cell, state, ...otherProps } = props;
   let ref = useRef(null);
   let { gridCellProps } = useTableCell({ node: cell }, state, ref);
   let { checkboxProps } = useTableSelectionCheckbox(
     { key: cell.parentKey || 'randomKey' },
     state,
   );
-  const { checkboxAdditionalProps, checkboxStyles } = useContext(
+  const { checkboxProps: jengCheckboxProps, checkboxStyles } = useContext(
     JengaTablePropsContext,
   );
+  const { styles: checkboxStylesFromProps, ...otherCheckboxProps } =
+    jengCheckboxProps;
   return (
-    <Td {...gridCellProps} styles={{ ...styles }} {...otherProps} ref={ref}>
+    <Td {...cell.props} {...gridCellProps} {...otherProps} ref={ref}>
       <Checkbox
         {...checkboxProps}
-        {...checkboxAdditionalProps}
-        styles={checkboxStyles}
+        styles={{ ...checkboxStylesFromProps, ...checkboxStyles }}
+        {...otherCheckboxProps}
       />
     </Td>
   );

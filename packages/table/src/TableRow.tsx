@@ -1,19 +1,28 @@
 import { mergeProps, useFocus } from '@jengaui/utils';
-import { useContext, useRef } from 'react';
+import { useHover } from '@react-aria/interactions';
+import { HTMLProps, useContext, useRef } from 'react';
 import { useTableRow } from '@react-aria/table';
 
 import { JengaTablePropsContext, Tr } from './TableElementsBase';
 import { JengaTableElementBaseProps } from './types';
 
-const isOnCurrentPage = (rowNumber: number, range: [number, number]) => {
-  // console.log(rowNumber, range);
-  return rowNumber >= range[0] && rowNumber < range[1];
-};
-export function TableRow(props: JengaTableElementBaseProps) {
-  let { state, item, children, styles = {}, ...otherProps } = props;
-  const { zebraStripes, currentlyVisibleRange = [0, 1000] } = useContext(
-    JengaTablePropsContext,
-  );
+export function TableRow<T>(
+  props: JengaTableElementBaseProps<T> & HTMLProps<HTMLTableRowElement>,
+) {
+  let {
+    state,
+    item,
+    children,
+    styles = {},
+    isDisabled,
+    isHidden,
+    ...otherProps
+  } = props;
+  const {
+    zebraStripes,
+    rowProps: jengaRowProps,
+    rowStyles,
+  } = useContext(JengaTablePropsContext);
   let ref = useRef(null);
   let isSelected = state.selectionManager.isSelected(item.key);
   let { rowProps, isPressed } = useTableRow(
@@ -24,32 +33,40 @@ export function TableRow(props: JengaTableElementBaseProps) {
     ref,
   );
   const index = item.index ? item.index : 0;
-  // console.log(index);
-  let { isFocused, focusProps } = useFocus({ isDisabled: false });
+
+  let { isFocused, focusProps } = useFocus({ isDisabled });
+  let { hoverProps, isHovered } = useHover({ isDisabled });
+  const { styles: rowStylesFromProps, ...otherRowProps } = jengaRowProps;
   return (
     <Tr
+      {...otherRowProps}
       {...otherProps}
-      styles={{
-        fill: isSelected
-          ? '#primary.20'
-          : isPressed
-          ? '#primary.10'
-          : index % 2
-          ? zebraStripes
-            ? '#primary.10'
-            : 'none'
-          : 'none',
-        color: isSelected ? 'white' : '',
-        outline: isFocused ? '1px rgba(94, 234, 212, 1)' : 'none',
-        display: isOnCurrentPage(index, currentlyVisibleRange)
-          ? 'table-row'
-          : 'none',
-
-        ...item.props.styles,
-        ...styles,
+      {...item.props}
+      mods={{
+        selected: isSelected,
+        pressed: isPressed,
+        zebraStripes: zebraStripes,
+        focused: isFocused,
+        hidden: isHidden,
+        hovered: isHovered,
+        ...(item.props?.mods || {}),
       }}
-      {...mergeProps(rowProps, focusProps)}
+      {...mergeProps(rowProps, focusProps, hoverProps)}
       ref={ref}
+      styles={{
+        fill: {
+          '': 'none',
+          selected: '#primary.20',
+          pressed: '#primary.10',
+          zebraStripes: index % 2 ? '#primary.10' : 'none',
+        },
+        color: { selected: 'white' },
+        outline: { '': 'none', focused: '1px rgba(94, 234, 212, 1)' },
+        ...styles,
+        ...rowStylesFromProps,
+        ...rowStyles,
+        ...(item.props.styles || {}),
+      }}
     >
       {children}
     </Tr>

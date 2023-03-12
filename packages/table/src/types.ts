@@ -1,62 +1,90 @@
 import { TableState, TableStateProps } from '@react-stately/table';
 import { GridNode } from '@react-types/grid';
-import { BaseProps, Styles } from 'tastycss';
-import { Node } from '@react-types/shared';
+import { BaseProps, BasePropsWithoutChildren, Styles } from 'tastycss';
 import { AriaTableProps } from '@react-aria/table';
 import { JengaCheckboxProps } from '@jengaui/checkbox';
-import { ReactNode } from 'react';
+import { HTMLProps } from 'react';
 
-export type JengaTableElementBaseProps = BaseProps & {
-  item: Node<unknown>;
-  state: TableState<unknown>;
-};
+export type JengaTableElementBaseProps<T> = {
+  item: GridNode<T>;
+  state: TableState<T>;
+} & BaseProps;
 
-export type JengaTableColumnHeaderProps = Omit<
-  JengaTableElementBaseProps,
-  'item'
-> & { item: GridNode<unknown> };
+export type JengaTableCellProps<T> = HTMLProps<HTMLTableCellElement> &
+  JengaTableElementBaseProps<T>;
 
-export type JengaTableProps = AriaTableProps<HTMLTableElement> &
-  BaseProps &
-  TableStateProps<HTMLTableElement> & {
-    tableStyles?: Styles;
-    bodyStyles?: Styles;
-    footerStyles?: Styles;
-    headerStyles?: Styles;
-    checkboxAdditionalProps?: JengaCheckboxProps;
-    checkboxStyles?: Styles;
-    selectionMode?: 'multiple' | 'single' | 'none';
-    selectionBehavior?: 'replace' | 'toggle';
-    cellPadding?: string | string[];
-    stickyHeader?: boolean;
-    zebraStripes?: boolean;
-    stickyFirstCol?: boolean;
-    setKeyboardNavigationDisabled?: boolean;
-    IsEmpty?: ReactNode;
-    paginated?: boolean;
-    showFooter?: boolean;
-    recordsPerPage?: number;
-    showPage?: number;
-  };
+export type JengaTableCheckboxCellProps<T> = JengaTableElementBaseProps<T>;
 
-export type JengaTableBaseProps = BaseProps &
-  TableStateProps<HTMLTableElement> & {
-    cellPadding?: string | string[];
-    paginated?: boolean;
-    zebraStripes?: boolean;
-    currentlyVisibleRange?: [number, number];
-    checkboxAdditionalProps?: JengaCheckboxProps;
-    checkboxStyles?: Styles;
-    currentPage?: number;
-    totalPages?: number;
-    recordsPerPage?: number;
-  };
+export type JengaTableColumnHeaderProps<T> = HTMLProps<HTMLTableCellElement> &
+  JengaTableElementBaseProps<T> &
+  BaseProps;
 
-export type JengaTableHeadProps = BaseProps & {
-  state: TableState<unknown>;
+export type JengaTableExtendedProps = {
+  wrapperStyles?: Styles;
+  wrapperProps?: BasePropsWithoutChildren;
+  tableBodyStyles?: Styles;
+  tableBodyProps?: HTMLProps<HTMLTableSectionElement> &
+    BasePropsWithoutChildren;
+  footerStyles?: Styles;
+  headerStyles?: HTMLProps<HTMLTableSectionElement> & Styles;
+  headerRowProps?: HTMLProps<HTMLTableRowElement> & BaseProps;
+  headerRowStyles?: Styles;
+  footerProps?: BasePropsWithoutChildren;
+  headerProps?: BasePropsWithoutChildren;
+  checkboxProps?: JengaCheckboxProps;
+  checkboxStyles?: Styles;
+  selectionMode?: 'multiple' | 'single' | 'none';
+  selectionBehavior?: 'replace' | 'toggle';
+  cellPadding?:
+    | 'dense'
+    | 'regular'
+    | 'spaceous'
+    | string
+    | string[]
+    | Array<'dense' | 'regular' | 'spaceous'>;
   stickyHeader?: boolean;
+  zebraStripes?: boolean;
+  setKeyboardNavigationDisabled?: boolean;
+  alternateBody?: JSX.Element;
+  showAlternateBody?: boolean;
+  showFooter?: boolean;
+  customHeaderRowPostion?: 'top' | 'bottom';
+  customFooter?: JSX.Element;
+  customHeaderRow?: JSX.Element;
+  onEmpty?: JSX.Element;
+  cellStyles?: Styles;
+  cellProps?: HTMLProps<HTMLTableCellElement> & BasePropsWithoutChildren;
+  rowProps?: HTMLProps<HTMLTableRowElement> & BasePropsWithoutChildren;
+  rowStyles?: Styles;
+};
+export type JengaTableProps<T> = AriaTableProps<T> &
+  TableStateProps<T> &
+  BasePropsWithoutChildren &
+  JengaTableExtendedProps;
+
+export type JengaTableBaseProps<T> = TableStateProps<T> &
+  BaseProps & {
+    cellPadding?: string | string[];
+    zebraStripes?: boolean;
+    checkboxProps?: JengaCheckboxProps;
+    checkboxStyles?: Styles;
+    cellStyles?: Styles;
+    cellProps?: BasePropsWithoutChildren;
+    rowProps?: BasePropsWithoutChildren;
+    rowStyles?: Styles;
+  };
+
+export type JengaTableHeadProps<T> = BaseProps & {
+  state: TableState<T>;
+  stickyHeader?: boolean;
+  headerRowProps?: HTMLProps<HTMLTableRowElement> & BasePropsWithoutChildren;
+  customHeaderPosition: 'top' | 'bottom';
 };
 
-export type JengaTableBodyProps = Omit<JengaTableHeadProps, 'stickyHeader'> & {
-  IsEmpty?: ReactNode;
+export type JengaTableBodyProps<T> = BaseProps & {
+  state: TableState<T>;
+} & {
+  alternateBody?: JSX.Element;
+  showAlternateBody?: boolean;
+  onEmpty?: JSX.Element;
 };
